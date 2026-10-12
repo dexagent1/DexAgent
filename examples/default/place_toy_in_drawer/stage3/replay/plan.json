@@ -1,0 +1,69 @@
+{
+ "subgoals": [
+  {
+   "index": 1,
+   "motion": "open_joint",
+   "side": "left",
+   "object": "drawer_unit_drawer_unit_drawer_r0c0",
+   "pose": "${REPLAY}/poses/left_pull_hook_nopress.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_drawer.json",
+   "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+   "target": 0.15,
+   "hand_follows": "rigid",
+   "release": true
+  },
+  {
+   "index": 2,
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "toy_toy",
+   "pose": "${REPLAY}/poses/left_toy_claw.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_toy.json",
+   "lift_m": 0.12
+  },
+  {
+   "index": 3,
+   "motion": "carry",
+   "side": "left",
+   "object": "toy_toy",
+   "target_pos": [
+    -0.067,
+    0.7,
+    0.1
+   ],
+   "turn": {
+    "axis": [
+     0,
+     0,
+     1
+    ],
+    "deg": -54
+   }
+  },
+  {
+   "index": 4,
+   "motion": "place",
+   "side": "left",
+   "object": "toy_toy",
+   "target_pos": [
+    -0.067,
+    0.7,
+    0.03
+   ],
+   "release": true
+  },
+  {
+   "index": 5,
+   "motion": "close_joint",
+   "side": "left",
+   "object": "drawer_unit_drawer_unit_drawer_r0c0",
+   "pose": "${REPLAY}/poses/left_pull_hook_nopress.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_drawer.json",
+   "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+   "target": 0.0,
+   "hand_follows": "rigid",
+   "release": true,
+   "with": "toy_toy"
+  }
+ ]
+}

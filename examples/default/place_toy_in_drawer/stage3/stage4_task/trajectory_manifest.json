@@ -1,0 +1,285 @@
+{
+ "source": "stage3/trajectory_manifest.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    230
+   ],
+   "motion": "open_joint",
+   "side": "left",
+   "object": "drawer_unit_drawer_unit_drawer_r0c0",
+   "plan": {
+    "index": 1,
+    "motion": "open_joint",
+    "side": "left",
+    "object": "drawer_unit_drawer_unit_drawer_r0c0",
+    "pose": "poses/left_pull_hook_nopress.json",
+    "hand_scene": "poses/hs_left_drawer.json",
+    "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+    "target": 0.15,
+    "hand_follows": "rigid",
+    "release": true
+   },
+   "expect": {
+    "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+    "joint_target": 0.15,
+    "object": "drawer_unit_drawer_unit_drawer_r0c0",
+    "in_hand": false,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       -0.06919985535914397,
+       0.747100057852957,
+       0.051509674420758746
+      ],
+      "normal": [
+       -0.12895455152915614,
+       0.9916505047823444,
+       -1.6844120082626804e-06
+      ]
+     }
+    },
+    "pads_at_label": "left: grip drawer_unit_drawer_unit_drawer_r0c0",
+    "hand": "left",
+    "involved": [
+     "drawer_unit_drawer_unit_drawer_r0c0"
+    ],
+    "untouched": [
+     "toy_toy"
+    ],
+    "pads_at_rel": 125
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    231,
+    395
+   ],
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "toy_toy",
+   "plan": {
+    "index": 2,
+    "motion": "grasp_lift",
+    "side": "left",
+    "object": "toy_toy",
+    "pose": "poses/left_toy_claw.json",
+    "hand_scene": "poses/hs_left_toy.json",
+    "lift_m": 0.12
+   },
+   "expect": {
+    "rise_m": 0.06,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       0.12849809329511033,
+       0.6915062583106942,
+       0.01563968370852131
+      ],
+      "normal": [
+       0.8774535436688643,
+       -0.479563820551726,
+       -0.009686109579294064
+      ]
+     },
+     "index": {
+      "point": [
+       0.08821535683260798,
+       0.7037338224892679,
+       0.018745777292340827
+      ],
+      "normal": [
+       -0.8774535436688643,
+       0.479563820551726,
+       0.009686109579294064
+      ]
+     },
+     "middle": {
+      "point": [
+       0.09645983701986027,
+       0.7188324359988216,
+       0.013324484408616503
+      ],
+      "normal": [
+       -0.8774535436688643,
+       0.479563820551726,
+       0.009686109579294064
+      ]
+     }
+    },
+    "pads_at_label": "left: grip toy_toy",
+    "hand": "left",
+    "object": "toy_toy",
+    "involved": [
+     "toy_toy"
+    ],
+    "untouched": [
+     "drawer_unit_drawer_unit_carcass"
+    ],
+    "pads_at_rel": 132,
+    "slip_from_rel": 133
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    396,
+    447
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "toy_toy",
+   "plan": {
+    "index": 3,
+    "motion": "carry",
+    "side": "left",
+    "object": "toy_toy",
+    "target_pos": [
+     -0.067,
+     0.7,
+     0.1
+    ],
+    "turn": {
+     "axis": [
+      0,
+      0,
+      1
+     ],
+     "deg": -54
+    }
+   },
+   "expect": {
+    "target_pos": [
+     -0.067,
+     0.7,
+     0.1
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "toy_toy",
+    "involved": [
+     "toy_toy"
+    ],
+    "untouched": [
+     "drawer_unit_drawer_unit_carcass"
+    ],
+    "slip_from_rel": 0
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    448,
+    570
+   ],
+   "motion": "place",
+   "side": "left",
+   "object": "toy_toy",
+   "plan": {
+    "index": 4,
+    "motion": "place",
+    "side": "left",
+    "object": "toy_toy",
+    "target_pos": [
+     -0.067,
+     0.7,
+     0.03
+    ],
+    "release": true
+   },
+   "expect": {
+    "target_pos": [
+     -0.067,
+     0.7,
+     0.03
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": true,
+    "released": true,
+    "hand": "left",
+    "object": "toy_toy",
+    "involved": [
+     "toy_toy"
+    ],
+    "untouched": []
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    571,
+    801
+   ],
+   "motion": "close_joint",
+   "side": "left",
+   "object": "drawer_unit_drawer_unit_drawer_r0c0",
+   "plan": {
+    "index": 5,
+    "motion": "close_joint",
+    "side": "left",
+    "object": "drawer_unit_drawer_unit_drawer_r0c0",
+    "pose": "poses/left_pull_hook_nopress.json",
+    "hand_scene": "poses/hs_left_drawer.json",
+    "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+    "target": 0.0,
+    "hand_follows": "rigid",
+    "release": true,
+    "with": "toy_toy"
+   },
+   "expect": {
+    "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+    "joint_target": 0.0,
+    "object": "drawer_unit_drawer_unit_drawer_r0c0",
+    "in_hand": false,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       -0.050185777234036305,
+       0.6006749903488743,
+       0.05150931688237793
+      ],
+      "normal": [
+       -0.12899500180717127,
+       0.9916452437774295,
+       -6.112606008446403e-07
+      ]
+     }
+    },
+    "pads_at_label": "left: grip drawer_unit_drawer_unit_drawer_r0c0",
+    "hand": "left",
+    "involved": [
+     "drawer_unit_drawer_unit_drawer_r0c0",
+     "toy_toy"
+    ],
+    "untouched": [],
+    "pads_at_rel": 125
+   }
+  }
+ ]
+}

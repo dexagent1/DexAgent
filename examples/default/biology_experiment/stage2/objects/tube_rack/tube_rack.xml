@@ -1,0 +1,108 @@
+<mujoco model="rack_rack">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="rack" pos="0.000000 0.000000 0.000000" quat="1.000000 0.000000 0.000000 0.000000">
+      <freejoint name="rack_free" />
+      <geom name="rack_bottom0" type="box" size="0.080000 0.010250 0.002000" pos="0.000000 -0.018750 0.002000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_bottom1" type="box" size="0.062750 0.008500 0.002000" pos="-0.017250 0.000000 0.002000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_bottom2" type="box" size="0.008750 0.008500 0.002000" pos="0.071250 0.000000 0.002000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_bottom3" type="box" size="0.080000 0.010250 0.002000" pos="0.000000 0.018750 0.002000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_rim0" type="cylinder" size="0.000200 0.000050" pos="-0.054000 0.000000 0.068050" rgba="0.8560 0.4080 0.1040 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_rim1" type="cylinder" size="0.000200 0.000050" pos="-0.018000 0.000000 0.068050" rgba="0.8560 0.4080 0.1040 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_rim2" type="cylinder" size="0.000200 0.000050" pos="0.018000 0.000000 0.068050" rgba="0.8560 0.4080 0.1040 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_rim3" type="cylinder" size="0.000200 0.000050" pos="0.054000 0.000000 0.068050" rgba="0.8560 0.4080 0.1040 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_topA" type="box" size="0.080000 0.008100 0.002000" pos="0.000000 -0.020900 0.066000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_topB" type="box" size="0.080000 0.008100 0.002000" pos="0.000000 0.020900 0.066000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_topX0" type="box" size="0.006600 0.012800 0.002000" pos="-0.073400 0.000000 0.066000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_topX1" type="box" size="0.005200 0.012800 0.002000" pos="-0.036000 0.000000 0.066000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_topX2" type="box" size="0.005200 0.012800 0.002000" pos="0.000000 0.000000 0.066000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_topX3" type="box" size="0.005200 0.012800 0.002000" pos="0.036000 0.000000 0.066000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_topX4" type="box" size="0.006600 0.012800 0.002000" pos="0.073400 0.000000 0.066000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_post0" type="box" size="0.003000 0.003000 0.034000" pos="-0.077000 -0.026000 0.034000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_post1" type="box" size="0.003000 0.003000 0.034000" pos="0.077000 -0.026000 0.034000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_post2" type="box" size="0.003000 0.003000 0.034000" pos="-0.077000 0.026000 0.034000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_post3" type="box" size="0.003000 0.003000 0.034000" pos="0.077000 0.026000 0.034000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_wall0" type="box" size="0.080000 0.001500 0.034000" pos="0.000000 -0.027500 0.034000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_perf0_0_0" type="cylinder" size="0.004200 0.000600" pos="-0.065778 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_0_1" type="cylinder" size="0.004200 0.000600" pos="-0.049333 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_0_2" type="cylinder" size="0.004200 0.000600" pos="-0.032889 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_0_3" type="cylinder" size="0.004200 0.000600" pos="-0.016444 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_0_4" type="cylinder" size="0.004200 0.000600" pos="0.000000 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_0_5" type="cylinder" size="0.004200 0.000600" pos="0.016444 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_0_6" type="cylinder" size="0.004200 0.000600" pos="0.032889 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_0_7" type="cylinder" size="0.004200 0.000600" pos="0.049333 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_0_8" type="cylinder" size="0.004200 0.000600" pos="0.065778 -0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_0" type="cylinder" size="0.004200 0.000600" pos="-0.065778 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_1" type="cylinder" size="0.004200 0.000600" pos="-0.049333 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_2" type="cylinder" size="0.004200 0.000600" pos="-0.032889 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_3" type="cylinder" size="0.004200 0.000600" pos="-0.016444 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_4" type="cylinder" size="0.004200 0.000600" pos="0.000000 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_5" type="cylinder" size="0.004200 0.000600" pos="0.016444 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_6" type="cylinder" size="0.004200 0.000600" pos="0.032889 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_7" type="cylinder" size="0.004200 0.000600" pos="0.049333 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_1_8" type="cylinder" size="0.004200 0.000600" pos="0.065778 -0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_0" type="cylinder" size="0.004200 0.000600" pos="-0.065778 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_1" type="cylinder" size="0.004200 0.000600" pos="-0.049333 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_2" type="cylinder" size="0.004200 0.000600" pos="-0.032889 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_3" type="cylinder" size="0.004200 0.000600" pos="-0.016444 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_4" type="cylinder" size="0.004200 0.000600" pos="0.000000 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_5" type="cylinder" size="0.004200 0.000600" pos="0.016444 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_6" type="cylinder" size="0.004200 0.000600" pos="0.032889 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_7" type="cylinder" size="0.004200 0.000600" pos="0.049333 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_2_8" type="cylinder" size="0.004200 0.000600" pos="0.065778 -0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_0" type="cylinder" size="0.004200 0.000600" pos="-0.065778 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_1" type="cylinder" size="0.004200 0.000600" pos="-0.049333 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_2" type="cylinder" size="0.004200 0.000600" pos="-0.032889 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_3" type="cylinder" size="0.004200 0.000600" pos="-0.016444 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_4" type="cylinder" size="0.004200 0.000600" pos="0.000000 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_5" type="cylinder" size="0.004200 0.000600" pos="0.016444 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_6" type="cylinder" size="0.004200 0.000600" pos="0.032889 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_7" type="cylinder" size="0.004200 0.000600" pos="0.049333 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf0_3_8" type="cylinder" size="0.004200 0.000600" pos="0.065778 -0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_wall1" type="box" size="0.080000 0.001500 0.034000" pos="0.000000 0.027500 0.034000" rgba="0.8560 0.4080 0.1040 1.0000" density="900.0" friction="0.800000 0.010000 0.000200" condim="3" />
+      <geom name="rack_perf1_0_0" type="cylinder" size="0.004200 0.000600" pos="-0.065778 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_0_1" type="cylinder" size="0.004200 0.000600" pos="-0.049333 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_0_2" type="cylinder" size="0.004200 0.000600" pos="-0.032889 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_0_3" type="cylinder" size="0.004200 0.000600" pos="-0.016444 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_0_4" type="cylinder" size="0.004200 0.000600" pos="0.000000 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_0_5" type="cylinder" size="0.004200 0.000600" pos="0.016444 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_0_6" type="cylinder" size="0.004200 0.000600" pos="0.032889 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_0_7" type="cylinder" size="0.004200 0.000600" pos="0.049333 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_0_8" type="cylinder" size="0.004200 0.000600" pos="0.065778 0.029300 0.011500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_0" type="cylinder" size="0.004200 0.000600" pos="-0.065778 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_1" type="cylinder" size="0.004200 0.000600" pos="-0.049333 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_2" type="cylinder" size="0.004200 0.000600" pos="-0.032889 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_3" type="cylinder" size="0.004200 0.000600" pos="-0.016444 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_4" type="cylinder" size="0.004200 0.000600" pos="0.000000 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_5" type="cylinder" size="0.004200 0.000600" pos="0.016444 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_6" type="cylinder" size="0.004200 0.000600" pos="0.032889 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_7" type="cylinder" size="0.004200 0.000600" pos="0.049333 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_1_8" type="cylinder" size="0.004200 0.000600" pos="0.065778 0.029300 0.026500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_0" type="cylinder" size="0.004200 0.000600" pos="-0.065778 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_1" type="cylinder" size="0.004200 0.000600" pos="-0.049333 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_2" type="cylinder" size="0.004200 0.000600" pos="-0.032889 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_3" type="cylinder" size="0.004200 0.000600" pos="-0.016444 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_4" type="cylinder" size="0.004200 0.000600" pos="0.000000 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_5" type="cylinder" size="0.004200 0.000600" pos="0.016444 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_6" type="cylinder" size="0.004200 0.000600" pos="0.032889 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_7" type="cylinder" size="0.004200 0.000600" pos="0.049333 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_2_8" type="cylinder" size="0.004200 0.000600" pos="0.065778 0.029300 0.041500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_0" type="cylinder" size="0.004200 0.000600" pos="-0.065778 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_1" type="cylinder" size="0.004200 0.000600" pos="-0.049333 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_2" type="cylinder" size="0.004200 0.000600" pos="-0.032889 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_3" type="cylinder" size="0.004200 0.000600" pos="-0.016444 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_4" type="cylinder" size="0.004200 0.000600" pos="0.000000 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_5" type="cylinder" size="0.004200 0.000600" pos="0.016444 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_6" type="cylinder" size="0.004200 0.000600" pos="0.032889 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_7" type="cylinder" size="0.004200 0.000600" pos="0.049333 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="rack_perf1_3_8" type="cylinder" size="0.004200 0.000600" pos="0.065778 0.029300 0.056500" quat="0.70710678 0.70710678 0 0" rgba="0.5500 0.2000 0.0300 1.0000" contype="0" conaffinity="0" mass="0" />
+    </body>
+  </worldbody>
+</mujoco>

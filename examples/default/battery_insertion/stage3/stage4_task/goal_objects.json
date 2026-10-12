@@ -1,0 +1,46 @@
+{
+ "objects": [
+  {
+   "id": "battery_holder",
+   "type": "articulated",
+   "root_body": "holder_battery_holder",
+   "bodies": [
+    "holder_battery_holder",
+    "holder_battery_holder_s0spring_coil1",
+    "holder_battery_holder_s0spring_coil2",
+    "holder_battery_holder_s0spring_coil3",
+    "holder_battery_holder_s0spring_coil4",
+    "holder_battery_holder_s0spring_coil5",
+    "holder_battery_holder_s0spring_mount",
+    "holder_battery_holder_s0spring_tip",
+    "holder_battery_holder_s1spring_coil1",
+    "holder_battery_holder_s1spring_coil2",
+    "holder_battery_holder_s1spring_coil3",
+    "holder_battery_holder_s1spring_coil4",
+    "holder_battery_holder_s1spring_coil5",
+    "holder_battery_holder_s1spring_mount",
+    "holder_battery_holder_s1spring_tip",
+    "holder_battery_holder_s2spring_coil1",
+    "holder_battery_holder_s2spring_coil2",
+    "holder_battery_holder_s2spring_coil3",
+    "holder_battery_holder_s2spring_coil4",
+    "holder_battery_holder_s2spring_coil5",
+    "holder_battery_holder_s2spring_mount",
+    "holder_battery_holder_s2spring_tip"
+   ],
+   "joints": [
+    "holder_battery_holder_s0spring_c1",
+    "holder_battery_holder_s1spring_c1",
+    "holder_battery_holder_s2spring_c1"
+   ]
+  },
+  {
+   "id": "battery",
+   "type": "rigid",
+   "root_body": "battery_battery",
+   "bodies": [
+    "battery_battery"
+   ]
+  }
+ ]
+}

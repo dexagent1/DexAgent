@@ -1,0 +1,470 @@
+[
+ {
+  "label": "right: reach to hold gift_box_gift_box #1.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box"
+  ],
+  "anchor": "gift_box_gift_box",
+  "subgoal": 1,
+  "frames": [
+   [
+    0,
+    62
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on gift_box_gift_box #1.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box"
+  ],
+  "anchor": "gift_box_gift_box",
+  "subgoal": 1,
+  "frames": [
+   [
+    63,
+    88
+   ]
+  ]
+ },
+ {
+  "label": "right: close on gift_box_gift_box #1.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box"
+  ],
+  "anchor": "gift_box_gift_box",
+  "subgoal": 1,
+  "frames": [
+   [
+    89,
+    108
+   ]
+  ]
+ },
+ {
+  "label": "right: hold gift_box_gift_box #1.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box"
+  ],
+  "anchor": "gift_box_gift_box",
+  "subgoal": 1,
+  "frames": [
+   [
+    109,
+    125
+   ]
+  ]
+ },
+ {
+  "label": "left: reach for gift_box_gift_box_lidb #1.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 1,
+  "frames": [
+   [
+    126,
+    204
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on gift_box_gift_box_lidb #1.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 1,
+  "frames": [
+   [
+    205,
+    230
+   ]
+  ]
+ },
+ {
+  "label": "left: close on gift_box_gift_box_lidb #1.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 1,
+  "frames": [
+   [
+    231,
+    261
+   ]
+  ]
+ },
+ {
+  "label": "left: grip gift_box_gift_box_lidb #1.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 1,
+  "frames": [
+   [
+    262,
+    278
+   ]
+  ]
+ },
+ {
+  "label": "left: close gift_box_gift_box_lidb #1.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 1,
+  "frames": [
+   [
+    279,
+    423
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of gift_box_gift_box #1.3",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    424,
+    447
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #1.3",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    448,
+    476
+   ]
+  ]
+ },
+ {
+  "label": "right: return home #1.4",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    477,
+    535
+   ]
+  ]
+ },
+ {
+  "label": "left: close gift_box_gift_box_lidb #2.1",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 2,
+  "frames": [
+   [
+    536,
+    585
+   ]
+  ]
+ },
+ {
+  "label": "left: let go #2.1",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    586,
+    619
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat #2.1",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    620,
+    648
+   ]
+  ]
+ },
+ {
+  "label": "left: reach for gift_box_gift_box_lidb #2.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 2,
+  "frames": [
+   [
+    649,
+    722
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on gift_box_gift_box_lidb #2.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 2,
+  "frames": [
+   [
+    723,
+    748
+   ]
+  ]
+ },
+ {
+  "label": "left: close on gift_box_gift_box_lidb #2.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 2,
+  "frames": [
+   [
+    749,
+    768
+   ]
+  ]
+ },
+ {
+  "label": "left: grip gift_box_gift_box_lidb #2.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 2,
+  "frames": [
+   [
+    769,
+    785
+   ]
+  ]
+ },
+ {
+  "label": "left: press gift_box_gift_box_lidb #2.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 2,
+  "frames": [
+   [
+    786,
+    814
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for gift_box_gift_box_lidb #3.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 3,
+  "frames": [
+   [
+    815,
+    877
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on gift_box_gift_box_lidb #3.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 3,
+  "frames": [
+   [
+    878,
+    903
+   ]
+  ]
+ },
+ {
+  "label": "right: close on gift_box_gift_box_lidb #3.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 3,
+  "frames": [
+   [
+    904,
+    923
+   ]
+  ]
+ },
+ {
+  "label": "right: grip gift_box_gift_box_lidb #3.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 3,
+  "frames": [
+   [
+    924,
+    940
+   ]
+  ]
+ },
+ {
+  "label": "right: press gift_box_gift_box_lidb #3.1",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": "gift_box_gift_box_lidb",
+  "subgoal": 3,
+  "frames": [
+   [
+    941,
+    969
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of gift_box_gift_box_lidb #3.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    970,
+    993
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat #3.2",
+  "hand": "left",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    994,
+    1022
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of gift_box_gift_box_lidb #3.3",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    1023,
+    1046
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #3.3",
+  "hand": "right",
+  "objects": [
+   "gift_box_gift_box_lidb"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    1047,
+    1075
+   ]
+  ]
+ },
+ {
+  "label": "right: wait #3.4",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    1076,
+    1094
+   ]
+  ]
+ },
+ {
+  "label": "left: return home | right: return home #4.1",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1095,
+    1148
+   ]
+  ]
+ },
+ {
+  "label": "left: return home | right: return home #4.1",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1095,
+    1148
+   ]
+  ]
+ }
+]

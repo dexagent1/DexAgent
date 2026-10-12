@@ -1,0 +1,29 @@
+{
+ "schema": "dexagent.example_certificate.v1",
+ "task": "place_cup_in_bowl",
+ "source_video_sha256": "e819f48dc73bbdaedd25efb8a9018cea0808a942deeb9ae07c24f8a2c6b6d803",
+ "frame0": {
+  "path": "frame0.jpg",
+  "source": "the first frame of the recording",
+  "signature": "frame0_signature.npz"
+ },
+ "masks": [
+  {
+   "path": "masks/cup.png",
+   "role": "object",
+   "object": "cup",
+   "pixels_sha256": "1d8f5f61d12463ad0428bb07532c4b55891241c06a290d42a2ee6d1330139c96"
+  },
+  {
+   "path": "masks/bowl.png",
+   "role": "object",
+   "object": "bowl",
+   "pixels_sha256": "bb85e386de2b3a49eea2b1dc1d37de6caad175f40f47068b136d3345d2dfd23d"
+  },
+  {
+   "path": "masks/hands.png",
+   "role": "hands",
+   "pixels_sha256": "cb1a14f420ab64854bede56219cce0989bc53c3584a71657b77e329d30d1a592"
+  }
+ ]
+}

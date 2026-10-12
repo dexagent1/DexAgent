@@ -1,0 +1,56 @@
+{
+ "shift": [
+  0.0,
+  0.35
+ ],
+ "scene": "scene_stations.xml",
+ "reached": {
+  "drawer_unit_drawer_unit_carcass": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 50.0
+  },
+  "toy_toy": {
+   "reached": 2,
+   "centre": false,
+   "worst_mm": 43.6
+  }
+ },
+ "poses_held": [],
+ "before": {
+  "drawer_unit_drawer_unit_carcass": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 335.5
+  },
+  "toy_toy": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 144.3
+  }
+ },
+ "home_weld_mm_deg": {
+  "left": [
+   0.0,
+   2.6694654798162853e-15
+  ],
+  "right": [
+   0.0,
+   2.306978382188081e-15
+  ]
+ },
+ "candidates": [
+  {
+   "shift": [
+    0.0,
+    0.35
+   ],
+   "reached": 2,
+   "poses_held": 0,
+   "pose_err_mm": 0.0,
+   "all_centres": false,
+   "worst_mm": 50.0
+  }
+ ],
+ "note": "stations moved +0.350 m toward the objects; use scene_stations.xml for Stage 3 and Stage 4"
+}

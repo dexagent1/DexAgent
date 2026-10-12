@@ -1,0 +1,35 @@
+{
+ "schema": "dexagent.example_certificate.v1",
+ "task": "drawing_and_wiping",
+ "source_video_sha256": "59c71451e0217ca8581866308fbec44c247b83c5653b16e5edac88bc4a3c305a",
+ "frame0": {
+  "path": "frame0.jpg",
+  "source": "the first frame of the recording",
+  "signature": "frame0_signature.npz"
+ },
+ "masks": [
+  {
+   "path": "masks/board.png",
+   "role": "object",
+   "object": "board",
+   "pixels_sha256": "4e8fb2a6625bdd4ae48884b3bb027cb72eccf41f95b28fef37518b1697ac1d89"
+  },
+  {
+   "path": "masks/marker.png",
+   "role": "object",
+   "object": "marker",
+   "pixels_sha256": "2bea6c87462869b9406a6ab223499185b211155a7b6ace61dbd262f8b9743bdf"
+  },
+  {
+   "path": "masks/eraser.png",
+   "role": "object",
+   "object": "eraser",
+   "pixels_sha256": "1527f8b249beb3f6d1de494e72bc01da44ffb5bf8380c515566a8edb3b71d142"
+  },
+  {
+   "path": "masks/hands.png",
+   "role": "hands",
+   "pixels_sha256": "4893b67902beb55ac806ff0fae2fbc7914e8626ac0b7adfba1ae59729c746cda"
+  }
+ ]
+}

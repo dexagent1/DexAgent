@@ -1,0 +1,555 @@
+[
+ {
+  "label": "left: reach for held_tube #1.1",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "held_tube",
+  "subgoal": 1,
+  "frames": [
+   [
+    0,
+    65
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on held_tube #1.1",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "held_tube",
+  "subgoal": 1,
+  "frames": [
+   [
+    66,
+    91
+   ]
+  ]
+ },
+ {
+  "label": "left: close on held_tube #1.1",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "held_tube",
+  "subgoal": 1,
+  "frames": [
+   [
+    92,
+    111
+   ]
+  ]
+ },
+ {
+  "label": "left: grip held_tube #1.1",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "held_tube",
+  "subgoal": 1,
+  "frames": [
+   [
+    112,
+    128
+   ]
+  ]
+ },
+ {
+  "label": "left: lift held_tube #1.1",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "held_tube",
+  "subgoal": 1,
+  "frames": [
+   [
+    129,
+    160
+   ]
+  ]
+ },
+ {
+  "label": "left: carry held_tube #1.2",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    161,
+    211
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for pipette_pipette #2.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "pipette_pipette",
+  "subgoal": 2,
+  "frames": [
+   [
+    212,
+    281
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on pipette_pipette #2.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "pipette_pipette",
+  "subgoal": 2,
+  "frames": [
+   [
+    282,
+    307
+   ]
+  ]
+ },
+ {
+  "label": "right: close on pipette_pipette #2.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "pipette_pipette",
+  "subgoal": 2,
+  "frames": [
+   [
+    308,
+    335
+   ]
+  ]
+ },
+ {
+  "label": "right: grip pipette_pipette #2.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "pipette_pipette",
+  "subgoal": 2,
+  "frames": [
+   [
+    336,
+    352
+   ]
+  ]
+ },
+ {
+  "label": "right: lift pipette_pipette #2.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "pipette_pipette",
+  "subgoal": 2,
+  "frames": [
+   [
+    353,
+    403
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette (free) #3.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    404,
+    436
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #3.2",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "tip_box_tipbox_tip",
+  "subgoal": 3,
+  "frames": [
+   [
+    437,
+    499
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #3.3",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "tip_box_tipbox_tip",
+  "subgoal": 3,
+  "frames": [
+   [
+    500,
+    562
+   ]
+  ]
+ },
+ {
+  "label": "right: lift pipette_pipette #3.4",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "pipette_pipette",
+  "subgoal": 3,
+  "frames": [
+   [
+    563,
+    601
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #4.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "tip_box_tipbox_tip",
+  "subgoal": 4,
+  "frames": [
+   [
+    602,
+    628
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #4.2",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "rack_tube_srctube",
+  "subgoal": 4,
+  "frames": [
+   [
+    629,
+    691
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #4.3",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "rack_tube_srctube",
+  "subgoal": 4,
+  "frames": [
+   [
+    692,
+    730
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #4.4",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "rack_tube_srctube",
+  "subgoal": 4,
+  "frames": [
+   [
+    731,
+    763
+   ]
+  ]
+ },
+ {
+  "label": "left: carry held_tube #5.1",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    764,
+    811
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #5.2",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "held_tube",
+  "subgoal": 5,
+  "frames": [
+   [
+    812,
+    874
+   ]
+  ]
+ },
+ {
+  "label": "left: wait | right: carry pipette_pipette #5.3",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    875,
+    913
+   ]
+  ]
+ },
+ {
+  "label": "left: wait | right: carry pipette_pipette #5.3",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "held_tube",
+  "subgoal": 5,
+  "frames": [
+   [
+    875,
+    913
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #5.4",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": "held_tube",
+  "subgoal": 5,
+  "frames": [
+   [
+    914,
+    946
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #6.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    947,
+    1009
+   ]
+  ]
+ },
+ {
+  "label": "left: carry held_tube #6.2",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1010,
+    1057
+   ]
+  ]
+ },
+ {
+  "label": "left: carry held_tube (up) #6.3",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "tube_rack_rack",
+  "subgoal": 6,
+  "frames": [
+   [
+    1058,
+    1076
+   ]
+  ]
+ },
+ {
+  "label": "left: carry held_tube #6.3",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "tube_rack_rack",
+  "subgoal": 6,
+  "frames": [
+   [
+    1077,
+    1106
+   ]
+  ]
+ },
+ {
+  "label": "left: carry held_tube (down) #6.3",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "tube_rack_rack",
+  "subgoal": 6,
+  "frames": [
+   [
+    1107,
+    1126
+   ]
+  ]
+ },
+ {
+  "label": "left: set down held_tube #6.3",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "tube_rack_rack",
+  "subgoal": 6,
+  "frames": [
+   [
+    1127,
+    1143
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of held_tube #6.3",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "tube_rack_rack",
+  "subgoal": 6,
+  "frames": [
+   [
+    1144,
+    1166
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat #6.3",
+  "hand": "left",
+  "objects": [
+   "held_tube"
+  ],
+  "anchor": "tube_rack_rack",
+  "subgoal": 6,
+  "frames": [
+   [
+    1167,
+    1195
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #7.1",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1196,
+    1268
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #7.2",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1269,
+    1316
+   ]
+  ]
+ },
+ {
+  "label": "right: carry pipette_pipette #7.3",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1317,
+    1364
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of pipette_pipette #7.4",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1365,
+    1396
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #7.4",
+  "hand": "right",
+  "objects": [
+   "pipette_pipette"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1397,
+    1425
+   ]
+  ]
+ }
+]

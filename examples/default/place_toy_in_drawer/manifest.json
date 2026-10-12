@@ -1,0 +1,40 @@
+{
+ "task": "place_toy_in_drawer",
+ "prompt": "Put the plushie into the grey box.",
+ "fingerprint": "fingerprint.json",
+ "video": {
+  "duration_s": 15.1,
+  "fps": 30.0,
+  "resolution": [
+   1280,
+   1024
+  ]
+ },
+ "objects": [
+  {
+   "id": "drawer_unit",
+   "type": "articulated",
+   "root_body": "drawer_unit_drawer_unit_carcass"
+  },
+  {
+   "id": "toy",
+   "type": "deformable",
+   "root_body": "toy_toy"
+  }
+ ],
+ "stages": {
+  "stage1": "stage1/scene_semantics.json",
+  "stage2": "stage2/scene_recon.json",
+  "stage3": "stage3/trajectory_manifest.json",
+  "stage4": "stage3/stage4_task/stage4.json"
+ },
+ "provenance": {
+  "run": "rel_place_toy_in_drawer",
+  "how": "solved by the agent stages (a model acting as the harness agent), reviewed by the maintainers",
+  "verified_at": "0b65055",
+  "finish_verifiers": "stage 1, 2 and 3 passed"
+ },
+ "verified": {
+  "stage_verifiers": "passed at the end of the run"
+ }
+}

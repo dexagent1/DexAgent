@@ -1,0 +1,32 @@
+{
+ "task": "knot_the_rope",
+ "prompt": "Tie a knot in the red velvet rope.",
+ "fingerprint": "fingerprint.json",
+ "video": {
+  "duration_s": 22.9,
+  "fps": 30.0,
+  "resolution": [
+   640,
+   480
+  ]
+ },
+ "objects": [
+  {
+   "id": "rope",
+   "type": "deformable",
+   "root_body": null
+  }
+ ],
+ "stages": {
+  "stage1": "stage1/scene_semantics.json",
+  "stage2": "stage2/scene_recon.json"
+ },
+ "provenance": {
+  "run": "knot_the_rope_003",
+  "how": "Stage 1 written for this video and passed by Stage 1's verifiers; Stage 2: the bench of setup/ seen through the camera of the ego13 Isaac twin of this task (fitted on this bench session's footage), the twin's rope asset (the fitted velvet-rope model, 41 links) fitted onto this video's frame-0 rope and settled in Isaac Sim; Stage 2's gates passed; reviewed by the maintainers",
+  "finish_verifiers": "stage 1 and 2 passed"
+ },
+ "verified": {
+  "stage_verifiers": "stages 1-2 passed at the end of the run"
+ }
+}

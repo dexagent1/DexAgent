@@ -1,0 +1,40 @@
+{
+ "task": "meal_box",
+ "prompt": "Put the lid on the glass meal box and close its latches.",
+ "fingerprint": "fingerprint.json",
+ "video": {
+  "duration_s": 23.757,
+  "fps": 60.067103294693254,
+  "resolution": [
+   640,
+   480
+  ]
+ },
+ "objects": [
+  {
+   "id": "container",
+   "type": "rigid",
+   "root_body": "meal_box_mealbox_container"
+  },
+  {
+   "id": "lid",
+   "type": "articulated",
+   "root_body": "meal_box_mealbox_lid"
+  }
+ ],
+ "stages": {
+  "stage1": "stage1/scene_semantics.json",
+  "stage2": "stage2/scene_recon.json",
+  "stage3": "stage3/trajectory_manifest.json",
+  "stage4": "stage3/stage4_task/stage4.json"
+ },
+ "provenance": {
+  "run": "rel_meal_box",
+  "how": "solved by the agent stages (a model acting as the harness agent), reviewed by the maintainers",
+  "verified_at": "8ba8a7a",
+  "finish_verifiers": "stage 1, 2 and 3 passed"
+ },
+ "verified": {
+  "stage_verifiers": "passed at the end of the run"
+ }
+}

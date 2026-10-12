@@ -1,0 +1,4 @@
+third_party/
+outputs/
+__pycache__/
+*.pyc

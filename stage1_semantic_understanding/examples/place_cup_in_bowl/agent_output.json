@@ -1,0 +1,125 @@
+{
+  "task_prompt": "Put the blue cup into the green bowl.",
+  "task_summary": "The left hand grasps the upside-down blue cup on the left of the table, lifts it, carries it right to the green bowl and sets it down inside the bowl, still upside down; the right hand rests flat on the table throughout.",
+  "video": {
+    "path": "input/video.mp4",
+    "duration_s": 7.633,
+    "fps": 30.0,
+    "frames": 229
+  },
+  "environment": {
+    "support_surface": "white tablecloth on a table, with dark backdrop walls behind and to the right",
+    "camera": "head-mounted egocentric camera looking down the table from the operator's side; small head motion only",
+    "notes": "A white plate and a black keyboard lie at the left edge of the frame; they are never touched and are not task-relevant."
+  },
+  "hands": {
+    "used": [
+      "left"
+    ],
+    "notes": "Both hands enter from the bottom of the frame at about 0.3 s. The left hand (forearm on the image's left) does the whole task; the right hand stays flat on the cloth at the lower right from about 1 s to 6 s, then both hands leave the frame by about 6.5 s."
+  },
+  "objects": [
+    {
+      "id": "cup",
+      "name": "blue cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "opaque blue plastic, smooth, slightly tapered with a small step near the rim"
+      },
+      "approximate_size": "palm-sized; a little narrower than the bowl's inner base and shorter than a hand-length",
+      "properties": [
+        "A rigid tapered cup that stands upside down on the table: its closed base faces up and its open mouth rests on the cloth.",
+        "It is grasped by one hand from above and the side, the fingers wrapping around the body near the top (the upturned base), and is light enough to lift and carry in one hand.",
+        "It tilts somewhat in the hand during the carry, so the grasp must hold it while it is not perfectly upright.",
+        "It fits inside the green bowl and rests on the bowl's flat inner bottom without touching the rim, staying upside down.",
+        "It must come to rest stably inside the bowl once the hand lets go."
+      ],
+      "initial_state": "standing upside down on the cloth, left of centre and nearer the operator than the bowl",
+      "final_state": "standing upside down on the flat inner bottom of the green bowl, roughly centred",
+      "evidence": "prompt: 'blue cup'; 0 s: blue cup upside down at the left (closed base on top, wider rim at the bottom); 1.6 to 2.8 s the left hand closes on it; 2.9 to 3.4 s it is carried tilted toward the bowl; 4.5 to 7.6 s it stands upside down inside the bowl; it moves only as one piece."
+    },
+    {
+      "id": "bowl",
+      "name": "green bowl",
+      "type": "rigid",
+      "role": "container",
+      "appearance": {
+        "body": "glossy bright green plastic, rounded-square in plan, sloping walls, flat square-ish inner bottom"
+      },
+      "approximate_size": "about two hand-widths across, roughly as tall as the cup or a little lower",
+      "properties": [
+        "An open-topped rigid container with sloping walls and a flat inner bottom large enough to hold the cup standing.",
+        "It stays fixed on the table during the whole clip; neither hand grasps or steadies it.",
+        "The cup is lowered into it over the near-left rim and set on its inner bottom; the rim may be touched by the hand or cup during placement without the bowl moving."
+      ],
+      "initial_state": "empty, resting on the cloth right of and farther from the operator than the cup",
+      "final_state": "unmoved, holding the upside-down blue cup",
+      "evidence": "prompt: 'green bowl'; visible in the same place in every frame from 0 s to 7.6 s; 3.4 to 4.3 s the cup is lowered into it."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "left",
+      "action": "Grasp the upside-down blue cup and lift it off the table.",
+      "object_refs": [
+        "cup"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Reaches to the cup, wraps the fingers around its upturned base and body from above and the side, settles the grip, and lifts it off the cloth.",
+        "right": "Rests flat on the table at the lower right."
+      },
+      "goal": "The cup is held in the left hand, clear of the table.",
+      "time_window_s": [
+        1.5,
+        2.9
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "left",
+      "action": "Carry the cup to above the green bowl.",
+      "object_refs": [
+        "cup",
+        "bowl"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Moves the held cup up and to the right, tilted, over the near-left rim of the bowl.",
+        "right": "Rests flat on the table at the lower right."
+      },
+      "goal": "The cup is above the bowl's opening, clear of the rim.",
+      "time_window_s": [
+        2.9,
+        3.4
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "left",
+      "action": "Lower the cup into the bowl, set it down upside down on the bowl's bottom and let go.",
+      "object_refs": [
+        "cup",
+        "bowl"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Rights the cup, lowers it into the bowl onto the inner bottom, opens the fingers and withdraws to the left.",
+        "right": "Rests flat on the table at the lower right."
+      },
+      "goal": "The cup stands upside down on the inner bottom of the bowl without hand support, entirely inside the rim.",
+      "time_window_s": [
+        3.4,
+        4.5
+      ]
+    }
+  ],
+  "task_success": "The blue cup stands upside down inside the green bowl, which has not moved; both hands are away from the objects.",
+  "notes": [
+    "The cup is upside down (mouth on the table) at the start and stays upside down in the bowl; the task does not turn it over.",
+    "Between about 1.8 s and 2.8 s the hand adjusts its grip with the cup nearly in place; whether the cup is slightly slid on the cloth before lifting cannot be resolved, so it is treated as part of the grasp and lift.",
+    "Only the left hand acts; the right hand rests on the cloth and then both hands leave the frame (about 5.9 to 6.5 s), which is not a subgoal."
+  ]
+}

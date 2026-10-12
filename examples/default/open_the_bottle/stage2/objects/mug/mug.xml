@@ -1,0 +1,70 @@
+<mujoco model="mug_vessel">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <material name="mug_mat" rgba="0.3350 0.4690 0.4060 1.0000" specular="0.300" shininess="0.300" />
+    <material name="mug_inmat" rgba="0.2010 0.3260 0.2680 1.0000" specular="0.210" shininess="0.210" />
+    <mesh name="mug_shell" file="../../../../../_assets/96bee08e5ffc3dda6730.obj" />
+    <mesh name="mug_lining" file="../../../../../_assets/1f4080c6df1863d6d5fb.obj" />
+    <mesh name="mug_wedge0" file="../../../../../_assets/e84e3aacafe8fd74c9b8.obj" />
+    <mesh name="mug_wedge1" file="../../../../../_assets/f4ee86e66c981f313a0d.obj" />
+    <mesh name="mug_wedge2" file="../../../../../_assets/00dda2c632023b1b5d1b.obj" />
+    <mesh name="mug_wedge3" file="../../../../../_assets/3553b439d3d1cd37cc62.obj" />
+    <mesh name="mug_wedge4" file="../../../../../_assets/c529b6cad2b1aa4c01b7.obj" />
+    <mesh name="mug_wedge5" file="../../../../../_assets/f0e98e8fb6f7ba381e02.obj" />
+    <mesh name="mug_wedge6" file="../../../../../_assets/cc2346b01aec5d68215d.obj" />
+    <mesh name="mug_wedge7" file="../../../../../_assets/5d6ed9b2a2a9291b79d1.obj" />
+    <mesh name="mug_wedge8" file="../../../../../_assets/34acf2a5702d9afc16f3.obj" />
+    <mesh name="mug_wedge9" file="../../../../../_assets/3593cb5f15fa393395c7.obj" />
+    <mesh name="mug_wedge10" file="../../../../../_assets/63fc5b1a1496742aebeb.obj" />
+    <mesh name="mug_wedge11" file="../../../../../_assets/d955557648378ebc8435.obj" />
+    <mesh name="mug_wedge12" file="../../../../../_assets/8293722c7398f5ec9847.obj" />
+    <mesh name="mug_wedge13" file="../../../../../_assets/374ea150a4f4e8982dee.obj" />
+    <mesh name="mug_wedge14" file="../../../../../_assets/1c09d883831740b5bf30.obj" />
+    <mesh name="mug_wedge15" file="../../../../../_assets/785577f759e6baa87cfb.obj" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="mug" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="mug_free" />
+      <geom name="mug_shell" type="mesh" mesh="mug_shell" material="mug_mat" contype="0" conaffinity="0" mass="0" group="1" />
+      <geom name="mug_lining" type="mesh" mesh="mug_lining" material="mug_inmat" contype="0" conaffinity="0" mass="0" group="1" />
+      <geom name="mug_base" type="cylinder" pos="0 0 0.00300" size="0.03250 0.00300" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge0" type="mesh" mesh="mug_wedge0" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge1" type="mesh" mesh="mug_wedge1" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge2" type="mesh" mesh="mug_wedge2" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge3" type="mesh" mesh="mug_wedge3" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge4" type="mesh" mesh="mug_wedge4" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge5" type="mesh" mesh="mug_wedge5" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge6" type="mesh" mesh="mug_wedge6" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge7" type="mesh" mesh="mug_wedge7" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge8" type="mesh" mesh="mug_wedge8" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge9" type="mesh" mesh="mug_wedge9" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge10" type="mesh" mesh="mug_wedge10" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge11" type="mesh" mesh="mug_wedge11" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge12" type="mesh" mesh="mug_wedge12" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge13" type="mesh" mesh="mug_wedge13" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge14" type="mesh" mesh="mug_wedge14" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_wedge15" type="mesh" mesh="mug_wedge15" density="2439.645" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle0" type="capsule" size="0.00650" fromto="0.055500 0.000000 0.014000 0.061712 0.000000 0.014818" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle1" type="capsule" size="0.00650" fromto="0.061712 0.000000 0.014818 0.067500 0.000000 0.017215" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle2" type="capsule" size="0.00650" fromto="0.067500 0.000000 0.017215 0.072471 0.000000 0.021029" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle3" type="capsule" size="0.00650" fromto="0.072471 0.000000 0.021029 0.076285 0.000000 0.026000" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle4" type="capsule" size="0.00650" fromto="0.076285 0.000000 0.026000 0.078682 0.000000 0.031788" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle5" type="capsule" size="0.00650" fromto="0.078682 0.000000 0.031788 0.079500 0.000000 0.038000" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle6" type="capsule" size="0.00650" fromto="0.079500 0.000000 0.038000 0.078682 0.000000 0.044212" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle7" type="capsule" size="0.00650" fromto="0.078682 0.000000 0.044212 0.076285 0.000000 0.050000" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle8" type="capsule" size="0.00650" fromto="0.076285 0.000000 0.050000 0.072471 0.000000 0.054971" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle9" type="capsule" size="0.00650" fromto="0.072471 0.000000 0.054971 0.067500 0.000000 0.058785" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle10" type="capsule" size="0.00650" fromto="0.067500 0.000000 0.058785 0.061712 0.000000 0.061182" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="mug_handle11" type="capsule" size="0.00650" fromto="0.061712 0.000000 0.061182 0.055500 0.000000 0.062000" rgba="0.3350 0.4690 0.4060 1.0000" density="2439.645" friction="1.000000 0.005000 0.000100" condim="4" />
+      <site name="mug_rim" pos="0 0 0.07600" size="0.002" rgba="0 1 0 0" />
+      <site name="mug_floor" pos="0 0 0.00600" size="0.002" rgba="0 0 1 0" />
+    </body>
+  </worldbody>
+</mujoco>

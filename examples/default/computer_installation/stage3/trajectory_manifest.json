@@ -1,0 +1,2509 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_recon": "../stage2/scene_recon.json",
+ "scene_executed": "scene_executed.xml",
+ "stations": {
+  "shift_m": [
+   -0.55,
+   0.175
+  ],
+  "tool": "place_arm_stations",
+  "args": "args/pas.json"
+ },
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    169
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "pose": {
+    "file": "r2/d1_c2.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_1.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.7 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.4
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.4
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 3,
+        "fingers": [
+         "middle",
+         "ring",
+         "thumb"
+        ],
+        "contact_force_N": 18.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.4,
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.4,
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 1.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 1.8,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.9,
+        "slip_mm_s": 0.2,
+        "finger_contacts": 2,
+        "contact_force_N": 13.7,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 84,
+        "saturated_frac": 0.262,
+        "median_s": 0.893,
+        "peak_s": 1.804,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    }
+   },
+   "plan": {
+    "index": 1,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "disk_1_disk_1",
+    "pose": "r2/d1_c2.json",
+    "hand_scene": "poses/hs_right_disk_1.json",
+    "lift_m": 0.08
+   },
+   "expect": {
+    "rise_m": 0.04,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       0.05286178705945566,
+       0.3441757898742101,
+       0.016
+      ],
+      "normal": [
+       -0.9925886326865888,
+       -0.12152286311376975,
+       0.0
+      ]
+     },
+     "middle": {
+      "point": [
+       0.1510269445601888,
+       0.3652613738797873,
+       0.016
+      ],
+      "normal": [
+       0.992588632686588,
+       0.12152286311377658,
+       0.0
+      ]
+     },
+     "ring": {
+      "point": [
+       0.15321435609623882,
+       0.34739477849141087,
+       0.016
+      ],
+      "normal": [
+       0.992588632686588,
+       0.12152286311377658,
+       0.0
+      ]
+     }
+    },
+    "pads_at_label": "right: grip disk_1_disk_1",
+    "hand": "right",
+    "object": "disk_1_disk_1",
+    "involved": [
+     "disk_1_disk_1"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_2_disk_2"
+    ],
+    "pads_at_rel": 137,
+    "slip_from_rel": 138
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "pads_touching": true,
+     "no_slip": true,
+     "untouched:disk_3_disk_3": true,
+     "untouched:disk_2_disk_2": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1,
+      0.3706,
+      -0.0
+     ],
+     "object_end": [
+      0.0939,
+      0.3664,
+      0.0789
+     ],
+     "object_moved_m": 0.0793,
+     "object_rotated_deg": 0.26,
+     "object_tilt_end_deg": 0.19,
+     "rise_m": 0.0789,
+     "peak_rise_m": 0.0789,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "pads": {
+      "thumb": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 6.0
+      },
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 7.5
+      },
+      "ring": {
+       "touching": true,
+       "in_contact": false,
+       "side_ok": true,
+       "offset_mm": 6.1
+      }
+     },
+     "pads_frame": 137,
+     "slip_in_hand_m": 0.0006,
+     "untouched": {
+      "disk_3_disk_3": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_2_disk_2": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.05,
+     "max_object_pen_mm": 0.09,
+     "max_track_pos_mm": 1.4,
+     "max_track_rot_deg": 1.7
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    170,
+    262
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "step": 1,
+   "pose": {
+    "file": "r2/d1_c2.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_1.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.7 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.4
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.4
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 3,
+        "fingers": [
+         "middle",
+         "ring",
+         "thumb"
+        ],
+        "contact_force_N": 18.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.4,
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.4,
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 1.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 1.8,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.9,
+        "slip_mm_s": 0.2,
+        "finger_contacts": 2,
+        "contact_force_N": 13.7,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 84,
+        "saturated_frac": 0.262,
+        "median_s": 0.893,
+        "peak_s": 1.804,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    },
+    "held_since_subgoal": 1
+   },
+   "plan": {
+    "index": 2,
+    "motion": "carry",
+    "side": "right",
+    "object": "disk_1_disk_1",
+    "target_pos": [
+     0.103,
+     0.475,
+     0.116
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -178.8
+    ],
+    "duration_s": 3.0
+   },
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.475,
+     0.116
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "disk_1_disk_1",
+    "involved": [
+     "disk_1_disk_1"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_2_disk_2"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:disk_3_disk_3": true,
+     "untouched:disk_2_disk_2": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0939,
+      0.3664,
+      0.0789
+     ],
+     "object_end": [
+      0.103,
+      0.475,
+      0.116
+     ],
+     "object_moved_m": 0.1151,
+     "object_rotated_deg": 5.61,
+     "object_tilt_end_deg": 0.0,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "disk_3_disk_3": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_2_disk_2": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.01,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.6,
+     "max_track_rot_deg": 0.1
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    263,
+    400
+   ],
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "step": 2,
+   "pose": {
+    "file": "r2/d1_c2.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_1.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.7 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.4
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.4
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 3,
+        "fingers": [
+         "middle",
+         "ring",
+         "thumb"
+        ],
+        "contact_force_N": 18.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.4,
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.4,
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 1.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 1.8,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.9,
+        "slip_mm_s": 0.2,
+        "finger_contacts": 2,
+        "contact_force_N": 13.7,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 84,
+        "saturated_frac": 0.262,
+        "median_s": 0.893,
+        "peak_s": 1.804,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    },
+    "held_since_subgoal": 1
+   },
+   "plan": {
+    "index": 2,
+    "motion": "insert",
+    "side": "right",
+    "object": "disk_1_disk_1",
+    "target_pos": [
+     0.103,
+     0.566,
+     0.116
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -178.8
+    ],
+    "duration_s": 2.5,
+    "release": true,
+    "retreat_dir": [
+     0,
+     -0.8,
+     1.0
+    ],
+    "retreat_m": 0.05
+   },
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.566,
+     0.116
+    ],
+    "target_axes": "xyz",
+    "pos_tol_m": 0.015,
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "disk_1_disk_1",
+    "involved": [
+     "disk_1_disk_1"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_2_disk_2"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "untouched:disk_3_disk_3": true,
+     "untouched:disk_2_disk_2": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.103,
+      0.475,
+      0.116
+     ],
+     "object_end": [
+      0.1056,
+      0.5642,
+      0.113
+     ],
+     "object_moved_m": 0.0893,
+     "object_rotated_deg": 2.87,
+     "object_tilt_end_deg": 1.07,
+     "target_err_m": 0.0043,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": 0.0426,
+     "support_contacts": 7,
+     "untouched": {
+      "disk_3_disk_3": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_2_disk_2": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.07,
+     "max_object_pen_mm": 0.04,
+     "max_track_pos_mm": 3.3,
+     "max_track_rot_deg": 1.9,
+     "plan_collisions": [
+      {
+       "frame": 99,
+       "depth_mm": 10.3,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_postRF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 102,
+       "depth_mm": 10.3,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_postRF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 105,
+       "depth_mm": 10.3,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_postRF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 108,
+       "depth_mm": 10.3,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_postRF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 111,
+       "depth_mm": 9.8,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_postRF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 96,
+       "depth_mm": 9.6,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_postRF"
+       ],
+       "kind": "hand-object"
+      }
+     ],
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance"
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    401,
+    536
+   ],
+   "motion": "push",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "pose": {
+    "file": "r2/rw_5500_175_3_0.json",
+    "source": "optimize_pose_for_reach",
+    "hand_scene": "poses/hs_right_disk_1_push.json",
+    "detail": "push_pose_from_point (index fingertip on the top-front edge of the tray handle, 45 deg from above-front, along the slot axis), turned about its contact normal for the moved station's reach",
+    "stress_tests": {}
+   },
+   "plan": {
+    "index": 3,
+    "motion": "push",
+    "side": "right",
+    "object": "disk_1_disk_1",
+    "pose": "r2/rw_5500_175_3_0.json",
+    "hand_scene": "poses/hs_right_disk_1_push.json",
+    "direction": [
+     -0.021,
+     1.0,
+     0.0
+    ],
+    "distance_m": 0.085,
+    "duration_s": 2.0
+   },
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.021,
+      1.0,
+      0.0
+     ],
+     "min_m": 0.0425
+    },
+    "hand": "right",
+    "object": "disk_1_disk_1",
+    "involved": [
+     "disk_1_disk_1"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_2_disk_2"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "displaced": true,
+     "untouched:disk_3_disk_3": true,
+     "untouched:disk_2_disk_2": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1056,
+      0.5642,
+      0.113
+     ],
+     "object_end": [
+      0.1036,
+      0.6367,
+      0.1129
+     ],
+     "object_moved_m": 0.0725,
+     "object_rotated_deg": 1.25,
+     "object_tilt_end_deg": 0.01,
+     "displacement_along_m": 0.0725,
+     "untouched": {
+      "disk_3_disk_3": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_2_disk_2": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.16,
+     "max_object_pen_mm": 0.16,
+     "max_track_pos_mm": 1.8,
+     "max_track_rot_deg": 1.4
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    537,
+    702
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "pose": {
+    "file": "r2/d2_c3.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_2.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.8 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.2
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.2
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 3,
+        "fingers": [
+         "middle",
+         "ring",
+         "thumb"
+        ],
+        "contact_force_N": 26.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.2,
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.2,
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 3.0,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 3.3,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 3.6,
+        "slip_mm_s": 0.31,
+        "finger_contacts": 2,
+        "contact_force_N": 14.5,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 83,
+        "saturated_frac": 0.289,
+        "median_s": 0.838,
+        "peak_s": 41.41,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    }
+   },
+   "plan": {
+    "index": 4,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "disk_2_disk_2",
+    "pose": "r2/d2_c3.json",
+    "hand_scene": "poses/hs_right_disk_2.json",
+    "lift_m": 0.08
+   },
+   "expect": {
+    "rise_m": 0.04,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       -0.10974000484640188,
+       0.3409687700877649,
+       0.016001404148972508
+      ],
+      "normal": [
+       -0.9955290551385668,
+       -0.09445581174767737,
+       -5.069248260908176e-15
+      ]
+     },
+     "middle": {
+      "point": [
+       -0.011037201637990404,
+       0.35937411275684644,
+       0.01600159202397907
+      ],
+      "normal": [
+       0.995529055138566,
+       0.09445581174768422,
+       1.6154568496334524e-15
+      ]
+     },
+     "ring": {
+      "point": [
+       -0.00933699702690087,
+       0.3414545897682386,
+       0.01600121627396696
+      ],
+      "normal": [
+       0.995529055138566,
+       0.09445581174768422,
+       1.6154568496334524e-15
+      ]
+     }
+    },
+    "pads_at_label": "right: grip disk_2_disk_2",
+    "hand": "right",
+    "object": "disk_2_disk_2",
+    "involved": [
+     "disk_2_disk_2"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_1_disk_1"
+    ],
+    "pads_at_rel": 133,
+    "slip_from_rel": 134
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "pads_touching": true,
+     "no_slip": true,
+     "untouched:disk_3_disk_3": true,
+     "untouched:disk_1_disk_1": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0619,
+      0.3661,
+      -0.0
+     ],
+     "object_end": [
+      -0.0681,
+      0.3625,
+      0.0761
+     ],
+     "object_moved_m": 0.0765,
+     "object_rotated_deg": 1.09,
+     "object_tilt_end_deg": 0.79,
+     "rise_m": 0.0761,
+     "peak_rise_m": 0.0761,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "pads": {
+      "thumb": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 6.1
+      },
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 7.7
+      },
+      "ring": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 6.2
+      }
+     },
+     "pads_frame": 133,
+     "slip_in_hand_m": 0.003,
+     "untouched": {
+      "disk_3_disk_3": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_1_disk_1": {
+       "moved_m": 0.0001,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.1,
+     "max_object_pen_mm": 0.11,
+     "max_track_pos_mm": 1.2,
+     "max_track_rot_deg": 1.2
+    },
+    "variant": "pose candidate 1"
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    703,
+    795
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "step": 1,
+   "pose": {
+    "file": "r2/d2_c3.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_2.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.8 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.2
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.2
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 3,
+        "fingers": [
+         "middle",
+         "ring",
+         "thumb"
+        ],
+        "contact_force_N": 26.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.2,
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.2,
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 3.0,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 3.3,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 3.6,
+        "slip_mm_s": 0.31,
+        "finger_contacts": 2,
+        "contact_force_N": 14.5,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 83,
+        "saturated_frac": 0.289,
+        "median_s": 0.838,
+        "peak_s": 41.41,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    },
+    "held_since_subgoal": 4
+   },
+   "plan": {
+    "index": 5,
+    "motion": "carry",
+    "side": "right",
+    "object": "disk_2_disk_2",
+    "target_pos": [
+     0.103,
+     0.475,
+     0.218
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -178.8
+    ],
+    "duration_s": 3.0
+   },
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.475,
+     0.218
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "disk_2_disk_2",
+    "involved": [
+     "disk_2_disk_2"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_1_disk_1"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:disk_3_disk_3": true,
+     "untouched:disk_1_disk_1": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0681,
+      0.3625,
+      0.0761
+     ],
+     "object_end": [
+      0.103,
+      0.475,
+      0.218
+     ],
+     "object_moved_m": 0.2491,
+     "object_rotated_deg": 3.56,
+     "object_tilt_end_deg": 0.0,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "untouched": {
+      "disk_3_disk_3": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_1_disk_1": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.01,
+     "max_object_pen_mm": 0.09,
+     "max_track_pos_mm": 0.6,
+     "max_track_rot_deg": 0.1
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    796,
+    933
+   ],
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "step": 2,
+   "pose": {
+    "file": "r2/d2_c3.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_2.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.8 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.2
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.2
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 3,
+        "fingers": [
+         "middle",
+         "ring",
+         "thumb"
+        ],
+        "contact_force_N": 26.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.2,
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.2,
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 2.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 3.0,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 3.3,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 3.6,
+        "slip_mm_s": 0.31,
+        "finger_contacts": 2,
+        "contact_force_N": 14.5,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 83,
+        "saturated_frac": 0.289,
+        "median_s": 0.838,
+        "peak_s": 41.41,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    },
+    "held_since_subgoal": 4
+   },
+   "plan": {
+    "index": 5,
+    "motion": "insert",
+    "side": "right",
+    "object": "disk_2_disk_2",
+    "target_pos": [
+     0.103,
+     0.566,
+     0.218
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -178.8
+    ],
+    "duration_s": 2.5,
+    "release": true,
+    "retreat_dir": [
+     0,
+     -0.8,
+     1.0
+    ],
+    "retreat_m": 0.05
+   },
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.566,
+     0.218
+    ],
+    "target_axes": "xyz",
+    "pos_tol_m": 0.015,
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "disk_2_disk_2",
+    "involved": [
+     "disk_2_disk_2"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_1_disk_1"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "untouched:disk_3_disk_3": true,
+     "untouched:disk_1_disk_1": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.103,
+      0.475,
+      0.218
+     ],
+     "object_end": [
+      0.1058,
+      0.564,
+      0.215
+     ],
+     "object_moved_m": 0.0891,
+     "object_rotated_deg": 2.78,
+     "object_tilt_end_deg": 1.35,
+     "target_err_m": 0.0046,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": 0.1446,
+     "support_contacts": 5,
+     "untouched": {
+      "disk_3_disk_3": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_1_disk_1": {
+       "moved_m": 0.0001,
+       "rotated_deg": 0.01
+      }
+     },
+     "max_hand_pen_mm": 0.04,
+     "max_object_pen_mm": 0.09,
+     "max_track_pos_mm": 3.3,
+     "max_track_rot_deg": 1.4,
+     "plan_collisions": [
+      {
+       "frame": 99,
+       "depth_mm": 7.9,
+       "geoms": [
+        "robot_right_collision_hand_right_middle_1",
+        "pc_case_pc_case_cage_postLF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 102,
+       "depth_mm": 7.9,
+       "geoms": [
+        "robot_right_collision_hand_right_middle_1",
+        "pc_case_pc_case_cage_postLF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 105,
+       "depth_mm": 7.9,
+       "geoms": [
+        "robot_right_collision_hand_right_middle_1",
+        "pc_case_pc_case_cage_postLF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 108,
+       "depth_mm": 7.9,
+       "geoms": [
+        "robot_right_collision_hand_right_middle_1",
+        "pc_case_pc_case_cage_postLF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 96,
+       "depth_mm": 7.8,
+       "geoms": [
+        "robot_right_collision_hand_right_middle_1",
+        "pc_case_pc_case_cage_postLF"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 93,
+       "depth_mm": 7.4,
+       "geoms": [
+        "robot_right_collision_hand_right_middle_1",
+        "pc_case_pc_case_cage_postLF"
+       ],
+       "kind": "hand-object"
+      }
+     ],
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance"
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    934,
+    1069
+   ],
+   "motion": "push",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "pose": {
+    "file": "r2/rw_5500_175_6_1.json",
+    "source": "optimize_pose_for_reach",
+    "hand_scene": "poses/hs_right_disk_2_push.json",
+    "detail": "push_pose_from_point (index fingertip on the handle's top-front edge, 45 deg), turned about its contact normal for reach",
+    "stress_tests": {}
+   },
+   "plan": {
+    "index": 6,
+    "motion": "push",
+    "side": "right",
+    "object": "disk_2_disk_2",
+    "pose": "r2/rw_5500_175_6_1.json",
+    "hand_scene": "poses/hs_right_disk_2_push.json",
+    "direction": [
+     -0.021,
+     1.0,
+     0.0
+    ],
+    "distance_m": 0.085,
+    "duration_s": 2.0
+   },
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.021,
+      1.0,
+      0.0
+     ],
+     "min_m": 0.0425
+    },
+    "hand": "right",
+    "object": "disk_2_disk_2",
+    "involved": [
+     "disk_2_disk_2"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_1_disk_1"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "displaced": true,
+     "untouched:disk_3_disk_3": true,
+     "untouched:disk_1_disk_1": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1058,
+      0.564,
+      0.215
+     ],
+     "object_end": [
+      0.1061,
+      0.6369,
+      0.215
+     ],
+     "object_moved_m": 0.0729,
+     "object_rotated_deg": 2.86,
+     "object_tilt_end_deg": 0.0,
+     "displacement_along_m": 0.0729,
+     "untouched": {
+      "disk_3_disk_3": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_1_disk_1": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.11,
+     "max_object_pen_mm": 0.18,
+     "max_track_pos_mm": 1.8,
+     "max_track_rot_deg": 1.2
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1070,
+    1243
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "pose": {
+    "file": "r2/d3_c4.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_3.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.8 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.7
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.7
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.1,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 19.6,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.7,
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.7,
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 2.6,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.9,
+        "slip_mm_s": 0.34,
+        "finger_contacts": 2,
+        "contact_force_N": 15.0,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 83,
+        "saturated_frac": 0.386,
+        "median_s": 0.869,
+        "peak_s": 67.894,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    }
+   },
+   "plan": {
+    "index": 7,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "disk_3_disk_3",
+    "pose": "r2/d3_c4.json",
+    "hand_scene": "poses/hs_right_disk_3.json",
+    "lift_m": 0.08
+   },
+   "expect": {
+    "rise_m": 0.04,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       -0.2527348324835739,
+       0.3378733482696053,
+       0.016001404149002443
+      ],
+      "normal": [
+       -0.9987975971944723,
+       -0.049024074050911526,
+       2.181110474045782e-14
+      ]
+     },
+     "middle": {
+      "point": [
+       -0.15329628943038934,
+       0.3517649340475024,
+       0.016001592024025884
+      ],
+      "normal": [
+       0.9987975971944723,
+       0.04902407405091153,
+       -7.950003414899903e-15
+      ]
+     },
+     "ring": {
+      "point": [
+       -0.15241385609766428,
+       0.33378657730190114,
+       0.01600121627398018
+      ],
+      "normal": [
+       0.9987975971944723,
+       0.04902407405091153,
+       -7.950003414899903e-15
+      ]
+     }
+    },
+    "pads_at_label": "right: grip disk_3_disk_3",
+    "hand": "right",
+    "object": "disk_3_disk_3",
+    "involved": [
+     "disk_3_disk_3"
+    ],
+    "untouched": [
+     "disk_2_disk_2",
+     "disk_1_disk_1"
+    ],
+    "pads_at_rel": 141,
+    "slip_from_rel": 142
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "pads_touching": true,
+     "no_slip": true,
+     "untouched:disk_2_disk_2": true,
+     "untouched:disk_1_disk_1": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.2038,
+      0.3608,
+      -0.0
+     ],
+     "object_end": [
+      -0.2114,
+      0.3575,
+      0.0764
+     ],
+     "object_moved_m": 0.0769,
+     "object_rotated_deg": 0.49,
+     "object_tilt_end_deg": 0.06,
+     "rise_m": 0.0764,
+     "peak_rise_m": 0.0764,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "pads": {
+      "thumb": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 6.6
+      },
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 9.3
+      },
+      "ring": {
+       "touching": true,
+       "in_contact": false,
+       "side_ok": true,
+       "offset_mm": 8.0
+      }
+     },
+     "pads_frame": 141,
+     "slip_in_hand_m": 0.0026,
+     "untouched": {
+      "disk_2_disk_2": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_1_disk_1": {
+       "moved_m": 0.0001,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.12,
+     "max_object_pen_mm": 0.2,
+     "max_track_pos_mm": 1.2,
+     "max_track_rot_deg": 1.3
+    },
+    "variant": "pose candidate 1"
+   }
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    1244,
+    1351
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "step": 1,
+   "pose": {
+    "file": "r2/d3_c4.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_3.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.8 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.7
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.7
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.1,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 19.6,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.7,
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.7,
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 2.6,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.9,
+        "slip_mm_s": 0.34,
+        "finger_contacts": 2,
+        "contact_force_N": 15.0,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 83,
+        "saturated_frac": 0.386,
+        "median_s": 0.869,
+        "peak_s": 67.894,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    },
+    "held_since_subgoal": 7
+   },
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "right",
+    "object": "disk_3_disk_3",
+    "target_pos": [
+     0.103,
+     0.475,
+     0.252
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -178.8
+    ],
+    "duration_s": 3.5
+   },
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.475,
+     0.252
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "disk_3_disk_3",
+    "involved": [
+     "disk_3_disk_3"
+    ],
+    "untouched": [
+     "disk_2_disk_2",
+     "disk_1_disk_1"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:disk_2_disk_2": true,
+     "untouched:disk_1_disk_1": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.2114,
+      0.3575,
+      0.0764
+     ],
+     "object_end": [
+      0.103,
+      0.475,
+      0.252
+     ],
+     "object_moved_m": 0.3788,
+     "object_rotated_deg": 1.12,
+     "object_tilt_end_deg": 0.0,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "untouched": {
+      "disk_2_disk_2": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_1_disk_1": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.01
+      }
+     },
+     "max_hand_pen_mm": 0.01,
+     "max_object_pen_mm": 0.09,
+     "max_track_pos_mm": 0.8,
+     "max_track_rot_deg": 0.0
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    1352,
+    1489
+   ],
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "step": 2,
+   "pose": {
+    "file": "r2/d3_c4.json",
+    "source": "generate_flat_pinches",
+    "hand_scene": "poses/hs_right_disk_3.json",
+    "detail": "thumb against middle+ring across the drive's width, along 0.2 toward the handle end (the pinch line 15 mm from the centre of mass, the nearest to it that keeps the fingers outside the cage while the drive's centre goes over the rails), pads 16 mm up, clamp press_depth_rad 0.06; generate_flat_pinches ranks it by the contact force it needs (8.8 N) and lift-tests it",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "first_fail": null,
+      "open_frac": 0.1,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.7
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.7
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.1,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 19.6,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.7,
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.7,
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 2.6,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.9,
+        "slip_mm_s": 0.34,
+        "finger_contacts": 2,
+        "contact_force_N": 15.0,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 83,
+        "saturated_frac": 0.386,
+        "median_s": 0.869,
+        "peak_s": 67.894,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "issues": []
+     }
+    },
+    "held_since_subgoal": 7
+   },
+   "plan": {
+    "index": 8,
+    "motion": "insert",
+    "side": "right",
+    "object": "disk_3_disk_3",
+    "target_pos": [
+     0.103,
+     0.566,
+     0.252
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -178.8
+    ],
+    "duration_s": 2.5,
+    "release": true,
+    "retreat_dir": [
+     0,
+     -1,
+     0.3
+    ],
+    "retreat_m": 0.04
+   },
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.566,
+     0.252
+    ],
+    "target_axes": "xyz",
+    "pos_tol_m": 0.015,
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "disk_3_disk_3",
+    "involved": [
+     "disk_3_disk_3"
+    ],
+    "untouched": [
+     "disk_2_disk_2",
+     "disk_1_disk_1"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "untouched:disk_2_disk_2": true,
+     "untouched:disk_1_disk_1": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.103,
+      0.475,
+      0.252
+     ],
+     "object_end": [
+      0.1057,
+      0.5658,
+      0.2491
+     ],
+     "object_moved_m": 0.0908,
+     "object_rotated_deg": 5.57,
+     "object_tilt_end_deg": 4.99,
+     "target_err_m": 0.004,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": 0.1787,
+     "support_contacts": 5,
+     "untouched": {
+      "disk_2_disk_2": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_1_disk_1": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.01
+      }
+     },
+     "max_hand_pen_mm": 0.09,
+     "max_object_pen_mm": 0.09,
+     "max_track_pos_mm": 3.0,
+     "max_track_rot_deg": 1.7,
+     "plan_collisions": [
+      {
+       "frame": 99,
+       "depth_mm": 11.0,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_plate_top"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 102,
+       "depth_mm": 11.0,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_plate_top"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 105,
+       "depth_mm": 11.0,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_plate_top"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 108,
+       "depth_mm": 11.0,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_plate_top"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 96,
+       "depth_mm": 10.5,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_plate_top"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 111,
+       "depth_mm": 10.4,
+       "geoms": [
+        "robot_right_collision_hand_right_thumb_1",
+        "pc_case_pc_case_cage_plate_top"
+       ],
+       "kind": "hand-object"
+      }
+     ],
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance"
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 9,
+   "stage1_indices": [
+    9
+   ],
+   "frames": [
+    1490,
+    1629
+   ],
+   "motion": "push",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "pose": {
+    "file": "r2/G_5500_175_60_9_0.json",
+    "source": "optimize_pose_for_reach",
+    "hand_scene": "r2/hsW_5500_175.json",
+    "detail": "push_pose_from_point on the top slot's handle (index fingertip on the handle top, 60 deg from above-front: the arm holds a steep push at the top slot), solved in the hand scene of the executed state after the insert, turned about its contact normal for reach",
+    "stress_tests": {}
+   },
+   "plan": {
+    "index": 9,
+    "motion": "push",
+    "side": "right",
+    "object": "disk_3_disk_3",
+    "pose": "r2/G_5500_175_60_9_0.json",
+    "hand_scene": "r2/hsW_5500_175.json",
+    "direction": [
+     -0.021,
+     1.0,
+     0.0
+    ],
+    "distance_m": 0.085,
+    "duration_s": 2.0
+   },
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.021,
+      1.0,
+      0.0
+     ],
+     "min_m": 0.0425
+    },
+    "hand": "right",
+    "object": "disk_3_disk_3",
+    "involved": [
+     "disk_3_disk_3"
+    ],
+    "untouched": [
+     "disk_2_disk_2",
+     "disk_1_disk_1"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "displaced": true,
+     "untouched:disk_2_disk_2": true,
+     "untouched:disk_1_disk_1": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1057,
+      0.5658,
+      0.2491
+     ],
+     "object_end": [
+      0.1045,
+      0.6366,
+      0.249
+     ],
+     "object_moved_m": 0.0709,
+     "object_rotated_deg": 5.0,
+     "object_tilt_end_deg": 0.0,
+     "displacement_along_m": 0.0709,
+     "untouched": {
+      "disk_2_disk_2": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "disk_1_disk_1": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.01
+      }
+     },
+     "max_hand_pen_mm": 0.38,
+     "max_object_pen_mm": 0.22,
+     "max_track_pos_mm": 7.4,
+     "max_track_rot_deg": 2.3,
+     "plan_collisions": [
+      {
+       "frame": 15,
+       "depth_mm": 6.3,
+       "geoms": [
+        "robot_right_collision_hand_right_middle_0",
+        "disk_3_disk_3_top"
+       ],
+       "kind": "pre-grasp hand-object"
+      }
+     ],
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance"
+    },
+    "variant": "as planned"
+   }
+  }
+ ],
+ "episode": {
+  "trajectory": "trajectory.npz",
+  "phases": "phases.json",
+  "sim_video": "sim_video.mp4",
+  "fps": 30,
+  "n_frames": 1630,
+  "execution_dir": "episode"
+ },
+ "stage4": {
+  "task_dir": "stage4_task",
+  "config": "stage4_task/stage4.json"
+ },
+ "checks": {
+  "episode_physics_check": {
+   "ok": true
+  },
+  "robot_self_collision_check": {
+   "ok": true
+  },
+  "arm_reach_check": {
+   "ok": true
+  },
+  "trajectory_audit": {
+   "ok": true
+  },
+  "stage4_handoff_check": {
+   "ok": true
+  }
+ },
+ "notes": [
+  "Both stations moved together by (dx, dy) = (-0.550, 0.175) m with place_arm_stations; every tool, the audits and stage4_task use scene_stations.xml. The left arm stays at home (Stage 1: the left hand rests). The shift was chosen by executing the task on a grid of station shifts: farther right the arm cannot hold a lifting pinch of the leftmost drive (disk_3, x = -0.20 m); farther back or left the top-slot inserts and pushes leave the arm's reach.",
+  "Grasps: thumb against middle+ring across each drive's width, with the pinch line 15 mm from the drive's centre of mass toward its handle. A 600 g drive pinched 30-45 mm off its centre (the earlier runs) holds only with the thumb's abduction servo at or beyond its torque cap; a pinch through the centre puts the fingers inside the cage before the drive's centre reaches the rails. At 15 mm every stress test passes with servo reserve (median 0.84-0.89 of the cap). The drives are carried level: the pinch does not survive a 25 deg pitch, so its stress tests run approach, close, lift, shake and hold without the turn phase.",
+  "Slots: the drives fill the slots the video shows filled (the top, the second and the fifth from the top; cage slots 7, 6 and 3), but bottom-up: disk_1 -> slot 3, disk_2 -> slot 6, disk_3 -> slot 7, where the human filled the top slot first. The hand pinches a drive from above, so its palm and thumb stand 10-14 cm above the drive's near end at the cage front: inserting into slot 3 under a drive already in slot 6 or 7 runs the palm into that drive's handle, and inserting into slot 6 under a drive in slot 7 runs the thumb into it (both measured as plan collisions, the drive above pushed 15 mm). Stage 1 names no slot for any drive.",
+  "Each insert ends with the drive's centre ~4 mm inside the cage front (its centre of mass over the rails) before the hand opens; the index fingertip then pushes the tray handle until the tray front is flush (final centres y = 0.637 / 0.637 / 0.637 m vs the slot centre 0.635 m).",
+  "The episode is 54 s for the 30.7 s clip: the robot is slower than the human (joint-rate limits)."
+ ],
+ "source": "examples/asset_reuse"
+}

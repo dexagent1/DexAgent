@@ -1,0 +1,26 @@
+<mujoco model="board_board">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <texture name="board_ink" type="2d" builtin="flat" rgb1="0.977451 0.977451 0.965686" width="571" height="784" />
+    <material name="board_inkmat" texture="board_ink" texuniform="false" texrepeat="1 1" rgba="0.8850 0.8860 0.9210 1.0000" specular="0.12" shininess="0.28" reflectance="0.0" />
+    <mesh name="board_face_mesh" file="../../../../../_assets/0fecbc613a45c980881b.obj" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="board" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <geom name="board_back" type="box" size="0.216000 0.292000 0.004250" pos="0 0 0.004250" rgba="0.8850 0.8860 0.9210 1.0000" mass="0.85000" friction="0.55 0.02 0.001" solref="0.004 1" solimp="0.99 0.999 0.0005" />
+      <geom name="board_panel" type="box" size="0.204000 0.280000 0.001250" pos="0 0 0.009750" mass="0.0001" friction="0.55 0.02 0.001" solref="0.004 1" solimp="0.99 0.999 0.0005" group="3" rgba="0.885 0.886 0.921 1" />
+      <geom name="board_face" type="mesh" mesh="board_face_mesh" pos="0 0 0.009750" material="board_inkmat" contype="0" conaffinity="0" group="0" mass="0" />
+      <geom name="board_frame_xp" type="box" size="0.006000 0.292000 0.007250" pos="0.210000 0.000000 0.007250" rgba="0.7400 0.7550 0.7750 1.0000" mass="0.0001" friction="0.55 0.02 0.001" solref="0.004 1" solimp="0.99 0.999 0.0005" />
+      <geom name="board_frame_xn" type="box" size="0.006000 0.292000 0.007250" pos="-0.210000 0.000000 0.007250" rgba="0.7400 0.7550 0.7750 1.0000" mass="0.0001" friction="0.55 0.02 0.001" solref="0.004 1" solimp="0.99 0.999 0.0005" />
+      <geom name="board_frame_yp" type="box" size="0.204000 0.006000 0.007250" pos="0.000000 0.286000 0.007250" rgba="0.7400 0.7550 0.7750 1.0000" mass="0.0001" friction="0.55 0.02 0.001" solref="0.004 1" solimp="0.99 0.999 0.0005" />
+      <geom name="board_frame_yn" type="box" size="0.204000 0.006000 0.007250" pos="0.000000 -0.286000 0.007250" rgba="0.7400 0.7550 0.7750 1.0000" mass="0.0001" friction="0.55 0.02 0.001" solref="0.004 1" solimp="0.99 0.999 0.0005" />
+    </body>
+  </worldbody>
+</mujoco>

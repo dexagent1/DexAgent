@@ -1,0 +1,69 @@
+<mujoco model="pipette_micropipette">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.001" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="pipette" pos="0.000000 0.000000 0.000000" quat="1.00000000 0.00000000 0.00000000 0.00000000">
+      <freejoint name="pipette_free" />
+      <geom name="pipette_nose0" type="capsule" size="0.0031 0.0011" pos="0 0 0.0043" rgba="0.9300 0.9300 0.9200 1.0000" density="820.0" friction="0.35 0.008 0.0002" condim="3" solref="0.004 1" />
+      <geom name="pipette_nose1" type="cylinder" size="0.0031 0.001250" pos="0 0 0.006250" rgba="0.9300 0.9300 0.9200 1.0000" density="820.0" friction="0.35 0.008 0.0002" condim="3" solref="0.004 1" />
+      <geom name="pipette_seat" type="cylinder" size="0.0050 0.0012" pos="0 0 0.008700" rgba="0.9300 0.9300 0.9200 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_stem0" type="cylinder" size="0.0036 0.010000" pos="0 0 0.019900" rgba="0.9300 0.9300 0.9200 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_shaft0" type="cylinder" size="0.005200 0.013991" pos="0 0 0.045491" rgba="0.9300 0.9300 0.9200 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_shaft1" type="cylinder" size="0.006800 0.015862" pos="0 0 0.075345" rgba="0.9300 0.9300 0.9200 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_shaft2" type="cylinder" size="0.008500 0.016897" pos="0 0 0.108103" rgba="0.9300 0.9300 0.9200 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_volband" type="cylinder" size="0.0088 0.0100" pos="0 0 0.135000" rgba="0.1600 0.3200 0.7500 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_handle" type="cylinder" size="0.013000 0.042500" pos="0 0 0.187500" rgba="0.9300 0.9300 0.9200 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_display" type="box" size="0.0080 0.0012 0.0110" pos="0 -0.012600 0.175000" euler="8 0 0" rgba="0.15 0.16 0.18 1" contype="0" conaffinity="0" density="1" />
+      <geom name="pipette_brand" type="box" size="0.0060 0.0008 0.0028" pos="0 -0.012800 0.197000" rgba="0.8000 0.1200 0.1200 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="pipette_hook0" type="box" size="0.0060 0.006000 0.004000" pos="0 0.019500 0.214000" rgba="0.5200 0.5300 0.5500 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_hook1" type="box" size="0.0060 0.008500 0.002800" pos="0 0.028000 0.222000" rgba="0.5200 0.5300 0.5500 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_hook2" type="box" size="0.0060 0.002800 0.008500" pos="0 0.034500 0.234000" rgba="0.5200 0.5300 0.5500 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <geom name="pipette_topcap" type="cylinder" size="0.0075 0.0060" pos="0 0 0.236000" rgba="0.5200 0.5300 0.5500 1.0000" density="820.0" friction="0.7 0.01 0.0002" condim="3" />
+      <body name="pipette_pin" pos="0 0 0">
+        <joint name="pipette_blow" type="slide" axis="0 0 -1" range="0 0.005500" stiffness="2600.0" springref="-0.001923" damping="4" armature="0.006" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+        <geom name="pipette_pintop" type="box" size="0.0030 0.0030 0.0015" pos="0 0 0.178000" rgba="0.3 0.3 0.3 1" contype="2" conaffinity="2" solref="-30000 -60" density="600" />
+      </body>
+      <body name="pipette_plunger" pos="0 0 0">
+        <joint name="pipette_plunge" type="slide" axis="0 0 -1" range="-0.0005 0.018700" stiffness="220.0" damping="2.5" armature="0.008" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+        <geom name="pipette_button" type="cylinder" size="0.0060 0.0045" pos="0 0 0.246500" rgba="0.1600 0.3200 0.7500 1.0000" density="400" friction="0.7 0.01 0.0002" />
+        <geom name="pipette_pshaft" type="cylinder" size="0.0028 0.012000" pos="0 0 0.232000" rgba="0.5200 0.5300 0.5500 1.0000" contype="0" conaffinity="0" density="400" />
+        <geom name="pipette_stembot" type="sphere" size="0.0022" pos="0 0 0.193700" rgba="0.3 0.3 0.3 1" contype="2" conaffinity="2" solref="-30000 -60" density="600" />
+      </body>
+      <body name="pipette_ejector" pos="0 0 0">
+        <joint name="pipette_eject" type="slide" axis="0 0 -1" range="-0.0002 0.01" stiffness="800.0" damping="3.0" armature="0.006" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+        <geom name="pipette_ejbtn" type="box" size="0.0050 0.0035 0.0090" pos="0 0.014500 0.224000" rgba="0.5200 0.5300 0.5500 1.0000" density="400" friction="0.7 0.01 0.0002" />
+        <geom name="pipette_ejrod" type="box" size="0.0022 0.0014 0.055000" pos="0 0.008600 0.077586" euler="3.5 0 0" rgba="0.5200 0.5300 0.5500 1.0000" contype="0" conaffinity="0" density="300" />
+        <geom name="pipette_sleeve_0" type="box" size="0.000500 0.001888 0.007000" pos="0.003973 0.001646 0.016000" euler="0 0 22.500" rgba="0.5200 0.5300 0.5500 1.0000" density="500" friction="0.7 0.01 0.0002" condim="3" />
+        <geom name="pipette_sleeve_1" type="box" size="0.000500 0.001888 0.007000" pos="0.001646 0.003973 0.016000" euler="0 0 67.500" rgba="0.5200 0.5300 0.5500 1.0000" density="500" friction="0.7 0.01 0.0002" condim="3" />
+        <geom name="pipette_sleeve_2" type="box" size="0.000500 0.001888 0.007000" pos="-0.001646 0.003973 0.016000" euler="0 0 112.500" rgba="0.5200 0.5300 0.5500 1.0000" density="500" friction="0.7 0.01 0.0002" condim="3" />
+        <geom name="pipette_sleeve_3" type="box" size="0.000500 0.001888 0.007000" pos="-0.003973 0.001646 0.016000" euler="0 0 157.500" rgba="0.5200 0.5300 0.5500 1.0000" density="500" friction="0.7 0.01 0.0002" condim="3" />
+        <geom name="pipette_sleeve_4" type="box" size="0.000500 0.001888 0.007000" pos="-0.003973 -0.001646 0.016000" euler="0 0 202.500" rgba="0.5200 0.5300 0.5500 1.0000" density="500" friction="0.7 0.01 0.0002" condim="3" />
+        <geom name="pipette_sleeve_5" type="box" size="0.000500 0.001888 0.007000" pos="-0.001646 -0.003973 0.016000" euler="0 0 247.500" rgba="0.5200 0.5300 0.5500 1.0000" density="500" friction="0.7 0.01 0.0002" condim="3" />
+        <geom name="pipette_sleeve_6" type="box" size="0.000500 0.001888 0.007000" pos="0.001646 -0.003973 0.016000" euler="0 0 292.500" rgba="0.5200 0.5300 0.5500 1.0000" density="500" friction="0.7 0.01 0.0002" condim="3" />
+        <geom name="pipette_sleeve_7" type="box" size="0.000500 0.001888 0.007000" pos="0.003973 -0.001646 0.016000" euler="0 0 337.500" rgba="0.5200 0.5300 0.5500 1.0000" density="500" friction="0.7 0.01 0.0002" condim="3" />
+      </body>
+      <body name="pipette_jaw0" pos="0 0 0">
+        <joint name="pipette_jawslide0" type="slide" axis="-0.70711 -0.70711 0" range="0 0.0009" stiffness="9000.0" damping="8.0" armature="0.01" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+        <geom name="pipette_jawg0" type="sphere" size="0.0009" pos="0.002051 0.002051 0.004200" rgba="0.9300 0.9300 0.9200 1.0000" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="900" />
+      </body>
+      <body name="pipette_jaw1" pos="0 0 0">
+        <joint name="pipette_jawslide1" type="slide" axis="0.70711 -0.70711 0" range="0 0.0009" stiffness="9000.0" damping="8.0" armature="0.01" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+        <geom name="pipette_jawg1" type="sphere" size="0.0009" pos="-0.002051 0.002051 0.004200" rgba="0.9300 0.9300 0.9200 1.0000" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="900" />
+      </body>
+      <body name="pipette_jaw2" pos="0 0 0">
+        <joint name="pipette_jawslide2" type="slide" axis="0.70711 0.70711 0" range="0 0.0009" stiffness="9000.0" damping="8.0" armature="0.01" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+        <geom name="pipette_jawg2" type="sphere" size="0.0009" pos="-0.002051 -0.002051 0.004200" rgba="0.9300 0.9300 0.9200 1.0000" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="900" />
+      </body>
+      <body name="pipette_jaw3" pos="0 0 0">
+        <joint name="pipette_jawslide3" type="slide" axis="-0.70711 0.70711 0" range="0 0.0009" stiffness="9000.0" damping="8.0" armature="0.01" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+        <geom name="pipette_jawg3" type="sphere" size="0.0009" pos="0.002051 -0.002051 0.004200" rgba="0.9300 0.9300 0.9200 1.0000" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="900" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,29 @@
+{
+ "schema": "dexagent.example_certificate.v1",
+ "task": "scissor_cutting",
+ "source_video_sha256": "b3cbead0b9cdae49422333a2c92a9e1a3445c70b6c0b6a2a5ba37544fff197c9",
+ "frame0": {
+  "path": "frame0.jpg",
+  "source": "the first frame of the recording",
+  "signature": "frame0_signature.npz"
+ },
+ "masks": [
+  {
+   "path": "masks/scissors.png",
+   "role": "object",
+   "object": "scissors",
+   "pixels_sha256": "45a5ebd28a413898467d74ab61a05c5d7e7da0c543f959011498461762607314"
+  },
+  {
+   "path": "masks/rope.png",
+   "role": "object",
+   "object": "rope",
+   "pixels_sha256": "5bd256e3b397dc5748779b24b16b7047dab84ee54ae4b60d0612803ac775c795"
+  },
+  {
+   "path": "masks/hands.png",
+   "role": "hands",
+   "pixels_sha256": "4893b67902beb55ac806ff0fae2fbc7914e8626ac0b7adfba1ae59729c746cda"
+  }
+ ]
+}

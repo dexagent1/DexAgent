@@ -1,0 +1,145 @@
+{
+ "subgoals": [
+  {
+   "index": 1,
+   "motion": "hold",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "pose": "${REPLAY}/poses/right_basefloor_0.06_60.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_lid.json",
+   "approach_m": 0.05,
+   "step": 1
+  },
+  {
+   "index": 1,
+   "motion": "close_joint",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "joint": "gift_box_gift_box_lid",
+   "target": 1.68,
+   "hand_follows": "rigid",
+   "pose": "${REPLAY}/poses/hookQ_side.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_lid.json",
+   "duration_s": 4.5,
+   "approach_m": 0.035,
+   "keep_hold": false,
+   "press_travel_m": 0.001,
+   "step": 2
+  },
+  {
+   "index": 1,
+   "motion": "release",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "retreat_dir": [
+    0,
+    0,
+    1
+   ],
+   "retreat_m": 0.06,
+   "step": 3
+  },
+  {
+   "index": 1,
+   "motion": "home",
+   "side": "right",
+   "step": 4
+  },
+  {
+   "index": 2,
+   "motion": "close_joint",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "joint": "gift_box_gift_box_lid",
+   "target": 1.5,
+   "hand_follows": "level",
+   "duration_s": 1.5,
+   "keep_hold": false,
+   "release": true,
+   "retreat_dir": [
+    -0.6,
+    -0.3,
+    0.75
+   ],
+   "retreat_m": 0.06,
+   "step": 1
+  },
+  {
+   "index": 2,
+   "motion": "press",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "joint": "gift_box_gift_box_lid",
+   "target": 0.0,
+   "pose": "${REPLAY}/poses/left_pressM.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_closed.json",
+   "approach_m": 0.03,
+   "duration_s": 0.8,
+   "reanchor": "translate",
+   "step": 2
+  },
+  {
+   "index": 3,
+   "motion": "press",
+   "side": "right",
+   "object": "gift_box_gift_box_lidb",
+   "joint": "gift_box_gift_box_lid",
+   "target": 0.0,
+   "pose": "${REPLAY}/poses/right_pressM.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_closed.json",
+   "approach_m": 0.03,
+   "duration_s": 0.8,
+   "reanchor": "translate",
+   "step": 1
+  },
+  {
+   "index": 3,
+   "motion": "release",
+   "side": "left",
+   "object": "gift_box_gift_box",
+   "retreat_dir": [
+    0,
+    -0.4,
+    0.9
+   ],
+   "retreat_m": 0.08,
+   "step": 2
+  },
+  {
+   "index": 3,
+   "motion": "release",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "retreat_dir": [
+    0,
+    -0.4,
+    0.9
+   ],
+   "retreat_m": 0.08,
+   "step": 3
+  },
+  {
+   "index": 3,
+   "motion": "wait",
+   "side": "right",
+   "duration_s": 0.6,
+   "step": 4
+  },
+  {
+   "index": 4,
+   "motion": "both",
+   "sync": "start",
+   "hands": {
+    "left": {
+     "motion": "home",
+     "side": "left"
+    },
+    "right": {
+     "motion": "home",
+     "side": "right"
+    }
+   },
+   "step": 1
+  }
+ ]
+}

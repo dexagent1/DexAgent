@@ -1,0 +1,168 @@
+<mujoco model="tipbox_tipbox">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.001" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <mesh name="tipbox_tiplathe_m" file="../../../../../_assets/4b52c2ad5501d3e420ab.obj" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="tipbox" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="tipbox_free" />
+      <geom name="tipbox_wall0" type="box" size="0.063500 0.001500 0.036000" pos="0.000000 0.046500 0.036000" rgba="0.0930 0.1100 0.3000 1.0000" density="480.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_wall1" type="box" size="0.063500 0.001500 0.036000" pos="0.000000 -0.046500 0.036000" rgba="0.0930 0.1100 0.3000 1.0000" density="480.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_wall2" type="box" size="0.001500 0.045000 0.036000" pos="0.062000 0.000000 0.036000" rgba="0.0930 0.1100 0.3000 1.0000" density="480.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_wall3" type="box" size="0.001500 0.045000 0.036000" pos="-0.062000 0.000000 0.036000" rgba="0.0930 0.1100 0.3000 1.0000" density="480.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_floor" type="box" size="0.060500 0.045000 0.001500" pos="0 0 0.0015" rgba="0.0930 0.1100 0.3000 1.0000" density="480.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_label" type="box" size="0.020 0.0006 0.006" pos="0 -0.048400 0.021600" rgba="0.7500 0.7800 0.8500 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_slab0" type="box" size="0.060500 0.004110 0.007100" pos="0.000000 -0.040890 0.075100" rgba="0.6000 0.7200 0.9200 1.0000" density="135.211" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_slab1" type="box" size="0.052360 0.005280 0.007100" pos="-0.008140 -0.031500 0.075100" rgba="0.6000 0.7200 0.9200 1.0000" density="135.211" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_slab2" type="box" size="0.002860 0.005280 0.007100" pos="0.057640 -0.031500 0.075100" rgba="0.6000 0.7200 0.9200 1.0000" density="135.211" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_slab3" type="box" size="0.060500 0.035610 0.007100" pos="0.000000 0.009390 0.075100" rgba="0.6000 0.7200 0.9200 1.0000" density="135.211" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_p0_11" type="box" size="0.004400 0.004400 0.003500" pos="0.049500 -0.031500 0.006500" rgba="0.0930 0.1100 0.3000 1.0000" density="480.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      <geom name="tipbox_stub0_0" type="cylinder" size="0.00440 0.00250" pos="-0.049500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_1" type="cylinder" size="0.00440 0.00250" pos="-0.040500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_2" type="cylinder" size="0.00440 0.00250" pos="-0.031500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_3" type="cylinder" size="0.00440 0.00250" pos="-0.022500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_4" type="cylinder" size="0.00440 0.00250" pos="-0.013500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_5" type="cylinder" size="0.00440 0.00250" pos="-0.004500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_6" type="cylinder" size="0.00440 0.00250" pos="0.004500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_7" type="cylinder" size="0.00440 0.00250" pos="0.013500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_8" type="cylinder" size="0.00440 0.00250" pos="0.022500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_9" type="cylinder" size="0.00440 0.00250" pos="0.031500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub0_10" type="cylinder" size="0.00440 0.00250" pos="0.040500 -0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_0" type="cylinder" size="0.00440 0.00250" pos="-0.049500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_1" type="cylinder" size="0.00440 0.00250" pos="-0.040500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_2" type="cylinder" size="0.00440 0.00250" pos="-0.031500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_3" type="cylinder" size="0.00440 0.00250" pos="-0.022500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_4" type="cylinder" size="0.00440 0.00250" pos="-0.013500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_5" type="cylinder" size="0.00440 0.00250" pos="-0.004500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_6" type="cylinder" size="0.00440 0.00250" pos="0.004500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_7" type="cylinder" size="0.00440 0.00250" pos="0.013500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_8" type="cylinder" size="0.00440 0.00250" pos="0.022500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_9" type="cylinder" size="0.00440 0.00250" pos="0.031500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_10" type="cylinder" size="0.00440 0.00250" pos="0.040500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub1_11" type="cylinder" size="0.00440 0.00250" pos="0.049500 -0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_0" type="cylinder" size="0.00440 0.00250" pos="-0.049500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_1" type="cylinder" size="0.00440 0.00250" pos="-0.040500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_2" type="cylinder" size="0.00440 0.00250" pos="-0.031500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_3" type="cylinder" size="0.00440 0.00250" pos="-0.022500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_4" type="cylinder" size="0.00440 0.00250" pos="-0.013500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_5" type="cylinder" size="0.00440 0.00250" pos="-0.004500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_6" type="cylinder" size="0.00440 0.00250" pos="0.004500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_7" type="cylinder" size="0.00440 0.00250" pos="0.013500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_8" type="cylinder" size="0.00440 0.00250" pos="0.022500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_9" type="cylinder" size="0.00440 0.00250" pos="0.031500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_10" type="cylinder" size="0.00440 0.00250" pos="0.040500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub2_11" type="cylinder" size="0.00440 0.00250" pos="0.049500 -0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_0" type="cylinder" size="0.00440 0.00250" pos="-0.049500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_1" type="cylinder" size="0.00440 0.00250" pos="-0.040500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_2" type="cylinder" size="0.00440 0.00250" pos="-0.031500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_3" type="cylinder" size="0.00440 0.00250" pos="-0.022500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_4" type="cylinder" size="0.00440 0.00250" pos="-0.013500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_5" type="cylinder" size="0.00440 0.00250" pos="-0.004500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_6" type="cylinder" size="0.00440 0.00250" pos="0.004500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_7" type="cylinder" size="0.00440 0.00250" pos="0.013500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_8" type="cylinder" size="0.00440 0.00250" pos="0.022500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_9" type="cylinder" size="0.00440 0.00250" pos="0.031500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_10" type="cylinder" size="0.00440 0.00250" pos="0.040500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub3_11" type="cylinder" size="0.00440 0.00250" pos="0.049500 -0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_0" type="cylinder" size="0.00440 0.00250" pos="-0.049500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_1" type="cylinder" size="0.00440 0.00250" pos="-0.040500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_2" type="cylinder" size="0.00440 0.00250" pos="-0.031500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_3" type="cylinder" size="0.00440 0.00250" pos="-0.022500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_4" type="cylinder" size="0.00440 0.00250" pos="-0.013500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_5" type="cylinder" size="0.00440 0.00250" pos="-0.004500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_6" type="cylinder" size="0.00440 0.00250" pos="0.004500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_7" type="cylinder" size="0.00440 0.00250" pos="0.013500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_8" type="cylinder" size="0.00440 0.00250" pos="0.022500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_9" type="cylinder" size="0.00440 0.00250" pos="0.031500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_10" type="cylinder" size="0.00440 0.00250" pos="0.040500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub4_11" type="cylinder" size="0.00440 0.00250" pos="0.049500 0.004500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_0" type="cylinder" size="0.00440 0.00250" pos="-0.049500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_1" type="cylinder" size="0.00440 0.00250" pos="-0.040500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_2" type="cylinder" size="0.00440 0.00250" pos="-0.031500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_3" type="cylinder" size="0.00440 0.00250" pos="-0.022500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_4" type="cylinder" size="0.00440 0.00250" pos="-0.013500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_5" type="cylinder" size="0.00440 0.00250" pos="-0.004500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_6" type="cylinder" size="0.00440 0.00250" pos="0.004500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_7" type="cylinder" size="0.00440 0.00250" pos="0.013500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_8" type="cylinder" size="0.00440 0.00250" pos="0.022500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_9" type="cylinder" size="0.00440 0.00250" pos="0.031500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_10" type="cylinder" size="0.00440 0.00250" pos="0.040500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub5_11" type="cylinder" size="0.00440 0.00250" pos="0.049500 0.013500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_0" type="cylinder" size="0.00440 0.00250" pos="-0.049500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_1" type="cylinder" size="0.00440 0.00250" pos="-0.040500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_2" type="cylinder" size="0.00440 0.00250" pos="-0.031500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_3" type="cylinder" size="0.00440 0.00250" pos="-0.022500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_4" type="cylinder" size="0.00440 0.00250" pos="-0.013500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_5" type="cylinder" size="0.00440 0.00250" pos="-0.004500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_6" type="cylinder" size="0.00440 0.00250" pos="0.004500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_7" type="cylinder" size="0.00440 0.00250" pos="0.013500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_8" type="cylinder" size="0.00440 0.00250" pos="0.022500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_9" type="cylinder" size="0.00440 0.00250" pos="0.031500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_10" type="cylinder" size="0.00440 0.00250" pos="0.040500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub6_11" type="cylinder" size="0.00440 0.00250" pos="0.049500 0.022500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_0" type="cylinder" size="0.00440 0.00250" pos="-0.049500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_1" type="cylinder" size="0.00440 0.00250" pos="-0.040500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_2" type="cylinder" size="0.00440 0.00250" pos="-0.031500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_3" type="cylinder" size="0.00440 0.00250" pos="-0.022500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_4" type="cylinder" size="0.00440 0.00250" pos="-0.013500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_5" type="cylinder" size="0.00440 0.00250" pos="-0.004500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_6" type="cylinder" size="0.00440 0.00250" pos="0.004500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_7" type="cylinder" size="0.00440 0.00250" pos="0.013500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_8" type="cylinder" size="0.00440 0.00250" pos="0.022500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_9" type="cylinder" size="0.00440 0.00250" pos="0.031500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_10" type="cylinder" size="0.00440 0.00250" pos="0.040500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <geom name="tipbox_stub7_11" type="cylinder" size="0.00440 0.00250" pos="0.049500 0.031500 0.083700" rgba="0.6200 0.7200 0.9300 1.0000" contype="0" conaffinity="0" density="1" />
+      <body name="tipbox_lid" pos="0.000000 0.050000 0.040000" quat="0.64278761 -0.76604444 0 0">
+        <joint name="tipbox_hinge" type="hinge" axis="-1 0 0" range="-2 118.0" ref="100.000" damping="0.02" frictionloss="0.055" armature="0.0004" solreffriction="0.002000 1.000000" solimpfriction="0.99 0.999 0.001" />
+        <geom name="tipbox_lidtop" type="box" size="0.067700 0.052200 0.001100" pos="0.000000 -0.050000 0.057900" rgba="0.8200 0.8600 0.8800 1.0000" density="280.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+        <geom name="tipbox_lidw0" type="box" size="0.067700 0.001100 0.028500" pos="0.000000 -0.101100 0.029500" rgba="0.8200 0.8600 0.8800 1.0000" density="280.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+        <geom name="tipbox_lidw1" type="box" size="0.067700 0.001100 0.028500" pos="0.000000 -0.000900 0.029500" rgba="0.8200 0.8600 0.8800 1.0000" density="280.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+        <geom name="tipbox_lidw2" type="box" size="0.001100 0.050000 0.028500" pos="0.066600 -0.050000 0.029500" rgba="0.8200 0.8600 0.8800 1.0000" density="280.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+        <geom name="tipbox_lidw3" type="box" size="0.001100 0.050000 0.028500" pos="-0.066600 -0.050000 0.029500" rgba="0.8200 0.8600 0.8800 1.0000" density="280.0" friction="0.85 0.015 0.0004" condim="3" solref="0.004 1" />
+      </body>
+    </body>
+    <body name="tipbox_tip" pos="0.049500 -0.031500 0.010200">
+      <freejoint name="tipbox_tip_free" />
+      <geom name="tipbox_tip_vis" type="mesh" mesh="tipbox_tiplathe_m" rgba="0.8000 0.8500 0.9500 1.0000" contype="0" conaffinity="0" group="2" density="1" />
+      <geom name="tipbox_tip_collar_0" type="box" size="0.000200 0.001888 0.004500" pos="0.003973 0.001646 0.071500" euler="0 0 22.500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_collar_1" type="box" size="0.000200 0.001888 0.004500" pos="0.001646 0.003973 0.071500" euler="0 0 67.500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_collar_2" type="box" size="0.000200 0.001888 0.004500" pos="-0.001646 0.003973 0.071500" euler="0 0 112.500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_collar_3" type="box" size="0.000200 0.001888 0.004500" pos="-0.003973 0.001646 0.071500" euler="0 0 157.500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_collar_4" type="box" size="0.000200 0.001888 0.004500" pos="-0.003973 -0.001646 0.071500" euler="0 0 202.500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_collar_5" type="box" size="0.000200 0.001888 0.004500" pos="-0.001646 -0.003973 0.071500" euler="0 0 247.500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_collar_6" type="box" size="0.000200 0.001888 0.004500" pos="0.001646 -0.003973 0.071500" euler="0 0 292.500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_collar_7" type="box" size="0.000200 0.001888 0.004500" pos="0.003973 -0.001646 0.071500" euler="0 0 337.500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_rim0" type="capsule" size="0.0005 0.001722" pos="0.003973 0.001646 0.075700" zaxis="-0.382683 0.923880 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="0.006 1" density="1010.0" />
+      <geom name="tipbox_tip_rim1" type="capsule" size="0.0005 0.001722" pos="0.001646 0.003973 0.075700" zaxis="-0.923880 0.382683 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="0.006 1" density="1010.0" />
+      <geom name="tipbox_tip_rim2" type="capsule" size="0.0005 0.001722" pos="-0.001646 0.003973 0.075700" zaxis="-0.923880 -0.382683 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="0.006 1" density="1010.0" />
+      <geom name="tipbox_tip_rim3" type="capsule" size="0.0005 0.001722" pos="-0.003973 0.001646 0.075700" zaxis="-0.382683 -0.923880 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="0.006 1" density="1010.0" />
+      <geom name="tipbox_tip_rim4" type="capsule" size="0.0005 0.001722" pos="-0.003973 -0.001646 0.075700" zaxis="0.382683 -0.923880 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="0.006 1" density="1010.0" />
+      <geom name="tipbox_tip_rim5" type="capsule" size="0.0005 0.001722" pos="-0.001646 -0.003973 0.075700" zaxis="0.923880 -0.382683 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="0.006 1" density="1010.0" />
+      <geom name="tipbox_tip_rim6" type="capsule" size="0.0005 0.001722" pos="0.001646 -0.003973 0.075700" zaxis="0.923880 0.382683 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="0.006 1" density="1010.0" />
+      <geom name="tipbox_tip_rim7" type="capsule" size="0.0005 0.001722" pos="0.003973 -0.001646 0.075700" zaxis="0.382683 0.923880 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="0.006 1" density="1010.0" />
+      <geom name="tipbox_tip_lip0" type="capsule" size="0.000800 0.001154" pos="0.003960 0.001061 0.074000" zaxis="-0.258819 0.965926 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip1" type="capsule" size="0.000800 0.001154" pos="0.002899 0.002899 0.074000" zaxis="-0.707107 0.707107 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip2" type="capsule" size="0.000800 0.001154" pos="0.001061 0.003960 0.074000" zaxis="-0.965926 0.258819 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip3" type="capsule" size="0.000800 0.001154" pos="-0.001061 0.003960 0.074000" zaxis="-0.965926 -0.258819 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip4" type="capsule" size="0.000800 0.001154" pos="-0.002899 0.002899 0.074000" zaxis="-0.707107 -0.707107 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip5" type="capsule" size="0.000800 0.001154" pos="-0.003960 0.001061 0.074000" zaxis="-0.258819 -0.965926 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip6" type="capsule" size="0.000800 0.001154" pos="-0.003960 -0.001061 0.074000" zaxis="0.258819 -0.965926 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip7" type="capsule" size="0.000800 0.001154" pos="-0.002899 -0.002899 0.074000" zaxis="0.707107 -0.707107 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip8" type="capsule" size="0.000800 0.001154" pos="-0.001061 -0.003960 0.074000" zaxis="0.965926 -0.258819 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip9" type="capsule" size="0.000800 0.001154" pos="0.001061 -0.003960 0.074000" zaxis="0.965926 0.258819 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip10" type="capsule" size="0.000800 0.001154" pos="0.002899 -0.002899 0.074000" zaxis="0.707107 0.707107 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_lip11" type="capsule" size="0.000800 0.001154" pos="0.003960 -0.001061 0.074000" zaxis="0.258819 0.965926 0.000000" rgba="0 0 0 0" friction="0.3 0.008 0.0002" condim="3" solref="-20000 -40" solimp="0.95 0.99 0.0005" density="1010.0" />
+      <geom name="tipbox_tip_s0" type="cylinder" size="0.003600 0.007500" pos="0 0 0.060500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_s1" type="cylinder" size="0.002800 0.008500" pos="0 0 0.045500" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_s2" type="cylinder" size="0.001800 0.018250" pos="0 0 0.019750" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+      <geom name="tipbox_tip_foot" type="sphere" size="0.0011" pos="0 0 0.0011" rgba="0 0 0 0" density="1010.0" friction="0.6 0.01 0.0002" condim="3" solref="0.004 1" />
+    </body>
+  </worldbody>
+</mujoco>

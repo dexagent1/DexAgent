@@ -1,0 +1,898 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_recon": "../stage2/scene_recon.json",
+ "scene_executed": "scene_executed.xml",
+ "stations": {
+  "tool": "place_arm_stations",
+  "shift_m": [
+   0.0,
+   0.35
+  ],
+  "file": "scene_stations.xml",
+  "why": "object_reach_check: the drawer (~30 cm) and the toy (~10 cm) lie outside the arms' palm-down band at the setup stations (the clip is a session-A recording); the same +0.35 m shift as stage3_r3"
+ },
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    230
+   ],
+   "motion": "open_joint",
+   "side": "left",
+   "object": "drawer_unit_drawer_unit_drawer_r0c0",
+   "plan": {
+    "index": 1,
+    "motion": "open_joint",
+    "side": "left",
+    "object": "drawer_unit_drawer_unit_drawer_r0c0",
+    "pose": "poses/left_pull_hook_nopress.json",
+    "hand_scene": "poses/hs_left_drawer.json",
+    "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+    "target": 0.15,
+    "hand_follows": "rigid",
+    "release": true
+   },
+   "expect": {
+    "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+    "joint_target": 0.15,
+    "object": "drawer_unit_drawer_unit_drawer_r0c0",
+    "in_hand": false,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       -0.06919985535914397,
+       0.747100057852957,
+       0.051509674420758746
+      ],
+      "normal": [
+       -0.12895455152915614,
+       0.9916505047823444,
+       -1.6844120082626804e-06
+      ]
+     }
+    },
+    "pads_at_label": "left: grip drawer_unit_drawer_unit_drawer_r0c0",
+    "hand": "left",
+    "involved": [
+     "drawer_unit_drawer_unit_drawer_r0c0"
+    ],
+    "untouched": [
+     "toy_toy"
+    ],
+    "pads_at_rel": 125
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "pads_touching": true,
+     "joint_reached": true,
+     "untouched:toy_toy": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0861,
+      0.8774,
+      0.0515
+     ],
+     "object_end": [
+      -0.0671,
+      0.731,
+      0.0515
+     ],
+     "object_moved_m": 0.1476,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.0,
+     "pads": {
+      "index": {
+       "touching": true,
+       "in_contact": false,
+       "side_ok": true,
+       "offset_mm": 7.8
+      }
+     },
+     "pads_frame": 125,
+     "joint_start": 0.0,
+     "joint_end": 0.1476,
+     "joint_travel_fraction": 0.984,
+     "base_moved": {
+      "body": "drawer_unit_drawer_unit_carcass",
+      "moved_m": 0.0,
+      "rotated_deg": 0.0
+     },
+     "untouched": {
+      "toy_toy": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.05,
+     "max_object_pen_mm": 0.68,
+     "max_track_pos_mm": 1.1,
+     "max_track_rot_deg": 0.6
+    }
+   },
+   "pose": {
+    "file": "poses/left_pull_hook_nopress.json",
+    "source": "pose_from_points",
+    "hand_scene": "poses/hs_left_drawer.json",
+    "derivation": "stage3_r3's pose, re-tested here: index pad on the back face of the pull bar (outward normal into the drawer), palm-down with the fingers pointing into the drawer (the human hooked the fingers behind the handle, 2.6-3.0 s); pre-grasp shape = the closed hook dropped in vertically, no extra squeeze",
+    "stress_tests": {
+     "grasp_slide_pull_test_preshaped": {
+      "ok": true,
+      "verdict": "PULLED: the part followed 151 of 150 mm (101%), held by ['index']",
+      "measured": {
+       "travel_m": 0.15,
+       "joint_moved_m": 0.1509,
+       "fraction": 1.006,
+       "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+       "joint_start": 0.0252,
+       "joint_end": 0.1761,
+       "joint_moved_during_approach_m": 0.0,
+       "joint_moved_during_close_m": 0.0252,
+       "pads_start": [
+        "index"
+       ],
+       "pads_end": [
+        "index"
+       ],
+       "lost_at_m": 0.005,
+       "siblings_moved": {},
+       "peak_wrist_force_n": 41.7,
+       "approach_pen_mm": 0.16,
+       "approach_pen_pair": [
+        "hand_collision_hand_left_index_2",
+        "drawer_unit_drawer_r0c0_front"
+       ],
+       "open_frac": 0.0,
+       "approach_dir": [
+        0.0,
+        0.0,
+        1.0
+       ],
+       "n_waypoints": 0
+      }
+     }
+    }
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    231,
+    395
+   ],
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "toy_toy",
+   "plan": {
+    "index": 2,
+    "motion": "grasp_lift",
+    "side": "left",
+    "object": "toy_toy",
+    "pose": "poses/left_toy_claw.json",
+    "hand_scene": "poses/hs_left_toy.json",
+    "lift_m": 0.12
+   },
+   "expect": {
+    "rise_m": 0.06,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       0.12849809329511033,
+       0.6915062583106942,
+       0.01563968370852131
+      ],
+      "normal": [
+       0.8774535436688643,
+       -0.479563820551726,
+       -0.009686109579294064
+      ]
+     },
+     "index": {
+      "point": [
+       0.08821535683260798,
+       0.7037338224892679,
+       0.018745777292340827
+      ],
+      "normal": [
+       -0.8774535436688643,
+       0.479563820551726,
+       0.009686109579294064
+      ]
+     },
+     "middle": {
+      "point": [
+       0.09645983701986027,
+       0.7188324359988216,
+       0.013324484408616503
+      ],
+      "normal": [
+       -0.8774535436688643,
+       0.479563820551726,
+       0.009686109579294064
+      ]
+     }
+    },
+    "pads_at_label": "left: grip toy_toy",
+    "hand": "left",
+    "object": "toy_toy",
+    "involved": [
+     "toy_toy"
+    ],
+    "untouched": [
+     "drawer_unit_drawer_unit_carcass"
+    ],
+    "pads_at_rel": 132,
+    "slip_from_rel": 133
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "pads_touching": true,
+     "no_slip": true,
+     "untouched:drawer_unit_drawer_unit_carcass": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1057,
+      0.6941,
+      -0.0007
+     ],
+     "object_end": [
+      0.1045,
+      0.6909,
+      0.117
+     ],
+     "object_moved_m": 0.1178,
+     "object_rotated_deg": 5.43,
+     "object_tilt_end_deg": 4.51,
+     "rise_m": 0.1177,
+     "peak_rise_m": 0.1177,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "pads": {
+      "thumb": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 7.2
+      },
+      "index": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 8.6
+      },
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 7.9
+      }
+     },
+     "pads_frame": 132,
+     "slip_in_hand_m": 0.002,
+     "untouched": {
+      "drawer_unit_drawer_unit_carcass": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.11,
+     "max_object_pen_mm": 0.95,
+     "max_track_pos_mm": 2.5,
+     "max_track_rot_deg": 1.0
+    }
+   },
+   "pose": {
+    "file": "poses/left_toy_claw.json",
+    "source": "pose_from_points",
+    "hand_scene": "poses/hs_left_toy.json",
+    "derivation": "stage3_r3's pose, re-tested here on the rolling-resistance plush: thumb versus index+middle fingertips across the toy's 4.25 cm width at its equator, palm-down from the operator side as in the video (6.3-7.0 s), refined with optimize_fingertip_contacts and turned 10 deg about the pinch line by optimize_pose_for_reach; pre-grasp thumb 5% / fingers 20% open",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "open_frac": 0.14,
+      "first_fail": null,
+      "grip": {
+       "fingers": [
+        "middle"
+       ],
+       "force_N": 0.2
+      },
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.2
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.2
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": false,
+        "finger_contacts": 1,
+        "fingers": [
+         "middle"
+        ],
+        "contact_force_N": 0.2,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.2,
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.2,
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 3.8,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 4.0,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 4.1,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 3.7,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 3.9,
+        "slip_mm_s": 0.19,
+        "finger_contacts": 2,
+        "contact_force_N": 13.3,
+        "ok": true
+       }
+      ]
+     }
+    }
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    396,
+    447
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "toy_toy",
+   "plan": {
+    "index": 3,
+    "motion": "carry",
+    "side": "left",
+    "object": "toy_toy",
+    "target_pos": [
+     -0.067,
+     0.7,
+     0.1
+    ],
+    "turn": {
+     "axis": [
+      0,
+      0,
+      1
+     ],
+     "deg": -54
+    }
+   },
+   "expect": {
+    "target_pos": [
+     -0.067,
+     0.7,
+     0.1
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "toy_toy",
+    "involved": [
+     "toy_toy"
+    ],
+    "untouched": [
+     "drawer_unit_drawer_unit_carcass"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:drawer_unit_drawer_unit_carcass": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1045,
+      0.6909,
+      0.117
+     ],
+     "object_end": [
+      -0.067,
+      0.7,
+      0.0999
+     ],
+     "object_moved_m": 0.1726,
+     "object_rotated_deg": 53.97,
+     "object_tilt_end_deg": 4.4,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0001,
+     "untouched": {
+      "drawer_unit_drawer_unit_carcass": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.08,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 1.0,
+     "max_track_rot_deg": 1.7
+    }
+   },
+   "pose": {
+    "file": "poses/left_toy_claw.json",
+    "source": "pose_from_points",
+    "hand_scene": "poses/hs_left_toy.json",
+    "derivation": "stage3_r3's pose, re-tested here on the rolling-resistance plush: thumb versus index+middle fingertips across the toy's 4.25 cm width at its equator, palm-down from the operator side as in the video (6.3-7.0 s), refined with optimize_fingertip_contacts and turned 10 deg about the pinch line by optimize_pose_for_reach; pre-grasp thumb 5% / fingers 20% open",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "open_frac": 0.14,
+      "first_fail": null,
+      "grip": {
+       "fingers": [
+        "middle"
+       ],
+       "force_N": 0.2
+      },
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.2
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.2
+       }
+      ],
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": false,
+        "finger_contacts": 1,
+        "fingers": [
+         "middle"
+        ],
+        "contact_force_N": 0.2,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 58.2,
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 98.2,
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 3.8,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 4.0,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 4.1,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 3.7,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 3.9,
+        "slip_mm_s": 0.19,
+        "finger_contacts": 2,
+        "contact_force_N": 13.3,
+        "ok": true
+       }
+      ]
+     }
+    },
+    "note": "the grasp of subgoal 2, held"
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    448,
+    570
+   ],
+   "motion": "place",
+   "side": "left",
+   "object": "toy_toy",
+   "plan": {
+    "index": 4,
+    "motion": "place",
+    "side": "left",
+    "object": "toy_toy",
+    "target_pos": [
+     -0.067,
+     0.7,
+     0.03
+    ],
+    "release": true
+   },
+   "expect": {
+    "target_pos": [
+     -0.067,
+     0.7,
+     0.03
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": true,
+    "released": true,
+    "hand": "left",
+    "object": "toy_toy",
+    "involved": [
+     "toy_toy"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "upright": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.067,
+      0.6999,
+      0.1
+     ],
+     "object_end": [
+      -0.0648,
+      0.7033,
+      0.0192
+     ],
+     "object_moved_m": 0.0809,
+     "object_rotated_deg": 5.43,
+     "object_tilt_end_deg": 1.08,
+     "target_err_m": 0.0039,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": 0.0115,
+     "support_contacts": 2,
+     "max_hand_pen_mm": 0.11,
+     "max_object_pen_mm": 2.87,
+     "max_track_pos_mm": 1.8,
+     "max_track_rot_deg": 0.0
+    }
+   },
+   "pose": {
+    "source": "held from subgoal 2 (no new grasp)",
+    "file": "poses/left_toy_claw.json",
+    "stress_tests": {}
+   },
+   "reason_for_motion": "Stage 1 calls this a release; executed as a place (set down inside the open tray, let go, retreat) because the human's hand went down into the tray before opening (7.5 s frame) and a 8-13 cm drop of the soft toy exceeded the penetration limit on impact in stage3_r3"
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    571,
+    801
+   ],
+   "motion": "close_joint",
+   "side": "left",
+   "object": "drawer_unit_drawer_unit_drawer_r0c0",
+   "plan": {
+    "index": 5,
+    "motion": "close_joint",
+    "side": "left",
+    "object": "drawer_unit_drawer_unit_drawer_r0c0",
+    "pose": "poses/left_pull_hook_nopress.json",
+    "hand_scene": "poses/hs_left_drawer.json",
+    "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+    "target": 0.0,
+    "hand_follows": "rigid",
+    "release": true,
+    "with": "toy_toy"
+   },
+   "expect": {
+    "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+    "joint_target": 0.0,
+    "object": "drawer_unit_drawer_unit_drawer_r0c0",
+    "in_hand": false,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       -0.050185777234036305,
+       0.6006749903488743,
+       0.05150931688237793
+      ],
+      "normal": [
+       -0.12899500180717127,
+       0.9916452437774295,
+       -6.112606008446403e-07
+      ]
+     }
+    },
+    "pads_at_label": "left: grip drawer_unit_drawer_unit_drawer_r0c0",
+    "hand": "left",
+    "involved": [
+     "drawer_unit_drawer_unit_drawer_r0c0",
+     "toy_toy"
+    ],
+    "untouched": [],
+    "pads_at_rel": 125
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "pads_touching": true,
+     "joint_reached": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0671,
+      0.731,
+      0.0515
+     ],
+     "object_end": [
+      -0.0848,
+      0.8678,
+      0.0515
+     ],
+     "object_moved_m": 0.138,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.0,
+     "pads": {
+      "index": {
+       "touching": true,
+       "in_contact": false,
+       "side_ok": true,
+       "offset_mm": 8.2
+      }
+     },
+     "pads_frame": 125,
+     "joint_start": 0.1477,
+     "joint_end": 0.0097,
+     "joint_travel_fraction": 0.935,
+     "base_moved": {
+      "body": "drawer_unit_drawer_unit_carcass",
+      "moved_m": 0.0,
+      "rotated_deg": 0.0
+     },
+     "max_hand_pen_mm": 0.21,
+     "max_object_pen_mm": 1.01,
+     "max_track_pos_mm": 1.1,
+     "max_track_rot_deg": 1.1
+    }
+   },
+   "pose": {
+    "file": "poses/left_pull_hook_nopress.json",
+    "source": "pose_from_points",
+    "hand_scene": "poses/hs_left_drawer.json",
+    "derivation": "stage3_r3's pose, re-tested here: index pad on the back face of the pull bar (outward normal into the drawer), palm-down with the fingers pointing into the drawer (the human hooked the fingers behind the handle, 2.6-3.0 s); pre-grasp shape = the closed hook dropped in vertically, no extra squeeze",
+    "stress_tests": {
+     "grasp_slide_pull_test_preshaped": {
+      "ok": true,
+      "verdict": "PULLED: the part followed 151 of 150 mm (101%), held by ['index']",
+      "measured": {
+       "travel_m": 0.15,
+       "joint_moved_m": 0.1509,
+       "fraction": 1.006,
+       "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+       "joint_start": 0.0252,
+       "joint_end": 0.1761,
+       "joint_moved_during_approach_m": 0.0,
+       "joint_moved_during_close_m": 0.0252,
+       "pads_start": [
+        "index"
+       ],
+       "pads_end": [
+        "index"
+       ],
+       "lost_at_m": 0.005,
+       "siblings_moved": {},
+       "peak_wrist_force_n": 41.7,
+       "approach_pen_mm": 0.16,
+       "approach_pen_pair": [
+        "hand_collision_hand_left_index_2",
+        "drawer_unit_drawer_r0c0_front"
+       ],
+       "open_frac": 0.0,
+       "approach_dir": [
+        0.0,
+        0.0,
+        1.0
+       ],
+       "n_waypoints": 0
+      }
+     }
+    }
+   }
+  }
+ ],
+ "episode": {
+  "trajectory": "trajectory.npz",
+  "phases": "phases.json",
+  "sim_video": "sim_video.mp4",
+  "fps": 30.0,
+  "n_frames": 802,
+  "execution_dir": "episode"
+ },
+ "stage4": {
+  "task_dir": "stage4_task",
+  "config": "stage4_task/stage4.json"
+ },
+ "checks": {
+  "episode_physics_check": {
+   "ok": true,
+   "failed": []
+  },
+  "robot_self_collision_check": {
+   "ok": true
+  },
+  "arm_reach_check": {
+   "ok": true,
+   "sides": {
+    "left": {
+     "pos_err_mm": {
+      "max": 0.79,
+      "mean": 0.08,
+      "worst_frame": 408,
+      "label": "left: carry toy_toy #3"
+     },
+     "tilt_err_deg": {
+      "max": 1.17,
+      "mean": 0.04,
+      "worst_frame": 408,
+      "label": "left: carry toy_toy #3"
+     }
+    },
+    "right": {
+     "pos_err_mm": {
+      "max": 0.0,
+      "mean": 0.0,
+      "worst_frame": 319,
+      "label": "left: descend on toy_toy #2"
+     },
+     "tilt_err_deg": {
+      "max": 0.0,
+      "mean": 0.0,
+      "worst_frame": 290,
+      "label": "left: reach for toy_toy #2"
+     }
+    }
+   }
+  },
+  "stage4_handoff_check": {
+   "ok": true,
+   "issues": []
+  },
+  "trajectory_audit": {
+   "ok": true,
+   "failed": []
+  }
+ },
+ "notes": [
+  "Maintainer re-execution for the release example: stage3_r3's plan (poses, stations) re-run unchanged with the current executor on the rebuilt Stage 2 scene, whose plush now has rolling resistance (construct_plush_toy_rolling): the toy, rocking 0.7-23.7 deg in the closed drawer in stage3_r3, is at rest at the end (end_state_rest_audit: 0.08 mm / 0.0 deg over 1 s).",
+  "Both arm stations are moved 0.35 m toward the objects (place_arm_stations); every tool, audit and the Stage 4 package use scene_stations.xml.",
+  "Only the left hand acts, as in the video; the right hand stays at home (the human's right hand rests on the table).",
+  "The toy is turned -54 deg about the vertical during the carry so the three-finger grip fits the 8 cm tray; the human did not visibly turn it.",
+  "The episode is longer than the clip: each phase is planned at the arm's speed limits, not time-locked to the video.",
+  "Stage 4 randomizes the toy's start (+-3 cm, +-15 deg; its grasp follows it) and keeps the drawer unit where the video has it: the carry and set-down targets are world positions inside the opened tray, so moving the drawer under them put the toy into the tray wall (stage4_randomization_gate: 26 mm deeper than the original in 3 of 3 draws)."
+ ],
+ "source": "examples/asset_reuse"
+}

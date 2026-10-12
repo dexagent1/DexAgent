@@ -1,0 +1,811 @@
+{
+ "task_prompt": "Put the blue cup into the green bowl.",
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_recon": "../stage2/scene_recon.json",
+ "scene_executed": "scene_executed.xml",
+ "stations": {
+  "tool": "place_arm_stations",
+  "report": "place_arm_stations.json"
+ },
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    177
+   ],
+   "motion": "grasp_lift",
+   "release": false,
+   "action": "Pick up the blue cup.",
+   "plan": {
+    "index": 1,
+    "motion": "grasp_lift",
+    "side": "left",
+    "object": "cup_cup",
+    "pose": "stage3/replay/poses/sg1_grasp_feather_ok.json",
+    "hand_scene": "stage3/replay/poses/hs_left_cup_v2.json",
+    "lift_m": 0.1,
+    "open_frac": 0.15
+   },
+   "expect": {
+    "rise_m": 0.05,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       -0.08249183791205639,
+       0.6958746957340108,
+       0.040759886024206604
+      ],
+      "normal": [
+       -0.18098704942122462,
+       -0.9832076394963083,
+       -0.023375747600793844
+      ]
+     },
+     "index": {
+      "point": [
+       -0.07386292589796456,
+       0.7298369460714745,
+       0.04115400364727619
+      ],
+      "normal": [
+       0.30303939774127714,
+       0.9527145723004724,
+       -0.022406854775515593
+      ]
+     }
+    },
+    "pads_at_label": "left: grip cup_cup",
+    "hand": "left",
+    "object": "cup_cup",
+    "involved": [
+     "cup_cup"
+    ],
+    "untouched": [
+     "bowl_bowl"
+    ],
+    "_motion_no_slip": true,
+    "pads_at_rel": 145,
+    "slip_from_rel": 146
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "pads_touching": true,
+     "no_slip": true,
+     "untouched:bowl_bowl": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0787,
+      0.7157,
+      0.0
+     ],
+     "object_end": [
+      -0.0854,
+      0.7122,
+      0.0983
+     ],
+     "object_moved_m": 0.0986,
+     "object_rotated_deg": 4.38,
+     "object_tilt_end_deg": 4.38,
+     "rise_m": 0.0983,
+     "peak_rise_m": 0.0984,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "pads": {
+      "thumb": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 9.1
+      },
+      "index": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 10.7
+      }
+     },
+     "pads_frame": 145,
+     "slip_in_hand_m": 0.0019,
+     "slip_peak_frame": 152,
+     "slip_in_hand_deg": 1.343,
+     "slip_rotation_peak_frame": 154,
+     "slip_held_body": "cup_cup",
+     "slip_contact_point_local": null,
+     "slip_turn_judged": true,
+     "untouched": {
+      "bowl_bowl": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.63,
+     "max_track_pos_mm": 1.0,
+     "max_track_rot_deg": 1.0,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 178,
+        "free_leg_frames": 61,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 84.6
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 178,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       },
+       "plan": {
+        "planned_legs": [],
+        "failed_legs": [],
+        "parked": [],
+        "checked_legs": 1,
+        "seconds": 0.06
+       }
+      },
+      "retimed_s": 0.0,
+      "runtime": {
+       "left": {
+        "residual_mm_max": 4.772331485227177e-10,
+        "residual_deg_max": 7.131056250107092e-05,
+        "peak_speed_deg_s": 85.75776289334335,
+        "speed_source": "substep_qvel",
+        "speed_sample": 493,
+        "speed_time_s": 0.9880000000000008,
+        "speed_frame": 30,
+        "mount": "fixed runtime flange"
+       },
+       "right": {
+        "residual_mm_max": 2.352615457129415e-10,
+        "residual_deg_max": 4.6719923818429006e-05,
+        "peak_speed_deg_s": 0.018143149563241222,
+        "speed_source": "substep_qvel",
+        "speed_sample": 0,
+        "speed_time_s": 0.002,
+        "speed_frame": 1,
+        "mount": "fixed runtime flange"
+       }
+      },
+      "timing_retries": []
+     }
+    }
+   },
+   "side": "left",
+   "object": "cup_cup",
+   "pose": {
+    "file": "stage3/exec_replay/subgoal_01/pose_used_left.json",
+    "hand_scene": "stage3/exec_replay/subgoal_01/hand_scene_used_left.json",
+    "source": "optimize_grasp_pose",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 20.8,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.9,
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.9,
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "lift_0.15",
+        "commanded_mm": 150.0,
+        "achieved_mm": 147.9,
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 3.9,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 4.0,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 4.1,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 4.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 4.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "held_slip": {
+         "body": "cup_cup",
+         "body_id": 2,
+         "contact_point_local": null,
+         "contact_frame": null,
+         "turn_judged": true,
+         "drift_m": 1.3097383675091764e-06,
+         "turn_deg": 0.0005850586309953857,
+         "translation_peak_frame": 33,
+         "rotation_peak_frame": 34,
+         "frames": [
+          0,
+          400
+         ]
+        },
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 132,
+        "saturated_frac": 0.0,
+        "median_s": 0.044,
+        "peak_s": 0.136,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       },
+       {
+        "name": "penetration",
+        "ok": true,
+        "max_contact_mm": 0.462,
+        "max_visual_floor_mm": 0.0,
+        "limit_mm": 3.0,
+        "steps": 6268,
+        "worst_pair": [
+         "hand_left_ring_elastomer_visual",
+         "hand_left_pinky_DP_visual"
+        ],
+        "first_bad": null
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 57.9
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 97.9
+       },
+       {
+        "commanded_mm": 150.0,
+        "achieved_mm": 147.9
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 4.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.37,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      },
+      "press_targets": {
+       "thumb_CMC_FE": 0.666233608933014,
+       "thumb_CMC_AA": 0.09466143976127155,
+       "thumb_MCP_FE": 0.2029181836614699,
+       "thumb_MCP_AA": -0.19771283723524027,
+       "thumb_IP": 0.5447743410897314,
+       "index_MCP_FE": 0.39090353657597743,
+       "index_MCP_AA": -0.3490999999999996,
+       "index_PIP": 0.5982625513881449,
+       "index_DIP": 0.4550398295198436,
+       "middle_MCP_FE": 1.5708,
+       "middle_MCP_AA": 0.0,
+       "middle_PIP": 1.7453,
+       "middle_DIP": 1.3963,
+       "ring_MCP_FE": 1.5708,
+       "ring_MCP_AA": 0.0,
+       "ring_PIP": 1.7453,
+       "ring_DIP": 1.3963,
+       "pinky_CMC": 0.2618,
+       "pinky_MCP_FE": 1.5708,
+       "pinky_MCP_AA": 0.0,
+       "pinky_PIP": 1.7453,
+       "pinky_DIP": 1.3963
+      },
+      "open_targets": {
+       "thumb_CMC_FE": 0.5034127969686237,
+       "thumb_CMC_AA": 0.09466143976127155,
+       "thumb_MCP_FE": 0.06844045611224943,
+       "thumb_MCP_AA": -0.19771283723524027,
+       "thumb_IP": 0.4375581899262717,
+       "index_MCP_FE": 0.28058806658958085,
+       "index_MCP_AA": -0.3490999999999996,
+       "index_PIP": 0.463290792671335,
+       "index_DIP": 0.34069008601564466,
+       "middle_MCP_FE": 0.6108668885,
+       "middle_MCP_AA": 0.0,
+       "middle_PIP": 0.785385,
+       "middle_DIP": 0.6283350000000001,
+       "ring_MCP_FE": 0.6108668885,
+       "ring_MCP_AA": 0.0,
+       "ring_PIP": 0.785385,
+       "ring_DIP": 0.6283350000000001,
+       "pinky_CMC": 0.11781,
+       "pinky_MCP_FE": 0.6108668885,
+       "pinky_MCP_AA": 0.0,
+       "pinky_PIP": 0.785385,
+       "pinky_DIP": 0.6283350000000001
+      },
+      "final_wrist_pos": [
+       -0.15032890750844524,
+       0.6357549427432724,
+       0.3125404576536417
+      ],
+      "penetration": {
+       "name": "penetration",
+       "ok": true,
+       "max_contact_mm": 0.462,
+       "max_visual_floor_mm": 0.0,
+       "limit_mm": 3.0,
+       "steps": 6268,
+       "worst_pair": [
+        "hand_left_ring_elastomer_visual",
+        "hand_left_pinky_DP_visual"
+       ],
+       "first_bad": null
+      },
+      "evidence": {
+       "path": "stage3/.evidence/c5c7a5b7113a71bf2de73d15b2bcf36ddf5f55c125411a46cc12fa4715fbe6e6.json",
+       "sha256": "c5c7a5b7113a71bf2de73d15b2bcf36ddf5f55c125411a46cc12fa4715fbe6e6"
+      }
+     }
+    }
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    178,
+    224
+   ],
+   "motion": "carry",
+   "release": false,
+   "action": "Carry the cup over the bowl.",
+   "plan": {
+    "index": 2,
+    "motion": "carry",
+    "side": "left",
+    "object": "cup_cup",
+    "over": "bowl_bowl",
+    "height_m": 0.1
+   },
+   "expect": {
+    "target_pos": [
+     0.09881419998528664,
+     0.7986839990462361,
+     0.15986348593365243
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "placement": {
+     "support": "bowl_bowl",
+     "support_top_z": 0.058,
+     "part_bottom_below_root_m": 0.00186,
+     "method": "footprint",
+     "n_rays": 196,
+     "n_hits": 196,
+     "n_features": 1
+    },
+    "hand": "left",
+    "object": "cup_cup",
+    "involved": [
+     "cup_cup",
+     "bowl_bowl"
+    ],
+    "untouched": [],
+    "_motion_no_slip": true,
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0854,
+      0.7122,
+      0.0983
+     ],
+     "object_end": [
+      0.0986,
+      0.7987,
+      0.1599
+     ],
+     "object_moved_m": 0.2125,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 4.38,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0002,
+     "slip_peak_frame": 47,
+     "slip_in_hand_deg": 0.004,
+     "slip_rotation_peak_frame": 40,
+     "slip_held_body": "cup_cup",
+     "slip_contact_point_local": null,
+     "slip_turn_judged": true,
+     "target_err_m": 0.0002,
+     "planned_move_m": 0.2126,
+     "target_tol_m": 0.03,
+     "max_hand_pen_mm": 0.1,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.6,
+     "max_track_rot_deg": 0.0,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 48,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 61.4
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 48,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       },
+       "plan": {
+        "planned_legs": [],
+        "failed_legs": [],
+        "parked": [],
+        "checked_legs": 0,
+        "seconds": 0.01
+       }
+      },
+      "retimed_s": 0.0,
+      "runtime": {
+       "left": {
+        "residual_mm_max": 4.772144608312968e-10,
+        "residual_deg_max": 7.131056249356195e-05,
+        "peak_speed_deg_s": 62.59187547742937,
+        "speed_source": "substep_qvel",
+        "speed_sample": 436,
+        "speed_time_s": 0.8739999999999037,
+        "speed_frame": 27,
+        "mount": "fixed runtime flange"
+       },
+       "right": {
+        "residual_mm_max": 2.352123292276727e-10,
+        "residual_deg_max": 4.671992379263776e-05,
+        "peak_speed_deg_s": 8.151163322462362e-13,
+        "speed_source": "substep_qvel",
+        "speed_sample": -1,
+        "speed_time_s": 0.0,
+        "speed_frame": 0,
+        "mount": "fixed runtime flange"
+       }
+      },
+      "timing_retries": []
+     }
+    }
+   },
+   "side": "left",
+   "object": "cup_cup"
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    225,
+    471
+   ],
+   "motion": "place",
+   "release": true,
+   "action": "Set the cup down inside the bowl and let go.",
+   "plan": {
+    "index": 3,
+    "motion": "place",
+    "side": "left",
+    "object": "cup_cup",
+    "into": "bowl_bowl",
+    "release": true,
+    "placement_force_n": 10.0,
+    "set_down_s": 2.0,
+    "t_open": 1.6,
+    "t_retreat": 1.2,
+    "settle_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09881419998529188,
+     0.7986839990462437,
+     0.008863674110660007
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "target_quat_wxyz": [
+     0.9941315800917152,
+     0.03546382536738011,
+     0.01424728504169033,
+     0.10120144971097246
+    ],
+    "on": null,
+    "released": true,
+    "placement": {
+     "support": "bowl_bowl",
+     "support_top_z": 0.004,
+     "part_bottom_below_root_m": 0.00186,
+     "method": "footprint",
+     "n_rays": 196,
+     "n_hits": 196,
+     "n_features": 1
+    },
+    "hand": "left",
+    "object": "cup_cup",
+    "involved": [
+     "cup_cup"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "release_settle": true,
+     "supported": true,
+     "at_target_orientation": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0986,
+      0.7987,
+      0.1599
+     ],
+     "object_end": [
+      0.1079,
+      0.8022,
+      0.004
+     ],
+     "object_moved_m": 0.1562,
+     "object_rotated_deg": 5.93,
+     "object_tilt_end_deg": 0.0,
+     "target_err_m": 0.0097,
+     "planned_move_m": 0.151,
+     "target_tol_m": 0.03,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "release_settle": {
+      "ok": true,
+      "issues": [],
+      "release_frame": 150,
+      "settle_frames": [
+       155,
+       164
+      ],
+      "settle_s": 0.3,
+      "moved_m": 0.0,
+      "rotated_deg": 0.0,
+      "worst_frame": 155,
+      "moved_since_release_m": 0.0001,
+      "rotated_since_release_deg": 0.15,
+      "dz_since_release_m": 0.0,
+      "supported": true
+     },
+     "lowest_point_z": 0.004,
+     "support_contacts": 80,
+     "target_rotation_error_deg": 5.925,
+     "max_hand_pen_mm": 0.19,
+     "max_object_pen_mm": 0.34,
+     "max_track_pos_mm": 1.0,
+     "max_track_rot_deg": 0.2,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 248,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 77.8
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 248,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       },
+       "plan": {
+        "planned_legs": [],
+        "failed_legs": [],
+        "parked": [],
+        "checked_legs": 0,
+        "seconds": 0.02
+       }
+      },
+      "retimed_s": 0.0,
+      "runtime": {
+       "left": {
+        "residual_mm_max": 4.772168520721348e-10,
+        "residual_deg_max": 7.131056250105075e-05,
+        "peak_speed_deg_s": 80.46685443419194,
+        "speed_source": "substep_qvel",
+        "speed_sample": 794,
+        "speed_time_s": 1.5900000000002938,
+        "speed_frame": 48,
+        "mount": "fixed runtime flange"
+       },
+       "right": {
+        "residual_mm_max": 2.352123292276727e-10,
+        "residual_deg_max": 4.671992379263776e-05,
+        "peak_speed_deg_s": 3.8808074159524626e-14,
+        "speed_source": "substep_qvel",
+        "speed_sample": 1936,
+        "speed_time_s": 3.8740000000010566,
+        "speed_frame": 117,
+        "mount": "fixed runtime flange"
+       }
+      },
+      "timing_retries": []
+     }
+    }
+   },
+   "side": "left",
+   "object": "cup_cup"
+  }
+ ],
+ "episode": {
+  "trajectory": "trajectory.npz",
+  "phases": "phases.json",
+  "sim_video": "sim_video.mp4",
+  "fps": 30.0,
+  "n_frames": 472,
+  "execution_dir": "stage3/exec_replay",
+  "execution_report": "stage3/exec_replay/execution_report.json"
+ },
+ "stage4": {
+  "task_dir": "stage4_task",
+  "config": "stage4_task/stage4.json"
+ },
+ "checks": {
+  "episode_physics_check": {
+   "ok": true,
+   "issues": []
+  },
+  "robot_self_collision_check": {
+   "ok": true,
+   "issues": []
+  },
+  "arm_reach_check": {
+   "ok": true,
+   "issues": []
+  },
+  "stage4_handoff_check": {
+   "ok": true,
+   "issues": []
+  }
+ },
+ "notes": [
+  "packaged by package_stage3_episode from the executor's own records",
+  "Rigid arm+hand runtime: accepted bundle of run own_cup_fastreplay (every Stage 3 finish verifier passed, the full stage3_gate_suite included). scene_executed.xml and stage4_task/scene.xml are the executor's runtime scenes byte for byte (their trajectories record scene_sha256); their meshes are in examples/_assets, mapped by runtime_assets.json."
+ ],
+ "source": "examples/default"
+}

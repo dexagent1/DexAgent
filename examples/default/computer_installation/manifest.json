@@ -1,0 +1,50 @@
+{
+ "task": "computer_installation",
+ "prompt": "Put the three hard disk drives into the hard-disk stack on the right side of the computer case",
+ "fingerprint": "fingerprint.json",
+ "video": {
+  "duration_s": 30.668,
+  "fps": 60.06240356493366,
+  "resolution": [
+   640,
+   480
+  ]
+ },
+ "objects": [
+  {
+   "id": "pc_case",
+   "type": "rigid",
+   "root_body": "pc_case_pc_case"
+  },
+  {
+   "id": "disk_1",
+   "type": "rigid",
+   "root_body": "disk_1_disk_1"
+  },
+  {
+   "id": "disk_2",
+   "type": "rigid",
+   "root_body": "disk_2_disk_2"
+  },
+  {
+   "id": "disk_3",
+   "type": "rigid",
+   "root_body": "disk_3_disk_3"
+  }
+ ],
+ "stages": {
+  "stage1": "stage1/scene_semantics.json",
+  "stage2": "stage2/scene_recon.json",
+  "stage3": "stage3/trajectory_manifest.json",
+  "stage4": "stage3/stage4_task/stage4.json"
+ },
+ "provenance": {
+  "run": "rel_computer_installation",
+  "how": "solved by the agent stages (a model acting as the harness agent), reviewed by the maintainers",
+  "verified_at": "ff80b41",
+  "finish_verifiers": "stage 1, 2 and 3 passed"
+ },
+ "verified": {
+  "stage_verifiers": "passed at the end of the run"
+ }
+}

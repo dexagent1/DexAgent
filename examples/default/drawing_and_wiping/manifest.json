@@ -1,0 +1,45 @@
+{
+ "task": "drawing_and_wiping",
+ "prompt": "Write 1 2 3 4 on the whiteboard with the marker, then erase the 4 with the eraser.",
+ "fingerprint": "fingerprint.json",
+ "video": {
+  "duration_s": 27.3,
+  "fps": 30.0,
+  "resolution": [
+   640,
+   480
+  ]
+ },
+ "objects": [
+  {
+   "id": "board",
+   "type": "rigid",
+   "root_body": "board_board"
+  },
+  {
+   "id": "marker",
+   "type": "rigid",
+   "root_body": "marker_marker"
+  },
+  {
+   "id": "eraser",
+   "type": "rigid",
+   "root_body": "eraser_eraser"
+  }
+ ],
+ "stages": {
+  "stage1": "stage1/scene_semantics.json",
+  "stage2": "stage2/scene_recon.json",
+  "stage3": "stage3/trajectory_manifest.json",
+  "stage4": "stage3/stage4_task/stage4.json"
+ },
+ "provenance": {
+  "run": "rel_drawing_and_wiping",
+  "how": "solved by the agent stages (a model acting as the harness agent), reviewed by the maintainers",
+  "verified_at": "85bbe74",
+  "finish_verifiers": "stage 1, 2 and 3 passed"
+ },
+ "verified": {
+  "stage_verifiers": "passed at the end of the run"
+ }
+}

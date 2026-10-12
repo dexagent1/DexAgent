@@ -1,0 +1,394 @@
+{
+ "subgoals": [
+  {
+   "index": 1,
+   "motion": "hold",
+   "side": "left",
+   "object": "meal_box_mealbox_lid",
+   "pose": "${REPLAY}/poses/r4_left_lid_squeeze.json",
+   "hand_scene": "${REPLAY}/poses/r4_hs_left_lid.json",
+   "approach_m": 0.06,
+   "press_depth_rad": 0.3,
+   "expect": {
+    "in_hand": false,
+    "pads": {},
+    "min_links": 0
+   }
+  },
+  {
+   "index": 1,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "meal_box_mealbox_lid",
+   "pose": "${REPLAY}/poses/r4_right_lid_squeeze.json",
+   "hand_scene": "${REPLAY}/poses/r4_hs_right_lid.json",
+   "approach_m": 0.06,
+   "open_frac": 0.1,
+   "press_depth_rad": 0.3,
+   "lift_m": 0.04
+  },
+  {
+   "index": 2,
+   "motion": "carry",
+   "side": "right",
+   "object": "meal_box_mealbox_lid",
+   "target_pos": [
+    -0.1172,
+    0.4433,
+    0.115
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -87.99
+   ],
+   "duration_s": 2.0
+  },
+  {
+   "index": 3,
+   "motion": "place",
+   "side": "right",
+   "object": "meal_box_mealbox_lid",
+   "target_pos": [
+    -0.1172,
+    0.4433,
+    0.0605
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -87.99
+   ],
+   "hover_m": 0.01,
+   "duration_s": 1.2,
+   "retreat_dir": [
+    0.5,
+    -0.3,
+    0.8
+   ],
+   "expect": {
+    "on": "meal_box_mealbox_container"
+   },
+   "clearance_m": 0.0
+  },
+  {
+   "index": 3,
+   "motion": "release",
+   "side": "left",
+   "object": "meal_box_mealbox_lid",
+   "retreat_dir": [
+    -0.5,
+    -0.3,
+    0.8
+   ],
+   "expect": {
+    "on": "meal_box_mealbox_container"
+   }
+  },
+  {
+   "index": 3,
+   "motion": "home",
+   "side": "left",
+   "duration_s": 1.2
+  },
+  {
+   "index": 3,
+   "motion": "press",
+   "side": "left",
+   "object": "meal_box_mealbox_lid",
+   "pose": "${REPLAY}/poses/r4_left_press.json",
+   "hand_scene": "${REPLAY}/poses/r4_hs_left_lid_onbox.json",
+   "direction": [
+    0,
+    0,
+    -1
+   ],
+   "distance_m": 0.004,
+   "expect": {
+    "displacement": null,
+    "stays_put": true,
+    "supported": true,
+    "on": "meal_box_mealbox_container",
+    "upright": true,
+    "upright_tol_deg": 2.0
+   }
+  },
+  {
+   "index": 3,
+   "motion": "home",
+   "side": "right",
+   "duration_s": 1.2
+  },
+  {
+   "index": 3,
+   "motion": "press",
+   "side": "right",
+   "object": "meal_box_mealbox_lid",
+   "pose": "${REPLAY}/poses/r4_right_press.json",
+   "hand_scene": "${REPLAY}/poses/r4_hs_right_lid_onbox.json",
+   "direction": [
+    0,
+    0,
+    -1
+   ],
+   "distance_m": 0.004,
+   "expect": {
+    "displacement": null,
+    "stays_put": true,
+    "supported": true,
+    "on": "meal_box_mealbox_container",
+    "upright": true,
+    "upright_tol_deg": 2.0
+   }
+  },
+  {
+   "index": 4,
+   "motion": "home",
+   "side": "left",
+   "duration_s": 1.2
+  },
+  {
+   "index": 4,
+   "motion": "home",
+   "side": "right",
+   "duration_s": 1.2
+  },
+  {
+   "index": 4,
+   "motion": "both",
+   "sync": "start",
+   "hands": {
+    "left": {
+     "motion": "close_joint",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_yn",
+     "joint": "meal_box_mealbox_fold_yn",
+     "target": 0.0,
+     "pose": [
+      "${REPLAY}/poses/yn4Lc_c06.json",
+      "${REPLAY}/poses/yn4Lc_c07.json",
+      "${REPLAY}/poses/yn4Lc_c08.json"
+     ],
+     "hand_scene": "${REPLAY}/poses/hs_left_onbox_v1.json",
+     "hand_follows": "rigid",
+     "approach_m": 0.05,
+     "duration_s": 3.0,
+     "release": true,
+     "retreat_dir": [
+      -0.6,
+      0,
+      0.8
+     ],
+     "retreat_m": 0.06
+    },
+    "right": {
+     "motion": "close_joint",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_yp",
+     "joint": "meal_box_mealbox_fold_yp",
+     "target": 0.0,
+     "pose": [
+      "${REPLAY}/poses/yp4Rd_c09.json",
+      "${REPLAY}/poses/yp4Rd_c06.json",
+      "${REPLAY}/poses/yp4Rd_c07.json",
+      "${REPLAY}/poses/yp4Rd_c08.json"
+     ],
+     "hand_scene": "${REPLAY}/poses/hs_right_onbox_v1.json",
+     "hand_follows": "rigid",
+     "approach_m": 0.05,
+     "duration_s": 3.0,
+     "release": true,
+     "retreat_dir": [
+      0.6,
+      0,
+      0.8
+     ],
+     "retreat_m": 0.06
+    }
+   }
+  },
+  {
+   "index": 5,
+   "motion": "home",
+   "side": "right",
+   "duration_s": 1.2
+  },
+  {
+   "index": 5,
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "pose": [
+    "${REPLAY}/poses/rotLG_c05.json"
+   ],
+   "hand_scene": "${REPLAY}/poses/hs_left_box_rot0.json",
+   "angle_deg": -45,
+   "duration_s": 3.0,
+   "with": "meal_box_mealbox_lid",
+   "expect": {
+    "yaw_turned_deg": -5.0
+   },
+   "back": false
+  },
+  {
+   "index": 5,
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "pose": [
+    "${REPLAY}/poses/rotT1_c00.json"
+   ],
+   "hand_scene": "${REPLAY}/poses/hs_left_box_turn1.json",
+   "angle_deg": -55.0,
+   "duration_s": 3.0,
+   "with": "meal_box_mealbox_lid",
+   "back": false,
+   "expect": {
+    "yaw_turned_deg": -5.0
+   }
+  },
+  {
+   "index": 5,
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "pose": [
+    "${REPLAY}/poses/rotT2_c00.json"
+   ],
+   "hand_scene": "${REPLAY}/poses/hs_left_box_turn2.json",
+   "angle_deg": -55.0,
+   "duration_s": 3.0,
+   "with": "meal_box_mealbox_lid",
+   "back": false,
+   "expect": {
+    "yaw_turned_deg": -5.0
+   }
+  },
+  {
+   "index": 5,
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "pose": [
+    "${REPLAY}/poses/rotT3_c01.json"
+   ],
+   "hand_scene": "${REPLAY}/poses/hs_left_box_turn3.json",
+   "angle_deg": -55.0,
+   "duration_s": 3.0,
+   "with": "meal_box_mealbox_lid",
+   "back": false,
+   "expect": {
+    "yaw_turned_deg": -5.0
+   }
+  },
+  {
+   "index": 5,
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "pose": [
+    "${REPLAY}/poses/rotT4_c02.json"
+   ],
+   "hand_scene": "${REPLAY}/poses/hs_left_box_turn4.json",
+   "angle_deg": -30.0,
+   "duration_s": 3.0,
+   "with": "meal_box_mealbox_lid",
+   "back": false,
+   "expect": {
+    "yaw_turned_deg": -5.0
+   }
+  },
+  {
+   "index": 5,
+   "motion": "home",
+   "side": "left",
+   "duration_s": 1.5
+  },
+  {
+   "index": 6,
+   "motion": "both",
+   "sync": "start",
+   "hands": {
+    "left": {
+     "motion": "close_joint",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_xp",
+     "joint": "meal_box_mealbox_fold_xp",
+     "target": 0.0,
+     "pose": [
+      "${REPLAY}/poses/xp6L_c09.json",
+      "${REPLAY}/poses/xp6L_c10.json",
+      "${REPLAY}/poses/xp6L_c11.json",
+      "${REPLAY}/poses/xp6L_c01.json",
+      "${REPLAY}/poses/xp6L_c02.json"
+     ],
+     "hand_scene": "${REPLAY}/poses/hs_left_turned_v1.json",
+     "hand_follows": "rigid",
+     "approach_m": 0.05,
+     "duration_s": 3.0,
+     "release": false
+    },
+    "right": {
+     "motion": "close_joint",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_xn",
+     "joint": "meal_box_mealbox_fold_xn",
+     "target": 0.0,
+     "pose": [
+      "${REPLAY}/poses/xn6R_c09.json",
+      "${REPLAY}/poses/xn6R_c10.json",
+      "${REPLAY}/poses/xn6R_c00.json",
+      "${REPLAY}/poses/xn6R_c01.json",
+      "${REPLAY}/poses/xn6R_c02.json"
+     ],
+     "hand_scene": "${REPLAY}/poses/hs_right_turned_v1.json",
+     "hand_follows": "rigid",
+     "approach_m": 0.05,
+     "duration_s": 3.0,
+     "release": false
+    }
+   }
+  },
+  {
+   "index": 7,
+   "motion": "both",
+   "sync": "start",
+   "hands": {
+    "left": {
+     "motion": "release",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_xp",
+     "retreat_dir": [
+      -0.6,
+      0,
+      0.8
+     ],
+     "retreat_m": 0.06
+    },
+    "right": {
+     "motion": "release",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_xn",
+     "retreat_dir": [
+      0.6,
+      0,
+      0.8
+     ],
+     "retreat_m": 0.06
+    }
+   }
+  },
+  {
+   "index": 7,
+   "motion": "home",
+   "side": "left",
+   "duration_s": 1.5
+  },
+  {
+   "index": 7,
+   "motion": "home",
+   "side": "right",
+   "duration_s": 1.5
+  }
+ ]
+}

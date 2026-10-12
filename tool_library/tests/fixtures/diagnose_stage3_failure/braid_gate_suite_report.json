@@ -1,0 +1,213 @@
+{
+ "ok": false,
+ "issues": [
+  "stage1_goal_gate: Stage 1 subgoal 1 [strand_crossings ribbon_ribbon_wide_pink_strandB_first]: 4 strand crossing(s) at frame 319, at most 0 required: the strands still lie across each other",
+  "stage1_goal_gate: Stage 1 subgoal 2: no executed manifest entry covers it, so its goal cannot be checked",
+  "bimanual_sync_gate: Stage 1 subgoal 2 (both hands) has no executed manifest entry",
+  "stage_station_integrity_check: station left (robot_left_arm_root) is moved by [0.15, 0.1, 0.0] m but the recorded shift is [0.1, 0.0, 0.0] m; use the scene place_arm_stations wrote, unedited",
+  "stage_station_integrity_check: station right (robot_right_arm_root) is moved by [0.25, 0.1, 0.0] m but the recorded shift is [0.1, 0.0, 0.0] m; use the scene place_arm_stations wrote, unedited",
+  "deformable_integrity_audit: ribbon_ribbon_wide_pink_strandB_first x ribbon_ribbon_red_strandB_first passes into itself: 2.6 mm at frame 165 (left: lift ribbon_ribbon_red_strandB_13 #1.1), segments [15, 14] (138 events); the rope is pressed through its own segments: loosen the pull at that crossing",
+  "deformable_integrity_audit: ribbon_ribbon_wide_pink_strandB_first sinks into the tabletop: 2.3 mm at frame 235 (left: carry ribbon_ribbon_red_strandB_13 (down) #1.2), segments [17] (1 events); the rope is pressed into the table: lift the pinch or lower the pressing force",
+  "deformable_integrity_audit: ribbon_ribbon_wide_pink_strandB_first x ribbon_ribbon_red_strandB_first passes through itself between frames: 0.2 mm at frame 164 (left: lift ribbon_ribbon_red_strandB_13 #1.1), segments [16, 14] (2 events); the rope tunnels through its own segment: slow the motion at that crossing (more frames) or raise the cable's contact stiffness",
+  "stage4_physics_replay_gate: the original layout fails 5 of 15 checks when replayed in physics: ['Stage 1 goal 1', 'subgoal 1 grasp_lift: in_hand', 'subgoal 1 grasp_lift: no_slip', 'subgoal 1 grasp_lift: rise', 'subgoal 1 place: at_target']; the Stage 3 episode does not hold up in contact physics there (re-execute that subgoal, or give the task folder the servo commands: trajectory.npz `reference`)"
+ ],
+ "warnings": [
+  "timing_realism_audit: Stage 1 subgoal 2 (1.7 s in the video) has no robot frames: it was not executed; plan and execute it or mark it merged into a neighbouring subgoal in the manifest"
+ ],
+ "reports": {
+  "episode_physics_check": {
+   "ok": true,
+   "issues": []
+  },
+  "robot_self_collision_check": {
+   "ok": true,
+   "issues": []
+  },
+  "arm_reach_check": {
+   "ok": true,
+   "issues": []
+  },
+  "stage1_goal_gate": {
+   "ok": false,
+   "issues": [
+    "Stage 1 subgoal 1 [strand_crossings ribbon_ribbon_wide_pink_strandB_first]: 4 strand crossing(s) at frame 319, at most 0 required: the strands still lie across each other",
+    "Stage 1 subgoal 2: no executed manifest entry covers it, so its goal cannot be checked"
+   ]
+  },
+  "bimanual_sync_gate": {
+   "ok": false,
+   "issues": [
+    "Stage 1 subgoal 2 (both hands) has no executed manifest entry"
+   ]
+  },
+  "robot_model_integrity_check": {
+   "ok": true,
+   "issues": []
+  },
+  "robot_joint_range_check": {
+   "ok": true,
+   "issues": []
+  },
+  "actuator_limit_integrity_check": {
+   "ok": true,
+   "issues": []
+  },
+  "contact_exclusion_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "physics_options_check": {
+   "ok": true,
+   "issues": []
+  },
+  "stage_station_integrity_check": {
+   "ok": false,
+   "issues": [
+    "station left (robot_left_arm_root) is moved by [0.15, 0.1, 0.0] m but the recorded shift is [0.1, 0.0, 0.0] m; use the scene place_arm_stations wrote, unedited",
+    "station right (robot_right_arm_root) is moved by [0.25, 0.1, 0.0] m but the recorded shift is [0.1, 0.0, 0.0] m; use the scene place_arm_stations wrote, unedited"
+   ]
+  },
+  "initial_keyframe_state_check": {
+   "ok": true,
+   "issues": []
+  },
+  "stage4_handoff_check": {
+   "ok": true,
+   "issues": []
+  },
+  "uncovered_frames_check": {
+   "ok": true,
+   "issues": []
+  },
+  "object_teleport_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "robot_joint_jump_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "badqacc_reset_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "arm_branch_flip_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "swept_collision_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "object_visual_penetration_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "dynamics_consistency_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "contactless_motion_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "free_fall_plausibility_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "object_spin_rate_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "contact_impulse_spike_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "finger_servo_saturation_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "hand_object_relative_jitter_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "joint_limit_margin_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "joint_acceleration_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "hand_joint_rate_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "start_state_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "end_state_rest_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "released_contact_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "held_object_slip_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "phase_label_continuity_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "table_workspace_bounds_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "wrist_singularity_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "deformable_integrity_audit": {
+   "ok": false,
+   "issues": [
+    "ribbon_ribbon_wide_pink_strandB_first x ribbon_ribbon_red_strandB_first passes into itself: 2.6 mm at frame 165 (left: lift ribbon_ribbon_red_strandB_13 #1.1), segments [15, 14] (138 events); the rope is pressed through its own segments: loosen the pull at that crossing",
+    "ribbon_ribbon_wide_pink_strandB_first sinks into the tabletop: 2.3 mm at frame 235 (left: carry ribbon_ribbon_red_strandB_13 (down) #1.2), segments [17] (1 events); the rope is pressed into the table: lift the pinch or lower the pressing force",
+    "ribbon_ribbon_wide_pink_strandB_first x ribbon_ribbon_red_strandB_first passes through itself between frames: 0.2 mm at frame 164 (left: lift ribbon_ribbon_red_strandB_13 #1.1), segments [16, 14] (2 events); the rope tunnels through its own segment: slow the motion at that crossing (more frames) or raise the cable's contact stiffness"
+   ]
+  },
+  "timing_realism_audit": {
+   "ok": false,
+   "issues": [
+    "Stage 1 subgoal 2 (1.7 s in the video) has no robot frames: it was not executed; plan and execute it or mark it merged into a neighbouring subgoal in the manifest"
+   ]
+  },
+  "camera_visibility_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "redundant_motion_audit": {
+   "ok": true,
+   "issues": []
+  },
+  "stage4_randomization_gate": {
+   "ok": true,
+   "issues": []
+  },
+  "stage4_physics_replay_gate": {
+   "ok": false,
+   "issues": [
+    "the original layout fails 5 of 15 checks when replayed in physics: ['Stage 1 goal 1', 'subgoal 1 grasp_lift: in_hand', 'subgoal 1 grasp_lift: no_slip', 'subgoal 1 grasp_lift: rise', 'subgoal 1 place: at_target']; the Stage 3 episode does not hold up in contact physics there (re-execute that subgoal, or give the task folder the servo commands: trajectory.npz `reference`)"
+   ]
+  },
+  "subgoal_outcome_check[1]": {
+   "ok": true,
+   "issues": []
+  }
+ },
+ "scene": "scene_stations4.xml",
+ "trajectory": "trajectory.npz"
+}

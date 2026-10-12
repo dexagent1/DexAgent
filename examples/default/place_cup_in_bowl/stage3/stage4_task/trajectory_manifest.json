@@ -1,0 +1,166 @@
+{
+ "source": "episode outcomes",
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "step": null,
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "cup_cup",
+   "frames": [
+    0,
+    177
+   ],
+   "expect": {
+    "rise_m": 0.05,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       -0.08249183791205639,
+       0.6958746957340108,
+       0.040759886024206604
+      ],
+      "normal": [
+       -0.18098704942122462,
+       -0.9832076394963083,
+       -0.023375747600793844
+      ]
+     },
+     "index": {
+      "point": [
+       -0.07386292589796456,
+       0.7298369460714745,
+       0.04115400364727619
+      ],
+      "normal": [
+       0.30303939774127714,
+       0.9527145723004724,
+       -0.022406854775515593
+      ]
+     }
+    },
+    "pads_at_label": "left: grip cup_cup",
+    "hand": "left",
+    "object": "cup_cup",
+    "involved": [
+     "cup_cup"
+    ],
+    "untouched": [
+     "bowl_bowl"
+    ],
+    "_motion_no_slip": true,
+    "pads_at_rel": 145,
+    "slip_from_rel": 146
+   },
+   "plan": {
+    "motion": "grasp_lift",
+    "object": "cup_cup",
+    "step": null
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "step": null,
+   "motion": "carry",
+   "side": "left",
+   "object": "cup_cup",
+   "frames": [
+    178,
+    224
+   ],
+   "expect": {
+    "target_pos": [
+     0.09881419998528664,
+     0.7986839990462361,
+     0.15986348593365243
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "placement": {
+     "support": "bowl_bowl",
+     "support_top_z": 0.058,
+     "part_bottom_below_root_m": 0.00186,
+     "method": "footprint",
+     "n_rays": 196,
+     "n_hits": 196,
+     "n_features": 1
+    },
+    "hand": "left",
+    "object": "cup_cup",
+    "involved": [
+     "cup_cup",
+     "bowl_bowl"
+    ],
+    "untouched": [],
+    "_motion_no_slip": true,
+    "slip_from_rel": 0
+   },
+   "plan": {
+    "motion": "carry",
+    "object": "cup_cup",
+    "step": null
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "step": null,
+   "motion": "place",
+   "side": "left",
+   "object": "cup_cup",
+   "frames": [
+    225,
+    471
+   ],
+   "expect": {
+    "target_pos": [
+     0.09881419998529188,
+     0.7986839990462437,
+     0.008863674110660007
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "target_quat_wxyz": [
+     0.9941315800917152,
+     0.03546382536738011,
+     0.01424728504169033,
+     0.10120144971097246
+    ],
+    "on": null,
+    "released": true,
+    "placement": {
+     "support": "bowl_bowl",
+     "support_top_z": 0.004,
+     "part_bottom_below_root_m": 0.00186,
+     "method": "footprint",
+     "n_rays": 196,
+     "n_hits": 196,
+     "n_features": 1
+    },
+    "hand": "left",
+    "object": "cup_cup",
+    "involved": [
+     "cup_cup"
+    ],
+    "untouched": []
+   },
+   "plan": {
+    "motion": "place",
+    "object": "cup_cup",
+    "step": null
+   }
+  }
+ ]
+}

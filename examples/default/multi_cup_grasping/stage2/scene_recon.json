@@ -1,0 +1,491 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "cup_teal",
+   "type": "rigid",
+   "skill": "construct_cup",
+   "skill_origin": "library",
+   "params": {
+    "name": "cup",
+    "base_radius": 0.0281,
+    "rim_radius": 0.0464,
+    "height": 0.1015,
+    "wall": 0.0012,
+    "lip": 0.0015,
+    "bottom": 0.002,
+    "body_rgba": [
+     0.287,
+     0.489,
+     0.433,
+     1
+    ],
+    "inner_rgba": [
+     0.705,
+     0.835,
+     0.838,
+     1
+    ],
+    "mass": 0.014,
+    "include_floor": false
+   },
+   "asset_xml": "objects/cup_teal/cup_teal.xml",
+   "root_body": "cup_teal_cup",
+   "bodies": [
+    "cup_teal_cup"
+   ],
+   "pose": {
+    "x": 0.1076,
+    "y": 0.297,
+    "z": 0.0,
+    "yaw_deg": 0.0
+   },
+   "mask": "masks/cup_teal.png",
+   "iou": 0.81,
+   "verification_plan": {
+    "silhouette_iou_check": "placement and size at frame 0 through video_cam (run inside scene_qc)",
+    "settle_stability_check": "stands at rest on the cloth at frame 0 (scene_qc)",
+    "support_check": "rests on the table, not floating (scene_qc)",
+    "vessel_containment_test": "open-topped rigid vessel: lands upright, holds a ball inside, and a second cup of the same taper nests into its mouth",
+    "color_match_check": "body colour matches the outer-wall palette measured from the video (teal party cup)"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.81,
+     "source": "scene_qc"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "source": "scene_qc"
+    },
+    "vessel_containment_test": {
+     "ok": true,
+     "verdict": "VESSEL OK \u2014 landed upright (0.0 deg), a 18 mm ball came to rest 0.0 mm off axis at z 19.6 mm, under the 101 mm rim, and the inner vessel's base sits 85.4 mm below the rim",
+     "measured": {
+      "drop": {
+       "tilt_deg": 0.0,
+       "base_height_mm": -0.02,
+       "ok": true
+      },
+      "fill": {
+       "ball_radius_mm": 18.1,
+       "ball_off_axis_mm": 0.01,
+       "ball_z_mm": 19.56,
+       "rim_z_mm": 101.46,
+       "floor_z_mm": 1.96,
+       "below_rim": true,
+       "above_floor": true,
+       "inside_radius": true,
+       "vessel_tilt_deg": 0.0,
+       "ok": true
+      },
+      "nest": {
+       "inner_base_below_rim_mm": 85.39,
+       "inner_tilt_deg": 0.01,
+       "outer_tilt_deg": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.287,
+      0.489,
+      0.433
+     ],
+     "closest_palette_rgb": [
+      0.287,
+      0.489,
+      0.433
+     ],
+     "dist": 0.0
+    }
+   },
+   "properties_covered": {
+    "A rigid tapered cup grasped around its side; it can be carried upright in one hand.": "construct_cup: rigid free body (frustum base radius 28.1 mm, rim radius 46.4 mm, height 101.5 mm, wall 1.2 mm, 14 g), upright on the cloth at rest (settle_stability_check 0.0 m, support_check), light enough for one hand; vessel_containment_test drop trial lands upright (open-top vessel)",
+    "Being tapered, a second cup can be taken into the same hand beside it: the first cup stays pinched between thumb and index while the other fingers hold the second cup from inside its rim.": "construct_cup tapered open frustum (frustum base radius 28.1 mm, rim radius 46.4 mm, height 101.5 mm, wall 1.2 mm, 14 g): inner rim radius 45 mm leaves room for three finger links side by side (about 43 mm) inside the mouth and a 1.2 mm wall for a thumb-index pinch; vessel_containment_test nest trial (a second cup of this form slides 85 mm into the mouth: the wall is a rigid taper, open at the top); the two-cup hold itself is a Stage 3 grasp"
+   }
+  },
+  {
+   "id": "cup_green",
+   "type": "rigid",
+   "skill": "construct_cup",
+   "skill_origin": "library",
+   "params": {
+    "name": "cup",
+    "base_radius": 0.0281,
+    "rim_radius": 0.0464,
+    "height": 0.1015,
+    "wall": 0.0012,
+    "lip": 0.0015,
+    "bottom": 0.002,
+    "body_rgba": [
+     0.167,
+     0.463,
+     0.369,
+     1
+    ],
+    "inner_rgba": [
+     0.69,
+     0.83,
+     0.82,
+     1
+    ],
+    "mass": 0.014,
+    "include_floor": false
+   },
+   "asset_xml": "objects/cup_green/cup_green.xml",
+   "root_body": "cup_green_cup",
+   "bodies": [
+    "cup_green_cup"
+   ],
+   "pose": {
+    "x": -0.1253,
+    "y": 0.5348,
+    "z": 0.0,
+    "yaw_deg": 0.0
+   },
+   "mask": "masks/cup_green.png",
+   "iou": 0.916,
+   "verification_plan": {
+    "silhouette_iou_check": "placement and size at frame 0 through video_cam (run inside scene_qc)",
+    "settle_stability_check": "stands at rest on the cloth at frame 0 (scene_qc)",
+    "support_check": "rests on the table, not floating (scene_qc)",
+    "vessel_containment_test": "open-topped rigid vessel: lands upright, holds a ball inside, and a second cup of the same taper nests into its mouth",
+    "color_match_check": "body colour matches the outer-wall palette measured from the video (green party cup)"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.916,
+     "source": "scene_qc"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "source": "scene_qc"
+    },
+    "vessel_containment_test": {
+     "ok": true,
+     "verdict": "VESSEL OK \u2014 landed upright (0.0 deg), a 18 mm ball came to rest 0.0 mm off axis at z 19.6 mm, under the 101 mm rim, and the inner vessel's base sits 85.4 mm below the rim",
+     "measured": {
+      "drop": {
+       "tilt_deg": 0.0,
+       "base_height_mm": -0.02,
+       "ok": true
+      },
+      "fill": {
+       "ball_radius_mm": 18.1,
+       "ball_off_axis_mm": 0.01,
+       "ball_z_mm": 19.56,
+       "rim_z_mm": 101.46,
+       "floor_z_mm": 1.96,
+       "below_rim": true,
+       "above_floor": true,
+       "inside_radius": true,
+       "vessel_tilt_deg": 0.0,
+       "ok": true
+      },
+      "nest": {
+       "inner_base_below_rim_mm": 85.39,
+       "inner_tilt_deg": 0.01,
+       "outer_tilt_deg": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.167,
+      0.463,
+      0.369
+     ],
+     "closest_palette_rgb": [
+      0.167,
+      0.463,
+      0.369
+     ],
+     "dist": 0.0
+    }
+   },
+   "properties_covered": {
+    "Same cup form; it is picked up by the right hand's free fingers and held beside the teal cup by the same hand's free fingers.": "construct_cup tapered open frustum (frustum base radius 28.1 mm, rim radius 46.4 mm, height 101.5 mm, wall 1.2 mm, 14 g): inner rim radius 45 mm leaves room for three finger links side by side (about 43 mm) inside the mouth and a 1.2 mm wall for a thumb-index pinch; vessel_containment_test nest trial (a second cup of this form slides 85 mm into the mouth: the wall is a rigid taper, open at the top); the two-cup hold itself is a Stage 3 grasp"
+   }
+  },
+  {
+   "id": "cup_orange_near",
+   "type": "rigid",
+   "skill": "construct_cup",
+   "skill_origin": "library",
+   "params": {
+    "name": "cup",
+    "base_radius": 0.0249,
+    "rim_radius": 0.0422,
+    "height": 0.1024,
+    "wall": 0.0012,
+    "lip": 0.0015,
+    "bottom": 0.002,
+    "body_rgba": [
+     0.834,
+     0.489,
+     0.193,
+     1
+    ],
+    "inner_rgba": [
+     0.94,
+     0.751,
+     0.702,
+     1
+    ],
+    "mass": 0.013,
+    "include_floor": false
+   },
+   "asset_xml": "objects/cup_orange_near/cup_orange_near.xml",
+   "root_body": "cup_orange_near_cup",
+   "bodies": [
+    "cup_orange_near_cup"
+   ],
+   "pose": {
+    "x": -0.1077,
+    "y": 0.2969,
+    "z": 0.0,
+    "yaw_deg": 0.0
+   },
+   "mask": "masks/cup_orange_near.png",
+   "iou": 0.815,
+   "verification_plan": {
+    "silhouette_iou_check": "placement and size at frame 0 through video_cam (run inside scene_qc)",
+    "settle_stability_check": "stands at rest on the cloth at frame 0 (scene_qc)",
+    "support_check": "rests on the table, not floating (scene_qc)",
+    "vessel_containment_test": "open-topped rigid vessel: lands upright, holds a ball inside, and a second cup of the same taper nests into its mouth",
+    "color_match_check": "body colour matches the outer-wall palette measured from the video (orange party cup)"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.815,
+     "source": "scene_qc"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "source": "scene_qc"
+    },
+    "vessel_containment_test": {
+     "ok": true,
+     "verdict": "VESSEL OK \u2014 landed upright (0.0 deg), a 16 mm ball came to rest 0.0 mm off axis at z 17.9 mm, under the 102 mm rim, and the inner vessel's base sits 86.4 mm below the rim",
+     "measured": {
+      "drop": {
+       "tilt_deg": 0.0,
+       "base_height_mm": -0.02,
+       "ok": true
+      },
+      "fill": {
+       "ball_radius_mm": 16.4,
+       "ball_off_axis_mm": 0.0,
+       "ball_z_mm": 17.9,
+       "rim_z_mm": 102.37,
+       "floor_z_mm": 1.97,
+       "below_rim": true,
+       "above_floor": true,
+       "inside_radius": true,
+       "vessel_tilt_deg": 0.0,
+       "ok": true
+      },
+      "nest": {
+       "inner_base_below_rim_mm": 86.38,
+       "inner_tilt_deg": 0.0,
+       "outer_tilt_deg": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.834,
+      0.489,
+      0.193
+     ],
+     "closest_palette_rgb": [
+      0.834,
+      0.489,
+      0.193
+     ],
+     "dist": 0.0
+    }
+   },
+   "properties_covered": {
+    "Same cup form; grasped by the left hand and kept pinched while the same hand takes the second orange cup.": "construct_cup tapered open frustum (frustum base radius 24.9 mm, rim radius 42.2 mm, height 102.4 mm, wall 1.2 mm, 13 g): inner rim radius 41 mm leaves room for three finger links side by side (about 43 mm) inside the mouth and a 1.2 mm wall for a thumb-index pinch; vessel_containment_test nest trial (a second cup of this form slides 85 mm into the mouth: the wall is a rigid taper, open at the top); the two-cup hold itself is a Stage 3 grasp"
+   }
+  },
+  {
+   "id": "cup_orange_far",
+   "type": "rigid",
+   "skill": "construct_cup",
+   "skill_origin": "library",
+   "params": {
+    "name": "cup",
+    "base_radius": 0.0249,
+    "rim_radius": 0.0422,
+    "height": 0.1024,
+    "wall": 0.0012,
+    "lip": 0.0015,
+    "bottom": 0.002,
+    "body_rgba": [
+     0.838,
+     0.495,
+     0.16,
+     1
+    ],
+    "inner_rgba": [
+     0.94,
+     0.751,
+     0.702,
+     1
+    ],
+    "mass": 0.013,
+    "include_floor": false
+   },
+   "asset_xml": "objects/cup_orange_far/cup_orange_far.xml",
+   "root_body": "cup_orange_far_cup",
+   "bodies": [
+    "cup_orange_far_cup"
+   ],
+   "pose": {
+    "x": 0.1152,
+    "y": 0.5261,
+    "z": 0.0,
+    "yaw_deg": 0.0
+   },
+   "mask": "masks/cup_orange_far.png",
+   "iou": 0.897,
+   "verification_plan": {
+    "silhouette_iou_check": "placement and size at frame 0 through video_cam (run inside scene_qc)",
+    "settle_stability_check": "stands at rest on the cloth at frame 0 (scene_qc)",
+    "support_check": "rests on the table, not floating (scene_qc)",
+    "vessel_containment_test": "open-topped rigid vessel: lands upright, holds a ball inside, and a second cup of the same taper nests into its mouth",
+    "color_match_check": "body colour matches the outer-wall palette measured from the video (orange party cup)"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.897,
+     "source": "scene_qc"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "source": "scene_qc"
+    },
+    "vessel_containment_test": {
+     "ok": true,
+     "verdict": "VESSEL OK \u2014 landed upright (0.0 deg), a 16 mm ball came to rest 0.0 mm off axis at z 17.9 mm, under the 102 mm rim, and the inner vessel's base sits 86.4 mm below the rim",
+     "measured": {
+      "drop": {
+       "tilt_deg": 0.0,
+       "base_height_mm": -0.02,
+       "ok": true
+      },
+      "fill": {
+       "ball_radius_mm": 16.4,
+       "ball_off_axis_mm": 0.0,
+       "ball_z_mm": 17.9,
+       "rim_z_mm": 102.37,
+       "floor_z_mm": 1.97,
+       "below_rim": true,
+       "above_floor": true,
+       "inside_radius": true,
+       "vessel_tilt_deg": 0.0,
+       "ok": true
+      },
+      "nest": {
+       "inner_base_below_rim_mm": 86.38,
+       "inner_tilt_deg": 0.0,
+       "outer_tilt_deg": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.838,
+      0.495,
+      0.16
+     ],
+     "closest_palette_rgb": [
+      0.838,
+      0.499,
+      0.184
+     ],
+     "dist": 0.024
+    }
+   },
+   "properties_covered": {
+    "Same cup form; picked up by the left hand's free fingers and held beside the near orange cup by the same hand's free fingers.": "construct_cup tapered open frustum (frustum base radius 24.9 mm, rim radius 42.2 mm, height 102.4 mm, wall 1.2 mm, 13 g): inner rim radius 41 mm leaves room for three finger links side by side (about 43 mm) inside the mouth and a 1.2 mm wall for a thumb-index pinch; vessel_containment_test nest trial (a second cup of this form slides 85 mm into the mouth: the wall is a rigid taper, open at the top); the two-cup hold itself is a Stage 3 grasp"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "silhouette_iou": {
+    "cup_teal_cup": 0.81,
+    "cup_green_cup": 0.916,
+    "cup_orange_near_cup": 0.815,
+    "cup_orange_far_cup": 0.897
+   },
+   "warnings": [
+    "OUT OF REACH: cup_teal_cup at y=0.30 m (left arm, 26 mm short), cup_orange_near_cup at y=0.30 m (left arm, 32 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+   ]
+  }
+ },
+ "notes": [
+  "Camera: the setup's calibrated ego camera (register_table_camera source=setup, fovy 38, 640x480); the 10 cm grid lies on the cloth and converges with its edges (camera_check.png).",
+  "Masks: SAM 3 instances of 'teal plastic cup' / 'green plastic cup' (both prompts return the same two green-blue cups: near-right = teal, far-left = green, as Stage 1 places them) and 'orange plastic cup' (near-left / far-right). Frame 0 has no hands; masks/hands.png is empty.",
+  "Frame 0 carries a green colour cast (the first second of the clip); colours were measured on frames 40-60 (frames_col) over the lower half of each mask (masks_body), the outer wall, since the pale interior seen through the mouth dominates the full mask.",
+  "Sizes: the old silhouette-fitted frustums of this clip (orange rb 24.9 / rim 42.2 / h 102.4 mm; teal and green rb 28.1 / rim 46.4 / h 101.5 mm) agree with the contact-line widths (52-60 mm) of measure_mask_footprint; fit_object_placement with a free scale returned 0.58-1.0 for cups of one form, contradicting those widths, so the sizes were kept and the placement fitted in x, y only (cups are symmetric about their axis).",
+  "Mass 13-14 g each: thin-walled party cups.",
+  "REACH: object_reach_check reports the two near cups (y = 0.30 m) 26-32 mm short of the arms' palm-down band (0.4-0.6 m in front of the stations); the far cups are inside it. The video really has them that close (the demonstrator's hands rest just in front of them), so Stage 3 has to move the stations (place_arm_stations) or grasp them with a reachable orientation."
+ ],
+ "source": "examples/asset_reuse"
+}

@@ -1,0 +1,41 @@
+{
+ "schema": "dexagent.example_certificate.v1",
+ "task": "computer_installation",
+ "source_video_sha256": "1632f256ae56d54e4b6eb8f1d349c6e3f44df5590106fadc74a03028452ea89b",
+ "frame0": {
+  "path": "frame0.jpg",
+  "source": "the first frame of the recording",
+  "signature": "frame0_signature.npz"
+ },
+ "masks": [
+  {
+   "path": "masks/pc_case.png",
+   "role": "object",
+   "object": "pc_case",
+   "pixels_sha256": "b190b198370e1ccfa147b3d066e88ec5a1e412acf2aba1b3c1d0a5fa43bd8d28"
+  },
+  {
+   "path": "masks/disk_1.png",
+   "role": "object",
+   "object": "disk_1",
+   "pixels_sha256": "f010026862146975e57fa85080c552fea60e9bc8aaa30d977d0fe33de48c3380"
+  },
+  {
+   "path": "masks/disk_2.png",
+   "role": "object",
+   "object": "disk_2",
+   "pixels_sha256": "1d8d4e8cd84637ffeb9b8be5cc9764963a706b1a5aef2b7314da5436268c14ae"
+  },
+  {
+   "path": "masks/disk_3.png",
+   "role": "object",
+   "object": "disk_3",
+   "pixels_sha256": "0e680f71fc10c3fb5a1b9421589fc171ec1bf4cc37432954a26e6f46d2b991b7"
+  },
+  {
+   "path": "masks/hands.png",
+   "role": "hands",
+   "pixels_sha256": "4893b67902beb55ac806ff0fae2fbc7914e8626ac0b7adfba1ae59729c746cda"
+  }
+ ]
+}

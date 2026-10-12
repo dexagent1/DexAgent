@@ -1,0 +1,228 @@
+{
+ "name": "place_cup_in_bowl",
+ "scene": "scene.xml",
+ "trajectory": "trajectory.npz",
+ "human_video": "human_video.mp4",
+ "output_dir": "outputs",
+ "num_samples": 2,
+ "seed": 0,
+ "robot": {
+  "body_prefix": "robot_",
+  "end_effectors": {
+   "left": "robot_left_left_base_yaw",
+   "right": "robot_right_right_base_yaw"
+  },
+  "init_jitter_rad": 0.05
+ },
+ "randomize": {
+  "objects": {
+   "cup_cup": {
+    "dx": [
+     -0.03,
+     0.03
+    ],
+    "dy": [
+     -0.03,
+     0.03
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ],
+    "carrier": "left",
+    "release": "left: let go of cup_cup #3",
+    "inside": "bowl_bowl"
+   },
+   "bowl_bowl": {
+    "dx": [
+     -0.03,
+     0.03
+    ],
+    "dy": [
+     -0.03,
+     0.03
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ]
+   }
+  }
+ },
+ "segments": {
+  "left": [
+   {
+    "phases": [
+     "left: reach for cup_cup #1"
+    ],
+    "blend": [
+     "world",
+     "cup_cup"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on cup_cup #1",
+     "left: close on cup_cup #1",
+     "left: grip cup_cup #1",
+     "left: lift cup_cup #1"
+    ],
+    "anchor": "cup_cup"
+   },
+   {
+    "phases": [
+     "left: carry cup_cup #2"
+    ],
+    "blend": [
+     "cup_cup",
+     "bowl_bowl"
+    ]
+   },
+   {
+    "phases": [
+     "left: carry cup_cup (up) #3",
+     "left: carry cup_cup #3",
+     "left: carry cup_cup (down) #3",
+     "left: set down cup_cup #3",
+     "left: let go of cup_cup #3",
+     "left: retreat #3",
+     "left: settle after release of cup_cup #3"
+    ],
+    "anchor": "bowl_bowl"
+   }
+  ],
+  "right": [
+   {
+    "phases": [
+     "left: reach for cup_cup #1",
+     "left: descend on cup_cup #1",
+     "left: close on cup_cup #1",
+     "left: grip cup_cup #1",
+     "left: lift cup_cup #1",
+     "left: carry cup_cup #2",
+     "left: carry cup_cup (up) #3",
+     "left: carry cup_cup #3",
+     "left: carry cup_cup (down) #3",
+     "left: set down cup_cup #3",
+     "left: let go of cup_cup #3",
+     "left: retreat #3",
+     "left: settle after release of cup_cup #3"
+    ],
+    "anchor": "world"
+   }
+  ]
+ },
+ "cameras": {
+  "width": 1280,
+  "height": 1024,
+  "ego": {
+   "pos": [
+    -0.0582,
+    -0.7184,
+    0.9549
+   ],
+   "quat_wxyz": [
+    0.8641567668544244,
+    0.5025448644156754,
+    -0.013125996458665702,
+    -0.022570993910448235
+   ],
+   "fovy": 28.37,
+   "fx": 2025.6341040658433,
+   "fy": 2025.6341040658433,
+   "cx": 640.0,
+   "cy": 512.0,
+   "image_size": [
+    1280,
+    1024
+   ]
+  },
+  "views": {
+   "wrist_right": {
+    "parent_body": "robot_right_right_base_yaw",
+    "pos": [
+     0.050377,
+     0.001601,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.15285697798110676,
+     0.7024578988116494,
+     -0.6789659021956478,
+     -0.14897297854059297
+    ],
+    "fovy": 100.0
+   },
+   "wrist_left": {
+    "parent_body": "robot_left_left_base_yaw",
+    "pos": [
+     0.050377,
+     -0.0016,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.14897395634728527,
+     0.6789658010477727,
+     -0.7024577941640913,
+     -0.15285695520947942
+    ],
+    "fovy": 100.0
+   }
+  }
+ },
+ "table": {
+  "top_z": 0.0,
+  "center": [
+   0.0,
+   1.125
+  ],
+  "half_size": [
+   1.8,
+   1.075
+  ]
+ },
+ "inpaint": {
+  "erase_prompts": [
+   "hand",
+   "arm",
+   "small blue cup",
+   "green bowl"
+  ],
+  "background_prompt": "An empty white tablecloth on a table, nothing on it, static background."
+ },
+ "render": {
+  "stride": 2,
+  "samples": 32,
+  "chunks": 4,
+  "exclude_geoms": [
+   "^table",
+   "groundplane",
+   "floor",
+   "^g_table"
+  ],
+  "materials": [
+   {
+    "match": "^robot_\\w+_arm_",
+    "preset": "yam_black"
+   },
+   {
+    "match": "^robot_",
+    "preset": "sharpa"
+   }
+  ]
+ },
+ "manifest": "trajectory_manifest.json",
+ "goal": {
+  "semantics": "scene_semantics.json",
+  "objects": "goal_objects.json"
+ },
+ "checks": {
+  "physics_replay": true
+ },
+ "physics": {
+  "rules": [],
+  "mujoco_version": "3.10.0",
+  "scene_recon_json": "mechanism_scene_recon.json",
+  "scene_recon_sha256": "53d8f6f25f0332fc023f6700321fd5bab013b6d85385268b9fa66705f5d00ccb"
+ }
+}

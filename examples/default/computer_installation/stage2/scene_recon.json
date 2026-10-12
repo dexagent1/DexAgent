@@ -1,0 +1,535 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "pc_case",
+   "type": "rigid",
+   "skill": "construct_pc_case",
+   "skill_origin": "library",
+   "params": {
+    "depth": 0.5,
+    "width": 0.235,
+    "height": 0.5,
+    "shell_rgba": [
+     0.185,
+     0.185,
+     0.188,
+     1.0
+    ],
+    "flip_x": true,
+    "fixed_base": true,
+    "cage": {
+     "bay_depth": 0.141,
+     "n_slots": 8,
+     "slot_h": 0.03,
+     "slot_w": 0.108
+    },
+    "cage_inset_front": 0.06,
+    "cage_lift": 0.0
+   },
+   "asset_xml": "objects/pc_case/pc_case.xml",
+   "root_body": "pc_case_pc_case",
+   "bodies": [
+    "pc_case_pc_case"
+   ],
+   "pose": {
+    "x": -0.0247,
+    "y": 0.673,
+    "z": 0.0,
+    "yaw_deg": -178.8
+   },
+   "mask": "masks/pc_case.png",
+   "iou": 0.799,
+   "verification_plan": {
+    "silhouette_iou_check": "placement: case outline and the cage column match the video through video_cam (run inside scene_qc)",
+    "support_check": "the heavy case stands on the table, fixed (never moves)",
+    "box_enclosure_check": "container (chassis): bottom, top and three walls around a hollow interior, open side (side panel removed) toward the operator",
+    "slot_insertion_test": "created: each cage slot a drive fills receives it sliding straight in (away from the operator), seats it, holds it after release and pens it laterally; run on the three slots the drives fill",
+    "color_match_check": "black case colour"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.799,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "support_check": {
+     "ok": true,
+     "supported_frac": 1.0,
+     "gap_m": 0.0,
+     "base_z": 0.0,
+     "footprint_x": [
+      -0.277,
+      0.228
+     ],
+     "footprint_y": [
+      0.55,
+      0.796
+     ],
+     "verdict": "supported"
+    },
+    "box_enclosure_check": {
+     "ok": true,
+     "issues": [],
+     "walls_found": [
+      "x_pos",
+      "x_neg",
+      "y_neg"
+     ],
+     "cavity_fraction": 0.89,
+     "top_state": "closed",
+     "interior_size_m": [
+      0.5,
+      0.235,
+      0.495
+     ]
+    },
+    "slot_insertion_test": {
+     "ok": true,
+     "slots": [
+      {
+       "slot": "pc_case_cage_slot7",
+       "depth_error_m": -0.002,
+       "drift_m": 0.0,
+       "rest_gap_m": -0.0,
+       "lateral_m": 0.004,
+       "seated": true,
+       "held": true,
+       "penned": true,
+       "unstable": false,
+       "ok": true
+      },
+      {
+       "slot": "pc_case_cage_slot6",
+       "depth_error_m": -0.002,
+       "drift_m": 0.0,
+       "rest_gap_m": -0.0,
+       "lateral_m": 0.004,
+       "seated": true,
+       "held": true,
+       "penned": true,
+       "unstable": false,
+       "ok": true
+      },
+      {
+       "slot": "pc_case_cage_slot3",
+       "depth_error_m": -0.002,
+       "drift_m": 0.0,
+       "rest_gap_m": -0.0,
+       "lateral_m": 0.004,
+       "seated": true,
+       "held": true,
+       "penned": true,
+       "unstable": false,
+       "ok": true
+      }
+     ]
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.13,
+      0.12,
+      0.1
+     ],
+     "closest_palette_rgb": [
+      0.16,
+      0.164,
+      0.165
+     ],
+     "dist": 0.084
+    }
+   },
+   "properties_covered": {
+    "A heavy rigid case that does not move; its open side faces the camera.": "fixed_base=true (no free joint, never moves); flip_x=true and case yaw ~180 deg put the open side (side panel removed) toward video_cam; support_check (stands on the table); box_enclosure_check (bottom, top, three walls, open side toward the operator); silhouette_iou_check",
+    "On its right side is a drive cage with several stacked horizontal slots; each slot accepts one drive slid in along the slot direction and holds it in place.": "cage on the camera's right (flip_x=true, PSU left): n_slots=8 stacked horizontal slots, slot_w 0.108, slot_h 0.030, bay_depth 0.141 sized from the drives; the slots open toward the operator (insert axis world +y); slot_insertion_test: each tested slot takes a drive slid straight in, seats it (-2 mm from the slot centre under a 6 N push), holds it after release (0 mm drift) and pens it under a 14.7 N side shove (4 mm)",
+    "Three of the slots are free at the start and filled at the end, one drive each.": "all eight cage slots start empty (three are needed); slot_insertion_test passed on the three slots the drives fill: pc_case_cage_slot7 (top), slot6 (second), slot3 (fifth from the top), one drive each"
+   }
+  },
+  {
+   "id": "disk_1",
+   "type": "rigid",
+   "skill": "construct_hard_disk",
+   "skill_origin": "library",
+   "params": {
+    "disk_l": 0.133,
+    "disk_w": 0.092,
+    "disk_h": 0.024,
+    "tray_t": 0.004,
+    "handle_l": 0.012,
+    "top_rgba": [
+     0.84,
+     0.83,
+     0.82,
+     1.0
+    ],
+    "body_rgba": [
+     0.9,
+     0.89,
+     0.88,
+     1.0
+    ],
+    "tray_rgba": [
+     0.07,
+     0.07,
+     0.08,
+     1.0
+    ],
+    "mass": 0.6
+   },
+   "asset_xml": "objects/disk_1/disk_1.xml",
+   "root_body": "disk_1_disk_1",
+   "bodies": [
+    "disk_1_disk_1"
+   ],
+   "pose": {
+    "x": 0.1,
+    "y": 0.3706,
+    "z": 0.0,
+    "yaw_deg": -173.02
+   },
+   "mask": "masks/disk_1.png",
+   "iou": 0.837,
+   "verification_plan": {
+    "silhouette_iou_check": "placement: x, y, yaw of the rightmost drive on the cloth through video_cam (handle tabs toward the operator)",
+    "settle_stability_check": "rigid flat block lies flat and stays at rest",
+    "support_check": "rests on the table, not floating",
+    "color_match_check": "silver drive colour",
+    "slot_insertion_test": "created: slides into its target slot, the top slot (pc_case_cage_slot7), seats, stays once released, constrained by the slot walls"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.837,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.9,
+      0.89,
+      0.88
+     ],
+     "closest_palette_rgb": [
+      0.903,
+      0.893,
+      0.889
+     ],
+     "dist": 0.01
+    },
+    "slot_insertion_test": {
+     "ok": true,
+     "issues": [],
+     "slots": [
+      {
+       "slot": "pc_case_cage_slot7",
+       "depth_error_m": -0.002,
+       "drift_m": 0.0,
+       "rest_gap_m": -0.0,
+       "lateral_m": 0.004,
+       "seated": true,
+       "held": true,
+       "penned": true,
+       "unstable": false,
+       "ok": true
+      }
+     ],
+     "insert": {
+      "body": "disk_1",
+      "length_m": 0.145,
+      "nose_local": [
+       0.0,
+       -1.0,
+       0.0
+      ],
+      "mass_kg": 0.6
+     },
+     "push_force_N": 6.0,
+     "lateral_force_N": 14.716
+    }
+   },
+   "properties_covered": {
+    "A rigid rectangular block grasped around its edges with one hand and carried level.": "one free rigid body (drive fixed in its tray), outer 0.145 x 0.100 x 0.024 m (palm-sized, measured from the footprint), 0.6 kg; lies flat and at rest (settle_stability_check, support_check); its 0.100 m width and 0.024 m edges are what the hand grasps; the grasp and the level carry themselves are Stage 3's",
+    "It slides into a cage slot along the slot direction and seats when pushed fully in.": "slot_insertion_test into the top slot (pc_case_cage_slot7): slid along the slot axis it seats (-2 mm from the slot centre under a 6 N push), stays after release and is penned by the slot walls"
+   }
+  },
+  {
+   "id": "disk_2",
+   "type": "rigid",
+   "skill": "construct_hard_disk",
+   "skill_origin": "library",
+   "params": {
+    "disk_l": 0.133,
+    "disk_w": 0.092,
+    "disk_h": 0.024,
+    "tray_t": 0.004,
+    "handle_l": 0.012,
+    "top_rgba": [
+     0.84,
+     0.83,
+     0.82,
+     1.0
+    ],
+    "body_rgba": [
+     0.9,
+     0.89,
+     0.88,
+     1.0
+    ],
+    "tray_rgba": [
+     0.07,
+     0.07,
+     0.08,
+     1.0
+    ],
+    "mass": 0.6
+   },
+   "asset_xml": "objects/disk_2/disk_2.xml",
+   "root_body": "disk_2_disk_2",
+   "bodies": [
+    "disk_2_disk_2"
+   ],
+   "pose": {
+    "x": -0.0619,
+    "y": 0.3661,
+    "z": 0.0,
+    "yaw_deg": -174.58
+   },
+   "mask": "masks/disk_2.png",
+   "iou": 0.826,
+   "verification_plan": {
+    "silhouette_iou_check": "placement: x, y, yaw of the middle drive on the cloth through video_cam (handle tabs toward the operator)",
+    "settle_stability_check": "rigid flat block lies flat and stays at rest",
+    "support_check": "rests on the table, not floating",
+    "color_match_check": "silver drive colour",
+    "slot_insertion_test": "created: slides into its target slot, the second slot from the top (pc_case_cage_slot6), seats, stays once released, constrained by the slot walls"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.826,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.9,
+      0.89,
+      0.88
+     ],
+     "closest_palette_rgb": [
+      0.991,
+      0.992,
+      0.99
+     ],
+     "dist": 0.175
+    },
+    "slot_insertion_test": {
+     "ok": true,
+     "issues": [],
+     "slots": [
+      {
+       "slot": "pc_case_cage_slot6",
+       "depth_error_m": -0.002,
+       "drift_m": 0.0,
+       "rest_gap_m": -0.0,
+       "lateral_m": 0.004,
+       "seated": true,
+       "held": true,
+       "penned": true,
+       "unstable": false,
+       "ok": true
+      }
+     ],
+     "insert": {
+      "body": "disk_2",
+      "length_m": 0.145,
+      "nose_local": [
+       0.0,
+       -1.0,
+       0.0
+      ],
+      "mass_kg": 0.6
+     },
+     "push_force_N": 6.0,
+     "lateral_force_N": 14.716
+    }
+   },
+   "properties_covered": {
+    "Same as disk_1.": "built with the same construct_hard_disk parameters as disk_1 (0.145 x 0.100 x 0.024 m, 0.6 kg); slot_insertion_test into the second slot from the top (pc_case_cage_slot6) passed; settle_stability_check, support_check"
+   }
+  },
+  {
+   "id": "disk_3",
+   "type": "rigid",
+   "skill": "construct_hard_disk",
+   "skill_origin": "library",
+   "params": {
+    "disk_l": 0.133,
+    "disk_w": 0.092,
+    "disk_h": 0.024,
+    "tray_t": 0.004,
+    "handle_l": 0.012,
+    "top_rgba": [
+     0.84,
+     0.83,
+     0.82,
+     1.0
+    ],
+    "body_rgba": [
+     0.9,
+     0.89,
+     0.88,
+     1.0
+    ],
+    "tray_rgba": [
+     0.07,
+     0.07,
+     0.08,
+     1.0
+    ],
+    "mass": 0.6
+   },
+   "asset_xml": "objects/disk_3/disk_3.xml",
+   "root_body": "disk_3_disk_3",
+   "bodies": [
+    "disk_3_disk_3"
+   ],
+   "pose": {
+    "x": -0.2038,
+    "y": 0.3608,
+    "z": 0.0,
+    "yaw_deg": -177.19
+   },
+   "mask": "masks/disk_3.png",
+   "iou": 0.849,
+   "verification_plan": {
+    "silhouette_iou_check": "placement: x, y, yaw of the leftmost drive on the cloth through video_cam (handle tabs toward the operator)",
+    "settle_stability_check": "rigid flat block lies flat and stays at rest",
+    "support_check": "rests on the table, not floating",
+    "color_match_check": "silver drive colour",
+    "slot_insertion_test": "created: slides into its target slot, the fifth slot from the top (pc_case_cage_slot3), seats, stays once released, constrained by the slot walls"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.849,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.9,
+      0.89,
+      0.88
+     ],
+     "closest_palette_rgb": [
+      0.953,
+      0.948,
+      0.935
+     ],
+     "dist": 0.096
+    },
+    "slot_insertion_test": {
+     "ok": true,
+     "issues": [],
+     "slots": [
+      {
+       "slot": "pc_case_cage_slot3",
+       "depth_error_m": -0.002,
+       "drift_m": 0.0,
+       "rest_gap_m": -0.0,
+       "lateral_m": 0.004,
+       "seated": true,
+       "held": true,
+       "penned": true,
+       "unstable": false,
+       "ok": true
+      }
+     ],
+     "insert": {
+      "body": "disk_3",
+      "length_m": 0.145,
+      "nose_local": [
+       0.0,
+       -1.0,
+       0.0
+      ],
+      "mass_kg": 0.6
+     },
+     "push_force_N": 6.0,
+     "lateral_force_N": 14.716
+    }
+   },
+   "properties_covered": {
+    "Same as disk_1.": "built with the same construct_hard_disk parameters as disk_1 (0.145 x 0.100 x 0.024 m, 0.6 kg); slot_insertion_test into the fifth slot from the top (pc_case_cage_slot3) passed; settle_stability_check, support_check"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "silhouette_iou": {
+    "pc_case_pc_case": 0.799,
+    "disk_1_disk_1": 0.837,
+    "disk_2_disk_2": 0.826,
+    "disk_3_disk_3": 0.849
+   },
+   "warnings": [
+    "OUT OF REACH: disk_2_disk_2 at y=0.37 m (left arm, 31 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+   ]
+  },
+  "penetration_check": {
+   "ok_for_objects": true,
+   "object_violations": [],
+   "note": "20 violation(s), all between the two robot hands at the setup home pose; none involves an object"
+  }
+ },
+ "notes": [
+  "Camera: calibrated setup ego camera (fovy 38, pitch 33.7, 0.558 m); the 10 cm grid lies on the cloth.",
+  "Ids follow Stage 1: disk_1 is the rightmost drive (x = 0.10), disk_2 the middle one, disk_3 the leftmost; they fill the top, second and fifth-from-top cage slots in that order (the slots the video shows filled).",
+  "Drive size: a standard 3.5-inch drive in a tray would be ~0.159 x 0.114 m, but the footprint width (0.091-0.094 m) and free-scale silhouette fits (0.80/0.91 on the two unoccluded drives) say the drives image ~12% smaller through this camera; the drives were built at 0.145 x 0.100 x 0.024 m outer to match the video, and the cage slots were sized from them (slot_w 0.108, slot_h 0.030, bay_depth 0.141).",
+  "Drive colour: measure_object_color on the drive masks reads 0.90-1.00 grey (silver casing and white label, partly overexposed); the casing is painted 0.90 grey.",
+  "Case shell and interior dressing (PSU, cooler, board) are approximate by design; the cage is exact geometry. The real case's stack shows a few occupied lower slots; the reconstruction leaves all eight slots empty.",
+  "Free-yaw fits flipped the drives by 180 deg (the silhouette is nearly symmetric); the final fit bounded yaw to +-15 deg around the tabs-toward-operator orientation seen in frame 0.",
+  "Reach: scene_qc warns that disk_2 at y = 0.37 m is 31 mm short of the LEFT arm's band; the right arm, which does every subgoal, reaches all three drives.",
+  "The grey slab at the image's far left (a second panel/case behind) was cut out of the case mask; it is not a Stage 1 object."
+ ],
+ "source": "examples/asset_reuse"
+}

@@ -1,0 +1,729 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco+isaac",
+ "objects": [
+  {
+   "id": "drawer_unit",
+   "type": "articulated",
+   "skill": "construct_articulated",
+   "skill_origin": "library",
+   "params": {
+    "width": 0.113,
+    "depth": 0.254,
+    "height": 0.103,
+    "rows": [
+     {
+      "cols": 1
+     }
+    ],
+    "moving": {
+     "row": 0,
+     "col": 0
+    },
+    "travel_frac": 0.8,
+    "body_rgba": [
+     0.565,
+     0.555,
+     0.577,
+     1
+    ],
+    "front_rgba": [
+     0.55,
+     0.54,
+     0.564,
+     1
+    ],
+    "handle_rgba": [
+     0.05,
+     0.05,
+     0.05,
+     1
+    ],
+    "backend": "builtin",
+    "port_urdf_asset": {
+     "fixed_base": false,
+     "include_floor": false
+    }
+   },
+   "asset_xml": "objects/drawer_unit/drawer_unit.xml",
+   "urdf": "assets/drawer_unit/urdf/model.urdf",
+   "root_body": "drawer_unit_drawer_unit_carcass",
+   "bodies": [
+    "drawer_unit_drawer_unit_carcass",
+    "drawer_unit_drawer_unit_drawer_r0c0"
+   ],
+   "joints": {
+    "drawer_unit_drawer_unit_carcass_to_drawer_r0c0": {
+     "type": "slide",
+     "range_m": [
+      0.0,
+      0.2032
+     ],
+     "initial": 0.0
+    }
+   },
+   "pose": {
+    "x": -0.08895,
+    "y": 0.89963,
+    "z": 0.0,
+    "yaw_deg": -172.61
+   },
+   "mask": "masks/drawer_unit.png",
+   "iou": 0.928,
+   "verification_plan": {
+    "urdf_articulation_check": "the URDF has a real prismatic tray joint with limits",
+    "articulation_check": "the drawer unit is articulated (slide joint with usable travel), not a rigid free body",
+    "articulated_joint_travel_test": "the tray slides out and back through its full range under a capped 10 N pull while the housing stays put",
+    "joint_range_check": "the tray travel equals the built 0.203 m (0.8 x depth, close to the observed ~one-housing-length pull) and frame 0 is closed (q=0)",
+    "box_enclosure_check": "the tray is an open-topped cavity (bottom + four walls, top open) and the housing is closed on top around it",
+    "drawer_receive_and_close_test": "the opened tray receives the toy dropped from above and closes with the toy enclosed (the task's success condition)",
+    "color_match_check": "grey body colour matches the measured video palette",
+    "silhouette_iou_check": "placement (x, y, yaw) and size match the frame-0 mask through video_cam",
+    "settle_stability_check": "the unit rests without drifting or tipping",
+    "support_check": "the unit stands on the table"
+   },
+   "verifiers": {
+    "urdf_articulation_check": {
+     "ok": true,
+     "moving_joints": 1,
+     "joints": [
+      {
+       "name": "carcass_to_drawer_r0c0",
+       "type": "prismatic",
+       "limits": {
+        "lower": 0.0,
+        "upper": 0.2032
+       }
+      }
+     ]
+    },
+    "articulation_check": {
+     "ok": true,
+     "verdict": "articulated",
+     "total_travel_slide_m": 0.2032
+    },
+    "articulated_joint_travel_test": {
+     "ok": true,
+     "verdict": "JOINTS OK \u2014 1 joint(s) each travelled >= 80% of their range both ways under 10 N; root slip <= 0.0 mm",
+     "measured": {
+      "drawer_unit_carcass_to_drawer_r0c0": {
+       "type": "slide",
+       "range": [
+        0.0,
+        0.2032
+       ],
+       "cap": 10.0,
+       "applied_at": "body com",
+       "q_start": 0.0,
+       "forward": {
+        "fraction": 1.054,
+        "t80_s": 0.272,
+        "q_end": 0.2055,
+        "q_best": 0.2142
+       },
+       "back": {
+        "fraction": 1.065,
+        "t80_s": 0.272,
+        "q_end": -0.0023,
+        "q_best": -0.0132
+       },
+       "root_slip_m": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "joint_range_check": {
+     "ok": true,
+     "range": [
+      0.0,
+      0.2032
+     ],
+     "type": "slide",
+     "limited": true,
+     "current": 0.0
+    },
+    "box_enclosure_check": {
+     "ok": true,
+     "tray": {
+      "object": "drawer_unit_drawer_unit_drawer_r0c0",
+      "expect_top": "open",
+      "top_state": "open",
+      "interior_size_m": [
+       0.081,
+       0.185,
+       0.069
+      ],
+      "cavity_fraction": 1.0,
+      "issues": []
+     },
+     "housing": {
+      "object": "drawer_unit_drawer_unit_carcass",
+      "expect_top": "closed",
+      "top_state": "closed",
+      "interior_size_m": [
+       0.101,
+       0.254,
+       0.097
+      ],
+      "issues": []
+     }
+    },
+    "drawer_receive_and_close_test": {
+     "ok": true,
+     "issues": [],
+     "joint": "drawer_unit_carcass_to_drawer_r0c0",
+     "held_free_root": true,
+     "open_q": 0.1829,
+     "exposed_m": 0.22,
+     "item_extent_m": [
+      0.064,
+      0.0425,
+      0.0356
+     ],
+     "item_lateral_m": 0.064,
+     "bin_local_bounds": {
+      "lo": [
+       -0.0485,
+       -0.0986,
+       -0.0405
+      ],
+      "hi": [
+       0.0485,
+       0.1417,
+       0.0405
+      ]
+     },
+     "rest": {
+      "inside": true,
+      "speed_m_s": 0.0,
+      "item_in_bin_frame_m": [
+       -0.0012,
+       0.0317,
+       -0.0168
+      ]
+     },
+     "close": {
+      "q_end": -0.0,
+      "range": [
+       0.0,
+       0.2032
+      ],
+      "closed": true,
+      "inside_bin": true,
+      "enclosed": true,
+      "item_in_bin_frame_m": [
+       -0.0063,
+       -0.0465,
+       -0.0168
+      ]
+     }
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.565,
+      0.555,
+      0.577
+     ],
+     "closest_palette_rgb": [
+      0.575,
+      0.565,
+      0.587
+     ],
+     "dist": 0.017
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.928
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "pos_m": 0.0,
+      "rot_deg": 0.0,
+      "verdict": "at rest"
+     }
+    },
+    "support_check": {
+     "ok": true
+    }
+   },
+   "properties_covered": {
+    "The prompt's 'grey box' is a single-drawer unit: the front panel with the handle is the face of a tray that slides out of the housing toward the operator.": "rows=[{cols:1}] (one drawer); yaw -172.6 deg puts the asset's +y (pull-out) toward the operator; box_enclosure_check (tray open-topped inside a closed housing)",
+    "One prismatic joint connects the tray to the housing; the tray translates along the housing's long axis, outward to open and inward to close, with no rotation or sideways play.": "single slide joint drawer_unit_drawer_unit_carcass_to_drawer_r0c0 along the housing's long axis; urdf_articulation_check, articulation_check, articulated_joint_travel_test",
+    "The observed travel is roughly one housing length, enough to expose the whole tray interior from above.": "travel_frac=0.8 -> 0.203 m (a tray cannot physically leave more than its own length); joint_range_check; drawer_receive_and_close_test reports 0.22 m of bin exposed when open",
+    "The handle is grasped from above with the fingers hooked behind it to pull, and pushed with the palm or fingers to close.": "black pull bar centred on the front standing ~32 mm proud (finger clearance), handle site drawer_unit_drawer_r0c0_handle; push-close proven by drawer_receive_and_close_test",
+    "The tray interior is an open cavity that can receive and hold the toy; the housing stays put on the table while the tray moves.": "box_enclosure_check (tray top open, interior 8.1x18.5x6.9 cm), drawer_receive_and_close_test (toy rests inside and is enclosed on closing), articulated_joint_travel_test root slip 0.0 mm, settle_stability_check"
+   }
+  },
+  {
+   "id": "toy",
+   "type": "deformable",
+   "skill": "construct_plush_toy_rolling",
+   "skill_origin": "created",
+   "params": {
+    "length": 0.064,
+    "width": 0.0425,
+    "height": 0.038,
+    "head_frac": 0.45,
+    "n_ears": 2,
+    "body_rgba": [
+     0.775,
+     0.698,
+     0.54,
+     1
+    ],
+    "accent_rgba": [
+     0.813,
+     0.755,
+     0.636,
+     1
+    ],
+    "mass": 0.03,
+    "friction": 1.0,
+    "torsional_friction": 0.01,
+    "rolling_friction": 0.005,
+    "soft_timeconst": 0.03,
+    "soft_dampratio": 1.0,
+    "soft_dmin": 0.5,
+    "soft_dmax": 0.95,
+    "soft_width": 0.012,
+    "free": true,
+    "include_floor": false
+   },
+   "asset_xml": "objects/toy/toy.xml",
+   "root_body": "toy_toy",
+   "bodies": [
+    "toy_toy"
+   ],
+   "pose": {
+    "x": 0.10571,
+    "y": 0.69409,
+    "z": 0.0,
+    "yaw_deg": -118.68
+   },
+   "mask": "masks/toy.png",
+   "iou": 0.823,
+   "verification_plan": {
+    "soft_squeeze_test": "the toy is compliant: it compresses by a grasp-sized amount under a hand-scale force and springs back",
+    "drawer_receive_and_close_test": "the toy fits through the tray opening, comes to rest inside after a drop and is enclosed when the drawer closes",
+    "color_match_check": "pale yellow colour matches the measured video palette",
+    "silhouette_iou_check": "placement and size (fitted scale 0.85 then rebuilt) match the frame-0 mask",
+    "settle_stability_check": "it lies still on the cloth",
+    "support_check": "it rests on the table, not floating",
+    "isaac_soft_body_settle": "the Isaac Sim soft-body copy stays where it was laid (mean drift)",
+    "drop_rest_test": "created: dropped onto a floor from five orientations (level and tilts up to 40 deg) the toy comes to rest within 1.5 s and stays (< 3 mm / 2 deg over 1 s more: end_state_rest_audit's numbers), i.e. 'drop and come to rest inside'"
+   },
+   "verifiers": {
+    "soft_squeeze_test": {
+     "ok": true,
+     "issues": [],
+     "body": "toy",
+     "rest_z_m": -0.00073,
+     "compression_mm": {
+      "0.5": 0.887,
+      "1": 1.453,
+      "2": 2.13,
+      "4": 2.845
+     },
+     "recovered_mm": 0.0,
+     "ref_force_N": 2.0,
+     "verdict": "SOFT OK: sinks 2.13 mm at 2.0 N and springs back"
+    },
+    "drawer_receive_and_close_test": {
+     "ok": true,
+     "rest_inside": true,
+     "rest_speed_m_s": 0.0,
+     "enclosed": true
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.775,
+      0.698,
+      0.54
+     ],
+     "closest_palette_rgb": [
+      0.775,
+      0.698,
+      0.54
+     ],
+     "dist": 0.0
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.823
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "pos_m": 0.0001,
+      "rot_deg": 0.1,
+      "verdict": "at rest"
+     }
+    },
+    "support_check": {
+     "ok": true
+    },
+    "isaac_soft_body_settle": {
+     "ok": true,
+     "mean_drift_m": 3.5538111535314504e-05,
+     "rot_change_deg": 17.332823368079627
+    },
+    "drop_rest_test": {
+     "ok": true,
+     "issues": [],
+     "drops": [
+      {
+       "orientation_deg": [
+        0.0,
+        0.0,
+        0.0
+       ],
+       "final_speed_m_s": 0.0,
+       "final_turn_deg_s": 0.0,
+       "check_peak_mm": 0.0,
+       "check_peak_deg": 0.0,
+       "rest_z_m": -0.0007,
+       "ok": true
+      },
+      {
+       "orientation_deg": [
+        20.0,
+        0.0,
+        0.0
+       ],
+       "final_speed_m_s": 0.0,
+       "final_turn_deg_s": 0.0,
+       "check_peak_mm": 0.0,
+       "check_peak_deg": 0.0,
+       "rest_z_m": -0.0007,
+       "ok": true
+      },
+      {
+       "orientation_deg": [
+        0.0,
+        20.0,
+        0.0
+       ],
+       "final_speed_m_s": 0.0,
+       "final_turn_deg_s": 0.0,
+       "check_peak_mm": 0.0,
+       "check_peak_deg": 0.0,
+       "rest_z_m": -0.0007,
+       "ok": true
+      },
+      {
+       "orientation_deg": [
+        35.0,
+        15.0,
+        30.0
+       ],
+       "final_speed_m_s": 0.0,
+       "final_turn_deg_s": 0.07,
+       "check_peak_mm": 0.0,
+       "check_peak_deg": 0.01,
+       "rest_z_m": -0.0007,
+       "ok": true
+      },
+      {
+       "orientation_deg": [
+        -25.0,
+        10.0,
+        -60.0
+       ],
+       "final_speed_m_s": 0.0,
+       "final_turn_deg_s": 0.02,
+       "check_peak_mm": 0.0,
+       "check_peak_deg": 0.0,
+       "rest_z_m": -0.0007,
+       "ok": true
+      }
+     ],
+     "thresholds": {
+      "rest_speed_m_s": 0.02,
+      "rest_deg_s": 15.0,
+      "settle_m": 0.003,
+      "settle_deg": 2.0,
+      "settle_s": 1.5,
+      "check_s": 1.0
+     }
+    }
+   },
+   "properties_covered": {
+    "Soft, light and compliant: it is picked up with a whole-hand grasp from above and squashes slightly in the hand.": "construct_plush_toy_rolling soft contact (30 g, ellipsoid torso/head/ears, solref 0.03 s / solimp 0.5-0.95 over 12 mm); soft_squeeze_test 2.13 mm at 2 N, recovers fully; Isaac compliant-contact body (1316 N/m)",
+    "It can be carried in one hand and released from above the tray to drop and come to rest inside.": "free body, 6.4 x 4.25 x 3.6 cm fits in one hand; condim 6 with rolling friction 5 mm (the squashed plush's contact patch) so it does not rock on its rounded underside: drop_rest_test (five drops, at rest within 1.5 s, max 0.01 deg after) and drawer_receive_and_close_test (rests inside the bin, speed 0, enclosed on closing)",
+    "Its shape does not matter for the task beyond fitting through the tray opening; it may be reconstructed as a soft or rigid body of roughly the right size.": "compliant ellipsoid body sized from the fitted silhouette scale (0.85 of the footprint estimate); fits the 8.1 x 18.5 cm tray interior"
+   },
+   "isaac": {
+    "scene_usda": "isaac/isaac_scene.usda",
+    "sim_png": "isaac/isaac_sim.png",
+    "report_json": "isaac/isaac_report.json",
+    "mean_drift_m": 3.5538111535314504e-05
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "checks": {
+    "model_finite": {
+     "ok": true,
+     "state_finite": true,
+     "bad_bodies": [],
+     "n_bodies": 79
+    },
+    "units": {
+     "ok": true,
+     "offenders": [],
+     "scene_radius_m": 1.13,
+     "max_extent_m": 50.0
+    },
+    "penetration": {
+     "ok": true,
+     "tolerance_m": 0.01,
+     "relative_to_baseline": false,
+     "violations": [],
+     "n_violations": 0,
+     "worst": null,
+     "n_pairs_touching": 0,
+     "n_frames": 1
+    },
+    "settle_stability": {
+     "ok": true,
+     "diverged": false,
+     "drift": {
+      "drawer_unit_drawer_unit_carcass": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "toy_toy": {
+       "pos_m": 0.0001,
+       "rot_deg": 0.1,
+       "verdict": "at rest"
+      }
+     },
+     "failures": [],
+     "warnings": [],
+     "seconds": 2.0
+    },
+    "support": {
+     "ok": true,
+     "floating": [],
+     "static": {},
+     "unsupported_static": []
+    },
+    "required_bodies": {
+     "ok": true,
+     "found": {
+      "drawer_unit_drawer_unit_carcass": "drawer_unit_drawer_unit_carcass",
+      "toy_toy": "toy_toy"
+     },
+     "missing": [],
+     "bodies": [
+      "table",
+      "robot_right_right_base_tx",
+      "robot_right_right_base_ty",
+      "robot_right_right_base_tz",
+      "robot_right_right_base_roll",
+      "robot_right_right_base_pitch",
+      "robot_right_right_base_yaw",
+      "robot_right_right_hand_C_MC",
+      "robot_right_right_thumb_CMC_VL",
+      "robot_right_right_thumb_MC",
+      "robot_right_right_thumb_MCP_VL",
+      "robot_right_right_thumb_PP",
+      "robot_right_right_thumb_DP",
+      "robot_right_right_index_MCP_VL",
+      "robot_right_right_index_PP",
+      "robot_right_right_index_MP",
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_MCP_VL",
+      "robot_right_right_middle_PP",
+      "robot_right_right_middle_MP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_ring_MCP_VL",
+      "robot_right_right_ring_PP",
+      "robot_right_right_ring_MP",
+      "robot_right_right_ring_DP",
+      "robot_right_right_pinky_MC",
+      "robot_right_right_pinky_MCP_VL",
+      "robot_right_right_pinky_PP",
+      "robot_right_right_pinky_MP",
+      "robot_right_right_pinky_DP",
+      "robot_right_arm_root",
+      "robot_right_arm_base",
+      "robot_right_arm_link1",
+      "robot_right_arm_link2",
+      "robot_right_arm_link3",
+      "robot_right_arm_link4",
+      "robot_right_arm_link5",
+      "robot_right_arm_gripper",
+      "robot_left_left_base_tx",
+      "robot_left_left_base_ty",
+      "robot_left_left_base_tz",
+      "robot_left_left_base_roll",
+      "robot_left_left_base_pitch",
+      "robot_left_left_base_yaw",
+      "robot_left_left_hand_C_MC",
+      "robot_left_left_thumb_CMC_VL",
+      "robot_left_left_thumb_MC",
+      "robot_left_left_thumb_MCP_VL",
+      "robot_left_left_thumb_PP",
+      "robot_left_left_thumb_DP",
+      "robot_left_left_index_MCP_VL",
+      "robot_left_left_index_PP",
+      "robot_left_left_index_MP",
+      "robot_left_left_index_DP",
+      "robot_left_left_middle_MCP_VL",
+      "robot_left_left_middle_PP",
+      "robot_left_left_middle_MP",
+      "robot_left_left_middle_DP",
+      "robot_left_left_ring_MCP_VL",
+      "robot_left_left_ring_PP",
+      "robot_left_left_ring_MP",
+      "robot_left_left_ring_DP",
+      "robot_left_left_pinky_MC",
+      "robot_left_left_pinky_MCP_VL",
+      "robot_left_left_pinky_PP",
+      "robot_left_left_pinky_MP",
+      "robot_left_left_pinky_DP",
+      "robot_left_arm_root",
+      "robot_left_arm_base",
+      "robot_left_arm_link1",
+      "robot_left_arm_link2",
+      "robot_left_arm_link3",
+      "robot_left_arm_link4",
+      "robot_left_arm_link5",
+      "robot_left_arm_gripper",
+      "camrig",
+      "drawer_unit_drawer_unit_carcass",
+      "drawer_unit_drawer_unit_drawer_r0c0",
+      "toy_toy"
+     ]
+    },
+    "articulation": {
+     "ok": true,
+     "objects": {
+      "drawer_unit_drawer_unit_carcass": {
+       "bodies": [
+        "drawer_unit_drawer_unit_carcass",
+        "drawer_unit_drawer_unit_drawer_r0c0"
+       ],
+       "joints": [
+        {
+         "joint": "drawer_unit_drawer_unit_carcass_to_drawer_r0c0",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.2032
+         ],
+         "travel": 0.2032,
+         "moves_part_m": 0.2032,
+         "usable": true
+        }
+       ],
+       "total_travel": {
+        "slide": 0.2032,
+        "hinge": 0.0
+       },
+       "verdict": "articulated"
+      }
+     }
+    },
+    "silhouette_iou": {
+     "ok": true,
+     "iou": {
+      "drawer_unit_drawer_unit_carcass": 0.928,
+      "toy_toy": 0.823
+     },
+     "failures": [],
+     "warnings": [],
+     "camera_suspect": false,
+     "bodies_used": {
+      "drawer_unit_drawer_unit_carcass": [
+       "drawer_unit_drawer_unit_carcass",
+       "drawer_unit_drawer_unit_drawer_r0c0"
+      ],
+      "toy_toy": [
+       "toy_toy"
+      ]
+     },
+     "render_size": [
+      1280,
+      1024
+     ],
+     "robot_covered_fraction": {
+      "drawer_unit_drawer_unit_carcass": 0.001,
+      "toy_toy": 0.0
+     }
+    },
+    "object_reach": {
+     "ok": true,
+     "advisory": true,
+     "reachable": false,
+     "unreachable": [
+      "drawer_unit_drawer_unit_carcass",
+      "toy_toy"
+     ],
+     "verdict": "OUT OF REACH: drawer_unit_drawer_unit_carcass at y=0.90 m (left arm, 302 mm short), toy_toy at y=0.69 m (right arm, 97 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+    }
+   },
+   "warnings": [
+    "OUT OF REACH: drawer_unit_drawer_unit_carcass at y=0.90 m (left arm, 302 mm short), toy_toy at y=0.69 m (right arm, 97 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+   ]
+  },
+  "penetration_check": {
+   "ok": true,
+   "tolerance_m": 0.003,
+   "n_violations": 0,
+   "worst": null
+  },
+  "settle_stability_check": {
+   "ok": true,
+   "drift": {
+    "drawer_unit_drawer_unit_carcass": {
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest"
+    },
+    "toy_toy": {
+     "pos_m": 0.0001,
+     "rot_deg": 0.1,
+     "verdict": "at rest"
+    }
+   },
+   "failures": []
+  },
+  "support_check": {
+   "ok": true,
+   "floating": [],
+   "static": {},
+   "unsupported_static": []
+  },
+  "silhouette_iou_check": {
+   "ok": true,
+   "iou": {
+    "drawer_unit_drawer_unit_carcass": 0.928,
+    "toy_toy": 0.823
+   },
+   "failures": [],
+   "warnings": []
+  }
+ },
+ "notes": [
+  "Camera given by the run configuration (source='given', fovy 28.37, 1280x1024); the camera_check grid lies on the cloth and runs with the table edges.",
+  "Drawer size: single-view measure_box_on_table is ambiguous between height and length (unconstrained fit gave h=4 cm); height bounded 0.10-0.15 m from the front-face pixel height, then a scale fit through video_cam (0.94) set the final 11.3 x 25.4 x 10.3 cm.",
+  "The drawer unit is a free body (the task never moves the housing); its tray joint is closed at frame 0.",
+  "The toy is Stage 1 'deformable' (soft plush): reconstructed as a compliant MuJoCo body plus an Isaac Sim compliant soft body; the Isaac copy settles with 0.04 mm drift but turns 17 deg as its ellipsoids settle into the compliant contact.",
+  "Travel 0.203 m (0.8 x depth) is the physical limit for a tray that stays in the housing; Stage 1 described it as roughly one housing length.",
+  "Maintainer rebuild (release examples): Stage 3's end_state_rest_audit found the first-pass plush (construct_plush_toy, condim 4) rocking in the closed drawer for seconds (13 deg about its long axis at 2.5 Hz, still 10 deg after 3 s, touching only the tray floor): a body of ellipsoids on a flat floor has nothing that resists rolling. Rebuilt with construct_plush_toy_rolling (new: the same toy with condim 6, torsional friction 1 cm and rolling friction 5 mm, the contact patch of a squashed plush) and proven with drop_rest_test (new); same size, mass, colour, softness and placement; the scene was re-staged from setup/scene.xml (which now carries the hand hull collision geoms) at the first pass's fitted poses and every MuJoCo check re-run. The Isaac soft-body copy (isaac/) is the first pass's: its PhysX compliant material does not use the MuJoCo rolling friction, and isaac_export_check passes on the new scene."
+ ],
+ "source": "examples/asset_reuse"
+}

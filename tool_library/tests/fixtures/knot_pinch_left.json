@@ -1,0 +1,185 @@
+{
+ "side": "left",
+ "pos": [
+  -0.12999042699379493,
+  0.3665912870987078,
+  0.15904405378846062
+ ],
+ "euler": [
+  -2.3656282139223674,
+  -0.7748414168206126,
+  1.3737413445050302
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 0.6171020889782787,
+  "thumb_CMC_AA": 0.02839539073276763,
+  "thumb_MCP_FE": 0.08557790881697772,
+  "thumb_MCP_AA": -0.19549096308012512,
+  "thumb_IP": 0.42439684014501244,
+  "index_MCP_FE": 0.46938175333670135,
+  "index_MCP_AA": -0.3356494241184524,
+  "index_PIP": 0.7711525890981151,
+  "index_DIP": 0.5173152566894296,
+  "middle_MCP_FE": 0.6108668885,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.785385,
+  "middle_DIP": 0.6283350000000001,
+  "ring_MCP_FE": 0.6108668885,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.785385,
+  "ring_DIP": 0.6283350000000001,
+  "pinky_CMC": 0.11781,
+  "pinky_MCP_FE": 0.6108668885,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.785385,
+  "pinky_DIP": 0.6283350000000001
+ },
+ "grip_fingers": [
+  "thumb",
+  "index"
+ ],
+ "finger_targets_squeezed": {
+  "thumb_CMC_FE": 0.6291020889782787,
+  "thumb_CMC_AA": 0.02839539073276763,
+  "thumb_MCP_FE": 0.09757790881697771,
+  "thumb_MCP_AA": -0.19549096308012512,
+  "thumb_IP": 0.43639684014501245,
+  "index_MCP_FE": 0.49338175333670137,
+  "index_MCP_AA": -0.3356494241184524,
+  "index_PIP": 0.7951525890981151,
+  "index_DIP": 0.5413152566894296,
+  "middle_MCP_FE": 0.6108668885,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.785385,
+  "middle_DIP": 0.6283350000000001,
+  "ring_MCP_FE": 0.6108668885,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.785385,
+  "ring_DIP": 0.6283350000000001,
+  "pinky_CMC": 0.11781,
+  "pinky_MCP_FE": 0.6108668885,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.785385,
+  "pinky_DIP": 0.6283350000000001
+ },
+ "press_depth_rad": 0.0803368221483603,
+ "standoff_m": 0.008,
+ "residual_mm": {
+  "thumb": 0.0,
+  "index": 0.0
+ },
+ "worst_residual_mm": 0.0,
+ "overlap_mm": 2.07,
+ "palm_facing": 0.512,
+ "bar": {
+  "p0": [
+   -0.1594290572416226,
+   0.43270195271096695,
+   0.015585426984182927
+  ],
+  "p1": [
+   -0.1530280348694064,
+   0.39775493396615286,
+   0.015585426984182927
+  ],
+  "radius": 0.01559
+ },
+ "pinch_dir": [
+  -0.9836361543097676,
+  -0.18016635627300434,
+  8.605439861049236e-23
+ ],
+ "approach": [
+  -0.10893852804995775,
+  -0.2574290329625176,
+  0.9601368080093022
+ ],
+ "targets": {
+  "thumb": [
+   -0.1330245691753471,
+   0.41947856768304004,
+   0.015585426984182927
+  ],
+  "index": [
+   -0.1794325229356819,
+   0.41097831899407977,
+   0.015585426984182927
+  ]
+ },
+ "straddle": {
+  "ok": true,
+  "along_axis_cos": 0.0,
+  "opposite_sides": true,
+  "along_segment": 0.5,
+  "axis_to_segment_mm": 0.0,
+  "pad_to_axis_mm": [
+   23.59,
+   23.59
+  ],
+  "pad_rise_mm": [
+   0.0,
+   0.0
+  ],
+  "below_centre_line": true,
+  "pad_span_mm": 47.18,
+  "bar_diameter_mm": 31.2,
+  "reach_mm": 34.6
+ },
+ "source": "optimize_grasp_pose family 'bar' (thumb-index pinch across a 31.2 mm cable link, lift and hold tests passed); test fixture for plan_knot_moves' PinchTemplate",
+ "open_frac": 0.6070017360542423,
+ "family": "bar",
+ "stress_tests": {
+  "grasp_lift_test": {
+   "ok": true,
+   "first_fail": null,
+   "lifts": [
+    {
+     "commanded_mm": 40.0,
+     "achieved_mm": 39.1
+    },
+    {
+     "commanded_mm": 70.0,
+     "achieved_mm": 69.1
+    }
+   ],
+   "grip": {
+    "fingers": [
+     "index",
+     "thumb"
+    ],
+    "force_N": 18.3
+   },
+   "penetration": {
+    "name": "penetration",
+    "ok": true,
+    "max_contact_mm": 0.462,
+    "max_visual_floor_mm": 0.009,
+    "limit_mm": 3.0,
+    "steps": 2192,
+    "worst_pair": [
+     "hand_left_ring_elastomer_visual",
+     "hand_left_pinky_DP_visual"
+    ],
+    "first_bad": null
+   }
+  },
+  "grasp_hold_test": {
+   "ok": true,
+   "first_fail": null,
+   "slip_mm_s": 0.02,
+   "penetration": {
+    "name": "penetration",
+    "ok": true,
+    "max_contact_mm": 0.462,
+    "max_visual_floor_mm": 0.009,
+    "limit_mm": 3.0,
+    "steps": 2217,
+    "worst_pair": [
+     "hand_left_ring_elastomer_visual",
+     "hand_left_pinky_DP_visual"
+    ],
+    "first_bad": null
+   }
+  }
+ }
+}

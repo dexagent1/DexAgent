@@ -1,0 +1,137 @@
+{
+  "task_prompt": "Tie a knot in the red velvet rope.",
+  "task_summary": "The rope lies in an arch with both brass ends toward the operator. The right hand carries the right end across the left side so the two strands cross and the rope forms a loop, the right hand then folds the loop over and passes the right end through it while the left hand holds the rope, both hands pull the two ends apart to tighten a single overhand knot, and the hands lay the knotted rope down and let go.",
+  "video": {
+    "path": "video.mp4",
+    "duration_s": 22.9,
+    "fps": 30.0,
+    "frames": 687,
+    "width": 640,
+    "height": 480
+  },
+  "environment": {
+    "support_surface": "white cloth covering a table, a dark backdrop beyond its far edge",
+    "camera": "fixed egocentric camera above the operator looking down the table; it does not move during the clip"
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ],
+    "notes": "The hands enter at about 1 s and rest on the table beside the rope's ends. The right hand does the crossing (3-6.5 s) and the threading (8-14 s) while the left hand steadies the rope; both hands pull the ends apart from 14 s, lay the rope down by 17 s and rest on the table until they withdraw at about 20.5 s."
+  },
+  "objects": [
+    {
+      "id": "rope",
+      "name": "red velvet rope",
+      "type": "deformable",
+      "role": "manipulated",
+      "parts": [
+        "body",
+        "left_end_ferrule",
+        "right_end_ferrule"
+      ],
+      "appearance": {
+        "body": "thick red velvet-covered rope",
+        "ferrules": "brass-coloured metal caps with a hook at each end"
+      },
+      "approximate_size": "about as long as the table is wide; as thick as a thumb",
+      "properties": [
+        "A thick, heavy, flexible rope: it bends freely along its length, keeps the curve it is laid in, and does not stretch.",
+        "Both ends carry short rigid brass ferrules.",
+        "Tying requires the rope to cross over itself, an end to pass through the resulting loop, and the ends to be pulled apart; the loop and the knot hold as the rope slides against itself under friction.",
+        "The knot formed is a single overhand knot."
+      ],
+      "deformation": {
+        "kind": "rope, one-dimensional flexible body",
+        "how_the_task_deforms_it": "an end is carried across the rope into a loop, threaded through the loop, and the ends are pulled apart into a knot"
+      },
+      "initial_state": "lying in an arch on the table with both ferrule ends toward the operator",
+      "final_state": "lying on the table with one tightened overhand knot in it and both ends toward the operator",
+      "evidence": "prompt: 'red velvet rope', 'knot'; 3-6.5 s the right end is carried across the left side and the strands cross; 8-14 s the loop is folded over and the end passes through it; 14-16.5 s both hands pull; from 17 s the knot lies on the table."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "both",
+      "action": "Cross the rope's two ends over each other to form a loop.",
+      "object_refs": [
+        "rope:right_end_ferrule",
+        "rope:left_end_ferrule",
+        "rope"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Holds the rope's left side where the strands cross.",
+        "right": "Carries the right end across the left side of the rope and sets it down."
+      },
+      "goal": "The rope crosses over itself, forming a loop on the table.",
+      "time_window_s": [
+        3.0,
+        6.5
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "both",
+      "action": "Pass the right end of the rope through the loop.",
+      "object_refs": [
+        "rope:right_end_ferrule",
+        "rope"
+      ],
+      "motion": "tie",
+      "hand_roles": {
+        "left": "Holds the rope so the loop keeps its shape.",
+        "right": "Folds the loop over and threads the end through it."
+      },
+      "goal": "The rope has an overhand knot in it.",
+      "time_window_s": [
+        8.0,
+        14.0
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "both",
+      "action": "Pull the two ends apart to tighten the knot.",
+      "object_refs": [
+        "rope:left_end_ferrule",
+        "rope:right_end_ferrule",
+        "rope"
+      ],
+      "motion": "pull",
+      "hand_roles": {
+        "left": "Pulls the left end away from the knot.",
+        "right": "Pulls the right end away from the knot."
+      },
+      "goal": "The rope has a persistent overhand knot in it.",
+      "time_window_s": [
+        14.0,
+        16.5
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "both",
+      "action": "Lay the knotted rope down and let go of it.",
+      "object_refs": [
+        "rope"
+      ],
+      "motion": "release",
+      "hand_roles": {
+        "left": "Lets go of the left end and withdraws.",
+        "right": "Lets go of the right end and withdraws."
+      },
+      "goal": "The rope rests on the table and has an overhand knot in it.",
+      "time_window_s": [
+        16.5,
+        20.5
+      ]
+    }
+  ],
+  "task_success": "The rope rests on the table and has a persistent overhand knot in it.",
+  "notes": [
+    "The crossing order of the strands fixes the knot's handedness; the reconstruction should follow the video's crossing order rather than only the number of crossings."
+  ]
+}

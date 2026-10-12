@@ -1,0 +1,40 @@
+{
+ "task": "scissor_cutting",
+ "prompt": "Cut the red rope with the scissors.",
+ "fingerprint": "fingerprint.json",
+ "video": {
+  "duration_s": 24.746,
+  "fps": 60.04932536503722,
+  "resolution": [
+   640,
+   480
+  ]
+ },
+ "objects": [
+  {
+   "id": "scissors",
+   "type": "articulated",
+   "root_body": "scissors_scissors"
+  },
+  {
+   "id": "rope",
+   "type": "deformable",
+   "root_body": "rope_a_rope_aB_first"
+  }
+ ],
+ "stages": {
+  "stage1": "stage1/scene_semantics.json",
+  "stage2": "stage2/scene_recon.json",
+  "stage3": "stage3/twin_episode.json"
+ },
+ "provenance": {
+  "run": "rel_scissor_cutting",
+  "how": "solved by the agent stages (a model acting as the harness agent), reviewed by the maintainers",
+  "verified_at": "9503dc3",
+  "finish_verifiers": "stage 1 and 2 passed",
+  "stage3": "the maintainers' Isaac Sim twin episode of this task (twin_episode.json): reused as the Stage 3 result; Stage 4 does not apply to it"
+ },
+ "verified": {
+  "stage_verifiers": "stages 1-2 passed at the end of the run"
+ }
+}

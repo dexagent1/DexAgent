@@ -1,0 +1,1748 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_recon": "../stage2/scene_recon.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "step": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    125
+   ],
+   "motion": "hold",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "plan": {
+    "index": 1,
+    "motion": "hold",
+    "side": "right",
+    "object": "gift_box_gift_box",
+    "pose": "poses/right_basefloor_0.06_60.json",
+    "hand_scene": "poses/hs_right_lid.json",
+    "approach_m": 0.05,
+    "step": 1
+   },
+   "expect": {
+    "in_hand": true,
+    "stays_put": true,
+    "min_links": 1,
+    "pads": {
+     "middle": {
+      "point": [
+       0.060005615135295357,
+       0.4548570302700635,
+       0.003305425029474655
+      ],
+      "normal": [
+       -0.00010481166079817339,
+       0.0036504547433256385,
+       0.999993331575106
+      ]
+     }
+    },
+    "pads_at_label": "right: hold gift_box_gift_box",
+    "hand": "right",
+    "object": "gift_box_gift_box",
+    "involved": [
+     "gift_box_gift_box"
+    ],
+    "untouched": [],
+    "pads_at_rel": 125
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "pads_touching": true,
+     "stays_put": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0051,
+      0.3731,
+      -0.0
+     ],
+     "object_end": [
+      -0.0051,
+      0.3731,
+      -0.0002
+     ],
+     "object_moved_m": 0.0002,
+     "object_rotated_deg": 0.06,
+     "object_tilt_end_deg": 0.06,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP"
+     ],
+     "pads": {
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 9.9
+      }
+     },
+     "pads_frame": 125,
+     "max_hand_pen_mm": 0.05,
+     "max_object_pen_mm": 0.38,
+     "max_track_pos_mm": 2.3,
+     "max_track_rot_deg": 1.3,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 126,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 126,
+        "free_leg_frames": 61,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 81.1
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.0,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 0,
+        "peak_step_deg_per_frame": 0.0,
+        "peak_speed_deg_s": 0.0,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.49,
+        "residual_deg_max": 0.46,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 49,
+        "peak_step_deg_per_frame": 2.72,
+        "peak_speed_deg_s": 81.5,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   },
+   "pose": {
+    "file": "poses/right_basefloor_0.06_60.json",
+    "source": "flat_hand_pose",
+    "hand_scene": "poses/hs_right_lid.json",
+    "derivation": "flat_hand_pose(hs_right_lid, point [0.06, 0.455, 0.003] on the tray floor in front of the back wall, normal +z, fingers along the box's +y, fingers [middle], contact pad, pitch 60): a fingertip that holds the tray's back down while the lid is lifted (without it the 0.16 kg tray tips up on the hinge: measured 26-29 deg in ep_v14a/b); arm_reach_check reachable",
+    "stress_tests": {
+     "contact_force_check": {
+      "ok": true,
+      "force_n": {
+       "min": 20.541,
+       "mean": 21.851,
+       "max": 22.529
+      },
+      "frac_in_range": 1.0,
+      "frames": [
+       120,
+       423
+      ],
+      "bodies_touching": {
+       "min": 1,
+       "max": 1
+      },
+      "file": "tests/cfc_right_base.json",
+      "window": "frames 120-423: from the grip until the right hand lets go (#1.3)"
+     }
+    }
+   }
+  },
+  {
+   "index": 1,
+   "step": 2,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    126,
+    423
+   ],
+   "motion": "close_joint",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "plan": {
+    "index": 1,
+    "motion": "close_joint",
+    "side": "left",
+    "object": "gift_box_gift_box_lidb",
+    "joint": "gift_box_gift_box_lid",
+    "target": 1.68,
+    "hand_follows": "rigid",
+    "pose": "poses/hookQ_side.json",
+    "hand_scene": "poses/hs_left_lid.json",
+    "duration_s": 4.5,
+    "approach_m": 0.035,
+    "keep_hold": false,
+    "press_travel_m": 0.001,
+    "step": 2
+   },
+   "expect": {
+    "joint": "gift_box_gift_box_lid",
+    "joint_target": 1.68,
+    "object": "gift_box_gift_box_lidb",
+    "in_hand": true,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       -0.12073606273411956,
+       0.5512327203033542,
+       0.02516661176748252
+      ],
+      "normal": [
+       0.1777139027748644,
+       -0.15091620851327228,
+       -0.9724412921953196
+      ]
+     },
+     "middle": {
+      "point": [
+       -0.1271982665878428,
+       0.5697263103977341,
+       0.021123241048147518
+      ],
+      "normal": [
+       0.1777139027748644,
+       -0.15091620851327228,
+       -0.9724412921953196
+      ]
+     }
+    },
+    "pads_at_label": "left: grip gift_box_gift_box_lidb",
+    "hand": "left",
+    "involved": [
+     "gift_box_gift_box_lidb"
+    ],
+    "untouched": [],
+    "pads_at_rel": 152
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "pads_touching": true,
+     "joint_reached": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0083,
+      0.4851,
+      0.0372
+     ],
+     "object_end": [
+      -0.0081,
+      0.4852,
+      0.0372
+     ],
+     "object_moved_m": 0.0003,
+     "object_rotated_deg": 93.06,
+     "object_tilt_end_deg": 96.1,
+     "hand_links_touching": [
+      "robot_left_left_index_DP"
+     ],
+     "pads": {
+      "index": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 7.4
+      },
+      "middle": {
+       "touching": true,
+       "in_contact": false,
+       "side_ok": true,
+       "offset_mm": 7.3
+      }
+     },
+     "pads_frame": 152,
+     "joint_start": 3.3003,
+     "joint_end": 1.676,
+     "joint_travel_fraction": 1.002,
+     "base_moved": {
+      "body": "gift_box_gift_box",
+      "moved_m": 0.0002,
+      "rotated_deg": 0.05
+     },
+     "max_hand_pen_mm": 0.22,
+     "max_object_pen_mm": 0.46,
+     "max_track_pos_mm": 3.2,
+     "max_track_rot_deg": 2.3,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 286,
+        "free_leg_frames": 65,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 90.0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 286,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       }
+      },
+      "retimed_s": 0.4,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.49,
+        "residual_deg_max": 1.07,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 256,
+        "peak_step_deg_per_frame": 3.41,
+        "peak_speed_deg_s": 102.4,
+        "speed_limited_frames": 3
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.01,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 244,
+        "peak_step_deg_per_frame": 0.01,
+        "peak_speed_deg_s": 0.2,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   },
+   "pose": {
+    "file": "poses/hookQ_side.json",
+    "source": "pose_from_points",
+    "hand_scene": "poses/hs_left_lid.json",
+    "derivation": "pose_from_points(hs_left_lid, index pad under the lid's outer face 15 mm in from its left edge, 7 cm from the hinge, middle pad 2 cm farther, curl_free 0.6) -> optimize_pose_for_reach(axis normal, sweep lid -> 1.75 rad level; reachable 0 mm) (poses/hookQ_r0.07_i0.015_normal_reach.json); approach set horizontal from the left (the solved approach dropped the fingertip onto the lid's top). Executed with hand_follows rigid: optimize_pose_for_reach(axis +x, sweep rigid to 1.75) reachable 0 mm, and the rigid turn leaves no stored force (a level hook drove the curled fingers through the turning lid and shoved the tray 2 cm when the right hand let go, ep_v12)",
+    "stress_tests": {
+     "hinge_drive_check": {
+      "ok": true,
+      "measured": {
+       "frames": [
+        126,
+        423
+       ],
+       "n_frames": 298,
+       "direction": -1,
+       "unit": "deg",
+       "joint_start": 189.09,
+       "joint_end": 96.03,
+       "travel": 93.07,
+       "best": 93.52,
+       "backslide": 0.45,
+       "backslide_frame": 423,
+       "backslide_label": "left: close gift_box_gift_box_lidb #1.2",
+       "driven_frac": 0.997,
+       "contact_frac": 0.607,
+       "longest_gap_frames": 62,
+       "min_gap_mm": -0.02,
+       "contact_tol_m": 0.003,
+       "lag_frames": 2
+      },
+      "file": "tests/hdc_left_lift.json",
+      "window": "frames 126-423 (#1.2)"
+     }
+    }
+   },
+   "deviation": {
+    "reason": "The robot cannot copy the two-hand pinch of the lid's edge: (1) no pinch of the lid's side edges near the hinge exists for this hand (plate_edge_pinch_pose: the opened hand sinks 12-50 mm into the table under a lid 2-4 cm above it, or the thumb goes 11 mm into the lid); (2) the left arm reaches no pinch of the raised lid's free edge (optimize_pose_for_reach 10-105 mm residual over 9 pinches); (3) the right arm's pinches of the upright lid's free edge either hit the standing skirt flap on the way in (shoved the tray 3-11 cm, ep_v23/v26), collide its arm with its own thumb hull (3.1 mm, ep_v28/v29) or flip the arm configuration mid-turn (ep_v24/v25/v30). So the right fingertip steadies the tray while the left index lifts the lid to upright and holds it there (a steadying hold of the lid by one hand while the other holds the box, the two hands acting at once).",
+    "predicates": [
+     {
+      "class": "held",
+      "bodies": {
+       "A": "gift_box_gift_box_lidb"
+      },
+      "params": {
+       "mode": "fixed",
+       "side": "left"
+      },
+      "frames": [
+       424,
+       535
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "index": 1,
+   "step": 3,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    424,
+    476
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "plan": {
+    "index": 1,
+    "motion": "release",
+    "side": "right",
+    "object": "gift_box_gift_box",
+    "retreat_dir": [
+     0,
+     0,
+     1
+    ],
+    "retreat_m": 0.06,
+    "step": 3
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "gift_box_gift_box",
+    "involved": [
+     "gift_box_gift_box"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.005,
+      0.3732,
+      -0.0002
+     ],
+     "object_end": [
+      -0.005,
+      0.3732,
+      -0.0
+     ],
+     "object_moved_m": 0.0002,
+     "object_rotated_deg": 0.08,
+     "object_tilt_end_deg": 0.01,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.1679,
+     "support_contacts": 5,
+     "max_hand_pen_mm": 0.04,
+     "max_object_pen_mm": 0.44,
+     "max_track_pos_mm": 2.3,
+     "max_track_rot_deg": 0.0,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 53,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 53,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 32.2
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.03,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 18,
+        "peak_step_deg_per_frame": 0.0,
+        "peak_speed_deg_s": 0.0,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.49,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 37,
+        "peak_step_deg_per_frame": 1.07,
+        "peak_speed_deg_s": 32.0,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 1,
+   "step": 4,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    477,
+    535
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 1,
+    "motion": "home",
+    "side": "right",
+    "step": 4
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "gift_box_gift_box"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:gift_box_gift_box": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "gift_box_gift_box": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.05,
+     "max_track_pos_mm": 1.7,
+     "max_track_rot_deg": 1.5,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 54,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 54,
+        "free_leg_frames": 46,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 90.0
+       }
+      },
+      "retimed_s": 0.17,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.03,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 0,
+        "peak_step_deg_per_frame": 0.0,
+        "peak_speed_deg_s": 0.0,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.48,
+        "residual_deg_max": 0.75,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 39,
+        "peak_step_deg_per_frame": 2.97,
+        "peak_speed_deg_s": 89.1,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 2,
+   "step": 1,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    536,
+    648
+   ],
+   "motion": "close_joint",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "plan": {
+    "index": 2,
+    "motion": "close_joint",
+    "side": "left",
+    "object": "gift_box_gift_box_lidb",
+    "joint": "gift_box_gift_box_lid",
+    "target": 1.5,
+    "hand_follows": "level",
+    "duration_s": 1.5,
+    "keep_hold": false,
+    "release": true,
+    "retreat_dir": [
+     -0.6,
+     -0.3,
+     0.75
+    ],
+    "retreat_m": 0.06,
+    "step": 1
+   },
+   "expect": {
+    "joint": "gift_box_gift_box_lid",
+    "joint_target": 1.5,
+    "object": "gift_box_gift_box_lidb",
+    "in_hand": false,
+    "min_links": 1,
+    "hand": "left",
+    "involved": [
+     "gift_box_gift_box_lidb"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "joint_reached": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0081,
+      0.4851,
+      0.0375
+     ],
+     "object_end": [
+      -0.0152,
+      0.4907,
+      0.0375
+     ],
+     "object_moved_m": 0.009,
+     "object_rotated_deg": 96.17,
+     "object_tilt_end_deg": 0.01,
+     "joint_start": 1.6779,
+     "joint_end": -0.0001,
+     "joint_travel_fraction": 9.43,
+     "base_moved": {
+      "body": "gift_box_gift_box",
+      "moved_m": 0.0128,
+      "rotated_deg": 2.3
+     },
+     "max_hand_pen_mm": 0.26,
+     "max_object_pen_mm": 0.22,
+     "max_track_pos_mm": 0.6,
+     "max_track_rot_deg": 0.0,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 113,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 1.58,
+        "ik_residual_deg_max": 0.11,
+        "projected_frames": 52,
+        "projected_mm_max": 1.58,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 28.1
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 113,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.48,
+        "residual_deg_max": 0.03,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 97,
+        "peak_step_deg_per_frame": 0.97,
+        "peak_speed_deg_s": 29.1,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.0,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 0,
+        "peak_step_deg_per_frame": 0.0,
+        "peak_speed_deg_s": 0.0,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   },
+   "pose": {
+    "file": "poses/hookQ_side.json",
+    "source": "pose_from_points",
+    "hand_scene": "poses/hs_left_lid.json",
+    "derivation": "no new grasp: the hook from #1.2 stays under the upright lid and tips it 14 deg past upright (level), after which it swings shut",
+    "stress_tests": {
+     "hinge_drive_check": {
+      "ok": true,
+      "measured": {
+       "frames": [
+        536,
+        580
+       ],
+       "n_frames": 45,
+       "direction": -1,
+       "unit": "deg",
+       "joint_start": 96.14,
+       "joint_end": 87.21,
+       "travel": 8.93,
+       "best": 8.93,
+       "backslide": 0.0,
+       "backslide_frame": 536,
+       "backslide_label": "left: close gift_box_gift_box_lidb #2.1",
+       "driven_frac": 1.0,
+       "contact_frac": 1.0,
+       "longest_gap_frames": 0,
+       "min_gap_mm": -0.0,
+       "contact_tol_m": 0.003,
+       "lag_frames": 2
+      },
+      "file": "tests/hdc_left_tip.json",
+      "window": "frames 536-580: the push past upright, before the lid leaves the fingertip"
+     }
+    }
+   },
+   "deviation": {
+    "reason": "The lid is swung over by one hand (the left fingertip tips it past upright and it swings shut onto the box, caught briefly on the left thumb): a second hand on the lid or the box during the swing would be under the falling lid (the right forearm was hit by it, ep_v4/v5), and neither arm can carry a pinch of the lid through the swing (see subgoal 1). The right hand returns to press in subgoal 3.",
+    "sequential": true
+   }
+  },
+  {
+   "index": 2,
+   "step": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    649,
+    814
+   ],
+   "motion": "press",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "plan": {
+    "index": 2,
+    "motion": "press",
+    "side": "left",
+    "object": "gift_box_gift_box_lidb",
+    "joint": "gift_box_gift_box_lid",
+    "target": 0.0,
+    "pose": "poses/left_pressM.json",
+    "hand_scene": "poses/hs_left_closed.json",
+    "approach_m": 0.03,
+    "duration_s": 0.8,
+    "reanchor": "translate",
+    "step": 2
+   },
+   "expect": {
+    "joint": "gift_box_gift_box_lid",
+    "joint_target": 0.0,
+    "object": "gift_box_gift_box_lidb",
+    "in_hand": true,
+    "min_links": 1,
+    "pads": {
+     "middle": {
+      "point": [
+       -0.07182158715844172,
+       0.4056866315619243,
+       0.039097261192174666
+      ],
+      "normal": [
+       0.0,
+       0.0,
+       1.0
+      ]
+     }
+    },
+    "pads_at_label": "left: grip gift_box_gift_box_lidb",
+    "hand": "left",
+    "involved": [
+     "gift_box_gift_box_lidb"
+    ],
+    "untouched": [],
+    "pads_at_rel": 136
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "pads_touching": true,
+     "joint_reached": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0152,
+      0.4907,
+      0.0375
+     ],
+     "object_end": [
+      -0.0152,
+      0.4911,
+      0.0373
+     ],
+     "object_moved_m": 0.0004,
+     "object_rotated_deg": 0.02,
+     "object_tilt_end_deg": 0.02,
+     "hand_links_touching": [
+      "robot_left_left_middle_DP"
+     ],
+     "pads": {
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 8.6
+      }
+     },
+     "pads_frame": 136,
+     "joint_start": -0.0001,
+     "joint_end": -0.0006,
+     "joint_travel_fraction": -7.163,
+     "base_moved": {
+      "body": "gift_box_gift_box",
+      "moved_m": 0.0004,
+      "rotated_deg": 0.02
+     },
+     "max_hand_pen_mm": 0.08,
+     "max_object_pen_mm": 0.47,
+     "max_track_pos_mm": 10.4,
+     "max_track_rot_deg": 2.4,
+     "plan_collisions": [
+      {
+       "frame": 42,
+       "depth_mm": 8.0,
+       "geoms": [
+        "robot_left_collision_hand_left_ring_0",
+        "gift_box_gift_box_lid"
+       ],
+       "kind": "pre-grasp hand-object"
+      },
+      {
+       "frame": 48,
+       "depth_mm": 7.8,
+       "geoms": [
+        "robot_left_collision_hand_left_ring_0",
+        "gift_box_gift_box_lid"
+       ],
+       "kind": "pre-grasp hand-object"
+      },
+      {
+       "frame": 39,
+       "depth_mm": 7.5,
+       "geoms": [
+        "robot_left_collision_hand_left_pinky_0",
+        "gift_box_gift_box_lid"
+       ],
+       "kind": "pre-grasp hand-object"
+      }
+     ],
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance",
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 166,
+        "free_leg_frames": 72,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 78.6
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 166,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.43,
+        "residual_deg_max": 0.98,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 13,
+        "peak_step_deg_per_frame": 2.63,
+        "peak_speed_deg_s": 78.8,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.0,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 0,
+        "peak_step_deg_per_frame": 0.0,
+        "peak_speed_deg_s": 0.0,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   },
+   "pose": {
+    "file": "poses/left_pressM.json",
+    "source": "flat_hand_pose",
+    "hand_scene": "poses/hs_left_closed.json",
+    "derivation": "flat_hand_pose(hs_left_closed (lid shut), point [-0.065, 0.40, 0.039] on the closed lid, normal +z, fingers along +y, fingers [middle], contact pad, pitch 45, thumb curled); arm_reach_check reachable"
+   }
+  },
+  {
+   "index": 3,
+   "step": 1,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    815,
+    969
+   ],
+   "motion": "press",
+   "side": "right",
+   "object": "gift_box_gift_box_lidb",
+   "plan": {
+    "index": 3,
+    "motion": "press",
+    "side": "right",
+    "object": "gift_box_gift_box_lidb",
+    "joint": "gift_box_gift_box_lid",
+    "target": 0.0,
+    "pose": "poses/right_pressM.json",
+    "hand_scene": "poses/hs_right_closed.json",
+    "approach_m": 0.03,
+    "duration_s": 0.8,
+    "reanchor": "translate",
+    "step": 1
+   },
+   "expect": {
+    "joint": "gift_box_gift_box_lid",
+    "joint_target": 0.0,
+    "object": "gift_box_gift_box_lidb",
+    "in_hand": true,
+    "min_links": 1,
+    "pads": {
+     "middle": {
+      "point": [
+       0.04812076558892364,
+       0.4060395183659321,
+       0.03887859792988021
+      ],
+      "normal": [
+       0.0,
+       0.0,
+       1.0
+      ]
+     }
+    },
+    "pads_at_label": "right: grip gift_box_gift_box_lidb",
+    "hand": "right",
+    "involved": [
+     "gift_box_gift_box_lidb"
+    ],
+    "untouched": [],
+    "pads_at_rel": 125
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "pads_touching": true,
+     "joint_reached": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0152,
+      0.4911,
+      0.0372
+     ],
+     "object_end": [
+      -0.0162,
+      0.4913,
+      0.0369
+     ],
+     "object_moved_m": 0.001,
+     "object_rotated_deg": 0.14,
+     "object_tilt_end_deg": 0.07,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP"
+     ],
+     "pads": {
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 8.6
+      }
+     },
+     "pads_frame": 125,
+     "joint_start": -0.0006,
+     "joint_end": -0.0008,
+     "joint_travel_fraction": -0.327,
+     "base_moved": {
+      "body": "gift_box_gift_box",
+      "moved_m": 0.0008,
+      "rotated_deg": 0.15
+     },
+     "max_hand_pen_mm": 0.05,
+     "max_object_pen_mm": 0.67,
+     "max_track_pos_mm": 2.3,
+     "max_track_rot_deg": 1.0,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 155,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.2
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 155,
+        "free_leg_frames": 61,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 72.5
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.01,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 0,
+        "peak_step_deg_per_frame": 0.02,
+        "peak_speed_deg_s": 0.7,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.49,
+        "residual_deg_max": 0.44,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 12,
+        "peak_step_deg_per_frame": 2.42,
+        "peak_speed_deg_s": 72.6,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   },
+   "pose": {
+    "file": "poses/right_pressM.json",
+    "source": "flat_hand_pose",
+    "hand_scene": "poses/hs_right_closed.json",
+    "derivation": "flat_hand_pose(hs_right_closed, point [0.055, 0.40, 0.039], normal +z, fingers along +y, fingers [middle], contact pad, pitch 45, thumb curled); arm_reach_check reachable"
+   }
+  },
+  {
+   "index": 3,
+   "step": 2,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    970,
+    1022
+   ],
+   "motion": "release",
+   "side": "left",
+   "object": "gift_box_gift_box",
+   "plan": {
+    "index": 3,
+    "motion": "release",
+    "side": "left",
+    "object": "gift_box_gift_box",
+    "retreat_dir": [
+     0,
+     -0.4,
+     0.9
+    ],
+    "retreat_m": 0.08,
+    "step": 2
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "left",
+    "object": "gift_box_gift_box",
+    "involved": [
+     "gift_box_gift_box"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0174,
+      0.3792,
+      -0.0004
+     ],
+     "object_end": [
+      -0.0172,
+      0.3779,
+      -0.0002
+     ],
+     "object_moved_m": 0.0013,
+     "object_rotated_deg": 0.03,
+     "object_tilt_end_deg": 0.1,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0001,
+     "lowest_point_z": -0.1681,
+     "support_contacts": 5,
+     "max_hand_pen_mm": 0.04,
+     "max_object_pen_mm": 0.7,
+     "max_track_pos_mm": 2.9,
+     "max_track_rot_deg": 0.1,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 53,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 53.6
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 53,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.45,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 39,
+        "peak_step_deg_per_frame": 1.78,
+        "peak_speed_deg_s": 53.3,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.0,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 52,
+        "peak_step_deg_per_frame": 0.02,
+        "peak_speed_deg_s": 0.6,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 3,
+   "step": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    1023,
+    1075
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "plan": {
+    "index": 3,
+    "motion": "release",
+    "side": "right",
+    "object": "gift_box_gift_box",
+    "retreat_dir": [
+     0,
+     -0.4,
+     0.9
+    ],
+    "retreat_m": 0.08,
+    "step": 3
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "gift_box_gift_box",
+    "involved": [
+     "gift_box_gift_box"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0172,
+      0.3779,
+      -0.0002
+     ],
+     "object_end": [
+      -0.017,
+      0.3778,
+      -0.0
+     ],
+     "object_moved_m": 0.0003,
+     "object_rotated_deg": 0.11,
+     "object_tilt_end_deg": 0.0,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.1679,
+     "support_contacts": 4,
+     "max_hand_pen_mm": 0.05,
+     "max_object_pen_mm": 0.49,
+     "max_track_pos_mm": 2.9,
+     "max_track_rot_deg": 0.0,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 53,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 53,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.01,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 47.8
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.0,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 0,
+        "peak_step_deg_per_frame": 0.0,
+        "peak_speed_deg_s": 0.0,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.46,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 39,
+        "peak_step_deg_per_frame": 1.58,
+        "peak_speed_deg_s": 47.5,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 3,
+   "step": 4,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    1076,
+    1094
+   ],
+   "motion": "wait",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 3,
+    "motion": "wait",
+    "side": "right",
+    "duration_s": 0.6,
+    "step": 4
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "gift_box_gift_box"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:gift_box_gift_box": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "gift_box_gift_box": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.03,
+     "max_track_pos_mm": 0.0,
+     "max_track_rot_deg": 0.0,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 19,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 19,
+        "free_leg_frames": 0,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 0.0
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.0,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 0,
+        "peak_step_deg_per_frame": 0.0,
+        "peak_speed_deg_s": 0.0,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.0,
+        "residual_deg_max": 0.0,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 0,
+        "peak_step_deg_per_frame": 0.0,
+        "peak_speed_deg_s": 0.0,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 4,
+   "step": 1,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1095,
+    1148
+   ],
+   "motion": "both",
+   "side": null,
+   "object": null,
+   "plan": {
+    "index": 4,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "home",
+      "side": "left"
+     },
+     "right": {
+      "motion": "home",
+      "side": "right"
+     }
+    },
+    "step": 1
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "object": null,
+      "hand": "left",
+      "involved": []
+     },
+     "right": {
+      "object": null,
+      "hand": "right",
+      "involved": []
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": null,
+     "right": null
+    },
+    "involved": [],
+    "untouched": [
+     "gift_box_gift_box"
+    ],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 19.2
+   },
+   "hands": {
+    "left": {
+     "motion": "home",
+     "side": "left"
+    },
+    "right": {
+     "motion": "home",
+     "side": "right"
+    }
+   },
+   "sync": "start",
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true,
+     "untouched:gift_box_gift_box": true,
+     "hands_apart": true
+    },
+    "measured": {
+     "hands": {
+      "left": {
+       "max_hand_pen_mm": 0.0,
+       "max_object_pen_mm": 0.03,
+       "max_track_pos_mm": 1.6,
+       "max_track_rot_deg": 1.5
+      },
+      "right": {
+       "max_hand_pen_mm": 0.0,
+       "max_object_pen_mm": 0.03,
+       "max_track_pos_mm": 1.6,
+       "max_track_rot_deg": 1.5
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.03,
+     "max_track_pos_mm": 1.6,
+     "max_track_rot_deg": 1.5,
+     "untouched": {
+      "gift_box_gift_box": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "hands_touching_frames": 0,
+     "arm": {
+      "plan": {
+       "left": {
+        "mount": "home keyframe",
+        "frames": 54,
+        "free_leg_frames": 46,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 83.1
+       },
+       "right": {
+        "mount": "home keyframe",
+        "frames": 54,
+        "free_leg_frames": 46,
+        "ik_residual_mm_max": 0.0,
+        "ik_residual_deg_max": 0.0,
+        "projected_frames": 0,
+        "projected_mm_max": 0.0,
+        "infeasible_frames": 0,
+        "branch_jumps": [],
+        "branch_jump_labels": [],
+        "peak_speed_deg_s": 84.5
+       }
+      },
+      "retimed_s": 0.0,
+      "fit": {
+       "left": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.5,
+        "residual_deg_max": 0.94,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 32,
+        "peak_step_deg_per_frame": 2.76,
+        "peak_speed_deg_s": 82.7,
+        "speed_limited_frames": 0
+       },
+       "right": {
+        "mount": "home keyframe",
+        "residual_mm_max": 0.5,
+        "residual_deg_max": 0.71,
+        "frames_over_2mm_2deg": 0,
+        "worst_frame": 33,
+        "peak_step_deg_per_frame": 2.79,
+        "peak_speed_deg_s": 83.6,
+        "speed_limited_frames": 0
+       }
+      }
+     }
+    },
+    "variant": "as planned"
+   }
+  }
+ ],
+ "episode": {
+  "trajectory": "trajectory.npz",
+  "phases": "phases.json",
+  "sim_video": "sim_video.mp4",
+  "fps": 30.0,
+  "n_frames": 1149,
+  "execution_dir": "episode",
+  "plan": "plan3_v7.json"
+ },
+ "stage4": {
+  "task_dir": "stage4_task",
+  "config": "stage4_task/stage4.json"
+ },
+ "checks": {
+  "episode_physics_check": {
+   "ok": true,
+   "failed": []
+  },
+  "robot_self_collision_check": {
+   "ok": true,
+   "failed": []
+  },
+  "arm_reach_check": {
+   "ok": true,
+   "failed": []
+  },
+  "stage4_handoff_check": {
+   "ok": true,
+   "issues": []
+  },
+  "trajectory_audit": {
+   "ok": true,
+   "failed": []
+  }
+ },
+ "notes": [
+  "Stations are the setup's (not moved); the scene is the Stage 2 scene.xml unchanged (box re-placed in Stage 2 after the camera re-registration).",
+  "Strategy (differs from the human's two-hand edge pinch, see the deviations on #1.2 and #2.1): #1 the right middle fingertip holds the tray's back down; the left index, curled under the lid's left edge 7 cm from the hinge, turns the lid with the hand (rigid follow) from lying open (189 deg) to upright (96 deg); the right hand lets go of the tray and returns home while the left fingertip holds the upright lid. #2 the left fingertip tips the lid 14 deg past upright; it swings shut onto the box (caught briefly on the left thumb at 46 deg) and the left middle fingertip comes down on the shut lid. #3 the right middle fingertip joins the press, then both lift off; #4 both hands withdraw home together (one two-hand entry).",
+  "Measured: the tray moves 0.2 mm during the lift and 13 mm / 2.3 deg when the lid swings shut onto it; the lid ends at its shut stop (0.000 rad) and stays shut after both hands lift.",
+  "Stage 1 says both hands act in every subgoal; subgoals 1, 3 and 4 have both hands acting at once (tray hold + lift; the two presses, then both lift off; one two-hand entry withdrawing both hands together); subgoal 2 is one hand (declared sequential deviation).",
+  "Library issue found: SubgoalPlanner.__init__ (tool_library/common/subgoal.py) attaches every body in state['held'] through its root's free joint, so after a 'hold' or a 'close_joint' (keep_hold) on a hinged part (the lid), the next entry of that hand carries the whole box with the wrist (the dry run swung the hand 4x the lid angle and moved the box root); worked around with keep_hold false and by not using 'hold' on the lid.",
+  "The episode (38.3 s) is slower than the human's 15 s clip (timing is a quality warning only)."
+ ],
+ "source": "examples/asset_reuse"
+}

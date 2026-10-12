@@ -1,0 +1,142 @@
+{
+ "side": "left",
+ "pos": [
+  -0.1860713637009918,
+  0.42858054055789974,
+  0.17818976221827362
+ ],
+ "euler": [
+  -2.513218133921975,
+  0.32727599867873347,
+  0.4165227385255479
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": -0.1745,
+  "thumb_CMC_AA": -0.3491,
+  "thumb_MCP_FE": -0.5236,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "finger_targets_open": {
+  "thumb_CMC_FE": -0.1745,
+  "thumb_CMC_AA": -0.3491,
+  "thumb_MCP_FE": -0.5236,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "grip_fingers": [
+  "middle",
+  "ring"
+ ],
+ "contact_side": "pad",
+ "thumb": "out",
+ "pitch_deg": 0.0,
+ "press_travel_m": 0.006,
+ "face_offset_m": 0.012,
+ "overlap_mm": 0.0,
+ "approach": [
+  -0.8659609732516542,
+  0.5001115803536994,
+  1.0831944884093087e-06
+ ],
+ "approach_kind": "normal",
+ "gap_before_m": 0.0015,
+ "normals": {
+  "middle": [
+   -0.8659609732516542,
+   0.5001115803536994,
+   1.0831944884093087e-06
+  ],
+  "ring": [
+   -0.8659609732516542,
+   0.5001115803536994,
+   1.0831944884093087e-06
+  ]
+ },
+ "points": {
+  "middle": [
+   -0.11040361031818786,
+   0.5346078232099917,
+   0.03922616090896178
+  ],
+  "ring": [
+   -0.12010949766088684,
+   0.5178017526764883,
+   0.030773839091038216
+  ]
+ },
+ "candidate": {
+  "face_frac": 0.5,
+  "z": 0.035,
+  "fingers": [
+   "middle",
+   "ring"
+  ],
+  "thumb": "auto",
+  "pitch_deg": 0,
+  "finger_tilt_deg": 40,
+  "sweep_deg": -55.0,
+  "sweep_reach": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ]
+  ],
+  "hand_scene": "poses/hs_left_box_turn3.json",
+  "generator": "py/rot_cands.py (flat_hand_pose on the near face + arm_reach_check over the turn)"
+ }
+}

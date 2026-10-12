@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+MUJOCO_LOG.TXT
+runs/
+dexagent.local.yaml
+*.local.yaml
+.claude/
+examples/asset_reuse/*
+!examples/asset_reuse/.gitkeep

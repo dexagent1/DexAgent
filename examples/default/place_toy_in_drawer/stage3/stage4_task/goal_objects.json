@@ -1,0 +1,31 @@
+{
+ "objects": [
+  {
+   "id": "drawer_unit",
+   "type": "articulated",
+   "root_body": "drawer_unit_drawer_unit_carcass",
+   "bodies": [
+    "drawer_unit_drawer_unit_carcass",
+    "drawer_unit_drawer_unit_drawer_r0c0"
+   ],
+   "joints": {
+    "drawer_unit_drawer_unit_carcass_to_drawer_r0c0": {
+     "type": "slide",
+     "range_m": [
+      0.0,
+      0.2032
+     ],
+     "initial": 0.0
+    }
+   }
+  },
+  {
+   "id": "toy",
+   "type": "deformable",
+   "root_body": "toy_toy",
+   "bodies": [
+    "toy_toy"
+   ]
+  }
+ ]
+}

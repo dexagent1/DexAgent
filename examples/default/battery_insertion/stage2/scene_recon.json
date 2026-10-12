@@ -1,0 +1,552 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "battery_holder",
+   "type": "articulated",
+   "skill": "construct_battery_case_contact_slide",
+   "skill_origin": "library",
+   "params": {
+    "name": "battery_holder",
+    "n_slots": 3,
+    "springs_at": [
+     "+x",
+     "-x",
+     "+x"
+    ],
+    "battery_diameter": 0.0105,
+    "battery_length": 0.0445,
+    "spring_coil_radius": 0.0032,
+    "bump_radius": 0.0025,
+    "height": 0.011,
+    "spring_stiffness": 200.0,
+    "density": 3000.0,
+    "body_rgba": [
+     0.199,
+     0.206,
+     0.224,
+     1.0
+    ],
+    "include_floor": false,
+    "fixed_base": false,
+    "min_travel": 0.003,
+    "wall": 0.001,
+    "divider": 0.0008,
+    "slot_clearance": 0.0012,
+    "with_wires": false
+   },
+   "asset_xml": "objects/battery_holder/battery_holder.xml",
+   "asset_prefix": "holder_",
+   "root_body": "holder_battery_holder",
+   "bodies": [
+    "holder_battery_holder",
+    "holder_battery_holder_s0spring_coil1",
+    "holder_battery_holder_s0spring_coil2",
+    "holder_battery_holder_s0spring_coil3",
+    "holder_battery_holder_s0spring_coil4",
+    "holder_battery_holder_s0spring_coil5",
+    "holder_battery_holder_s0spring_mount",
+    "holder_battery_holder_s0spring_tip",
+    "holder_battery_holder_s1spring_coil1",
+    "holder_battery_holder_s1spring_coil2",
+    "holder_battery_holder_s1spring_coil3",
+    "holder_battery_holder_s1spring_coil4",
+    "holder_battery_holder_s1spring_coil5",
+    "holder_battery_holder_s1spring_mount",
+    "holder_battery_holder_s1spring_tip",
+    "holder_battery_holder_s2spring_coil1",
+    "holder_battery_holder_s2spring_coil2",
+    "holder_battery_holder_s2spring_coil3",
+    "holder_battery_holder_s2spring_coil4",
+    "holder_battery_holder_s2spring_coil5",
+    "holder_battery_holder_s2spring_mount",
+    "holder_battery_holder_s2spring_tip"
+   ],
+   "joints": [
+    "holder_battery_holder_s0spring_c1",
+    "holder_battery_holder_s1spring_c1",
+    "holder_battery_holder_s2spring_c1"
+   ],
+   "pose": {
+    "x": -0.037,
+    "y": 0.3731,
+    "z": 0.0,
+    "yaw_deg": -134.88
+   },
+   "mask": "masks/battery_holder.png",
+   "iou": 0.779,
+   "verification_plan": {
+    "box_enclosure_check": "an open-topped case: a floor, four walls and a hollow interior, top open as frame 0 shows",
+    "articulation_check": "each slot's spring contact is a real prismatic joint with usable travel, not a rigid tray",
+    "joint_range_check": "every slot's contact slide has its built compression range [-6.1 mm, 0] (run on all three)",
+    "articulated_joint_travel_test": "the three contact slides compress through their full travel under a capped 10 N push and return (same build with fixed_base=True: the test's own free-root weld is broken under MuJoCo 3.10)",
+    "battery_seat_test": "each of the three slots holds a seated cell between its spring and end contacts and ejects a cell released mid-insertion: the cell fits only with the spring compressed",
+    "silhouette_iou_check": "placement and size against the frame-0 mask through video_cam",
+    "settle_stability_check": "lies flat on the table and stays put with no hand",
+    "support_check": "rests on the table, not floating",
+    "penetration_check": "no interpenetration with the table or the battery at frame 0",
+    "color_match_check": "black housing colour from measure_object_color"
+   },
+   "verifiers": {
+    "box_enclosure_check": {
+     "ok": true,
+     "issues": [],
+     "top_state": "open",
+     "walls_found": [
+      "x_pos",
+      "x_neg",
+      "y_pos",
+      "y_neg"
+     ],
+     "cavity_fraction": 0.837,
+     "interior_size_m": [
+      0.0576,
+      0.0387,
+      0.0095
+     ]
+    },
+    "articulation_check": {
+     "ok": true,
+     "objects": {
+      "holder_battery_holder": {
+       "bodies": [
+        "holder_battery_holder",
+        "holder_battery_holder_s0spring_coil1",
+        "holder_battery_holder_s0spring_coil2",
+        "holder_battery_holder_s0spring_coil3",
+        "holder_battery_holder_s0spring_coil4",
+        "holder_battery_holder_s0spring_coil5",
+        "holder_battery_holder_s0spring_mount",
+        "holder_battery_holder_s0spring_tip",
+        "holder_battery_holder_s1spring_coil1",
+        "holder_battery_holder_s1spring_coil2",
+        "holder_battery_holder_s1spring_coil3",
+        "holder_battery_holder_s1spring_coil4",
+        "holder_battery_holder_s1spring_coil5",
+        "holder_battery_holder_s1spring_mount",
+        "holder_battery_holder_s1spring_tip",
+        "holder_battery_holder_s2spring_coil1",
+        "holder_battery_holder_s2spring_coil2",
+        "holder_battery_holder_s2spring_coil3",
+        "holder_battery_holder_s2spring_coil4",
+        "holder_battery_holder_s2spring_coil5",
+        "holder_battery_holder_s2spring_mount",
+        "holder_battery_holder_s2spring_tip"
+       ],
+       "joints": [
+        {
+         "joint": "holder_battery_holder_s0spring_c1",
+         "type": "slide",
+         "range": [
+          -0.0061,
+          1e-05
+         ],
+         "travel": 0.0061,
+         "moves_part_m": 0.0061,
+         "usable": true
+        },
+        {
+         "joint": "holder_battery_holder_s1spring_c1",
+         "type": "slide",
+         "range": [
+          -0.0061,
+          1e-05
+         ],
+         "travel": 0.0061,
+         "moves_part_m": 0.0061,
+         "usable": true
+        },
+        {
+         "joint": "holder_battery_holder_s2spring_c1",
+         "type": "slide",
+         "range": [
+          -0.0061,
+          1e-05
+         ],
+         "travel": 0.0061,
+         "moves_part_m": 0.0061,
+         "usable": true
+        }
+       ],
+       "total_travel": {
+        "slide": 0.0183,
+        "hinge": 0.0
+       },
+       "verdict": "articulated"
+      }
+     }
+    },
+    "joint_range_check": {
+     "ok": true,
+     "s0": {
+      "ok": true,
+      "range": [
+       -0.0061,
+       1e-05
+      ],
+      "limited": true,
+      "type": "slide",
+      "current": 0.0,
+      "expected": [
+       -0.0061,
+       1e-05
+      ]
+     },
+     "s1": {
+      "ok": true,
+      "range": [
+       -0.0061,
+       1e-05
+      ],
+      "limited": true,
+      "type": "slide",
+      "current": 0.0,
+      "expected": [
+       -0.0061,
+       1e-05
+      ]
+     },
+     "s2": {
+      "ok": true,
+      "range": [
+       -0.0061,
+       1e-05
+      ],
+      "limited": true,
+      "type": "slide",
+      "current": 0.0,
+      "expected": [
+       -0.0061,
+       1e-05
+      ]
+     }
+    },
+    "articulated_joint_travel_test": {
+     "ok": true,
+     "verdict": "JOINTS OK \u2014 3 joint(s) each travelled >= 80% of their range both ways under 10 N; root slip <= 0.0 mm",
+     "measured": {
+      "battery_holder_s0spring_c1": {
+       "type": "slide",
+       "range": [
+        -0.0061,
+        0.0
+       ],
+       "cap": 10.0,
+       "applied_at": "body com",
+       "q_start": 0.0,
+       "forward": {
+        "fraction": 1.004,
+        "t80_s": 0.0,
+        "q_end": 0.0,
+        "q_best": 0.0
+       },
+       "back": {
+        "fraction": 1.015,
+        "t80_s": 0.07,
+        "q_end": -0.0061,
+        "q_best": -0.0062
+       },
+       "root_slip_m": 0.0,
+       "ok": true
+      },
+      "battery_holder_s1spring_c1": {
+       "type": "slide",
+       "range": [
+        -0.0061,
+        0.0
+       ],
+       "cap": 10.0,
+       "applied_at": "body com",
+       "q_start": 0.0,
+       "forward": {
+        "fraction": 1.004,
+        "t80_s": 0.0,
+        "q_end": 0.0,
+        "q_best": 0.0
+       },
+       "back": {
+        "fraction": 1.015,
+        "t80_s": 0.07,
+        "q_end": -0.0061,
+        "q_best": -0.0062
+       },
+       "root_slip_m": 0.0,
+       "ok": true
+      },
+      "battery_holder_s2spring_c1": {
+       "type": "slide",
+       "range": [
+        -0.0061,
+        0.0
+       ],
+       "cap": 10.0,
+       "applied_at": "body com",
+       "q_start": 0.0,
+       "forward": {
+        "fraction": 1.004,
+        "t80_s": 0.0,
+        "q_end": 0.0,
+        "q_best": 0.0
+       },
+       "back": {
+        "fraction": 1.015,
+        "t80_s": 0.07,
+        "q_end": -0.0061,
+        "q_best": -0.0062
+       },
+       "root_slip_m": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "battery_seat_test": {
+     "ok": true,
+     "slot0": {
+      "ok": true,
+      "verdict": "SEAT OK \u2014 seated cell drifted 0.90 mm in 1.5 s with the spring holding 2.5 mm; released mid-insertion it was thrown 6.3 mm down the slot and the spring re-extended to 0.05 mm",
+      "measured": {
+       "slot": 0,
+       "seated": {
+        "drift_mm": 0.9,
+        "spring_holds_mm": 2.45,
+        "ok": true
+       },
+       "eject": {
+        "thrown_mm": 6.3,
+        "spring_after_mm": 0.05,
+        "ok": true
+       },
+       "ok": true
+      }
+     },
+     "slot1": {
+      "ok": true,
+      "verdict": "SEAT OK \u2014 seated cell drifted 0.94 mm in 1.5 s with the spring holding 2.4 mm; released mid-insertion it was thrown 6.7 mm down the slot and the spring re-extended to -0.00 mm",
+      "measured": {
+       "slot": 1,
+       "seated": {
+        "drift_mm": 0.94,
+        "spring_holds_mm": 2.44,
+        "ok": true
+       },
+       "eject": {
+        "thrown_mm": 6.7,
+        "spring_after_mm": -0.0,
+        "ok": true
+       },
+       "ok": true
+      }
+     },
+     "slot2": {
+      "ok": true,
+      "verdict": "SEAT OK \u2014 seated cell drifted 0.90 mm in 1.5 s with the spring holding 2.5 mm; released mid-insertion it was thrown 6.3 mm down the slot and the spring re-extended to 0.04 mm",
+      "measured": {
+       "slot": 2,
+       "seated": {
+        "drift_mm": 0.9,
+        "spring_holds_mm": 2.45,
+        "ok": true
+       },
+       "eject": {
+        "thrown_mm": 6.3,
+        "spring_after_mm": 0.04,
+        "ok": true
+       },
+       "ok": true
+      }
+     }
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.779
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "pos_m": 0.0,
+      "rot_deg": 0.0,
+      "verdict": "at rest"
+     }
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "static": {},
+     "unsupported_static": []
+    },
+    "penetration_check": {
+     "ok": true,
+     "tolerance_m": 0.003,
+     "n_violations": 0,
+     "worst": {
+      "geoms": [
+       "table/g_table",
+       "battery_battery/geom150"
+      ],
+      "depth_m": 0.00015,
+      "excess_m": 0.00015,
+      "frame": 0
+     }
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.199,
+      0.206,
+      0.224
+     ],
+     "closest_palette_rgb": [
+      0.199,
+      0.206,
+      0.224
+     ],
+     "dist": 0.0
+    }
+   },
+   "properties_covered": {
+    "A rigid open-topped case with three parallel cylindrical slots, each sized for one AA cell.": "n_slots=3 parallel cylindrical slots sized from the cell (battery_diameter 10.5 mm + 1.2 mm clearance, length 44.5 mm), walls 1.0 mm and dividers 0.8 mm so three slots fit the measured footprint (outer 57.6 x 38.7 x 11 mm, footprint 59.7 x 38.2 mm); open top proven by box_enclosure_check (top_state open, 4 walls, floor, cavity 0.837); AAA instead of AA sizing: see notes",
+    "Each slot has a compressible spring contact at one end: inserting a cell compresses the spring a few millimetres, and the spring then clamps the seated cell between the contacts.": "construct_battery_case_contact_slide: one prismatic contact per slot (springs alternating +x/-x/+x as in a series holder), travel 6.1 mm, 200 N/m; articulation_check, joint_range_check x3, articulated_joint_travel_test; battery_seat_test in all three slots: seated with ~2.5 mm spring compression the cell is clamped and stays (drift < 1 mm), released mid-insertion it is thrown out by the spring",
+    "The holder is light and slides when pushed, so one hand steadies it while the other presses the cell in.": "a FREE body (fixed_base false) resting on the table, friction 0.7, 23.5 g: an unbraced push can slide or turn it (Stage 3 braces it with the left hand); settle_stability_check drift 0.0 mm with no hand",
+    "Two wire leads trail from the case onto the cloth; they do not take part in the task.": "not reproduced (with_wires false): the leads take no part in the task, and the constructor's leads are rigid visual capsules lying on the cloth, so whenever the free holder tilts (the cell dropping into its slot tips it ~9 deg) they sink up to 12 mm into the tabletop (object_visual_penetration_audit); flexible leads would need a deformable that no subgoal uses"
+   }
+  },
+  {
+   "id": "battery",
+   "type": "rigid",
+   "skill": "construct_battery",
+   "skill_origin": "library",
+   "params": {
+    "name": "battery",
+    "diameter": 0.0105,
+    "length": 0.0445,
+    "button_radius": 0.0019,
+    "button_height": 0.0008,
+    "body_rgba": [
+     0.303,
+     0.3,
+     0.316,
+     1.0
+    ],
+    "upright": true,
+    "include_floor": false,
+    "mass": 0.0115
+   },
+   "asset_xml": "objects/battery/battery.xml",
+   "root_body": "battery_battery",
+   "bodies": [
+    "battery_battery"
+   ],
+   "pose": {
+    "x": 0.1319,
+    "y": 0.3771,
+    "z": 0.0,
+    "yaw_deg": -0.84
+   },
+   "mask": "masks/battery.png",
+   "iou": 0.577,
+   "verification_plan": {
+    "height_check": "stands on its flat (negative) end as the video shows before the pick: body origin (flat face) at table height",
+    "silhouette_iou_check": "placement and size against the frame-0 mask through video_cam",
+    "settle_stability_check": "stands without tipping",
+    "support_check": "rests on the table",
+    "color_match_check": "dark jacket and copper end colours from measure_object_color",
+    "battery_seat_test": "the cell lies lengthwise in a slot between the contacts only with the spring compressed, stays seated without hand support, and is thrown out if released half-inserted"
+   },
+   "verifiers": {
+    "height_check": {
+     "ok": true,
+     "z": 0.0001,
+     "reference_z": 0.0,
+     "band": [
+      -0.001,
+      0.002
+     ]
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.577
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "pos_m": 0.0001,
+      "rot_deg": 0.0,
+      "verdict": "at rest"
+     }
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "static": {},
+     "unsupported_static": []
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.303,
+      0.3,
+      0.316
+     ],
+     "closest_palette_rgb": [
+      0.303,
+      0.3,
+      0.316
+     ],
+     "dist": 0.0
+    },
+    "battery_seat_test": {
+     "ok": true,
+     "slot0": {
+      "ok": true,
+      "verdict": "SEAT OK \u2014 seated cell drifted 0.90 mm in 1.5 s with the spring holding 2.5 mm; released mid-insertion it was thrown 6.3 mm down the slot and the spring re-extended to 0.05 mm"
+     },
+     "slot1": {
+      "ok": true,
+      "verdict": "SEAT OK \u2014 seated cell drifted 0.94 mm in 1.5 s with the spring holding 2.4 mm; released mid-insertion it was thrown 6.7 mm down the slot and the spring re-extended to -0.00 mm"
+     },
+     "slot2": {
+      "ok": true,
+      "verdict": "SEAT OK \u2014 seated cell drifted 0.90 mm in 1.5 s with the spring holding 2.5 mm; released mid-insertion it was thrown 6.3 mm down the slot and the spring re-extended to 0.04 mm"
+     }
+    }
+   },
+   "properties_covered": {
+    "A small rigid cylinder picked up with a fingertip pinch and carried in one hand.": "construct_battery: a free rigid cylinder 10.5 x 44.5 mm, 11.5 g, standing on its flat end where the frame-0 mask has it (the video shows it upright at 1.5 s); the fingertip pinch and one-hand carry are Stage 3 (it is light and small enough for a thumb-index pinch); height_check, settle_stability_check, support_check",
+    "It goes into a slot of the holder lengthwise: one end is pushed against the slot's spring contact to compress it, then the other end is pressed down so the cell drops between the contacts and seats.": "battery_seat_test (all three slots): the cell's length fits between the contacts only with the spring compressed; a cell released half-inserted is thrown 6.3-6.7 mm down the slot by the spring",
+    "Once seated it is held by the spring and stays in the slot without support.": "battery_seat_test seated trial: with ~2.5 mm spring compression the cell stays in the slot without hand support (drift 0.90-0.94 mm in 1.5 s, free holder)"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "silhouette_iou": {
+    "holder_battery_holder": 0.779,
+    "battery_battery": 0.577
+   },
+   "warnings": [
+    "OUT OF REACH: holder_battery_holder at y=0.37 m (left arm, 67 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+   ]
+  }
+ },
+ "notes": [
+  "Maintainer rebuild (release examples): the first-pass scene had a 2-slot holder; Stage 1 says three slots, so the holder was rebuilt with n_slots 3 (springs alternating +x/-x/+x like a series holder), walls 1.0 mm and dividers 0.8 mm so three AAA slots fit the measured 38 mm footprint width; placement refit with fit_object_placement (x, y, yaw; IoU 0.78 through video_cam without the omitted leads). The battery kept its first-pass size and placement.",
+  "The spring-coil limit time constant: common/spring.py wrote solreflimit 0.0005 s on every coil joint, below MuJoCo's 2 x timestep floor (0.004 s) that the engine silently runs instead (solver_parameter_sanity_check failed the first-pass scene); the library now writes 2 x timestep (commit c5b659c) and the rebuilt asset and scene carry 0.004 s; every mechanism test was re-run with it (battery_seat_test in all three slots, articulated_joint_travel_test).",
+  "Naming: the holder is attached under the prefix 'holder_' (bodies holder_battery_holder*), so the battery object's '<id>_' prefix 'battery_' matches only the cell (battery_battery) and no holder body; the holder id still resolves to its root (the one body ending in '_battery_holder'). Stage 1 ids are unchanged.",
+  "Camera: register_table_camera(source='setup'); camera_check.png grid lies on the cloth and converges with the table edges. Frame 0 has a green exposure cast; colours were measured on source frame 45 (1.5 s, settled exposure, no hands) with the frame-0 masks (objects do not move before 2 s).",
+  "SIZE DEVIATION FROM STAGE 1: Stage 1 names the cell 'AA'. Built at AA size the renders were larger than the video on every side (first pass: IoU 0.66 holder, 0.40 battery; uniform-scale fits 0.82 / 0.64); the AAA standard cell (10.5 x 44.5 mm) matches those ratios, so cell and holder are built from the AAA size.",
+  "Battery initial state: Stage 1 says 'lying on the cloth'; the video shows the cell standing on its flat end before the pick (1.5 s, copper end up), so it is built upright (construct_battery upright=true).",
+  "Holder density 3000 kg/m^3 (23.5 g with three slots): lighter free housings jiggle under the spring and battery_seat_test's seated drift exceeds its 1 mm limit (first pass: 1.0-1.1 mm at 1250-2000 kg/m^3). Spring stiffness 200 N/m (a soft AAA contact).",
+  "Slot numbering: slot 0 is the asset's smallest local y; joints holder_battery_holder_s{0,1,2}spring_c1.",
+  "The battery's silhouette IoU (0.58 through video_cam) is limited by its size in the frame: ~10 x 25 px.",
+  "The holder's lead wires are omitted (with_wires false): rigid visual leads lying on the cloth sank into the tabletop whenever the free holder tilted in Stage 3; they take no part in the task.",
+  "scene_qc warns that the holder is at the edge of the left arm's reach (y 0.37 m); the video has it there. Stage 3 may move the stations with place_arm_stations."
+ ],
+ "source": "examples/asset_reuse"
+}

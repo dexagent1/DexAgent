@@ -1,0 +1,5671 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_recon": "../stage2/scene_recon.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "step": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    160
+   ],
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "held_tube",
+   "pose": {
+    "file": "poses/left_tube.json",
+    "hand_scene": "poses/hs_left_tube.json",
+    "source": "generate_rigid_grasps (thumb-index pinch near the rim, candidate g2c0; emul2 stage3_r3), executed with press_depth_rad 0, re-anchored to this scene's tube with subgoal.reanchor_pose",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 17.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 0.8,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.0,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 1.4,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.4,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 125,
+        "saturated_frac": 0.0,
+        "median_s": 0.025,
+        "peak_s": 0.279,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 1.4,
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.74,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 1,
+    "step": 1,
+    "motion": "grasp_lift",
+    "side": "left",
+    "object": "held_tube",
+    "pose": "poses/left_tube.json",
+    "hand_scene": "poses/hs_left_tube.json",
+    "lift_m": 0.1,
+    "press_depth_rad": 0.0
+   },
+   "expect": {
+    "rise_m": 0.05,
+    "in_hand": true,
+    "no_slip": true,
+    "hand": "left",
+    "object": "held_tube",
+    "involved": [
+     "held_tube"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "pipette_pipette",
+     "tip_box_tipbox",
+     "tip_box_tipbox_tip"
+    ],
+    "slip_from_rel": 129
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "no_slip": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:pipette_pipette": true,
+     "untouched:tip_box_tipbox": true,
+     "untouched:tip_box_tipbox_tip": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1027,
+      0.3974,
+      0.004
+     ],
+     "object_end": [
+      0.101,
+      0.3949,
+      0.1048
+     ],
+     "object_moved_m": 0.1009,
+     "object_rotated_deg": 1.66,
+     "object_tilt_end_deg": 1.08,
+     "rise_m": 0.1009,
+     "peak_rise_m": 0.1009,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0025,
+       "rotated_deg": 0.98
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0028,
+       "rotated_deg": 1.03
+      },
+      "pipette_pipette": {
+       "moved_m": 0.0019,
+       "rotated_deg": 7.4
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox_tip": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.01
+      }
+     },
+     "max_hand_pen_mm": 0.3,
+     "max_object_pen_mm": 0.67,
+     "max_track_pos_mm": 0.9,
+     "max_track_rot_deg": 1.2
+    },
+    "frames": [
+     0,
+     160
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 1,
+   "step": 2,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    161,
+    211
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "held_tube",
+   "pose": {
+    "file": "poses/left_tube.json",
+    "hand_scene": "poses/hs_left_tube.json",
+    "source": "generate_rigid_grasps (thumb-index pinch near the rim, candidate g2c0; emul2 stage3_r3), executed with press_depth_rad 0, re-anchored to this scene's tube with subgoal.reanchor_pose",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 17.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 0.8,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.0,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 1.4,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.4,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 125,
+        "saturated_frac": 0.0,
+        "median_s": 0.025,
+        "peak_s": 0.279,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 1.4,
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.74,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 1,
+    "step": 2,
+    "motion": "carry",
+    "side": "left",
+    "object": "held_tube",
+    "target_pos": [
+     -0.16,
+     0.28,
+     0.06
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     0
+    ],
+    "duration_s": 1.6
+   },
+   "expect": {
+    "target_pos": [
+     -0.16,
+     0.28,
+     0.06
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "held_tube",
+    "involved": [
+     "held_tube"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "pipette_pipette",
+     "tip_box_tipbox",
+     "tip_box_tipbox_tip"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:pipette_pipette": true,
+     "untouched:tip_box_tipbox": true,
+     "untouched:tip_box_tipbox_tip": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.101,
+      0.3949,
+      0.1048
+     ],
+     "object_end": [
+      -0.16,
+      0.28,
+      0.06
+     ],
+     "object_moved_m": 0.2887,
+     "object_rotated_deg": 7.95,
+     "object_tilt_end_deg": 0.0,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.01
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.01
+      },
+      "pipette_pipette": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.47
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox_tip": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.38,
+     "max_track_pos_mm": 0.8,
+     "max_track_rot_deg": 0.3
+    },
+    "frames": [
+     161,
+     211
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 2,
+   "step": 1,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    212,
+    403
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 2,
+    "step": 1,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "pipette_pipette",
+    "pose": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "approach_m": 0.1,
+    "lift_path": [
+     [
+      0.0008,
+      -0.0012,
+      0.0058
+     ],
+     [
+      -0.0005980000000000002,
+      -0.00047099999999999963,
+      0.0117
+     ],
+     [
+      0.010202000000000001,
+      -0.015671,
+      0.0874
+     ]
+    ],
+    "open_frac": 0.3,
+    "duration_s": 2.0
+   },
+   "expect": {
+    "rise_m": 0.0437,
+    "in_hand": true,
+    "no_slip": true,
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "tip_box_tipbox",
+     "tip_box_tipbox_tip"
+    ],
+    "slip_from_rel": 141
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "no_slip": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "untouched:tip_box_tipbox_tip": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.2031,
+      0.3858,
+      -0.0
+     ],
+     "object_end": [
+      0.2153,
+      0.3697,
+      0.0886
+     ],
+     "object_moved_m": 0.0909,
+     "object_rotated_deg": 16.08,
+     "object_tilt_end_deg": 17.04,
+     "rise_m": 0.0886,
+     "peak_rise_m": 0.0886,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0006,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0083,
+       "rotated_deg": 5.3
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0096,
+       "rotated_deg": 5.35
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox_tip": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.01
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 1.28,
+     "max_track_pos_mm": 0.9,
+     "max_track_rot_deg": 2.5
+    },
+    "frames": [
+     212,
+     403
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 3,
+   "step": 1,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    404,
+    436
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 3,
+    "step": 1,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "target_pos": [
+     0.2165,
+     0.3705,
+     0.135
+    ],
+    "turn": {
+     "axis": [
+      0,
+      0,
+      1
+     ],
+     "deg": -15
+    },
+    "arm_path": "joint",
+    "duration_s": 1.0
+   },
+   "expect": {
+    "target_pos": [
+     0.2165,
+     0.3705,
+     0.135
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "tip_box_tipbox",
+     "tip_box_tipbox_tip"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "untouched:tip_box_tipbox_tip": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.2154,
+      0.3697,
+      0.0887
+     ],
+     "object_end": [
+      0.2165,
+      0.3706,
+      0.135
+     ],
+     "object_moved_m": 0.0464,
+     "object_rotated_deg": 14.97,
+     "object_tilt_end_deg": 17.05,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0001,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox_tip": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.02,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.8
+    },
+    "frames": [
+     404,
+     436
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 3,
+   "step": 2,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    437,
+    499
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 3,
+    "step": 2,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "over": "tip_box_tipbox_tip",
+    "offset": [
+     -0.0009,
+     -0.0005,
+     0
+    ],
+    "height_m": 0.023,
+    "target_euler_deg": [
+     0,
+     6,
+     -100
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     -0.0865987258309544,
+     0.38657154532312255,
+     0.10925798014052954
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "placement": {
+     "support": "tip_box_tipbox_tip",
+     "support_top_z": 0.08622,
+     "part_bottom_below_root_m": 4e-05,
+     "method": "footprint",
+     "n_rays": 225,
+     "n_hits": 4,
+     "n_features": 28
+    },
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.2165,
+      0.3706,
+      0.135
+     ],
+     "object_end": [
+      -0.0866,
+      0.3866,
+      0.1093
+     ],
+     "object_moved_m": 0.3046,
+     "object_rotated_deg": 22.3,
+     "object_tilt_end_deg": 5.99,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.02,
+     "max_track_pos_mm": 0.6,
+     "max_track_rot_deg": 0.6
+    },
+    "frames": [
+     437,
+     499
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 3,
+   "step": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    500,
+    562
+   ],
+   "motion": "insert",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 3,
+    "step": 3,
+    "motion": "insert",
+    "side": "right",
+    "object": "pipette_pipette",
+    "over": "tip_box_tipbox_tip",
+    "offset": [
+     -0.0009,
+     -0.0005,
+     0
+    ],
+    "height_m": -0.0105,
+    "target_euler_deg": [
+     0,
+     6,
+     -100
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     -0.08659872776533552,
+     0.38657154222113155,
+     0.07563487285953915
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "pos_tol_m": 0.015,
+    "placement": {
+     "support": "tip_box_tipbox_tip",
+     "support_top_z": 0.08622,
+     "part_bottom_below_root_m": -8e-05,
+     "method": "footprint",
+     "n_rays": 135,
+     "n_hits": 4,
+     "n_features": 32
+    },
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0866,
+      0.3866,
+      0.1092
+     ],
+     "object_end": [
+      -0.0866,
+      0.3866,
+      0.076
+     ],
+     "object_moved_m": 0.0332,
+     "object_rotated_deg": 0.02,
+     "object_tilt_end_deg": 6.0,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0004,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 1.58,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     500,
+     562
+    ],
+    "variant": "as planned"
+   },
+   "goal_predicates": [
+    {
+     "class": "insertion_depth",
+     "bodies": {
+      "A": "pipette",
+      "B": "tip"
+     },
+     "params": {
+      "axis": [
+       0.0,
+       0.0,
+       -1.0
+      ],
+      "min_depth_m": 0.005,
+      "point": "leading"
+     },
+     "frames": [
+      500,
+      562
+     ]
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "step": 4,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    563,
+    601
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 3,
+    "step": 4,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "pipette_pipette",
+    "with": "tip_box_tipbox_tip",
+    "lift_m": 0.065
+   },
+   "expect": {
+    "rise_m": 0.0325,
+    "in_hand": true,
+    "no_slip": true,
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "no_slip": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0866,
+      0.3866,
+      0.076
+     ],
+     "object_end": [
+      -0.0866,
+      0.3866,
+      0.1406
+     ],
+     "object_moved_m": 0.0646,
+     "object_rotated_deg": 0.01,
+     "object_tilt_end_deg": 6.01,
+     "rise_m": 0.0646,
+     "peak_rise_m": 0.0646,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 1.58,
+     "max_track_pos_mm": 0.4,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     563,
+     601
+    ],
+    "variant": "as planned"
+   },
+   "goal_predicates": [
+    {
+     "class": "stacked_on",
+     "bodies": {
+      "A": "tip",
+      "B": "pipette"
+     },
+     "params": {},
+     "frames": [
+      563,
+      601
+     ]
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "step": 1,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    602,
+    628
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 4,
+    "step": 1,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "over": "tip_box_tipbox_tip",
+    "offset": [
+     -0.0009,
+     -0.0005,
+     0
+    ],
+    "height_m": 0.023,
+    "with": "tip_box_tipbox_tip",
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     -0.09131451147086832,
+     0.3876998497845216,
+     0.1713124048194053
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "placement": {
+     "support": "tip_box_tipbox_tip",
+     "support_top_z": 0.14839,
+     "part_bottom_below_root_m": -8e-05,
+     "method": "footprint",
+     "n_rays": 135,
+     "n_hits": 5,
+     "n_features": 32
+    },
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0866,
+      0.3866,
+      0.1406
+     ],
+     "object_end": [
+      -0.0913,
+      0.3877,
+      0.1713
+     ],
+     "object_moved_m": 0.031,
+     "object_rotated_deg": 0.01,
+     "object_tilt_end_deg": 6.02,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.26,
+     "max_track_pos_mm": 0.1,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     602,
+     628
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 4,
+   "step": 2,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    629,
+    691
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 4,
+    "step": 2,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "over": "rack_tube_srctube",
+    "offset": [
+     0.0,
+     0.0,
+     0
+    ],
+    "height_m": 0.07,
+    "with": "tip_box_tipbox_tip",
+    "target_euler_deg": [
+     0,
+     0,
+     -100
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     0.14028674109367537,
+     0.3803033304328296,
+     0.15590729582312163
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "placement": {
+     "support": "rack_tube_srctube",
+     "support_top_z": 0.08599,
+     "part_bottom_below_root_m": -8e-05,
+     "method": "footprint",
+     "n_rays": 135,
+     "n_hits": 26,
+     "n_features": 1
+    },
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "rack_tube_srctube",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0913,
+      0.3877,
+      0.1713
+     ],
+     "object_end": [
+      0.1403,
+      0.3803,
+      0.1559
+     ],
+     "object_moved_m": 0.2322,
+     "object_rotated_deg": 6.01,
+     "object_tilt_end_deg": 0.01,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.16,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.2
+    },
+    "frames": [
+     629,
+     691
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 4,
+   "step": 3,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    692,
+    730
+   ],
+   "motion": "insert",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 4,
+    "step": 3,
+    "motion": "insert",
+    "side": "right",
+    "object": "pipette_pipette",
+    "over": "rack_tube_srctube",
+    "offset": [
+     0.0,
+     0.0,
+     0
+    ],
+    "height_m": 0.035,
+    "with": "tip_box_tipbox_tip",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "target_pos": [
+     0.14028674109303632,
+     0.3803033304357276,
+     0.12088965945331856
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "pos_tol_m": 0.015,
+    "placement": {
+     "support": "rack_tube_srctube",
+     "support_top_z": 0.08599,
+     "part_bottom_below_root_m": -0.0001,
+     "method": "footprint",
+     "n_rays": 135,
+     "n_hits": 39,
+     "n_features": 1
+    },
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "rack_tube_srctube",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1403,
+      0.3803,
+      0.1559
+     ],
+     "object_end": [
+      0.1403,
+      0.3803,
+      0.1209
+     ],
+     "object_moved_m": 0.035,
+     "object_rotated_deg": 0.01,
+     "object_tilt_end_deg": 0.01,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.14,
+     "max_track_pos_mm": 0.2,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     692,
+     730
+    ],
+    "variant": "as planned"
+   },
+   "goal_predicates": [
+    {
+     "class": "insertion_depth",
+     "bodies": {
+      "A": "tip",
+      "B": "rack_tube"
+     },
+     "params": {
+      "axis": [
+       0.0,
+       0.0,
+       -1.0
+      ],
+      "min_depth_m": 0.02,
+      "point": "leading"
+     },
+     "frames": [
+      692,
+      730
+     ]
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "step": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    731,
+    763
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 4,
+    "step": 4,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "over": "rack_tube_srctube",
+    "offset": [
+     0.0,
+     0.0,
+     0
+    ],
+    "height_m": 0.079,
+    "with": "tip_box_tipbox_tip",
+    "duration_s": 1.0
+   },
+   "expect": {
+    "target_pos": [
+     0.14028674109257522,
+     0.38030333043798314,
+     0.164889659700856
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "placement": {
+     "support": "rack_tube_srctube",
+     "support_top_z": 0.08599,
+     "part_bottom_below_root_m": -0.0001,
+     "method": "footprint",
+     "n_rays": 135,
+     "n_hits": 39,
+     "n_features": 1
+    },
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "rack_tube_srctube",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1403,
+      0.3803,
+      0.1209
+     ],
+     "object_end": [
+      0.1403,
+      0.3803,
+      0.1649
+     ],
+     "object_moved_m": 0.044,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.02,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.13,
+     "max_track_pos_mm": 0.2,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     731,
+     763
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 5,
+   "step": 1,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    764,
+    811
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "held_tube",
+   "pose": {
+    "file": "poses/left_tube.json",
+    "hand_scene": "poses/hs_left_tube.json",
+    "source": "generate_rigid_grasps (thumb-index pinch near the rim, candidate g2c0; emul2 stage3_r3), executed with press_depth_rad 0, re-anchored to this scene's tube with subgoal.reanchor_pose",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 17.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 0.8,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.0,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 1.4,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.4,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 125,
+        "saturated_frac": 0.0,
+        "median_s": 0.025,
+        "peak_s": 0.279,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 1.4,
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.74,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 5,
+    "step": 1,
+    "motion": "carry",
+    "side": "left",
+    "object": "held_tube",
+    "target_pos": [
+     0.02,
+     0.32,
+     0.07
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     0
+    ],
+    "duration_s": 1.5
+   },
+   "expect": {
+    "target_pos": [
+     0.02,
+     0.32,
+     0.07
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "held_tube",
+    "involved": [
+     "held_tube"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "tip_box_tipbox",
+     "tip_box_tipbox_tip"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "untouched:tip_box_tipbox_tip": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.16,
+      0.28,
+      0.06
+     ],
+     "object_end": [
+      0.02,
+      0.32,
+      0.07
+     ],
+     "object_moved_m": 0.1847,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.0,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox_tip": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.05
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.13,
+     "max_track_pos_mm": 0.6,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     764,
+     811
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 5,
+   "step": 2,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    812,
+    874
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 5,
+    "step": 2,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "over": "held_tube",
+    "offset": [
+     0,
+     0,
+     0
+    ],
+    "height_m": 0.0736,
+    "with": "tip_box_tipbox_tip",
+    "target_euler_deg": [
+     0,
+     0,
+     -100
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     0.02000020122966998,
+     0.32000001927478094,
+     0.225499998715723
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "placement": {
+     "support": "held_tube",
+     "support_top_z": 0.152,
+     "part_bottom_below_root_m": -0.0001,
+     "method": "footprint",
+     "n_rays": 135,
+     "n_hits": 39,
+     "n_features": 1
+    },
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "held_tube",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1403,
+      0.3803,
+      0.1649
+     ],
+     "object_end": [
+      0.02,
+      0.32,
+      0.2255
+     ],
+     "object_moved_m": 0.1476,
+     "object_rotated_deg": 0.02,
+     "object_tilt_end_deg": 0.01,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.14,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     812,
+     874
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 5,
+   "step": 3,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    875,
+    913
+   ],
+   "motion": "both",
+   "hands": {
+    "left": {
+     "motion": "wait",
+     "side": "left",
+     "object": "held_tube",
+     "pose": {
+      "file": "poses/left_tube.json",
+      "hand_scene": "poses/hs_left_tube.json",
+      "source": "generate_rigid_grasps (thumb-index pinch near the rim, candidate g2c0; emul2 stage3_r3), executed with press_depth_rad 0, re-anchored to this scene's tube with subgoal.reanchor_pose",
+      "stress_tests": {
+       "grasp_stress_test": {
+        "ok": true,
+        "first_fail": null,
+        "phases": [
+         {
+          "name": "approach_open",
+          "object_nudged_mm": 0.0,
+          "penetration_mm": 0.0,
+          "ok": true
+         },
+         {
+          "name": "seated",
+          "held_before_full_press": true,
+          "finger_contacts": 2,
+          "fingers": [
+           "index",
+           "thumb"
+          ],
+          "contact_force_N": 17.0,
+          "ok": true
+         },
+         {
+          "name": "lift_0.05",
+          "commanded_mm": 50.0,
+          "achieved_mm": 49.7,
+          "drift_mm": 0.1,
+          "ok": true
+         },
+         {
+          "name": "lift_0.10",
+          "commanded_mm": 100.0,
+          "achieved_mm": 99.7,
+          "drift_mm": 0.1,
+          "ok": true
+         },
+         {
+          "name": "move_up",
+          "drift_mm": 0.1,
+          "ok": true
+         },
+         {
+          "name": "move_fwd",
+          "drift_mm": 0.1,
+          "ok": true
+         },
+         {
+          "name": "move_back",
+          "drift_mm": 0.1,
+          "ok": true
+         },
+         {
+          "name": "move_left",
+          "drift_mm": 0.1,
+          "ok": true
+         },
+         {
+          "name": "move_right",
+          "drift_mm": 0.2,
+          "ok": true
+         },
+         {
+          "name": "turn_roll",
+          "drift_mm": 0.8,
+          "ok": true
+         },
+         {
+          "name": "turn_pitch",
+          "drift_mm": 1.0,
+          "ok": true
+         },
+         {
+          "name": "turn_yaw",
+          "drift_mm": 1.4,
+          "ok": true
+         },
+         {
+          "name": "hold",
+          "drift_mm": 1.4,
+          "slip_mm_s": 0.0,
+          "finger_contacts": 2,
+          "contact_force_N": 13.9,
+          "ok": true
+         },
+         {
+          "name": "servo_reserve",
+          "judged": 125,
+          "saturated_frac": 0.0,
+          "median_s": 0.025,
+          "peak_s": 0.279,
+          "limiting_joint": "thumb_CMC_AA",
+          "ok": true
+         }
+        ],
+        "lifts": [
+         {
+          "commanded_mm": 50.0,
+          "achieved_mm": 49.7
+         },
+         {
+          "commanded_mm": 100.0,
+          "achieved_mm": 99.7
+         }
+        ],
+        "slip_mm_s": 0.0,
+        "max_drift_mm": 1.4,
+        "penetration_at_end_mm": {
+         "object_mm": 0.0,
+         "floor_mm": 0.0,
+         "visual_object_mm": 0.74,
+         "visual_floor_mm": 0.0,
+         "worst_pair": {}
+        }
+       }
+      }
+     }
+    },
+    "right": {
+     "motion": "insert",
+     "side": "right",
+     "object": "pipette_pipette",
+     "pose": {
+      "file": "poses/right_pipette_p0.json",
+      "hand_scene": "poses/hs_right_pipette.json",
+      "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+      "stress_tests": {
+       "grasp_stress_test": {
+        "ok": true,
+        "first_fail": null,
+        "phases": [
+         {
+          "name": "approach_open",
+          "object_nudged_mm": 0.0,
+          "penetration_mm": 0.0,
+          "ok": true
+         },
+         {
+          "name": "seated",
+          "held_before_full_press": true,
+          "finger_contacts": 2,
+          "fingers": [
+           "middle",
+           "thumb"
+          ],
+          "contact_force_N": 14.7,
+          "ok": true
+         },
+         {
+          "name": "lift_0.05",
+          "commanded_mm": 50.0,
+          "achieved_mm": 50.0,
+          "drift_mm": 0.5,
+          "ok": true
+         },
+         {
+          "name": "lift_0.12",
+          "commanded_mm": 120.0,
+          "achieved_mm": 120.0,
+          "drift_mm": 0.5,
+          "ok": true
+         },
+         {
+          "name": "move_up",
+          "drift_mm": 0.5,
+          "ok": true
+         },
+         {
+          "name": "move_fwd",
+          "drift_mm": 0.4,
+          "ok": true
+         },
+         {
+          "name": "move_back",
+          "drift_mm": 0.5,
+          "ok": true
+         },
+         {
+          "name": "move_left",
+          "drift_mm": 0.5,
+          "ok": true
+         },
+         {
+          "name": "move_right",
+          "drift_mm": 0.4,
+          "ok": true
+         },
+         {
+          "name": "turn_roll",
+          "drift_mm": 1.2,
+          "ok": true
+         },
+         {
+          "name": "turn_pitch",
+          "drift_mm": 1.6,
+          "ok": true
+         },
+         {
+          "name": "turn_yaw",
+          "drift_mm": 2.2,
+          "ok": true
+         },
+         {
+          "name": "hold",
+          "drift_mm": 2.2,
+          "slip_mm_s": 0.0,
+          "finger_contacts": 2,
+          "contact_force_N": 13.9,
+          "ok": true
+         },
+         {
+          "name": "servo_reserve",
+          "judged": 122,
+          "saturated_frac": 0.516,
+          "median_s": 3.368,
+          "peak_s": 13.147,
+          "limiting_joint": "thumb_CMC_AA",
+          "ok": true
+         }
+        ],
+        "lifts": [
+         {
+          "commanded_mm": 50.0,
+          "achieved_mm": 50.0
+         },
+         {
+          "commanded_mm": 120.0,
+          "achieved_mm": 120.0
+         }
+        ],
+        "slip_mm_s": 0.0,
+        "max_drift_mm": 2.2,
+        "penetration_at_end_mm": {
+         "object_mm": 0.04,
+         "floor_mm": 0.0,
+         "visual_object_mm": 0.61,
+         "visual_floor_mm": 0.0,
+         "worst_pair": {
+          "object": [
+           "hand_collision_hand_right_thumb_1",
+           "pipette_pipette_handle"
+          ]
+         }
+        }
+       }
+      }
+     }
+    }
+   },
+   "sync": "start",
+   "plan": {
+    "index": 5,
+    "step": 3,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "wait",
+      "object": "held_tube",
+      "duration_s": 1.2
+     },
+     "right": {
+      "motion": "insert",
+      "object": "pipette_pipette",
+      "over": "held_tube",
+      "offset": [
+       0,
+       0,
+       0
+      ],
+      "height_m": 0.052,
+      "with": "tip_box_tipbox_tip",
+      "duration_s": 1.2
+     }
+    }
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "object": null,
+      "hand": "left",
+      "involved": [
+       "held_tube"
+      ]
+     },
+     "right": {
+      "target_pos": [
+       0.019999999157897422,
+       0.3199988110564755,
+       0.2039003349621593
+      ],
+      "in_hand": true,
+      "no_slip": true,
+      "target_axes": "xyz",
+      "pos_tol_m": 0.015,
+      "placement": {
+       "support": "held_tube",
+       "support_top_z": 0.152,
+       "part_bottom_below_root_m": -0.0001,
+       "method": "footprint",
+       "n_rays": 135,
+       "n_hits": 39,
+       "n_features": 1
+      },
+      "hand": "right",
+      "object": "pipette_pipette",
+      "involved": [
+       "pipette_pipette",
+       "held_tube",
+       "tip_box_tipbox_tip"
+      ],
+      "slip_from_rel": 0
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": "held_tube",
+     "right": "pipette_pipette"
+    },
+    "involved": [
+     "held_tube",
+     "held_tube",
+     "pipette_pipette",
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "tip_box_tipbox"
+    ],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 50.0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "right:in_hand": true,
+     "right:no_slip": true,
+     "right:at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "hands_apart": true
+    },
+    "measured": {
+     "hands": {
+      "left": {
+       "max_hand_pen_mm": 0.18,
+       "max_object_pen_mm": 0.11,
+       "max_track_pos_mm": 0.1,
+       "max_track_rot_deg": 0.0
+      },
+      "right": {
+       "object_start": [
+        0.02,
+        0.32,
+        0.2255
+       ],
+       "object_end": [
+        0.02,
+        0.32,
+        0.2039
+       ],
+       "object_moved_m": 0.0216,
+       "object_rotated_deg": 0.01,
+       "object_tilt_end_deg": 0.02,
+       "hand_links_touching": [
+        "robot_right_right_middle_DP",
+        "robot_right_right_thumb_PP"
+       ],
+       "slip_in_hand_m": 0.0,
+       "target_err_m": 0.0,
+       "max_hand_pen_mm": 0.18,
+       "max_object_pen_mm": 0.11,
+       "max_track_pos_mm": 0.1,
+       "max_track_rot_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.11,
+     "max_track_pos_mm": 0.1,
+     "max_track_rot_deg": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "hands_touching_frames": 0
+    },
+    "frames": [
+     875,
+     913
+    ],
+    "variant": "as planned"
+   },
+   "goal_predicates": [
+    {
+     "class": "insertion_depth",
+     "bodies": {
+      "A": "tip",
+      "B": "tube"
+     },
+     "params": {
+      "axis": [
+       0.0,
+       0.0,
+       -1.0
+      ],
+      "min_depth_m": 0.012,
+      "point": "leading"
+     },
+     "frames": [
+      875,
+      913
+     ]
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "step": 4,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    914,
+    946
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 5,
+    "step": 4,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "over": "held_tube",
+    "offset": [
+     0,
+     0,
+     0
+    ],
+    "height_m": 0.0736,
+    "with": "tip_box_tipbox_tip",
+    "duration_s": 1.0
+   },
+   "expect": {
+    "target_pos": [
+     0.01999999915787192,
+     0.3199988110564575,
+     0.2255003350325691
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "placement": {
+     "support": "held_tube",
+     "support_top_z": 0.152,
+     "part_bottom_below_root_m": -0.0001,
+     "method": "footprint",
+     "n_rays": 135,
+     "n_hits": 39,
+     "n_features": 1
+    },
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "held_tube",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.02,
+      0.32,
+      0.2039
+     ],
+     "object_end": [
+      0.02,
+      0.32,
+      0.2255
+     ],
+     "object_moved_m": 0.0216,
+     "object_rotated_deg": 0.01,
+     "object_tilt_end_deg": 0.02,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.11,
+     "max_track_pos_mm": 0.1,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     914,
+     946
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 6,
+   "step": 1,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    947,
+    1009
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 6,
+    "step": 1,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "target_pos": [
+     0.15,
+     0.3,
+     0.25
+    ],
+    "with": "tip_box_tipbox_tip",
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     0.15,
+     0.3,
+     0.25
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.02,
+      0.32,
+      0.2255
+     ],
+     "object_end": [
+      0.15,
+      0.3,
+      0.25
+     ],
+     "object_moved_m": 0.1338,
+     "object_rotated_deg": 0.01,
+     "object_tilt_end_deg": 0.03,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.1,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     947,
+     1009
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 6,
+   "step": 2,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1010,
+    1057
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "held_tube",
+   "pose": {
+    "file": "poses/left_tube.json",
+    "hand_scene": "poses/hs_left_tube.json",
+    "source": "generate_rigid_grasps (thumb-index pinch near the rim, candidate g2c0; emul2 stage3_r3), executed with press_depth_rad 0, re-anchored to this scene's tube with subgoal.reanchor_pose",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 17.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 0.8,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.0,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 1.4,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.4,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 125,
+        "saturated_frac": 0.0,
+        "median_s": 0.025,
+        "peak_s": 0.279,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 1.4,
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.74,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 6,
+    "step": 2,
+    "motion": "carry",
+    "side": "left",
+    "object": "held_tube",
+    "target_pos": [
+     0.03,
+     0.24,
+     0.1
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     0
+    ],
+    "duration_s": 1.5
+   },
+   "expect": {
+    "target_pos": [
+     0.03,
+     0.24,
+     0.1
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "held_tube",
+    "involved": [
+     "held_tube"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "rack_tube_srctube",
+     "tip_box_tipbox",
+     "tip_box_tipbox_tip"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "untouched:tip_box_tipbox_tip": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.02,
+      0.32,
+      0.07
+     ],
+     "object_end": [
+      0.03,
+      0.24,
+      0.1
+     ],
+     "object_moved_m": 0.086,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.0,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox_tip": {
+       "moved_m": 0.0005,
+       "rotated_deg": 0.45
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 0.11,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     1010,
+     1057
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 6,
+   "step": 3,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1058,
+    1195
+   ],
+   "motion": "place",
+   "side": "left",
+   "object": "held_tube",
+   "pose": {
+    "file": "poses/left_tube.json",
+    "hand_scene": "poses/hs_left_tube.json",
+    "source": "generate_rigid_grasps (thumb-index pinch near the rim, candidate g2c0; emul2 stage3_r3), executed with press_depth_rad 0, re-anchored to this scene's tube with subgoal.reanchor_pose",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 17.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7,
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 0.8,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.0,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 1.4,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.4,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 125,
+        "saturated_frac": 0.0,
+        "median_s": 0.025,
+        "peak_s": 0.279,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 49.7
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.7
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 1.4,
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.74,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 6,
+    "step": 3,
+    "motion": "place",
+    "side": "left",
+    "object": "held_tube",
+    "offset": [
+     -0.0533,
+     0.0086,
+     0
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     0
+    ],
+    "via_height": 0.27,
+    "duration_s": 2.0,
+    "over": "tube_rack_rack",
+    "height_m": -0.05
+   },
+   "expect": {
+    "target_pos": [
+     0.10525424682278665,
+     0.3879518466689491,
+     0.017997778413670742
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": true,
+    "on": null,
+    "released": true,
+    "placement": {
+     "support": "tube_rack_rack",
+     "support_top_z": 0.068,
+     "part_bottom_below_root_m": 0.0,
+     "method": "footprint",
+     "n_rays": 64,
+     "n_hits": 64,
+     "n_features": 0
+    },
+    "hand": "left",
+    "object": "held_tube",
+    "involved": [
+     "held_tube",
+     "tube_rack_rack"
+    ],
+    "untouched": [
+     "tip_box_tipbox",
+     "tip_box_tipbox_tip"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "upright": true,
+     "untouched:tip_box_tipbox": true,
+     "untouched:tip_box_tipbox_tip": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.03,
+      0.24,
+      0.1
+     ],
+     "object_end": [
+      0.106,
+      0.3691,
+      0.0059
+     ],
+     "object_moved_m": 0.1769,
+     "object_rotated_deg": 15.82,
+     "object_tilt_end_deg": 11.88,
+     "target_err_m": 0.0189,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.0048,
+     "support_contacts": 8,
+     "untouched": {
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox_tip": {
+       "moved_m": 0.002,
+       "rotated_deg": 2.01
+      }
+     },
+     "max_hand_pen_mm": 0.3,
+     "max_object_pen_mm": 3.44,
+     "max_track_pos_mm": 0.8,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     1058,
+     1195
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 7,
+   "step": 1,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1196,
+    1268
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 7,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "with": "tip_box_tipbox_tip",
+    "step": 1,
+    "target_pos": [
+     0.25,
+     0.24,
+     0.14
+    ],
+    "target_euler_deg": [
+     89.953,
+     69.945,
+     110.058
+    ],
+    "duration_s": 2.2
+   },
+   "expect": {
+    "target_pos": [
+     0.25,
+     0.24,
+     0.14
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "held_tube",
+     "rack_tube_srctube",
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:held_tube": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1499,
+      0.3001,
+      0.25
+     ],
+     "object_end": [
+      0.2487,
+      0.2401,
+      0.1404
+     ],
+     "object_moved_m": 0.1592,
+     "object_rotated_deg": 114.44,
+     "object_tilt_end_deg": 90.17,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0015,
+     "target_err_m": 0.0014,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "held_tube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.06,
+     "max_object_pen_mm": 0.27,
+     "max_track_pos_mm": 0.7,
+     "max_track_rot_deg": 2.4
+    },
+    "frames": [
+     1196,
+     1268
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 7,
+   "step": 2,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1269,
+    1316
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 7,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "with": "tip_box_tipbox_tip",
+    "step": 2,
+    "target_pos": [
+     0.25,
+     0.24,
+     0.07
+    ],
+    "target_euler_deg": [
+     89.953,
+     69.945,
+     110.058
+    ],
+    "duration_s": 1.5
+   },
+   "expect": {
+    "target_pos": [
+     0.25,
+     0.24,
+     0.07
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "held_tube",
+     "rack_tube_srctube",
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:held_tube": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.2487,
+      0.2401,
+      0.1404
+     ],
+     "object_end": [
+      0.25,
+      0.24,
+      0.07
+     ],
+     "object_moved_m": 0.0705,
+     "object_rotated_deg": 0.23,
+     "object_tilt_end_deg": 89.98,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "held_tube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.05,
+     "max_object_pen_mm": 0.29,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     1269,
+     1316
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 7,
+   "step": 3,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1317,
+    1364
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 7,
+    "motion": "carry",
+    "side": "right",
+    "object": "pipette_pipette",
+    "with": "tip_box_tipbox_tip",
+    "step": 3,
+    "target_pos": [
+     0.25,
+     0.24,
+     0.02
+    ],
+    "target_euler_deg": [
+     89.953,
+     69.945,
+     110.058
+    ],
+    "duration_s": 1.5
+   },
+   "expect": {
+    "target_pos": [
+     0.25,
+     0.24,
+     0.02
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "held_tube",
+     "rack_tube_srctube",
+     "tip_box_tipbox"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:held_tube": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.25,
+      0.24,
+      0.07
+     ],
+     "object_end": [
+      0.25,
+      0.2401,
+      0.0217
+     ],
+     "object_moved_m": 0.0483,
+     "object_rotated_deg": 0.04,
+     "object_tilt_end_deg": 89.99,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0017,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "held_tube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.05,
+     "max_object_pen_mm": 0.31,
+     "max_track_pos_mm": 1.5,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     1317,
+     1364
+    ],
+    "variant": "as planned"
+   }
+  },
+  {
+   "index": 7,
+   "step": 4,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1365,
+    1425
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": {
+    "file": "poses/right_pipette_p0.json",
+    "hand_scene": "poses/hs_right_pipette.json",
+    "source": "handle_pinch_pose + optimize_pose_for_reach (thumb-index-middle pinch on the handle, turned -67.5 deg about the pinch axis for reach; emul2 stage3_r3), re-anchored to this scene's pipette with subgoal.reanchor_pose; press_depth_rad 0 (the fingers stop at contact: the default 0.12 rad squeeze pushed the leaning pipette and the rack 1 cm, and the Stage 4 replay of the original diverged there)",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "middle",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.05",
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "lift_0.12",
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0,
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.5,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.4,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 1.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.6,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 2.2,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 2.2,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 13.9,
+        "ok": true
+       },
+       {
+        "name": "servo_reserve",
+        "judged": 122,
+        "saturated_frac": 0.516,
+        "median_s": 3.368,
+        "peak_s": 13.147,
+        "limiting_joint": "thumb_CMC_AA",
+        "ok": true
+       }
+      ],
+      "lifts": [
+       {
+        "commanded_mm": 50.0,
+        "achieved_mm": 50.0
+       },
+       {
+        "commanded_mm": 120.0,
+        "achieved_mm": 120.0
+       }
+      ],
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 2.2,
+      "penetration_at_end_mm": {
+       "object_mm": 0.04,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.61,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_right_thumb_1",
+         "pipette_pipette_handle"
+        ]
+       }
+      }
+     }
+    }
+   },
+   "plan": {
+    "index": 7,
+    "motion": "release",
+    "side": "right",
+    "object": "pipette_pipette",
+    "with": "tip_box_tipbox_tip",
+    "retreat_dir": [
+     0,
+     -0.4,
+     0.9
+    ],
+    "retreat_m": 0.06,
+    "step": 4
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "pipette_pipette",
+    "involved": [
+     "pipette_pipette",
+     "tip_box_tipbox_tip"
+    ],
+    "untouched": [
+     "tube_rack_rack",
+     "held_tube",
+     "rack_tube_srctube",
+     "tip_box_tipbox"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "untouched:tube_rack_rack": true,
+     "untouched:held_tube": true,
+     "untouched:rack_tube_srctube": true,
+     "untouched:tip_box_tipbox": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.25,
+      0.2401,
+      0.0217
+     ],
+     "object_end": [
+      0.2495,
+      0.24,
+      0.0127
+     ],
+     "object_moved_m": 0.009,
+     "object_rotated_deg": 8.86,
+     "object_tilt_end_deg": 89.89,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.0439,
+     "support_contacts": 22,
+     "untouched": {
+      "tube_rack_rack": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "held_tube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "rack_tube_srctube": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "tip_box_tipbox": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.17,
+     "max_object_pen_mm": 1.24,
+     "max_track_pos_mm": 4.2,
+     "max_track_rot_deg": 0.0
+    },
+    "frames": [
+     1365,
+     1425
+    ],
+    "variant": "as planned"
+   }
+  }
+ ],
+ "episode": {
+  "trajectory": "trajectory.npz",
+  "phases": "phases.json",
+  "sim_video": "sim_video.mp4",
+  "fps": 30,
+  "n_frames": 1426,
+  "execution_dir": "episode",
+  "plan": "plan.json"
+ },
+ "stage4": {
+  "task_dir": "stage4_task",
+  "config": "stage4_task/stage4.json"
+ },
+ "checks": {
+  "episode_physics_check": {
+   "ok": true,
+   "n_frames": 1426
+  },
+  "robot_self_collision_check": {
+   "ok": true,
+   "worst": {}
+  },
+  "arm_reach_check": {
+   "ok": true,
+   "n_frames": 1426
+  },
+  "stage4_handoff_check": {
+   "ok": true,
+   "issues": [],
+   "summary": {
+    "frames": 1426,
+    "fps": 30.0,
+    "sides": [
+     "left",
+     "right"
+    ],
+    "objects": {
+     "tube_rack_rack": null,
+     "held_tube": "left",
+     "rack_tube_srctube": null,
+     "pipette_pipette": "right",
+     "tip_box_tipbox": null,
+     "tip_box_tipbox_tip": "right"
+    },
+    "labels": [
+     "left: reach for held_tube #1.1",
+     "left: descend on held_tube #1.1",
+     "left: close on held_tube #1.1",
+     "left: grip held_tube #1.1",
+     "left: lift held_tube #1.1",
+     "left: carry held_tube #1.2",
+     "right: reach for pipette_pipette #2.1",
+     "right: descend on pipette_pipette #2.1",
+     "right: close on pipette_pipette #2.1",
+     "right: grip pipette_pipette #2.1",
+     "right: lift pipette_pipette #2.1",
+     "right: carry pipette_pipette (free) #3.1",
+     "right: carry pipette_pipette #3.2",
+     "right: carry pipette_pipette #3.3",
+     "right: lift pipette_pipette #3.4",
+     "right: carry pipette_pipette #4.1",
+     "right: carry pipette_pipette #4.2",
+     "right: carry pipette_pipette #4.3",
+     "right: carry pipette_pipette #4.4",
+     "left: carry held_tube #5.1",
+     "right: carry pipette_pipette #5.2",
+     "left: wait | right: carry pipette_pipette #5.3",
+     "right: carry pipette_pipette #5.4",
+     "right: carry pipette_pipette #6.1",
+     "left: carry held_tube #6.2",
+     "left: carry held_tube (up) #6.3",
+     "left: carry held_tube #6.3",
+     "left: carry held_tube (down) #6.3",
+     "left: set down held_tube #6.3",
+     "left: let go of held_tube #6.3",
+     "left: retreat #6.3",
+     "right: carry pipette_pipette #7.1",
+     "right: carry pipette_pipette #7.2",
+     "right: carry pipette_pipette #7.3",
+     "right: let go of pipette_pipette #7.4",
+     "right: retreat #7.4"
+    ],
+    "relations": {
+     "held_tube": "rests_on tube_rack_rack",
+     "pipette_pipette": "rests with world",
+     "tip_box_tipbox_tip": "rests with world"
+    },
+    "warnings": [],
+    "human_video": {
+     "fps": 30.0,
+     "duration_s": 37.77
+    },
+    "segments": {
+     "left": 6,
+     "right": 14
+    }
+   }
+  }
+ },
+ "notes": [
+  "Hand poses: the right hand holds the pipette with the handle pinch of the earlier run (handle_pinch_pose + optimize_pose_for_reach), re-anchored with subgoal.reanchor_pose, with press_depth_rad 0 (poses/right_pipette_p0.json: the fingers stop at contact; the 0.12 rad squeeze pushed the leaning pipette and the light rack about 1 cm and made the Stage 4 physics replay lose the tip mount); the left hand holds the tube with the generate_rigid_grasps thumb-index pinch near its rim (press_depth_rad 0). Both pass grasp_stress_test in their hand scenes (re-run with the current library).",
+  "Pipette out of its well (2.1): the pipette leans 14 deg in the rack's end well with its nose in the catch hole, so it is lifted along its own axis with a 3 mm side step away from the hole edge (lift_path) instead of straight up; a straight lift dragged the light rack.",
+  "Tip mount (3.3): the nose is pressed 10.5 mm into the free tip's collar (height_m -0.0105 under the collar top: the 7.5 mm seat plus 3 mm). The earlier plan's 44 mm press slid the pipette 34 mm through the pinch once the tip bottomed. The tip snaps on and rides the 6.5 cm lift (3.4); measured at 68.6 mm below the pipette's root along its axis.",
+  "Draw (4.x) and dispense (5.x): the tip is dipped straight down (pipette upright, yaw kept as the hand holds it) into the rack tube (3.3 cm deep) and into the held tube (1.65 cm deep). For the dispense the left hand first brings the tube to the middle of the table (5.1, the right arm cannot reach the tube where it was parked during the tip mount), then the two-hand step (5.3) runs the right hand's dip while the left hand holds the tube still. A deeper dip (3.4 cm) brought the right palm into the left forearm (arm collision 12 mm).",
+  "Plunger strokes are not executed: the Stage 1 goal sentences of subgoals 4 and 5 state intended outcomes (liquid drawn / dispensed) that cannot be seen; the executor has no thumb-stroke motion while the same hand keeps its grip, and the goal gate asks for the tip inside each tube (goal_predicates insertion_depth over the dip entry).",
+  "Tube back (6.3): lowered 5 cm into well 1 by the rack's current pose (over the rack with the well's offset) and released 1.4 cm above the bottom plate; released from the top plate (into) it fell 7 cm and tunnelled into the 4 mm bottom plate.",
+  "Pipette down (7.x): the pipette is turned 90 deg about the table's y axis (handle away from the rack, nose toward it), rolled 45 deg about its own axis so the thumb and fingers sit at its sides, and yawed 20 deg (the right arm reaches the low horizontal pose only so), lowered flat until its axis is about 28 mm above the cloth (15 mm above its resting height) and released; it lands on its body, horizontal, and the mounted tip never touches the cloth. The earlier nose-down lay-down (turned about the table's x axis, fingers under the handle) landed on the tip's end and levered the tip 4.4 cm off the nose (contactless motion and teleport audits).",
+  "Order and hands as Stage 1: left tube out, right pipette out, tip, draw, dispense with both hands, tube back, pipette down. Extra steps inside subgoals (carries between actions, the tube brought to the middle before the dispense) carry their Stage 1 index.",
+  "Stage 4 config (py/package.sh patches what write_stage4_config writes): the mounted tip gets carrier right and release '#7.4' (it rides the pipette from the mount to the lay-down; carriers come only from phases that name an object and the tip travels as the pipette's 'with' companion); the pipette's rests_on (inferred from final contacts as the tip on its own nose) is dropped so it rests on the world like the tip; the right hand stays in the tip's frame through the lift off the box and the move away (3.4, 4.1: the tip rides the hand only from a frame anchored to it) and is anchored to the world for the dip into the held tube (5.2-6.1: the tube rides the world-anchored left hand there, while Stage 4 moves a hand anchored to an object with that object's start displacement)."
+ ],
+ "source": "examples/asset_reuse"
+}

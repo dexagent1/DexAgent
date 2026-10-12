@@ -1,0 +1,471 @@
+{
+ "source": "stage3/trajectory_manifest.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    162
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 1,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "battery_battery",
+    "pose": "poses/pinch_h30c_B_r.json",
+    "hand_scene": "poses/hs_right_battery.json",
+    "lift_m": 0.08,
+    "open_frac": 0.3
+   },
+   "expect": {
+    "rise_m": 0.04,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       0.1356199406086351,
+       0.3733999403289909,
+       0.0301127201298911
+      ],
+      "normal": [
+       0.7086126251011751,
+       -0.705597720284175,
+       -6.837393759554195e-05
+      ]
+     },
+     "index": {
+      "point": [
+       0.12818005939136487,
+       0.38080005967100905,
+       0.030111626146889593
+      ],
+      "normal": [
+       -0.7086126251011751,
+       0.705597720284175,
+       6.837393759554195e-05
+      ]
+     }
+    },
+    "pads_at_label": "right: grip battery_battery",
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": [
+     "holder_battery_holder"
+    ],
+    "pads_at_rel": 130,
+    "slip_from_rel": 131
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    163,
+    219
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 2,
+    "motion": "carry",
+    "side": "right",
+    "object": "battery_battery",
+    "target_pos": [
+     -0.03624,
+     0.35616,
+     0.04472
+    ],
+    "target_euler_deg": [
+     -22.251,
+     20.658,
+     -11.192
+    ],
+    "duration_s": 1.8,
+    "pos_tol_m": 0.01
+   },
+   "expect": {
+    "target_pos": [
+     -0.03624,
+     0.35616,
+     0.04472
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": [
+     "holder_battery_holder"
+    ],
+    "pos_tol_m": 0.01,
+    "slip_from_rel": 0
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    220,
+    270
+   ],
+   "motion": "insert",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 3,
+    "motion": "insert",
+    "side": "right",
+    "object": "battery_battery",
+    "target_pos": [
+     -0.03624,
+     0.35616,
+     0.00472
+    ],
+    "target_euler_deg": [
+     -22.251,
+     20.658,
+     -11.192
+    ],
+    "duration_s": 1.6,
+    "pos_tol_m": 0.004
+   },
+   "expect": {
+    "target_pos": [
+     -0.03624,
+     0.35616,
+     0.00472
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "pos_tol_m": 0.004,
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "goal_predicates": [
+    {
+     "class": "insertion_depth",
+     "bodies": {
+      "A": "battery_battery",
+      "B": "holder_battery_holder"
+     }
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    271,
+    324
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 3,
+    "motion": "release",
+    "side": "right",
+    "object": "battery_battery",
+    "retreat_m": 0.12,
+    "retreat_dir": [
+     0,
+     0,
+     1
+    ]
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": []
+   },
+   "goal_predicates": [
+    {
+     "class": "insertion_depth",
+     "bodies": {
+      "A": "battery_battery",
+      "B": "holder_battery_holder"
+     }
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    325,
+    451
+   ],
+   "motion": "hold",
+   "side": "left",
+   "object": "holder_battery_holder",
+   "plan": {
+    "index": 4,
+    "motion": "hold",
+    "side": "left",
+    "object": "holder_battery_holder",
+    "pose": "poses/left_brace_v9.json",
+    "hand_scene": "poses/hs_left_holder_after.json",
+    "approach_m": 0.05
+   },
+   "expect": {
+    "in_hand": true,
+    "stays_put": true,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       -0.06693713032639215,
+       0.35697512951764104,
+       0.011659260426816885
+      ],
+      "normal": [
+       0.33719132022287396,
+       0.1796842593377936,
+       0.9241296340409088
+      ]
+     },
+     "middle": {
+      "point": [
+       -0.07655055951688389,
+       0.3751317814209894,
+       0.011636644910631266
+      ],
+      "normal": [
+       0.33719132022287396,
+       0.1796842593377936,
+       0.9241296340409088
+      ]
+     }
+    },
+    "pads_at_label": "left: hold holder_battery_holder",
+    "hand": "left",
+    "object": "holder_battery_holder",
+    "involved": [
+     "holder_battery_holder"
+    ],
+    "untouched": [],
+    "pads_at_rel": 126
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    452,
+    590
+   ],
+   "motion": "press",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 4,
+    "motion": "press",
+    "side": "right",
+    "object": "battery_battery",
+    "pose": "poses/right_flat_push_v10.json",
+    "hand_scene": "poses/hs_right_battery_v10.json",
+    "direction": [
+     -0.3636,
+     -0.3165,
+     -0.8761
+    ],
+    "distance_m": 0.016,
+    "back": true,
+    "wrist_force_n": [
+     20.0,
+     20.0,
+     20.0
+    ],
+    "reanchor": "translate",
+    "expect": {
+     "displacement": {
+      "dir": [
+       -0.3636,
+       -0.3165,
+       -0.8761
+      ],
+      "min_m": 0.002
+     }
+    }
+   },
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.3636,
+      -0.3165,
+      -0.8761
+     ],
+     "min_m": 0.002
+    },
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": []
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    591,
+    643
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 5,
+    "motion": "release",
+    "side": "right",
+    "object": "battery_battery",
+    "retreat_m": 0.08,
+    "retreat_dir": [
+     0,
+     0,
+     1
+    ]
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": []
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    644,
+    696
+   ],
+   "motion": "release",
+   "side": "left",
+   "object": "holder_battery_holder",
+   "plan": {
+    "index": 5,
+    "motion": "release",
+    "side": "left",
+    "object": "holder_battery_holder",
+    "retreat_m": 0.07,
+    "retreat_dir": [
+     -0.3,
+     -0.3,
+     0.9
+    ]
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "left",
+    "object": "holder_battery_holder",
+    "involved": [
+     "holder_battery_holder"
+    ],
+    "untouched": []
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    697,
+    757
+   ],
+   "motion": "home",
+   "side": "left",
+   "object": "holder_battery_holder",
+   "plan": {
+    "index": 5,
+    "motion": "home",
+    "side": "left"
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "holder_battery_holder",
+     "battery_battery"
+    ]
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    758,
+    816
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 5,
+    "motion": "home",
+    "side": "right"
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "holder_battery_holder",
+     "battery_battery"
+    ]
+   }
+  }
+ ]
+}

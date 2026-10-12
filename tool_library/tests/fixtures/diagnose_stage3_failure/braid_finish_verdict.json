@@ -1,0 +1,16 @@
+{
+ "ok": false,
+ "issues": [
+  "subgoal [1]: no passing stress test on its hand pose",
+  "subgoal [2]: skipped (not executed: subgoal 1 is unfinished (4 of 5 crossings remain), so the strands cannot be pulled apart and laid flat; wi) - the task is not complete; skipping is only for a step with no robot action or one merged into another entry (skip_kind one of ['merged', 'no_robot_action'])",
+  "stage1_goal_gate: Stage 1 subgoal 1 [strand_crossings ribbon_ribbon_wide_pink_strandB_first]: 4 strand crossing(s) at frame 319, at most 0 required: the strands still lie across each other",
+  "stage1_goal_gate: Stage 1 subgoal 2: no executed manifest entry covers it, so its goal cannot be checked",
+  "bimanual_sync_gate: Stage 1 subgoal 2 (both hands) has no executed manifest entry",
+  "stage_station_integrity_check: station left (robot_left_arm_root) is moved by [0.15, 0.1, 0.0] m but the recorded shift is [0.1, 0.0, 0.0] m; use the scene place_arm_stations wrote, unedited",
+  "stage_station_integrity_check: station right (robot_right_arm_root) is moved by [0.25, 0.1, 0.0] m but the recorded shift is [0.1, 0.0, 0.0] m; use the scene place_arm_stations wrote, unedited",
+  "deformable_integrity_audit: ribbon_ribbon_wide_pink_strandB_first x ribbon_ribbon_red_strandB_first passes into itself: 2.6 mm at frame 165 (left: lift ribbon_ribbon_red_strandB_13 #1.1), segments [15, 14] (138 events); the rope is pressed through its own segments: loosen the pull at that crossing",
+  "deformable_integrity_audit: ribbon_ribbon_wide_pink_strandB_first sinks into the tabletop: 2.3 mm at frame 235 (left: carry ribbon_ribbon_red_strandB_13 (down) #1.2), segments [17] (1 events); the rope is pressed into the table: lift the pinch or lower the pressing force",
+  "deformable_integrity_audit: ribbon_ribbon_wide_pink_strandB_first x ribbon_ribbon_red_strandB_first passes through itself between frames: 0.2 mm at frame 164 (left: lift ribbon_ribbon_red_strandB_13 #1.1), segments [16, 14] (2 events); the rope tunnels through its own segment: slow the motion at that crossing (more frames) or raise the cable's contact stiffness",
+  "stage4_physics_replay_gate: the original layout fails 5 of 15 checks when replayed in physics: ['Stage 1 goal 1', 'subgoal 1 grasp_lift: in_hand', 'subgoal 1 grasp_lift: no_slip', 'subgoal 1 grasp_lift: rise', 'subgoal 1 place: at_target']; the Stage 3 episode does not hold up in contact physics there (re-execute that subgoal, or give the task folder the servo commands: trajectory.npz `reference`)"
+ ]
+}

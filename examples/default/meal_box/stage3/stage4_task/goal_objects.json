@@ -1,0 +1,28 @@
+{
+ "objects": [
+  {
+   "id": "container",
+   "type": "rigid",
+   "root_body": "meal_box_mealbox_container",
+   "bodies": [
+    "meal_box_mealbox_container"
+   ]
+  },
+  {
+   "id": "lid",
+   "type": "articulated",
+   "root_body": "meal_box_mealbox_lid",
+   "bodies": [
+    "meal_box_mealbox_latch_xn",
+    "meal_box_mealbox_latch_xp",
+    "meal_box_mealbox_latch_yn",
+    "meal_box_mealbox_latch_yp",
+    "meal_box_mealbox_lid",
+    "meal_box_mealbox_strap_xn",
+    "meal_box_mealbox_strap_xp",
+    "meal_box_mealbox_strap_yn",
+    "meal_box_mealbox_strap_yp"
+   ]
+  }
+ ]
+}

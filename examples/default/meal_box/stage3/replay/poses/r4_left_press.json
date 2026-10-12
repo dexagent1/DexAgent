@@ -1,0 +1,146 @@
+{
+ "side": "left",
+ "pos": [
+  -0.19268272666202496,
+  0.30876047278857227,
+  0.1410890543620661
+ ],
+ "euler": [
+  -2.047825190230456,
+  0.23091412678746437,
+  1.620750522615647
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": -0.1745,
+  "thumb_CMC_AA": -0.3491,
+  "thumb_MCP_FE": -0.5236,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "finger_targets_open": {
+  "thumb_CMC_FE": -0.1745,
+  "thumb_CMC_AA": -0.3491,
+  "thumb_MCP_FE": -0.5236,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "grip_fingers": [
+  "index",
+  "middle",
+  "ring",
+  "pinky"
+ ],
+ "contact_side": "pad",
+ "thumb": "out",
+ "pitch_deg": 12.0,
+ "press_travel_m": 0.004,
+ "face_offset_m": 0.0307,
+ "overlap_mm": 4.4,
+ "approach": [
+  -3.83594183976839e-05,
+  0.2588190422599073,
+  0.9659258262890683
+ ],
+ "approach_kind": "normal",
+ "normals": {
+  "index": [
+   -3.8359418397683886e-05,
+   0.2588190422599072,
+   0.965925826289068
+  ],
+  "middle": [
+   -3.8359418397683886e-05,
+   0.2588190422599072,
+   0.965925826289068
+  ],
+  "ring": [
+   -3.8359418397683886e-05,
+   0.2588190422599072,
+   0.965925826289068
+  ],
+  "pinky": [
+   -3.8359418397683886e-05,
+   0.2588190422599072,
+   0.965925826289068
+  ]
+ },
+ "points": {
+  "index": [
+   -0.11974048798871717,
+   0.4682381578853116,
+   0.0655414865537448
+  ],
+  "middle": [
+   -0.13874180178748355,
+   0.47577680003519585,
+   0.06352075890841605
+  ],
+  "ring": [
+   -0.15992446512709546,
+   0.4745599515808348,
+   0.063845971247022
+  ],
+  "pinky": [
+   -0.18159206398043695,
+   0.47345585129379447,
+   0.0641409535475318
+  ]
+ },
+ "reach_optimized": {
+  "rotation_deg": {
+   "primary": 5.0,
+   "tilt": -15.0
+  },
+  "axes": {
+   "primary": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "tilt": [
+    1.0,
+    0.0001,
+    0.0
+   ]
+  },
+  "pivot": [
+   -0.15,
+   0.475,
+   0.0717
+  ]
+ }
+}

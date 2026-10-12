@@ -1,0 +1,44 @@
+{
+ "task": "open_the_bottle",
+ "prompt": "Remove the bottle cap, then pour the water from the bottle into the mug.",
+ "fingerprint": "fingerprint.json",
+ "video": {
+  "duration_s": 23.933,
+  "fps": 30.0,
+  "resolution": [
+   640,
+   480
+  ]
+ },
+ "objects": [
+  {
+   "id": "bottle",
+   "type": "articulated",
+   "root_body": "bottle_bottle"
+  },
+  {
+   "id": "cap_assembly",
+   "type": "rigid",
+   "root_body": "bottle_bottle_cap_assembly"
+  },
+  {
+   "id": "mug",
+   "type": "rigid",
+   "root_body": "mug_mug"
+  }
+ ],
+ "stages": {
+  "stage1": "stage1/scene_semantics.json",
+  "stage2": "stage2/scene_recon.json"
+ },
+ "provenance": {
+  "run": "rel_open_the_bottle",
+  "how": "solved by the agent stages (a model acting as the harness agent), reviewed by the maintainers",
+  "verified_at": "9503dc3",
+  "finish_verifiers": "stage 1 and 2 passed",
+  "stage3": "not solved: no left steadying hold keeps the hand and its arm out of the cap's way while the right hand turns the cap through several bites"
+ },
+ "verified": {
+  "stage_verifiers": "stages 1-2 passed at the end of the run"
+ }
+}

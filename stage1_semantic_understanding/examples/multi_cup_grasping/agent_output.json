@@ -1,0 +1,283 @@
+{
+  "task_prompt": "Pick up all four cups from the table.",
+  "task_summary": "The right hand picks up the near-right green cup, carries it to the far-left green cup and takes that second green cup into the same hand; the left hand picks up the near-left orange cup, carries it to the far-right orange cup and takes that second orange cup into the same hand; both hands then carry their pair of cups toward the operator and off the table out of view.",
+  "video": {
+    "path": "video.mp4",
+    "duration_s": 18.933,
+    "fps": 30.0,
+    "frames": 568,
+    "resolution": "640x480"
+  },
+  "environment": {
+    "support_surface": "white tablecloth on a table, black backdrop behind and at the sides",
+    "camera": "head-mounted egocentric camera above the operator looking down the table; small head motion only (slight zoom/sway, colour balance settles in the first second)",
+    "notes": "The four cups stand in a 2x2 square in the middle of the table at the start; a small dark clip sits on the table's left edge and is not part of the task."
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ],
+    "notes": "Each hand ends up holding two cups of one colour: the right hand the two green cups, the left hand the two orange cups. Both hands rest flat on the near edge of the table until they start (right at about 3 s, left at about 6 s)."
+  },
+  "objects": [
+    {
+      "id": "green_cup_near",
+      "name": "green plastic cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "rim",
+        "wall",
+        "base"
+      ],
+      "appearance": {
+        "wall": "green outside, pale blue-white inside",
+        "rim": "thin white rolled rim"
+      },
+      "approximate_size": "a standard disposable party cup, about a hand-length tall, slightly wider at the rim than the base",
+      "properties": [
+        "A thin-walled, open-topped, tapered plastic cup that stands upright on its base and is light enough to lift with one hand.",
+        "It is grasped at the rim from above by the right hand, held between the thumb and the index finger on the wall, which leaves the other fingers free.",
+        "It stays upright while carried and is never put back down; it remains in the right hand while the hand takes the second green cup.",
+        "Its interior is open, so fingers can reach inside the cup."
+      ],
+      "initial_state": "standing upright on the table, near-right corner of the 2x2 square of cups",
+      "final_state": "held in the right hand together with the other green cup, carried off the table toward the operator",
+      "evidence": "prompt: 'all four cups'; visible at near right from 0 s; 3.3 to 4.5 s the right hand closes on its rim and lifts it; carried in the right hand to 15 s."
+    },
+    {
+      "id": "green_cup_far",
+      "name": "green plastic cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "rim",
+        "wall",
+        "base"
+      ],
+      "appearance": {
+        "wall": "green outside, pale blue-white inside",
+        "rim": "thin white rolled rim"
+      },
+      "approximate_size": "same size as the other green cup",
+      "properties": [
+        "Same tapered open-topped thin-walled plastic cup as the near green cup, standing upright and free on the table.",
+        "It is taken by the right hand while that hand already holds the first green cup: the free fingers reach into or over its rim so both cups hang from one hand.",
+        "The two green cups are held side by side (not nested) and both stay upright while carried."
+      ],
+      "initial_state": "standing upright on the table, far-left corner of the 2x2 square of cups",
+      "final_state": "held in the right hand together with the near green cup, carried off the table toward the operator",
+      "evidence": "prompt: 'all four cups'; visible at far left from 0 s; 8.3 to 9.9 s the right hand, already holding the near green cup, closes on it and lifts both."
+    },
+    {
+      "id": "orange_cup_near",
+      "name": "orange plastic cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "rim",
+        "wall",
+        "base"
+      ],
+      "appearance": {
+        "wall": "orange outside with handwritten black marks, pale pink inside",
+        "rim": "thin white rolled rim"
+      },
+      "approximate_size": "same size as the green cups",
+      "properties": [
+        "A thin-walled, open-topped, tapered plastic cup that stands upright on its base and is light enough to lift with one hand.",
+        "It is grasped at the rim from above by the left hand with the thumb and index finger, leaving the other fingers free.",
+        "It stays in the left hand, upright, while the hand takes the second orange cup; it is held low near the table between 8 s and 10 s but not released."
+      ],
+      "initial_state": "standing upright on the table, near-left corner of the 2x2 square of cups",
+      "final_state": "held in the left hand together with the other orange cup, carried off the table toward the operator",
+      "evidence": "prompt: 'all four cups'; visible at near left from 0 s; 6.3 to 7.5 s the left hand closes on its rim and lifts it; carried in the left hand to 15 s."
+    },
+    {
+      "id": "orange_cup_far",
+      "name": "orange plastic cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "rim",
+        "wall",
+        "base"
+      ],
+      "appearance": {
+        "wall": "orange outside with the handwritten word 'oh' in black, pale pink inside",
+        "rim": "thin white rolled rim"
+      },
+      "approximate_size": "same size as the other cups",
+      "properties": [
+        "Same tapered open-topped thin-walled plastic cup, standing upright and free on the table.",
+        "It is taken by the left hand while that hand already holds the near orange cup: the free fingers reach into or over its rim so both cups hang from one hand.",
+        "The two orange cups are held side by side (not nested) and both stay upright while carried."
+      ],
+      "initial_state": "standing upright on the table, far-right corner of the 2x2 square of cups",
+      "final_state": "held in the left hand together with the near orange cup, carried off the table toward the operator",
+      "evidence": "prompt: 'all four cups'; visible at far right from 0 s; 10.8 to 11.8 s the left hand, already holding the near orange cup, closes on it and lifts both."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the near-right green cup by its rim.",
+      "object_refs": [
+        "green_cup_near"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests flat on the table at the near left.",
+        "right": "Pinches the cup's rim between thumb and index finger from above and lifts it clear of the table."
+      },
+      "goal": "The near green cup is held upright in the right hand, clear of the table.",
+      "time_window_s": [
+        3.2,
+        4.6
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "left",
+      "action": "Pick up the near-left orange cup by its rim.",
+      "object_refs": [
+        "orange_cup_near"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Pinches the cup's rim between thumb and index finger from above and lifts it.",
+        "right": "Holds the near green cup at the right edge of the table."
+      },
+      "goal": "The near orange cup is held upright in the left hand, clear of the table.",
+      "time_window_s": [
+        6.2,
+        7.6
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Carry the held green cup across to the far-left green cup.",
+      "object_refs": [
+        "green_cup_near",
+        "green_cup_far"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Holds the near orange cup low at the left.",
+        "right": "Moves the held green cup from the right edge to beside the far-left green cup."
+      },
+      "goal": "The held green cup is next to the far green cup, with the right hand's free fingers above the far cup's rim.",
+      "time_window_s": [
+        7.4,
+        8.4
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "right",
+      "action": "Take the far-left green cup into the same right hand and lift both.",
+      "object_refs": [
+        "green_cup_far",
+        "green_cup_near"
+      ],
+      "motion": "regrasp",
+      "hand_roles": {
+        "left": "Holds the near orange cup low at the left.",
+        "right": "Keeps the first green cup in the thumb-index pinch and hooks the free fingers into the far green cup, then lifts both."
+      },
+      "goal": "Both green cups are held upright in the right hand, clear of the table.",
+      "time_window_s": [
+        8.4,
+        10.0
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "right",
+      "action": "Carry the two green cups to the right edge of the table.",
+      "object_refs": [
+        "green_cup_near",
+        "green_cup_far"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Starts moving the near orange cup toward the far-right orange cup.",
+        "right": "Moves both green cups to the right side, out of the left hand's path."
+      },
+      "goal": "Both green cups are held at the right edge, away from the far-right orange cup.",
+      "time_window_s": [
+        10.0,
+        11.0
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "left",
+      "action": "Carry the held orange cup across to the far-right orange cup.",
+      "object_refs": [
+        "orange_cup_near",
+        "orange_cup_far"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Moves the held orange cup from the near left to beside the far-right orange cup.",
+        "right": "Holds the two green cups at the right edge."
+      },
+      "goal": "The held orange cup is next to the far orange cup, with the left hand's free fingers above the far cup's rim.",
+      "time_window_s": [
+        10.0,
+        10.9
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "left",
+      "action": "Take the far-right orange cup into the same left hand and lift both.",
+      "object_refs": [
+        "orange_cup_far",
+        "orange_cup_near"
+      ],
+      "motion": "regrasp",
+      "hand_roles": {
+        "left": "Keeps the first orange cup in the thumb-index pinch and hooks the free fingers into the far orange cup, then lifts both.",
+        "right": "Holds the two green cups at the right edge."
+      },
+      "goal": "Both orange cups are held upright in the left hand, clear of the table.",
+      "time_window_s": [
+        10.9,
+        11.9
+      ]
+    },
+    {
+      "index": 8,
+      "acting_hand": "both",
+      "action": "Carry both pairs of cups toward the operator and off the table.",
+      "object_refs": [
+        "green_cup_near",
+        "green_cup_far",
+        "orange_cup_near",
+        "orange_cup_far"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Carries the two orange cups toward the near edge and out of view.",
+        "right": "Carries the two green cups toward the near edge and out of view."
+      },
+      "goal": "All four cups are held in the hands and none remains on the table.",
+      "observed_outcome": "The cups pass the near edge of the table low (around 13.7 to 14.6 s they are close to the cloth) and leave the frame by 15.2 s; whether they touch the table again on the way is not resolvable. The table is empty from 15.5 s to the end.",
+      "time_window_s": [
+        11.9,
+        15.3
+      ]
+    }
+  ],
+  "task_success": "No cup remains on the table: the right hand holds both green cups and the left hand both orange cups, all upright, and the table is empty.",
+  "notes": [
+    "Each hand holds two cups at once; the exact finger assignment of the two-cup grip (which fingers are inside which cup) is only partly visible from above and is inferred from the rim contacts at 9.5 to 10 s and 12 to 13 s.",
+    "The cups are held side by side, not nested.",
+    "The cups appear empty; no liquid is visible."
+  ]
+}

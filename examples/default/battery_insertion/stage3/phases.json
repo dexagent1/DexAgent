@@ -1,0 +1,339 @@
+[
+ {
+  "label": "right: reach for battery_battery #1",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 1,
+  "frames": [
+   [
+    0,
+    67
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on battery_battery #1",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 1,
+  "frames": [
+   [
+    68,
+    93
+   ]
+  ]
+ },
+ {
+  "label": "right: close on battery_battery #1",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 1,
+  "frames": [
+   [
+    94,
+    113
+   ]
+  ]
+ },
+ {
+  "label": "right: grip battery_battery #1",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 1,
+  "frames": [
+   [
+    114,
+    130
+   ]
+  ]
+ },
+ {
+  "label": "right: lift battery_battery #1",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 1,
+  "frames": [
+   [
+    131,
+    162
+   ]
+  ]
+ },
+ {
+  "label": "right: carry battery_battery #2",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    163,
+    219
+   ]
+  ]
+ },
+ {
+  "label": "right: carry battery_battery #3.1",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    220,
+    270
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of battery_battery #3.2",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    271,
+    295
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #3.2",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    296,
+    324
+   ]
+  ]
+ },
+ {
+  "label": "left: reach to hold holder_battery_holder #4.1",
+  "hand": "left",
+  "objects": [
+   "holder_battery_holder"
+  ],
+  "anchor": "holder_battery_holder",
+  "subgoal": 4,
+  "frames": [
+   [
+    325,
+    388
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on holder_battery_holder #4.1",
+  "hand": "left",
+  "objects": [
+   "holder_battery_holder"
+  ],
+  "anchor": "holder_battery_holder",
+  "subgoal": 4,
+  "frames": [
+   [
+    389,
+    414
+   ]
+  ]
+ },
+ {
+  "label": "left: close on holder_battery_holder #4.1",
+  "hand": "left",
+  "objects": [
+   "holder_battery_holder"
+  ],
+  "anchor": "holder_battery_holder",
+  "subgoal": 4,
+  "frames": [
+   [
+    415,
+    434
+   ]
+  ]
+ },
+ {
+  "label": "left: hold holder_battery_holder #4.1",
+  "hand": "left",
+  "objects": [
+   "holder_battery_holder"
+  ],
+  "anchor": "holder_battery_holder",
+  "subgoal": 4,
+  "frames": [
+   [
+    435,
+    451
+   ]
+  ]
+ },
+ {
+  "label": "right: approach for push #4.2",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 4,
+  "frames": [
+   [
+    452,
+    518
+   ]
+  ]
+ },
+ {
+  "label": "right: contact #4.2",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 4,
+  "frames": [
+   [
+    519,
+    532
+   ]
+  ]
+ },
+ {
+  "label": "right: press battery_battery #4.2",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 4,
+  "frames": [
+   [
+    533,
+    570
+   ]
+  ]
+ },
+ {
+  "label": "right: back off #4.2",
+  "hand": "right",
+  "objects": [
+   "battery_battery"
+  ],
+  "anchor": "battery_battery",
+  "subgoal": 4,
+  "frames": [
+   [
+    571,
+    590
+   ]
+  ]
+ },
+ {
+  "label": "right: let go #5.1",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    591,
+    614
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #5.1",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    615,
+    643
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of holder_battery_holder #5.2",
+  "hand": "left",
+  "objects": [
+   "holder_battery_holder"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    644,
+    667
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat #5.2",
+  "hand": "left",
+  "objects": [
+   "holder_battery_holder"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    668,
+    696
+   ]
+  ]
+ },
+ {
+  "label": "left: return home #5.3",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    697,
+    757
+   ]
+  ]
+ },
+ {
+  "label": "right: return home #5.4",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    758,
+    816
+   ]
+  ]
+ }
+]

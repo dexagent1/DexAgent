@@ -1,0 +1,63 @@
+{
+ "objects": [
+  {
+   "id": "tube_rack",
+   "type": "rigid",
+   "root_body": "tube_rack_rack",
+   "bodies": [
+    "tube_rack_rack"
+   ]
+  },
+  {
+   "id": "tube",
+   "type": "rigid",
+   "root_body": "held_tube",
+   "bodies": [
+    "held_tube"
+   ]
+  },
+  {
+   "id": "rack_tube",
+   "type": "rigid",
+   "root_body": "rack_tube_srctube",
+   "bodies": [
+    "rack_tube_srctube"
+   ]
+  },
+  {
+   "id": "pipette",
+   "type": "articulated",
+   "root_body": "pipette_pipette",
+   "bodies": [
+    "pipette_pipette",
+    "pipette_pipette_pin",
+    "pipette_pipette_plunger",
+    "pipette_pipette_ejector",
+    "pipette_pipette_jaw0",
+    "pipette_pipette_jaw1",
+    "pipette_pipette_jaw2",
+    "pipette_pipette_jaw3"
+   ]
+  },
+  {
+   "id": "tip_box",
+   "type": "articulated",
+   "root_body": "tip_box_tipbox",
+   "bodies": [
+    "tip_box_tipbox",
+    "tip_box_tipbox_lid"
+   ],
+   "joints": [
+    "tip_box_tipbox_hinge"
+   ]
+  },
+  {
+   "id": "tip",
+   "type": "rigid",
+   "root_body": "tip_box_tipbox_tip",
+   "bodies": [
+    "tip_box_tipbox_tip"
+   ]
+  }
+ ]
+}

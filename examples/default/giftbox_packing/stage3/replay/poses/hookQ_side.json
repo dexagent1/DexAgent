@@ -1,0 +1,148 @@
+{
+ "side": "left",
+ "pos": [
+  -0.2493866501927003,
+  0.4924512089520384,
+  0.12205131501498101
+ ],
+ "euler": [
+  -2.9249355738448366,
+  0.6372128035732625,
+  -0.3719156023084409
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 1.0821399999999999,
+  "thumb_CMC_AA": -0.17455,
+  "thumb_MCP_FE": 0.62834,
+  "thumb_MCP_AA": -0.17455,
+  "thumb_IP": 1.04718,
+  "index_MCP_FE": 0.2427861225533494,
+  "index_MCP_AA": 0.14539320652300342,
+  "index_PIP": 0.5029387164766786,
+  "index_DIP": 0.3874403990714023,
+  "middle_MCP_FE": 0.29196491713810285,
+  "middle_MCP_AA": -0.32486135164460855,
+  "middle_PIP": 0.3711193728352178,
+  "middle_DIP": 0.31063168419933157,
+  "ring_MCP_FE": 0.8726668279999998,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.04718,
+  "ring_DIP": 0.8377800000000001,
+  "pinky_CMC": 0.15707999999999997,
+  "pinky_MCP_FE": 0.8726668279999998,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.04718,
+  "pinky_DIP": 0.8377800000000001
+ },
+ "grip_fingers": [
+  "index",
+  "middle"
+ ],
+ "finger_targets_squeezed": {
+  "thumb_CMC_FE": 1.0821399999999999,
+  "thumb_CMC_AA": -0.17455,
+  "thumb_MCP_FE": 0.62834,
+  "thumb_MCP_AA": -0.17455,
+  "thumb_IP": 1.04718,
+  "index_MCP_FE": 0.23443625208271207,
+  "index_MCP_AA": 0.14255850786811508,
+  "index_PIP": 0.5756983324471118,
+  "index_DIP": 0.43481814555071685,
+  "middle_MCP_FE": 0.27993063771471643,
+  "middle_MCP_AA": -0.34068747586676806,
+  "middle_PIP": 0.44455044025003737,
+  "middle_DIP": 0.3569355386099072,
+  "ring_MCP_FE": 0.8726668279999998,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.04718,
+  "ring_DIP": 0.8377800000000001,
+  "pinky_CMC": 0.15707999999999997,
+  "pinky_MCP_FE": 0.8726668279999998,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.04718,
+  "pinky_DIP": 0.8377800000000001
+ },
+ "press_depth_rad": 0.12,
+ "curl_free": 0.6,
+ "approach": [
+  -0.9887,
+  -0.1483,
+  -0.0198
+ ],
+ "cleared_m": 0.0003,
+ "contact_side": "pad",
+ "normals": {
+  "index": [
+   0.1779977172366726,
+   -0.14889716756916635,
+   -0.9727005942973472
+  ],
+  "middle": [
+   0.1779977172366726,
+   -0.14889716756916635,
+   -0.9727005942973472
+  ]
+ },
+ "points": {
+  "index": [
+   -0.12075810572269818,
+   0.5512730859754922,
+   0.025389480487316714
+  ],
+  "middle": [
+   -0.12721951577369306,
+   0.5697748888138225,
+   0.02138257745823644
+  ]
+ },
+ "residual_mm": {
+  "index": 0.26,
+  "middle": 0.26
+ },
+ "worst_residual_mm": 0.26,
+ "overlap_mm": 1.48,
+ "palm_facing": 0.33,
+ "standoff_m": 0.008,
+ "targets": {
+  "index": [
+   -0.11933412398480481,
+   0.5500819086349389,
+   0.017607875732937935
+  ],
+  "middle": [
+   -0.12579553403579968,
+   0.5685837114732691,
+   0.013600972703857664
+  ]
+ },
+ "progress": {
+  "seeds_tried": 252,
+  "seeds_total": 252,
+  "elapsed_s": 12.43,
+  "stopped": null
+ },
+ "reach_optimized": {
+  "rotation_deg": {
+   "primary": 17.5,
+   "tilt": 10.0
+  },
+  "axes": {
+   "primary": [
+    -0.0045,
+    0.1563,
+    0.9877
+   ],
+   "tilt": [
+    0.0285,
+    -0.9873,
+    0.1563
+   ]
+  },
+  "pivot": [
+   -0.1225,
+   0.5593,
+   0.0153
+  ]
+ },
+ "note_approach": "approach set horizontal from the left so the curled index comes in under the lid edge (the solved approach dropped the fingertip onto the lid's top face)"
+}

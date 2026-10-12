@@ -1,0 +1,354 @@
+{
+  "task_prompt": "Put the three hard disk drives into the hard-disk stack on the right side of the computer case",
+  "task_summary": "The right hand alone installs the three tray-mounted hard disk drives one after another, right drive first, then the middle one, then the left one: each is picked up off the table, carried to the open drive stack in the right part of the computer case, slid into a slot and pushed home with the index finger; the left hand rests at the lower left throughout.",
+  "video": {
+    "path": "video.mp4",
+    "duration_s": 30.668,
+    "fps": 60.06,
+    "frames": 1842
+  },
+  "environment": {
+    "support_surface": "white tablecloth on a table; the computer case stands at the far side of the table with its side panel removed, facing the operator",
+    "camera": "head-mounted egocentric camera looking down the table at the open case; small head motion only",
+    "notes": "The drives lie in a row on the cloth in front of the case; the drive stack is the vertical column of slots in the right part of the case's interior, right of the power supply and motherboard."
+  },
+  "hands": {
+    "used": [
+      "right"
+    ],
+    "notes": "Only the right hand (forearm entering from the image's lower right) moves drives, including the leftmost one, which it reaches across for at 17 s. The left hand's fingertips rest on the cloth at the lower left from about 3 s to 16 s and do not touch any object. Both open hands are shown to the camera at 26.4 to 27.5 s, after the task; this is not a subgoal."
+  },
+  "objects": [
+    {
+      "id": "computer_case",
+      "name": "black computer case",
+      "type": "rigid",
+      "role": "container",
+      "parts": [
+        "chassis",
+        "hdd_stack"
+      ],
+      "appearance": {
+        "chassis": "black tower case with the side panel removed; motherboard, tower CPU cooler with copper heat pipes and a black 'Antec' power supply visible on the left",
+        "hdd_stack": "black vertical cage of horizontal drive slots in the right part of the case, with small RGB LED strips on the front edges of occupied slots"
+      },
+      "approximate_size": "a full tower filling the far half of the view; each slot is just wider than a 3.5-inch drive",
+      "properties": [
+        "The prompt's 'hard-disk stack' is a vertical column of about eight horizontal drive slots in the right part of the open case (count read at 0 s and 30.6 s; the lowest slots are dark and partly hidden, so the exact count is uncertain).",
+        "Each slot is an open-fronted horizontal guide that receives one tray-mounted drive sliding straight in, away from the operator, flat side down; the slot walls constrain the drive to a single sliding direction.",
+        "Slots are filled at different heights: the first drive goes into the top slot, the second into the slot directly below it, the third into a lower slot, about the fifth from the top.",
+        "A drive is fully seated when its tray front is flush with the front of the stack; the last centimetres are reached by pushing the tray front with a fingertip.",
+        "The case and its stack never move; the case is not grasped or steadied by either hand."
+      ],
+      "initial_state": "standing at the far side of the table, side panel off; the upper slots of the stack are empty (the bright background shows through them)",
+      "final_state": "unchanged in place, with three drives seated in the stack",
+      "evidence": "prompt: 'hard-disk stack on the right side of the computer case'; the case is visible and static in every frame; slots empty at 0 s, drives sliding in at 6.3 to 7.4 s, 12.7 to 14.8 s and 20.8 to 22.7 s; filled slots at 30.65 s."
+    },
+    {
+      "id": "hdd_right",
+      "name": "silver hard disk drive in black tray",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "drive",
+        "tray"
+      ],
+      "appearance": {
+        "drive": "silver 3.5-inch hard disk with a white printed label",
+        "tray": "black tool-less drive tray along both long sides, with two bent tabs at the end facing the operator"
+      },
+      "approximate_size": "about a hand-length long and a palm wide, thin",
+      "properties": [
+        "A rigid flat box (drive fixed in its tray) that moves as one piece.",
+        "Picked up from above in a whole-hand grasp across its top face and carried flat.",
+        "Slides into a stack slot along the slot guides, flat side down, and stays there under its own weight once released.",
+        "Pushed home by the index fingertip on the tray front after the hand lets go."
+      ],
+      "initial_state": "lying flat on the cloth, the rightmost of the three drives, in front of the case",
+      "final_state": "seated in the top slot of the hard-disk stack",
+      "evidence": "prompt: 'three hard disk drives'; 0 s three drives on the cloth; 3.2 to 5.3 s the right hand lifts the rightmost one; 6.3 to 7.4 s it slides into the top slot; 8.0 to 9.5 s the index finger pushes it in."
+    },
+    {
+      "id": "hdd_middle",
+      "name": "silver hard disk drive in black tray",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "drive",
+        "tray"
+      ],
+      "appearance": {
+        "drive": "silver 3.5-inch hard disk with a round platter-cover pattern and white label",
+        "tray": "black tool-less drive tray with two bent tabs at the end facing the operator"
+      },
+      "approximate_size": "same as the other drives",
+      "properties": [
+        "A rigid flat box (drive fixed in its tray) that moves as one piece.",
+        "Picked up from above with a whole-hand grasp and carried flat to the stack.",
+        "Slides into the slot directly below the first drive and stays there once released.",
+        "Pushed home with the index fingertip on the tray front."
+      ],
+      "initial_state": "lying flat on the cloth, the middle of the three drives",
+      "final_state": "seated in the second slot from the top of the stack",
+      "evidence": "10.3 to 11.6 s the right hand lifts the middle drive; 12.7 to 14.8 s it slides into the slot below the first; 15.3 to 16.3 s the index finger pushes it in."
+    },
+    {
+      "id": "hdd_left",
+      "name": "silver hard disk drive in black tray",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "drive",
+        "tray"
+      ],
+      "appearance": {
+        "drive": "silver 3.5-inch hard disk with a white label",
+        "tray": "black tool-less drive tray with two bent tabs at the end facing the operator"
+      },
+      "approximate_size": "same as the other drives",
+      "properties": [
+        "A rigid flat box (drive fixed in its tray) that moves as one piece.",
+        "Lies at the far left of the row, so the right hand must reach across the body to pick it up from above.",
+        "Slides into a lower slot of the stack, about the fifth from the top, and stays once released.",
+        "Pushed home with the index fingertip on the tray front."
+      ],
+      "initial_state": "lying flat on the cloth, the leftmost of the three drives",
+      "final_state": "seated in a lower slot of the stack (about the fifth from the top)",
+      "evidence": "16.9 to 19.0 s the right hand reaches left and lifts it; 19.5 to 20.8 s carried to the case; 20.8 to 22.7 s slid into a lower slot; 23.3 to 25.6 s the index finger pushes it in."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the rightmost drive from the table.",
+      "object_refs": [
+        "hdd_right"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests on the table at the lower left.",
+        "right": "Grasps the drive across its top face and lifts it off the cloth."
+      },
+      "goal": "The rightmost drive is held in the right hand, clear of the table.",
+      "time_window_s": [
+        3.0,
+        5.3
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "right",
+      "action": "Carry the drive to the front of the top slot of the stack.",
+      "object_refs": [
+        "hdd_right",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Rests on the table at the lower left.",
+        "right": "Moves the held drive, flat, up to the stack's top slot."
+      },
+      "goal": "The drive is level with and aligned to the opening of the top slot.",
+      "time_window_s": [
+        5.3,
+        6.3
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Slide the drive into the top slot and let go.",
+      "object_refs": [
+        "hdd_right",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Rests on the table at the lower left.",
+        "right": "Slides the drive into the slot guides, then opens the hand."
+      },
+      "goal": "The drive sits in the top slot, supported by the stack, without hand support.",
+      "time_window_s": [
+        6.3,
+        7.6
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "right",
+      "action": "Push the drive's tray front with the index finger until it is fully in.",
+      "object_refs": [
+        "hdd_right:tray",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "push",
+      "hand_roles": {
+        "left": "Rests on the table at the lower left.",
+        "right": "Presses the tray front inward with the index fingertip."
+      },
+      "goal": "The tray front is flush with the front of the stack.",
+      "observed_outcome": "The final push is visible; whether the drive latches or connects cannot be seen.",
+      "time_window_s": [
+        7.8,
+        9.8
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "right",
+      "action": "Pick up the middle drive from the table.",
+      "object_refs": [
+        "hdd_middle"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests on the table at the lower left.",
+        "right": "Grasps the middle drive from above and lifts it."
+      },
+      "goal": "The middle drive is held in the right hand, clear of the table.",
+      "time_window_s": [
+        10.0,
+        11.8
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "right",
+      "action": "Carry the drive to the slot below the first drive.",
+      "object_refs": [
+        "hdd_middle",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Rests on the table at the lower left.",
+        "right": "Moves the held drive, flat, to the second slot from the top."
+      },
+      "goal": "The drive is aligned with the opening of the second slot.",
+      "time_window_s": [
+        11.8,
+        12.7
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "right",
+      "action": "Slide the drive into the second slot and let go.",
+      "object_refs": [
+        "hdd_middle",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Rests on the table at the lower left.",
+        "right": "Slides the drive into the slot guides, then opens the hand."
+      },
+      "goal": "The drive sits in the second slot from the top without hand support.",
+      "time_window_s": [
+        12.7,
+        14.9
+      ]
+    },
+    {
+      "index": 8,
+      "acting_hand": "right",
+      "action": "Push the drive's tray front with the index finger until it is fully in.",
+      "object_refs": [
+        "hdd_middle:tray",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "push",
+      "hand_roles": {
+        "left": "Rests on the table at the lower left.",
+        "right": "Presses the tray front inward with the index fingertip."
+      },
+      "goal": "The tray front is flush with the front of the stack.",
+      "time_window_s": [
+        15.0,
+        16.5
+      ]
+    },
+    {
+      "index": 9,
+      "acting_hand": "right",
+      "action": "Reach across and pick up the leftmost drive from the table.",
+      "object_refs": [
+        "hdd_left"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests out of the way at the lower left edge.",
+        "right": "Reaches to the left, grasps the drive from above and lifts it."
+      },
+      "goal": "The leftmost drive is held in the right hand, clear of the table.",
+      "time_window_s": [
+        16.8,
+        19.3
+      ]
+    },
+    {
+      "index": 10,
+      "acting_hand": "right",
+      "action": "Carry the drive to a lower slot of the stack.",
+      "object_refs": [
+        "hdd_left",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Rests out of view.",
+        "right": "Moves the held drive right and up to the opening of a lower slot."
+      },
+      "goal": "The drive is aligned with the opening of the target slot (about the fifth from the top).",
+      "time_window_s": [
+        19.3,
+        20.8
+      ]
+    },
+    {
+      "index": 11,
+      "acting_hand": "right",
+      "action": "Slide the drive into the lower slot and let go.",
+      "object_refs": [
+        "hdd_left",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Rests out of view.",
+        "right": "Slides the drive into the slot guides, then opens the hand."
+      },
+      "goal": "The drive sits in the lower slot without hand support.",
+      "time_window_s": [
+        20.8,
+        23.0
+      ]
+    },
+    {
+      "index": 12,
+      "acting_hand": "right",
+      "action": "Push the drive's tray front with the index finger until it is fully in.",
+      "object_refs": [
+        "hdd_left:tray",
+        "computer_case:hdd_stack"
+      ],
+      "motion": "push",
+      "hand_roles": {
+        "left": "Rests out of view.",
+        "right": "Presses the tray front inward with the index fingertip, several short pushes."
+      },
+      "goal": "The tray front is flush with the front of the stack.",
+      "time_window_s": [
+        23.1,
+        25.7
+      ]
+    }
+  ],
+  "task_success": "All three tray-mounted drives are seated in the hard-disk stack on the right of the case (top slot, second slot, and a lower slot about fifth from the top), the table in front of the case is empty, and the case has not moved.",
+  "notes": [
+    "Drives are named by their starting position on the table (right, middle, left) because they look nearly identical.",
+    "The exact number of slots in the stack and the exact slot of the third drive are uncertain: the lower slots are dark and the backlight through the empty upper slots changes once drives are inserted.",
+    "Whether each drive latches or electrically connects is not visible; seating is judged by the tray front being flush with the stack."
+  ]
+}

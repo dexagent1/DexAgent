@@ -1,0 +1,544 @@
+{
+ "source": "stage3/trajectory_manifest.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    125
+   ],
+   "motion": "hold",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "plan": {
+    "index": 1,
+    "motion": "hold",
+    "side": "right",
+    "object": "gift_box_gift_box",
+    "pose": "poses/right_basefloor_0.06_60.json",
+    "hand_scene": "poses/hs_right_lid.json",
+    "approach_m": 0.05,
+    "step": 1
+   },
+   "expect": {
+    "in_hand": true,
+    "stays_put": true,
+    "min_links": 1,
+    "pads": {
+     "middle": {
+      "point": [
+       0.060005615135295357,
+       0.4548570302700635,
+       0.003305425029474655
+      ],
+      "normal": [
+       -0.00010481166079817339,
+       0.0036504547433256385,
+       0.999993331575106
+      ]
+     }
+    },
+    "pads_at_label": "right: hold gift_box_gift_box",
+    "hand": "right",
+    "object": "gift_box_gift_box",
+    "involved": [
+     "gift_box_gift_box"
+    ],
+    "untouched": [],
+    "pads_at_rel": 125
+   },
+   "step": 1
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    126,
+    423
+   ],
+   "motion": "close_joint",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "plan": {
+    "index": 1,
+    "motion": "close_joint",
+    "side": "left",
+    "object": "gift_box_gift_box_lidb",
+    "joint": "gift_box_gift_box_lid",
+    "target": 1.68,
+    "hand_follows": "rigid",
+    "pose": "poses/hookQ_side.json",
+    "hand_scene": "poses/hs_left_lid.json",
+    "duration_s": 4.5,
+    "approach_m": 0.035,
+    "keep_hold": false,
+    "press_travel_m": 0.001,
+    "step": 2
+   },
+   "expect": {
+    "joint": "gift_box_gift_box_lid",
+    "joint_target": 1.68,
+    "object": "gift_box_gift_box_lidb",
+    "in_hand": true,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       -0.12073606273411956,
+       0.5512327203033542,
+       0.02516661176748252
+      ],
+      "normal": [
+       0.1777139027748644,
+       -0.15091620851327228,
+       -0.9724412921953196
+      ]
+     },
+     "middle": {
+      "point": [
+       -0.1271982665878428,
+       0.5697263103977341,
+       0.021123241048147518
+      ],
+      "normal": [
+       0.1777139027748644,
+       -0.15091620851327228,
+       -0.9724412921953196
+      ]
+     }
+    },
+    "pads_at_label": "left: grip gift_box_gift_box_lidb",
+    "hand": "left",
+    "involved": [
+     "gift_box_gift_box_lidb"
+    ],
+    "untouched": [],
+    "pads_at_rel": 152
+   },
+   "step": 2,
+   "deviation": {
+    "reason": "The robot cannot copy the two-hand pinch of the lid's edge: (1) no pinch of the lid's side edges near the hinge exists for this hand (plate_edge_pinch_pose: the opened hand sinks 12-50 mm into the table under a lid 2-4 cm above it, or the thumb goes 11 mm into the lid); (2) the left arm reaches no pinch of the raised lid's free edge (optimize_pose_for_reach 10-105 mm residual over 9 pinches); (3) the right arm's pinches of the upright lid's free edge either hit the standing skirt flap on the way in (shoved the tray 3-11 cm, ep_v23/v26), collide its arm with its own thumb hull (3.1 mm, ep_v28/v29) or flip the arm configuration mid-turn (ep_v24/v25/v30). So the right fingertip steadies the tray while the left index lifts the lid to upright and holds it there (a steadying hold of the lid by one hand while the other holds the box, the two hands acting at once).",
+    "predicates": [
+     {
+      "class": "held",
+      "bodies": {
+       "A": "gift_box_gift_box_lidb"
+      },
+      "params": {
+       "mode": "fixed",
+       "side": "left"
+      },
+      "frames": [
+       424,
+       535
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    424,
+    476
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "plan": {
+    "index": 1,
+    "motion": "release",
+    "side": "right",
+    "object": "gift_box_gift_box",
+    "retreat_dir": [
+     0,
+     0,
+     1
+    ],
+    "retreat_m": 0.06,
+    "step": 3
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "gift_box_gift_box",
+    "involved": [
+     "gift_box_gift_box"
+    ],
+    "untouched": []
+   },
+   "step": 3
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    477,
+    535
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 1,
+    "motion": "home",
+    "side": "right",
+    "step": 4
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "gift_box_gift_box"
+    ]
+   },
+   "step": 4
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    536,
+    648
+   ],
+   "motion": "close_joint",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "plan": {
+    "index": 2,
+    "motion": "close_joint",
+    "side": "left",
+    "object": "gift_box_gift_box_lidb",
+    "joint": "gift_box_gift_box_lid",
+    "target": 1.5,
+    "hand_follows": "level",
+    "duration_s": 1.5,
+    "keep_hold": false,
+    "release": true,
+    "retreat_dir": [
+     -0.6,
+     -0.3,
+     0.75
+    ],
+    "retreat_m": 0.06,
+    "step": 1
+   },
+   "expect": {
+    "joint": "gift_box_gift_box_lid",
+    "joint_target": 1.5,
+    "object": "gift_box_gift_box_lidb",
+    "in_hand": false,
+    "min_links": 1,
+    "hand": "left",
+    "involved": [
+     "gift_box_gift_box_lidb"
+    ],
+    "untouched": []
+   },
+   "step": 1,
+   "deviation": {
+    "reason": "The lid is swung over by one hand (the left fingertip tips it past upright and it swings shut onto the box, caught briefly on the left thumb): a second hand on the lid or the box during the swing would be under the falling lid (the right forearm was hit by it, ep_v4/v5), and neither arm can carry a pinch of the lid through the swing (see subgoal 1). The right hand returns to press in subgoal 3.",
+    "sequential": true
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    649,
+    814
+   ],
+   "motion": "press",
+   "side": "left",
+   "object": "gift_box_gift_box_lidb",
+   "plan": {
+    "index": 2,
+    "motion": "press",
+    "side": "left",
+    "object": "gift_box_gift_box_lidb",
+    "joint": "gift_box_gift_box_lid",
+    "target": 0.0,
+    "pose": "poses/left_pressM.json",
+    "hand_scene": "poses/hs_left_closed.json",
+    "approach_m": 0.03,
+    "duration_s": 0.8,
+    "reanchor": "translate",
+    "step": 2
+   },
+   "expect": {
+    "joint": "gift_box_gift_box_lid",
+    "joint_target": 0.0,
+    "object": "gift_box_gift_box_lidb",
+    "in_hand": true,
+    "min_links": 1,
+    "pads": {
+     "middle": {
+      "point": [
+       -0.07182158715844172,
+       0.4056866315619243,
+       0.039097261192174666
+      ],
+      "normal": [
+       0.0,
+       0.0,
+       1.0
+      ]
+     }
+    },
+    "pads_at_label": "left: grip gift_box_gift_box_lidb",
+    "hand": "left",
+    "involved": [
+     "gift_box_gift_box_lidb"
+    ],
+    "untouched": [],
+    "pads_at_rel": 136
+   },
+   "step": 2
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    815,
+    969
+   ],
+   "motion": "press",
+   "side": "right",
+   "object": "gift_box_gift_box_lidb",
+   "plan": {
+    "index": 3,
+    "motion": "press",
+    "side": "right",
+    "object": "gift_box_gift_box_lidb",
+    "joint": "gift_box_gift_box_lid",
+    "target": 0.0,
+    "pose": "poses/right_pressM.json",
+    "hand_scene": "poses/hs_right_closed.json",
+    "approach_m": 0.03,
+    "duration_s": 0.8,
+    "reanchor": "translate",
+    "step": 1
+   },
+   "expect": {
+    "joint": "gift_box_gift_box_lid",
+    "joint_target": 0.0,
+    "object": "gift_box_gift_box_lidb",
+    "in_hand": true,
+    "min_links": 1,
+    "pads": {
+     "middle": {
+      "point": [
+       0.04812076558892364,
+       0.4060395183659321,
+       0.03887859792988021
+      ],
+      "normal": [
+       0.0,
+       0.0,
+       1.0
+      ]
+     }
+    },
+    "pads_at_label": "right: grip gift_box_gift_box_lidb",
+    "hand": "right",
+    "involved": [
+     "gift_box_gift_box_lidb"
+    ],
+    "untouched": [],
+    "pads_at_rel": 125
+   },
+   "step": 1
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    970,
+    1022
+   ],
+   "motion": "release",
+   "side": "left",
+   "object": "gift_box_gift_box",
+   "plan": {
+    "index": 3,
+    "motion": "release",
+    "side": "left",
+    "object": "gift_box_gift_box",
+    "retreat_dir": [
+     0,
+     -0.4,
+     0.9
+    ],
+    "retreat_m": 0.08,
+    "step": 2
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "left",
+    "object": "gift_box_gift_box",
+    "involved": [
+     "gift_box_gift_box"
+    ],
+    "untouched": []
+   },
+   "step": 2
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    1023,
+    1075
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "gift_box_gift_box",
+   "plan": {
+    "index": 3,
+    "motion": "release",
+    "side": "right",
+    "object": "gift_box_gift_box",
+    "retreat_dir": [
+     0,
+     -0.4,
+     0.9
+    ],
+    "retreat_m": 0.08,
+    "step": 3
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "gift_box_gift_box",
+    "involved": [
+     "gift_box_gift_box"
+    ],
+    "untouched": []
+   },
+   "step": 3
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    1076,
+    1094
+   ],
+   "motion": "wait",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 3,
+    "motion": "wait",
+    "side": "right",
+    "duration_s": 0.6,
+    "step": 4
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "gift_box_gift_box"
+    ]
+   },
+   "step": 4
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1095,
+    1148
+   ],
+   "motion": "both",
+   "side": null,
+   "object": null,
+   "plan": {
+    "index": 4,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "home",
+      "side": "left"
+     },
+     "right": {
+      "motion": "home",
+      "side": "right"
+     }
+    },
+    "step": 1
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "object": null,
+      "hand": "left",
+      "involved": []
+     },
+     "right": {
+      "object": null,
+      "hand": "right",
+      "involved": []
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": null,
+     "right": null
+    },
+    "involved": [],
+    "untouched": [
+     "gift_box_gift_box"
+    ],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 19.2
+   },
+   "step": 1,
+   "hands": {
+    "left": {
+     "motion": "home",
+     "side": "left"
+    },
+    "right": {
+     "motion": "home",
+     "side": "right"
+    }
+   },
+   "sync": "start"
+  }
+ ]
+}

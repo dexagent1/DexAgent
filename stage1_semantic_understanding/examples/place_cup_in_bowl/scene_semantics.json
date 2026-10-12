@@ -1,0 +1,111 @@
+{
+  "task_prompt": "Put the blue cup into the green bowl.",
+  "task_summary": "The left hand picks up the small blue cup, carries it to the green bowl and sets it down inside the bowl; the right hand rests on the table.",
+  "environment": {
+    "support_surface": "white tablecloth on a table",
+    "camera": "head-mounted egocentric camera looking down over the table"
+  },
+  "hands": {
+    "used": [
+      "left"
+    ],
+    "notes": "The right hand stays on the table at the lower right."
+  },
+  "objects": [
+    {
+      "id": "cup",
+      "name": "small blue cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "dark blue, slightly tapered, open top"
+      },
+      "approximate_size": "small enough to be enclosed by one hand; shorter than the bowl is wide",
+      "properties": [
+        "A rigid open-topped cup that is grasped from above around its rim and body with one hand.",
+        "It is carried upright and set down inside the bowl, where it rests on the bowl's inner surface.",
+        "It is small enough to fit inside the bowl's opening."
+      ],
+      "initial_state": "standing on the cloth left of centre, in front of the bowl",
+      "final_state": "standing inside the green bowl",
+      "evidence": "prompt: 'blue cup'; 1.5 to 2.3 s the left hand closes on it and lifts; 3 to 4 s it is lowered into the bowl and stays there."
+    },
+    {
+      "id": "bowl",
+      "name": "green bowl",
+      "type": "rigid",
+      "role": "container",
+      "appearance": {
+        "body": "bright green, square-ish with rounded corners, open top"
+      },
+      "approximate_size": "about twice the cup's width",
+      "properties": [
+        "A rigid open container with a stable base; its opening is wide enough to receive the cup.",
+        "It stays where it is; no hand touches it."
+      ],
+      "initial_state": "on the cloth right of the cup, further from the operator",
+      "final_state": "unchanged, with the cup inside",
+      "evidence": "prompt: 'green bowl'; visible in every frame and never moved; the cup is placed into it at 3.5 to 4.3 s."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "left",
+      "action": "Pick up the blue cup.",
+      "object_refs": [
+        "cup"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Grasps the cup from above and lifts it off the cloth.",
+        "right": "Rests on the table."
+      },
+      "goal": "The cup is held clear of the table.",
+      "time_window_s": [
+        1.4,
+        2.5
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "left",
+      "action": "Carry the cup over the bowl.",
+      "object_refs": [
+        "cup",
+        "bowl"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Moves the cup to above the bowl opening.",
+        "right": "Rests on the table."
+      },
+      "goal": "The cup is above the bowl's interior.",
+      "time_window_s": [
+        2.5,
+        3.5
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "left",
+      "action": "Set the cup down inside the bowl and let go.",
+      "object_refs": [
+        "cup",
+        "bowl"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Lowers the cup into the bowl, releases, withdraws.",
+        "right": "Rests on the table."
+      },
+      "goal": "The cup stands inside the bowl without hand support.",
+      "time_window_s": [
+        3.5,
+        4.8
+      ]
+    }
+  ],
+  "task_success": "The blue cup rests inside the green bowl; the bowl has not moved.",
+  "notes": []
+}

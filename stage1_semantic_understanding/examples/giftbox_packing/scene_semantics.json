@@ -1,0 +1,130 @@
+{
+  "task_prompt": "Close the red gift box",
+  "task_summary": "Both hands grasp the far edge of the open red box's hinged lid, swing it up and over onto the box, then press it down flat so the box is closed.",
+  "environment": {
+    "support_surface": "white tablecloth on a table",
+    "camera": "fixed camera above the operator looking down the table"
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ]
+  },
+  "objects": [
+    {
+      "id": "gift_box",
+      "name": "red gift box",
+      "type": "articulated",
+      "role": "manipulated",
+      "parts": [
+        "base",
+        "lid",
+        "hinge_edge"
+      ],
+      "appearance": {
+        "base": "red, shallow rectangular tray",
+        "lid": "red panel with two small printed labels on its outer face",
+        "hinge_edge": "the far long edge where lid and base meet"
+      },
+      "approximate_size": "about two hand-spans wide and one deep; a few fingers tall",
+      "properties": [
+        "The lid is attached to the base along the far long edge and rotates about that edge like a hinge; it is not a separate loose lid.",
+        "Open state: the lid lies flat on the table behind the base, inner face up. Closed state: the lid lies flat on top of the base covering the opening.",
+        "Closing is a rotation of about 180 degrees about the hinge edge, done with both hands lifting the lid's free edge, swinging it over and lowering it.",
+        "The lid settles flat and stays closed when pressed; the base does not move during closing."
+      ],
+      "articulation": {
+        "moving_part": "lid",
+        "fixed_part": "base",
+        "joint_type": "revolute",
+        "axis": "horizontal, along the far long edge of the base",
+        "range_observed": "about 180 degrees, from lying open behind the base to flat on top of it",
+        "state_over_video": "open (0 to 5 s) -> swinging over (5 to 7 s) -> closed and pressed (7 to 15 s)"
+      },
+      "initial_state": "open, base in the middle of the table with the lid lying flat behind it",
+      "final_state": "closed, lid flat on the base",
+      "evidence": "prompt: 'close the red gift box'; frames 0 to 5 s show the lid flat behind the open base; 5.2 to 7.2 s both hands lift the lid's far edge and bring it over; from 7.8 s the box is closed with the lid's outer face up."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "both",
+      "action": "Grasp the far free edge of the lid with both hands.",
+      "object_refs": [
+        "gift_box:lid"
+      ],
+      "motion": "hold",
+      "hand_roles": {
+        "left": "Takes the lid's left far corner.",
+        "right": "Takes the lid's right far corner."
+      },
+      "goal": "The lid is held in the left hand and in the right hand, both at its edge.",
+      "time_window_s": [
+        4.3,
+        5.5
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "both",
+      "action": "Swing the lid up and over the box about its hinge.",
+      "object_refs": [
+        "gift_box:lid",
+        "gift_box:hinge_edge"
+      ],
+      "motion": "close_joint",
+      "hand_roles": {
+        "left": "Lifts and rotates the left side of the lid over the base.",
+        "right": "Lifts and rotates the right side in step."
+      },
+      "goal": "The lid has completed its rotation, is closed and rests on top of the base.",
+      "time_window_s": [
+        5.5,
+        7.5
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "both",
+      "action": "Press the lid down flat onto the base.",
+      "object_refs": [
+        "gift_box:lid",
+        "gift_box:base"
+      ],
+      "motion": "press",
+      "hand_roles": {
+        "left": "Presses the lid's left side down.",
+        "right": "Presses the lid's right side down."
+      },
+      "goal": "The lid lies flat on the base, is closed and stays closed when the hands let go.",
+      "time_window_s": [
+        7.5,
+        11.5
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "both",
+      "action": "Release the box and withdraw.",
+      "object_refs": [
+        "gift_box"
+      ],
+      "motion": "release",
+      "hand_roles": {
+        "left": "Lifts off and withdraws.",
+        "right": "Lifts off and withdraws."
+      },
+      "goal": "The gift box stands on the table without hand support and the lid is closed.",
+      "time_window_s": [
+        11.5,
+        13.5
+      ]
+    }
+  ],
+  "task_success": "The red gift box is closed, its lid flat on the base, and the box rests on the table and is in the same place.",
+  "notes": [
+    "The lid's outer face, with two small labels, becomes visible only after closing."
+  ]
+}

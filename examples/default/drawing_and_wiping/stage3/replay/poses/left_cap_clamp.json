@@ -1,0 +1,73 @@
+{
+ "side": "left",
+ "pos": [
+  0.17192573873624817,
+  0.13995772238462484,
+  0.07960400240632684
+ ],
+ "euler": [
+  -1.9734567420991729,
+  0.2979083859961249,
+  1.6951713659119751
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 0.0,
+  "thumb_CMC_AA": 0.0,
+  "thumb_MCP_FE": 0.0,
+  "thumb_MCP_AA": 0.0,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": 0.0,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": 0.0,
+  "middle_MCP_AA": -0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "finger_targets_open": {
+  "thumb_CMC_FE": 0.0,
+  "thumb_CMC_AA": 0.0,
+  "thumb_MCP_FE": 0.0,
+  "thumb_MCP_AA": 0.0,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": 0.0,
+  "index_MCP_AA": -0.3491,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": 0.0,
+  "middle_MCP_AA": 0.3491,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "grip_fingers": [
+  "index",
+  "middle"
+ ],
+ "press_depth_rad": 0.0,
+ "press_travel_m": 0.0,
+ "approach": [
+  0,
+  0,
+  1.0
+ ],
+ "family": "cigarette"
+}

@@ -1,0 +1,3364 @@
+{
+ "source": "stage3/trajectory_manifest.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    53
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 1,
+    "step": 1,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "marker_marker",
+     "marker_marker_cap",
+     "eraser_eraser"
+    ]
+   },
+   "step": 1
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    54,
+    217
+   ],
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "plan": {
+    "index": 1,
+    "step": 2,
+    "motion": "grasp_lift",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "pose": "stage3/poses/left_cap_clamp.json",
+    "hand_scene": "stage3/poses/hs_left_cap.json",
+    "lift_m": 0.06,
+    "with": "marker_marker"
+   },
+   "expect": {
+    "rise_m": 0.03,
+    "in_hand": true,
+    "no_slip": true,
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap",
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 132
+   },
+   "step": 2
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    218,
+    295
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "plan": {
+    "index": 1,
+    "step": 3,
+    "motion": "carry",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "target_pos": [
+     0.1,
+     0.42,
+     0.18
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -140.0
+    ],
+    "duration_s": 2.5,
+    "with": "marker_marker"
+   },
+   "expect": {
+    "target_pos": [
+     0.1,
+     0.42,
+     0.18
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap",
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 3
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    296,
+    421
+   ],
+   "motion": "hold",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "index": 1,
+    "step": 4,
+    "motion": "hold",
+    "side": "right",
+    "object": "marker_marker",
+    "pose": "stage3/poses/right_tripod_va.json",
+    "hand_scene": "stage3/poses/hs_right_air.json",
+    "approach_m": 0.05,
+    "with": "marker_marker_cap"
+   },
+   "expect": {
+    "in_hand": true,
+    "stays_put": true,
+    "min_links": 2,
+    "pads": {
+     "thumb": {
+      "point": [
+       0.13088795373309536,
+       0.4379746730144436,
+       0.17961999999999997
+      ],
+      "normal": [
+       0.6427876096858969,
+       -0.7660444431182113,
+       2.223308773542079e-16
+      ]
+     },
+     "index": {
+      "point": [
+       0.12906263629047768,
+       0.45367442604074776,
+       0.18194937140592268
+      ],
+      "normal": [
+       -0.6427876096858969,
+       0.7660444431182113,
+       -2.223308773542079e-16
+      ]
+     },
+     "middle": {
+      "point": [
+       0.11574367827998842,
+       0.44249849328648055,
+       0.1772906285940773
+      ],
+      "normal": [
+       -0.6427876096858969,
+       0.7660444431182113,
+       -2.223308773542079e-16
+      ]
+     }
+    },
+    "pads_at_label": "right: hold marker_marker",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker",
+     "marker_marker_cap"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "pads_at_rel": 125
+   },
+   "step": 4
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    422,
+    469
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "plan": {
+    "index": 1,
+    "step": 5,
+    "stage1_indices": [
+     3
+    ],
+    "motion": "carry",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "target_pos": [
+     0.084,
+     0.3825,
+     0.1668
+    ],
+    "duration_s": 1.5,
+    "with": "marker_marker"
+   },
+   "expect": {
+    "target_pos": [
+     0.084,
+     0.3825,
+     0.1668
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap",
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 5
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    470,
+    508
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "index": 1,
+    "step": 6,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "marker_marker",
+    "lift_m": 0.05,
+    "duration_s": 1.0
+   },
+   "expect": {
+    "rise_m": 0.025,
+    "in_hand": true,
+    "no_slip": true,
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 6
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    509,
+    547
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "plan": {
+    "index": 1,
+    "step": 7,
+    "stage1_indices": [
+     3
+    ],
+    "motion": "carry",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "target_pos": [
+     0.0366,
+     0.3459,
+     0.1867
+    ],
+    "duration_s": 1.2
+   },
+   "expect": {
+    "target_pos": [
+     0.0366,
+     0.3459,
+     0.1867
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 7
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    548,
+    715
+   ],
+   "motion": "place",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "plan": {
+    "index": 1,
+    "step": 8,
+    "stage1_indices": [
+     3
+    ],
+    "motion": "place",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "target_pos": [
+     0.2504,
+     0.339,
+     0.0085
+    ],
+    "upright": false,
+    "duration_s": 2.5,
+    "carry_rise_m": 0.02,
+    "target_euler_deg": [
+     0,
+     0,
+     -120.0
+    ]
+   },
+   "expect": {
+    "target_pos": [
+     0.2504,
+     0.339,
+     0.0085
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": false,
+    "released": true,
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ]
+   },
+   "step": 8,
+   "goal_predicates": [
+    {
+     "class": "apart",
+     "bodies": {
+      "A": "marker_marker_cap",
+      "B": "marker_marker"
+     },
+     "params": {
+      "apart_m": 0.01
+     }
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    716,
+    784
+   ],
+   "motion": "home",
+   "side": "left",
+   "object": null,
+   "plan": {
+    "index": 2,
+    "step": 1,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "marker_marker_cap",
+     "eraser_eraser"
+    ]
+   },
+   "step": 1
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    785,
+    973
+   ],
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 2,
+    "motion": "grasp_lift",
+    "side": "left",
+    "object": "eraser_eraser",
+    "pose": "stage3/poses/ler_1.json",
+    "hand_scene": "stage3/poses/hs_left_eraser.json",
+    "lift_m": 0.06,
+    "step": 2
+   },
+   "expect": {
+    "rise_m": 0.03,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       -0.27765348828583225,
+       0.3067083227912772,
+       0.0185
+      ],
+      "normal": [
+       0.995760168441988,
+       0.09198742817572303,
+       -0.0
+      ]
+     },
+     "index": {
+      "point": [
+       -0.3215665117141677,
+       0.3026516772087228,
+       0.0185
+      ],
+      "normal": [
+       -0.9957601684419853,
+       -0.09198742817575054,
+       -0.0
+      ]
+     }
+    },
+    "pads_at_label": "left: grip eraser_eraser",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "pads_at_rel": 156,
+    "slip_from_rel": 157
+   },
+   "step": 2
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    974,
+    1021
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 2,
+    "step": 3,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     -0.36,
+     0.27,
+     0.1
+    ],
+    "duration_s": 1.5
+   },
+   "expect": {
+    "target_pos": [
+     -0.36,
+     0.27,
+     0.1
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 3
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1022,
+    1085
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "index": 4,
+    "step": 1,
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.0558,
+     0.3655,
+     0.17720000000000002
+    ],
+    "target_euler_deg": [
+     63.184,
+     -46.765,
+     -110.217
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     0.0558,
+     0.3655,
+     0.17720000000000002
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 1
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1086,
+    1115
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.12076,
+     0.32503,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 4,
+    "step": 2
+   },
+   "expect": {
+    "target_pos": [
+     -0.12076,
+     0.32503,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 2
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1116,
+    1133
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.12076,
+     0.32503,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 4,
+    "step": 3
+   },
+   "expect": {
+    "target_pos": [
+     -0.12076,
+     0.32503,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 3
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1134,
+    1146
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.32,
+    "index": 4,
+    "step": 4
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 4
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1147,
+    1163
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.31903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 4,
+    "step": 5
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.31903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 5
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1164,
+    1180
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.30403,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 4,
+    "step": 6
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.30403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 6
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1181,
+    1197
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 4,
+    "step": 7
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 7
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1198,
+    1215
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.28903,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 4,
+    "step": 8
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.28903,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 8,
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "marker_marker",
+      "B": "board_board"
+     },
+     "frames": [
+      1181,
+      1197
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "marker_marker"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "right"
+     }
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1216,
+    1245
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.07126,
+     0.32278,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 5,
+    "step": 1
+   },
+   "expect": {
+    "target_pos": [
+     -0.07126,
+     0.32278,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 1
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1246,
+    1263
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.07126,
+     0.32278,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 5,
+    "step": 2
+   },
+   "expect": {
+    "target_pos": [
+     -0.07126,
+     0.32278,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 2
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1264,
+    1278
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.06376,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.41,
+    "index": 5,
+    "step": 3
+   },
+   "expect": {
+    "target_pos": [
+     -0.06376,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 3
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1279,
+    1295
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.04876,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 4
+   },
+   "expect": {
+    "target_pos": [
+     -0.04876,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 4
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1296,
+    1310
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.04126,
+     0.32278,
+     0.06571
+    ],
+    "duration_s": 0.41,
+    "index": 5,
+    "step": 5
+   },
+   "expect": {
+    "target_pos": [
+     -0.04126,
+     0.32278,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 5
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1311,
+    1327
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.05126,
+     0.31153,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 6
+   },
+   "expect": {
+    "target_pos": [
+     -0.05126,
+     0.31153,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 6
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1328,
+    1344
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.06126,
+     0.30028,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 7
+   },
+   "expect": {
+    "target_pos": [
+     -0.06126,
+     0.30028,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 7
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1345,
+    1361
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.07126,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 8
+   },
+   "expect": {
+    "target_pos": [
+     -0.07126,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 8
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1362,
+    1378
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.05626,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 9
+   },
+   "expect": {
+    "target_pos": [
+     -0.05626,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 9
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1379,
+    1395
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.04126,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 10
+   },
+   "expect": {
+    "target_pos": [
+     -0.04126,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 10
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1396,
+    1413
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.04126,
+     0.28903,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 5,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     -0.04126,
+     0.28903,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 11,
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "marker_marker",
+      "B": "board_board"
+     },
+     "frames": [
+      1379,
+      1395
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "marker_marker"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "right"
+     }
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1414,
+    1443
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.01126,
+     0.32953,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 6,
+    "step": 1
+   },
+   "expect": {
+    "target_pos": [
+     -0.01126,
+     0.32953,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 1
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1444,
+    1461
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.01126,
+     0.32953,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 6,
+    "step": 2
+   },
+   "expect": {
+    "target_pos": [
+     -0.01126,
+     0.32953,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 2
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1462,
+    1475
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00074,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.38,
+    "index": 6,
+    "step": 3
+   },
+   "expect": {
+    "target_pos": [
+     0.00074,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 3
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1476,
+    1487
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00974,
+     0.32953,
+     0.06571
+    ],
+    "duration_s": 0.3,
+    "index": 6,
+    "step": 4
+   },
+   "expect": {
+    "target_pos": [
+     0.00974,
+     0.32953,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 4
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1488,
+    1499
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.01874,
+     0.32503,
+     0.06571
+    ],
+    "duration_s": 0.3,
+    "index": 6,
+    "step": 5
+   },
+   "expect": {
+    "target_pos": [
+     0.01874,
+     0.32503,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 5
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1500,
+    1513
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00899,
+     0.31828,
+     0.06571
+    ],
+    "duration_s": 0.36,
+    "index": 6,
+    "step": 6
+   },
+   "expect": {
+    "target_pos": [
+     0.00899,
+     0.31828,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 6
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1514,
+    1527
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.00076,
+     0.31153,
+     0.06571
+    ],
+    "duration_s": 0.36,
+    "index": 6,
+    "step": 7
+   },
+   "expect": {
+    "target_pos": [
+     -0.00076,
+     0.31153,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 7
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1528,
+    1540
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00899,
+     0.30591,
+     0.06571
+    ],
+    "duration_s": 0.34,
+    "index": 6,
+    "step": 8
+   },
+   "expect": {
+    "target_pos": [
+     0.00899,
+     0.30591,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 8
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1541,
+    1553
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.01874,
+     0.30028,
+     0.06571
+    ],
+    "duration_s": 0.34,
+    "index": 6,
+    "step": 9
+   },
+   "expect": {
+    "target_pos": [
+     0.01874,
+     0.30028,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 9
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1554,
+    1573
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00374,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.56,
+    "index": 6,
+    "step": 10
+   },
+   "expect": {
+    "target_pos": [
+     0.00374,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 10
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1574,
+    1590
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.01126,
+     0.29353,
+     0.06571
+    ],
+    "duration_s": 0.47,
+    "index": 6,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     -0.01126,
+     0.29353,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 11
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1591,
+    1608
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.01126,
+     0.29353,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 6,
+    "step": 12
+   },
+   "expect": {
+    "target_pos": [
+     -0.01126,
+     0.29353,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 12,
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "marker_marker",
+      "B": "board_board"
+     },
+     "frames": [
+      1574,
+      1590
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "marker_marker"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "right"
+     }
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1609,
+    1638
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.33403,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 7,
+    "step": 1
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.33403,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 1
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1639,
+    1656
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 7,
+    "step": 2
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 2
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1657,
+    1675
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.06924,
+     0.31941,
+     0.06571
+    ],
+    "duration_s": 0.54,
+    "index": 7,
+    "step": 3
+   },
+   "expect": {
+    "target_pos": [
+     0.06924,
+     0.31941,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 3
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1676,
+    1694
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.05874,
+     0.30478,
+     0.06571
+    ],
+    "duration_s": 0.54,
+    "index": 7,
+    "step": 4
+   },
+   "expect": {
+    "target_pos": [
+     0.05874,
+     0.30478,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 4
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1695,
+    1711
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07374,
+     0.30478,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 7,
+    "step": 5
+   },
+   "expect": {
+    "target_pos": [
+     0.07374,
+     0.30478,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 5
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1712,
+    1728
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.08874,
+     0.30478,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 7,
+    "step": 6
+   },
+   "expect": {
+    "target_pos": [
+     0.08874,
+     0.30478,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 6
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1729,
+    1746
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.08874,
+     0.30478,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 7,
+    "step": 7
+   },
+   "expect": {
+    "target_pos": [
+     0.08874,
+     0.30478,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 7
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1747,
+    1776
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.32053,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 7,
+    "step": 8
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.32053,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 8
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1777,
+    1794
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.32053,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 7,
+    "step": 9
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.32053,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 9
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1795,
+    1811
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.30478,
+     0.06571
+    ],
+    "duration_s": 0.47,
+    "index": 7,
+    "step": 10
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.30478,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 10
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1812,
+    1828
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.47,
+    "index": 7,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 11
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1829,
+    1846
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.28903,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 7,
+    "step": 12
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.28903,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 12
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1847,
+    1894
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "index": 7,
+    "step": 13,
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.2,
+     0.42,
+     0.17
+    ],
+    "duration_s": 1.5
+   },
+   "expect": {
+    "target_pos": [
+     0.2,
+     0.42,
+     0.17
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "step": 13,
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "marker_marker",
+      "B": "board_board"
+     },
+     "frames": [
+      1812,
+      1828
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "marker_marker"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "right"
+     }
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    1895,
+    1966
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 1,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.3,
+     0.045
+    ],
+    "duration_s": 2.0,
+    "target_euler_deg": [
+     0,
+     0,
+     15.0
+    ]
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.3,
+     0.045
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 1
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    1967,
+    1993
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 2,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.3,
+     0.0113
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.3,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 2
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    1994,
+    2011
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 3,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 3
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2012,
+    2038
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 4,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 4
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2039,
+    2056
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 5,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 5
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2057,
+    2083
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 6,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 6
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2084,
+    2101
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 7,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 7
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2102,
+    2128
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 8
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2129,
+    2146
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 11
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2147,
+    2173
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8,
+    "step": 12
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 12
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2174,
+    2191
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 11
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2192,
+    2218
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8,
+    "step": 12
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 12
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2219,
+    2233
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 13,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.3,
+     0.0113
+    ],
+    "duration_s": 0.4
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.3,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 13
+  },
+  {
+   "index": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2234,
+    2260
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 8,
+    "step": 14,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.3,
+     0.05
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.3,
+     0.05
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "step": 14,
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "eraser_eraser",
+      "B": "board_board"
+     },
+     "frames": [
+      2219,
+      2233
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "eraser_eraser"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "left"
+     }
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "stage1_indices": [
+    9
+   ],
+   "frames": [
+    2261,
+    2439
+   ],
+   "motion": "place",
+   "side": "left",
+   "object": "eraser_eraser",
+   "plan": {
+    "index": 9,
+    "motion": "place",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     -0.29961,
+     0.30468,
+     0.0
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     95.278
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     -0.29961,
+     0.30468,
+     0.0
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": true,
+    "released": true,
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ]
+   },
+   "step": null
+  },
+  {
+   "index": 10,
+   "stage1_indices": [
+    10
+   ],
+   "frames": [
+    2440,
+    2621
+   ],
+   "motion": "place",
+   "side": "right",
+   "object": "marker_marker",
+   "plan": {
+    "index": 10,
+    "motion": "place",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.27,
+     0.44,
+     0.0075
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     160.0
+    ],
+    "upright": false,
+    "duration_s": 2.5
+   },
+   "expect": {
+    "target_pos": [
+     0.27,
+     0.44,
+     0.0075
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": false,
+    "released": true,
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ]
+   },
+   "step": null
+  }
+ ]
+}

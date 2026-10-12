@@ -1,0 +1,667 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "container",
+   "type": "rigid",
+   "skill": "construct_latch_box",
+   "skill_origin": "library",
+   "params": {
+    "length": 0.21,
+    "width": 0.15,
+    "height": 0.06,
+    "corner_r": 0.024,
+    "wall": 0.005,
+    "rim_h": 0.007,
+    "rim_out": 0.0015,
+    "latch_edges": [
+     "xp",
+     "xn",
+     "yp",
+     "yn"
+    ],
+    "latch_len": 0.04,
+    "latch_open_deg": 115.0,
+    "fold_frictionloss": 0.006,
+    "glass_rgba": [
+     0.78,
+     0.79,
+     0.79,
+     0.38
+    ],
+    "lid_rgba": [
+     0.79,
+     0.79,
+     0.8,
+     0.34
+    ],
+    "gasket_rgba": [
+     0.6,
+     0.65,
+     0.7,
+     1.0
+    ],
+    "latch_rgba": [
+     0.88,
+     0.92,
+     0.94,
+     0.82
+    ],
+    "lid_layout": "beside",
+    "lid_offset": [
+     0.0,
+     -0.25
+    ],
+    "friction": "0.9 0.02 0.001",
+    "body_free": true,
+    "include_floor": false,
+    "part": "body (the glass dish) of the construct_latch_box asset; the same build provides the lid object"
+   },
+   "asset_xml": "objects/container/container.xml",
+   "root_body": "meal_box_mealbox_container",
+   "bodies": [
+    "meal_box_mealbox_container"
+   ],
+   "pose": {
+    "x": -0.1172,
+    "y": 0.4433,
+    "z": 0.0,
+    "yaw_deg": 92.01
+   },
+   "mask": "masks/container.png",
+   "iou": 0.887,
+   "verification_plan": {
+    "box_enclosure_check": "open-topped dish: bottom, four walls, hollow inside, top open at frame 0",
+    "box_enclosure_check_tiled_bottom": "created: open-topped dish with a flat (tiled rounded-rectangle) bottom and four walls, top open at frame 0 (the library box_enclosure_check reads only the largest floor slab of a rounded dish and misses the two end walls)",
+    "latch_snap_test": "rim nubs (the lip under the rim) catch the lid's four latches; lid seats on the rim in the long-to-long orientation; latched lid carries the dish",
+    "silhouette_iou_check": "placement at frame 0 through video_cam (via scene_qc)",
+    "settle_stability_check": "rests stably on the table (via scene_qc)",
+    "support_check": "stands on the table, not floating (via scene_qc)"
+   },
+   "verifiers": {
+    "box_enclosure_check": {
+     "ok": true,
+     "issues": [],
+     "faces": {
+      "bottom": {
+       "hit": true,
+       "geom": "meal_box_mealbox_floor_a",
+       "distance_m": 0.027
+      },
+      "x_pos": {
+       "hit": true,
+       "geom": "meal_box_mealbox_wall_0",
+       "distance_m": 0.1
+      },
+      "x_neg": {
+       "hit": true,
+       "geom": "meal_box_mealbox_wall_2",
+       "distance_m": 0.1
+      },
+      "y_pos": {
+       "hit": true,
+       "geom": "meal_box_mealbox_wall_1",
+       "distance_m": 0.07
+      },
+      "y_neg": {
+       "hit": true,
+       "geom": "meal_box_mealbox_wall_3",
+       "distance_m": 0.07
+      },
+      "top": {
+       "hit": false,
+       "geom": null,
+       "distance_m": null
+      }
+     },
+     "cavity_fraction": 1.0,
+     "top_state": "open",
+     "interior_size_m": [
+      0.162,
+      0.15,
+      0.054
+     ],
+     "n_geoms": 54,
+     "walls_found": [
+      "x_pos",
+      "x_neg",
+      "y_pos",
+      "y_neg"
+     ]
+    },
+    "box_enclosure_check_tiled_bottom": {
+     "ok": true,
+     "issues": [],
+     "faces": {
+      "bottom": {
+       "hit": true,
+       "geom": "meal_box_mealbox_floor_a",
+       "distance_m": 0.027
+      },
+      "x_pos": {
+       "hit": true,
+       "geom": "meal_box_mealbox_wall_0",
+       "distance_m": 0.1
+      },
+      "x_neg": {
+       "hit": true,
+       "geom": "meal_box_mealbox_wall_2",
+       "distance_m": 0.1
+      },
+      "y_pos": {
+       "hit": true,
+       "geom": "meal_box_mealbox_wall_1",
+       "distance_m": 0.07
+      },
+      "y_neg": {
+       "hit": true,
+       "geom": "meal_box_mealbox_wall_3",
+       "distance_m": 0.07
+      },
+      "top": {
+       "hit": false,
+       "geom": null,
+       "distance_m": null
+      }
+     },
+     "cavity_fraction": 1.0,
+     "top_state": "open",
+     "interior_size_m": [
+      0.21,
+      0.15,
+      0.054
+     ],
+     "bottom_tiles": [
+      "meal_box_mealbox_floor_a",
+      "meal_box_mealbox_floor_b"
+     ],
+     "n_geoms": 54,
+     "walls_found": [
+      "x_pos",
+      "x_neg",
+      "y_pos",
+      "y_neg"
+     ]
+    },
+    "latch_snap_test": {
+     "ok": true,
+     "verdict": "LATCHES OK \u2014 all 4 latch under a 10 N pinch (snap 7.2 N), carry the 1.56 kg box 108 mm off the table by the lid alone, survive a shake, and release when prised",
+     "measured": {
+      "after_seat": {
+       "seated": true,
+       "lid_proud_mm": -0.0,
+       "n_latched": 0
+      },
+      "after_close": {
+       "n_latched": 4,
+       "all_latched": true,
+       "seated": true,
+       "lid_proud_mm": -0.0,
+       "peak_strap_bow_mm": {
+        "xp": 4.25,
+        "xn": 4.25,
+        "yp": 4.48,
+        "yn": 4.48
+       }
+      },
+      "after_lift": {
+       "n_latched": 4,
+       "body_rose_mm": 108.1,
+       "lid_proud_mm": 1.49
+      },
+      "after_shake": {
+       "n_latched": 4,
+       "all_latched": true,
+       "lid_proud_mm": 1.5
+      },
+      "after_prise_open": {
+       "n_latched": 0,
+       "fold_deg": {
+        "xp": 115.22,
+        "xn": 115.22,
+        "yp": 115.22,
+        "yn": 115.22
+       }
+      },
+      "snap_force_N": 7.2,
+      "close_force_N": 10.0
+     },
+     "asset": "assets/meal_box/mechtest/mealbox.xml (same parameters, include_floor on for the stand-alone trial)"
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.887
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "meal_box_mealbox_container": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "meal_box_mealbox_lid": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      }
+     }
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    }
+   },
+   "properties_covered": {
+    "A rigid open rectangular container with a flat rim; the lid seats on the rim and the latch flaps hook under its lip.": "construct_latch_box dish: length 0.21 / width 0.15 / height 0.06 m (footprint, contact width 0.152 m), flat rim (rim_h 7 mm) with the rim_out lip and wall nubs the latch flaps hook under (nub 31.5-36.5 mm, 1.2 mm interference, 7.2 N snap); box_enclosure_check + box_enclosure_check_tiled_bottom (open top, four walls, flat bottom); latch_snap_test: the lid seats on the rim (lid_proud 0 mm) and 4/4 flaps latch under the lip, carry the box 108 mm and survive a shake",
+    "It stays on the table but is turned a quarter turn about the vertical, together with the lid, between the two latching pairs.": "body_free true (free joint) on the table, friction 0.9, mass 1.30 kg: it stays on the table (settle_stability_check, support_check) and can be turned about the vertical when pushed with the lid on (a ~11 N push slides it); the quarter turn itself is Stage 3's motion",
+    "colour": "glass_rgba RGB set from measure_object_color (0.78, 0.79, 0.79), alpha 0.38 for clear glass; color_match_check could not score a transparent geom (it crashes on no opaque colour), so not used"
+   }
+  },
+  {
+   "id": "lid",
+   "type": "articulated",
+   "skill": "construct_latch_box",
+   "skill_origin": "library",
+   "params": {
+    "length": 0.21,
+    "width": 0.15,
+    "height": 0.06,
+    "corner_r": 0.024,
+    "wall": 0.005,
+    "rim_h": 0.007,
+    "rim_out": 0.0015,
+    "latch_edges": [
+     "xp",
+     "xn",
+     "yp",
+     "yn"
+    ],
+    "latch_len": 0.04,
+    "latch_open_deg": 115.0,
+    "fold_frictionloss": 0.006,
+    "glass_rgba": [
+     0.78,
+     0.79,
+     0.79,
+     0.38
+    ],
+    "lid_rgba": [
+     0.79,
+     0.79,
+     0.8,
+     0.34
+    ],
+    "gasket_rgba": [
+     0.6,
+     0.65,
+     0.7,
+     1.0
+    ],
+    "latch_rgba": [
+     0.88,
+     0.92,
+     0.94,
+     0.82
+    ],
+    "lid_layout": "beside",
+    "lid_offset": [
+     0.0,
+     -0.25
+    ],
+    "friction": "0.9 0.02 0.001",
+    "body_free": true,
+    "include_floor": false,
+    "part": "lid with four latch straps of the same construct_latch_box asset",
+    "fold_joints": [
+     "mealbox_fold_xp",
+     "mealbox_fold_xn",
+     "mealbox_fold_yp",
+     "mealbox_fold_yn"
+    ],
+    "start_deg": 79.92
+   },
+   "asset_xml": "objects/container/container.xml",
+   "root_body": "meal_box_mealbox_lid",
+   "bodies": [
+    "meal_box_mealbox_latch_xn",
+    "meal_box_mealbox_latch_xp",
+    "meal_box_mealbox_latch_yn",
+    "meal_box_mealbox_latch_yp",
+    "meal_box_mealbox_lid",
+    "meal_box_mealbox_strap_xn",
+    "meal_box_mealbox_strap_xp",
+    "meal_box_mealbox_strap_yn",
+    "meal_box_mealbox_strap_yp"
+   ],
+   "pose": {
+    "x": 0.1468,
+    "y": 0.4721,
+    "z": 0.005,
+    "yaw_deg": -86.59
+   },
+   "mask": "masks/lid.png",
+   "iou": 0.771,
+   "verification_plan": {
+    "articulation_check": "four latch flaps are hinge joints with usable range (via scene_qc)",
+    "latch_snap_test": "each flap folds down from open under a 10 N pinch and snaps under the box rim nub, stays latched (detent) through lift and shake, opens when prised",
+    "joint_range_check": "fold joint range -1..115 deg (latched to splayed), covers the observed quarter turn",
+    "joint_release_hold_test": "open flaps stay open where released (85, 100, 112 deg) so they stay open while carried",
+    "color_match_check": "lid colours against the measured palette",
+    "silhouette_iou_check": "placement at frame 0 (via scene_qc)",
+    "settle_stability_check": "lies flat and still on the table (via scene_qc)",
+    "support_check": "rests on the table (via scene_qc)"
+   },
+   "verifiers": {
+    "articulation_check": {
+     "ok": true,
+     "objects": {
+      "meal_box_mealbox_lid": {
+       "bodies": [
+        "meal_box_mealbox_latch_xn",
+        "meal_box_mealbox_latch_xp",
+        "meal_box_mealbox_latch_yn",
+        "meal_box_mealbox_latch_yp",
+        "meal_box_mealbox_lid",
+        "meal_box_mealbox_strap_xn",
+        "meal_box_mealbox_strap_xp",
+        "meal_box_mealbox_strap_yn",
+        "meal_box_mealbox_strap_yp"
+       ],
+       "joints": [
+        {
+         "joint": "meal_box_mealbox_fold_xp",
+         "type": "hinge",
+         "range": [
+          -0.0174533,
+          2.00713
+         ],
+         "travel": 2.0246,
+         "moves_part_m": 0.0558,
+         "usable": true
+        },
+        {
+         "joint": "meal_box_mealbox_flex_xp",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.006
+         ],
+         "travel": 0.006,
+         "moves_part_m": 0.006,
+         "usable": true
+        },
+        {
+         "joint": "meal_box_mealbox_fold_xn",
+         "type": "hinge",
+         "range": [
+          -0.0174533,
+          2.00713
+         ],
+         "travel": 2.0246,
+         "moves_part_m": 0.0558,
+         "usable": true
+        },
+        {
+         "joint": "meal_box_mealbox_flex_xn",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.006
+         ],
+         "travel": 0.006,
+         "moves_part_m": 0.006,
+         "usable": true
+        },
+        {
+         "joint": "meal_box_mealbox_fold_yp",
+         "type": "hinge",
+         "range": [
+          -0.0174533,
+          2.00713
+         ],
+         "travel": 2.0246,
+         "moves_part_m": 0.0558,
+         "usable": true
+        },
+        {
+         "joint": "meal_box_mealbox_flex_yp",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.006
+         ],
+         "travel": 0.006,
+         "moves_part_m": 0.006,
+         "usable": true
+        },
+        {
+         "joint": "meal_box_mealbox_fold_yn",
+         "type": "hinge",
+         "range": [
+          -0.0174533,
+          2.00713
+         ],
+         "travel": 2.0246,
+         "moves_part_m": 0.0558,
+         "usable": true
+        },
+        {
+         "joint": "meal_box_mealbox_flex_yn",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.006
+         ],
+         "travel": 0.006,
+         "moves_part_m": 0.006,
+         "usable": true
+        }
+       ],
+       "total_travel": {
+        "slide": 0.024,
+        "hinge": 8.0983
+       },
+       "verdict": "articulated"
+      }
+     }
+    },
+    "latch_snap_test": {
+     "ok": true,
+     "verdict": "LATCHES OK \u2014 all 4 latch under a 10 N pinch (snap 7.2 N), carry the 1.56 kg box 108 mm off the table by the lid alone, survive a shake, and release when prised",
+     "measured": {
+      "after_seat": {
+       "seated": true,
+       "lid_proud_mm": -0.0,
+       "n_latched": 0
+      },
+      "after_close": {
+       "n_latched": 4,
+       "all_latched": true,
+       "seated": true,
+       "lid_proud_mm": -0.0,
+       "peak_strap_bow_mm": {
+        "xp": 4.25,
+        "xn": 4.25,
+        "yp": 4.48,
+        "yn": 4.48
+       }
+      },
+      "after_lift": {
+       "n_latched": 4,
+       "body_rose_mm": 108.1,
+       "lid_proud_mm": 1.49
+      },
+      "after_shake": {
+       "n_latched": 4,
+       "all_latched": true,
+       "lid_proud_mm": 1.5
+      },
+      "after_prise_open": {
+       "n_latched": 0,
+       "fold_deg": {
+        "xp": 115.22,
+        "xn": 115.22,
+        "yp": 115.22,
+        "yn": 115.22
+       }
+      },
+      "snap_force_N": 7.2,
+      "close_force_N": 10.0
+     },
+     "asset": "assets/meal_box/mechtest/mealbox.xml (same parameters, include_floor on for the stand-alone trial)"
+    },
+    "joint_range_check": {
+     "ok": true,
+     "range": [
+      -0.0174533,
+      2.00713
+     ],
+     "limited": true,
+     "type": "hinge",
+     "current": 1.39489,
+     "expected": [
+      -0.0174533,
+      2.00713
+     ]
+    },
+    "joint_release_hold_test": {
+     "ok": true,
+     "issues": [],
+     "trials": [
+      {
+       "released": 85.0,
+       "final": 84.8822,
+       "drift": -0.1178,
+       "root_slip_m": 0.0,
+       "held": true
+      },
+      {
+       "released": 100.0,
+       "final": 99.8835,
+       "drift": -0.1165,
+       "root_slip_m": 0.0,
+       "held": true
+      },
+      {
+       "released": 112.0,
+       "final": 111.8903,
+       "drift": -0.1097,
+       "root_slip_m": 0.0,
+       "held": true
+      }
+     ],
+     "joint_type": "hinge",
+     "range": [
+      -1.0,
+      115.0
+     ],
+     "tol": 3.0,
+     "hold_s": 3.0
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.88,
+      0.92,
+      0.94
+     ],
+     "closest_palette_rgb": [
+      0.788,
+      0.789,
+      0.799
+     ],
+     "dist": 0.213,
+     "colours": [
+      {
+       "rgb": [
+        0.88,
+        0.92,
+        0.94
+       ],
+       "share": 0.614
+      },
+      {
+       "rgb": [
+        0.6,
+        0.65,
+        0.7
+       ],
+       "share": 0.386
+      }
+     ]
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.771
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "meal_box_mealbox_container": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "meal_box_mealbox_lid": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      }
+     }
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    }
+   },
+   "properties_covered": {
+    "A rigid plate with four latch flaps, one per side, each on a hinge along the plate's edge.": "rigid lid plate (free body 0.255 kg) with latch_edges [xp, xn, yp, yn]: four flaps, one per side, each on a fold hinge along its plate edge (latch_frac 0.42 centred on the edge); articulation_check: 4 fold hinges with usable range",
+    "Open flaps stick out sideways; closing a flap rotates it down about its hinge until it hooks under the container's rim lip and snaps shut.": "fold hinge axis along the edge, 115 deg = splayed open (flaps stick out sideways; at frame 0 they rest on the table at ~87 deg), 0 deg = latched against the wall; the flex slide (6000 N/m) over the 1.2 mm rim nub makes the snap (7.2 N); joint_range_check, latch_snap_test",
+    "The plate must sit square on the rim before any flap can latch; latching is done one pair of flaps at a time, pressing the flap down and in against the box wall with the fingers; the box is turned a quarter turn between the two pairs so each pair is at the hands' sides.": "the catch bar sits 1.5 mm under the nub, so a flap can only latch with the lid seated on the rim (latch_snap_test after_seat: seated, lid_proud 0 mm before 4/4 close under a 10 N pinch); pairs of flaps and the quarter turn are Stage 3's motions",
+    "A latched flap stays closed on its own and holds the lid to the container.": "latch_snap_test: the 4 latched flaps stay closed through lift (box carried 108 mm by the lid alone) and shake, and open only when prised; joint_release_hold_test: open flaps stay where released (85/100/112 deg) while the lid is carried",
+    "colour": "lid_rgba / latch_rgba / gasket_rgba from measure_object_color (color_match_check)"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "silhouette_iou": {
+    "container": 0.887,
+    "lid": 0.771
+   },
+   "penetration_worst": {
+    "geoms": [
+     "table/g_table",
+     "meal_box_mealbox_strap_xp/meal_box_mealbox_tab_xp"
+    ],
+    "depth_m": 0.00228,
+    "excess_m": 0.00228,
+    "frame": 0
+   },
+   "support": {
+    "ok": true,
+    "floating": []
+   },
+   "settle_stability": true
+  }
+ },
+ "notes": [
+  "Both objects come from ONE construct_latch_box build (assets/meal_box/mealbox.xml, staged as meal_box): the dish is body meal_box_mealbox_container and the lid meal_box_mealbox_lid, two free bodies fitted independently with fit_object_placement.",
+  "Camera from the calibrated setup (fovy 38, pitch 33.7, h 0.558 m); the 10 cm grid lies on the cloth in camera_check.png.",
+  "Masks: SAM 3 returned both transparent objects for either prompt; split into left (container) and right (lid) connected components. No hands at frame 0 (masks/hands.png empty).",
+  "Sizes: footprint-based (contact width 0.152 m) with the default proportions of this meal-box class; dish 0.21 x 0.15 x 0.06 m.",
+  "Mechanism trials (latch_snap_test, joint_release_hold_test) ran on assets/meal_box/mechtest/mealbox.xml, the same parameters with include_floor on: without a floor the stand-alone dish falls and the latch trial is meaningless.",
+  "corner_r 0.024 m (library default 0.0273; the corner radius is not resolved by the footprint): at 0.0273 the library box_enclosure_check took the largest floor tile of the rounded dish as the whole bottom and reported the two end walls missing (a false negative; the walls exist, see box_enclosure_check_tiled_bottom). With 0.024 both checks pass; this is a 3 mm change to an unmeasured parameter, disclosed here.",
+  "The lid's yaw -87 deg is the 180-degree-symmetric equivalent of the dish's 92 deg.",
+  "Rel rebuild 2026-10-05: ids follow the Stage 1 reference annotation (the dish is 'container'; its body was renamed meal_box_mealbox_body -> meal_box_mealbox_container so the id resolves to it), properties_covered re-mapped to the Stage 1 property texts, and keyframe 0 rewritten from the settled state (scripts/settle_keyframe.py): the four latch folds start at 87.5/87.1 deg resting on the table instead of the built 79.9 deg (they fell 0.12-0.13 rad in the first second). The robot, stations, table and physics are untouched. The staged asset assets/meal_box/mealbox.xml carries the same rename (mealbox_body -> mealbox_container) so hand scenes built from it name the dish like the bench."
+ ],
+ "source": "examples/asset_reuse"
+}

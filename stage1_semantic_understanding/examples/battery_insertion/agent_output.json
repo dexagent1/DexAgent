@@ -1,0 +1,230 @@
+{
+  "task_prompt": "Insert the battery into the battery holder.",
+  "task_summary": "The right hand picks up the single AA battery standing upright on the right of the table, carries it to the black two-cell battery holder in the middle, lowers it into the holder's far slot and presses it in, then lets go; the left hand then braces the holder at its left end while the right fingers press the battery down to seat it fully, and both hands withdraw.",
+  "video": {
+    "path": "input/video.mp4",
+    "duration_s": 19.9,
+    "fps": 30.0,
+    "frames": 597
+  },
+  "environment": {
+    "support_surface": "white tablecloth on a table, black backdrop behind",
+    "camera": "fixed camera above the operator looking down the table; it does not move (the first ~1.4 s have a green colour cast that fades as the exposure settles)",
+    "notes": "The battery holder sits in the lower middle of the image; the battery starts about a forearm-length to its right. A small red object at the far left edge of the table is never touched and is not task-relevant."
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ],
+    "notes": "Both hands enter from the bottom edge at about 2 s. The right hand (forearm from the lower right) does the pick, carry and insertion; the left hand (forearm from the lower left) rests flat on the table until about 9 s, then braces the holder during the final press. Both withdraw by about 16.4 s; from 16.4 s to the end the scene is empty of hands."
+  },
+  "objects": [
+    {
+      "id": "battery",
+      "name": "black AA battery",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "body",
+        "copper_end",
+        "flat_end"
+      ],
+      "appearance": {
+        "body": "black cylindrical cell",
+        "copper_end": "copper/gold coloured band and cap at one end"
+      },
+      "approximate_size": "AA cell: finger-length, about a finger thick; exactly fills one slot of the holder",
+      "properties": [
+        "A rigid cylinder that starts standing upright on one flat end on the table, so it is picked from above with a fingertip pinch around its top.",
+        "It is carried in a right-hand pinch and laid lengthwise into one slot of the holder, its long axis along the slot.",
+        "It goes into the slot end-first and is then pressed down from above until it lies flat in the slot between the two end contacts; its length must fit between the contacts only when the spring contact is compressed.",
+        "Once seated it stays in the slot without hand support and moves with the holder."
+      ],
+      "initial_state": "standing upright on its end on the table, right of the holder (right of centre, near the operator)",
+      "final_state": "lying in the far slot of the holder (the slot farther from the camera), copper end toward the holder's right end where the wires leave",
+      "evidence": "prompt: 'battery'; 0 to 3.4 s a small upright black cylinder stands right of the holder; 3.4 to 4.4 s the right fingers close on it and lift it; 4.4 to 5.0 s it is carried to the holder; 5.0 to 8.6 s it is pushed into the far slot; from 9.0 s its copper end is visible in the slot to the end of the clip. It never changes shape: rigid."
+    },
+    {
+      "id": "battery_holder",
+      "name": "black battery holder",
+      "type": "articulated",
+      "role": "container",
+      "parts": [
+        "housing",
+        "near_slot",
+        "far_slot",
+        "spring_contact",
+        "end_contact",
+        "lead_wires"
+      ],
+      "appearance": {
+        "housing": "black plastic open-topped rectangular tray with two side-by-side cylindrical slots",
+        "spring_contact": "metal coil contact at one end of each slot",
+        "end_contact": "flat metal contact at the opposite end of each slot",
+        "lead_wires": "thin red and black wire pair leaving the right end of the holder, curving up and left to a small white connector"
+      },
+      "approximate_size": "a little longer than an AA cell and two cells wide; palm-sized",
+      "properties": [
+        "An open-topped two-cell AA holder lying flat on the table with its slots facing up and its long axis running roughly left to right (slightly down-left to up-right in the image).",
+        "Each slot is a half-cylinder channel that holds one cell lengthwise; the cell enters from above and is retained by the slot walls and the two end contacts.",
+        "One end of each slot has a coil spring contact that compresses along the slot axis when the cell is pushed against it; the cell is seated end-first against the spring and then pressed down past the other contact.",
+        "Seating the cell fully takes a downward press on the cell while the holder is braced, otherwise the holder slides or rotates on the cloth (it rotates by a few degrees during the press, 10.6 to 13.8 s).",
+        "The holder is not lifted; it stays on the table where it started apart from the small shift during the press.",
+        "The lead wires are attached at the right end and lie loose on the table; they are not handled."
+      ],
+      "articulation": {
+        "moving_part": "spring_contact",
+        "fixed_part": "housing",
+        "joint_type": "prismatic",
+        "axis": "along the slot's long axis, toward the opposite end contact",
+        "range_observed": "not resolvable at this resolution; the spring compression is implied by the end-first insertion and the press, not seen directly",
+        "state_over_video": "far slot empty, spring relaxed -> battery pushed in end-first (5.0 s to 8.6 s) -> pressed down to seat (10.6 s to 13.6 s) -> battery held between the contacts to the end"
+      },
+      "initial_state": "empty, lying flat in the lower middle of the table with its wires curving to the upper left",
+      "final_state": "same place, rotated a few degrees, with the battery seated in the far slot and the near slot empty",
+      "evidence": "prompt: 'battery holder'; the black two-slot tray is visible in every frame; 5.0 to 8.6 s the battery goes into its far slot; 10.6 to 13.6 s the left thumb braces its left end while the right fingers press down on the cell; the holder's outline turns slightly between 9.0 s and 13.8 s. The spring contact itself is not resolved in the frames."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the upright battery with a fingertip pinch.",
+      "object_refs": [
+        "battery"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests flat on the table at the lower left.",
+        "right": "Reaches to the battery on the right and pinches it around its top, lifting it off the cloth."
+      },
+      "goal": "The battery is held in the right fingers, clear of the table.",
+      "time_window_s": [
+        3.2,
+        4.4
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "right",
+      "action": "Carry the battery over the holder's far slot.",
+      "object_refs": [
+        "battery",
+        "battery_holder:far_slot"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Rests flat on the table at the lower left.",
+        "right": "Moves the held battery leftward and turns it lengthwise above the far slot."
+      },
+      "goal": "The battery is above the far slot with its long axis along the slot.",
+      "time_window_s": [
+        4.4,
+        5.0
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Insert the battery end-first into the far slot and push it down into the slot.",
+      "object_refs": [
+        "battery",
+        "battery_holder:far_slot",
+        "battery_holder:spring_contact"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Rests flat on the table at the lower left.",
+        "right": "Lowers one end of the battery into the slot against the end contact, then presses the whole cell down into the channel with the fingers."
+      },
+      "goal": "The battery lies in the far slot along its axis, between the two end contacts.",
+      "time_window_s": [
+        5.0,
+        8.6
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "right",
+      "action": "Let go of the battery and lift the hand away.",
+      "object_refs": [
+        "battery"
+      ],
+      "motion": "release",
+      "hand_roles": {
+        "left": "Lifts off the table and moves toward the holder's left end.",
+        "right": "Opens the fingers and moves up and to the right, off the battery."
+      },
+      "goal": "The battery stays in the far slot without hand support.",
+      "time_window_s": [
+        8.5,
+        9.4
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "left",
+      "action": "Brace the holder at its left end.",
+      "object_refs": [
+        "battery_holder:housing"
+      ],
+      "motion": "hold",
+      "hand_roles": {
+        "left": "Places the thumb against the holder's left end and the fingers alongside it so it cannot slide.",
+        "right": "Comes back toward the battery."
+      },
+      "goal": "The holder is held fixed on the table so the battery can be pressed against it.",
+      "time_window_s": [
+        9.4,
+        10.6
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "both",
+      "action": "Press the battery down firmly to seat it fully in the slot.",
+      "object_refs": [
+        "battery",
+        "battery_holder:far_slot",
+        "battery_holder:spring_contact"
+      ],
+      "motion": "press",
+      "hand_roles": {
+        "left": "Keeps bracing the holder's left end with the thumb.",
+        "right": "Presses the index and middle fingertips down on the battery several times along its length."
+      },
+      "goal": "The battery sits fully down in the far slot, flush with the slot, held between the spring contact and the end contact.",
+      "observed_outcome": "The battery ends lying in the far slot and the holder turns a few degrees under the press; a click or the spring compressing is not visible at this resolution.",
+      "time_window_s": [
+        10.6,
+        13.6
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "both",
+      "action": "Withdraw both hands from the holder.",
+      "object_refs": [
+        "battery_holder",
+        "battery"
+      ],
+      "motion": "release",
+      "hand_roles": {
+        "left": "Lets go of the holder and leaves at the lower left.",
+        "right": "Lifts off the battery, pauses briefly at the lower right, then leaves the frame."
+      },
+      "goal": "Neither hand touches the holder or the battery, and the battery stays seated.",
+      "time_window_s": [
+        13.6,
+        16.4
+      ]
+    }
+  ],
+  "task_success": "The AA battery lies seated in the far slot of the black battery holder, which rests on the table near its start position with the near slot empty and no hand touching it.",
+  "notes": [
+    "Only one battery is present, so only one of the holder's two slots is filled.",
+    "The battery's polarity (which end faces the spring) cannot be read reliably; the copper end appears toward the holder's right end, where the wires leave.",
+    "The press with both hands (10.6 to 13.6 s) is treated as a separate subgoal from the one-handed insertion because the right hand lets go between them and the left hand only joins for the press."
+  ]
+}

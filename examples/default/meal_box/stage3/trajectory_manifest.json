@@ -1,0 +1,2527 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_recon": "../stage2/scene_recon.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "tag": "subgoal_01_01",
+   "frames": [
+    0,
+    135
+   ],
+   "motion": "hold",
+   "side": "left",
+   "plan": {
+    "index": 1,
+    "motion": "hold",
+    "side": "left",
+    "object": "meal_box_mealbox_lid",
+    "pose": "poses/r4_left_lid_squeeze.json",
+    "hand_scene": "poses/r4_hs_left_lid.json",
+    "approach_m": 0.06,
+    "press_depth_rad": 0.3,
+    "expect": {
+     "in_hand": false,
+     "pads": {},
+     "min_links": 0
+    }
+   },
+   "expect": {
+    "in_hand": false,
+    "stays_put": true,
+    "min_links": 0,
+    "pads": {},
+    "pads_at_label": "left: hold meal_box_mealbox_lid",
+    "hand": "left",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [
+     "meal_box_mealbox_container"
+    ],
+    "pads_at_rel": 135
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "stays_put": true,
+     "untouched:meal_box_mealbox_container": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1468,
+      0.4721,
+      0.005
+     ],
+     "object_end": [
+      0.1491,
+      0.4728,
+      0.005
+     ],
+     "object_moved_m": 0.0025,
+     "object_rotated_deg": 0.75,
+     "object_tilt_end_deg": 0.0,
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.41,
+     "max_object_pen_mm": 0.1,
+     "max_track_pos_mm": 9.6,
+     "max_track_rot_deg": 2.2
+    },
+    "variant": "as planned"
+   },
+   "object": "meal_box_mealbox_lid",
+   "pose": {
+    "file": "poses/r4_left_lid_squeeze.json",
+    "source": "pose_from_points (index+middle pads on the lid's left 4 mm panel edge; the r4/r5 solve re-checked in the current library)",
+    "hand_scene": "poses/r4_hs_left_lid.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.0,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.17
+     },
+     "pregrasp_clearance_test": {
+      "ok": true,
+      "clearance_mm": 14.75,
+      "retract_m": 0.048
+     }
+    },
+    "notes": "stress tests run in a hand scene from the rel keyframe (poses/hs_left_lid_k0.json: lid at the same pose as the pose's own hand scene)"
+   }
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "tag": "subgoal_01_02",
+   "frames": [
+    136,
+    299
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "plan": {
+    "index": 1,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "meal_box_mealbox_lid",
+    "pose": "poses/r4_right_lid_squeeze.json",
+    "hand_scene": "poses/r4_hs_right_lid.json",
+    "approach_m": 0.06,
+    "open_frac": 0.1,
+    "press_depth_rad": 0.3,
+    "lift_m": 0.04
+   },
+   "expect": {
+    "rise_m": 0.02,
+    "in_hand": true,
+    "no_slip": true,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       0.22976999293894176,
+       0.41967177327207367,
+       0.010323911323431446
+      ],
+      "normal": [
+       0.9822319604088026,
+       0.0716779593977309,
+       -0.17344349536970335
+      ]
+     },
+     "middle": {
+      "point": [
+       0.23113473774874196,
+       0.4017906303041967,
+       0.010472900472257053
+      ],
+      "normal": [
+       0.9822319604088026,
+       0.0716779593977309,
+       -0.17344349536970335
+      ]
+     }
+    },
+    "pads_at_label": "right: grip meal_box_mealbox_lid",
+    "hand": "right",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [
+     "meal_box_mealbox_container"
+    ],
+    "pads_at_rel": 131,
+    "slip_from_rel": 132
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "pads_touching": true,
+     "no_slip": true,
+     "untouched:meal_box_mealbox_container": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1491,
+      0.4728,
+      0.005
+     ],
+     "object_end": [
+      0.1472,
+      0.4723,
+      0.0434
+     ],
+     "object_moved_m": 0.0385,
+     "object_rotated_deg": 0.96,
+     "object_tilt_end_deg": 0.92,
+     "rise_m": 0.0384,
+     "peak_rise_m": 0.0384,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP"
+     ],
+     "pads": {
+      "index": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 12.1
+      },
+      "middle": {
+       "touching": false,
+       "in_contact": false,
+       "side_ok": true,
+       "offset_mm": 12.9
+      }
+     },
+     "pads_frame": 131,
+     "slip_in_hand_m": 0.0009,
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.29,
+     "max_object_pen_mm": 0.04,
+     "max_track_pos_mm": 6.7,
+     "max_track_rot_deg": 2.5
+    },
+    "variant": "as planned"
+   },
+   "object": "meal_box_mealbox_lid",
+   "pose": {
+    "file": "poses/r4_right_lid_squeeze.json",
+    "source": "pose_from_points + optimize_pose_for_reach (pinch axis +10 deg, carry waypoints; r4/r5 solve re-checked)",
+    "hand_scene": "poses/r4_hs_right_lid.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.4,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.17
+     },
+     "pregrasp_clearance_test": {
+      "ok": true,
+      "clearance_mm": 14.4,
+      "retract_m": 0.048
+     }
+    },
+    "notes": "right half of a two-hand squeeze of the lid's long edges (left hold first, the right closes the squeeze and lifts with the left coupled): single-hand lift/shake tests do not apply to one side of a squeeze; the lift, carry and place are proved in physics"
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "tag": "subgoal_02",
+   "frames": [
+    300,
+    362
+   ],
+   "motion": "carry",
+   "side": "right",
+   "plan": {
+    "index": 2,
+    "motion": "carry",
+    "side": "right",
+    "object": "meal_box_mealbox_lid",
+    "target_pos": [
+     -0.1172,
+     0.4433,
+     0.115
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -87.99
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     -0.1172,
+     0.4433,
+     0.115
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "min_links": 1,
+    "hand": "right",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [
+     "meal_box_mealbox_container"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:meal_box_mealbox_container": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1472,
+      0.4723,
+      0.0434
+     ],
+     "object_end": [
+      -0.1163,
+      0.4427,
+      0.1137
+     ],
+     "object_moved_m": 0.2743,
+     "object_rotated_deg": 2.27,
+     "object_tilt_end_deg": 0.92,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP"
+     ],
+     "slip_in_hand_m": 0.0011,
+     "target_err_m": 0.0017,
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.04,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 2.5,
+     "max_track_rot_deg": 0.4
+    },
+    "variant": "as planned"
+   },
+   "object": "meal_box_mealbox_lid"
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "tag": "subgoal_03_01",
+   "frames": [
+    363,
+    474
+   ],
+   "motion": "place",
+   "side": "right",
+   "plan": {
+    "index": 3,
+    "motion": "place",
+    "side": "right",
+    "object": "meal_box_mealbox_lid",
+    "target_pos": [
+     -0.1172,
+     0.4433,
+     0.0605
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -87.99
+    ],
+    "hover_m": 0.01,
+    "duration_s": 1.2,
+    "retreat_dir": [
+     0.5,
+     -0.3,
+     0.8
+    ],
+    "expect": {
+     "on": "meal_box_mealbox_container"
+    },
+    "clearance_m": 0.0
+   },
+   "expect": {
+    "target_pos": [
+     -0.1172,
+     0.4433,
+     0.0605
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": true,
+    "released": true,
+    "hand": "right",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [],
+    "on": "meal_box_mealbox_container"
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "upright": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1163,
+      0.4427,
+      0.1137
+     ],
+     "object_end": [
+      -0.116,
+      0.4435,
+      0.06
+     ],
+     "object_moved_m": 0.0537,
+     "object_rotated_deg": 1.11,
+     "object_tilt_end_deg": 0.0,
+     "target_err_m": 0.0012,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.0561,
+     "support_contacts": 166,
+     "on_contacts": 165,
+     "max_hand_pen_mm": 0.03,
+     "max_object_pen_mm": 0.44,
+     "max_track_pos_mm": 1.9,
+     "max_track_rot_deg": 0.1
+    },
+    "variant": "as planned"
+   },
+   "object": "meal_box_mealbox_lid"
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "tag": "subgoal_03_02",
+   "frames": [
+    475,
+    527
+   ],
+   "motion": "release",
+   "side": "left",
+   "plan": {
+    "index": 3,
+    "motion": "release",
+    "side": "left",
+    "object": "meal_box_mealbox_lid",
+    "retreat_dir": [
+     -0.5,
+     -0.3,
+     0.8
+    ],
+    "expect": {
+     "on": "meal_box_mealbox_container"
+    }
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [],
+    "on": "meal_box_mealbox_container"
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.116,
+      0.4435,
+      0.06
+     ],
+     "object_end": [
+      -0.1162,
+      0.4437,
+      0.06
+     ],
+     "object_moved_m": 0.0003,
+     "object_rotated_deg": 0.19,
+     "object_tilt_end_deg": 0.0,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.0561,
+     "support_contacts": 163,
+     "on_contacts": 163,
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.09,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.0
+    },
+    "variant": "as planned"
+   },
+   "object": "meal_box_mealbox_lid"
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "tag": "subgoal_03_03",
+   "frames": [
+    528,
+    600
+   ],
+   "motion": "home",
+   "side": "left",
+   "plan": {
+    "index": 3,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:meal_box_mealbox_container": true,
+     "untouched:meal_box_mealbox_lid": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "meal_box_mealbox_lid": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.7,
+     "max_track_rot_deg": 2.4
+    },
+    "variant": "as planned"
+   },
+   "object": null
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "tag": "subgoal_03_04",
+   "frames": [
+    601,
+    732
+   ],
+   "motion": "press",
+   "side": "left",
+   "plan": {
+    "index": 3,
+    "motion": "press",
+    "side": "left",
+    "object": "meal_box_mealbox_lid",
+    "pose": "poses/r4_left_press.json",
+    "hand_scene": "poses/r4_hs_left_lid_onbox.json",
+    "direction": [
+     0,
+     0,
+     -1
+    ],
+    "distance_m": 0.004,
+    "expect": {
+     "displacement": null,
+     "stays_put": true,
+     "supported": true,
+     "on": "meal_box_mealbox_container",
+     "upright": true,
+     "upright_tol_deg": 2.0
+    }
+   },
+   "expect": {
+    "displacement": null,
+    "hand": "left",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [],
+    "stays_put": true,
+    "supported": true,
+    "on": "meal_box_mealbox_container",
+    "upright": true,
+    "upright_tol_deg": 2.0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "supported": true,
+     "upright": true,
+     "stays_put": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1162,
+      0.4437,
+      0.06
+     ],
+     "object_end": [
+      -0.1162,
+      0.4437,
+      0.06
+     ],
+     "object_moved_m": 0.0,
+     "object_rotated_deg": 0.01,
+     "object_tilt_end_deg": 0.0,
+     "lowest_point_z": -0.0561,
+     "support_contacts": 163,
+     "on_contacts": 163,
+     "max_hand_pen_mm": 0.04,
+     "max_object_pen_mm": 0.57,
+     "max_track_pos_mm": 2.1,
+     "max_track_rot_deg": 1.1
+    },
+    "variant": "as planned"
+   },
+   "object": "meal_box_mealbox_lid",
+   "pose": {
+    "file": "poses/r4_left_press.json",
+    "source": "flat_hand_pose (pads, pitch 12) + optimize_pose_for_reach (r4/r5)",
+    "hand_scene": "poses/r4_hs_left_lid_onbox.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.0,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.0
+     }
+    }
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "tag": "subgoal_03_05",
+   "frames": [
+    733,
+    813
+   ],
+   "motion": "home",
+   "side": "right",
+   "plan": {
+    "index": 3,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:meal_box_mealbox_container": true,
+     "untouched:meal_box_mealbox_lid": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "meal_box_mealbox_lid": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.6,
+     "max_track_rot_deg": 2.4
+    },
+    "variant": "as planned"
+   },
+   "object": null
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "tag": "subgoal_03_06",
+   "frames": [
+    814,
+    946
+   ],
+   "motion": "press",
+   "side": "right",
+   "plan": {
+    "index": 3,
+    "motion": "press",
+    "side": "right",
+    "object": "meal_box_mealbox_lid",
+    "pose": "poses/r4_right_press.json",
+    "hand_scene": "poses/r4_hs_right_lid_onbox.json",
+    "direction": [
+     0,
+     0,
+     -1
+    ],
+    "distance_m": 0.004,
+    "expect": {
+     "displacement": null,
+     "stays_put": true,
+     "supported": true,
+     "on": "meal_box_mealbox_container",
+     "upright": true,
+     "upright_tol_deg": 2.0
+    }
+   },
+   "expect": {
+    "displacement": null,
+    "hand": "right",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [],
+    "stays_put": true,
+    "supported": true,
+    "on": "meal_box_mealbox_container",
+    "upright": true,
+    "upright_tol_deg": 2.0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "supported": true,
+     "upright": true,
+     "stays_put": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1162,
+      0.4437,
+      0.06
+     ],
+     "object_end": [
+      -0.1162,
+      0.4438,
+      0.06
+     ],
+     "object_moved_m": 0.0,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.0,
+     "lowest_point_z": -0.0561,
+     "support_contacts": 163,
+     "on_contacts": 163,
+     "max_hand_pen_mm": 0.02,
+     "max_object_pen_mm": 0.35,
+     "max_track_pos_mm": 2.4,
+     "max_track_rot_deg": 2.6
+    },
+    "variant": "as planned"
+   },
+   "object": "meal_box_mealbox_lid",
+   "pose": {
+    "file": "poses/r4_right_press.json",
+    "source": "reachable_contact_search (flat_hand_pose pads, pitch 45, fingertips; r4/r5)",
+    "hand_scene": "poses/r4_hs_right_lid_onbox.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.0,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.0
+     }
+    }
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "tag": "subgoal_04_01",
+   "frames": [
+    947,
+    1003
+   ],
+   "motion": "home",
+   "side": "left",
+   "plan": {
+    "index": 4,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:meal_box_mealbox_container": true,
+     "untouched:meal_box_mealbox_lid": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "meal_box_mealbox_lid": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.7,
+     "max_track_rot_deg": 1.2
+    },
+    "variant": "as planned"
+   },
+   "object": null
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "tag": "subgoal_04_02",
+   "frames": [
+    1004,
+    1071
+   ],
+   "motion": "home",
+   "side": "right",
+   "plan": {
+    "index": 4,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:meal_box_mealbox_container": true,
+     "untouched:meal_box_mealbox_lid": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "meal_box_mealbox_lid": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.9,
+     "max_track_rot_deg": 2.2
+    },
+    "variant": "as planned"
+   },
+   "object": null
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "tag": "subgoal_04_03",
+   "frames": [
+    1072,
+    1344
+   ],
+   "motion": "both",
+   "side": "both",
+   "plan": {
+    "index": 4,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "close_joint",
+      "side": "left",
+      "object": "meal_box_mealbox_latch_yn",
+      "joint": "meal_box_mealbox_fold_yn",
+      "target": 0.0,
+      "pose": [
+       "poses/yn4Lc_c06.json",
+       "poses/yn4Lc_c07.json",
+       "poses/yn4Lc_c08.json"
+      ],
+      "hand_scene": "poses/hs_left_onbox_v1.json",
+      "hand_follows": "rigid",
+      "approach_m": 0.05,
+      "duration_s": 3.0,
+      "release": true,
+      "retreat_dir": [
+       -0.6,
+       0,
+       0.8
+      ],
+      "retreat_m": 0.06
+     },
+     "right": {
+      "motion": "close_joint",
+      "side": "right",
+      "object": "meal_box_mealbox_latch_yp",
+      "joint": "meal_box_mealbox_fold_yp",
+      "target": 0.0,
+      "pose": [
+       "poses/yp4Rd_c09.json",
+       "poses/yp4Rd_c06.json",
+       "poses/yp4Rd_c07.json",
+       "poses/yp4Rd_c08.json"
+      ],
+      "hand_scene": "poses/hs_right_onbox_v1.json",
+      "hand_follows": "rigid",
+      "approach_m": 0.05,
+      "duration_s": 3.0,
+      "release": true,
+      "retreat_dir": [
+       0.6,
+       0,
+       0.8
+      ],
+      "retreat_m": 0.06
+     }
+    }
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "joint": "meal_box_mealbox_fold_yn",
+      "joint_target": 0.0,
+      "object": "meal_box_mealbox_latch_yn",
+      "in_hand": false,
+      "min_links": 1,
+      "pads": {
+       "index": {
+        "point": [
+         -0.1955204914084852,
+         0.46230901088650045,
+         0.06329848184747489
+        ],
+        "normal": [
+         -8.724419650212344e-07,
+         -3.6986746706732975e-08,
+         0.9999999999996184
+        ]
+       },
+       "middle": {
+        "point": [
+         -0.2157207834042707,
+         0.45894775608612326,
+         0.06329846409957057
+        ],
+        "normal": [
+         -8.724419650212344e-07,
+         -3.6986746706732975e-08,
+         0.9999999999996184
+        ]
+       }
+      },
+      "pads_at_label": "left: grip meal_box_mealbox_latch_yn",
+      "hand": "left",
+      "involved": [
+       "meal_box_mealbox_latch_yn"
+      ],
+      "pads_at_rel": 125
+     },
+     "right": {
+      "joint": "meal_box_mealbox_fold_yp",
+      "joint_target": 0.0,
+      "object": "meal_box_mealbox_latch_yp",
+      "in_hand": false,
+      "min_links": 1,
+      "pads": {
+       "index": {
+        "point": [
+         -0.03637118808183273,
+         0.43481245860301976,
+         0.06331115883497858
+        ],
+        "normal": [
+         -8.724419650212344e-07,
+         -3.6986746706732975e-08,
+         0.9999999999996184
+        ]
+       },
+       "middle": {
+        "point": [
+         -0.01584693226084255,
+         0.4349915715000701,
+         0.06331117674782547
+        ],
+        "normal": [
+         -8.724419650212344e-07,
+         -3.6986746706732975e-08,
+         0.9999999999996184
+        ]
+       }
+      },
+      "pads_at_label": "right: grip meal_box_mealbox_latch_yp",
+      "hand": "right",
+      "involved": [
+       "meal_box_mealbox_latch_yp"
+      ],
+      "pads_at_rel": 125
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": "meal_box_mealbox_latch_yn",
+     "right": "meal_box_mealbox_latch_yp"
+    },
+    "involved": [
+     "meal_box_mealbox_latch_yn",
+     "meal_box_mealbox_latch_yn",
+     "meal_box_mealbox_latch_yp",
+     "meal_box_mealbox_latch_yp"
+    ],
+    "untouched": [],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 50.0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "left:pads_touching": true,
+     "left:joint_reached": true,
+     "right:pads_touching": true,
+     "right:joint_reached": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true,
+     "hands_apart": true
+    },
+    "measured": {
+     "hands": {
+      "left": {
+       "object_start": [
+        -0.1949,
+        0.441,
+        0.062
+       ],
+       "object_end": [
+        -0.1956,
+        0.4423,
+        0.062
+       ],
+       "object_moved_m": 0.0014,
+       "object_rotated_deg": 84.51,
+       "object_tilt_end_deg": 0.27,
+       "pads": {
+        "index": {
+         "touching": true,
+         "in_contact": true,
+         "side_ok": true,
+         "offset_mm": 9.1
+        },
+        "middle": {
+         "touching": true,
+         "in_contact": false,
+         "side_ok": true,
+         "offset_mm": 7.5
+        }
+       },
+       "pads_frame": 125,
+       "joint_start": 1.4796,
+       "joint_end": 0.0047,
+       "joint_travel_fraction": 0.997,
+       "base_moved": {
+        "body": "meal_box_mealbox_lid",
+        "moved_m": 0.0009,
+        "rotated_deg": 0.42
+       },
+       "max_hand_pen_mm": 0.18,
+       "max_object_pen_mm": 1.05,
+       "max_track_pos_mm": 2.3,
+       "max_track_rot_deg": 1.5
+      },
+      "right": {
+       "object_start": [
+        -0.0375,
+        0.4465,
+        0.062
+       ],
+       "object_end": [
+        -0.0381,
+        0.4466,
+        0.062
+       ],
+       "object_moved_m": 0.0006,
+       "object_rotated_deg": 88.04,
+       "object_tilt_end_deg": 1.0,
+       "pads": {
+        "index": {
+         "touching": true,
+         "in_contact": true,
+         "side_ok": true,
+         "offset_mm": 7.2
+        },
+        "middle": {
+         "touching": true,
+         "in_contact": false,
+         "side_ok": true,
+         "offset_mm": 7.4
+        }
+       },
+       "pads_frame": 125,
+       "joint_start": 1.5192,
+       "joint_end": -0.0174,
+       "joint_travel_fraction": 1.011,
+       "base_moved": {
+        "body": "meal_box_mealbox_lid",
+        "moved_m": 0.0009,
+        "rotated_deg": 0.42
+       },
+       "max_hand_pen_mm": 0.18,
+       "max_object_pen_mm": 1.05,
+       "max_track_pos_mm": 2.3,
+       "max_track_rot_deg": 1.5
+      }
+     },
+     "max_hand_pen_mm": 0.18,
+     "max_object_pen_mm": 1.05,
+     "max_track_pos_mm": 2.3,
+     "max_track_rot_deg": 1.5,
+     "hands_touching_frames": 0
+    },
+    "variant": "left pose candidate 1, right pose candidate 1"
+   },
+   "hands": {
+    "left": {
+     "motion": "close_joint",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_yn",
+     "joint": "meal_box_mealbox_fold_yn",
+     "pose": {
+      "file": "poses/yn4Lc_c06.json",
+      "source": "py/latch_cands.py: flat_hand_pose with index+middle pads on the strap top, ranked by the side's arm reach over the whole rigid fold sweep (arm_reach_check of 5 poses along the fold), thumb curled so the two hands' thumbs do not meet over the lid; the executor's two-hand screen picked the pair (left yn: heading -75 deg from outward, pitch 50)",
+      "hand_scene": "poses/hs_left_onbox_v1.json",
+      "stress_tests": {
+       "grasp_approach_open_test": {
+        "ok": true,
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "floor_penetration_mm": 0.0
+       },
+       "grasp_turn_test": {
+        "ok": false,
+        "verdict": "LOST \u2014 the hand came off the part after 5.0 deg of sweep (moved 61 deg)"
+       }
+      },
+      "notes": "grasp_turn_test reports LOST for this one-sided push (the floating hand leaves the strap after 5 deg while the strap folds 61 deg); the bench fold is the proof (fold yn 1.48 -> 0.02 rad)"
+     }
+    },
+    "right": {
+     "motion": "close_joint",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_yp",
+     "joint": "meal_box_mealbox_fold_yp",
+     "pose": {
+      "file": "poses/yp4Rd_c09.json",
+      "source": "py/latch_cands.py: flat_hand_pose with index+middle pads on the strap top, ranked by the side's arm reach over the whole rigid fold sweep (arm_reach_check of 5 poses along the fold), thumb curled so the two hands' thumbs do not meet over the lid; the executor's two-hand screen picked the pair (right yp: heading 80 deg, pitch 35)",
+      "hand_scene": "poses/hs_right_onbox_v1.json",
+      "stress_tests": {
+       "grasp_approach_open_test": {
+        "ok": true,
+        "object_nudged_mm": 0.16,
+        "penetration_mm": 0.06,
+        "floor_penetration_mm": 0.0
+       },
+       "grasp_turn_test": {
+        "ok": false,
+        "verdict": "LOST \u2014 the hand came off the part after 5.0 deg of sweep (moved 69 deg)"
+       }
+      },
+      "notes": "grasp_turn_test reports LOST for this one-sided push; the bench fold is the proof (fold yp 1.52 -> -0.02 rad)"
+     }
+    }
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "tag": "subgoal_05_01",
+   "frames": [
+    1345,
+    1405
+   ],
+   "motion": "home",
+   "side": "right",
+   "plan": {
+    "index": 5,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:meal_box_mealbox_container": true,
+     "untouched:meal_box_mealbox_lid": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "meal_box_mealbox_lid": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.8,
+     "max_track_rot_deg": 2.5
+    },
+    "variant": "as planned"
+   },
+   "object": null
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "tag": "subgoal_05_02",
+   "frames": [
+    1406,
+    1581
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotLG_c05.json"
+    ],
+    "hand_scene": "poses/hs_left_box_rot0.json",
+    "angle_deg": -45,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "expect": {
+     "yaw_turned_deg": -5.0
+    },
+    "back": false
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "upright": true,
+     "yaw_turned": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1173,
+      0.4434,
+      -0.0
+     ],
+     "object_end": [
+      -0.1057,
+      0.4531,
+      -0.0
+     ],
+     "object_moved_m": 0.0151,
+     "object_rotated_deg": 10.85,
+     "object_tilt_end_deg": 0.01,
+     "yaw_turned_deg": -10.9,
+     "max_hand_pen_mm": 0.09,
+     "max_object_pen_mm": 0.48,
+     "max_track_pos_mm": 4.3,
+     "max_track_rot_deg": 9.8
+    },
+    "variant": "pose candidate 1"
+   },
+   "object": "meal_box_mealbox_container",
+   "pose": {
+    "file": "poses/rotLG_c05.json",
+    "source": "py/rot_cands.py: flat_hand_pose with the pads on the dish's LEFT face near its far end (pushing it clockwise), fingers tilted 20 deg in the face plane, ranked by the left arm's reach over the stroke; regenerated from the state each stroke started in",
+    "hand_scene": "poses/hs_left_box_rot0.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.0,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.0
+     }
+    }
+   },
+   "deviation": {
+    "reason": "Stage 1 has both hands swing the lidded box round; the robot turns it with the LEFT hand alone in five side pushes (-10.9, -21.1, -22.1, -24.1, -10.5 deg: -88.8 deg clockwise, as in the video). Measured: a flat hand pressed on the lid drags nothing (the press adds as much cloth friction under the 1.56 kg box as hand friction on the lid: -0.4 deg for a -105 deg sweep when r5's pressed-lid stroke was re-executed with the current executor, plans/plan_v5.json, logs/exec_v5b.txt), so the turn must push a side face; the executor's rotate has no two-hand couple and a two-hand entry may not act on one part (subgoal.run_both rejects it), and a right-hand push on the box's right face is out of the right arm's reach over the stroke (py/rot_cands.py right face: 55-276 mm flange residual on every sample). The goal (the unlatched flaps face left and right) is met: rotation_turns >= 80 deg.",
+    "sequential": true
+   },
+   "goal_predicates": [
+    {
+     "class": "rotation_turns",
+     "bodies": {
+      "A": "meal_box_mealbox_container"
+     },
+     "params": {
+      "body": "meal_box_mealbox_container",
+      "axis": [
+       0,
+       0,
+       1
+      ],
+      "min_deg": 80
+     }
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "tag": "subgoal_05_03",
+   "frames": [
+    1582,
+    1732
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotT1_c00.json"
+    ],
+    "hand_scene": "poses/hs_left_box_turn1.json",
+    "angle_deg": -55.0,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "back": false,
+    "expect": {
+     "yaw_turned_deg": -5.0
+    }
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "upright": true,
+     "yaw_turned": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1057,
+      0.4531,
+      -0.0
+     ],
+     "object_end": [
+      -0.0706,
+      0.4536,
+      -0.0
+     ],
+     "object_moved_m": 0.0352,
+     "object_rotated_deg": 21.12,
+     "object_tilt_end_deg": 0.01,
+     "yaw_turned_deg": -21.1,
+     "max_hand_pen_mm": 0.05,
+     "max_object_pen_mm": 0.45,
+     "max_track_pos_mm": 3.9,
+     "max_track_rot_deg": 9.8,
+     "plan_collisions": [
+      {
+       "frame": 6,
+       "depth_mm": 20.3,
+       "geoms": [
+        "robot_left_collision_hand_left_index_1",
+        "meal_box_mealbox_panel_c2"
+       ],
+       "kind": "pre-grasp hand-object"
+      },
+      {
+       "frame": 3,
+       "depth_mm": 19.9,
+       "geoms": [
+        "robot_left_collision_hand_left_index_1",
+        "meal_box_mealbox_panel_c2"
+       ],
+       "kind": "pre-grasp hand-object"
+      },
+      {
+       "frame": 0,
+       "depth_mm": 19.8,
+       "geoms": [
+        "robot_left_collision_hand_left_index_1",
+        "meal_box_mealbox_panel_c2"
+       ],
+       "kind": "pre-grasp hand-object"
+      },
+      {
+       "frame": 9,
+       "depth_mm": 9.5,
+       "geoms": [
+        "robot_left_collision_hand_left_index_1",
+        "meal_box_mealbox_panel_c2"
+       ],
+       "kind": "pre-grasp hand-object"
+      }
+     ],
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance"
+    },
+    "variant": "pose candidate 1"
+   },
+   "object": "meal_box_mealbox_container",
+   "pose": {
+    "file": "poses/rotT1_c00.json",
+    "source": "py/rot_cands.py: flat_hand_pose with the pads on the dish's LEFT face near its far end (pushing it clockwise), fingers tilted 20 deg in the face plane, ranked by the left arm's reach over the stroke; regenerated from the state each stroke started in",
+    "hand_scene": "poses/hs_left_box_turn1.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.0,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.0
+     }
+    }
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "tag": "subgoal_05_04",
+   "frames": [
+    1733,
+    1883
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotT2_c00.json"
+    ],
+    "hand_scene": "poses/hs_left_box_turn2.json",
+    "angle_deg": -55.0,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "back": false,
+    "expect": {
+     "yaw_turned_deg": -5.0
+    }
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "upright": true,
+     "yaw_turned": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0706,
+      0.4536,
+      -0.0
+     ],
+     "object_end": [
+      -0.0343,
+      0.4452,
+      -0.0
+     ],
+     "object_moved_m": 0.0372,
+     "object_rotated_deg": 22.15,
+     "object_tilt_end_deg": 0.02,
+     "yaw_turned_deg": -22.1,
+     "max_hand_pen_mm": 0.06,
+     "max_object_pen_mm": 0.3,
+     "max_track_pos_mm": 2.9,
+     "max_track_rot_deg": 2.2
+    },
+    "variant": "pose candidate 1"
+   },
+   "object": "meal_box_mealbox_container",
+   "pose": {
+    "file": "poses/rotT2_c00.json",
+    "source": "py/rot_cands.py: flat_hand_pose with the pads on the dish's LEFT face near its far end (pushing it clockwise), fingers tilted 20 deg in the face plane, ranked by the left arm's reach over the stroke; regenerated from the state each stroke started in",
+    "hand_scene": "poses/hs_left_box_turn2.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.0,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.0
+     }
+    }
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "tag": "subgoal_05_05",
+   "frames": [
+    1884,
+    2037
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotT3_c01.json"
+    ],
+    "hand_scene": "poses/hs_left_box_turn3.json",
+    "angle_deg": -55.0,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "back": false,
+    "expect": {
+     "yaw_turned_deg": -5.0
+    }
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "upright": true,
+     "yaw_turned": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0343,
+      0.4452,
+      -0.0
+     ],
+     "object_end": [
+      -0.0062,
+      0.4207,
+      -0.0
+     ],
+     "object_moved_m": 0.0373,
+     "object_rotated_deg": 24.14,
+     "object_tilt_end_deg": 0.0,
+     "yaw_turned_deg": -24.1,
+     "max_hand_pen_mm": 0.13,
+     "max_object_pen_mm": 0.94,
+     "max_track_pos_mm": 2.7,
+     "max_track_rot_deg": 2.3
+    },
+    "variant": "pose candidate 1"
+   },
+   "object": "meal_box_mealbox_container",
+   "pose": {
+    "file": "poses/rotT3_c01.json",
+    "source": "py/rot_cands.py: flat_hand_pose with the pads on the dish's LEFT face near its far end (pushing it clockwise), fingers tilted 20 deg in the face plane, ranked by the left arm's reach over the stroke; regenerated from the state each stroke started in",
+    "hand_scene": "poses/hs_left_box_turn3.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.0,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.0
+     }
+    }
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "tag": "subgoal_05_06",
+   "frames": [
+    2038,
+    2187
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotT4_c02.json"
+    ],
+    "hand_scene": "poses/hs_left_box_turn4.json",
+    "angle_deg": -30.0,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "back": false,
+    "expect": {
+     "yaw_turned_deg": -5.0
+    }
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "upright": true,
+     "yaw_turned": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0062,
+      0.4207,
+      -0.0
+     ],
+     "object_end": [
+      0.006,
+      0.4099,
+      -0.0
+     ],
+     "object_moved_m": 0.0163,
+     "object_rotated_deg": 10.46,
+     "object_tilt_end_deg": 0.0,
+     "yaw_turned_deg": -10.5,
+     "max_hand_pen_mm": 0.15,
+     "max_object_pen_mm": 0.99,
+     "max_track_pos_mm": 2.2,
+     "max_track_rot_deg": 1.9
+    },
+    "variant": "pose candidate 1"
+   },
+   "object": "meal_box_mealbox_container",
+   "pose": {
+    "file": "poses/rotT4_c02.json",
+    "source": "py/rot_cands.py: flat_hand_pose with the pads on the dish's LEFT face near its far end (pushing it clockwise), fingers tilted 20 deg in the face plane, ranked by the left arm's reach over the stroke; regenerated from the state each stroke started in",
+    "hand_scene": "poses/hs_left_box_turn4.json",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.0,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.0
+     }
+    }
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "tag": "subgoal_05_07",
+   "frames": [
+    2188,
+    2270
+   ],
+   "motion": "home",
+   "side": "left",
+   "plan": {
+    "index": 5,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:meal_box_mealbox_container": true,
+     "untouched:meal_box_mealbox_lid": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "meal_box_mealbox_lid": {
+       "moved_m": 0.0001,
+       "rotated_deg": 0.01
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.41,
+     "max_track_pos_mm": 0.9,
+     "max_track_rot_deg": 1.7
+    },
+    "variant": "as planned"
+   },
+   "object": null
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "tag": "subgoal_06",
+   "frames": [
+    2271,
+    2491
+   ],
+   "motion": "both",
+   "side": "both",
+   "plan": {
+    "index": 6,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "close_joint",
+      "side": "left",
+      "object": "meal_box_mealbox_latch_xp",
+      "joint": "meal_box_mealbox_fold_xp",
+      "target": 0.0,
+      "pose": [
+       "poses/xp6L_c09.json",
+       "poses/xp6L_c10.json",
+       "poses/xp6L_c11.json",
+       "poses/xp6L_c01.json",
+       "poses/xp6L_c02.json"
+      ],
+      "hand_scene": "poses/hs_left_turned_v1.json",
+      "hand_follows": "rigid",
+      "approach_m": 0.05,
+      "duration_s": 3.0,
+      "release": false
+     },
+     "right": {
+      "motion": "close_joint",
+      "side": "right",
+      "object": "meal_box_mealbox_latch_xn",
+      "joint": "meal_box_mealbox_fold_xn",
+      "target": 0.0,
+      "pose": [
+       "poses/xn6R_c09.json",
+       "poses/xn6R_c10.json",
+       "poses/xn6R_c00.json",
+       "poses/xn6R_c01.json",
+       "poses/xn6R_c02.json"
+      ],
+      "hand_scene": "poses/hs_right_turned_v1.json",
+      "hand_follows": "rigid",
+      "approach_m": 0.05,
+      "duration_s": 3.0,
+      "release": false
+     }
+    }
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "joint": "meal_box_mealbox_fold_xp",
+      "joint_target": 0.0,
+      "object": "meal_box_mealbox_latch_xp",
+      "in_hand": true,
+      "min_links": 1,
+      "pads": {
+       "index": {
+        "point": [
+         -0.10253657641276627,
+         0.4179647330582395,
+         0.06331738294995287
+        ],
+        "normal": [
+         3.842575274737962e-06,
+         1.4327311774199172e-06,
+         0.9999999999915922
+        ]
+       },
+       "middle": {
+        "point": [
+         -0.12281850005835283,
+         0.4148150137590859,
+         0.06331746539747224
+        ],
+        "normal": [
+         3.842575274737962e-06,
+         1.4327311774199172e-06,
+         0.9999999999915922
+        ]
+       }
+      },
+      "pads_at_label": "left: grip meal_box_mealbox_latch_xp",
+      "hand": "left",
+      "involved": [
+       "meal_box_mealbox_latch_xp"
+      ],
+      "pads_at_rel": 125
+     },
+     "right": {
+      "joint": "meal_box_mealbox_fold_xn",
+      "joint_target": 0.0,
+      "object": "meal_box_mealbox_latch_xn",
+      "in_hand": true,
+      "min_links": 1,
+      "pads": {
+       "index": {
+        "point": [
+         0.1173360968313934,
+         0.4019575777326678,
+         0.06331434348625979
+        ],
+        "normal": [
+         3.842575274737962e-06,
+         1.4327311774199172e-06,
+         0.9999999999915922
+        ]
+       },
+       "middle": {
+        "point": [
+         0.13785907368233563,
+         0.40224840346238416,
+         0.06331426420850128
+        ],
+        "normal": [
+         3.842575274737962e-06,
+         1.4327311774199172e-06,
+         0.9999999999915922
+        ]
+       }
+      },
+      "pads_at_label": "right: grip meal_box_mealbox_latch_xn",
+      "hand": "right",
+      "involved": [
+       "meal_box_mealbox_latch_xn"
+      ],
+      "pads_at_rel": 125
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": "meal_box_mealbox_latch_xp",
+     "right": "meal_box_mealbox_latch_xn"
+    },
+    "involved": [
+     "meal_box_mealbox_latch_xp",
+     "meal_box_mealbox_latch_xp",
+     "meal_box_mealbox_latch_xn",
+     "meal_box_mealbox_latch_xn"
+    ],
+    "untouched": [],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 50.0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "left:in_hand": true,
+     "left:pads_touching": true,
+     "left:joint_reached": true,
+     "right:in_hand": true,
+     "right:pads_touching": true,
+     "right:joint_reached": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true,
+     "hands_apart": true
+    },
+    "measured": {
+     "hands": {
+      "left": {
+       "object_start": [
+        -0.1012,
+        0.4048,
+        0.062
+       ],
+       "object_end": [
+        -0.1014,
+        0.4052,
+        0.0621
+       ],
+       "object_moved_m": 0.0005,
+       "object_rotated_deg": 87.8,
+       "object_tilt_end_deg": 0.32,
+       "hand_links_touching": [
+        "robot_left_left_index_DP",
+        "robot_left_left_middle_DP"
+       ],
+       "pads": {
+        "index": {
+         "touching": true,
+         "in_contact": true,
+         "side_ok": true,
+         "offset_mm": 7.0
+        },
+        "middle": {
+         "touching": false,
+         "in_contact": false,
+         "side_ok": true,
+         "offset_mm": 10.1
+        }
+       },
+       "pads_frame": 125,
+       "joint_start": 1.5269,
+       "joint_end": -0.0069,
+       "joint_travel_fraction": 1.005,
+       "base_moved": {
+        "body": "meal_box_mealbox_lid",
+        "moved_m": 0.0003,
+        "rotated_deg": 0.14
+       },
+       "max_hand_pen_mm": 0.2,
+       "max_object_pen_mm": 1.07,
+       "max_track_pos_mm": 2.6,
+       "max_track_rot_deg": 1.5
+      },
+      "right": {
+       "object_start": [
+        0.1161,
+        0.4136,
+        0.062
+       ],
+       "object_end": [
+        0.1159,
+        0.4137,
+        0.0618
+       ],
+       "object_moved_m": 0.0003,
+       "object_rotated_deg": 88.65,
+       "object_tilt_end_deg": 1.17,
+       "hand_links_touching": [
+        "robot_right_right_index_DP"
+       ],
+       "pads": {
+        "index": {
+         "touching": true,
+         "in_contact": true,
+         "side_ok": true,
+         "offset_mm": 7.3
+        },
+        "middle": {
+         "touching": true,
+         "in_contact": false,
+         "side_ok": true,
+         "offset_mm": 7.6
+        }
+       },
+       "pads_frame": 125,
+       "joint_start": 1.5269,
+       "joint_end": -0.0188,
+       "joint_travel_fraction": 1.012,
+       "base_moved": {
+        "body": "meal_box_mealbox_lid",
+        "moved_m": 0.0003,
+        "rotated_deg": 0.14
+       },
+       "max_hand_pen_mm": 0.2,
+       "max_object_pen_mm": 1.07,
+       "max_track_pos_mm": 2.6,
+       "max_track_rot_deg": 1.5
+      }
+     },
+     "max_hand_pen_mm": 0.2,
+     "max_object_pen_mm": 1.07,
+     "max_track_pos_mm": 2.6,
+     "max_track_rot_deg": 1.5,
+     "hands_touching_frames": 0
+    },
+    "variant": "left pose candidate 1, right pose candidate 1"
+   },
+   "hands": {
+    "left": {
+     "motion": "close_joint",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_xp",
+     "joint": "meal_box_mealbox_fold_xp",
+     "pose": {
+      "file": "poses/xp6L_c09.json",
+      "source": "py/latch_cands.py: flat_hand_pose with index+middle pads on the strap top, ranked by the side's arm reach over the whole rigid fold sweep (arm_reach_check of 5 poses along the fold), thumb curled so the two hands' thumbs do not meet over the lid; the executor's two-hand screen picked the pair (left xp after the turn: heading -75 deg, pitch 35)",
+      "hand_scene": "poses/hs_left_turned_v1.json",
+      "stress_tests": {
+       "grasp_approach_open_test": {
+        "ok": true,
+        "object_nudged_mm": 0.18,
+        "penetration_mm": 0.06,
+        "floor_penetration_mm": 0.0
+       }
+      }
+     }
+    },
+    "right": {
+     "motion": "close_joint",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_xn",
+     "joint": "meal_box_mealbox_fold_xn",
+     "pose": {
+      "file": "poses/xn6R_c09.json",
+      "source": "py/latch_cands.py: flat_hand_pose with index+middle pads on the strap top, ranked by the side's arm reach over the whole rigid fold sweep (arm_reach_check of 5 poses along the fold), thumb curled so the two hands' thumbs do not meet over the lid; the executor's two-hand screen picked the pair (right xn after the turn: heading 80 deg, pitch 35)",
+      "hand_scene": "poses/hs_right_turned_v1.json",
+      "stress_tests": {
+       "grasp_approach_open_test": {
+        "ok": true,
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "floor_penetration_mm": 0.0
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "tag": "subgoal_07_01",
+   "frames": [
+    2492,
+    2544
+   ],
+   "motion": "both",
+   "side": "both",
+   "plan": {
+    "index": 7,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "release",
+      "side": "left",
+      "object": "meal_box_mealbox_latch_xp",
+      "retreat_dir": [
+       -0.6,
+       0,
+       0.8
+      ],
+      "retreat_m": 0.06
+     },
+     "right": {
+      "motion": "release",
+      "side": "right",
+      "object": "meal_box_mealbox_latch_xn",
+      "retreat_dir": [
+       0.6,
+       0,
+       0.8
+      ],
+      "retreat_m": 0.06
+     }
+    }
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "released": true,
+      "at_rest": true,
+      "supported": true,
+      "hand": "left",
+      "object": "meal_box_mealbox_latch_xp",
+      "involved": [
+       "meal_box_mealbox_latch_xp"
+      ]
+     },
+     "right": {
+      "released": true,
+      "at_rest": true,
+      "supported": true,
+      "hand": "right",
+      "object": "meal_box_mealbox_latch_xn",
+      "involved": [
+       "meal_box_mealbox_latch_xn"
+      ]
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": "meal_box_mealbox_latch_xp",
+     "right": "meal_box_mealbox_latch_xn"
+    },
+    "involved": [
+     "meal_box_mealbox_latch_xp",
+     "meal_box_mealbox_latch_xp",
+     "meal_box_mealbox_latch_xn",
+     "meal_box_mealbox_latch_xn"
+    ],
+    "untouched": [],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 50.0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "left:released": true,
+     "left:at_rest": true,
+     "left:supported": true,
+     "right:released": true,
+     "right:at_rest": true,
+     "right:supported": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true,
+     "hands_apart": true
+    },
+    "measured": {
+     "hands": {
+      "left": {
+       "object_start": [
+        -0.1014,
+        0.4052,
+        0.0621
+       ],
+       "object_end": [
+        -0.1015,
+        0.4056,
+        0.0633
+       ],
+       "object_moved_m": 0.0012,
+       "object_rotated_deg": 0.19,
+       "object_tilt_end_deg": 0.14,
+       "hand_contacts_end": 0,
+       "moved_in_last_window_m": 0.0,
+       "lowest_point_z": -0.0045,
+       "support_contacts": 5,
+       "max_hand_pen_mm": 0.12,
+       "max_object_pen_mm": 0.89,
+       "max_track_pos_mm": 2.4,
+       "max_track_rot_deg": 0.0
+      },
+      "right": {
+       "object_start": [
+        0.1159,
+        0.4137,
+        0.0618
+       ],
+       "object_end": [
+        0.1158,
+        0.4141,
+        0.0619
+       ],
+       "object_moved_m": 0.0004,
+       "object_rotated_deg": 0.22,
+       "object_tilt_end_deg": 1.36,
+       "hand_contacts_end": 0,
+       "moved_in_last_window_m": 0.0,
+       "lowest_point_z": -0.0058,
+       "support_contacts": 0,
+       "max_hand_pen_mm": 0.12,
+       "max_object_pen_mm": 0.89,
+       "max_track_pos_mm": 2.4,
+       "max_track_rot_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.12,
+     "max_object_pen_mm": 0.89,
+     "max_track_pos_mm": 2.4,
+     "max_track_rot_deg": 0.0,
+     "hands_touching_frames": 0
+    },
+    "variant": "as planned"
+   },
+   "hands": {
+    "left": {
+     "motion": "release",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_xp"
+    },
+    "right": {
+     "motion": "release",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_xn"
+    }
+   }
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "tag": "subgoal_07_02",
+   "frames": [
+    2545,
+    2599
+   ],
+   "motion": "home",
+   "side": "left",
+   "plan": {
+    "index": 7,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:meal_box_mealbox_container": true,
+     "untouched:meal_box_mealbox_lid": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "meal_box_mealbox_lid": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.45,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 2.4
+    },
+    "variant": "as planned"
+   },
+   "object": null
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "tag": "subgoal_07_03",
+   "frames": [
+    2600,
+    2658
+   ],
+   "motion": "home",
+   "side": "right",
+   "plan": {
+    "index": 7,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:meal_box_mealbox_container": true,
+     "untouched:meal_box_mealbox_lid": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "meal_box_mealbox_container": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "meal_box_mealbox_lid": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.45,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 2.6
+    },
+    "variant": "as planned"
+   },
+   "object": null
+  }
+ ],
+ "episode": {
+  "trajectory": "trajectory.npz",
+  "phases": "phases.json",
+  "sim_video": "sim_video.mp4",
+  "fps": 30,
+  "n_frames": 2659,
+  "execution_dir": "episode"
+ },
+ "stage4": {
+  "task_dir": "stage4_task",
+  "config": "stage4_task/stage4.json"
+ },
+ "checks": {
+  "episode_physics_check": {
+   "ok": true,
+   "failed": [],
+   "issues": []
+  },
+  "robot_self_collision_check": {
+   "ok": true,
+   "failed": [],
+   "issues": []
+  },
+  "arm_reach_check": {
+   "ok": true,
+   "failed": [],
+   "issues": []
+  },
+  "stage4_handoff_check": {
+   "ok": true,
+   "failed": [],
+   "issues": []
+  },
+  "trajectory_audit": {
+   "ok": false,
+   "failed": [
+    "joint_speed"
+   ],
+   "issues": []
+  }
+ },
+ "notes": [
+  "COMPLETE EPISODE in the Stage 2 scene (stations not moved): all 7 Stage 1 subgoals executed and proved in contact physics with the current executor (realistic 2 cm torsional patch), 2659 frames at 30 fps.",
+  "1-3 (both): two-hand squeeze of the lid's long panel edges (left hold, right grasp_lift with the left coupled), carry 27 cm onto the dish long side to long side, set down and release; then a left palm press and a right fingertip press (both hands are on the lid together during the lift, carry and set-down, so subgoals 1-3 are two-handed).",
+  "4 and 6 (both): each flap pair is closed by ONE two-hand entry (motion both, sync start): a flat two-finger contact on each strap top that turns with the strap (hand_follows rigid). The r5 contacts (wrists 8 cm apart, thumbs out) put the hands 41 mm into each other; candidates were regenerated per side with the thumb curled and headings that keep the wrists ~20 cm apart (py/latch_cands.py), and the executor's two-hand screen chose the pair. Subgoal 6 keeps both hands on the flaps; subgoal 7 releases both together.",
+  "5: quarter turn by the left hand alone in five side pushes (declared deviation on entry subgoal_05_02 with the measurements). The pushes slide the box 12 cm to the right while turning it -88.8 deg (the video shows it ending slightly right of its start).",
+  "Final fold angles: xp -0.5, xn -1.0, yp 0.6, yn 2.3 deg (open 87 deg): all four latched and still closed at the last frame after both hands let go.",
+  "Stage 2 rel fixes this Stage 3 runs on: dish body renamed meal_box_mealbox_container, keyframe 0 written from the settled state (folds at 87 deg).",
+  "The episode (88.6 s) is slower than the 21 s video: homes between steps, five turn strokes."
+ ],
+ "source": "examples/asset_reuse"
+}

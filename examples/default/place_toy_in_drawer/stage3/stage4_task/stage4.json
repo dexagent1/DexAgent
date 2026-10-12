@@ -1,0 +1,257 @@
+{
+ "name": "stage3",
+ "scene": "../scene_executed.xml",
+ "trajectory": "trajectory.npz",
+ "human_video": "human_video.mp4",
+ "output_dir": "outputs",
+ "num_samples": 3,
+ "seed": 0,
+ "robot": {
+  "body_prefix": "robot_",
+  "end_effectors": {
+   "left": "robot_left_left_base_yaw",
+   "right": "robot_right_right_base_yaw"
+  },
+  "init_jitter_rad": 0.05
+ },
+ "randomize": {
+  "objects": {
+   "drawer_unit_drawer_unit_carcass": {
+    "dx": [
+     -0.03,
+     0.03
+    ],
+    "dy": [
+     -0.03,
+     0.03
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ]
+   },
+   "toy_toy": {
+    "dx": [
+     -0.03,
+     0.03
+    ],
+    "dy": [
+     -0.03,
+     0.03
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ],
+    "carrier": "left",
+    "release": "left: let go of toy_toy #4",
+    "rests_on": "drawer_unit_drawer_unit_carcass"
+   }
+  }
+ },
+ "segments": {
+  "left": [
+   {
+    "phases": [
+     "left: reach for drawer_unit_drawer_unit_drawer_r0c0 #1"
+    ],
+    "blend": [
+     "world",
+     "drawer_unit_drawer_unit_carcass"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: close on drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: grip drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: open drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: let go #1",
+     "left: retreat #1"
+    ],
+    "anchor": "drawer_unit_drawer_unit_carcass"
+   },
+   {
+    "phases": [
+     "left: reach for toy_toy #2"
+    ],
+    "blend": [
+     "drawer_unit_drawer_unit_carcass",
+     "toy_toy"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on toy_toy #2",
+     "left: close on toy_toy #2",
+     "left: grip toy_toy #2",
+     "left: lift toy_toy #2"
+    ],
+    "anchor": "toy_toy"
+   },
+   {
+    "phases": [
+     "left: carry toy_toy #3"
+    ],
+    "blend": [
+     "toy_toy",
+     "drawer_unit_drawer_unit_carcass"
+    ]
+   },
+   {
+    "phases": [
+     "left: carry toy_toy (up) #4",
+     "left: carry toy_toy #4",
+     "left: carry toy_toy (down) #4",
+     "left: set down toy_toy #4",
+     "left: let go of toy_toy #4",
+     "left: retreat #4",
+     "left: reach for drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: descend on drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: close on drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: grip drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: close drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: let go #5",
+     "left: retreat #5"
+    ],
+    "anchor": "drawer_unit_drawer_unit_carcass"
+   }
+  ],
+  "right": [
+   {
+    "phases": [
+     "left: reach for drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: descend on drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: close on drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: grip drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: open drawer_unit_drawer_unit_drawer_r0c0 #1",
+     "left: let go #1",
+     "left: retreat #1",
+     "left: reach for toy_toy #2",
+     "left: descend on toy_toy #2",
+     "left: close on toy_toy #2",
+     "left: grip toy_toy #2",
+     "left: lift toy_toy #2",
+     "left: carry toy_toy #3",
+     "left: carry toy_toy (up) #4",
+     "left: carry toy_toy #4",
+     "left: carry toy_toy (down) #4",
+     "left: set down toy_toy #4",
+     "left: let go of toy_toy #4",
+     "left: retreat #4",
+     "left: reach for drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: descend on drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: close on drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: grip drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: close drawer_unit_drawer_unit_drawer_r0c0 #5",
+     "left: let go #5",
+     "left: retreat #5"
+    ],
+    "anchor": "world"
+   }
+  ]
+ },
+ "cameras": {
+  "width": 1280,
+  "height": 1024,
+  "ego": {
+   "pos": [
+    -0.0582,
+    -0.7184,
+    0.9549
+   ],
+   "quat_wxyz": [
+    0.8641567668544244,
+    0.5025448644156754,
+    -0.013125996458665702,
+    -0.022570993910448235
+   ],
+   "fovy": 28.37
+  },
+  "views": {
+   "wrist_right": {
+    "parent_body": "robot_right_right_base_yaw",
+    "pos": [
+     0.050377,
+     0.001601,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.15285697798110676,
+     0.7024578988116494,
+     -0.6789659021956478,
+     -0.14897297854059297
+    ],
+    "fovy": 100.0
+   },
+   "wrist_left": {
+    "parent_body": "robot_left_left_base_yaw",
+    "pos": [
+     0.050377,
+     -0.0016,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.14897395634728527,
+     0.6789658010477727,
+     -0.7024577941640913,
+     -0.15285695520947942
+    ],
+    "fovy": 100.0
+   }
+  }
+ },
+ "table": {
+  "top_z": 0.0,
+  "center": [
+   0.0,
+   1.125
+  ],
+  "half_size": [
+   1.8,
+   1.075
+  ]
+ },
+ "inpaint": {
+  "erase_prompts": [
+   "hand",
+   "arm",
+   "grey drawer box",
+   "small yellow plush toy"
+  ],
+  "background_prompt": "An empty white tablecloth on a table, nothing on it, static background."
+ },
+ "render": {
+  "stride": 2,
+  "samples": 32,
+  "chunks": 4,
+  "exclude_geoms": [
+   "^table",
+   "groundplane",
+   "floor",
+   "^g_table"
+  ],
+  "materials": [
+   {
+    "match": "^robot_\\w+_arm_",
+    "preset": "yam_black"
+   },
+   {
+    "match": "^robot_",
+    "preset": "sharpa"
+   }
+  ]
+ },
+ "manifest": "trajectory_manifest.json",
+ "goal": {
+  "semantics": "scene_semantics.json",
+  "objects": "goal_objects.json"
+ },
+ "checks": {
+  "physics_replay": true
+ },
+ "physics": {
+  "rules": [],
+  "mujoco_version": "3.10.0"
+ }
+}

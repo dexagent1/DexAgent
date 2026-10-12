@@ -1,0 +1,168 @@
+{
+  "task_prompt": "Cut the red rope with the scissors.",
+  "task_summary": "The right hand picks up the purple scissors, the left hand lifts a section of the thin red rope off the table so it hangs free, the right hand closes the scissor blades on the hanging rope with several snips until it is severed, then the rope is laid down and the scissors put back.",
+  "environment": {
+    "support_surface": "white tablecloth on a table",
+    "camera": "fixed camera above the operator looking down the table"
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ]
+  },
+  "objects": [
+    {
+      "id": "rope",
+      "name": "thin red rope",
+      "type": "deformable",
+      "role": "manipulated",
+      "appearance": {
+        "body": "thin red rope (cord), loosely looped"
+      },
+      "approximate_size": "a few millimetres thick; about an arm's length long",
+      "properties": [
+        "A thin flexible rope that lies in loose curves and hangs limply when a section is lifted.",
+        "It can be cut: closing the scissor blades across it severs it into two separate pieces.",
+        "A section is held up by one hand so the blades can close across a free, roughly taut span."
+      ],
+      "deformation": {
+        "kind": "thin rope",
+        "how_the_task_deforms_it": "one section is lifted and held hanging; the rope is cut through and becomes two pieces"
+      },
+      "initial_state": "lying in a loose loop on the left half of the table",
+      "final_state": "lying on the left half of the table, cut through at the held section",
+      "evidence": "prompt: 'red rope'; 9 to 10.8 s the left hand lifts the rope; 10.8 to 16.3 s the scissor blades close on the hanging section repeatedly; from 17.7 s the rope lies down again."
+    },
+    {
+      "id": "scissors",
+      "name": "purple-handled scissors",
+      "type": "articulated",
+      "role": "tool",
+      "parts": [
+        "blade_a",
+        "blade_b",
+        "pivot",
+        "handle_rings"
+      ],
+      "appearance": {
+        "handles": "purple plastic finger rings",
+        "blades": "silver steel"
+      },
+      "approximate_size": "hand-length",
+      "properties": [
+        "Two blades joined at a pivot; squeezing the handle rings together closes the blades and opening the hand opens them.",
+        "Held in one hand with fingers through the rings; the blades open and close while the hand carries the tool.",
+        "Closing the blades across the rope cuts it; several open-close cycles are used."
+      ],
+      "articulation": {
+        "moving_part": "blade_b with its handle ring",
+        "fixed_part": "blade_a with its handle ring",
+        "joint_type": "revolute",
+        "axis": "through the pivot, perpendicular to the blade plane",
+        "range_observed": "from open by a few tens of degrees to fully closed, repeatedly",
+        "state_over_video": "closed on the table -> opened and closed several times while cutting (10.8 to 16.3 s) -> closed and put down"
+      },
+      "initial_state": "lying closed on the right half of the table",
+      "final_state": "lying closed on the right half of the table",
+      "evidence": "prompt: 'scissors'; 5.4 to 7.5 s the right hand picks them up; 10.8 to 16.3 s blades open and close on the rope; 17.2 to 19.4 s they are put back."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the scissors with the fingers through the handle rings.",
+      "object_refs": [
+        "scissors"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests on the table.",
+        "right": "Slides thumb and fingers into the rings and lifts the scissors."
+      },
+      "goal": "The scissors are held in the right hand, ready to cut.",
+      "time_window_s": [
+        5.0,
+        7.6
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "left",
+      "action": "Lift a section of the rope off the table.",
+      "object_refs": [
+        "rope"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Pinches the rope and raises it so a span hangs free.",
+        "right": "Holds the scissors nearby."
+      },
+      "goal": "A span of rope hangs free of the table within reach of the blades.",
+      "time_window_s": [
+        8.8,
+        10.8
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "both",
+      "action": "Close the scissor blades across the hanging rope until it is severed.",
+      "object_refs": [
+        "scissors",
+        "rope"
+      ],
+      "motion": "cut",
+      "hand_roles": {
+        "left": "Keeps the rope span held up and still.",
+        "right": "Positions the open blades around the rope and squeezes them shut, repeating as needed."
+      },
+      "goal": "The rope is cut through into two pieces.",
+      "time_window_s": [
+        10.8,
+        16.5
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "left",
+      "action": "Lay the rope back down.",
+      "object_refs": [
+        "rope"
+      ],
+      "motion": "release",
+      "hand_roles": {
+        "left": "Lowers the held rope and lets go.",
+        "right": "Holds the scissors."
+      },
+      "goal": "The rope rests on the table.",
+      "time_window_s": [
+        16.5,
+        18.0
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "right",
+      "action": "Put the scissors back on the table.",
+      "object_refs": [
+        "scissors"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Withdraws.",
+        "right": "Sets the scissors down on the right and withdraws."
+      },
+      "goal": "The scissors are closed and rest on the table.",
+      "time_window_s": [
+        17.2,
+        19.5
+      ]
+    }
+  ],
+  "task_success": "The rope is severed into two pieces and lies on the table; the scissors are closed and rest on the table to the right of the rope.",
+  "notes": [
+    "Several snips are one subgoal: the checkable outcome is that the rope is severed."
+  ]
+}

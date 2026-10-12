@@ -1,0 +1,517 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "board",
+   "type": "rigid",
+   "skill": "construct_whiteboard",
+   "skill_origin": "library",
+   "params": {
+    "surface_w": 0.408,
+    "surface_d": 0.56,
+    "frame_w": 0.012,
+    "thickness": 0.011,
+    "surface_rgba": [
+     0.885,
+     0.886,
+     0.921,
+     1.0
+    ],
+    "back_rgba": [
+     0.885,
+     0.886,
+     0.921,
+     1.0
+    ],
+    "frame_rgba": [
+     0.74,
+     0.755,
+     0.775,
+     1.0
+    ],
+    "fixed_base": true,
+    "tex_px_per_m": 1400
+   },
+   "asset_xml": "objects/board/board.xml",
+   "root_body": "board_board",
+   "bodies": [
+    "board_board"
+   ],
+   "pose": {
+    "x": -0.02616,
+    "y": 0.33218,
+    "z": 0.0,
+    "yaw_deg": 1.446
+   },
+   "mask": "masks/board.png",
+   "iou": 0.981,
+   "verification_plan": {
+    "ink_round_trip_test": "properties 2 and 3: a nib in contact leaves strokes that persist, a nib in the air does not, a pad wipe clears only what it passes over",
+    "silhouette_iou_check": "placement: x, y, yaw against the frame-0 mask through video_cam (robot-covered pixels ignored)",
+    "support_check": "property 1: the fixed panel lies flat on the table, fully supported",
+    "penetration_check": "placement: no interpenetration with the table or the tools at the home keyframe",
+    "color_match_check": "appearance: glossy white writing surface"
+   },
+   "verifiers": {
+    "ink_round_trip_test": {
+     "ok": true,
+     "verdict": "INK OK \u2014 a contact stroke darkened its band to 0.450, the same stroke 5 mm up left 0.000, a jump left 0.000 between the dabs, and a wipe took the band from 0.450 to 0.000",
+     "measured": {
+      "after_contact_stroke": 0.4499,
+      "rendered_dark_px_inked": 36391,
+      "after_air_stroke": 0.0,
+      "after_jump_midline": 0.0,
+      "before_wipe": 0.4499,
+      "after_wipe": 0.0,
+      "rendered_dark_px_wiped": 36293,
+      "checks": {
+       "contact_marks": true,
+       "air_does_not_mark": true,
+       "jump_not_joined": true,
+       "wipe_clears": true,
+       "render_round_trip": true
+      }
+     }
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.981,
+     "robot_covered_fraction": 0.023
+    },
+    "support_check": {
+     "ok": true,
+     "board_board": {
+      "supported_frac": 1.0,
+      "gap_m": 0.0,
+      "base_z": 0.0,
+      "footprint_x": [
+       -0.249,
+       0.197
+      ],
+      "footprint_y": [
+       0.035,
+       0.63
+      ],
+      "verdict": "supported"
+     }
+    },
+    "penetration_check": {
+     "ok": true,
+     "object_violations": [],
+     "note": "scene-level pairs involving the board: none; the only violations at the home pose are the robot's own two hands (setup, not moved)"
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.885,
+      0.886,
+      0.921
+     ],
+     "closest_palette_rgb": [
+      0.885,
+      0.886,
+      0.921
+     ],
+     "dist": 0.0
+    }
+   },
+   "properties_covered": {
+    "A flat rigid panel lying on the table; it does not move during the task.": "fixed_base=true, flat panel at z=0; support_check supported_frac 1.0",
+    "Marker contact produces visible dark strokes that persist after the tip lifts.": "live ink texture (InkSurface); ink_round_trip_test contact_marks + air_does_not_mark + render_round_trip",
+    "Sliding eraser contact removes the strokes it passes over while strokes it does not touch stay visible.": "InkSurface.wipe over the pad rectangle only; ink_round_trip_test wipe_clears + jump_not_joined"
+   },
+   "notes": "outer 0.432 x 0.584 m (17x23 in board) from the measured width; near edge below the frame; writing face: the panel BOX (board_board_panel, collision + InkSurface frame) is group 3 without material, and a visual-only UV mesh board_board_face (assets/board/board_face.obj, same extent, MuJoCo's box UV convention) carries the ink texture so Stage 4 keeps it (scripts/board_face_mesh.py)",
+   "surface_geom": "board_board_panel",
+   "texture": "board_board_ink",
+   "visual_face_geom": "board_board_face"
+  },
+  {
+   "id": "marker",
+   "type": "rigid",
+   "skill": "construct_marker_capped",
+   "skill_origin": "library",
+   "params": {
+    "length": 0.1213,
+    "radius": 0.0066,
+    "cap_length": 0.0316,
+    "cap_radius": 0.0075,
+    "nib_length": 0.0088,
+    "nib_radius": 0.0023,
+    "collar_length": 0.0088,
+    "back_length": 0.0105,
+    "cap_clearance": 0.0026,
+    "off_margin": 0.03,
+    "hold_force_N": 1.5,
+    "cap_damping": 0.5,
+    "barrel_rgba": [
+     0.988,
+     0.981,
+     0.98,
+     1
+    ],
+    "cap_rgba": [
+     0.368,
+     0.338,
+     0.36,
+     1
+    ],
+    "nib_rgba": [
+     0.368,
+     0.338,
+     0.36,
+     1
+    ],
+    "mass": 0.012,
+    "cap_mass": 0.003,
+    "detachable_cap": true,
+    "release_travel_m": 0.0202,
+    "engaged_depth_m": 0.0202,
+    "off_q": 0.0502
+   },
+   "asset_xml": "objects/marker/marker.xml",
+   "root_body": "marker_marker",
+   "bodies": [
+    "marker_marker",
+    "marker_marker_cap_carrier",
+    "marker_marker_cap"
+   ],
+   "cap_body": "marker_marker_cap",
+   "equalities": {
+    "engaged": "marker_marker_cap_engaged"
+   },
+   "joints": {
+    "lift": "marker_marker_cap_slide"
+   },
+   "joint_init": {
+    "marker_marker_cap_slide": 0.0
+   },
+   "tip_site": "marker_marker_tip",
+   "pose": {
+    "x": 0.25042,
+    "y": 0.33884,
+    "z": 0.0,
+    "yaw_deg": -98.46
+   },
+   "mask": "masks/marker.png",
+   "iou": 0.633,
+   "iou_with_cap": 0.706,
+   "verification_plan": {
+    "articulation_check": "property 3: the cap's press-fit slide is a real joint with usable travel",
+    "articulated_joint_travel_test": "property 3: a 4 N pull draws the welded cap the full slide both ways",
+    "detachable_part_release_test": "created: property 3: the cap stays seated under gravity along the axis and a brief tug, stays coaxial while welded, reaches the release travel under a 4 N pull, and once the release rule switches marker_cap_engaged off it leaves the pen axis and uncovers the nib (marker_tip covered -> exposed)",
+    "joint_release_hold_test": "property 3 / frame 0: the seated cap stays on when released",
+    "joint_range_check": "the slide travel is the engaged depth 0.0202 m + 0.03 m parking margin",
+    "ink_round_trip_test": "property 2: the tip site writes only in contact (proved on the board's InkSurface the marker_tip site feeds)",
+    "silhouette_iou_check": "placement x, y, yaw",
+    "settle_stability_check": "the pen and its cap lying on the table stay at rest",
+    "support_check": "pen and cap rest on the table",
+    "penetration_check": "the cap shell around the nib is not an interpenetration (pen-cap pair excluded by the asset); no pairs with other objects",
+    "color_match_check": "white barrel, dark cap"
+   },
+   "verifiers": {
+    "articulation_check": {
+     "ok": true,
+     "bodies": [
+      "marker_marker",
+      "marker_marker_cap",
+      "marker_marker_cap_carrier"
+     ],
+     "joints": [
+      {
+       "joint": "marker_marker_cap_slide",
+       "type": "slide",
+       "range": [
+        0.0,
+        0.0502
+       ],
+       "travel": 0.0502,
+       "moves_part_m": 0.0502,
+       "usable": true
+      }
+     ],
+     "total_travel": {
+      "slide": 0.0502,
+      "hinge": 0.0
+     },
+     "verdict": "articulated"
+    },
+    "articulated_joint_travel_test": {
+     "ok": true,
+     "verdict": "JOINTS OK \u2014 1 joint(s) each travelled >= 80% of their range both ways under 4 N; root slip <= 0.0 mm",
+     "measured": {
+      "marker_cap_slide": {
+       "type": "slide",
+       "range": [
+        0.0,
+        0.0502
+       ],
+       "cap": 4.0,
+       "applied_at": "body com",
+       "q_start": 0.0,
+       "forward": {
+        "fraction": 1.037,
+        "t80_s": 0.408,
+        "q_end": 0.0503,
+        "q_best": 0.0521
+       },
+       "back": {
+        "fraction": 1.021,
+        "t80_s": 0.396,
+        "q_end": -0.0001,
+        "q_best": -0.0011
+       },
+       "root_slip_m": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "detachable_part_release_test": {
+     "ok": true,
+     "issues": [],
+     "verdict": "DETACH OK - seated under gravity (q 0.0 mm), held a 0.45 N tug, stayed coaxial while welded (1.1 mm), released at 21.1 mm after 0.03 s of a 4.0 N pull and was 2.5 cm off the axis 0.02 s after the weld was switched off; the site went from covered to exposed",
+     "measured": {
+      "hold_force_N": 1.5,
+      "release_travel_m": 0.0202,
+      "axis_world": [
+       1.0,
+       0.0,
+       0.0
+      ],
+      "seated_hold": {
+       "q_end": 0.0,
+       "ok": true
+      },
+      "brief_tug": {
+       "force_N": 0.45,
+       "q_max": 1e-05,
+       "ok": true
+      },
+      "weld_holds_coaxial": {
+       "lateral_force_N": 0.5,
+       "perp_drift_m": 0.00105,
+       "ok": true
+      },
+      "pull_off": {
+       "force_N": 4.0,
+       "released": true,
+       "t_release_s": 0.032,
+       "q_at_release": 0.02115,
+       "perp_separation_m": 0.0252,
+       "t_separate_s": 0.018,
+       "covered_before": true,
+       "exposed_after": true,
+       "ok": true
+      }
+     }
+    },
+    "joint_release_hold_test": {
+     "ok": true,
+     "issues": [],
+     "trials": [
+      {
+       "released": 0.0,
+       "final": 0.0,
+       "drift": 0.0,
+       "root_slip_m": 0.00015,
+       "held": true
+      }
+     ],
+     "tol": 0.005,
+     "hold_s": 3.0
+    },
+    "joint_range_check": {
+     "ok": true,
+     "range": [
+      0.0,
+      0.0502
+     ],
+     "limited": true,
+     "type": "slide",
+     "current": 0.0,
+     "expected": [
+      0.0,
+      0.0502
+     ]
+    },
+    "ink_round_trip_test": {
+     "ok": true,
+     "verdict": "INK OK \u2014 a contact stroke darkened its band to 0.450, the same stroke 5 mm up left 0.000, a jump left 0.000 between the dabs, and a wipe took the band from 0.450 to 0.000"
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.633,
+     "iou_with_cap": 0.706,
+     "robot_covered_fraction": 0.34
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "marker_marker": {
+      "pos_m": 0.0009,
+      "rot_deg": 0.9,
+      "verdict": "at rest"
+     },
+     "marker_marker_cap": {
+      "pos_m": 0.0008,
+      "rot_deg": 1.9,
+      "verdict": "at rest"
+     }
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "penetration_check": {
+     "ok": true,
+     "violations": [],
+     "note": "asset alone: 0 violations (pen-cap pair excluded); scene: no pairs involving the marker"
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.988,
+      0.981,
+      0.98
+     ],
+     "closest_palette_rgb": [
+      0.988,
+      0.981,
+      0.98
+     ],
+     "dist": 0.0
+    }
+   },
+   "properties_covered": {
+    "A rigid pen held in a writing grip with the tip toward the board.": "free rigid body, cylinder barrel (barrel_geom marker_barrel for the grasp), tip site marker_tip, tip_local/axis_local declared",
+    "Moving the tip against the board leaves a visible dark trace; lifting it stops the trace.": "marker_tip site + low nib friction; ink_round_trip_test contact vs air stroke",
+    "It has a cap that is removed before writing and is held in the hand or put back afterwards.": "detachable_cap=true: the cap is its own free body (marker_marker_cap) welded by marker_marker_cap_engaged to a carrier on the press-fit slide marker_marker_cap_slide (1.5 N hold), seated (q=0, nib covered) at frame 0; once the slide has travelled release_travel_m 0.0202 m the executor switches the weld off and the cap is free in the hand that pulled it; detachable_part_release_test proves seat, release and separation with the nib exposed"
+   },
+   "notes": "same dimensions as the verified earlier build (0.1213 m pen from the scaled fit), rebuilt with detachable_cap=true; silhouette_iou_check scores the pen body only (0.633) since the cap is now a separate free body; pen + cap together 0.706, the earlier build's value; cap drawn as an open shell (visual mesh marker_marker_cap_shell_vis, assets/marker/marker_cap_shell.obj: side wall + closed end); the solid collision cylinder marker_marker_cap_shell is unchanged in group 3 (scripts/cap_shell_mesh.py)"
+  },
+  {
+   "id": "eraser",
+   "type": "rigid",
+   "skill": "construct_eraser",
+   "skill_origin": "library",
+   "params": {
+    "block_l": 0.1147,
+    "block_w": 0.0441,
+    "block_h": 0.0265,
+    "pad_h": 0.0062,
+    "block_rgba": [
+     0.408,
+     0.366,
+     0.347,
+     1.0
+    ],
+    "pad_rgba": [
+     0.455,
+     0.41,
+     0.395,
+     1.0
+    ],
+    "eraser_mass": 0.048
+   },
+   "asset_xml": "objects/eraser/eraser.xml",
+   "root_body": "eraser_eraser",
+   "bodies": [
+    "eraser_eraser"
+   ],
+   "pose": {
+    "x": -0.29961,
+    "y": 0.30468,
+    "z": 0.0,
+    "yaw_deg": 95.278
+   },
+   "mask": "masks/eraser.png",
+   "iou": 0.804,
+   "verification_plan": {
+    "ink_round_trip_test": "property 2: a pad wiped over strokes clears them and leaves untouched ink",
+    "silhouette_iou_check": "placement x, y, yaw",
+    "settle_stability_check": "rests on the table without drifting",
+    "support_check": "rests on the table",
+    "color_match_check": "dark grey block"
+   },
+   "verifiers": {
+    "ink_round_trip_test": {
+     "ok": true,
+     "verdict": "INK OK \u2014 a contact stroke darkened its band to 0.450, the same stroke 5 mm up left 0.000, a jump left 0.000 between the dabs, and a wipe took the band from 0.450 to 0.000"
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.804,
+     "robot_covered_fraction": 0.827
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "eraser_eraser": {
+      "pos_m": 0.0,
+      "rot_deg": 0.0,
+      "verdict": "at rest"
+     }
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.408,
+      0.366,
+      0.347
+     ],
+     "closest_palette_rgb": [
+      0.408,
+      0.366,
+      0.347
+     ],
+     "dist": 0.0
+    }
+   },
+   "properties_covered": {
+    "A rigid block held from above with its broad felt face down.": "rigid free block 0.1147 x 0.0441 x 0.0265 m, felt pad geom on the underside, pad_normal_local [0,0,-1], pad site declared",
+    "Sliding its wiping face over the board removes the marker strokes it contacts.": "pad_half declared for InkSurface.wipe; ink_round_trip_test wipe_clears"
+   },
+   "notes": "size from the earlier scaled fit; pad_press_slide_test not used (a rigid block, not a compliant pad)"
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "warnings": [
+    "OUT OF REACH: eraser_eraser at y=0.30 m (50.8 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+   ],
+   "silhouette_iou": {
+    "board": 0.981,
+    "marker": 0.633,
+    "eraser": 0.804
+   },
+   "object_reach": {
+    "ok": true,
+    "advisory": true,
+    "reachable": false,
+    "unreachable": [
+     "eraser_eraser"
+    ],
+    "verdict": "OUT OF REACH: eraser_eraser at y=0.30 m (50.8 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+   }
+  }
+ },
+ "notes": [
+  "REBUILD of the verified Stage 2 at ../../emul2_drawing_and_wiping/stage2: same camera (register_table_camera source=setup gives the identical camera.json), same frame 0 (pixel-identical), same masks (copied), same board and eraser builds and the same three poses; only the marker changed: construct_marker_capped(detachable_cap=True) with the same dimensions, so Stage 3 can pull the cap off and write.",
+  "Marker release rule: equalities.engaged = marker_marker_cap_engaged (weld cap -> carrier), joints.lift = marker_marker_cap_slide (press fit, 1.5 N frictionloss), params.release_travel_m = 0.0202 (collar + nib + clearance); switch the weld off once the slide has travelled that far and the cap is a free body in the hand.",
+  "REACH WARNING (scene_qc object_reach, advisory): eraser_eraser at y=0.30 m is 50.8 mm short of the arms' 0.4-0.6 m band. The video really has the eraser there (left edge of the board, IoU 0.80 through the calibrated setup camera; size from the scaled fit), so the placement was kept; Stage 3 must reach it at the band's near edge.",
+  "Robot occlusion: at the fixed home keyframe the left hand covers 83% of the eraser's mask and the right hand 34% of the marker's; silhouette_iou_check ignores those pixels.",
+  "Colours measured on frame 818 (both tools back in place; frame 0 has a green white-balance cast) with the earlier run's end-frame masks.",
+  "No deformable objects: no Isaac scene.",
+  "Release prep (rel_drawing_and_wiping): appearance_texture_check failed because Stage 4 drops a 2D texture on a box primitive. scripts/board_face_mesh.py keeps the panel box unchanged as the collision face and InkSurface frame (ink_trace_check assumes a box +z face; a mesh geom's frame is re-oriented by MuJoCo to its principal axes, measured: size [0.00125, 0.204, 0.28]), moves it to group 3 without the material, and adds a visual-only mesh board_board_face with UVs (render identical to the box mapping, measured) carrying board_board_inkmat. Re-ran ink_round_trip_test (INK OK, same numbers), silhouette_iou_check (same IoUs) and color_match_check (dist 0).",
+  "Release prep (Stage 3 retry): construct_marker_capped draws the cap as a solid cylinder over the collar and nib, which object_visual_penetration_audit reads as 7.3 mm of visible interpenetration of marker and cap on every frame the cap is on. scripts/cap_shell_mesh.py keeps the collision cylinder (same size, pose, friction, mass; group 3) and draws the cap as an open shell mesh with the same outside surface. Physics unchanged."
+ ],
+ "source": "examples/asset_reuse"
+}

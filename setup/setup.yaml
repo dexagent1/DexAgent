@@ -1,0 +1,126 @@
+# DexAgent default setup: the bench the paper's data was collected on.
+# Two robot stations on the near edge of a table and one fixed ego camera above the operator's position.
+# scene.xml is the floating-wrist planning representation. Physical episodes
+# compile it with runtime_robot below; their saved scene has fixed flange-hand
+# body trees and real bounded arm motor actuators.
+# Units: metres, radians, quaternions as [w, x, y, z]. Angles in degrees say so in the key name.
+
+name: dexagent_bench
+scene: scene.xml                     # the empty bench: table + both stations, keyframe `home`, cameras `ego`, `wrist_left`, `wrist_right`
+
+frame:                               # the rig frame every number below is in; Stage 2 places objects in it
+  origin: midpoint of the two station mounts, projected onto the tabletop
+  x: toward the right station
+  y: into the work, away from the operator
+  z: up
+  tabletop_z: 0.0
+
+table:
+  body: table
+  geom: g_table
+  center: [0.0, 1.125, -0.02]        # a 3.6 x 2.15 m slab; its near edge is at y = 0.05, just in front of the mounts
+  half_extents: [1.8, 1.075, 0.02]
+  work_area:                         # the cloth the ego camera sees, measured from the footage
+    x: [-0.40, 0.32]
+    y: [0.05, 1.16]
+
+stations:                            # one arm + one hand each
+  left:
+    arm: I2RT YAM, 6 DOF
+    hand: Sharpa Wave, 22 finger joints, left
+    arm_xml: robot/yam_arm.xml                      # the arm alone
+    base_body: robot_left_arm_root
+    base_pos: [-0.23, 0.0, -0.05]    # the mount sits 5 cm below the tabletop, behind the near edge
+    base_quat_wxyz: [0.0, 0.0, 0.0, 1.0]
+    arm_joints: [robot_left_arm_dof_joint1, robot_left_arm_dof_joint2, robot_left_arm_dof_joint3,
+                 robot_left_arm_dof_joint4, robot_left_arm_dof_joint5, robot_left_arm_dof_joint6]
+    flange_body: robot_left_arm_gripper
+    hand_root_body: robot_left_left_base_yaw        # the end effector Stage 3 and Stage 4 steer
+    hand_xml: robot/sharpa_left.xml                 # the hand alone, for the grasp tools
+    wrist_joints: [robot_left_left_pos_x, robot_left_left_pos_y, robot_left_left_pos_z,
+                   robot_left_left_rot_x, robot_left_left_rot_y, robot_left_left_rot_z]   # = the hand's world pose: metres, then intrinsic XYZ euler
+    finger_joint_prefix: robot_left_left_
+    home_arm_rad: [-0.121032, -0.012622, -0.024980, 0.246490, 0.548471, -1.067270]
+    hand_mount_roll_rad: -0.331902   # how the hand is bolted to the flange, about the flange axis
+  right:
+    arm: I2RT YAM, 6 DOF
+    hand: Sharpa Wave, 22 finger joints, right
+    arm_xml: robot/yam_arm.xml
+    base_body: robot_right_arm_root
+    base_pos: [0.26, 0.0, -0.05]
+    base_quat_wxyz: [0.0, 0.0, 0.0, 1.0]
+    arm_joints: [robot_right_arm_dof_joint1, robot_right_arm_dof_joint2, robot_right_arm_dof_joint3,
+                 robot_right_arm_dof_joint4, robot_right_arm_dof_joint5, robot_right_arm_dof_joint6]
+    flange_body: robot_right_arm_gripper
+    hand_root_body: robot_right_right_base_yaw
+    hand_xml: robot/sharpa_right.xml
+    wrist_joints: [robot_right_right_pos_x, robot_right_right_pos_y, robot_right_right_pos_z,
+                   robot_right_right_rot_x, robot_right_right_rot_y, robot_right_right_rot_z]   # = the hand's world pose
+    finger_joint_prefix: robot_right_right_
+    home_arm_rad: [-0.129180, 0.165585, -0.053966, 0.770028, 0.097288, -0.329552]
+    hand_mount_roll_rad: 1.741057
+
+robot:
+  body_prefix: robot_                # every robot body, joint and geom starts with this
+  attachment: fixed flange child in runtime  # structural attachment with zero relative DOF, never an equality weld
+  hand_root_frame: flange in runtime; world in proposal
+  actuators: 12 arm torque motors and 44 finger position servos in runtime
+  proposal_only: scene.xml virtual wrist joints and soft weld placeholders are for planning, never delivered physics
+  nq: 68
+  reach: 0.74                        # shoulder to flange
+
+# scene.xml above remains the floating-wrist PROPOSAL representation used by
+# geometric grasp search. It is not the robot sent to physical execution.
+# Stage 3 compiles the following fixed-tree runtime and publishes its own XML
+# together with the matching named-coordinate trajectory and motor recording.
+runtime_robot:
+  schema: dexagent.rigid_robot.v1
+  compiler: tool_library.common.rigid_robot.compile_rigid
+  attachment: hand base_yaw is a fixed child of the arm gripper; no wrist joints
+  nq_empty_bench: 56                 # 12 physical arm joints + 44 finger joints
+  arm_control: bounded Cartesian impedance mapped through the Jacobian to motor torques
+  gravity_compensation: motor feedforward included inside the total motor torque cap
+  arm_torque_cap_nm: [28, 28, 28, 10, 10, 10]
+  arm_inertia_source: robot/yam_arm.xml
+  arm_motor_types: [DM4340, DM4340, DM4340, DM4310, DM4310, DM4310]
+  motor_layout_source: https://doc.i2rt.com/products/yam
+  motor_limit_source: https://raw.githubusercontent.com/i2rt-robotics/i2rt/cbe48976b44aae45af856c62545be00ea2feed11/i2rt/motor_drivers/utils.py
+  motor_limit_scope: SDK command encoding bounds; not continuous rated torque or hardware certification
+  armature_kg_m2: [0.032, 0.032, 0.032, 0.0018, 0.0018, 0.0018]
+  armature_scope: reflected-inertia simulation estimate; requires hardware system identification
+  mount_source: flange-to-hand transforms at the trusted setup scene home keyframe
+  recording: initial mjSTATE_INTEGRATION plus every physics substep state, control and mechanism state
+
+home:                                # keyframe `home` in scene.xml: the recorded start pose of every demonstration
+  keyframe: home
+  description: both hands rest palm down at the bottom corners of the ego frame, fingers pointing into the work, thumbs on the inner side
+  hand_root_pos:
+    left: [-0.236, 0.105, 0.141]
+    right: [0.270, 0.105, 0.169]
+
+cameras:
+  ego:                               # the fixed camera that films the demonstrations; MuJoCo camera `ego`
+    width: 640
+    height: 480
+    fovy_deg: 38.0
+    focal_px: 697.0                  # = (height / 2) / tan(fovy / 2); fx = fy, principal point at the image centre
+    pos: [0.01879, -0.18293, 0.55779]  # 0.56 m above the tabletop, 0.18 m behind the mounts
+    quat_wxyz: [0.881567, 0.470897, 0.024947, 0.021763]   # MuJoCo convention: the camera looks along its -z, y up
+    pitch_deg: 33.73                 # of the optical axis, below horizontal
+    yaw_deg: 94.45                   # of the optical axis, from +x; 90 would be straight into the work
+    roll_deg: -1.62
+  wrist_left:                        # the extra views Stage 4 renders; rigid to the hand root body
+    parent_body: robot_left_left_base_yaw
+    pos: [0.050377, -0.0016, 0.054631]
+    quat_wxyz: [0.148974, 0.678966, -0.702458, -0.152857]
+    fovy_deg: 100.0
+  wrist_right:
+    parent_body: robot_right_right_base_yaw
+    pos: [0.050377, 0.001601, 0.054631]
+    quat_wxyz: [0.152857, 0.702458, -0.678966, -0.148973]
+    fovy_deg: 100.0
+
+physics:
+  timestep: 0.002
+  integrator: implicitfast
+  impratio: 5

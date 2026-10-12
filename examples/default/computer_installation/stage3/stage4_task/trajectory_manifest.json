@@ -1,0 +1,542 @@
+{
+ "source": "episode outcomes",
+ "subgoals": [
+  {
+   "index": 1,
+   "step": null,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "frames": [
+    0,
+    169
+   ],
+   "expect": {
+    "rise_m": 0.04,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       0.05286178705945566,
+       0.3441757898742101,
+       0.016
+      ],
+      "normal": [
+       -0.9925886326865888,
+       -0.12152286311376975,
+       0.0
+      ]
+     },
+     "middle": {
+      "point": [
+       0.1510269445601888,
+       0.3652613738797873,
+       0.016
+      ],
+      "normal": [
+       0.992588632686588,
+       0.12152286311377658,
+       0.0
+      ]
+     },
+     "ring": {
+      "point": [
+       0.15321435609623882,
+       0.34739477849141087,
+       0.016
+      ],
+      "normal": [
+       0.992588632686588,
+       0.12152286311377658,
+       0.0
+      ]
+     }
+    },
+    "pads_at_label": "right: grip disk_1_disk_1",
+    "hand": "right",
+    "object": "disk_1_disk_1",
+    "involved": [
+     "disk_1_disk_1"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_2_disk_2"
+    ],
+    "pads_at_rel": 137,
+    "slip_from_rel": 138
+   },
+   "plan": {
+    "motion": "grasp_lift",
+    "object": "disk_1_disk_1",
+    "step": null
+   }
+  },
+  {
+   "index": 2,
+   "step": null,
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "frames": [
+    170,
+    262
+   ],
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.475,
+     0.116
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "disk_1_disk_1",
+    "involved": [
+     "disk_1_disk_1"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_2_disk_2"
+    ],
+    "slip_from_rel": 0
+   },
+   "plan": {
+    "motion": "carry",
+    "object": "disk_1_disk_1",
+    "step": null
+   }
+  },
+  {
+   "index": 2,
+   "step": null,
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "frames": [
+    263,
+    400
+   ],
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.566,
+     0.116
+    ],
+    "target_axes": "xyz",
+    "pos_tol_m": 0.015,
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "disk_1_disk_1",
+    "involved": [
+     "disk_1_disk_1"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_2_disk_2"
+    ]
+   },
+   "plan": {
+    "motion": "insert",
+    "object": "disk_1_disk_1",
+    "step": null
+   }
+  },
+  {
+   "index": 3,
+   "step": null,
+   "motion": "push",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "frames": [
+    401,
+    536
+   ],
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.021,
+      1.0,
+      0.0
+     ],
+     "min_m": 0.0425
+    },
+    "hand": "right",
+    "object": "disk_1_disk_1",
+    "involved": [
+     "disk_1_disk_1"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_2_disk_2"
+    ]
+   },
+   "plan": {
+    "motion": "push",
+    "object": "disk_1_disk_1",
+    "step": null
+   }
+  },
+  {
+   "index": 4,
+   "step": null,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "frames": [
+    537,
+    702
+   ],
+   "expect": {
+    "rise_m": 0.04,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       -0.10974000484640188,
+       0.3409687700877649,
+       0.016001404148972508
+      ],
+      "normal": [
+       -0.9955290551385668,
+       -0.09445581174767737,
+       -5.069248260908176e-15
+      ]
+     },
+     "middle": {
+      "point": [
+       -0.011037201637990404,
+       0.35937411275684644,
+       0.01600159202397907
+      ],
+      "normal": [
+       0.995529055138566,
+       0.09445581174768422,
+       1.6154568496334524e-15
+      ]
+     },
+     "ring": {
+      "point": [
+       -0.00933699702690087,
+       0.3414545897682386,
+       0.01600121627396696
+      ],
+      "normal": [
+       0.995529055138566,
+       0.09445581174768422,
+       1.6154568496334524e-15
+      ]
+     }
+    },
+    "pads_at_label": "right: grip disk_2_disk_2",
+    "hand": "right",
+    "object": "disk_2_disk_2",
+    "involved": [
+     "disk_2_disk_2"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_1_disk_1"
+    ],
+    "pads_at_rel": 133,
+    "slip_from_rel": 134
+   },
+   "plan": {
+    "motion": "grasp_lift",
+    "object": "disk_2_disk_2",
+    "step": null
+   }
+  },
+  {
+   "index": 5,
+   "step": null,
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "frames": [
+    703,
+    795
+   ],
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.475,
+     0.218
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "disk_2_disk_2",
+    "involved": [
+     "disk_2_disk_2"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_1_disk_1"
+    ],
+    "slip_from_rel": 0
+   },
+   "plan": {
+    "motion": "carry",
+    "object": "disk_2_disk_2",
+    "step": null
+   }
+  },
+  {
+   "index": 5,
+   "step": null,
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "frames": [
+    796,
+    933
+   ],
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.566,
+     0.218
+    ],
+    "target_axes": "xyz",
+    "pos_tol_m": 0.015,
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "disk_2_disk_2",
+    "involved": [
+     "disk_2_disk_2"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_1_disk_1"
+    ]
+   },
+   "plan": {
+    "motion": "insert",
+    "object": "disk_2_disk_2",
+    "step": null
+   }
+  },
+  {
+   "index": 6,
+   "step": null,
+   "motion": "push",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "frames": [
+    934,
+    1069
+   ],
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.021,
+      1.0,
+      0.0
+     ],
+     "min_m": 0.0425
+    },
+    "hand": "right",
+    "object": "disk_2_disk_2",
+    "involved": [
+     "disk_2_disk_2"
+    ],
+    "untouched": [
+     "disk_3_disk_3",
+     "disk_1_disk_1"
+    ]
+   },
+   "plan": {
+    "motion": "push",
+    "object": "disk_2_disk_2",
+    "step": null
+   }
+  },
+  {
+   "index": 7,
+   "step": null,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "frames": [
+    1070,
+    1243
+   ],
+   "expect": {
+    "rise_m": 0.04,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       -0.2527348324835739,
+       0.3378733482696053,
+       0.016001404149002443
+      ],
+      "normal": [
+       -0.9987975971944723,
+       -0.049024074050911526,
+       2.181110474045782e-14
+      ]
+     },
+     "middle": {
+      "point": [
+       -0.15329628943038934,
+       0.3517649340475024,
+       0.016001592024025884
+      ],
+      "normal": [
+       0.9987975971944723,
+       0.04902407405091153,
+       -7.950003414899903e-15
+      ]
+     },
+     "ring": {
+      "point": [
+       -0.15241385609766428,
+       0.33378657730190114,
+       0.01600121627398018
+      ],
+      "normal": [
+       0.9987975971944723,
+       0.04902407405091153,
+       -7.950003414899903e-15
+      ]
+     }
+    },
+    "pads_at_label": "right: grip disk_3_disk_3",
+    "hand": "right",
+    "object": "disk_3_disk_3",
+    "involved": [
+     "disk_3_disk_3"
+    ],
+    "untouched": [
+     "disk_2_disk_2",
+     "disk_1_disk_1"
+    ],
+    "pads_at_rel": 141,
+    "slip_from_rel": 142
+   },
+   "plan": {
+    "motion": "grasp_lift",
+    "object": "disk_3_disk_3",
+    "step": null
+   }
+  },
+  {
+   "index": 8,
+   "step": null,
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "frames": [
+    1244,
+    1351
+   ],
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.475,
+     0.252
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "disk_3_disk_3",
+    "involved": [
+     "disk_3_disk_3"
+    ],
+    "untouched": [
+     "disk_2_disk_2",
+     "disk_1_disk_1"
+    ],
+    "slip_from_rel": 0
+   },
+   "plan": {
+    "motion": "carry",
+    "object": "disk_3_disk_3",
+    "step": null
+   }
+  },
+  {
+   "index": 8,
+   "step": null,
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "frames": [
+    1352,
+    1489
+   ],
+   "expect": {
+    "target_pos": [
+     0.103,
+     0.566,
+     0.252
+    ],
+    "target_axes": "xyz",
+    "pos_tol_m": 0.015,
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "disk_3_disk_3",
+    "involved": [
+     "disk_3_disk_3"
+    ],
+    "untouched": [
+     "disk_2_disk_2",
+     "disk_1_disk_1"
+    ]
+   },
+   "plan": {
+    "motion": "insert",
+    "object": "disk_3_disk_3",
+    "step": null
+   }
+  },
+  {
+   "index": 9,
+   "step": null,
+   "motion": "push",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "frames": [
+    1490,
+    1629
+   ],
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.021,
+      1.0,
+      0.0
+     ],
+     "min_m": 0.0425
+    },
+    "hand": "right",
+    "object": "disk_3_disk_3",
+    "involved": [
+     "disk_3_disk_3"
+    ],
+    "untouched": [
+     "disk_2_disk_2",
+     "disk_1_disk_1"
+    ]
+   },
+   "plan": {
+    "motion": "push",
+    "object": "disk_3_disk_3",
+    "step": null
+   }
+  }
+ ]
+}

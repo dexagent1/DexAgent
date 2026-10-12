@@ -1,0 +1,86 @@
+{
+ "hand_xml": "${SETUP}/robot/sharpa_right.xml",
+ "side": "right",
+ "objects": [
+  {
+   "name": "pc_case",
+   "xml": "${STAGE2}/assets/pc_case/pc_case.xml",
+   "pos": [
+    -0.0247,
+    0.673,
+    0.0
+   ],
+   "quat": [
+    -0.010471801771723036,
+    0.0,
+    0.0,
+    0.9999451691806175
+   ]
+  },
+  {
+   "name": "disk_2",
+   "xml": "${STAGE2}/assets/disk_2/disk_2.xml",
+   "pos": [
+    -0.0619,
+    0.3661,
+    0.0
+   ],
+   "quat": [
+    -0.0472807828850065,
+    0.0,
+    0.0,
+    0.9988816384185771
+   ]
+  },
+  {
+   "name": "disk_3",
+   "xml": "${STAGE2}/assets/disk_3/disk_3.xml",
+   "pos": [
+    -0.2038,
+    0.3608,
+    0.0
+   ],
+   "quat": [
+    -0.024519408685053652,
+    0.0,
+    0.0,
+    0.9996993541048905
+   ]
+  },
+  {
+   "name": "disk_1",
+   "xml": "${STAGE2}/assets/disk_1/disk_1.xml",
+   "pos": [
+    0.1,
+    0.3706,
+    0.0
+   ],
+   "quat": [
+    -0.06087432674132177,
+    0.0,
+    0.0,
+    0.998145438472666
+   ]
+  }
+ ],
+ "floor": true,
+ "grasp_body": "disk_1_disk_1",
+ "joint_init": {},
+ "bench_scene": "${STAGE2}/scene.xml",
+ "target": "disk_1",
+ "target_root": "disk_1_disk_1",
+ "grasp_body_pose": {
+  "body": "disk_1_disk_1",
+  "pos": [
+   0.1,
+   0.3706,
+   0.0
+  ],
+  "quat_wxyz": [
+   -0.06087432674132177,
+   0.0,
+   0.0,
+   0.998145438472666
+  ]
+ }
+}

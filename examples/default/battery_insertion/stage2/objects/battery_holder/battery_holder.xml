@@ -1,0 +1,131 @@
+<mujoco model="battery_holder_asset">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <mesh name="battery_holder_s0spring_turn" file="../../../../../_assets/66b501e3113c3dc20b02.stl" />
+    <mesh name="battery_holder_s0spring_seat" file="../../../../../_assets/3e2c18a0b2c65290807d.stl" />
+    <material name="battery_holder_s0spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" specular="0.700" shininess="0.900" reflectance="0.3" />
+    <mesh name="battery_holder_s1spring_turn" file="../../../../../_assets/66b501e3113c3dc20b02.stl" />
+    <mesh name="battery_holder_s1spring_seat" file="../../../../../_assets/3e2c18a0b2c65290807d.stl" />
+    <material name="battery_holder_s1spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" specular="0.700" shininess="0.900" reflectance="0.3" />
+    <mesh name="battery_holder_s2spring_turn" file="../../../../../_assets/66b501e3113c3dc20b02.stl" />
+    <mesh name="battery_holder_s2spring_seat" file="../../../../../_assets/3e2c18a0b2c65290807d.stl" />
+    <material name="battery_holder_s2spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" specular="0.700" shininess="0.900" reflectance="0.3" />
+    <material name="battery_holder_abs" rgba="0.1990 0.2060 0.2240 1.0000" specular="0.35" shininess="0.65" />
+    <material name="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" specular="0.75" shininess="0.9" reflectance="0.3" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="battery_holder" pos="0 0 0">
+      <freejoint name="battery_holder_free" />
+      <geom name="battery_holder_floor" type="box" size="0.028820 0.019350 0.000800" pos="0 0 0.000800" material="battery_holder_abs" rgba="0.1990 0.2060 0.2240 1.0000" density="3000.0" friction="0.700000 0.008000 0.000200" />
+      <geom name="battery_holder_endwall_a" type="box" size="0.001000 0.019350 0.004700" pos="-0.027820 0 0.006300" material="battery_holder_abs" rgba="0.1990 0.2060 0.2240 1.0000" density="3000.0" friction="0.700000 0.008000 0.000200" />
+      <geom name="battery_holder_sidewall_a" type="box" size="0.026820 0.000500 0.004700" pos="0 -0.018850 0.006300" material="battery_holder_abs" rgba="0.1990 0.2060 0.2240 1.0000" density="3000.0" friction="0.700000 0.008000 0.000200" />
+      <geom name="battery_holder_endwall_b" type="box" size="0.001000 0.019350 0.004700" pos="0.027820 0 0.006300" material="battery_holder_abs" rgba="0.1990 0.2060 0.2240 1.0000" density="3000.0" friction="0.700000 0.008000 0.000200" />
+      <geom name="battery_holder_sidewall_b" type="box" size="0.026820 0.000500 0.004700" pos="0 0.018850 0.006300" material="battery_holder_abs" rgba="0.1990 0.2060 0.2240 1.0000" density="3000.0" friction="0.700000 0.008000 0.000200" />
+      <geom name="battery_holder_divider_0" type="box" size="0.026820 0.000400 0.004700" pos="0 -0.006250 0.006300" material="battery_holder_abs" rgba="0.1990 0.2060 0.2240 1.0000" density="3000.0" friction="0.700000 0.008000 0.000200" />
+      <geom name="battery_holder_divider_1" type="box" size="0.026820 0.000400 0.004700" pos="0 0.006250 0.006300" material="battery_holder_abs" rgba="0.1990 0.2060 0.2240 1.0000" density="3000.0" friction="0.700000 0.008000 0.000200" />
+      <body name="battery_holder_s0spring_mount" pos="0.026820 -0.012500 0.006850" quat="0.7071068 0 -0.7071068 0">
+        <geom type="mesh" mesh="battery_holder_s0spring_seat" material="battery_holder_s0spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+        <body name="battery_holder_s0spring_coil1" pos="0 0 0.000450">
+          <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+          <joint name="battery_holder_s0spring_c1" type="slide" axis="0 0 1" range="-0.006100 0.000010" stiffness="200.0000" springref="0" damping="3.57140" armature="0.05102" limited="true" solreflimit="0.0040 1" solimplimit="0.99 0.999 0.0001" />
+          <geom type="mesh" mesh="battery_holder_s0spring_turn" material="battery_holder_s0spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+          <body name="battery_holder_s0spring_coil2" pos="0 0 0.002120">
+            <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+            <geom type="mesh" mesh="battery_holder_s0spring_turn" material="battery_holder_s0spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+            <body name="battery_holder_s0spring_coil3" pos="0 0 0.002120">
+              <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+              <geom type="mesh" mesh="battery_holder_s0spring_turn" material="battery_holder_s0spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+              <body name="battery_holder_s0spring_coil4" pos="0 0 0.002120">
+                <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                <geom type="mesh" mesh="battery_holder_s0spring_turn" material="battery_holder_s0spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+                <body name="battery_holder_s0spring_coil5" pos="0 0 0.002120">
+                  <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                  <geom type="mesh" mesh="battery_holder_s0spring_turn" material="battery_holder_s0spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+                  <body name="battery_holder_s0spring_tip" pos="0 0 0.002120">
+                    <inertial pos="0 0 0" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                    <geom name="battery_holder_s0spring_plate" type="box" size="0.002628 0.002628 0.000400" pos="0 0 0.000850" rgba="0.8000 0.8200 0.8400 1.0000" group="3" friction="0.850 0.005 0.0001" />
+                    <geom type="cylinder" size="0.003650 0.000400" pos="0 0 0.000850" material="battery_holder_s0spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" mass="0" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <geom type="box" size="0.0004 0.004212 0.004212" pos="0.026420 -0.012500 0.006850" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="battery_holder_s0plate" type="box" size="0.000250 0.004680 0.003572" pos="-0.026570 -0.012500 0.006850" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" mass="0" friction="0.3 0.005 0.0001" />
+      <geom name="battery_holder_s0bump" type="cylinder" fromto="-0.026320 -0.012500 0.006850 -0.025620 -0.012500 0.006850" size="0.002500" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" mass="0" contype="0" conaffinity="0" />
+      <body name="battery_holder_s1spring_mount" pos="-0.026820 0.000000 0.006850" quat="0.7071068 0 0.7071068 0">
+        <geom type="mesh" mesh="battery_holder_s1spring_seat" material="battery_holder_s1spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+        <body name="battery_holder_s1spring_coil1" pos="0 0 0.000450">
+          <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+          <joint name="battery_holder_s1spring_c1" type="slide" axis="0 0 1" range="-0.006100 0.000010" stiffness="200.0000" springref="0" damping="3.57140" armature="0.05102" limited="true" solreflimit="0.0040 1" solimplimit="0.99 0.999 0.0001" />
+          <geom type="mesh" mesh="battery_holder_s1spring_turn" material="battery_holder_s1spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+          <body name="battery_holder_s1spring_coil2" pos="0 0 0.002120">
+            <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+            <geom type="mesh" mesh="battery_holder_s1spring_turn" material="battery_holder_s1spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+            <body name="battery_holder_s1spring_coil3" pos="0 0 0.002120">
+              <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+              <geom type="mesh" mesh="battery_holder_s1spring_turn" material="battery_holder_s1spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+              <body name="battery_holder_s1spring_coil4" pos="0 0 0.002120">
+                <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                <geom type="mesh" mesh="battery_holder_s1spring_turn" material="battery_holder_s1spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+                <body name="battery_holder_s1spring_coil5" pos="0 0 0.002120">
+                  <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                  <geom type="mesh" mesh="battery_holder_s1spring_turn" material="battery_holder_s1spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+                  <body name="battery_holder_s1spring_tip" pos="0 0 0.002120">
+                    <inertial pos="0 0 0" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                    <geom name="battery_holder_s1spring_plate" type="box" size="0.002628 0.002628 0.000400" pos="0 0 0.000850" rgba="0.8000 0.8200 0.8400 1.0000" group="3" friction="0.850 0.005 0.0001" />
+                    <geom type="cylinder" size="0.003650 0.000400" pos="0 0 0.000850" material="battery_holder_s1spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" mass="0" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <geom type="box" size="0.0004 0.004212 0.004212" pos="-0.026420 0.000000 0.006850" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="battery_holder_s1plate" type="box" size="0.000250 0.004680 0.003572" pos="0.026570 0.000000 0.006850" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" mass="0" friction="0.3 0.005 0.0001" />
+      <geom name="battery_holder_s1bump" type="cylinder" fromto="0.026320 0.000000 0.006850 0.025620 0.000000 0.006850" size="0.002500" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" mass="0" contype="0" conaffinity="0" />
+      <body name="battery_holder_s2spring_mount" pos="0.026820 0.012500 0.006850" quat="0.7071068 0 -0.7071068 0">
+        <geom type="mesh" mesh="battery_holder_s2spring_seat" material="battery_holder_s2spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+        <body name="battery_holder_s2spring_coil1" pos="0 0 0.000450">
+          <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+          <joint name="battery_holder_s2spring_c1" type="slide" axis="0 0 1" range="-0.006100 0.000010" stiffness="200.0000" springref="0" damping="3.57140" armature="0.05102" limited="true" solreflimit="0.0040 1" solimplimit="0.99 0.999 0.0001" />
+          <geom type="mesh" mesh="battery_holder_s2spring_turn" material="battery_holder_s2spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+          <body name="battery_holder_s2spring_coil2" pos="0 0 0.002120">
+            <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+            <geom type="mesh" mesh="battery_holder_s2spring_turn" material="battery_holder_s2spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+            <body name="battery_holder_s2spring_coil3" pos="0 0 0.002120">
+              <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+              <geom type="mesh" mesh="battery_holder_s2spring_turn" material="battery_holder_s2spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+              <body name="battery_holder_s2spring_coil4" pos="0 0 0.002120">
+                <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                <geom type="mesh" mesh="battery_holder_s2spring_turn" material="battery_holder_s2spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+                <body name="battery_holder_s2spring_coil5" pos="0 0 0.002120">
+                  <inertial pos="0 0 0.001060" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                  <geom type="mesh" mesh="battery_holder_s2spring_turn" material="battery_holder_s2spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" />
+                  <body name="battery_holder_s2spring_tip" pos="0 0 0.002120">
+                    <inertial pos="0 0 0" mass="0.000160" diaginertia="1e-08 1e-08 1e-08" />
+                    <geom name="battery_holder_s2spring_plate" type="box" size="0.002628 0.002628 0.000400" pos="0 0 0.000850" rgba="0.8000 0.8200 0.8400 1.0000" group="3" friction="0.850 0.005 0.0001" />
+                    <geom type="cylinder" size="0.003650 0.000400" pos="0 0 0.000850" material="battery_holder_s2spring_steel" rgba="0.8000 0.8200 0.8400 1.0000" contype="0" conaffinity="0" mass="0" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <geom type="box" size="0.0004 0.004212 0.004212" pos="0.026420 0.012500 0.006850" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom name="battery_holder_s2plate" type="box" size="0.000250 0.004680 0.003572" pos="-0.026570 0.012500 0.006850" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" mass="0" friction="0.3 0.005 0.0001" />
+      <geom name="battery_holder_s2bump" type="cylinder" fromto="-0.026320 0.012500 0.006850 -0.025620 0.012500 0.006850" size="0.002500" material="battery_holder_steel" rgba="0.7500 0.7600 0.7800 1.0000" mass="0" contype="0" conaffinity="0" />
+    </body>
+  </worldbody>
+</mujoco>

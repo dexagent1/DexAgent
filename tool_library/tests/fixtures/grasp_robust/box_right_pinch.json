@@ -1,0 +1,96 @@
+{
+ "side": "right",
+ "pos": [
+  0.050987,
+  0.014615,
+  0.160619
+ ],
+ "euler": [
+  3.627773,
+  -0.839102,
+  0.350552
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 0.665121,
+  "thumb_CMC_AA": 0.030888,
+  "thumb_MCP_FE": 0.092686,
+  "thumb_MCP_AA": -0.158456,
+  "thumb_IP": 0.409693,
+  "index_MCP_FE": 0.739597,
+  "index_MCP_AA": 0.036144,
+  "index_PIP": 0.922369,
+  "index_DIP": 0.685079,
+  "middle_MCP_FE": 0.959933,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 1.134445,
+  "middle_DIP": 0.907595,
+  "ring_MCP_FE": 0.959933,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.134445,
+  "ring_DIP": 0.907595,
+  "pinky_CMC": 0.17017,
+  "pinky_MCP_FE": 0.959933,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.134445,
+  "pinky_DIP": 0.907595
+ },
+ "finger_targets_squeezed": {
+  "thumb_CMC_FE": 0.665121,
+  "thumb_CMC_AA": 0.030888,
+  "thumb_MCP_FE": 0.092686,
+  "thumb_MCP_AA": -0.158456,
+  "thumb_IP": 0.409693,
+  "index_MCP_FE": 0.775597,
+  "index_MCP_AA": 0.036144,
+  "index_PIP": 0.958369,
+  "index_DIP": 0.721079,
+  "middle_MCP_FE": 0.959933,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 1.134445,
+  "middle_DIP": 0.907595,
+  "ring_MCP_FE": 0.959933,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.134445,
+  "ring_DIP": 0.907595,
+  "pinky_CMC": 0.17017,
+  "pinky_MCP_FE": 0.959933,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.134445,
+  "pinky_DIP": 0.907595
+ },
+ "grip_fingers": [
+  "thumb",
+  "index"
+ ],
+ "press_depth_rad": 0.12,
+ "approach": [
+  0.350133,
+  0.100366,
+  0.931308
+ ],
+ "normals": {
+  "thumb": [
+   0.0,
+   -1.0,
+   0.0
+  ],
+  "index": [
+   0.0,
+   1.0,
+   0.0
+  ]
+ },
+ "points": {
+  "thumb": [
+   0.0,
+   -0.02,
+   0.025
+  ],
+  "index": [
+   0.0,
+   0.02,
+   0.025
+  ]
+ },
+ "family": "pinch"
+}

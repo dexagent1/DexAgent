@@ -1,0 +1,130 @@
+{
+  "task_prompt": "Close the red gift box",
+  "task_summary": "Both hands pinch the side edges of the red gift box's open lid near its hinge, swing the lid up over the back edge and down onto the base so it closes, then press the closed lid flat with both palms and withdraw to rest beside the box.",
+  "video": {
+    "path": "input/video.mp4",
+    "duration_s": 15.033,
+    "fps": 30.0,
+    "frames": 451,
+    "resolution": "640x480"
+  },
+  "environment": {
+    "support_surface": "white cloth-covered table",
+    "camera": "head-mounted egocentric camera looking down the table from the operator's side; essentially static, only slight head motion",
+    "notes": "The box sits alone in the middle of the table, its open lid toward the far side of the table; nothing else is on the table."
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ],
+    "notes": "The left hand enters from the image's left and the right hand from the image's right at about 1.9 s; both rest flat on the table on either side of the box until about 4.5 s, act together from 4.5 s to 10.4 s, rest beside the box again from about 10.8 s to 12.9 s, and leave the view by 13.4 s."
+  },
+  "objects": [
+    {
+      "id": "gift_box",
+      "name": "red gift box",
+      "type": "articulated",
+      "role": "manipulated",
+      "parts": [
+        "base",
+        "lid",
+        "lid_front_flap",
+        "hinge"
+      ],
+      "appearance": {
+        "base": "open-topped rectangular red cardboard tray with straight walls, red interior, empty",
+        "lid": "flat red cardboard panel the same footprint as the base; its outer (top when closed) face carries two small dark patches, a black one on the left and a black-and-white one on the right, whose nature (print, sticker or clasp) cannot be resolved",
+        "lid_front_flap": "narrow red strip along the lid's free edge that folds down over the base's front wall when the lid is closed",
+        "hinge": "the back edge of the base, along which the lid is attached; no separate hardware visible"
+      },
+      "approximate_size": "about one and a half hand-spans wide and slightly less deep, roughly a hand's width tall when closed",
+      "properties": [
+        "The lid is attached to the top of the base's back wall (far from the operator) by a hinge running left-right along that edge; it stays attached throughout and only rotates about this edge.",
+        "At the start the lid is folded back away from the operator, leaning or lying behind the base with its inner face up, so the empty tray is fully open from above.",
+        "Closing is a rotation of roughly 180 degrees: the lid swings up through vertical (about 6.0 s) and over toward the operator until it lies flat on top of the base walls (about 7.2 s).",
+        "The lid's free edge has a short flap that comes down over the outside of the base's front wall, so the closed lid covers the opening completely with its edges flush with the base walls.",
+        "The lid is light and is operated by pinching its two side edges near the hinge with both hands, one per side; it stays seated closed without being held once pressed down.",
+        "The base stays in place on the table while the lid moves; it is never lifted or slid."
+      ],
+      "articulation": {
+        "moving_part": "lid (with lid_front_flap)",
+        "fixed_part": "base",
+        "joint_type": "revolute",
+        "axis": "horizontal, left-right along the top of the base's back wall (parallel to the image's horizontal)",
+        "range_observed": "about 180 degrees, from folded back behind the base to flat on top of it; the exact starting angle of the open lid (fully flat on the table or slightly propped) cannot be resolved from the frames",
+        "state_over_video": "open, folded back (0 s to 5.3 s) -> rising to vertical (5.3 s to 6.0 s) -> past vertical and lowering toward the operator (6.0 s to 7.0 s) -> closed on the base (7.2 s) -> pressed and seated (7.5 s to 10.4 s) -> closed to the end"
+      },
+      "initial_state": "standing in the middle of the table, base open and empty, lid folded back on the far side of the base",
+      "final_state": "closed in the same place, lid flat on the base with its two dark patches facing up",
+      "evidence": "prompt: 'red gift box', 'close'; 0 to 5.3 s the open empty tray with the lid folded behind it; 5.3 to 7.2 s the lid alone rotates about the back edge (vertical at 6.0 s, over the tray at 6.9 s) while the base stays put, which shows a hinge; 7.2 s onward the closed box, the base never moving."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "both",
+      "action": "Swing the lid up and over onto the base by its side edges.",
+      "object_refs": [
+        "gift_box:lid",
+        "gift_box:hinge",
+        "gift_box:base"
+      ],
+      "motion": "close_joint",
+      "hand_roles": {
+        "left": "Reaches to the lid's left side edge near the hinge, pinches it between thumb and fingers, and rotates it up, over and down toward the operator together with the right hand.",
+        "right": "Pinches the lid's right side edge near the hinge and rotates it in step with the left hand."
+      },
+      "goal": "The lid has rotated about the back edge from folded back to lying on top of the base, covering the tray opening.",
+      "time_window_s": [
+        4.5,
+        7.3
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "both",
+      "action": "Press the closed lid down flat onto the base.",
+      "object_refs": [
+        "gift_box:lid",
+        "gift_box:lid_front_flap",
+        "gift_box:base"
+      ],
+      "motion": "press",
+      "hand_roles": {
+        "left": "Runs the fingers along the lid's left edge to line it up, then presses the left half of the lid down with the flat palm and fingers.",
+        "right": "Aligns the lid's right edge, then presses the right half of the lid down with the flat palm and fingers."
+      },
+      "goal": "The lid lies flat and level on the base with its edges and front flap flush against the base walls, and stays closed without hand support.",
+      "observed_outcome": "The lid appears flat and flush after the press; whether a magnetic or friction catch engages cannot be seen.",
+      "time_window_s": [
+        7.4,
+        10.4
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "both",
+      "action": "Release the lid and withdraw both hands to the table beside the box.",
+      "object_refs": [
+        "gift_box"
+      ],
+      "motion": "release",
+      "hand_roles": {
+        "left": "Lifts the palm off the lid and withdraws to the table left of the box, then leaves the view.",
+        "right": "Lifts the palm off the lid and withdraws to the table right of the box, then leaves the view."
+      },
+      "goal": "No hand touches the box and the lid remains closed on the base.",
+      "time_window_s": [
+        10.3,
+        13.4
+      ]
+    }
+  ],
+  "task_success": "The red gift box stands closed in its original place in the middle of the table, the lid lying flat on the base, and neither hand touches it.",
+  "notes": [
+    "Both hands act symmetrically on the lid throughout; neither hand only stabilizes the base, which stays still on its own.",
+    "The two dark patches on the lid's outer face are only visible once the lid is closed; whether they are printed marks, stickers or a clasp cannot be resolved, and no latching action is observed.",
+    "The box is empty; no item is put into it in this clip."
+  ]
+}

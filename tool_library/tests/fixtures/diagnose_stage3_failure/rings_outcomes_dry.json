@@ -1,0 +1,22 @@
+[
+ {
+  "index": 1,
+  "motion": "hold",
+  "side": "left",
+  "object": "left_ring_left_ring",
+  "ok": true,
+  "measured": {}
+ },
+ {
+  "index": 1,
+  "motion": "hold",
+  "side": "right",
+  "object": "right_ring_right_ring",
+  "ok": false,
+  "failed": [
+   "arm_collision"
+  ],
+  "error": "the arm runs into robot_right_collision_hand_right_thumb_MC_hull (17.5 mm) at 'right: descend on right_ring_right_ring': approach from another side or re-orient the pose",
+  "measured": {}
+ }
+]

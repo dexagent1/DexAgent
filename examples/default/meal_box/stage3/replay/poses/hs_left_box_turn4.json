@@ -1,0 +1,59 @@
+{
+ "hand_xml": "${SETUP}/robot/sharpa_left.xml",
+ "side": "left",
+ "objects": [
+  {
+   "name": "meal_box",
+   "xml": "${STAGE2}/assets/meal_box/mealbox.xml",
+   "pos": [
+    -0.070565,
+    0.453624,
+    -4e-06
+   ],
+   "quat": [
+    0.8660547418754492,
+    -4.791658708281122e-07,
+    1.7600976171626373e-06,
+    0.49994918148920064
+   ]
+  }
+ ],
+ "floor": true,
+ "grasp_body": "meal_box_mealbox_container",
+ "joint_init": {
+  "meal_box_mealbox_lid_free": [
+   -0.0704041166212593,
+   0.4552938909513863,
+   0.05999084959597852,
+   0.4963713529535179,
+   2.530157238067846e-05,
+   1.5008790286481586e-05,
+   -0.8681102920145931
+  ],
+  "meal_box_mealbox_fold_xp": 1.5269097539491905,
+  "meal_box_mealbox_flex_xp": -4.4586388103455947e-07,
+  "meal_box_mealbox_fold_xn": 1.5269141740433898,
+  "meal_box_mealbox_flex_xn": -7.189423140624292e-07,
+  "meal_box_mealbox_fold_yp": 0.010205336310821624,
+  "meal_box_mealbox_flex_yp": 6.7282300127085865e-06,
+  "meal_box_mealbox_fold_yn": 0.05743406486833468,
+  "meal_box_mealbox_flex_yn": -4.208497946777962e-08
+ },
+ "bench_scene": "${STAGE2}/scene.xml",
+ "target": "container",
+ "target_root": "meal_box_mealbox_container",
+ "grasp_body_pose": {
+  "body": "meal_box_mealbox_container",
+  "pos": [
+   -0.070565,
+   0.453624,
+   -4e-06
+  ],
+  "quat_wxyz": [
+   0.8660547418754492,
+   -4.791658708281122e-07,
+   1.7600976171626373e-06,
+   0.49994918148920064
+  ]
+ }
+}

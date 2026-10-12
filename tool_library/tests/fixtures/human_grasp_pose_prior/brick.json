@@ -1,0 +1,12 @@
+{
+ "x": -0.069,
+ "y": 0.5622,
+ "yaw_deg": -79.6,
+ "size": [
+  0.0598,
+  0.0598,
+  0.0335
+ ],
+ "contact_frame": 16,
+ "source": "EgoDex build_unstack_lego/59, Stage 2 scene_recon.json yellow_brick (construct_stud_brick 2x2: pitch 0.03, body 0.0268 + studs 0.0067), approximated by a box"
+}

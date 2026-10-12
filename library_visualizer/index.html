@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DexAgent Tool Library</title>
+<meta name="description" content="Live view of DexAgent's self-evolving tool library: every skill and verifier, by category, with inputs, outputs and source.">
+<link rel="icon" href="https://dexagent1.github.io/static/icons/icon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c10; --bg-2:#0f1217; --panel:#12161d; --panel-2:#171c24; --line:rgba(255,255,255,.08); --line-2:rgba(255,255,255,.14);
+  --text:#e7eaf0; --text-2:#aab2bf; --muted:#6f7886;
+  --skill:#38c6ec; --skill-dim:rgba(56,198,236,.14); --verifier:#f2b544; --verifier-dim:rgba(242,181,68,.14);
+  --live:#3ddc84; --radius:12px; --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace; --sans:'Inter',system-ui,-apple-system,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+body{min-height:100vh;background-image:
+  radial-gradient(900px 420px at 15% -10%, rgba(56,198,236,.10), transparent 60%),
+  radial-gradient(700px 360px at 90% 0%, rgba(242,181,68,.07), transparent 60%),
+  linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size:auto,auto,48px 48px,48px 48px; background-attachment:fixed}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+/* header */
+header{padding:22px 0 6px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:40px;height:40px}
+.brand h1{font-size:20px;font-weight:700;margin:0;letter-spacing:-.01em}
+.brand h1 span{color:var(--text-2);font-weight:500}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{font-size:13px;color:var(--text-2);padding:7px 11px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.02)}
+nav a:hover{color:var(--text);border-color:var(--line-2)}
+.lead{margin:22px 0 0;max-width:720px;color:var(--text-2);font-size:15px;line-height:1.55}
+.status{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--text-2);padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted);box-shadow:0 0 0 0 rgba(61,220,132,.5)}
+.status.live .dot{background:var(--live);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.45)}70%{box-shadow:0 0 0 8px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+/* kpis */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0 8px}
+.kpi{position:relative;background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 16px;overflow:hidden}
+.kpi::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c,var(--text-2))}
+.kpi .label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);font-weight:600}
+.kpi .num{font-family:var(--mono);font-size:44px;font-weight:600;line-height:1.1;margin:8px 0 4px;color:var(--text);font-variant-numeric:tabular-nums}
+.kpi .sub{font-size:12.5px;color:var(--muted)}
+.kpi.skill{--c:var(--skill)} .kpi.verifier{--c:var(--verifier)} .kpi.total{--c:#b6bfcc}
+/* controls */
+.controls{position:sticky;top:0;z-index:5;background:linear-gradient(var(--bg) 85%,transparent);padding:14px 0 10px;margin-top:10px}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:9px;overflow:hidden;background:var(--panel)}
+.seg button{appearance:none;border:0;background:transparent;color:var(--text-2);font:inherit;font-size:13px;font-weight:500;padding:8px 14px;cursor:pointer;border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:rgba(255,255,255,.08);color:var(--text)}
+.search{flex:1;min-width:200px;display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line-2);border-radius:9px;padding:0 12px}
+.search input{flex:1;background:transparent;border:0;outline:0;color:var(--text);font:inherit;font-size:14px;padding:9px 0}
+.search svg{width:16px;height:16px;color:var(--muted);flex:none}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.chip{appearance:none;border:1px solid var(--line);background:rgba(255,255,255,.02);color:var(--text-2);font:inherit;font-size:12.5px;padding:6px 10px;border-radius:999px;cursor:pointer;display:inline-flex;gap:7px;align-items:center}
+.chip b{font-family:var(--mono);font-weight:500;color:var(--muted);font-size:12px}
+.chip.on{border-color:var(--line-2);background:rgba(255,255,255,.09);color:var(--text)} .chip.on b{color:var(--text)}
+.chip.zero{opacity:.55}
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:14px 0 40px}
+.card{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px 14px;cursor:pointer;transition:border-color .15s,transform .15s,background .15s;display:flex;flex-direction:column;gap:8px;min-height:150px}
+.card:hover{border-color:var(--line-2);background:var(--panel-2);transform:translateY(-1px)}
+.card:focus-visible{outline:2px solid var(--skill);outline-offset:2px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:6px;font-weight:600}
+.badge.skill{color:var(--skill);background:var(--skill-dim)} .badge.verifier{color:var(--verifier);background:var(--verifier-dim)}
+.st{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1px solid var(--line-2);color:var(--text-2)}
+.st.tested{color:var(--live);border-color:rgba(61,220,132,.35)}
+.card .head{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card .cat{font-size:12px;color:var(--muted)}
+.card h3{margin:0;font-size:16px;font-weight:600;letter-spacing:-.005em}
+.card .name{font-family:var(--mono);font-size:12px;color:var(--text-2)}
+.card p{margin:0;font-size:13.5px;line-height:1.5;color:var(--text-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;color:var(--muted);padding-top:6px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11px;color:var(--text-2);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:48px 12px;border:1px dashed var(--line-2);border-radius:var(--radius);font-size:14px}
+.empty b{display:block;color:var(--text-2);font-weight:600;margin-bottom:4px}
+/* drawer */
+.backdrop{position:fixed;inset:0;background:rgba(5,7,10,.6);backdrop-filter:blur(2px);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(560px,100vw);background:var(--bg-2);border-left:1px solid var(--line-2);transform:translateX(100%);transition:transform .25s cubic-bezier(.2,.7,.2,1);z-index:21;overflow-y:auto;padding:22px 22px 40px}
+body.open .backdrop{opacity:1;pointer-events:auto} body.open .drawer{transform:none}
+.drawer .close{position:absolute;top:14px;right:14px;appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--text-2);width:34px;height:34px;border-radius:8px;cursor:pointer;font-size:18px;line-height:1}
+.drawer h2{margin:10px 0 2px;font-size:22px;letter-spacing:-.01em}
+.drawer .name{font-family:var(--mono);font-size:12.5px;color:var(--text-2)}
+.drawer .meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0 16px;font-size:12.5px;color:var(--muted)}
+.drawer .summary{font-size:15px;line-height:1.55;color:var(--text);margin:0 0 14px}
+.drawer p.desc{font-size:14px;line-height:1.6;color:var(--text-2);margin:0 0 18px}
+.drawer h4{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px;font-weight:600}
+table.io{width:100%;border-collapse:collapse;font-size:13px}
+table.io td{padding:8px 8px;border-top:1px solid var(--line);vertical-align:top;line-height:1.45}
+table.io tr:first-child td{border-top:0}
+table.io td.n{font-family:var(--mono);font-size:12.5px;color:var(--text);width:24%;word-break:break-word}
+table.io td.t{font-family:var(--mono);font-size:11.5px;color:var(--muted);width:26%;word-break:break-word}
+table.io td.d{color:var(--text-2);width:50%}
+.iobox{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel)}
+.kv{display:grid;grid-template-columns:120px 1fr;gap:6px 12px;font-size:13px}
+.kv dt{color:var(--muted)} .kv dd{margin:0;color:var(--text-2)}
+pre.cli{position:relative;margin:0;background:#0b0e13;border:1px solid var(--line);border-radius:10px;padding:12px 44px 12px 14px;font-family:var(--mono);font-size:12.5px;color:var(--text);white-space:pre-wrap;word-break:break-word;line-height:1.5}
+pre.cli button{position:absolute;top:8px;right:8px;appearance:none;border:1px solid var(--line);background:var(--panel);color:var(--text-2);font:inherit;font-size:11px;padding:4px 8px;border-radius:6px;cursor:pointer}
+.src{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13.5px;padding:9px 13px;border-radius:9px;border:1px solid var(--line-2);background:var(--panel);color:var(--text)}
+.src:hover{border-color:rgba(255,255,255,.28)}
+footer{color:var(--muted);font-size:12.5px;padding:10px 0 40px;font-family:var(--mono)}
+@media (max-width:720px){.kpis{grid-template-columns:1fr 1fr}.kpi.total{grid-column:1/-1}.kpi .num{font-size:36px}.drawer{padding:18px 16px 32px}.kv{grid-template-columns:100px 1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="top">
+      <a class="brand" href="https://dexagent1.github.io/">
+        <img src="https://dexagent1.github.io/static/icons/icon-192.png" alt="">
+        <h1>DexAgent <span>Tool Library</span></h1>
+      </a>
+      <nav>
+        <a href="https://dexagent1.github.io/">Website</a>
+        <a href="https://arxiv.org/abs/2609.35318">Paper</a>
+        <a href="https://github.com/dexagent1/DexAgent/tree/main/tool_library">GitHub</a>
+      </nav>
+    </div>
+    <p class="lead">Every skill and verifier DexAgent has accumulated, as they stand in the repository right now. A <b>skill</b> produces an asset, a pose or a motion; a <b>verifier</b> checks one and reports pass or fail. Pick a type and a category, or search, and open a tool for its inputs, outputs and source.</p>
+    <div class="status" id="status"><span class="dot"></span><span id="statusText">loading index…</span></div>
+  </header>
+
+  <section class="kpis" aria-label="Totals">
+    <div class="kpi skill"><div class="label">Skills</div><div class="num" id="nSkills">0</div><div class="sub" id="subSkills">&nbsp;</div></div>
+    <div class="kpi verifier"><div class="label">Verifiers</div><div class="num" id="nVerifiers">0</div><div class="sub" id="subVerifiers">&nbsp;</div></div>
+    <div class="kpi total"><div class="label">Total tools</div><div class="num" id="nTotal">0</div><div class="sub" id="subTotal">&nbsp;</div></div>
+  </section>
+
+  <section class="controls">
+    <div class="row">
+      <div class="seg" role="tablist" id="typeSeg">
+        <button class="on" data-type="all">All</button>
+        <button data-type="skill">Skills</button>
+        <button data-type="verifier">Verifiers</button>
+      </div>
+      <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search by name, tag, input or output…" autocomplete="off"></label>
+    </div>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <main class="grid" id="grid" aria-live="polite"></main>
+  <footer>Source of truth: <a href="https://github.com/dexagent1/DexAgent/blob/main/tool_library/index.json">tool_library/index.json</a> in the DexAgent repository, built by <code>build_index.py</code>. This page re-reads it every 60 s.</footer>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" aria-label="Tool details"></aside>
+
+<script>
+const LIVE = 'https://raw.githubusercontent.com/dexagent1/DexAgent/main/tool_library/index.json';
+const LOCAL = './index.json';
+const CATS = {
+  skill: ['Trajectory & Execution','Object Reconstruction','Perception & Grounding','Scene Runtime & Rendering','Grasp & Poses','Measurements'],
+  verifier: ['Task & Rollout Gates','Grasp Stress Tests','Reconstruction Mechanism Tests','Episode Audits','Scene Assertions','Scene Compile Checks']
+};
+const state = { tools: [], type: 'all', cat: null, q: '', source: '' };
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+async function fetchIndex() {
+  for (const [url, label] of [[LIVE, 'live'], [LOCAL, 'snapshot']]) {
+    try {
+      const r = await fetch(url + (label === 'live' ? '?t=' + Date.now() : ''), { cache: 'no-store' });
+      if (!r.ok) continue;
+      const data = await r.json();
+      if (Array.isArray(data.tools)) return { data, label };
+    } catch (e) { /* try the next source */ }
+  }
+  return null;
+}
+
+function countUp(el, to) {
+  const from = +el.dataset.v || 0; if (from === to) { el.textContent = to; return; }
+  const t0 = performance.now(), dur = 700;
+  (function step(now) {
+    const u = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - u, 3);
+    el.textContent = Math.round(from + (to - from) * e);
+    if (u < 1) requestAnimationFrame(step); else el.dataset.v = to;
+  })(t0);
+}
+
+
+function render() {
+  const tools = state.tools;
+  const nS = tools.filter(t => t.type === 'skill').length, nV = tools.length - nS;
+  countUp($('nSkills'), nS); countUp($('nVerifiers'), nV); countUp($('nTotal'), tools.length);
+  const catsUsed = type => new Set(tools.filter(t => t.type === type).map(t => t.category)).size;
+  const tested = type => tools.filter(t => t.type === type && t.status === 'tested').length;
+  $('subSkills').textContent = `${tested('skill')} tested here · ${catsUsed('skill')} of ${CATS.skill.length} categories`;
+  $('subVerifiers').textContent = `${tested('verifier')} tested here · ${catsUsed('verifier')} of ${CATS.verifier.length} categories`;
+  $('subTotal').textContent = `${state.tools.filter(t => t.status === 'tested').length} tested here`;
+  const st = $('status'); st.classList.toggle('live', state.source === 'live');
+  const n = `${tools.length} tool${tools.length === 1 ? '' : 's'}`;
+  $('statusText').textContent = state.source === 'live'
+    ? `live from github.com/dexagent1/DexAgent · ${n}`
+    : state.source === 'snapshot' ? `snapshot copy · ${n}` : 'index unavailable';
+
+  // category chips for the selected type
+  const types = state.type === 'all' ? ['skill', 'verifier'] : [state.type];
+  const chips = [];
+  for (const ty of types) for (const c of CATS[ty]) {
+    const n = tools.filter(t => t.type === ty && t.category === c).length;
+    chips.push(`<button class="chip ${state.cat === c ? 'on' : ''} ${n ? '' : 'zero'}" data-cat="${esc(c)}"><span class="badge ${ty}" style="padding:2px 6px">${ty === 'skill' ? 'S' : 'V'}</span>${esc(c)}<b>${n}</b></button>`);
+  }
+  $('chips').innerHTML = chips.join('');
+  $('chips').querySelectorAll('.chip').forEach(b => b.onclick = () => { state.cat = state.cat === b.dataset.cat ? null : b.dataset.cat; render(); });
+
+  // cards
+  const q = state.q.trim().toLowerCase();
+  const hay = t => [t.name, t.title, t.summary, t.category, t.status, ...(t.tags || []), ...(t.used_in || []), ...(t.inputs || []).flatMap(i => [i.name, i.description]), ...(t.outputs || []).flatMap(o => [o.name, o.description]), t.description].join(' ').toLowerCase();
+  const shown = tools.filter(t => (state.type === 'all' || t.type === state.type) && (!state.cat || t.category === state.cat) && (!q || hay(t).includes(q)));
+  const order = t => (t.type === 'skill' ? 0 : 1) * 100 + CATS[t.type].indexOf(t.category);
+  shown.sort((a, b) => order(a) - order(b) || a.title.localeCompare(b.title));
+  $('grid').innerHTML = shown.length ? shown.map(t => `
+    <article class="card" tabindex="0" data-name="${esc(t.name)}">
+      <div class="head"><span class="badge ${t.type}">${t.type}</span><span class="cat">${esc(t.category)}</span></div>
+      <h3>${esc(t.title)}</h3>
+      <div class="name">${esc(t.name)}</div>
+      <p>${esc(t.summary)}</p>
+      <div class="foot"><span>${(t.inputs || []).length} in → ${(t.outputs || []).length} out</span><span class="st ${esc(t.status || '')}">${esc(t.status || '')}</span></div>
+    </article>`).join('')
+    : `<div class="empty"><b>No tools here yet</b>${state.q ? 'Nothing matches the search.' : 'This category fills as DexAgent processes more demonstrations.'}</div>`;
+  $('grid').querySelectorAll('.card').forEach(c => {
+    c.onclick = () => openTool(c.dataset.name);
+    c.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTool(c.dataset.name); } };
+  });
+}
+
+function ioTable(rows) {
+  if (!rows || !rows.length) return '<div class="iobox"><table class="io"><tr><td class="d">none</td></tr></table></div>';
+  return `<div class="iobox"><table class="io">${rows.map(r => `<tr><td class="n">${esc(r.name)}</td><td class="t">${esc(r.type || '')}</td><td class="d">${esc(r.description || '')}</td></tr>`).join('')}</table></div>`;
+}
+
+function openTool(name) {
+  const t = state.tools.find(x => x.name === name); if (!t) return;
+  const kv = [['Category', t.category], ['Status', t.status === 'tested' ? 'tested: its smoke test ran and passed' : t.status === 'ported' ? 'ported: runs, needs an external model or GPU stack not exercised here' : t.status], ['Simulators', (t.simulators || []).join(', ')], ['Requirements', (t.requirements || []).join(', ')], ['Used in', (t.used_in || []).join(', ')], ['Entry point', t.entrypoint], ['Added', t.added]].filter(([, v]) => v);
+  $('drawer').innerHTML = `
+    <button class="close" aria-label="Close">×</button>
+    <span class="badge ${t.type}">${t.type}</span>
+    <h2>${esc(t.title)}</h2>
+    <div class="name">${esc(t.file || t.name)}</div>
+    <div class="meta">${(t.tags || []).map(x => `<span class="tag">${esc(x)}</span>`).join('')}</div>
+    <p class="summary">${esc(t.summary)}</p>
+    <p class="desc">${esc(t.description)}</p>
+    <h4>Inputs</h4>${ioTable(t.inputs)}
+    <h4>Outputs</h4>${ioTable(t.outputs)}
+    <h4>Details</h4><dl class="kv">${kv.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>
+    ${t.cli ? `<h4>Command line</h4><pre class="cli"><button type="button" data-copy>copy</button>${esc(t.cli)}</pre>` : ''}
+    ${t.url ? `<a class="src" href="${esc(t.url)}" target="_blank" rel="noopener">View source on GitHub ↗</a>` : ''}`;
+  $('drawer').querySelector('.close').onclick = closeTool;
+  const cp = $('drawer').querySelector('[data-copy]');
+  if (cp) cp.onclick = () => { navigator.clipboard?.writeText(t.cli); cp.textContent = 'copied'; setTimeout(() => cp.textContent = 'copy', 1200); };
+  document.body.classList.add('open'); $('drawer').scrollTop = 0;
+  if (location.hash !== '#' + name) history.replaceState(null, '', '#' + name);
+}
+function closeTool() { document.body.classList.remove('open'); if (location.hash) history.replaceState(null, '', location.pathname + location.search); }
+
+$('backdrop').onclick = closeTool;
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTool(); });
+$('typeSeg').querySelectorAll('button').forEach(b => b.onclick = () => {
+  state.type = b.dataset.type; $('typeSeg').querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+  if (state.cat && state.type !== 'all' && !CATS[state.type].includes(state.cat)) state.cat = null; render();
+});
+$('q').oninput = e => { state.q = e.target.value; render(); };
+
+async function load(first) {
+  const got = await fetchIndex();
+  if (!got) { if (first) { state.source = ''; render(); } return; }
+  const sig = JSON.stringify(got.data.tools);
+  if (first || sig !== load.sig || got.label !== state.source) {
+    load.sig = sig; state.tools = got.data.tools; state.source = got.label;
+    render();
+    if (first && location.hash.length > 1) openTool(decodeURIComponent(location.hash.slice(1)));
+  }
+}
+load(true);
+setInterval(() => load(false), 60000);
+</script>
+</body>
+</html>

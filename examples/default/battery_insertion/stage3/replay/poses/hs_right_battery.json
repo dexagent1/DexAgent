@@ -1,0 +1,60 @@
+{
+ "hand_xml": "${SETUP}/robot/sharpa_right.xml",
+ "side": "right",
+ "objects": [
+  {
+   "name": "holder",
+   "xml": "${STAGE2}/assets/battery_holder/battery_holder.xml",
+   "pos": [
+    -0.03701,
+    0.373102,
+    0.0
+   ],
+   "quat": [
+    -0.383687071684646,
+    0.0,
+    0.0,
+    0.9234631725315641
+   ]
+  },
+  {
+   "name": "battery",
+   "xml": "${STAGE2}/assets/battery/battery.xml",
+   "pos": [
+    0.1319,
+    0.3771,
+    0.0
+   ],
+   "quat": [
+    0.9999731328362886,
+    0.0,
+    0.0,
+    -0.007330320973758795
+   ]
+  }
+ ],
+ "floor": true,
+ "grasp_body": "battery_battery",
+ "joint_init": {
+  "holder_battery_holder_s0spring_c1": 0.0,
+  "holder_battery_holder_s1spring_c1": 0.0,
+  "holder_battery_holder_s2spring_c1": 0.0
+ },
+ "bench_scene": "${STAGE2}/scene.xml",
+ "target": "battery",
+ "target_root": "battery_battery",
+ "grasp_body_pose": {
+  "body": "battery_battery",
+  "pos": [
+   0.1319,
+   0.3771,
+   0.0
+  ],
+  "quat_wxyz": [
+   0.9999731328362886,
+   0.0,
+   0.0,
+   -0.007330320973758795
+  ]
+ }
+}

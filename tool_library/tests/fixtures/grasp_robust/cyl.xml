@@ -1,0 +1,4 @@
+<mujoco model="cyl"><worldbody>
+  <body name="cyl" pos="0 0 0.06"><freejoint/>
+    <geom name="cyl_body" type="cylinder" size="0.03 0.06" mass="0.25" rgba="0.2 0.5 0.8 1"/>
+  </body></worldbody></mujoco>

@@ -1,0 +1,136 @@
+{
+ "subgoals": [
+  {
+   "index": 1,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "battery_battery",
+   "pose": "${REPLAY}/poses/pinch_h30c_B_r.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_battery.json",
+   "lift_m": 0.08,
+   "open_frac": 0.3
+  },
+  {
+   "index": 2,
+   "motion": "carry",
+   "side": "right",
+   "object": "battery_battery",
+   "target_pos": [
+    -0.03624,
+    0.35616,
+    0.04472
+   ],
+   "target_euler_deg": [
+    -22.251,
+    20.658,
+    -11.192
+   ],
+   "duration_s": 1.8,
+   "pos_tol_m": 0.01
+  },
+  {
+   "index": 3,
+   "motion": "insert",
+   "side": "right",
+   "object": "battery_battery",
+   "target_pos": [
+    -0.03624,
+    0.35616,
+    0.00472
+   ],
+   "target_euler_deg": [
+    -22.251,
+    20.658,
+    -11.192
+   ],
+   "duration_s": 1.6,
+   "pos_tol_m": 0.004
+  },
+  {
+   "index": 3,
+   "motion": "release",
+   "side": "right",
+   "object": "battery_battery",
+   "retreat_m": 0.12,
+   "retreat_dir": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "index": 4,
+   "motion": "hold",
+   "side": "left",
+   "object": "holder_battery_holder",
+   "pose": "${REPLAY}/poses/left_brace_v9.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_holder_after.json",
+   "approach_m": 0.05
+  },
+  {
+   "index": 4,
+   "motion": "press",
+   "side": "right",
+   "object": "battery_battery",
+   "pose": "${REPLAY}/poses/right_flat_push_v10.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_battery_v10.json",
+   "direction": [
+    -0.3636,
+    -0.3165,
+    -0.8761
+   ],
+   "distance_m": 0.016,
+   "back": true,
+   "wrist_force_n": [
+    20.0,
+    20.0,
+    20.0
+   ],
+   "reanchor": "translate",
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.3636,
+      -0.3165,
+      -0.8761
+     ],
+     "min_m": 0.002
+    }
+   }
+  },
+  {
+   "index": 5,
+   "motion": "release",
+   "side": "right",
+   "object": "battery_battery",
+   "retreat_m": 0.08,
+   "retreat_dir": [
+    0,
+    0,
+    1
+   ]
+  },
+  {
+   "index": 5,
+   "motion": "release",
+   "side": "left",
+   "object": "holder_battery_holder",
+   "retreat_m": 0.07,
+   "retreat_dir": [
+    -0.3,
+    -0.3,
+    0.9
+   ]
+  },
+  {
+   "index": 5,
+   "motion": "home",
+   "side": "left"
+  },
+  {
+   "index": 5,
+   "motion": "home",
+   "side": "right"
+  }
+ ]
+}

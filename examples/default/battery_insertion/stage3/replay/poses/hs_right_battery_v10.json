@@ -1,0 +1,60 @@
+{
+ "hand_xml": "${SETUP}/robot/sharpa_right.xml",
+ "side": "right",
+ "objects": [
+  {
+   "name": "holder",
+   "xml": "${STAGE2}/assets/battery_holder/battery_holder.xml",
+   "pos": [
+    -0.050047,
+    0.380598,
+    -0.001128
+   ],
+   "quat": [
+    -0.3406707050140223,
+    -0.001981884412400731,
+    -0.012953752956032665,
+    0.94009134830812
+   ]
+  },
+  {
+   "name": "battery",
+   "xml": "${STAGE2}/assets/battery/battery.xml",
+   "pos": [
+    -0.048278,
+    0.364658,
+    0.005109
+   ],
+   "quat": [
+    0.7513962230463949,
+    -0.5253801457825326,
+    0.2909395978487202,
+    -0.27337441140816815
+   ]
+  }
+ ],
+ "floor": true,
+ "grasp_body": "battery_battery",
+ "joint_init": {
+  "holder_battery_holder_s0spring_c1": -6.222570926387991e-07,
+  "holder_battery_holder_s1spring_c1": 6.558137383530017e-07,
+  "holder_battery_holder_s2spring_c1": -6.928690013846733e-07
+ },
+ "bench_scene": "${STAGE2}/scene.xml",
+ "target": "battery",
+ "target_root": "battery_battery",
+ "grasp_body_pose": {
+  "body": "battery_battery",
+  "pos": [
+   -0.048278,
+   0.364658,
+   0.005109
+  ],
+  "quat_wxyz": [
+   0.7513962230463949,
+   -0.5253801457825326,
+   0.2909395978487202,
+   -0.27337441140816815
+  ]
+ }
+}

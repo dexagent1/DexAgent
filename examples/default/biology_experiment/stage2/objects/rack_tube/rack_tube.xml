@@ -1,0 +1,38 @@
+<mujoco model="srctube_vessel">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <material name="srctube_mat" rgba="0.8800 0.9000 0.9200 1.0000" specular="0.300" shininess="0.300" />
+    <material name="srctube_inmat" rgba="0.8000 0.8200 0.8500 1.0000" specular="0.210" shininess="0.210" />
+    <mesh name="srctube_shell" file="../../../../../_assets/858f0ff4deff8d99bf75.obj" />
+    <mesh name="srctube_lining" file="../../../../../_assets/55153621b0188956706d.obj" />
+    <mesh name="srctube_wedge0" file="../../../../../_assets/156f998400b5fc3dd5b3.obj" />
+    <mesh name="srctube_wedge1" file="../../../../../_assets/0ceed6a9dbf3f0f40764.obj" />
+    <mesh name="srctube_wedge2" file="../../../../../_assets/ea66fdb7a04da486fac0.obj" />
+    <mesh name="srctube_wedge3" file="../../../../../_assets/e13b82790eff1f064380.obj" />
+    <mesh name="srctube_wedge4" file="../../../../../_assets/57bf9b9032fcd8546026.obj" />
+    <mesh name="srctube_wedge5" file="../../../../../_assets/ec52a24321aa67e6457c.obj" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="srctube" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="srctube_free" />
+      <geom name="srctube_shell" type="mesh" mesh="srctube_shell" material="srctube_mat" contype="0" conaffinity="0" mass="0" group="1" />
+      <geom name="srctube_lining" type="mesh" mesh="srctube_lining" material="srctube_inmat" contype="0" conaffinity="0" mass="0" group="1" />
+      <geom name="srctube_base" type="cylinder" pos="0 0 0.00075" size="0.00950 0.00075" density="1050.0" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="srctube_wedge0" type="mesh" mesh="srctube_wedge0" density="1050.0" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="srctube_wedge1" type="mesh" mesh="srctube_wedge1" density="1050.0" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="srctube_wedge2" type="mesh" mesh="srctube_wedge2" density="1050.0" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="srctube_wedge3" type="mesh" mesh="srctube_wedge3" density="1050.0" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="srctube_wedge4" type="mesh" mesh="srctube_wedge4" density="1050.0" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="srctube_wedge5" type="mesh" mesh="srctube_wedge5" density="1050.0" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <site name="srctube_rim" pos="0 0 0.08200" size="0.002" rgba="0 1 0 0" />
+      <site name="srctube_floor" pos="0 0 0.00150" size="0.002" rgba="0 0 1 0" />
+    </body>
+  </worldbody>
+</mujoco>

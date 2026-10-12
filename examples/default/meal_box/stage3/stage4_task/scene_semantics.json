@@ -1,0 +1,213 @@
+{
+  "task_prompt": "Put the lid on the glass meal box and close its latches.",
+  "task_summary": "Both hands lift the latching lid of the glass meal box from the right, set it onto the container and press it flat, fold the two latch flaps on the box's left and right sides down over the rim, turn the whole box a quarter turn on the table, and fold the remaining two flaps down so all four sides are latched.",
+  "environment": {
+    "support_surface": "white tablecloth on a table",
+    "camera": "fixed camera above the operator looking down the table"
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ]
+  },
+  "objects": [
+    {
+      "id": "container",
+      "name": "clear glass food container",
+      "type": "rigid",
+      "role": "target",
+      "parts": [
+        "body",
+        "rim"
+      ],
+      "appearance": {
+        "body": "clear glass, rectangular with rounded corners",
+        "rim": "straight rim with a lip the latches hook under"
+      },
+      "approximate_size": "about a hand-span and a half long",
+      "properties": [
+        "A rigid open rectangular container with a flat rim; the lid seats on the rim and the latch flaps hook under its lip.",
+        "It stays on the table but is turned a quarter turn about the vertical, together with the lid, between the two latching pairs."
+      ],
+      "initial_state": "on the left, open",
+      "final_state": "turned a quarter turn from its start, closed by the latched lid",
+      "evidence": "prompt: 'glass meal box'; the clear container is at the left in frames 0 to 6 s and the lid is lowered onto it at 7 to 9 s."
+    },
+    {
+      "id": "lid",
+      "name": "clear latching lid",
+      "type": "articulated",
+      "role": "manipulated",
+      "parts": [
+        "plate",
+        "latch_near",
+        "latch_far",
+        "latch_left",
+        "latch_right"
+      ],
+      "appearance": {
+        "plate": "clear plastic plate with a light blue-grey seal",
+        "latches": "four hinged flaps, one on each side, splayed outward when open"
+      },
+      "approximate_size": "matches the container's footprint",
+      "properties": [
+        "A rigid plate with four latch flaps, one per side, each on a hinge along the plate's edge.",
+        "Open flaps stick out sideways; closing a flap rotates it down about its hinge until it hooks under the container's rim lip and snaps shut.",
+        "The plate must sit square on the rim before any flap can latch; latching is done one pair of flaps at a time, pressing the flap down and in against the box wall with the fingers; the box is turned a quarter turn between the two pairs so each pair is at the hands' sides.",
+        "A latched flap stays closed on its own and holds the lid to the container."
+      ],
+      "articulation": {
+        "moving_part": "latch_near, latch_far, latch_left, latch_right (one revolute flap per side)",
+        "fixed_part": "plate",
+        "joint_type": "revolute",
+        "axis": "along each edge of the plate",
+        "range_observed": "about 90 degrees each, from splayed open to closed against the container side",
+        "state_over_video": "all four open (0 to 9 s) -> lid pressed flat (11 to 13 s) -> left and right flaps folded closed (13 to 16 s) -> box turned a quarter turn (16 to 17.3 s) -> the other two flaps folded closed (17.3 to 19.5 s)"
+      },
+      "initial_state": "lying flat on the right with flaps splayed",
+      "final_state": "on the container with all four flaps latched",
+      "evidence": "prompt: 'lid', 'latches'; 4 to 7 s both hands lift it from the right; 7 to 9 s it is set on the container; 12 to 19 s the hands press each flap down in turn."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "both",
+      "action": "Pick up the lid with both hands.",
+      "object_refs": [
+        "lid"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Takes the lid's left side.",
+        "right": "Takes the lid's right side."
+      },
+      "goal": "The lid is held level above the table.",
+      "time_window_s": [
+        4.0,
+        7.2
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "both",
+      "action": "Carry the lid over the container.",
+      "object_refs": [
+        "lid",
+        "container"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Moves the lid left with the right hand.",
+        "right": "Moves the lid left with the left hand."
+      },
+      "goal": "The lid is above the container rim.",
+      "time_window_s": [
+        7.2,
+        8.4
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "both",
+      "action": "Set the lid squarely onto the container rim and press it flat.",
+      "object_refs": [
+        "lid:plate",
+        "container:rim"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Lowers the left side onto the rim and presses.",
+        "right": "Lowers the right side onto the rim and presses."
+      },
+      "goal": "The lid plate sits level on the rim with the flaps still open.",
+      "time_window_s": [
+        8.4,
+        12.8
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "both",
+      "action": "Fold the left and right latch flaps down over the rim until they snap.",
+      "object_refs": [
+        "lid:latch_left",
+        "lid:latch_right",
+        "container:rim"
+      ],
+      "motion": "close_joint",
+      "hand_roles": {
+        "left": "Presses the left flap down and in against the box wall.",
+        "right": "Presses the right flap down and in against the box wall."
+      },
+      "goal": "The two side flaps are latched.",
+      "observed_outcome": "The flaps no longer stick out afterwards; the snap itself is hidden by the hands.",
+      "time_window_s": [
+        12.8,
+        15.9
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "both",
+      "action": "Turn the lidded box a quarter turn on the table.",
+      "object_refs": [
+        "container",
+        "lid"
+      ],
+      "motion": "other",
+      "hand_roles": {
+        "left": "Grips one end of the box and swings it round.",
+        "right": "Grips the other end and swings it round."
+      },
+      "goal": "The two unlatched flaps now face left and right.",
+      "time_window_s": [
+        15.9,
+        17.3
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "both",
+      "action": "Fold the remaining two latch flaps down over the rim until they snap.",
+      "object_refs": [
+        "lid:latch_near",
+        "lid:latch_far",
+        "container:rim"
+      ],
+      "motion": "close_joint",
+      "hand_roles": {
+        "left": "Presses the flap now on the left down and in.",
+        "right": "Presses the flap now on the right down and in."
+      },
+      "goal": "All four flaps are latched.",
+      "time_window_s": [
+        17.3,
+        19.5
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "both",
+      "action": "Release and withdraw.",
+      "object_refs": [
+        "lid"
+      ],
+      "motion": "release",
+      "hand_roles": {
+        "left": "Withdraws.",
+        "right": "Withdraws."
+      },
+      "goal": "The closed, latched box stands alone.",
+      "time_window_s": [
+        19.5,
+        21.0
+      ]
+    }
+  ],
+  "task_success": "The lid sits on the glass container with all four latch flaps closed under the rim; the box has been turned a quarter turn from where it started.",
+  "notes": [
+    "The four flaps are latched in two pairs, with the box turned between them so each pair is at the hands' sides."
+  ]
+}

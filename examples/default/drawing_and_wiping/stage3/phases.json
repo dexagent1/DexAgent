@@ -1,0 +1,1453 @@
+[
+ {
+  "label": "right: return home #1.1",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    0,
+    53
+   ]
+  ]
+ },
+ {
+  "label": "left: reach for marker_marker_cap #1.2",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": "marker_marker_cap",
+  "subgoal": 1,
+  "frames": [
+   [
+    54,
+    122
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on marker_marker_cap #1.2",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": "marker_marker_cap",
+  "subgoal": 1,
+  "frames": [
+   [
+    123,
+    148
+   ]
+  ]
+ },
+ {
+  "label": "left: close on marker_marker_cap #1.2",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": "marker_marker_cap",
+  "subgoal": 1,
+  "frames": [
+   [
+    149,
+    168
+   ]
+  ]
+ },
+ {
+  "label": "left: grip marker_marker_cap #1.2",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": "marker_marker_cap",
+  "subgoal": 1,
+  "frames": [
+   [
+    169,
+    185
+   ]
+  ]
+ },
+ {
+  "label": "left: lift marker_marker_cap #1.2",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": "marker_marker_cap",
+  "subgoal": 1,
+  "frames": [
+   [
+    186,
+    217
+   ]
+  ]
+ },
+ {
+  "label": "left: carry marker_marker_cap #1.3",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    218,
+    295
+   ]
+  ]
+ },
+ {
+  "label": "right: reach to hold marker_marker #1.4",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": "marker_marker",
+  "subgoal": 1,
+  "frames": [
+   [
+    296,
+    358
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on marker_marker #1.4",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": "marker_marker",
+  "subgoal": 1,
+  "frames": [
+   [
+    359,
+    384
+   ]
+  ]
+ },
+ {
+  "label": "right: close on marker_marker #1.4",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": "marker_marker",
+  "subgoal": 1,
+  "frames": [
+   [
+    385,
+    404
+   ]
+  ]
+ },
+ {
+  "label": "right: hold marker_marker #1.4",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": "marker_marker",
+  "subgoal": 1,
+  "frames": [
+   [
+    405,
+    421
+   ]
+  ]
+ },
+ {
+  "label": "left: carry marker_marker_cap #1.5",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    422,
+    469
+   ]
+  ]
+ },
+ {
+  "label": "right: lift marker_marker #1.6",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": "marker_marker",
+  "subgoal": 1,
+  "frames": [
+   [
+    470,
+    508
+   ]
+  ]
+ },
+ {
+  "label": "left: carry marker_marker_cap #1.7",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    509,
+    547
+   ]
+  ]
+ },
+ {
+  "label": "left: carry marker_marker_cap (up) #1.8",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    548,
+    571
+   ]
+  ]
+ },
+ {
+  "label": "left: carry marker_marker_cap #1.8",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    572,
+    617
+   ]
+  ]
+ },
+ {
+  "label": "left: carry marker_marker_cap (down) #1.8",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    618,
+    646
+   ]
+  ]
+ },
+ {
+  "label": "left: set down marker_marker_cap #1.8",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    647,
+    663
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of marker_marker_cap #1.8",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    664,
+    686
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat #1.8",
+  "hand": "left",
+  "objects": [
+   "marker_marker_cap"
+  ],
+  "anchor": null,
+  "subgoal": 1,
+  "frames": [
+   [
+    687,
+    715
+   ]
+  ]
+ },
+ {
+  "label": "left: return home #2.1",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    716,
+    784
+   ]
+  ]
+ },
+ {
+  "label": "left: reach for eraser_eraser #2.2",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": "eraser_eraser",
+  "subgoal": 2,
+  "frames": [
+   [
+    785,
+    853
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on eraser_eraser #2.2",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": "eraser_eraser",
+  "subgoal": 2,
+  "frames": [
+   [
+    854,
+    896
+   ]
+  ]
+ },
+ {
+  "label": "left: close on eraser_eraser #2.2",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": "eraser_eraser",
+  "subgoal": 2,
+  "frames": [
+   [
+    897,
+    924
+   ]
+  ]
+ },
+ {
+  "label": "left: grip eraser_eraser #2.2",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": "eraser_eraser",
+  "subgoal": 2,
+  "frames": [
+   [
+    925,
+    941
+   ]
+  ]
+ },
+ {
+  "label": "left: lift eraser_eraser #2.2",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": "eraser_eraser",
+  "subgoal": 2,
+  "frames": [
+   [
+    942,
+    973
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #2.3",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    974,
+    1021
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #4.1",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1022,
+    1085
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #4.2",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1086,
+    1115
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #4.3",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1116,
+    1133
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #4.4",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1134,
+    1146
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #4.5",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1147,
+    1163
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #4.6",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1164,
+    1180
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #4.7",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1181,
+    1197
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #4.8",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1198,
+    1215
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.1",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1216,
+    1245
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.2",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1246,
+    1263
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.3",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1264,
+    1278
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.4",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1279,
+    1295
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.5",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1296,
+    1310
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.6",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1311,
+    1327
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.7",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1328,
+    1344
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.8",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1345,
+    1361
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.9",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1362,
+    1378
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1379,
+    1395
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #5.11",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1396,
+    1413
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.1",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1414,
+    1443
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.2",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1444,
+    1461
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.3",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1462,
+    1475
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.4",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1476,
+    1487
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.5",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1488,
+    1499
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.6",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1500,
+    1513
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.7",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1514,
+    1527
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.8",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1528,
+    1540
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.9",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1541,
+    1553
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1554,
+    1573
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.11",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1574,
+    1590
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #6.12",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    1591,
+    1608
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.1",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1609,
+    1638
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.2",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1639,
+    1656
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.3",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1657,
+    1675
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.4",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1676,
+    1694
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.5",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1695,
+    1711
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.6",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1712,
+    1728
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.7",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1729,
+    1746
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.8",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1747,
+    1776
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.9",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1777,
+    1794
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1795,
+    1811
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.11",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1812,
+    1828
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.12",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1829,
+    1846
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #7.13",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    1847,
+    1894
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.1",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    1895,
+    1966
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.2",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    1967,
+    1993
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.3",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    1994,
+    2011
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.4",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2012,
+    2038
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.5",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2039,
+    2056
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.6",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2057,
+    2083
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.7",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2084,
+    2101
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.8",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2102,
+    2128
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.11",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2129,
+    2146
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.12",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2147,
+    2173
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.9",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2174,
+    2191
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.10",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2192,
+    2218
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.13",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2219,
+    2233
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #8.14",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    2234,
+    2260
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser (up) #9",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 9,
+  "frames": [
+   [
+    2261,
+    2279
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser #9",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 9,
+  "frames": [
+   [
+    2280,
+    2342
+   ]
+  ]
+ },
+ {
+  "label": "left: carry eraser_eraser (down) #9",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 9,
+  "frames": [
+   [
+    2343,
+    2362
+   ]
+  ]
+ },
+ {
+  "label": "left: set down eraser_eraser #9",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 9,
+  "frames": [
+   [
+    2363,
+    2379
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of eraser_eraser #9",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 9,
+  "frames": [
+   [
+    2380,
+    2410
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat #9",
+  "hand": "left",
+  "objects": [
+   "eraser_eraser"
+  ],
+  "anchor": null,
+  "subgoal": 9,
+  "frames": [
+   [
+    2411,
+    2439
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker (up) #10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 10,
+  "frames": [
+   [
+    2440,
+    2462
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker #10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 10,
+  "frames": [
+   [
+    2463,
+    2524
+   ]
+  ]
+ },
+ {
+  "label": "right: carry marker_marker (down) #10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 10,
+  "frames": [
+   [
+    2525,
+    2552
+   ]
+  ]
+ },
+ {
+  "label": "right: set down marker_marker #10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 10,
+  "frames": [
+   [
+    2553,
+    2569
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of marker_marker #10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 10,
+  "frames": [
+   [
+    2570,
+    2592
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #10",
+  "hand": "right",
+  "objects": [
+   "marker_marker"
+  ],
+  "anchor": null,
+  "subgoal": 10,
+  "frames": [
+   [
+    2593,
+    2621
+   ]
+  ]
+ }
+]

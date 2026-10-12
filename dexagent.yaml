@@ -1,0 +1,129 @@
+# DexAgent run configuration.
+# Copy this file next to your data (or edit it in place), fill in `inputs`, and give it to every stage:
+#   python stage1_semantic_understanding/run_stage1.py my_run.yaml
+# Paths are relative to this file unless absolute. Leave a key at its default when you have nothing to put there.
+
+agent:                                 # the language model that runs the agent (required)
+  provider: anthropic                  # anthropic | openai (base_url for compatible endpoints) | external (file transport)
+  model: claude-opus-5-5               # model name, e.g. claude-opus-5-5, claude-sonnet-5-5, claude-fable-5-1
+  api_key: ""                          # your API key; empty = read ANTHROPIC_API_KEY (or OPENAI_API_KEY) from the environment
+  base_url: null                       # only for a self-hosted or OpenAI-compatible endpoint
+  budget_usd: null                     # REQUIRED for anthropic / openai: the run's spending cap in USD, across all its stages
+                                       # (runs/<name>/budget.json; a stage stops when it is spent, the agent is told at 90%).
+                                       # The external transport (a coding agent forked as a subagent) is capped by max_rounds
+  price_usd_per_mtok: {input: null, output: null}   # USD per million tokens; null = the list price of claude-opus-5 /
+                                       # claude-opus-5-5; any other model needs both (check your provider's pricing page)
+  tool_discovery: search              # search exposes requested schemas; all sends every tool in the stage categories
+
+run:
+  name: my_task                        # names the run; everything the stages write goes under output_dir/<name>/
+  output_dir: runs
+
+examples:                              # verified examples (asset reuse)
+  dir: examples                        # holds default/ (our verified samples) and asset_reuse/ (runs you saved)
+  reuse: true                          # the same recording as a shipped example (its certificate) reuses the example's results
+                                       # without calling the model: Stages 1-2 as recorded, Stage 3's trajectory shifted by the
+                                       # positional difference of the example's assets fitted to this video (arms re-solved by IK,
+                                       # never re-executed); set false for an evaluation from scratch
+  save_assets: false                   # true: a run whose stages all pass is saved to examples/asset_reuse/<run name> for later reuse
+
+inputs:
+  video: path/to/human_video.mp4       # the human demonstration, filmed by a camera that does not move
+  task: ""                             # optional one-sentence description of the task; Stage 1 infers it when empty
+  setup: setup                         # folder with setup.yaml + scene.xml: the table, the robot stations, the cameras (default: our bench)
+  library: tool_library                # the tool library the agent uses and extends
+  egodex_hdf5: null                    # optional: an EgoDex episode .hdf5; its .mp4 beside it is the video when `video` is not a file
+
+camera:                                # the camera that filmed `inputs.video`
+  source: setup                        # setup    = the `ego` camera of the setup folder, as calibrated there
+                                       # given    = the intrinsics/extrinsics below
+                                       # estimate = Stage 2 estimates the pose from the table plane in the video (needs intrinsics or fovy)
+  width: null                          # pixels; null = read from the video
+  height: null
+  fovy_deg: null                       # vertical field of view, or give fx/fy/cx/cy instead
+  intrinsics: {fx: null, fy: null, cx: null, cy: null}
+  extrinsics:                          # camera pose in the setup's frame (origin between the mounts on the tabletop, x right, y into the work, z up)
+    pos: null                          # [x, y, z] metres
+    quat_wxyz: null                    # MuJoCo convention: the camera looks along its -z axis, image up is +y
+    # or a 4x4 camera-to-world matrix in a text/npy file:
+    matrix_file: null
+
+stage1:                                # semantic understanding; see stage1_semantic_understanding/README.md
+  examples: [place_toy_in_drawer, knot_the_rope, computer_installation]   # worked examples shown to the model (their goals use the measurable goal language)
+  max_rounds: 100                      # model rounds (agent turns) before the stage stops; agent.budget_usd caps the money
+  max_wall_minutes: 60
+
+stage2:                                # scene reconstruction; see stage2_scene_reconstruction/README.md
+  max_rounds: 100
+  max_wall_minutes: 150
+
+stage3:                                # robot trajectory generation; see stage3_trajectory_generation/README.md
+  max_rounds: 100                      # the base round budget ...
+  rounds_per_subgoal: 0                # ... plus this many rounds per Stage 1 subgoal (e.g. 10 gives a 19-step build room a 3-step pick does not need)
+  max_rounds_cap: 300                  # the scaled budget never exceeds this
+  notes: ""                            # optional hints for the agent (e.g. which hand the robot should use)
+  max_wall_minutes: 240                # wall-clock budget besides the rounds; past it the agent has 3 rounds to finish or report
+  stall_note_executions: 10            # every physical execution is scored against the Stage 1 goals; after this many without
+  stall_stop_executions: 25            # improving the best, the agent is told to change strategy; after this many the search ends
+  stage4_draws: 3                      # randomized layouts Stage 3 verifies; 0 is diagnostic-only and cannot publish
+  strict_quality: true                 # required for release: timing, camera visibility and redundant motion also block
+  methods: [physics_informed_retargeting, sampling_mpc_refinement, reinforcement_learning_tracking]
+                                       # method modules run in order when the agent's search ends unfinished (budget, wall
+                                       # time, stall, blocked without naming an earlier stage): each is a library skill, called
+                                       # like an agent's, its episode executed, packaged and verified like an agent's; the
+                                       # first that passes finish is published. [] turns them off. See methods.py
+  methods_max_minutes: 180             # all method modules together: each gets what is left of this (its max_minutes / timeout_s)
+  method_options:                      # per-method arguments (the skills' own inputs)
+    physics_informed_retargeting: {source: plan, device: cuda:0}   # needs models.spider_dir + environments.spider and a GPU;
+                                       # without them it reports itself unavailable and the next method runs
+    sampling_mpc_refinement: {max_minutes: 30}
+    reinforcement_learning_tracking: {max_minutes: 60}
+
+compute:                               # CPU parallelism of the search tools (optimize_grasp_pose's stress tests)
+  workers: null                        # local processes; null = the CPUs available - 1, at most 8
+  launcher: null                       # optional command prefix that runs a batch elsewhere on a shared filesystem, e.g. [srun, --jobid=123, --overlap]; null = local
+
+repair:                                # cross-stage repair: report_blocked(upstream='stage1' | 'stage2', evidence) re-opens that earlier stage
+  max_loops_per_stage: 1               # how many times one stage may be re-opened in a run (the stages after it run again each time)
+
+stage4:                                # robot data generation; see stage4_robot_data_generation/README.md
+  # run_dexagent.py writes these into the stage4.json Stage 3 packaged before it starts Stage 4
+  num_samples: 3                       # randomized episodes to keep
+  seed: 0
+  views: [wrist_left, wrist_right]     # cameras to render besides `ego` (of those Stage 3 packaged); [] = ego only
+  render: {samples: 32, chunks: 4}     # Cycles samples per pixel, render processes per GPU
+
+models:                                # checkouts and weights; a tool call that leaves the matching argument out gets these
+  hf_home: null                        # Hugging Face cache for SAM 3 / SAM 2 / GeoCalib weights; null = $HF_HOME
+  void_dir: null                       # VOID checkout (Stage 4 clean plates)
+  hamer_root: null                     # HaMeR checkout with _DATA/ (hand meshes)
+  sam3d_repo: null                     # SAM 3D Objects checkout (object meshes)
+  sam2_checkpoint: null                # SAM 2.1 checkpoint .pt (track_objects); null = download from Hugging Face
+  video_depth_anything_dir: null       # Video-Depth-Anything checkout (estimate_depth)
+  video_depth_anything_ckpt: null      # its metric_video_depth_anything_vitl.pth
+  articraft_dir: null                  # ArtiCraft checkout (articulated objects); the built-in URDF writer is used without it
+  bodex_dir: null                      # BODex checkout (grasp_prior_bodex); with its Python under environments.bodex
+  dexgraspnet_dir: null                # DexGraspNet checkout prepared for the hand (grasp_prior_dexgraspnet); Python under environments.dexgraspnet
+  hand_urdf: null                      # URDF of the hand for DexGraspNet / pytorch_kinematics (joint names as in the MJCF hand)
+  spider_dir: null                     # SPIDER checkout (github.com/facebookresearch/spider): the optimizer of Stage 3's physics_informed_retargeting
+
+environments:                          # Python interpreters for tools whose packages live in another environment; null = this interpreter
+  sam3: null                           # e.g. /opt/envs/sam3/bin/python  (detect_objects, segment_with_text_prompts)
+  sam2: null                           # track_objects
+  hamer: null                          # extract_hand_meshes
+  sam3d: null                          # reconstruct_object_meshes (SAM 3D Objects)
+  depth: null                          # estimate_depth, estimate_gravity
+  isaac: null                          # Isaac Sim 5.0 Python with mujoco installed: deformable objects (Stage 2 build_isaac_scene, Stage 3 execute_isaac_deformables, Stage 4 replays)
+  bodex: null                          # BODex / cuRobo Python (grasp_prior_bodex)
+  dexgraspnet: null                    # DexGraspNet Python (grasp_prior_dexgraspnet)
+  spider: null                         # SPIDER's Python (mujoco, mujoco_warp, warp-lang, torch with CUDA, hydra-core; physics_informed_retargeting)
+  stage4: null                         # the Stage 4 environment (stage4_robot_data_generation/setup.sh); run_dexagent.py launches Stage 4 with it
+
+tool_environments:                     # tool name -> environment name above; tools not listed run in this interpreter
+  detect_objects: sam3
+  segment_with_text_prompts: sam3
+  track_objects: sam2
+  extract_hand_meshes: hamer
+  reconstruct_object_meshes: sam3d
+  estimate_depth: depth
+  estimate_gravity: depth

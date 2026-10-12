@@ -1,0 +1,10 @@
+{
+ "stage": "stage3",
+ "status": "blocked",
+ "reason": "Stage 3 cannot synthesize the two opening grasps honestly. (1) Stage 2 defect: the cable's asset_xml (../stage2/assets/usb_c_cable/cable.xml, referenced by scene_recon.json) is a bare composite cable with NO USB-C plug, while ../stage2/scene.xml carries the plug housing and tip on usb_c_cable_cableB_last. hand_scene_from_recon builds the floating-hand scenes from asset_xml, so every grasp skill and stress test sees only the 3.2 mm cord capsule (generate_rigid_grasps object_extent z 1.8-5.0 mm, 0/168; generate_flat_pinches footprint 3.2 x 21 mm, 0/24 twice; pinch_support_clearance_check object = usb_c_cable_cableG98 radius 1.6 mm). A plug pose solved there is not the pose the bench needs; Stage 2 must re-export the plug-carrying cable asset. (2) Library gap: no grasp skill yields a pose for the 9 mm thin, 72 mm wide phone lying flat (generate_flat_pinches auto->pencil with both pads on the top face, down -> mid-height contact rejected for table overlap 0/6 and 0/8; generate_rigid_grasps 0/168; pose_from_points 33-48 mm residual). Without both grasps no subgoal can be executed, so there is no trajectory to verify.",
+ "finish_attempts": 1,
+ "last_finish": [
+  "trajectory_manifest_check: AttributeError: 'NoneType' object has no attribute 'get'",
+  "stage3_gate_suite: trajectory.npz is missing"
+ ]
+}

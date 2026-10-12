@@ -1,0 +1,95 @@
+{
+ "task": "build_unstake_lego",
+ "description": "Stake lego bricks to build freely in any form on a blue tablecloth.",
+ "description2": "Unstake lego bricks to disassemble the built structure on a blue tablecloth.",
+ "dataset_objects": [
+  "lego"
+ ],
+ "environment": "tablecloth:blue, position:sitting, background:pink, from:table",
+ "n_frames": 388,
+ "fps": 30.0,
+ "width": 1920,
+ "height": 1080,
+ "frame": 0,
+ "table_height_world": 1.1076288743019105,
+ "rig": {
+  "R_world_rig": [
+   [
+    0.9970080345731498,
+    -0.07729798830878434,
+    0.0
+   ],
+   [
+    0.0,
+    0.0,
+    1.0
+   ],
+   [
+    -0.07729798830878434,
+    -0.9970080345731498,
+    0.0
+   ]
+  ],
+  "origin_world": [
+   -0.02924589546230539,
+   1.1076288743019105,
+   -0.13578177908857603
+  ],
+  "cam_xy": [
+   0.019,
+   0.05
+  ]
+ },
+ "fingertips_px_z": {
+  "leftThumbTip": [
+   996.3,
+   777.3,
+   0.0848
+  ],
+  "leftIndexFingerTip": [
+   988.3,
+   708.6,
+   0.1136
+  ],
+  "leftMiddleFingerTip": [
+   969.8,
+   703.5,
+   0.1141
+  ],
+  "leftRingFingerTip": [
+   951.1,
+   727.4,
+   0.0944
+  ],
+  "leftLittleFingerTip": [
+   904.2,
+   734.5,
+   0.0897
+  ],
+  "rightThumbTip": [
+   1249.5,
+   881.8,
+   0.0603
+  ],
+  "rightIndexFingerTip": [
+   1328.2,
+   957.0,
+   0.0435
+  ],
+  "rightMiddleFingerTip": [
+   1368.3,
+   971.0,
+   0.04
+  ],
+  "rightRingFingerTip": [
+   1380.1,
+   954.1,
+   0.0369
+  ],
+  "rightLittleFingerTip": [
+   1431.9,
+   944.5,
+   0.0442
+  ]
+ }
+}

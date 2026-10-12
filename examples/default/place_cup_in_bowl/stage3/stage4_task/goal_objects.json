@@ -1,0 +1,20 @@
+{
+ "objects": [
+  {
+   "id": "cup",
+   "type": "rigid",
+   "root_body": "cup_cup",
+   "bodies": [
+    "cup_cup"
+   ]
+  },
+  {
+   "id": "bowl",
+   "type": "rigid",
+   "root_body": "bowl_bowl",
+   "bodies": [
+    "bowl_bowl"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "side": "right",
+ "pos": [
+  0.012502342489835741,
+  0.23501706663680416,
+  0.13327342203771342
+ ],
+ "euler": [
+  -2.242905264186178,
+  -0.057990969342950116,
+  1.722100034409026
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": -0.1745,
+  "thumb_CMC_AA": -0.3491,
+  "thumb_MCP_FE": -0.5236,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "finger_targets_open": {
+  "thumb_CMC_FE": -0.1745,
+  "thumb_CMC_AA": -0.3491,
+  "thumb_MCP_FE": -0.5236,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "grip_fingers": [
+  "index",
+  "middle"
+ ],
+ "contact_side": "pad",
+ "thumb": "out",
+ "pitch_deg": 10.0,
+ "press_travel_m": 0.004,
+ "face_offset_m": 0.025,
+ "overlap_mm": 6.5,
+ "approach": [
+  0.15825204982047492,
+  0.477252078152582,
+  0.8643996428890168
+ ],
+ "approach_kind": "normal",
+ "gap_before_m": -0.0016,
+ "normals": {
+  "index": [
+   0.1582520498204749,
+   0.47725207815258197,
+   0.8643996428890167
+  ],
+  "middle": [
+   0.1582520498204749,
+   0.47725207815258197,
+   0.8643996428890167
+  ]
+ },
+ "points": {
+  "index": [
+   -0.027702168274944407,
+   0.3865497741012921,
+   0.023879818698572954
+  ],
+  "middle": [
+   -0.007764630934188617,
+   0.38829936753408306,
+   0.019263720939748714
+  ]
+ },
+ "reach_optimized": {
+  "rotation_deg": {
+   "primary": 45.0,
+   "tilt": 15.0
+  },
+  "axes": {
+   "primary": [
+    -0.3636,
+    -0.3165,
+    -0.8761
+   ],
+   "tilt": [
+    -0.5585,
+    -0.6787,
+    0.477
+   ]
+  },
+  "pivot": [
+   -0.016,
+   0.3928,
+   0.0313
+  ]
+ }
+}

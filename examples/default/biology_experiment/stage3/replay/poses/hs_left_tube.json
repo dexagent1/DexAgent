@@ -1,0 +1,120 @@
+{
+ "hand_xml": "${SETUP}/robot/sharpa_left.xml",
+ "side": "left",
+ "objects": [
+  {
+   "name": "tube_rack",
+   "xml": "${STAGE2}/assets/tube_rack/rack.xml",
+   "pos": [
+    0.155963,
+    0.388818,
+    -1e-06
+   ],
+   "quat": [
+    0.996823070894965,
+    5.378655842955113e-06,
+    -1.7900519477344314e-07,
+    -0.07964775767446115
+   ]
+  },
+  {
+   "name": "rack_tube",
+   "xml": "${STAGE2}/assets/rack_tube/srctube.xml",
+   "pos": [
+    0.138215,
+    0.391667,
+    0.003998
+   ],
+   "quat": [
+    0.9968234387979664,
+    4.470467173997751e-06,
+    -2.7069401053584486e-06,
+    -0.07964315309983921
+   ]
+  },
+  {
+   "name": "pipette",
+   "xml": "${STAGE2}/assets/pipette/pipette.xml",
+   "pos": [
+    0.204593,
+    0.387026,
+    -1e-05
+   ],
+   "quat": [
+    -0.46043400002116075,
+    0.01584744000072832,
+    -0.11851070000544653,
+    0.8796048000404251
+   ]
+  },
+  {
+   "name": "tip_box",
+   "xml": "${STAGE2}/assets/tip_box/tipbox.xml",
+   "pos": [
+    -0.1439,
+    0.3945,
+    -0.0
+   ],
+   "quat": [
+    0.975935832462297,
+    -6.765921225053059e-07,
+    -1.3810810459385357e-07,
+    0.21805790725320282
+   ]
+  },
+  {
+   "name": "held",
+   "xml": "${STAGE2}/assets/tube/tube.xml",
+   "pos": [
+    0.102685,
+    0.397387,
+    0.003998
+   ],
+   "quat": [
+    0.9968220926898083,
+    4.054965970262919e-06,
+    -1.463284989269004e-06,
+    -0.07965999941581363
+   ]
+  }
+ ],
+ "floor": true,
+ "grasp_body": "held_tube",
+ "joint_init": {
+  "pipette_pipette_blow": -8.552062e-05,
+  "pipette_pipette_plunge": 2.903732e-05,
+  "pipette_pipette_eject": 1.336535e-05,
+  "pipette_pipette_jawslide0": -8.241516e-11,
+  "pipette_pipette_jawslide1": -3.840985e-11,
+  "pipette_pipette_jawslide2": 6.446204e-10,
+  "pipette_pipette_jawslide3": 2.400247e-05,
+  "tip_box_tipbox_hinge": 1.747599,
+  "tip_box_tipbox_tip_free": [
+   -0.08569868,
+   0.3870715,
+   0.009997738,
+   0.9664851705843464,
+   0.0033759828972495937,
+   -0.0023280259291448987,
+   0.2566896921874693
+  ]
+ },
+ "bench_scene": "${STAGE2}/scene.xml",
+ "target": "tube",
+ "target_root": "held_tube",
+ "grasp_body_pose": {
+  "body": "held_tube",
+  "pos": [
+   0.102685,
+   0.397387,
+   0.003998
+  ],
+  "quat_wxyz": [
+   0.9968220926898083,
+   4.054965970262919e-06,
+   -1.463284989269004e-06,
+   -0.07965999941581363
+  ]
+ },
+ "held_in_air": []
+}

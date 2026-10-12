@@ -1,0 +1,56 @@
+{
+ "shift": [
+  0.0,
+  -0.075
+ ],
+ "scene": "scene_stations.xml",
+ "reached": {
+  "holder_battery_holder": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 44.3
+  },
+  "battery_battery": {
+   "reached": 5,
+   "centre": true,
+   "worst_mm": 0.0
+  }
+ },
+ "poses_held": [],
+ "before": {
+  "holder_battery_holder": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 79.2
+  },
+  "battery_battery": {
+   "reached": 1,
+   "centre": false,
+   "worst_mm": 16.3
+  }
+ },
+ "home_weld_mm_deg": {
+  "left": [
+   0.0,
+   2.6694654798162853e-15
+  ],
+  "right": [
+   0.0,
+   2.306978382188081e-15
+  ]
+ },
+ "candidates": [
+  {
+   "shift": [
+    0.0,
+    -0.075
+   ],
+   "reached": 5,
+   "poses_held": 0,
+   "pose_err_mm": 0.0,
+   "all_centres": false,
+   "worst_mm": 44.3
+  }
+ ],
+ "note": "stations moved -0.075 m toward the objects; use scene_stations.xml for Stage 3 and Stage 4"
+}

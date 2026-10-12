@@ -1,0 +1,29 @@
+<mujoco model="battery_cell">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <material name="battery_black" rgba="0.3030 0.3000 0.3160 1.0000" specular="0.3" shininess="0.55" />
+    <material name="battery_copper" rgba="0.7200 0.4500 0.2000 1.0000" specular="0.75" shininess="0.9" reflectance="0.25" />
+    <material name="battery_steel" rgba="0.7500 0.7600 0.7800 1.0000" specular="0.75" shininess="0.9" reflectance="0.3" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="battery" pos="0.000000 0.000000 0.000000" quat="1 0 0 0">
+      <freejoint name="battery_free" />
+      <geom name="battery_can" type="cylinder" size="0.005250 0.021850" pos="0 0 0.021850" mass="0.0115" material="battery_black" rgba="0.3030 0.3000 0.3160 1.0000" friction="0.850000 0.008000 0.000200" />
+      <geom name="battery_button" type="sphere" size="0.001900" pos="0 0 0.042600" mass="0" rgba="0.7500 0.7600 0.7800 1.0000" group="3" friction="0.850000 0.008000 0.000200" />
+      <geom type="cylinder" size="0.001900 0.000400" pos="0 0 0.044100" mass="0" material="battery_steel" rgba="0.7500 0.7600 0.7800 1.0000" contype="0" conaffinity="0" />
+      <geom type="sphere" size="0.001200" pos="0.003000 0.000000 0.001050" mass="0" rgba="0.7500 0.7600 0.7800 1.0000" group="3" friction="0.850000 0.008000 0.000200" />
+      <geom type="sphere" size="0.001200" pos="-0.001500 0.002598 0.001050" mass="0" rgba="0.7500 0.7600 0.7800 1.0000" group="3" friction="0.850000 0.008000 0.000200" />
+      <geom type="sphere" size="0.001200" pos="-0.001500 -0.002598 0.001050" mass="0" rgba="0.7500 0.7600 0.7800 1.0000" group="3" friction="0.850000 0.008000 0.000200" />
+      <geom type="cylinder" size="0.005300 0.006555" pos="0 0 0.037145" material="battery_copper" rgba="0.7200 0.4500 0.2000 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom type="cylinder" size="0.005300 0.000600" pos="0 0 0.000600" material="battery_copper" rgba="0.7200 0.4500 0.2000 1.0000" contype="0" conaffinity="0" mass="0" />
+      <geom type="cylinder" size="0.002888 0.0001" pos="0 0 0.0001" material="battery_steel" rgba="0.7500 0.7600 0.7800 1.0000" contype="0" conaffinity="0" mass="0" />
+    </body>
+  </worldbody>
+</mujoco>

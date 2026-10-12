@@ -1,0 +1,23 @@
+{
+ "schema": "dexagent.example_certificate.v1",
+ "task": "giftbox_packing",
+ "source_video_sha256": "aa2b94f62cce75cbd7a3329e1291ef2b77820b9cbb8184f17314dbc6eb101910",
+ "frame0": {
+  "path": "frame0.jpg",
+  "source": "the first frame of the recording",
+  "signature": "frame0_signature.npz"
+ },
+ "masks": [
+  {
+   "path": "masks/gift_box.png",
+   "role": "object",
+   "object": "gift_box",
+   "pixels_sha256": "44216afcb19cb70c15127de8e03506bb3b3d6e3f27ca565f093f840f51b56da7"
+  },
+  {
+   "path": "masks/hands.png",
+   "role": "hands",
+   "pixels_sha256": "4893b67902beb55ac806ff0fae2fbc7914e8626ac0b7adfba1ae59729c746cda"
+  }
+ ]
+}

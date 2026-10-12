@@ -1,0 +1,114 @@
+{
+ "side": "right",
+ "pos": [
+  0.04795337188942181,
+  0.38252862521510506,
+  0.16560018460056117
+ ],
+ "euler": [
+  3.1519534322105764,
+  0.9381582528031871,
+  1.9772161206719512
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 0.4816352021707564,
+  "thumb_CMC_AA": -0.15180163583361705,
+  "thumb_MCP_FE": 0.010379927017655314,
+  "thumb_MCP_AA": -0.2545800911616181,
+  "thumb_IP": 0.44160160869615184,
+  "index_MCP_FE": 0.13241075990652773,
+  "index_MCP_AA": -0.18111529113669295,
+  "index_PIP": 0.3859900465270506,
+  "index_DIP": 0.34206710647457744,
+  "middle_MCP_FE": 0.9599334745000001,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 1.1344450000000001,
+  "middle_DIP": 0.907595,
+  "ring_MCP_FE": 0.9599334745000001,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.1344450000000001,
+  "ring_DIP": 0.907595,
+  "pinky_CMC": 0.17017,
+  "pinky_MCP_FE": 0.9599334745000001,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.1344450000000001,
+  "pinky_DIP": 0.907595
+ },
+ "finger_targets_squeezed": {
+  "thumb_CMC_FE": 0.4749543261072041,
+  "thumb_CMC_AA": -0.13240500702994737,
+  "thumb_MCP_FE": 0.025085515425153082,
+  "thumb_MCP_AA": -0.2538688409024934,
+  "thumb_IP": 0.45478371328528616,
+  "index_MCP_FE": 0.10300308523272787,
+  "index_MCP_AA": -0.20463533405278075,
+  "index_PIP": 0.46949360336557977,
+  "index_DIP": 0.402482074183091,
+  "middle_MCP_FE": 0.9599334745000001,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 1.1344450000000001,
+  "middle_DIP": 0.907595,
+  "ring_MCP_FE": 0.9599334745000001,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.1344450000000001,
+  "ring_DIP": 0.907595,
+  "pinky_CMC": 0.17017,
+  "pinky_MCP_FE": 0.9599334745000001,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.1344450000000001,
+  "pinky_DIP": 0.907595
+ },
+ "grip_fingers": [
+  "index",
+  "thumb"
+ ],
+ "approach": [
+  -0.3305897059482059,
+  0.1120271430469857,
+  0.9371021105204111
+ ],
+ "open_frac": 0.1,
+ "press_depth_rad": 0.12,
+ "points": {
+  "thumb": [
+   0.05109970554430426,
+   0.35856832504818004,
+   0.016
+  ],
+  "index": [
+   0.15035856881306242,
+   0.370720611359569,
+   0.016
+  ]
+ },
+ "normals": {
+  "thumb": [
+   -0.9925886326865888,
+   -0.12152286311376975,
+   0.0
+  ],
+  "index": [
+   0.9925886326865897,
+   0.12152286311376291,
+   0.0
+  ]
+ },
+ "pinch": {
+  "axis": "short",
+  "thumb_side": "+",
+  "along": 0.0,
+  "fingers": [
+   "index"
+  ],
+  "z": 0.016,
+  "grip": null,
+  "contact_deg": null
+ },
+ "family": "flat_pinch_short",
+ "hold": {
+  "opposed": true,
+  "opposition_deg": 180.0,
+  "need_n": 7.92
+ },
+ "_note": "generate_flat_pinches on a 600 g construct_hard_disk drive (133 x 92 x 24 mm) lying at (0.1, 0.3706) yaw -173 deg: thumb against the index across the width through its centre"
+}

@@ -1,0 +1,29 @@
+{
+ "schema": "dexagent.example_certificate.v1",
+ "task": "battery_insertion",
+ "source_video_sha256": "bfe9bbf7460173ed5fc1616326cb059263db213f051720f1aaa84cbbaceb1b08",
+ "frame0": {
+  "path": "frame0.jpg",
+  "source": "the first frame of the recording",
+  "signature": "frame0_signature.npz"
+ },
+ "masks": [
+  {
+   "path": "masks/battery_holder.png",
+   "role": "object",
+   "object": "battery_holder",
+   "pixels_sha256": "478d6226b1afcaa8c7cb7d4abbc5f79798fd0dbbac1e860c971f55f1df0af9e7"
+  },
+  {
+   "path": "masks/battery.png",
+   "role": "object",
+   "object": "battery",
+   "pixels_sha256": "0fa79b613e4046eaa1bc50286e75478c35baaaba226f4f72cc93033d1a64b43f"
+  },
+  {
+   "path": "masks/hands.png",
+   "role": "hands",
+   "pixels_sha256": "4893b67902beb55ac806ff0fae2fbc7914e8626ac0b7adfba1ae59729c746cda"
+  }
+ ]
+}

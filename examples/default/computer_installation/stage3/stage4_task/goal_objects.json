@@ -1,0 +1,36 @@
+{
+ "objects": [
+  {
+   "id": "pc_case",
+   "type": "rigid",
+   "root_body": "pc_case_pc_case",
+   "bodies": [
+    "pc_case_pc_case"
+   ]
+  },
+  {
+   "id": "disk_1",
+   "type": "rigid",
+   "root_body": "disk_1_disk_1",
+   "bodies": [
+    "disk_1_disk_1"
+   ]
+  },
+  {
+   "id": "disk_2",
+   "type": "rigid",
+   "root_body": "disk_2_disk_2",
+   "bodies": [
+    "disk_2_disk_2"
+   ]
+  },
+  {
+   "id": "disk_3",
+   "type": "rigid",
+   "root_body": "disk_3_disk_3",
+   "bodies": [
+    "disk_3_disk_3"
+   ]
+  }
+ ]
+}

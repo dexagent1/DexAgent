@@ -1,0 +1,197 @@
+[
+ {
+  "label": "left: reach for cup_cup #1",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "cup_cup",
+  "subgoal": 1,
+  "frames": [
+   [
+    0,
+    62
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on cup_cup #1",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "cup_cup",
+  "subgoal": 1,
+  "frames": [
+   [
+    63,
+    88
+   ]
+  ]
+ },
+ {
+  "label": "left: close on cup_cup #1",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "cup_cup",
+  "subgoal": 1,
+  "frames": [
+   [
+    89,
+    128
+   ]
+  ]
+ },
+ {
+  "label": "left: grip cup_cup #1",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "cup_cup",
+  "subgoal": 1,
+  "frames": [
+   [
+    129,
+    145
+   ]
+  ]
+ },
+ {
+  "label": "left: lift cup_cup #1",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "cup_cup",
+  "subgoal": 1,
+  "frames": [
+   [
+    146,
+    177
+   ]
+  ]
+ },
+ {
+  "label": "left: carry cup_cup #2",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "bowl_bowl",
+  "subgoal": 2,
+  "frames": [
+   [
+    178,
+    224
+   ]
+  ]
+ },
+ {
+  "label": "left: carry cup_cup (up) #3",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "bowl_bowl",
+  "subgoal": 3,
+  "frames": [
+   [
+    225,
+    237
+   ]
+  ]
+ },
+ {
+  "label": "left: carry cup_cup #3",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "bowl_bowl",
+  "subgoal": 3,
+  "frames": [
+   [
+    238,
+    259
+   ]
+  ]
+ },
+ {
+  "label": "left: carry cup_cup (down) #3",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "bowl_bowl",
+  "subgoal": 3,
+  "frames": [
+   [
+    260,
+    288
+   ]
+  ]
+ },
+ {
+  "label": "left: set down cup_cup #3",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "bowl_bowl",
+  "subgoal": 3,
+  "frames": [
+   [
+    289,
+    350
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of cup_cup #3",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "bowl_bowl",
+  "subgoal": 3,
+  "frames": [
+   [
+    351,
+    406
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat #3",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "bowl_bowl",
+  "subgoal": 3,
+  "frames": [
+   [
+    407,
+    447
+   ]
+  ]
+ },
+ {
+  "label": "left: settle after release of cup_cup #3",
+  "hand": "left",
+  "objects": [
+   "cup_cup"
+  ],
+  "anchor": "bowl_bowl",
+  "subgoal": 3,
+  "frames": [
+   [
+    448,
+    471
+   ]
+  ]
+ }
+]

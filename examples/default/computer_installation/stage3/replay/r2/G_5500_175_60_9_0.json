@@ -1,0 +1,75 @@
+{
+ "side": "right",
+ "pos": [
+  0.06011730453474647,
+  0.34829295399685545,
+  0.3974533609332166
+ ],
+ "euler": [
+  -2.1874958462576446,
+  0.3324777038428184,
+  1.0244267764350097
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 1.3962999999999997,
+  "thumb_CMC_AA": 0.0,
+  "thumb_MCP_FE": 0.5323450000000002,
+  "thumb_MCP_AA": 0.0,
+  "thumb_IP": 0.785385,
+  "index_MCP_FE": 0.1047203388,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.069812,
+  "index_DIP": 0.055852000000000006,
+  "middle_MCP_FE": 1.221733414,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 1.483505,
+  "middle_DIP": 0.97741,
+  "ring_MCP_FE": 1.221733414,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.483505,
+  "ring_DIP": 0.97741,
+  "pinky_CMC": 0.10472,
+  "pinky_MCP_FE": 1.221733414,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.483505,
+  "pinky_DIP": 0.97741
+ },
+ "grip_fingers": [
+  "index"
+ ],
+ "residual_mm": {
+  "index": 0.0
+ },
+ "worst_residual_mm": 0.0,
+ "overlap_mm": 0.0,
+ "palm_facing": 0.666,
+ "finger_alignment": 1.0,
+ "standoff_m": 0.015,
+ "point": [
+  0.10404690745673838,
+  0.4888983367155535,
+  0.25588011007665223
+ ],
+ "normal": [
+  -0.011695538700083193,
+  -0.5178468610200627,
+  0.8553933848845119
+ ],
+ "reach_optimized": {
+  "rotation_deg": {
+   "primary": 27.5
+  },
+  "axes": {
+   "primary": [
+    0.4911,
+    -0.6325,
+    -0.5989
+   ]
+  },
+  "pivot": [
+   0.1039,
+   0.4811,
+   0.2687
+  ]
+ }
+}

@@ -1,0 +1,1324 @@
+[
+ {
+  "label": "left: reach to hold meal_box_mealbox_lid #1.1",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    0,
+    72
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on meal_box_mealbox_lid #1.1",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    73,
+    98
+   ]
+  ]
+ },
+ {
+  "label": "left: close on meal_box_mealbox_lid #1.1",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    99,
+    118
+   ]
+  ]
+ },
+ {
+  "label": "left: hold meal_box_mealbox_lid #1.1",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    119,
+    135
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for meal_box_mealbox_lid #1.2",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    136,
+    204
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on meal_box_mealbox_lid #1.2",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    205,
+    230
+   ]
+  ]
+ },
+ {
+  "label": "right: close on meal_box_mealbox_lid #1.2",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    231,
+    250
+   ]
+  ]
+ },
+ {
+  "label": "right: grip meal_box_mealbox_lid #1.2",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    251,
+    267
+   ]
+  ]
+ },
+ {
+  "label": "right: lift meal_box_mealbox_lid #1.2",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 1,
+  "frames": [
+   [
+    268,
+    299
+   ]
+  ]
+ },
+ {
+  "label": "right: carry meal_box_mealbox_lid #2",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    300,
+    362
+   ]
+  ]
+ },
+ {
+  "label": "right: carry meal_box_mealbox_lid (up) #3.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    363,
+    374
+   ]
+  ]
+ },
+ {
+  "label": "right: carry meal_box_mealbox_lid #3.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    375,
+    392
+   ]
+  ]
+ },
+ {
+  "label": "right: carry meal_box_mealbox_lid (down) #3.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    393,
+    405
+   ]
+  ]
+ },
+ {
+  "label": "right: set down meal_box_mealbox_lid #3.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    406,
+    422
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of meal_box_mealbox_lid #3.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    423,
+    445
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #3.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    446,
+    474
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of meal_box_mealbox_lid #3.2",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    475,
+    498
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat #3.2",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    499,
+    527
+   ]
+  ]
+ },
+ {
+  "label": "left: return home #3.3",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    528,
+    600
+   ]
+  ]
+ },
+ {
+  "label": "left: approach for push #3.4",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 3,
+  "frames": [
+   [
+    601,
+    660
+   ]
+  ]
+ },
+ {
+  "label": "left: contact #3.4",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 3,
+  "frames": [
+   [
+    661,
+    674
+   ]
+  ]
+ },
+ {
+  "label": "left: press meal_box_mealbox_lid #3.4",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 3,
+  "frames": [
+   [
+    675,
+    712
+   ]
+  ]
+ },
+ {
+  "label": "left: back off #3.4",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 3,
+  "frames": [
+   [
+    713,
+    732
+   ]
+  ]
+ },
+ {
+  "label": "right: return home #3.5",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 3,
+  "frames": [
+   [
+    733,
+    813
+   ]
+  ]
+ },
+ {
+  "label": "right: approach for push #3.6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 3,
+  "frames": [
+   [
+    814,
+    874
+   ]
+  ]
+ },
+ {
+  "label": "right: contact #3.6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 3,
+  "frames": [
+   [
+    875,
+    888
+   ]
+  ]
+ },
+ {
+  "label": "right: press meal_box_mealbox_lid #3.6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 3,
+  "frames": [
+   [
+    889,
+    926
+   ]
+  ]
+ },
+ {
+  "label": "right: back off #3.6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_lid"
+  ],
+  "anchor": "meal_box_mealbox_lid",
+  "subgoal": 3,
+  "frames": [
+   [
+    927,
+    946
+   ]
+  ]
+ },
+ {
+  "label": "left: return home #4.1",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    947,
+    1003
+   ]
+  ]
+ },
+ {
+  "label": "right: return home #4.2",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1004,
+    1071
+   ]
+  ]
+ },
+ {
+  "label": "left: reach for meal_box_mealbox_latch_yn | right: reach for meal_box_mealbox_latch_yp #4.3",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_yp"
+  ],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1072,
+    1102
+   ]
+  ]
+ },
+ {
+  "label": "left: reach for meal_box_mealbox_latch_yn | right: reach for meal_box_mealbox_latch_yp #4.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_yn"
+  ],
+  "anchor": "meal_box_mealbox_latch_yn",
+  "subgoal": 4,
+  "frames": [
+   [
+    1072,
+    1102
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for meal_box_mealbox_latch_yp | left: reach for meal_box_mealbox_latch_yn #4.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_yn"
+  ],
+  "anchor": "meal_box_mealbox_latch_yn",
+  "subgoal": 4,
+  "frames": [
+   [
+    1103,
+    1134
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for meal_box_mealbox_latch_yp | left: reach for meal_box_mealbox_latch_yn #4.3",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_yp"
+  ],
+  "anchor": "meal_box_mealbox_latch_yp",
+  "subgoal": 4,
+  "frames": [
+   [
+    1103,
+    1134
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on meal_box_mealbox_latch_yn | right: descend on meal_box_mealbox_latch_yp #4.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_yn"
+  ],
+  "anchor": "meal_box_mealbox_latch_yn",
+  "subgoal": 4,
+  "frames": [
+   [
+    1135,
+    1160
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on meal_box_mealbox_latch_yn | right: descend on meal_box_mealbox_latch_yp #4.3",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_yp"
+  ],
+  "anchor": "meal_box_mealbox_latch_yp",
+  "subgoal": 4,
+  "frames": [
+   [
+    1135,
+    1160
+   ]
+  ]
+ },
+ {
+  "label": "left: close on meal_box_mealbox_latch_yn | right: close on meal_box_mealbox_latch_yp #4.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_yn"
+  ],
+  "anchor": "meal_box_mealbox_latch_yn",
+  "subgoal": 4,
+  "frames": [
+   [
+    1161,
+    1180
+   ]
+  ]
+ },
+ {
+  "label": "left: close on meal_box_mealbox_latch_yn | right: close on meal_box_mealbox_latch_yp #4.3",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_yp"
+  ],
+  "anchor": "meal_box_mealbox_latch_yp",
+  "subgoal": 4,
+  "frames": [
+   [
+    1161,
+    1180
+   ]
+  ]
+ },
+ {
+  "label": "left: grip meal_box_mealbox_latch_yn | right: grip meal_box_mealbox_latch_yp #4.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_yn"
+  ],
+  "anchor": "meal_box_mealbox_latch_yn",
+  "subgoal": 4,
+  "frames": [
+   [
+    1181,
+    1197
+   ]
+  ]
+ },
+ {
+  "label": "left: grip meal_box_mealbox_latch_yn | right: grip meal_box_mealbox_latch_yp #4.3",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_yp"
+  ],
+  "anchor": "meal_box_mealbox_latch_yp",
+  "subgoal": 4,
+  "frames": [
+   [
+    1181,
+    1197
+   ]
+  ]
+ },
+ {
+  "label": "left: close meal_box_mealbox_latch_yn | right: close meal_box_mealbox_latch_yp #4.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_yn"
+  ],
+  "anchor": "meal_box_mealbox_latch_yn",
+  "subgoal": 4,
+  "frames": [
+   [
+    1198,
+    1292
+   ]
+  ]
+ },
+ {
+  "label": "left: close meal_box_mealbox_latch_yn | right: close meal_box_mealbox_latch_yp #4.3",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_yp"
+  ],
+  "anchor": "meal_box_mealbox_latch_yp",
+  "subgoal": 4,
+  "frames": [
+   [
+    1198,
+    1292
+   ]
+  ]
+ },
+ {
+  "label": "left: let go | right: let go #4.3",
+  "hand": "right",
+  "objects": [],
+  "anchor": "meal_box_mealbox_latch_yp",
+  "subgoal": 4,
+  "frames": [
+   [
+    1293,
+    1303
+   ]
+  ]
+ },
+ {
+  "label": "left: let go | right: let go #4.3",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1293,
+    1303
+   ]
+  ]
+ },
+ {
+  "label": "right: let go | left: let go #4.3",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1304,
+    1315
+   ]
+  ]
+ },
+ {
+  "label": "right: let go | left: let go #4.3",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1304,
+    1315
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat | right: retreat #4.3",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1316,
+    1344
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat | right: retreat #4.3",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 4,
+  "frames": [
+   [
+    1316,
+    1344
+   ]
+  ]
+ },
+ {
+  "label": "right: return home #5.1",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    1345,
+    1405
+   ]
+  ]
+ },
+ {
+  "label": "left: approach for rotate #5.2",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1406,
+    1458
+   ]
+  ]
+ },
+ {
+  "label": "left: contact #5.2",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1459,
+    1472
+   ]
+  ]
+ },
+ {
+  "label": "left: press for rotate #5.2",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1473,
+    1486
+   ]
+  ]
+ },
+ {
+  "label": "left: rotate meal_box_mealbox_container #5.2",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1487,
+    1581
+   ]
+  ]
+ },
+ {
+  "label": "left: approach for rotate #5.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1582,
+    1608
+   ]
+  ]
+ },
+ {
+  "label": "left: contact #5.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1609,
+    1622
+   ]
+  ]
+ },
+ {
+  "label": "left: press for rotate #5.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1623,
+    1636
+   ]
+  ]
+ },
+ {
+  "label": "left: rotate meal_box_mealbox_container #5.3",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1637,
+    1732
+   ]
+  ]
+ },
+ {
+  "label": "left: approach for rotate #5.4",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1733,
+    1759
+   ]
+  ]
+ },
+ {
+  "label": "left: contact #5.4",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1760,
+    1773
+   ]
+  ]
+ },
+ {
+  "label": "left: press for rotate #5.4",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1774,
+    1787
+   ]
+  ]
+ },
+ {
+  "label": "left: rotate meal_box_mealbox_container #5.4",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1788,
+    1883
+   ]
+  ]
+ },
+ {
+  "label": "left: approach for rotate #5.5",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1884,
+    1913
+   ]
+  ]
+ },
+ {
+  "label": "left: contact #5.5",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1914,
+    1927
+   ]
+  ]
+ },
+ {
+  "label": "left: press for rotate #5.5",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1928,
+    1941
+   ]
+  ]
+ },
+ {
+  "label": "left: rotate meal_box_mealbox_container #5.5",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    1942,
+    2037
+   ]
+  ]
+ },
+ {
+  "label": "left: approach for rotate #5.6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    2038,
+    2066
+   ]
+  ]
+ },
+ {
+  "label": "left: contact #5.6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    2067,
+    2080
+   ]
+  ]
+ },
+ {
+  "label": "left: press for rotate #5.6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    2081,
+    2094
+   ]
+  ]
+ },
+ {
+  "label": "left: rotate meal_box_mealbox_container #5.6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_container"
+  ],
+  "anchor": "meal_box_mealbox_container",
+  "subgoal": 5,
+  "frames": [
+   [
+    2095,
+    2187
+   ]
+  ]
+ },
+ {
+  "label": "left: return home #5.7",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    2188,
+    2270
+   ]
+  ]
+ },
+ {
+  "label": "left: reach for meal_box_mealbox_latch_xp | right: reach for meal_box_mealbox_latch_xn #6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": null,
+  "subgoal": 6,
+  "frames": [
+   [
+    2271,
+    2301
+   ]
+  ]
+ },
+ {
+  "label": "left: reach for meal_box_mealbox_latch_xp | right: reach for meal_box_mealbox_latch_xn #6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": "meal_box_mealbox_latch_xp",
+  "subgoal": 6,
+  "frames": [
+   [
+    2271,
+    2301
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for meal_box_mealbox_latch_xn | left: reach for meal_box_mealbox_latch_xp #6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": "meal_box_mealbox_latch_xp",
+  "subgoal": 6,
+  "frames": [
+   [
+    2302,
+    2333
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for meal_box_mealbox_latch_xn | left: reach for meal_box_mealbox_latch_xp #6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": "meal_box_mealbox_latch_xn",
+  "subgoal": 6,
+  "frames": [
+   [
+    2302,
+    2333
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on meal_box_mealbox_latch_xp | right: descend on meal_box_mealbox_latch_xn #6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": "meal_box_mealbox_latch_xp",
+  "subgoal": 6,
+  "frames": [
+   [
+    2334,
+    2359
+   ]
+  ]
+ },
+ {
+  "label": "left: descend on meal_box_mealbox_latch_xp | right: descend on meal_box_mealbox_latch_xn #6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": "meal_box_mealbox_latch_xn",
+  "subgoal": 6,
+  "frames": [
+   [
+    2334,
+    2359
+   ]
+  ]
+ },
+ {
+  "label": "left: close on meal_box_mealbox_latch_xp | right: close on meal_box_mealbox_latch_xn #6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": "meal_box_mealbox_latch_xp",
+  "subgoal": 6,
+  "frames": [
+   [
+    2360,
+    2379
+   ]
+  ]
+ },
+ {
+  "label": "left: close on meal_box_mealbox_latch_xp | right: close on meal_box_mealbox_latch_xn #6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": "meal_box_mealbox_latch_xn",
+  "subgoal": 6,
+  "frames": [
+   [
+    2360,
+    2379
+   ]
+  ]
+ },
+ {
+  "label": "left: grip meal_box_mealbox_latch_xp | right: grip meal_box_mealbox_latch_xn #6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": "meal_box_mealbox_latch_xp",
+  "subgoal": 6,
+  "frames": [
+   [
+    2380,
+    2396
+   ]
+  ]
+ },
+ {
+  "label": "left: grip meal_box_mealbox_latch_xp | right: grip meal_box_mealbox_latch_xn #6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": "meal_box_mealbox_latch_xn",
+  "subgoal": 6,
+  "frames": [
+   [
+    2380,
+    2396
+   ]
+  ]
+ },
+ {
+  "label": "left: close meal_box_mealbox_latch_xp | right: close meal_box_mealbox_latch_xn #6",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": "meal_box_mealbox_latch_xp",
+  "subgoal": 6,
+  "frames": [
+   [
+    2397,
+    2491
+   ]
+  ]
+ },
+ {
+  "label": "left: close meal_box_mealbox_latch_xp | right: close meal_box_mealbox_latch_xn #6",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": "meal_box_mealbox_latch_xn",
+  "subgoal": 6,
+  "frames": [
+   [
+    2397,
+    2491
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of meal_box_mealbox_latch_xp | right: let go of meal_box_mealbox_latch_xn #7.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": "meal_box_mealbox_latch_xn",
+  "subgoal": 7,
+  "frames": [
+   [
+    2492,
+    2503
+   ]
+  ]
+ },
+ {
+  "label": "left: let go of meal_box_mealbox_latch_xp | right: let go of meal_box_mealbox_latch_xn #7.1",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    2492,
+    2503
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of meal_box_mealbox_latch_xn | left: let go of meal_box_mealbox_latch_xp #7.1",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    2504,
+    2515
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of meal_box_mealbox_latch_xn | left: let go of meal_box_mealbox_latch_xp #7.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    2504,
+    2515
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat | right: retreat #7.1",
+  "hand": "left",
+  "objects": [
+   "meal_box_mealbox_latch_xp"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    2516,
+    2544
+   ]
+  ]
+ },
+ {
+  "label": "left: retreat | right: retreat #7.1",
+  "hand": "right",
+  "objects": [
+   "meal_box_mealbox_latch_xn"
+  ],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    2516,
+    2544
+   ]
+  ]
+ },
+ {
+  "label": "left: return home #7.2",
+  "hand": "left",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    2545,
+    2599
+   ]
+  ]
+ },
+ {
+  "label": "right: return home #7.3",
+  "hand": "right",
+  "objects": [],
+  "anchor": null,
+  "subgoal": 7,
+  "frames": [
+   [
+    2600,
+    2658
+   ]
+  ]
+ }
+]

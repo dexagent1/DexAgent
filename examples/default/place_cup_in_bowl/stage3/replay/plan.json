@@ -1,0 +1,35 @@
+{
+ "subgoals": [
+  {
+   "index": 1,
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "cup_cup",
+   "pose": "${REPLAY}/poses/sg1_grasp_feather_ok.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_cup_v2.json",
+   "lift_m": 0.1,
+   "open_frac": 0.15
+  },
+  {
+   "index": 2,
+   "motion": "carry",
+   "side": "left",
+   "object": "cup_cup",
+   "over": "bowl_bowl",
+   "height_m": 0.1
+  },
+  {
+   "index": 3,
+   "motion": "place",
+   "side": "left",
+   "object": "cup_cup",
+   "into": "bowl_bowl",
+   "release": true,
+   "placement_force_n": 10.0,
+   "set_down_s": 2.0,
+   "t_open": 1.6,
+   "t_retreat": 1.2,
+   "settle_s": 0.8
+  }
+ ]
+}

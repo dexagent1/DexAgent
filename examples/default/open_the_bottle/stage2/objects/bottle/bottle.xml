@@ -1,0 +1,60 @@
+<mujoco model="bottle_screwcap">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.00025" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <mesh name="bottle_body_m" file="../../../../../_assets/0e1013747b95d5bda690.obj" />
+    <mesh name="bottle_cap_m" file="../../../../../_assets/39275dbd47d1d97ad6c0.obj" />
+    <mesh name="bottle_thr_m" file="../../../../../_assets/8a4bad3873771a56d971.obj" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="bottle" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="bottle_free" />
+      <inertial pos="0 0 0.0440" mass="0.45" diaginertia="0.001935 0.001935 0.000241" />
+      <geom name="bottle_v_body" type="mesh" mesh="bottle_body_m" rgba="0.0480 0.3690 0.5440 0.8500" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_v_thread" type="mesh" mesh="bottle_thr_m" rgba="0.1690 0.4820 0.5910 0.9000" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_c_barrel" type="cylinder" size="0.03270 0.05500" pos="0 0 0.05500" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_c_shoulder" type="cylinder" size="0.02910 0.00600" pos="0 0 0.11600" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_c_neck" type="cylinder" size="0.02334 0.00900" pos="0 0 0.13100" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <body name="bottle_carrier" pos="0 0 0.12450">
+        <joint name="bottle_yaw" type="hinge" axis="0 0 1" range="-1100.00 1100.00" damping="0.008" frictionloss="0.02" />
+        <joint name="bottle_lift" type="slide" axis="0 0 1" range="-0.002 0.01897" damping="0.002" />
+        <inertial pos="0 0 0.0200" mass="0.020000" diaginertia="0.00006000 0.00006000 0.00010000" />
+      </body>
+    </body>
+    <body name="bottle_cap_assembly" pos="0.000000 0.000000 0.124500" euler="0 0 0.0">
+      <freejoint name="bottle_cap_free" />
+      <inertial pos="0 0 0.0200" mass="0.015" diaginertia="0.00001409 0.00001409 0.00001218" />
+      <geom name="bottle_v_cap" type="mesh" mesh="bottle_cap_m" rgba="0.0200 0.3530 0.5580 1.0000" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_cap_s0" type="box" size="0.00090 0.00746 0.00800" pos="0.02760 0.00000 0.00800" euler="0 0 0.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s1" type="box" size="0.00090 0.00746 0.00800" pos="0.02390 0.01380 0.00800" euler="0 0 30.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s2" type="box" size="0.00090 0.00746 0.00800" pos="0.01380 0.02390 0.00800" euler="0 0 60.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s3" type="box" size="0.00090 0.00746 0.00800" pos="0.00000 0.02760 0.00800" euler="0 0 90.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s4" type="box" size="0.00090 0.00746 0.00800" pos="-0.01380 0.02390 0.00800" euler="0 0 120.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s5" type="box" size="0.00090 0.00746 0.00800" pos="-0.02390 0.01380 0.00800" euler="0 0 150.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s6" type="box" size="0.00090 0.00746 0.00800" pos="-0.02760 0.00000 0.00800" euler="0 0 180.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s7" type="box" size="0.00090 0.00746 0.00800" pos="-0.02390 -0.01380 0.00800" euler="0 0 210.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s8" type="box" size="0.00090 0.00746 0.00800" pos="-0.01380 -0.02390 0.00800" euler="0 0 240.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s9" type="box" size="0.00090 0.00746 0.00800" pos="-0.00000 -0.02760 0.00800" euler="0 0 270.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s10" type="box" size="0.00090 0.00746 0.00800" pos="0.01380 -0.02390 0.00800" euler="0 0 300.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_s11" type="box" size="0.00090 0.00746 0.00800" pos="0.02390 -0.01380 0.00800" euler="0 0 330.00" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_top" type="cylinder" size="0.02850 0.01200" pos="0 0 0.02800" rgba="0 0 0 0" friction="1.800000 0.020000 0.001000" solref="0.004000 1.000000" />
+      <geom name="bottle_cap_stripe0" type="box" size="0.0006 0.00187 0.01600" pos="0.02890 0.00000 0.02080" euler="0 0 0.00" rgba="0.3090 0.5950 0.7350 1.0000" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_cap_stripe1" type="box" size="0.0006 0.00187 0.01600" pos="0.01445 0.02503 0.02080" euler="0 0 60.00" rgba="0.3090 0.5950 0.7350 1.0000" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_cap_stripe2" type="box" size="0.0006 0.00187 0.01600" pos="-0.01445 0.02503 0.02080" euler="0 0 120.00" rgba="0.3090 0.5950 0.7350 1.0000" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_cap_stripe3" type="box" size="0.0006 0.00187 0.01600" pos="-0.02890 0.00000 0.02080" euler="0 0 180.00" rgba="0.3090 0.5950 0.7350 1.0000" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_cap_stripe4" type="box" size="0.0006 0.00187 0.01600" pos="-0.01445 -0.02503 0.02080" euler="0 0 240.00" rgba="0.3090 0.5950 0.7350 1.0000" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_cap_stripe5" type="box" size="0.0006 0.00187 0.01600" pos="0.01445 -0.02503 0.02080" euler="0 0 300.00" rgba="0.3090 0.5950 0.7350 1.0000" contype="0" conaffinity="0" group="2" />
+      <geom name="bottle_straw" type="cylinder" size="0.00350 0.05500" pos="0 0 -0.03900" rgba="0.3910 0.6550 0.7200 0.3500" contype="0" conaffinity="0" group="2" mass="0" />
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="bottle_thread" joint1="bottle_lift" joint2="bottle_yaw" polycoef="0 0.00087535 0 0 0" solref="0.000500 1.000000" solimp="0.990000 0.999900 0.000010" />
+    <weld name="bottle_engaged" body1="bottle_carrier" body2="bottle_cap_assembly" relpose="0 0 0 1 0 0 0" solref="0.000500 1.000000" solimp="0.990000 0.999900 0.000010" />
+  </equality>
+</mujoco>

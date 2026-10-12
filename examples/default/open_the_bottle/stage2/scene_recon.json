@@ -1,0 +1,592 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "bottle",
+   "type": "articulated",
+   "skill": "construct_bottle_straw",
+   "skill_origin": "created",
+   "params": {
+    "body_height": 0.11,
+    "body_mass": 0.45,
+    "body_radius": 0.0327,
+    "body_rgba": [
+     0.048,
+     0.369,
+     0.544,
+     0.85
+    ],
+    "bottle_fixed": false,
+    "cap_height": 0.04,
+    "cap_mass": 0.015,
+    "cap_radius": 0.0285,
+    "cap_rgba": [
+     0.02,
+     0.353,
+     0.558,
+     1.0
+    ],
+    "cap_skirt_segments": 12,
+    "cap_stripe_count": 6,
+    "cap_stripe_rgba": [
+     0.309,
+     0.595,
+     0.735,
+     1.0
+    ],
+    "cap_top_wall": 0.024,
+    "cap_wall": 0.0018,
+    "carrier_inertia": 0.0001,
+    "carrier_mass": 0.02,
+    "contact_solref": [
+     0.004,
+     1.0
+    ],
+    "friction": [
+     1.8,
+     0.02,
+     0.001
+    ],
+    "include_floor": false,
+    "lift_damping": 0.002,
+    "name": "bottle",
+    "neck_height": 0.018,
+    "neck_radius": 0.0255,
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "shoulder_height": 0.012,
+    "straw_length": 0.11,
+    "straw_radius": 0.0035,
+    "straw_rgba": [
+     0.391,
+     0.655,
+     0.72,
+     0.35
+    ],
+    "thread_pitch": 0.0055,
+    "thread_rgba": [
+     0.169,
+     0.482,
+     0.591,
+     0.9
+    ],
+    "thread_ridge_radius": 0.0011,
+    "thread_right_handed": true,
+    "thread_solimp": [
+     0.99,
+     0.9999,
+     1e-05
+    ],
+    "thread_solref": [
+     0.0005,
+     1.0
+    ],
+    "thread_turns": 3.0,
+    "timestep": 0.00025,
+    "yaw_damping": 0.008,
+    "yaw_deg": 0.0,
+    "yaw_frictionloss": 0.02
+   },
+   "asset_xml": "objects/bottle/bottle.xml",
+   "root_body": "bottle_bottle",
+   "bodies": [
+    "bottle_bottle",
+    "bottle_bottle_carrier",
+    "bottle_bottle_cap_assembly"
+   ],
+   "pose": {
+    "x": -0.0954,
+    "y": 0.3409,
+    "z": 0.0,
+    "yaw_deg": -160.0
+   },
+   "mask": "masks/bottle.png",
+   "iou": 0.617,
+   "placement_fit": {
+    "tool": "fit_object_placement",
+    "mask": "seg/bottle_body_only.png (bottle mask minus cap mask)",
+    "ignore_mask": "seg/ignore_cap.png",
+    "iou_body_only": 0.9276,
+    "params": [
+     "x",
+     "y",
+     "yaw"
+    ]
+   },
+   "verification_plan": {
+    "thread_self_locking_test": "screw thread: cap turns about the bottle axis for several turns before it is free, cannot be pulled off straight (run on assets/bottle/held_variant, the same build with the body held fixed as the left hand holds it)",
+    "articulation_check": "the cap/body is a real hinge+slide thread mechanism, not a rigid body (run inside scene_qc)",
+    "joint_range_check": "thread lift range = 3 turns x 5.5 mm (+15% headroom) as built in the scene",
+    "silhouette_iou_check": "placement on the table vs the frame-0 mask (inside scene_qc)",
+    "settle_stability_check": "stable base: stands upright without drifting (inside scene_qc)",
+    "support_check": "stands on the table; seated cap bears on the mouth (inside scene_qc)",
+    "color_match_check": "measured blue colours"
+   },
+   "verifiers": {
+    "thread_self_locking_test": {
+     "ok": true,
+     "verdict": "THREAD OK \u2014 20 N of straight push/pull moved the cap 0.22 mm of its 16 mm travel; 100.0 mN*m of twist moved it all of it in 3.0 turns",
+     "measured": {
+      "push_N": 20.0,
+      "twist_Nm": 0.1,
+      "travel_without_turning_mm": 0.2176,
+      "thread_travel_mm": 16.5,
+      "turns_applied": 3.0,
+      "coupling_error_mm": 0.0281,
+      "lift_at_release_mm": 15.84,
+      "turns_at_release": 2.88
+     },
+     "video": null,
+     "start": "top"
+    },
+    "articulation_check": {
+     "ok": true,
+     "objects": {
+      "bottle_bottle": {
+       "bodies": [
+        "bottle_bottle",
+        "bottle_bottle_cap_assembly",
+        "bottle_bottle_carrier"
+       ],
+       "joints": [
+        {
+         "joint": "bottle_bottle_yaw",
+         "type": "hinge",
+         "range": [
+          -19.1986,
+          19.1986
+         ],
+         "travel": 38.3972,
+         "moves_part_m": 0.0,
+         "usable": false
+        },
+        {
+         "joint": "bottle_bottle_lift",
+         "type": "slide",
+         "range": [
+          -0.002,
+          0.01897
+         ],
+         "travel": 0.021,
+         "moves_part_m": 0.019,
+         "usable": true
+        }
+       ],
+       "verdict": "articulated"
+      }
+     }
+    },
+    "joint_range_check": {
+     "ok": true,
+     "range": [
+      -0.002,
+      0.01897
+     ],
+     "limited": true,
+     "type": "slide",
+     "current": 0.0,
+     "expected": [
+      -0.002,
+      0.018975
+     ]
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.617
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "pos_m": 0.0,
+      "rot_deg": 0.0,
+      "verdict": "at rest"
+     }
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.391,
+      0.655,
+      0.72
+     ],
+     "closest_palette_rgb": [
+      0.391,
+      0.655,
+      0.72
+     ],
+     "dist": 0.0,
+     "colours": [
+      {
+       "rgb": [
+        0.391,
+        0.655,
+        0.72
+       ],
+       "share": 0.653
+      },
+      {
+       "rgb": [
+        0.048,
+        0.369,
+        0.544
+       ],
+       "share": 0.272
+      },
+      {
+       "rgb": [
+        0.02,
+        0.353,
+        0.558
+       ],
+       "share": 0.055
+      },
+      {
+       "rgb": [
+        0.169,
+        0.482,
+        0.591
+       ],
+       "share": 0.02
+      },
+      {
+       "rgb": [
+        0.309,
+        0.595,
+        0.735
+       ],
+       "share": 0.0
+      }
+     ]
+    }
+   },
+   "properties_covered": {
+    "The cap is attached to the bottle mouth by a screw thread: it turns about the bottle axis relative to the body for several turns before it comes free, and only then can it be lifted off.": "thread_pitch 0.0055 m x thread_turns 3 (16.5 mm > 16 mm engagement, cap_clears_neck true); thread_self_locking_test THREAD OK: 20 N straight push/pull moved the cap 0.22 mm, 0.1 N*m twist freed it after 2.9 turns; joint_range_check on bottle_bottle_lift",
+    "Unscrewing needs the body to be held against rotation while the cap is turned, so this is a two-handed interaction.": "the thread has yaw_frictionloss 0.02 N*m, so twisting the cap twists a free body unless it is held; the body is a free body (bottle_fixed false), friction 1.8 for the holding hand; thread_self_locking_test was run with the body held fixed (held_variant), which is exactly the left hand's role",
+    "A drinking tube hangs from the underside of the cap down into the body; when the cap is lifted the tube comes with it and must clear the mouth before the cap is moved aside.": "straw_length 0.11 m, radius 3.5 mm, a geom of the cap body so it leaves with the cap; built straw_clear_lift_m = 0.1095 (lift of the cap above its seat before it can move sideways). The tube is rigid; it collides with the table and the mug through explicit contact pairs (not with the bottle, whose collision model is solid cylinders around the hollow it hangs in), so a cap set down cannot push it through the tabletop (scripts/straw_drop_test.py: laid on its side the straw rests 24.8 mm above the cloth; stood upright it stops on its tip). Its flexibility and its contact with the mouth are NOT reproduced",
+    "The body is a rigid container with a stable base; after the cap is off it can be lifted by one hand and tilted so its open mouth points into the mug.": "rigid free body, body_mass 0.45 kg (filled), open mouth radius 25.5 mm; settle_stability_check / support_check pass; liquid is not simulated",
+    "The bottle returns to standing upright on the table at the end.": "flat base radius 0.92 x 32.7 mm; settle_stability_check: 0.0 mm / 0.0 deg drift"
+   }
+  },
+  {
+   "id": "cap_assembly",
+   "type": "rigid",
+   "skill": "construct_bottle_straw",
+   "skill_origin": "created",
+   "params": {
+    "cap_radius": 0.0285,
+    "cap_height": 0.04,
+    "cap_wall": 0.0018,
+    "cap_top_wall": 0.024,
+    "cap_mass": 0.015,
+    "straw_length": 0.11,
+    "straw_radius": 0.0035,
+    "cap_rgba": [
+     0.02,
+     0.353,
+     0.558,
+     1.0
+    ],
+    "straw_rgba": [
+     0.391,
+     0.655,
+     0.72,
+     0.35
+    ]
+   },
+   "asset_xml": "objects/bottle/bottle.xml",
+   "root_body": "bottle_bottle_cap_assembly",
+   "bodies": [
+    "bottle_bottle_cap_assembly"
+   ],
+   "pose": {
+    "x": -0.0954,
+    "y": 0.3409,
+    "z": 0.1238,
+    "yaw_deg": -160.0
+   },
+   "mask": "masks/cap_assembly.png",
+   "iou": 0.594,
+   "verification_plan": {
+    "silhouette_iou_check": "cap seated on the bottle at frame 0 (inside scene_qc)",
+    "support_check": "seated cap bears on the mouth (inside scene_qc)",
+    "settle_stability_check": "cap stays seated (inside scene_qc)",
+    "color_match_check": "measured cap blue",
+    "thread_self_locking_test": "the cap becomes a free rigid body once the thread runs out (shared with bottle)"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.594
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "pos_m": 0.0,
+      "rot_deg": 1.9,
+      "verdict": "at rest"
+     }
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.391,
+      0.655,
+      0.72
+     ],
+     "closest_palette_rgb": [
+      0.309,
+      0.595,
+      0.735
+     ],
+     "dist": 0.103,
+     "colours": [
+      {
+       "rgb": [
+        0.391,
+        0.655,
+        0.72
+       ],
+       "share": 0.922
+      },
+      {
+       "rgb": [
+        0.02,
+        0.353,
+        0.558
+       ],
+       "share": 0.078
+      },
+      {
+       "rgb": [
+        0.309,
+        0.595,
+        0.735
+       ],
+       "share": 0.001
+      }
+     ]
+    },
+    "thread_self_locking_test": {
+     "ok": true,
+     "verdict": "THREAD OK \u2014 20 N of straight push/pull moved the cap 0.22 mm of its 16 mm travel; 100.0 mN*m of twist moved it all of it in 3.0 turns"
+    }
+   },
+   "properties_covered": {
+    "Once unscrewed it is a free object: the cap with the tube hanging from it is carried by the right hand and laid on the table.": "the cap is its own free body (bottle_bottle_cap_assembly, freejoint) welded to the thread carrier only while engaged (equality bottle_bottle_engaged); thread_self_locking_test shows it comes free after the full thread",
+    "The tube is long and flexible, so it trails below the cap while carried and lies in a curve on the table.": "rigid 0.11 m tube on the cap body with table and mug contact pairs (mass 2 g): it hangs below the cap while carried; its flexibility is NOT modelled, so it cannot curve on the table: the cap is laid on its side as in the video (13.6 s: the cap lies at the right edge with the tube pointing up off the cloth), where the rigid tube stays 24.8 mm above the table (scripts/straw_drop_test.py)"
+   }
+  },
+  {
+   "id": "mug",
+   "type": "rigid",
+   "skill": "construct_cup",
+   "skill_origin": "library",
+   "params": {
+    "base_radius": 0.0365,
+    "body_rgba": [
+     0.335,
+     0.469,
+     0.406,
+     1.0
+    ],
+    "bottom": 0.006,
+    "collision_rgba": [
+     0.8,
+     0.2,
+     0.2,
+     0.0
+    ],
+    "condim": 4,
+    "density": 250.0,
+    "fixed": false,
+    "friction": [
+     1.0,
+     0.005,
+     0.0001
+    ],
+    "handle": {
+     "radius": 0.024,
+     "segments": 12,
+     "tube": 0.0065,
+     "z_frac": 0.5
+    },
+    "height": 0.076,
+    "include_floor": false,
+    "inner_rgba": [
+     0.201,
+     0.326,
+     0.268,
+     1.0
+    ],
+    "lining": 0.0004,
+    "lip": 0.0015,
+    "mass": 0.32,
+    "n_wedges": 16,
+    "name": "mug",
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "profile": null,
+    "rim_radius": 0.0395,
+    "sections": 96,
+    "shininess": 0.3,
+    "specular": 0.3,
+    "timestep": 0.002,
+    "wall": 0.004,
+    "yaw_deg": 0.0
+   },
+   "asset_xml": "objects/mug/mug.xml",
+   "root_body": "mug_mug",
+   "bodies": [
+    "mug_mug"
+   ],
+   "pose": {
+    "x": 0.1165,
+    "y": 0.3937,
+    "z": 0.0,
+    "yaw_deg": 27.7
+   },
+   "mask": "masks/mug.png",
+   "iou": 0.823,
+   "verification_plan": {
+    "vessel_containment_test": "open-topped receptacle: lands upright, a ball dropped in stays inside below the rim (run on assets/mug/floor_variant, the same build with a floor)",
+    "silhouette_iou_check": "placement and handle on the right (inside scene_qc)",
+    "settle_stability_check": "stays where it is (inside scene_qc)",
+    "support_check": "stands on the table (inside scene_qc)",
+    "color_match_check": "measured grey (green-tinted in frame 0)"
+   },
+   "verifiers": {
+    "vessel_containment_test": {
+     "ok": true,
+     "verdict": "VESSEL OK \u2014 landed upright (0.0 deg), a 14 mm ball came to rest 6.1 mm off axis at z 19.8 mm, under the 76 mm rim",
+     "measured": {
+      "drop": {
+       "tilt_deg": 0.03,
+       "base_height_mm": -0.02,
+       "ok": true
+      },
+      "fill": {
+       "ball_radius_mm": 14.2,
+       "ball_off_axis_mm": 6.1,
+       "ball_z_mm": 19.81,
+       "rim_z_mm": 75.98,
+       "floor_z_mm": 5.98,
+       "below_rim": true,
+       "above_floor": true,
+       "inside_radius": true,
+       "vessel_tilt_deg": 0.03,
+       "ok": true
+      }
+     }
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.823
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "pos_m": 0.0,
+      "rot_deg": 0.0,
+      "verdict": "at rest"
+     }
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.335,
+      0.469,
+      0.406
+     ],
+     "closest_palette_rgb": [
+      0.335,
+      0.469,
+      0.406
+     ],
+     "dist": 0.0,
+     "colours": [
+      {
+       "rgb": [
+        0.335,
+        0.469,
+        0.406
+       ],
+       "share": 0.862
+      },
+      {
+       "rgb": [
+        0.201,
+        0.326,
+        0.268
+       ],
+       "share": 0.138
+      }
+     ]
+    }
+   },
+   "properties_covered": {
+    "An open-topped rigid receptacle with a stable base; the bottle mouth is brought over its opening.": "construct_cup hollow wedge collider, rim radius 39.5 mm, height 76 mm, handle; vessel_containment_test VESSEL OK",
+    "It stays on the table where it is; neither hand grasps or steadies it.": "free body of 0.32 kg standing on the table; settle_stability_check 0.0 mm drift"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "silhouette_iou": {
+    "bottle": 0.617,
+    "cap_assembly": 0.594,
+    "mug": 0.823
+   },
+   "penetration_worst": {
+    "geoms": [
+     "bottle_bottle/bottle_bottle_c_neck",
+     "bottle_bottle_cap_assembly/bottle_bottle_cap_top"
+    ],
+    "depth_m": 0.0002,
+    "excess_m": 0.0002,
+    "frame": 0
+   },
+   "support": {
+    "ok": true,
+    "floating": []
+   },
+   "settle_stability": true
+  }
+ },
+ "notes": [
+  "Camera: register_table_camera(source='setup'); the 10 cm grid lies on the cloth (camera_check.png).",
+  "Frame 0 has a green colour cast (auto white balance settles by 1.8 s); colours were measured on frame 0 so the mug reads green-grey.",
+  "Created skill construct_bottle_straw (fork of construct_bottle) adds the drinking tube on the cap; it is rigid; see the rel rebuild note for its collision pairs.",
+  "In the scene the thread carrier and the cap were lowered 0.7 mm (cap ceiling 0.2 mm onto the mouth) so the seated cap bears on the bottle lip and is supported; the thread test ran on the unlowered build.",
+  "The bottle silhouette IoU (0.62) is against the full bottle mask while bottle_bottle renders only the body; the body-only fit IoU is 0.93. The real cap is a domed sports cap with a carry loop, modelled as a 57 mm x 40 mm cylinder, hence cap IoU 0.59.",
+  "Mug height (76 mm) and radii were refined from the placement overlay (the 95 mm first build rendered taller than the mask); fit_object_placement's scale fit returned an implausible 0.31 and was not used.",
+  "color_match_check reports the dominant colour by geometry share without alpha, so the translucent straw (coloured with the measured light-blue palette entry, the clear plastic as seen in the footage) dominates; the body's own colour equals palette entry 1 exactly.",
+  "Pouring liquid is not simulated.",
+  "Rel rebuild 2026-10-05 (scripts/rel_fix_scene.py): (1) the cap body is renamed bottle_bottle_cap -> bottle_bottle_cap_assembly so the Stage 1 id 'cap_assembly' resolves to it (the weld follows the name); (2) keyframe 0 had the cap 11.7 mm / 160 deg off the carrier its active weld bottle_bottle_engaged holds it to (MuJoCo reset on a bad acceleration at 0.024 s): the cap now starts on its carrier; (3) stale keyframe servo ctrl synced to the keyframe joints; (4) the drinking straw (bottle_bottle_straw) gets explicit contact pairs with the table and every mug collision geom and a 2 g mass, so it can no longer pass through the tabletop when the cap is put down. Robot, stations, table and physics options are untouched. The staged asset assets/bottle/bottle.xml carries the same cap rename so hand scenes built from it name the cap like the bench."
+ ],
+ "source": "examples/asset_reuse"
+}

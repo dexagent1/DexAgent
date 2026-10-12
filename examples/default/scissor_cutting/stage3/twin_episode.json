@@ -1,0 +1,23 @@
+{
+ "schema": "dexagent.twin_episode.v1",
+ "task": "scissor_cutting",
+ "kind": "Isaac Sim twin episode",
+ "simulator": "Isaac Sim 5.0 / PhysX (the rope, 52 capsule links on ball joints, cut by releasing the joint between the bitten links); MuJoCo as the kinematics library",
+ "summary": "The left hand pinches the rope end (link 1) palm down and lifts it; the right hand brings the scissors in around the hanging rope 5 cm below the pinch and snips six times at one pose, the thumb driving the moving blade; the sixth closure severs the rope (link 7); the left hand lays its piece down and both arms return to the parked pose.",
+ "frames": 1697,
+ "fps": 30.0,
+ "files": {
+  "sim_video": "twin_episode/twin_sim.mp4",
+  "joints": "twin_episode/twin_joints.npz",
+  "rope_states": "twin_episode/twin_rope_states.npz",
+  "log": "twin_episode/twin_log.json"
+ },
+ "contents": {
+  "twin_joints.npz": "per frame: left and right arm joints (rad, 6 each), scissors opening theta (rad), left and right finger vectors (22 each)",
+  "twin_rope_states.npz": "C: the rope's 52 link centres per frame from PhysX (m); cut: the severed link",
+  "twin_log.json": "the plan, the cut pose (cut_block), the events (pinch k360, sever k1182, release k1230) and the solver parameters"
+ },
+ "physics": "rope dynamic in PhysX (gravity, cloth contact, self-contact, blade and hand contact); robot and scissors position-driven (kinematic colliders: the rope is pushed by them and never pushes back); the pinch is a fixed joint between the left hand and rope link 1 from k360 to k1230",
+ "use": "Stage 3 of a run on this example's recording (or on the same task whose Stage 2 reused this example) publishes this episode as its result: sim_video.mp4 and these files. It is the twin's own recording, not a rigid runtime recording of setup/, so Stage 4 does not randomize it.",
+ "source": "the scissors/011 full-video physics twin in Isaac Sim, built by the maintainers; reviewed"
+}

@@ -1,0 +1,199 @@
+{
+ "subgoals": [
+  {
+   "index": 1,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "pose": "${REPLAY}/r2/d1_c2.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_disk_1.json",
+   "lift_m": 0.08
+  },
+  {
+   "index": 2,
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "target_pos": [
+    0.103,
+    0.475,
+    0.116
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -178.8
+   ],
+   "duration_s": 3.0
+  },
+  {
+   "index": 2,
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "target_pos": [
+    0.103,
+    0.566,
+    0.116
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -178.8
+   ],
+   "duration_s": 2.5,
+   "release": true,
+   "retreat_dir": [
+    0,
+    -0.8,
+    1.0
+   ],
+   "retreat_m": 0.05
+  },
+  {
+   "index": 3,
+   "motion": "push",
+   "side": "right",
+   "object": "disk_1_disk_1",
+   "pose": "${REPLAY}/r2/rw_5500_175_3_0.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_disk_1_push.json",
+   "direction": [
+    -0.021,
+    1.0,
+    0.0
+   ],
+   "distance_m": 0.085,
+   "duration_s": 2.0
+  },
+  {
+   "index": 4,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "pose": "${REPLAY}/r2/d2_c3.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_disk_2.json",
+   "lift_m": 0.08
+  },
+  {
+   "index": 5,
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "target_pos": [
+    0.103,
+    0.475,
+    0.218
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -178.8
+   ],
+   "duration_s": 3.0
+  },
+  {
+   "index": 5,
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "target_pos": [
+    0.103,
+    0.566,
+    0.218
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -178.8
+   ],
+   "duration_s": 2.5,
+   "release": true,
+   "retreat_dir": [
+    0,
+    -0.8,
+    1.0
+   ],
+   "retreat_m": 0.05
+  },
+  {
+   "index": 6,
+   "motion": "push",
+   "side": "right",
+   "object": "disk_2_disk_2",
+   "pose": "${REPLAY}/r2/rw_5500_175_6_1.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_disk_2_push.json",
+   "direction": [
+    -0.021,
+    1.0,
+    0.0
+   ],
+   "distance_m": 0.085,
+   "duration_s": 2.0
+  },
+  {
+   "index": 7,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "pose": "${REPLAY}/r2/d3_c4.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_disk_3.json",
+   "lift_m": 0.08
+  },
+  {
+   "index": 8,
+   "motion": "carry",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "target_pos": [
+    0.103,
+    0.475,
+    0.252
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -178.8
+   ],
+   "duration_s": 3.5
+  },
+  {
+   "index": 8,
+   "motion": "insert",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "target_pos": [
+    0.103,
+    0.566,
+    0.252
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -178.8
+   ],
+   "duration_s": 2.5,
+   "release": true,
+   "retreat_dir": [
+    0,
+    -1,
+    0.3
+   ],
+   "retreat_m": 0.04
+  },
+  {
+   "index": 9,
+   "motion": "push",
+   "side": "right",
+   "object": "disk_3_disk_3",
+   "pose": "${REPLAY}/r2/G_5500_175_60_9_0.json",
+   "hand_scene": "${REPLAY}/r2/hsW_5500_175.json",
+   "direction": [
+    -0.021,
+    1.0,
+    0.0
+   ],
+   "distance_m": 0.085,
+   "duration_s": 2.0
+  }
+ ]
+}

@@ -1,0 +1,979 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco+isaac",
+ "objects": [
+  {
+   "id": "scissors",
+   "type": "articulated",
+   "skill": "construct_scissors",
+   "skill_origin": "library",
+   "params": {
+    "blade_length": 0.083,
+    "blade_rgba": [
+     0.66,
+     0.65,
+     0.68,
+     1.0
+    ],
+    "blade_thickness": 0.0016,
+    "blade_tip_width": 0.0016,
+    "blade_width": 0.014,
+    "close_deg": 0.0,
+    "condim": 6,
+    "cut_catch_m": 0.011,
+    "cut_gap_m": 0.0035,
+    "cut_lat_m": 0.004,
+    "cut_pinch_mm": 0.3,
+    "fixed_base": false,
+    "friction": [
+     0.9,
+     0.02,
+     0.004
+    ],
+    "handle_length": 0.102,
+    "handle_rgba": [
+     0.393,
+     0.341,
+     0.467,
+     1.0
+    ],
+    "include_floor": false,
+    "joint_armature": 5e-05,
+    "joint_damping": 0.015,
+    "joint_frictionloss": 0.04,
+    "joint_solreflimit": [
+     0.01,
+     1.0
+    ],
+    "mass": 0.06,
+    "name": "scissors",
+    "open_deg": 42.0,
+    "pivot_radius": 0.0055,
+    "pivot_rgba": [
+     0.55,
+     0.55,
+     0.58,
+     1.0
+    ],
+    "ring_lift": 0.0,
+    "ring_offset": 0.0135,
+    "ring_scale_b": 1.15,
+    "ring_segments": 14,
+    "ring_strap": 0.006,
+    "ring_tube": 0.005,
+    "ring_width": 0.032,
+    "shank_length": 0.036,
+    "solimp": [
+     0.99,
+     0.999,
+     0.001
+    ],
+    "solref": [
+     0.005,
+     1.0
+    ],
+    "timestep": 0.002
+   },
+   "asset_xml": "objects/scissors/scissors.xml",
+   "root_body": "scissors_scissors",
+   "bodies": [
+    "scissors_scissors",
+    "scissors_scissors_upper"
+   ],
+   "joints": {
+    "scissors_scissors_open": 0.0
+   },
+   "pose": {
+    "x": 0.118,
+    "y": 0.4618,
+    "z": 0.0042,
+    "yaw_deg": 85.05
+   },
+   "mask": "masks/scissors.png",
+   "iou": 0.581,
+   "cutter": {
+    "bodies": {
+     "lower": "scissors",
+     "upper": "scissors_upper"
+    },
+    "joint": "scissors_open",
+    "joint_range_deg": [
+     0.0,
+     42.0
+    ],
+    "blade_length_m": 0.083,
+    "blade_width_m": 0.014,
+    "blade_tip_width_m": 0.0016,
+    "axis_local": [
+     1.0,
+     0.0,
+     0.0
+    ],
+    "pivot_height_m": 0.0058,
+    "ring_centre_local": [
+     -0.069,
+     0.0135
+    ],
+    "cut_gap_m": 0.0035,
+    "cut_catch_m": 0.011,
+    "cut_lat_m": 0.004,
+    "cut_pinch_mm": 0.3
+   },
+   "verification_plan": {
+    "articulation_check": "two halves on one revolute pivot (hinge with usable range), not a rigid body",
+    "joint_range_check": "opening range 0..42 deg covers the 30-45 deg V seen at 10.8-16.3 s; shut (qpos 0) at frame 0",
+    "scissors_cut_test": "ring forces open and close the blades, and closing on an 8.2 mm cord (the measured rope diameter) severs it",
+    "color_match_check": "purple handles / steel blades match the measured palette",
+    "ring_hole_measure": "the finger rings are open loops a finger passes through (hole across >= 18 mm), as the demonstrator's grip needs",
+    "silhouette_iou_check": "placement: closed, flat, points to the far side, right of centre (scene_qc through video_cam and fit_object_placement)",
+    "settle_stability_check": "rests flat on the cloth without drifting (scene_qc)",
+    "support_check": "lies on the table, not floating (scene_qc)"
+   },
+   "verifiers": {
+    "articulation_check": {
+     "ok": true,
+     "objects": {
+      "scissors": {
+       "bodies": [
+        "scissors",
+        "scissors_upper"
+       ],
+       "joints": [
+        {
+         "joint": "scissors_open",
+         "type": "hinge",
+         "range": [
+          0.0,
+          0.7330382858376184
+         ],
+         "travel": 0.733,
+         "moves_part_m": 0.0777,
+         "usable": true
+        }
+       ],
+       "total_travel": {
+        "slide": 0.0,
+        "hinge": 0.733
+       },
+       "verdict": "articulated"
+      }
+     }
+    },
+    "joint_range_check": {
+     "ok": true,
+     "range": [
+      0.0,
+      0.7330382858376184
+     ],
+     "limited": true,
+     "type": "hinge",
+     "current": 0.0,
+     "expected": [
+      0.0,
+      0.7330382858376184
+     ]
+    },
+    "scissors_cut_test": {
+     "ok": true,
+     "verdict": "CUT \u2014 opened to 42.0 deg, then shut on the cord and parted it at 14.5 mm of blade gap, 52 mm from the pivot",
+     "measured": {
+      "max_open_deg": 41.9997,
+      "min_gap_at_join_mm": null,
+      "ring_force_N": 2.8,
+      "cut": [
+       {
+        "eq": "cord_cut",
+        "body": "cord_a_cord_aB_last",
+        "diameter_m": 0.0082,
+        "s_m": 0.0517,
+        "gap_mm": 14.47,
+        "edge_gap_mm": 8.19,
+        "lat_mm": 0.17,
+        "pinch_mm": [
+         0.317,
+         0.373
+        ]
+       }
+      ],
+      "closed_deg": 16.04,
+      "attempts": [
+       {
+        "ring_force_N": 0.7,
+        "verdict": "NO CUT \u2014 blades reached 42.0 deg and closed to 1000000000.0 mm at the cord, never under the 3.5 mm the cut needs"
+       },
+       {
+        "ring_force_N": 1.4,
+        "verdict": "NO CUT \u2014 blades reached 42.0 deg and closed to 1000000000.0 mm at the cord, never under the 3.5 mm the cut needs"
+       },
+       {
+        "ring_force_N": 2.8,
+        "verdict": "CUT \u2014 opened to 42.0 deg, then shut on the cord and parted it at 14.5 mm of blade gap, 52 mm from the pivot"
+       }
+      ]
+     }
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.393,
+      0.341,
+      0.467
+     ],
+     "closest_palette_rgb": [
+      0.393,
+      0.341,
+      0.467
+     ],
+     "dist": 0.0,
+     "colours": [
+      {
+       "rgb": [
+        0.393,
+        0.341,
+        0.467
+       ],
+       "share": 0.901
+      },
+      {
+       "rgb": [
+        0.66,
+        0.65,
+        0.68
+       ],
+       "share": 0.086
+      },
+      {
+       "rgb": [
+        0.55,
+        0.55,
+        0.58
+       ],
+       "share": 0.013
+      }
+     ]
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.581,
+     "source": "scene_qc silhouette through video_cam after fit_object_placement (x, y, yaw)"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "diverged": false,
+     "drift": {
+      "scissors_scissors": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "rope_a_rope_aB_first": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "rope_b_rope_bB_first": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      }
+     },
+     "failures": [],
+     "warnings": [],
+     "seconds": 2.0
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "static": {},
+     "unsupported_static": []
+    },
+    "ring_hole_measure": {
+     "ok": true,
+     "holes": {
+      "a": {
+       "across_mm": 20.0,
+       "along_mm": 54.0
+      },
+      "b": {
+       "across_mm": 21.9,
+       "along_mm": 63.9
+      }
+     },
+     "finger_mm": 14.0
+    }
+   },
+   "properties_covered": {
+    "Two blades joined at a pivot; squeezing the handle rings together closes the blades and opening the hand opens them.": "one hinge scissors_scissors_open at the pivot (range 0-42 deg): articulation_check; ring forces open and shut the blades in scissors_cut_test",
+    "Held in one hand with fingers through the rings; the blades open and close while the hand carries the tool.": "flat moulded strap rings (ring_strap 0.006 m wide, 0.01 m tall) with open holes 20.0 x 54.0 mm (ring a) and 21.9 x 63.9 mm (ring b): a finger (the Sharpa distal phalanx is 14 mm across, a human finger 15-18 mm) passes through, as the video's demonstrator's thumb and fingers do; geometry measured on the built asset; the hand's grip and its opening/closing are Stage 3 (finger servos on the rings)",
+    "Closing the blades across the rope cuts it; several open-close cycles are used.": "measured cutting throat; scissors_cut_test closes the blades on an 8.2 mm cord and severs it (one closing stroke is enough in simulation; the strokes are Stage 3)"
+   },
+   "notes": [
+    "joint_frictionloss 0.04 N m (not measurable from the video; the builder's 0.003 lets any grip that carries the 60 g pair shut it, real scissors stay where a relaxed hand leaves them)",
+    "rings rebuilt as flat straps with finger-sized holes (emul2's 5.8 mm round tubes left 8.8 / 10.8 mm slits, which no finger fits); outer ring size, handle length and placement unchanged",
+    "`cutter` is construct_scissors' output, read by the Stage 3 cut rule"
+   ]
+  },
+  {
+   "id": "rope",
+   "type": "deformable",
+   "skill": "construct_cuttable_rope",
+   "skill_origin": "library",
+   "params": {
+    "bend_stiffness": 100000.0,
+    "cap_length": 0.0,
+    "cap_length_a": null,
+    "cap_length_b": null,
+    "cap_radius_scale": 1.0,
+    "cap_rgba": [
+     0.83,
+     0.68,
+     0.24,
+     1.0
+    ],
+    "cap_shininess": 0.85,
+    "cap_specular": 0.35,
+    "condim": 4,
+    "contact_solref": [
+     0.004,
+     1.0
+    ],
+    "cut_frac": 0.5,
+    "cut_point": null,
+    "density": 1100.0,
+    "friction": [
+     0.7,
+     0.02,
+     0.001
+    ],
+    "grip_rgba": [
+     0.15,
+     0.75,
+     0.35,
+     0.0
+    ],
+    "grip_solref": [
+     0.01,
+     1.0
+    ],
+    "grips": false,
+    "include_floor": false,
+    "join_solref": [
+     0.004,
+     1.0
+    ],
+    "joint_armature": 1e-05,
+    "joint_damping": 0.012,
+    "joint_fric_solimp": [
+     0.999,
+     0.9999,
+     0.0001,
+     0.5,
+     2
+    ],
+    "joint_fric_solref": [
+     0.001,
+     1.0
+    ],
+    "joint_frictionloss": 0.02,
+    "lift_crossings": true,
+    "min_half_segments": 3,
+    "name": "rope",
+    "radius": 0.0041,
+    "rgba": [
+     0.579,
+     0.182,
+     0.191,
+     1.0
+    ],
+    "segments": 48,
+    "shininess": 0.1,
+    "specular": 0.12,
+    "timestep": 0.002,
+    "twist_stiffness": 50000.0,
+    "z": 0.0041,
+    "centreline": "rope_trace.json (35 points hand-traced on frame 0, back-projected to the table plane z = radius)"
+   },
+   "asset_xml": "objects/rope/rope.xml",
+   "root_body": "rope_a_rope_aB_first",
+   "bodies": [
+    "rope_a_rope_aB_first",
+    "rope_a_rope_aB_1",
+    "rope_a_rope_aB_2",
+    "rope_a_rope_aB_3",
+    "rope_a_rope_aB_4",
+    "rope_a_rope_aB_5",
+    "rope_a_rope_aB_6",
+    "rope_a_rope_aB_7",
+    "rope_a_rope_aB_8",
+    "rope_a_rope_aB_9",
+    "rope_a_rope_aB_10",
+    "rope_a_rope_aB_11",
+    "rope_a_rope_aB_12",
+    "rope_a_rope_aB_13",
+    "rope_a_rope_aB_14",
+    "rope_a_rope_aB_15",
+    "rope_a_rope_aB_16",
+    "rope_a_rope_aB_17",
+    "rope_a_rope_aB_18",
+    "rope_a_rope_aB_19",
+    "rope_a_rope_aB_20",
+    "rope_a_rope_aB_21",
+    "rope_a_rope_aB_22",
+    "rope_a_rope_aB_last",
+    "rope_b_rope_bB_first",
+    "rope_b_rope_bB_1",
+    "rope_b_rope_bB_2",
+    "rope_b_rope_bB_3",
+    "rope_b_rope_bB_4",
+    "rope_b_rope_bB_5",
+    "rope_b_rope_bB_6",
+    "rope_b_rope_bB_7",
+    "rope_b_rope_bB_8",
+    "rope_b_rope_bB_9",
+    "rope_b_rope_bB_10",
+    "rope_b_rope_bB_11",
+    "rope_b_rope_bB_12",
+    "rope_b_rope_bB_13",
+    "rope_b_rope_bB_14",
+    "rope_b_rope_bB_15",
+    "rope_b_rope_bB_16",
+    "rope_b_rope_bB_17",
+    "rope_b_rope_bB_18",
+    "rope_b_rope_bB_19",
+    "rope_b_rope_bB_20",
+    "rope_b_rope_bB_21",
+    "rope_b_rope_bB_22",
+    "rope_b_rope_bB_last"
+   ],
+   "halves": {
+    "a": {
+     "prefix": "rope_a_",
+     "root_body": "rope_a_rope_aB_first",
+     "first": "rope_a_rope_aB_first",
+     "last": "rope_a_rope_aB_last",
+     "bodies": [
+      "rope_a_rope_aB_first",
+      "rope_a_rope_aB_1",
+      "rope_a_rope_aB_2",
+      "rope_a_rope_aB_3",
+      "rope_a_rope_aB_4",
+      "rope_a_rope_aB_5",
+      "rope_a_rope_aB_6",
+      "rope_a_rope_aB_7",
+      "rope_a_rope_aB_8",
+      "rope_a_rope_aB_9",
+      "rope_a_rope_aB_10",
+      "rope_a_rope_aB_11",
+      "rope_a_rope_aB_12",
+      "rope_a_rope_aB_13",
+      "rope_a_rope_aB_14",
+      "rope_a_rope_aB_15",
+      "rope_a_rope_aB_16",
+      "rope_a_rope_aB_17",
+      "rope_a_rope_aB_18",
+      "rope_a_rope_aB_19",
+      "rope_a_rope_aB_20",
+      "rope_a_rope_aB_21",
+      "rope_a_rope_aB_22",
+      "rope_a_rope_aB_last"
+     ],
+     "s_range_m": [
+      0.0,
+      0.4722
+     ]
+    },
+    "b": {
+     "prefix": "rope_b_",
+     "root_body": "rope_b_rope_bB_first",
+     "first": "rope_b_rope_bB_first",
+     "last": "rope_b_rope_bB_last",
+     "bodies": [
+      "rope_b_rope_bB_first",
+      "rope_b_rope_bB_1",
+      "rope_b_rope_bB_2",
+      "rope_b_rope_bB_3",
+      "rope_b_rope_bB_4",
+      "rope_b_rope_bB_5",
+      "rope_b_rope_bB_6",
+      "rope_b_rope_bB_7",
+      "rope_b_rope_bB_8",
+      "rope_b_rope_bB_9",
+      "rope_b_rope_bB_10",
+      "rope_b_rope_bB_11",
+      "rope_b_rope_bB_12",
+      "rope_b_rope_bB_13",
+      "rope_b_rope_bB_14",
+      "rope_b_rope_bB_15",
+      "rope_b_rope_bB_16",
+      "rope_b_rope_bB_17",
+      "rope_b_rope_bB_18",
+      "rope_b_rope_bB_19",
+      "rope_b_rope_bB_20",
+      "rope_b_rope_bB_21",
+      "rope_b_rope_bB_22",
+      "rope_b_rope_bB_last"
+     ],
+     "s_range_m": [
+      0.4722,
+      0.9444
+     ]
+    }
+   },
+   "cut_joins": [
+    {
+     "eq": "rope_rope_cut",
+     "body": "rope_a_rope_aB_last",
+     "anchor_local": [
+      0.0196742351989934,
+      0.0,
+      0.0
+     ],
+     "diameter_m": 0.0082,
+     "s_m": 0.4722,
+     "point": [
+      -0.07544,
+      0.4268,
+      0.0041
+     ],
+     "other_body": "rope_b_rope_bB_first"
+    }
+   ],
+   "pose": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0,
+    "yaw_deg": 0.0,
+    "note": "a rope's pose is its centreline: both cables are built along the measured trace (rig frame) and staged at the origin"
+   },
+   "mask": "masks/rope.png",
+   "iou": 0.5211,
+   "verification_plan": {
+    "measure_rope": "radius constancy along the mask (uniform braided cord) and the cord diameter that the scissors_cut_test cord uses",
+    "construct_cuttable_rope": "the rope exists in scene.xml as two cables on the measured centreline joined at the cut location by one CONNECT (continuous: join gap 0 at build), cuttable by the Stage 3 cut rule",
+    "isaac_settle_drift": "the cord laid on the cloth stays where it was laid under gravity in PhysX (mean drift < 2 mm)",
+    "scissors_cut_test": "cuttability: an 8.2 mm cord placed between the blades is severed when they close (run on the scissors asset)",
+    "silhouette_iou_check": "placement: the settled Isaac cord projected through the video camera overlaps the rope mask",
+    "settle_stability_check": "the MuJoCo cables rest on the cloth at keyframe 0 (scene_qc settle + stage2_gate_suite keyframe checks)"
+   },
+   "verifiers": {
+    "measure_rope": {
+     "ok": true,
+     "radius_m": 0.00409,
+     "diameter_m": 0.0082,
+     "radius_cv": 0.173,
+     "self_crossings": 20,
+     "note": "radius_cv 0.17 includes the crossings and the loops; the skeleton path is not used as the centreline (it cut through the loop), the hand-traced one is"
+    },
+    "construct_cuttable_rope": {
+     "ok": true,
+     "join_gap_mm_at_build": 0.0,
+     "length_m": 0.9444,
+     "cut": {
+      "s_m": 0.4722,
+      "frac": 0.5,
+      "point": [
+       -0.07544,
+       0.4268,
+       0.0041
+      ],
+      "off_centreline_m": 0.0
+     },
+     "crossings": [
+      {
+       "s_under": 0.0133,
+       "s_over": 0.3872,
+       "point": [
+        -0.078,
+        0.509
+       ]
+      },
+      {
+       "s_under": 0.6198,
+       "s_over": 0.9078,
+       "point": [
+        -0.1115,
+        0.2815
+       ]
+      },
+      {
+       "s_under": 0.6731,
+       "s_over": 0.8703,
+       "point": [
+        -0.0882,
+        0.2522
+       ]
+      }
+     ]
+    },
+    "isaac_settle_drift": {
+     "ok": true,
+     "mean_drift_m": 0.0004577174022420608,
+     "max_drift_m": 0.00045838136836120834
+    },
+    "scissors_cut_test": {
+     "ok": true,
+     "verdict": "CUT \u2014 opened to 42.0 deg, then shut on the cord and parted it at 14.5 mm of blade gap, 52 mm from the pivot",
+     "measured": {
+      "max_open_deg": 41.9997,
+      "min_gap_at_join_mm": null,
+      "ring_force_N": 2.8,
+      "cut": [
+       {
+        "eq": "cord_cut",
+        "body": "cord_a_cord_aB_last",
+        "diameter_m": 0.0082,
+        "s_m": 0.0517,
+        "gap_mm": 14.47,
+        "edge_gap_mm": 8.19,
+        "lat_mm": 0.17,
+        "pinch_mm": [
+         0.317,
+         0.373
+        ]
+       }
+      ],
+      "closed_deg": 16.04,
+      "attempts": [
+       {
+        "ring_force_N": 0.7,
+        "verdict": "NO CUT \u2014 blades reached 42.0 deg and closed to 1000000000.0 mm at the cord, never under the 3.5 mm the cut needs"
+       },
+       {
+        "ring_force_N": 1.4,
+        "verdict": "NO CUT \u2014 blades reached 42.0 deg and closed to 1000000000.0 mm at the cord, never under the 3.5 mm the cut needs"
+       },
+       {
+        "ring_force_N": 2.8,
+        "verdict": "CUT \u2014 opened to 42.0 deg, then shut on the cord and parted it at 14.5 mm of blade gap, 52 mm from the pivot"
+       }
+      ]
+     }
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.5211,
+     "method": "settled Isaac centreline projected through camera.json at the cord radius vs masks/rope.png",
+     "png": "isaac/rope_silhouette.png"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "diverged": false,
+     "drift": {
+      "scissors_scissors": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "rope_a_rope_aB_first": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "rope_b_rope_bB_first": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      }
+     },
+     "failures": [],
+     "warnings": [],
+     "seconds": 2.0
+    }
+   },
+   "properties_covered": {
+    "A thin flexible rope that lies in loose curves and hangs limply when a section is lifted.": "two MuJoCo elastic cables (48 capsules, radius 0.0041 m, bend/twist stiffness from construct_cuttable_rope) laid on the measured trace; crossings lifted; Isaac PhysX cord settles with 0.46 mm drift; density 1100 kg/m3 hangs under gravity when lifted (Stage 3)",
+    "It can be cut: closing the scissor blades across it severs it into two separate pieces.": "construct_cuttable_rope: the CONNECT rope_rope_cut at s = 0.4722 m is the cut; the Stage 3 executor switches it off through scissors.try_sever only when the blades close on it; scissors_cut_test severs an 8.2 mm cord",
+    "A section is held up by one hand so the blades can close across a free, roughly taut span.": "the join sits at s = 0.4722 m, about 8 cm along the rope from where the left fist takes it (s ~ 0.55 m) toward the loop, so it hangs in the free span below the hand once lifted; the lift is Stage 3"
+   },
+   "isaac": {
+    "scene_usda": "isaac/isaac_scene.usda",
+    "sim_png": "isaac/isaac_sim.png",
+    "report_json": "isaac/isaac_report.json",
+    "overlay_png": "isaac/isaac_overlay.png",
+    "mean_drift_m": 0.0004577174022420608
+   },
+   "simulation_model": {
+    "kind": "mujoco_cable",
+    "approximation": "discrete elastic cable"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "checks": {
+    "model_finite": {
+     "ok": true,
+     "state_finite": true,
+     "bad_bodies": [],
+     "n_bodies": 126
+    },
+    "units": {
+     "ok": true,
+     "offenders": [],
+     "scene_radius_m": 1.13,
+     "max_extent_m": 50.0
+    },
+    "penetration": {
+     "ok": true,
+     "tolerance_m": 0.01,
+     "relative_to_baseline": false,
+     "violations": [],
+     "n_violations": 0,
+     "worst": {
+      "geoms": [
+       "rope_b_rope_bB_10/rope_b_rope_bG10",
+       "rope_b_rope_bB_20/rope_b_rope_bG20"
+      ],
+      "depth_m": 0.00034,
+      "excess_m": 0.00034,
+      "frame": 0
+     },
+     "n_pairs_touching": 40,
+     "n_frames": 1
+    },
+    "settle_stability": {
+     "ok": true,
+     "diverged": false,
+     "drift": {
+      "scissors_scissors": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "rope_a_rope_aB_first": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "rope_b_rope_bB_first": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      }
+     },
+     "failures": [],
+     "warnings": [],
+     "seconds": 2.0
+    },
+    "support": {
+     "ok": true,
+     "floating": [],
+     "static": {},
+     "unsupported_static": []
+    },
+    "required_bodies": {
+     "ok": true,
+     "found": {
+      "scissors_scissors": "scissors_scissors",
+      "rope_a_rope_aB_first": "rope_a_rope_aB_first"
+     },
+     "missing": [],
+     "bodies": [
+      "table",
+      "robot_right_right_base_tx",
+      "robot_right_right_base_ty",
+      "robot_right_right_base_tz",
+      "robot_right_right_base_roll",
+      "robot_right_right_base_pitch",
+      "robot_right_right_base_yaw",
+      "robot_right_right_hand_C_MC",
+      "robot_right_right_thumb_CMC_VL",
+      "robot_right_right_thumb_MC",
+      "robot_right_right_thumb_MCP_VL",
+      "robot_right_right_thumb_PP",
+      "robot_right_right_thumb_DP",
+      "robot_right_right_index_MCP_VL",
+      "robot_right_right_index_PP",
+      "robot_right_right_index_MP",
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_MCP_VL",
+      "robot_right_right_middle_PP",
+      "robot_right_right_middle_MP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_ring_MCP_VL",
+      "robot_right_right_ring_PP",
+      "robot_right_right_ring_MP",
+      "robot_right_right_ring_DP",
+      "robot_right_right_pinky_MC",
+      "robot_right_right_pinky_MCP_VL",
+      "robot_right_right_pinky_PP",
+      "robot_right_right_pinky_MP",
+      "robot_right_right_pinky_DP",
+      "robot_right_arm_root",
+      "robot_right_arm_base",
+      "robot_right_arm_link1",
+      "robot_right_arm_link2",
+      "robot_right_arm_link3",
+      "robot_right_arm_link4",
+      "robot_right_arm_link5",
+      "robot_right_arm_gripper",
+      "robot_left_left_base_tx",
+      "robot_left_left_base_ty",
+      "robot_left_left_base_tz",
+      "robot_left_left_base_roll",
+      "robot_left_left_base_pitch",
+      "robot_left_left_base_yaw",
+      "robot_left_left_hand_C_MC",
+      "robot_left_left_thumb_CMC_VL",
+      "robot_left_left_thumb_MC",
+      "robot_left_left_thumb_MCP_VL",
+      "robot_left_left_thumb_PP",
+      "robot_left_left_thumb_DP",
+      "robot_left_left_index_MCP_VL",
+      "robot_left_left_index_PP",
+      "robot_left_left_index_MP",
+      "robot_left_left_index_DP",
+      "robot_left_left_middle_MCP_VL",
+      "robot_left_left_middle_PP",
+      "robot_left_left_middle_MP",
+      "robot_left_left_middle_DP",
+      "robot_left_left_ring_MCP_VL",
+      "robot_left_left_ring_PP",
+      "robot_left_left_ring_MP",
+      "robot_left_left_ring_DP",
+      "robot_left_left_pinky_MC",
+      "robot_left_left_pinky_MCP_VL",
+      "robot_left_left_pinky_PP",
+      "robot_left_left_pinky_MP",
+      "robot_left_left_pinky_DP",
+      "robot_left_arm_root",
+      "robot_left_arm_base",
+      "robot_left_arm_link1",
+      "robot_left_arm_link2",
+      "robot_left_arm_link3",
+      "robot_left_arm_link4",
+      "robot_left_arm_link5",
+      "robot_left_arm_gripper",
+      "camrig",
+      "scissors_scissors",
+      "scissors_scissors_upper",
+      "rope_a_rope_aB_first",
+      "rope_a_rope_aB_1",
+      "rope_a_rope_aB_2",
+      "rope_a_rope_aB_3",
+      "rope_a_rope_aB_4",
+      "rope_a_rope_aB_5",
+      "rope_a_rope_aB_6",
+      "rope_a_rope_aB_7",
+      "rope_a_rope_aB_8",
+      "rope_a_rope_aB_9",
+      "rope_a_rope_aB_10",
+      "rope_a_rope_aB_11",
+      "rope_a_rope_aB_12",
+      "rope_a_rope_aB_13",
+      "rope_a_rope_aB_14",
+      "rope_a_rope_aB_15",
+      "rope_a_rope_aB_16",
+      "rope_a_rope_aB_17",
+      "rope_a_rope_aB_18",
+      "rope_a_rope_aB_19",
+      "rope_a_rope_aB_20",
+      "rope_a_rope_aB_21",
+      "rope_a_rope_aB_22",
+      "rope_a_rope_aB_last",
+      "rope_b_rope_bB_first",
+      "rope_b_rope_bB_1",
+      "rope_b_rope_bB_2",
+      "rope_b_rope_bB_3",
+      "rope_b_rope_bB_4",
+      "rope_b_rope_bB_5",
+      "rope_b_rope_bB_6",
+      "rope_b_rope_bB_7",
+      "rope_b_rope_bB_8",
+      "rope_b_rope_bB_9",
+      "rope_b_rope_bB_10",
+      "rope_b_rope_bB_11",
+      "rope_b_rope_bB_12",
+      "rope_b_rope_bB_13",
+      "rope_b_rope_bB_14",
+      "rope_b_rope_bB_15",
+      "rope_b_rope_bB_16",
+      "rope_b_rope_bB_17",
+      "rope_b_rope_bB_18",
+      "rope_b_rope_bB_19",
+      "rope_b_rope_bB_20",
+      "rope_b_rope_bB_21",
+      "rope_b_rope_bB_22",
+      "rope_b_rope_bB_last"
+     ]
+    },
+    "articulation": {
+     "ok": true,
+     "objects": {
+      "scissors_scissors": {
+       "bodies": [
+        "scissors_scissors",
+        "scissors_scissors_upper"
+       ],
+       "joints": [
+        {
+         "joint": "scissors_scissors_open",
+         "type": "hinge",
+         "range": [
+          0.0,
+          0.733038
+         ],
+         "travel": 0.733,
+         "moves_part_m": 0.0775,
+         "usable": true
+        }
+       ],
+       "total_travel": {
+        "slide": 0.0,
+        "hinge": 0.733
+       },
+       "verdict": "articulated"
+      }
+     }
+    },
+    "silhouette_iou": {
+     "ok": true,
+     "iou": {
+      "scissors": 0.581
+     },
+     "failures": [],
+     "warnings": [],
+     "camera_suspect": false,
+     "bodies_used": {
+      "scissors": [
+       "scissors_scissors",
+       "scissors_scissors_upper"
+      ]
+     },
+     "render_size": [
+      640,
+      480
+     ],
+     "robot_covered_fraction": {
+      "scissors": 0.002
+     }
+    },
+    "object_reach": {
+     "ok": true,
+     "advisory": true,
+     "reachable": false,
+     "unreachable": [
+      "rope_b_rope_bB_first"
+     ],
+     "verdict": "OUT OF REACH: rope_b_rope_bB_first at y=0.43 m (right arm, 29 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+    }
+   },
+   "warnings": [
+    "OUT OF REACH: rope_b_rope_bB_first at y=0.43 m (right arm, 29 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+   ]
+  }
+ },
+ "notes": [
+  "Camera from the calibrated setup (fovy 38); the 10 cm grid lies on the cloth and follows the table edges.",
+  "The rope's near end runs past the bottom edge of frame 0; the traced centreline includes a short U-turn just below the image edge joining the two strands that leave the frame, so the rope is 0.94 m in the scene; the true total length is unresolved.",
+  "The red-and-black clip on the far-left edge is background and not reconstructed.",
+  "rel rebuild: staged on the repo's setup/scene.xml (the emul6 scene referenced robot meshes in a deleted agent worktree); the rope's id is Stage 1's `rope`, the scissors' rings have finger-sized holes."
+ ],
+ "source": "examples/asset_reuse"
+}

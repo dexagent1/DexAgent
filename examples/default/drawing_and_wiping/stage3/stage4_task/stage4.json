@@ -1,0 +1,390 @@
+{
+ "name": "stage3",
+ "scene": "../../stage2/scene.xml",
+ "trajectory": "trajectory.npz",
+ "human_video": "human_video.mp4",
+ "output_dir": "outputs",
+ "num_samples": 3,
+ "seed": 0,
+ "robot": {
+  "body_prefix": "robot_",
+  "end_effectors": {
+   "left": "robot_left_left_base_yaw",
+   "right": "robot_right_right_base_yaw"
+  },
+  "init_jitter_rad": 0.05
+ },
+ "randomize": {
+  "objects": {
+   "eraser_eraser": {
+    "dx": [
+     -0.02,
+     0.0
+    ],
+    "dy": [
+     -0.015,
+     0.015
+    ],
+    "dyaw_deg": [
+     -6,
+     6
+    ],
+    "carrier": "left",
+    "release": "left: let go of eraser_eraser #9"
+   }
+  }
+ },
+ "segments": {
+  "left": [
+   {
+    "phases": [
+     "right: return home #1.1",
+     "left: reach for marker_marker_cap #1.2",
+     "left: descend on marker_marker_cap #1.2",
+     "left: close on marker_marker_cap #1.2",
+     "left: grip marker_marker_cap #1.2",
+     "left: lift marker_marker_cap #1.2",
+     "left: carry marker_marker_cap #1.3",
+     "right: reach to hold marker_marker #1.4",
+     "right: descend on marker_marker #1.4",
+     "right: close on marker_marker #1.4",
+     "right: hold marker_marker #1.4",
+     "left: carry marker_marker_cap #1.5",
+     "right: lift marker_marker #1.6",
+     "left: carry marker_marker_cap #1.7",
+     "left: carry marker_marker_cap (up) #1.8",
+     "left: carry marker_marker_cap #1.8",
+     "left: carry marker_marker_cap (down) #1.8",
+     "left: set down marker_marker_cap #1.8",
+     "left: let go of marker_marker_cap #1.8",
+     "left: retreat #1.8",
+     "left: return home #2.1"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "left: reach for eraser_eraser #2.2"
+    ],
+    "blend": [
+     "world",
+     "eraser_eraser"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on eraser_eraser #2.2",
+     "left: close on eraser_eraser #2.2",
+     "left: grip eraser_eraser #2.2",
+     "left: lift eraser_eraser #2.2"
+    ],
+    "anchor": "eraser_eraser"
+   },
+   {
+    "phases": [
+     "left: carry eraser_eraser #2.3"
+    ],
+    "blend": [
+     "eraser_eraser",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry marker_marker #4.1",
+     "right: carry marker_marker #4.2",
+     "right: carry marker_marker #4.3",
+     "right: carry marker_marker #4.4",
+     "right: carry marker_marker #4.5",
+     "right: carry marker_marker #4.6",
+     "right: carry marker_marker #4.7",
+     "right: carry marker_marker #4.8",
+     "right: carry marker_marker #5.1",
+     "right: carry marker_marker #5.2",
+     "right: carry marker_marker #5.3",
+     "right: carry marker_marker #5.4",
+     "right: carry marker_marker #5.5",
+     "right: carry marker_marker #5.6",
+     "right: carry marker_marker #5.7",
+     "right: carry marker_marker #5.8",
+     "right: carry marker_marker #5.9",
+     "right: carry marker_marker #5.10",
+     "right: carry marker_marker #5.11",
+     "right: carry marker_marker #6.1",
+     "right: carry marker_marker #6.2",
+     "right: carry marker_marker #6.3",
+     "right: carry marker_marker #6.4",
+     "right: carry marker_marker #6.5",
+     "right: carry marker_marker #6.6",
+     "right: carry marker_marker #6.7",
+     "right: carry marker_marker #6.8",
+     "right: carry marker_marker #6.9",
+     "right: carry marker_marker #6.10",
+     "right: carry marker_marker #6.11",
+     "right: carry marker_marker #6.12",
+     "right: carry marker_marker #7.1",
+     "right: carry marker_marker #7.2",
+     "right: carry marker_marker #7.3",
+     "right: carry marker_marker #7.4",
+     "right: carry marker_marker #7.5",
+     "right: carry marker_marker #7.6",
+     "right: carry marker_marker #7.7",
+     "right: carry marker_marker #7.8",
+     "right: carry marker_marker #7.9",
+     "right: carry marker_marker #7.10",
+     "right: carry marker_marker #7.11",
+     "right: carry marker_marker #7.12",
+     "right: carry marker_marker #7.13",
+     "left: carry eraser_eraser #8.1",
+     "left: carry eraser_eraser #8.2",
+     "left: carry eraser_eraser #8.3",
+     "left: carry eraser_eraser #8.4",
+     "left: carry eraser_eraser #8.5",
+     "left: carry eraser_eraser #8.6",
+     "left: carry eraser_eraser #8.7",
+     "left: carry eraser_eraser #8.8",
+     "left: carry eraser_eraser #8.11",
+     "left: carry eraser_eraser #8.12",
+     "left: carry eraser_eraser #8.9",
+     "left: carry eraser_eraser #8.10",
+     "left: carry eraser_eraser #8.13",
+     "left: carry eraser_eraser #8.14",
+     "left: carry eraser_eraser (up) #9",
+     "left: carry eraser_eraser #9",
+     "left: carry eraser_eraser (down) #9",
+     "left: set down eraser_eraser #9",
+     "left: let go of eraser_eraser #9",
+     "left: retreat #9",
+     "right: carry marker_marker (up) #10",
+     "right: carry marker_marker #10",
+     "right: carry marker_marker (down) #10",
+     "right: set down marker_marker #10",
+     "right: let go of marker_marker #10",
+     "right: retreat #10"
+    ],
+    "anchor": "world"
+   }
+  ],
+  "right": [
+   {
+    "phases": [
+     "right: return home #1.1",
+     "left: reach for marker_marker_cap #1.2",
+     "left: descend on marker_marker_cap #1.2",
+     "left: close on marker_marker_cap #1.2",
+     "left: grip marker_marker_cap #1.2",
+     "left: lift marker_marker_cap #1.2",
+     "left: carry marker_marker_cap #1.3",
+     "right: reach to hold marker_marker #1.4",
+     "right: descend on marker_marker #1.4",
+     "right: close on marker_marker #1.4",
+     "right: hold marker_marker #1.4",
+     "left: carry marker_marker_cap #1.5",
+     "right: lift marker_marker #1.6",
+     "left: carry marker_marker_cap #1.7",
+     "left: carry marker_marker_cap (up) #1.8",
+     "left: carry marker_marker_cap #1.8",
+     "left: carry marker_marker_cap (down) #1.8",
+     "left: set down marker_marker_cap #1.8",
+     "left: let go of marker_marker_cap #1.8",
+     "left: retreat #1.8",
+     "left: return home #2.1",
+     "left: reach for eraser_eraser #2.2",
+     "left: descend on eraser_eraser #2.2",
+     "left: close on eraser_eraser #2.2",
+     "left: grip eraser_eraser #2.2",
+     "left: lift eraser_eraser #2.2",
+     "left: carry eraser_eraser #2.3",
+     "right: carry marker_marker #4.1",
+     "right: carry marker_marker #4.2",
+     "right: carry marker_marker #4.3",
+     "right: carry marker_marker #4.4",
+     "right: carry marker_marker #4.5",
+     "right: carry marker_marker #4.6",
+     "right: carry marker_marker #4.7",
+     "right: carry marker_marker #4.8",
+     "right: carry marker_marker #5.1",
+     "right: carry marker_marker #5.2",
+     "right: carry marker_marker #5.3",
+     "right: carry marker_marker #5.4",
+     "right: carry marker_marker #5.5",
+     "right: carry marker_marker #5.6",
+     "right: carry marker_marker #5.7",
+     "right: carry marker_marker #5.8",
+     "right: carry marker_marker #5.9",
+     "right: carry marker_marker #5.10",
+     "right: carry marker_marker #5.11",
+     "right: carry marker_marker #6.1",
+     "right: carry marker_marker #6.2",
+     "right: carry marker_marker #6.3",
+     "right: carry marker_marker #6.4",
+     "right: carry marker_marker #6.5",
+     "right: carry marker_marker #6.6",
+     "right: carry marker_marker #6.7",
+     "right: carry marker_marker #6.8",
+     "right: carry marker_marker #6.9",
+     "right: carry marker_marker #6.10",
+     "right: carry marker_marker #6.11",
+     "right: carry marker_marker #6.12",
+     "right: carry marker_marker #7.1",
+     "right: carry marker_marker #7.2",
+     "right: carry marker_marker #7.3",
+     "right: carry marker_marker #7.4",
+     "right: carry marker_marker #7.5",
+     "right: carry marker_marker #7.6",
+     "right: carry marker_marker #7.7",
+     "right: carry marker_marker #7.8",
+     "right: carry marker_marker #7.9",
+     "right: carry marker_marker #7.10",
+     "right: carry marker_marker #7.11",
+     "right: carry marker_marker #7.12",
+     "right: carry marker_marker #7.13",
+     "left: carry eraser_eraser #8.1",
+     "left: carry eraser_eraser #8.2",
+     "left: carry eraser_eraser #8.3",
+     "left: carry eraser_eraser #8.4",
+     "left: carry eraser_eraser #8.5",
+     "left: carry eraser_eraser #8.6",
+     "left: carry eraser_eraser #8.7",
+     "left: carry eraser_eraser #8.8",
+     "left: carry eraser_eraser #8.11",
+     "left: carry eraser_eraser #8.12",
+     "left: carry eraser_eraser #8.9",
+     "left: carry eraser_eraser #8.10",
+     "left: carry eraser_eraser #8.13",
+     "left: carry eraser_eraser #8.14",
+     "left: carry eraser_eraser (up) #9",
+     "left: carry eraser_eraser #9",
+     "left: carry eraser_eraser (down) #9",
+     "left: set down eraser_eraser #9",
+     "left: let go of eraser_eraser #9",
+     "left: retreat #9",
+     "right: carry marker_marker (up) #10",
+     "right: carry marker_marker #10",
+     "right: carry marker_marker (down) #10",
+     "right: set down marker_marker #10",
+     "right: let go of marker_marker #10",
+     "right: retreat #10"
+    ],
+    "anchor": "world"
+   }
+  ]
+ },
+ "cameras": {
+  "width": 640,
+  "height": 480,
+  "ego": {
+   "pos": [
+    0.01879,
+    -0.18293,
+    0.55779
+   ],
+   "quat_wxyz": [
+    0.8815668496593654,
+    0.47089691969418795,
+    0.0249469957455896,
+    0.021762996288582456
+   ],
+   "fovy": 38.0
+  },
+  "views": {
+   "wrist_right": {
+    "parent_body": "robot_right_right_base_yaw",
+    "pos": [
+     0.050377,
+     0.001601,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.15285697798110676,
+     0.7024578988116494,
+     -0.6789659021956478,
+     -0.14897297854059297
+    ],
+    "fovy": 100.0
+   },
+   "wrist_left": {
+    "parent_body": "robot_left_left_base_yaw",
+    "pos": [
+     0.050377,
+     -0.0016,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.14897395634728527,
+     0.6789658010477727,
+     -0.7024577941640913,
+     -0.15285695520947942
+    ],
+    "fovy": 100.0
+   }
+  }
+ },
+ "table": {
+  "top_z": 0.0,
+  "center": [
+   0.0,
+   1.125
+  ],
+  "half_size": [
+   1.8,
+   1.075
+  ]
+ },
+ "inpaint": {
+  "erase_prompts": [
+   "hand",
+   "arm",
+   "whiteboard",
+   "black whiteboard marker",
+   "whiteboard eraser"
+  ],
+  "background_prompt": "An empty white tablecloth on a table; the whiteboard lies flat on it, nothing on it, static background."
+ },
+ "render": {
+  "stride": 2,
+  "samples": 32,
+  "chunks": 4,
+  "exclude_geoms": [
+   "^table",
+   "groundplane",
+   "floor",
+   "^g_table"
+  ],
+  "materials": [
+   {
+    "match": "^robot_\\w+_arm_",
+    "preset": "yam_black"
+   },
+   {
+    "match": "^robot_",
+    "preset": "sharpa"
+   }
+  ]
+ },
+ "manifest": "trajectory_manifest.json",
+ "goal": {
+  "semantics": "scene_semantics.json",
+  "objects": "goal_objects.json"
+ },
+ "checks": {
+  "physics_replay": true
+ },
+ "physics": {
+  "rules": [
+   {
+    "engaged": "marker_marker_cap_engaged",
+    "lift_joint": "marker_marker_cap_slide",
+    "travel_m": 0.0202,
+    "frac": 0.96
+   }
+  ],
+  "mujoco_version": "3.10.0",
+  "releases": [
+   {
+    "equality": "marker_marker_cap_engaged",
+    "frame": 445
+   }
+  ]
+ }
+}

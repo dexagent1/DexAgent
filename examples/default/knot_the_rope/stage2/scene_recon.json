@@ -1,0 +1,108 @@
+{
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "simulator": "mujoco+isaac",
+ "objects": [
+  {
+   "id": "rope",
+   "type": "deformable",
+   "simulator": "isaac",
+   "skill": "build_isaac_scene",
+   "skill_origin": "library",
+   "params": {
+    "preset": "segmented_rope",
+    "n_links": 41,
+    "radius": 0.01386,
+    "length_m": 1.1148,
+    "rgb": [
+     0.4588,
+     0.0235,
+     0.0431
+    ],
+    "cap_rgb": [
+     0.5412,
+     0.5137,
+     0.2902
+    ],
+    "cap_length_a_m": 0.075,
+    "cap_length_b_m": 0.075,
+    "physics": {
+     "max_linear_velocity": 1.0,
+     "max_depenetration_velocity": 0.15
+    },
+    "grasp": {
+     "calm_frames": 0
+    },
+    "centreline": "the ego13 Isaac twin's frame-0 lay (rope_frame0), moved onto the bench with the twin's world and fitted onto this video's frame-0 rope (a 1.1 cm, 2.3 cm shift and a 7.0 deg turn about its centre; the robot's hand targets move with it)"
+   },
+   "simulation_model": {
+    "kind": "isaac_cord",
+    "approximation": "segmented capsule chain (41 capsules on D6 ball joints, one PhysX articulation)"
+   },
+   "pose": {
+    "x": 0.015,
+    "y": 0.6129,
+    "yaw_deg": 0.0
+   },
+   "mask": "masks/rope.png",
+   "isaac": {
+    "cord_json": "isaac/isaac_rope_cord.json",
+    "scene_usda": "isaac/isaac_scene.usda",
+    "sim_png": "isaac/isaac_sim.png",
+    "report_json": "isaac/isaac_report.json",
+    "mean_drift_m": 0.00045884237627982473
+   },
+   "iou": 0.69,
+   "verification_plan": {
+    "isaac_deformable_rest_check": "the cord settles where it was laid (drift, connected chain, no self-overlap, on the table) and its settled tube matches the frame-0 mask through the camera"
+   },
+   "verifiers": {
+    "isaac_deformable_rest_check": {
+     "ok": true,
+     "issues": [],
+     "rope": {
+      "cord": "rope",
+      "n_links": 41,
+      "segment_m": 0.02719,
+      "preset": "segmented_rope",
+      "mean_drift_m": 0.00059,
+      "max_link_drift_m": 0.00141,
+      "claimed_drift_m": {
+       "the report": 0.00045884237627982473,
+       "the entry": 0.0004577991303560733
+      },
+      "joint_gap_m": 1e-05,
+      "link_stretch": 0.0002,
+      "self_overlap_m": 0.0,
+      "below_table_m": -0.0,
+      "inside_geom": {
+       "geom": null,
+       "depth_m": 0.0
+      },
+      "iou": 0.69,
+      "plain_iou": 0.609,
+      "thin": {
+       "width_px": 21.1,
+       "render_width_px": 24.6,
+       "elongation": 33.0,
+       "tolerance_px": 14
+      }
+     }
+    }
+   },
+   "properties_covered": {
+    "A thick, heavy, flexible rope: it bends freely along its length, keeps the curve it is laid in, and does not stretch.": "isaac_deformable_rest_check: a 41-link segmented rope that bends at every joint and does not stretch (locked joint translations)",
+    "Both ends carry short rigid brass ferrules.": "params: brass cap links at both ends (cap_length 0.075 m, cap_rgb)",
+    "Tying requires the rope to cross over itself, an end to pass through the resulting loop, and the ends to be pulled apart; the loop and the knot hold as the rope slides against itself under friction.": "the segmented_rope preset: rope-on-rope friction 0.6 and self-collision, so it crosses over itself and holds a knot (Stage 3 proves the tie)",
+    "The knot formed is a single overhand knot.": "Stage 3: the knot is proved on the executed episode"
+   }
+  }
+ ],
+ "notes": [
+  "The bench of setup/, seen through the ego13 Isaac twin's camera 'video' (fitted on this bench session's footage), moved onto the bench with the twin's world; the rope is the twin's asset (the fitted velvet-rope model, 41 links, 1.1148 m, 13.86 mm radius, brass caps) laid as the twin found it at its frame 0 (a second take of this task on the same day), fitted onto this video's frame-0 rope by a planar shift and turn, settled in Isaac Sim."
+ ],
+ "frame0_compare_png": "frame0_compare.png",
+ "source": "examples/asset_reuse"
+}

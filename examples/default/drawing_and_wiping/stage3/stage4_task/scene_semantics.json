@@ -1,0 +1,277 @@
+{
+  "task_prompt": "Write 1 2 3 4 on the whiteboard with the marker, then erase the 4 with the eraser.",
+  "task_summary": "The right hand picks up the marker and the left hand the eraser; the right hand writes 1, 2, 3 and 4 in a row on the whiteboard lying on the table; the left hand wipes out the 4 with the eraser; both tools are put back where they came from.",
+  "environment": {
+    "support_surface": "white tablecloth on a table; the whiteboard lies flat on it",
+    "camera": "fixed camera above the operator looking down the table"
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ]
+  },
+  "objects": [
+    {
+      "id": "board",
+      "name": "whiteboard",
+      "type": "rigid",
+      "role": "target",
+      "parts": [
+        "writing_surface",
+        "frame"
+      ],
+      "appearance": {
+        "writing_surface": "glossy white",
+        "frame": "thin light grey or silver edge"
+      },
+      "approximate_size": "covers most of the near half of the table, about two forearm-lengths wide",
+      "properties": [
+        "A flat rigid panel lying on the table; it does not move during the task.",
+        "Marker contact produces visible dark strokes that persist after the tip lifts.",
+        "Sliding eraser contact removes the strokes it passes over while strokes it does not touch stay visible."
+      ],
+      "initial_state": "blank, lying flat in the middle of the table",
+      "final_state": "shows 1, 2 and 3 in a row; the 4 is wiped off",
+      "evidence": "prompt: 'whiteboard'; the white panel is present in every frame; strokes appear from 8 s and the rightmost one disappears between 15 s and 21 s."
+    },
+    {
+      "id": "marker",
+      "name": "black whiteboard marker",
+      "type": "rigid",
+      "role": "tool",
+      "parts": [
+        "barrel",
+        "tip",
+        "cap"
+      ],
+      "appearance": {
+        "barrel": "black and white",
+        "tip": "dark"
+      },
+      "approximate_size": "pen-sized",
+      "properties": [
+        "A rigid pen held in a writing grip with the tip toward the board.",
+        "Moving the tip against the board leaves a visible dark trace; lifting it stops the trace.",
+        "It has a cap that is removed before writing and is held in the hand or put back afterwards."
+      ],
+      "initial_state": "lying on the table at the right edge of the board",
+      "final_state": "lying back at the right edge of the board",
+      "evidence": "prompt: 'marker'; 4 to 6 s the right hand picks it up from the right; 8 to 14 s its tip traces the digits; 22 to 24 s it is put back on the right."
+    },
+    {
+      "id": "eraser",
+      "name": "whiteboard eraser",
+      "type": "rigid",
+      "role": "tool",
+      "parts": [
+        "body",
+        "wiping_face"
+      ],
+      "appearance": {
+        "body": "dark grey block",
+        "wiping_face": "felt underside"
+      },
+      "approximate_size": "palm-sized block",
+      "properties": [
+        "A rigid block held from above with its broad felt face down.",
+        "Sliding its wiping face over the board removes the marker strokes it contacts."
+      ],
+      "initial_state": "lying on the table at the left edge of the board",
+      "final_state": "lying back at the left edge of the board",
+      "evidence": "prompt: 'eraser'; 6 to 7.5 s the left hand picks it up from the left; 15 to 21 s it is rubbed back and forth over the 4; 22 to 24 s it is put back on the left."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the marker.",
+      "object_refs": [
+        "marker"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests on the table.",
+        "right": "Grasps the marker from the right edge of the board and lifts it."
+      },
+      "goal": "The marker is held in the right hand.",
+      "time_window_s": [
+        4.0,
+        6.0
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "left",
+      "action": "Pick up the eraser.",
+      "object_refs": [
+        "eraser"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Grasps the eraser from the left edge of the board and lifts it.",
+        "right": "Holds the marker."
+      },
+      "goal": "The eraser is held in the left hand.",
+      "time_window_s": [
+        6.0,
+        7.5
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Uncap the marker.",
+      "object_refs": [
+        "marker:cap"
+      ],
+      "motion": "other",
+      "hand_roles": {
+        "left": "Holds the eraser at the left.",
+        "right": "Pulls the cap off the marker tip."
+      },
+      "goal": "The marker tip is exposed.",
+      "time_window_s": [
+        7.0,
+        8.3
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "right",
+      "action": "Write the digit 1 on the board.",
+      "object_refs": [
+        "marker",
+        "board"
+      ],
+      "motion": "write",
+      "hand_roles": {
+        "left": "Holds the eraser away from the board.",
+        "right": "Moves the marker tip along the stroke in contact with the board."
+      },
+      "goal": "A dark 1 is visible on the board.",
+      "time_window_s": [
+        8.3,
+        9.5
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "right",
+      "action": "Write the digit 2 to the right of the 1.",
+      "object_refs": [
+        "marker",
+        "board"
+      ],
+      "motion": "write",
+      "hand_roles": {
+        "left": "Holds the eraser.",
+        "right": "Traces the 2."
+      },
+      "goal": "1 and 2 are visible in order.",
+      "time_window_s": [
+        9.5,
+        10.8
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "right",
+      "action": "Write the digit 3 to the right of the 2.",
+      "object_refs": [
+        "marker",
+        "board"
+      ],
+      "motion": "write",
+      "hand_roles": {
+        "left": "Holds the eraser.",
+        "right": "Traces the 3."
+      },
+      "goal": "1, 2 and 3 are visible in order.",
+      "time_window_s": [
+        10.8,
+        12.3
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "right",
+      "action": "Write the digit 4 to the right of the 3.",
+      "object_refs": [
+        "marker",
+        "board"
+      ],
+      "motion": "write",
+      "hand_roles": {
+        "left": "Holds the eraser.",
+        "right": "Traces the 4, then lifts the marker away."
+      },
+      "goal": "The board displays 1, 2, 3 and 4 in order.",
+      "time_window_s": [
+        12.3,
+        14.5
+      ]
+    },
+    {
+      "index": 8,
+      "acting_hand": "left",
+      "action": "Wipe repeatedly over the 4 with the eraser.",
+      "object_refs": [
+        "eraser",
+        "board"
+      ],
+      "motion": "wipe",
+      "hand_roles": {
+        "left": "Presses the eraser's felt face on the 4 and slides it back and forth.",
+        "right": "Holds the marker up, away from the board."
+      },
+      "goal": "The 4 is no longer readable; 1, 2 and 3 remain.",
+      "time_window_s": [
+        15.0,
+        21.5
+      ]
+    },
+    {
+      "index": 9,
+      "acting_hand": "left",
+      "action": "Put the eraser back at the left edge of the board.",
+      "object_refs": [
+        "eraser"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Carries the eraser to the left and sets it down.",
+        "right": "Holds the marker."
+      },
+      "goal": "The eraser rests on the table at the left.",
+      "time_window_s": [
+        21.5,
+        23.5
+      ]
+    },
+    {
+      "index": 10,
+      "acting_hand": "right",
+      "action": "Put the marker back at the right edge of the board.",
+      "object_refs": [
+        "marker"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Withdraws.",
+        "right": "Carries the marker to the right and sets it down, then withdraws."
+      },
+      "goal": "The marker rests on the table at the right.",
+      "time_window_s": [
+        22.0,
+        24.5
+      ]
+    }
+  ],
+  "task_success": "The board shows 1, 2, 3 with the 4 erased; the marker and eraser lie back at the right and left edges of the board.",
+  "notes": [
+    "Writing is decomposed per digit because each digit is a separate stroke sequence with a checkable outcome.",
+    "Recapping the marker is not clearly visible; it is omitted."
+  ]
+}

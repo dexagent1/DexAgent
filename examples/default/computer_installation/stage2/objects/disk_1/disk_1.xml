@@ -1,0 +1,22 @@
+<mujoco model="disk_1_disk">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="disk_1" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="disk_1_free" />
+      <geom name="disk_1_body" type="box" size="0.046000 0.066500 0.011250" pos="0 0 0.01125" rgba="0.9000 0.8900 0.8800 1.0000" mass="0.60000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="disk_1_top" type="box" size="0.045770 0.066168 0.000750" pos="0 0 0.02325" rgba="0.8400 0.8300 0.8200 1.0000" mass="0.00001" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="disk_1_trayL" type="box" size="0.002000 0.066500 0.010200" pos="-0.04800 0 0.01020" rgba="0.0700 0.0700 0.0800 1.0000" mass="0.00001" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="disk_1_trayR" type="box" size="0.002000 0.066500 0.010200" pos="0.04800 0 0.01020" rgba="0.0700 0.0700 0.0800 1.0000" mass="0.00001" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="disk_1_handle" type="box" size="0.050000 0.006000 0.006720" pos="0 0.07250 0.00672" rgba="0.0700 0.0700 0.0800 1.0000" mass="0.00001" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <site name="disk_1_grip" pos="0 0.03990 0.02400" size="0.002" group="4" rgba="0 0 1 0.35" />
+      <site name="disk_1_nose" pos="0 -0.06650 0.01200" size="0.002" group="4" rgba="1 0 0 0.35" />
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,445 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "gift_box",
+   "type": "articulated",
+   "skill": "construct_hinged_lid_box",
+   "skill_origin": "library",
+   "params": {
+    "body_rgba": [
+     0.721,
+     0.191,
+     0.166,
+     1.0
+    ],
+    "density": 600.0,
+    "fixed_base": false,
+    "friction": [
+     0.9,
+     0.02,
+     0.001
+    ],
+    "height": 0.036,
+    "hinge_armature": 0.005,
+    "hinge_damping": 0.02,
+    "hinge_frictionloss": 0.004,
+    "hinge_solreflimit": [
+     0.005,
+     1.0
+    ],
+    "include_floor": false,
+    "length": 0.254,
+    "lid_flap": true,
+    "lid_flap_h": null,
+    "lid_init_deg": 188.995,
+    "lid_range_deg": [
+     0.0,
+     240.0
+    ],
+    "lid_rgba": null,
+    "name": "gift_box",
+    "pos": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "skirt_frictionloss": null,
+    "skirt_init_deg": 90.0,
+    "skirt_range_deg": [
+     -5.0,
+     90.0
+    ],
+    "thickness": 0.003,
+    "timestep": 0.002,
+    "width": 0.224,
+    "yaw_deg": 0.0
+   },
+   "asset_xml": "objects/gift_box/gift_box.xml",
+   "root_body": "gift_box_gift_box",
+   "bodies": [
+    "gift_box_gift_box",
+    "gift_box_gift_box_lidb",
+    "gift_box_gift_box_lidflapb"
+   ],
+   "joints": {
+    "lid": "gift_box_gift_box_lid",
+    "skirt": "gift_box_gift_box_lidflap",
+    "free": "gift_box_gift_box_free"
+   },
+   "initial_state": {
+    "lid_deg": 189.0,
+    "skirt_deg": 90.0,
+    "closed_lid_deg": 0.0,
+    "closed_skirt_deg": 90.0
+   },
+   "pose": {
+    "x": -0.0051,
+    "y": 0.3731,
+    "z": 0.0,
+    "yaw_deg": 1.64
+   },
+   "mask": "masks/gift_box.png",
+   "iou": 0.9537,
+   "measurements": {
+    "method": "edge back-projection through the re-registered camera.json at column 323 of frame 0 (front wall bottom/top rows 383/360, back wall floor junction 258.5, hinge row 232) and of the closed box at frame 445 (front face 24 px)",
+    "length_m": 0.254,
+    "width_m": 0.224,
+    "wall_height_m": 0.036,
+    "note": "the closed box's front face (frame 445) is 0.0376 m tall = wall + lid board, so the walls are 0.036 m; the open frame's back-wall reading (0.047 m) includes the hinge crease highlight and the floor shadow and is not used",
+    "fitted_scale": 0.9989,
+    "palette": [
+     [
+      0.721,
+      0.191,
+      0.166
+     ],
+     [
+      0.653,
+      0.113,
+      0.104
+     ],
+     [
+      0.649,
+      0.195,
+      0.19
+     ]
+    ]
+   },
+   "verification_plan": {
+    "hinged_lid_closure_test": "created (new_tools.json, earlier run of this task): the lid rests folded back on the table where frame 0 shows it, swings ~189 deg shut about the back edge under a capped torque, the skirt folds flush down the front wall, and released both stay shut (Stage 1 properties 1-4)",
+    "articulation_check": "the gift box is articulated: a usable lid hinge (and the skirt crease), not a rigid free body (property 1)",
+    "articulated_joint_travel_test": "lid and skirt each travel their range both ways under capped torques without the base slipping (light lid, the base stays put: properties 3, 4)",
+    "joint_range_check": "lid range 0..240 deg covers the observed ~180 deg swing from folded back on the table (189 deg) to shut (0) (property 3)",
+    "box_enclosure_check": "the base is a real tray: a bottom, four walls and a hollow inside, top open at frame 0 (the lid folded back) (property 2)",
+    "color_match_check": "constructed red matches the video palette",
+    "settle_stability_check": "the box with its open lid stays at rest on the table (base never slides or lifts; lid stays on the cloth) (properties 2, 4)",
+    "support_check": "the box stands on the table, the folded-back lid rests on the cloth",
+    "silhouette_iou_check": "placement: rendered silhouette (base, lid, skirt) through video_cam against the frame-0 mask",
+    "penetration_check": "no object interpenetration at frame 0"
+   },
+   "verifiers": {
+    "hinged_lid_closure_test": {
+     "ok": true,
+     "created": true,
+     "rest": {
+      "lid_init_deg": 189.0,
+      "lid_after_deg": 189.23,
+      "skirt_init_deg": 90.0,
+      "skirt_after_deg": 89.98,
+      "lid_drift_deg": 0.23
+     },
+     "close": {
+      "lid_torque_Nm": 0.4427,
+      "lid_gravity_torque_Nm": 0.1476,
+      "lid_mass_kg": 0.1189,
+      "lid_reached_deg": -0.0,
+      "skirt_torque_Nm": 0.0184,
+      "skirt_reached_deg": 90.0,
+      "lid_with_skirt_deg": -0.0
+     },
+     "hold": {
+      "lid_final_deg": -0.0,
+      "lid_drift_deg": 0.0,
+      "skirt_final_deg": 90.0,
+      "skirt_drift_deg": 0.0
+     },
+     "root_slip_m": 0.0,
+     "asset": "assets/gift_box/standalone/gift_box.xml"
+    },
+    "articulation_check": {
+     "ok": true,
+     "verdict": "articulated",
+     "joints": [
+      {
+       "joint": "gift_box_gift_box_lid",
+       "type": "hinge",
+       "range": [
+        0.0,
+        4.18879
+       ],
+       "travel": 4.1888,
+       "moves_part_m": 0.451,
+       "usable": true
+      },
+      {
+       "joint": "gift_box_gift_box_lidflap",
+       "type": "hinge",
+       "range": [
+        -0.0872665,
+        1.5708
+       ],
+       "travel": 1.6581,
+       "moves_part_m": 0.0266,
+       "usable": true
+      }
+     ]
+    },
+    "articulated_joint_travel_test": {
+     "ok": true,
+     "lid": {
+      "type": "hinge",
+      "range": [
+       0.0,
+       4.1888
+      ],
+      "cap": 0.3,
+      "applied_at": "body com",
+      "q_start": 3.2986,
+      "forward": {
+       "fraction": 0.789,
+       "t80_s": null,
+       "q_end": 3.304,
+       "q_best": 3.3058
+      },
+      "back": {
+       "fraction": 1.005,
+       "t80_s": 0.958,
+       "q_end": -0.0002,
+       "q_best": -0.0191
+      },
+      "root_slip_m": 0.0,
+      "ok": true
+     },
+     "skirt": {
+      "type": "hinge",
+      "range": [
+       -0.0873,
+       1.5708
+      ],
+      "cap": 0.05,
+      "applied_at": "body com",
+      "q_start": 1.5708,
+      "forward": {
+       "fraction": 1.0,
+       "t80_s": 0.0,
+       "q_end": 1.5708,
+       "q_best": 1.5708
+      },
+      "back": {
+       "fraction": 1.001,
+       "t80_s": 1.172,
+       "q_end": -0.0873,
+       "q_best": -0.0888
+      },
+      "root_slip_m": 0.0,
+      "ok": true
+     },
+     "note": "standalone asset; lid at 0.3 N m with min_fraction 0.75 (its forward end past the rest angle is blocked by the table by design), skirt at 0.05 N m, min_fraction 0.8"
+    },
+    "joint_range_check": {
+     "ok": true,
+     "range": [
+      0.0,
+      4.18879
+     ],
+     "limited": true,
+     "type": "hinge",
+     "current": 3.29859,
+     "expected": [
+      0.0,
+      4.18879
+     ]
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.721,
+      0.191,
+      0.166
+     ],
+     "closest_palette_rgb": [
+      0.721,
+      0.191,
+      0.166
+     ],
+     "dist": 0.0,
+     "colours": [
+      {
+       "rgb": [
+        0.721,
+        0.191,
+        0.166
+       ],
+       "share": 1.0
+      }
+     ]
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "drift": {
+      "gift_box_gift_box": {
+       "pos_m": 0.0,
+       "rot_deg": 0.0,
+       "verdict": "at rest"
+      },
+      "gift_box_gift_box_lidb": {
+       "pos_m": 0.0,
+       "rot_deg": 0.3,
+       "verdict": "at rest"
+      }
+     },
+     "failures": [],
+     "warnings": [],
+     "seconds": 2.0
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "static": {},
+     "unsupported_static": []
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": {
+      "gift_box": 0.949
+     },
+     "failures": [],
+     "warnings": [],
+     "camera_suspect": false,
+     "bodies_used": {
+      "gift_box": [
+       "gift_box_gift_box",
+       "gift_box_gift_box_lidb",
+       "gift_box_gift_box_lidflapb"
+      ]
+     }
+    },
+    "box_enclosure_check": {
+     "ok": true,
+     "issues": [],
+     "faces": {
+      "bottom": {
+       "hit": true,
+       "geom": "gift_box_gift_box_base",
+       "distance_m": 0.0165
+      },
+      "x_pos": {
+       "hit": true,
+       "geom": "gift_box_gift_box_wall_right",
+       "distance_m": 0.124
+      },
+      "x_neg": {
+       "hit": true,
+       "geom": "gift_box_gift_box_wall_left",
+       "distance_m": 0.124
+      },
+      "y_pos": {
+       "hit": true,
+       "geom": "gift_box_gift_box_wall_back",
+       "distance_m": 0.109
+      },
+      "y_neg": {
+       "hit": true,
+       "geom": "gift_box_gift_box_wall_front",
+       "distance_m": 0.109
+      },
+      "top": {
+       "hit": false,
+       "geom": null,
+       "distance_m": null
+      }
+     },
+     "cavity_fraction": 1.0,
+     "top_state": "open",
+     "interior_size_m": [
+      0.254,
+      0.224,
+      0.033
+     ],
+     "n_geoms": 7,
+     "walls_found": [
+      "x_pos",
+      "x_neg",
+      "y_pos",
+      "y_neg"
+     ]
+    },
+    "penetration_check": {
+     "ok": true,
+     "object_pairs": [],
+     "note": "20 violations at the scene's qpos0, all between the two robot hands' visual meshes of the setup; none involves the gift box; scene_qc's penetration at the home key: 0 violations"
+    }
+   },
+   "properties_covered": {
+    "The lid is attached to the base along the far long edge and rotates about that edge like a hinge; it is not a separate loose lid.": "construct_hinged_lid_box: the lid is a child body of the base on one hinge joint (gift_box_gift_box_lid, axis along x = the long left-right edge) at the top of the far (+y) wall; not a free body; articulation_check (usable hinge, lid moves 0.45 m over its range), joint_range_check",
+    "Open state: the lid lies flat on the table behind the base, inner face up. Closed state: the lid lies flat on top of the base covering the opening.": "lid_init_deg='rest' -> 189.0 deg: the lid lies back on the table behind the base with its inner face up (joint ref = initial angle so the home key shows it; skirt standing at 90 = the light strip at the lid's far end in frame 0); shut = 0 deg = lid flat on the wall tops with the same footprint as the base (0.254 x 0.224 m), skirt flush down the front wall; box_enclosure_check (open tray), silhouette IoU 0.95, hinged_lid_closure_test REST and CLOSE",
+    "Closing is a rotation of about 180 degrees about the hinge edge, done with both hands lifting the lid's free edge, swinging it over and lowering it.": "lid range [0, 240] deg; hinged_lid_closure_test CLOSE reached -0.0 deg from 189 deg under 0.44 N m (3x the lid's 0.15 N m gravity torque: a light lid two hands lift easily); articulated_joint_travel_test back fraction 1.0 under 0.3 N m",
+    "The lid settles flat and stays closed when pressed; the base does not move during closing.": "the shut stop is the joint limit at 0 deg (solreflimit 0.005): hinged_lid_closure_test HOLD released shut with 0.0 deg lid drift and 0.0 deg skirt drift; base is a free body (fixed_base False) of 0.28 kg with friction 0.9 that did not slip in the closure test (root slip 0.0 mm) or in settle_stability_check"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "warnings": [],
+   "checks": {
+    "model_finite": {
+     "ok": true
+    },
+    "units": {
+     "ok": true
+    },
+    "penetration": {
+     "ok": true
+    },
+    "settle_stability": {
+     "ok": true
+    },
+    "support": {
+     "ok": true
+    },
+    "required_bodies": {
+     "ok": true
+    },
+    "articulation": {
+     "ok": true
+    },
+    "silhouette_iou": {
+     "ok": true
+    },
+    "object_reach": {
+     "ok": true
+    }
+   },
+   "silhouette_iou": {
+    "gift_box": 0.949
+   }
+  }
+ },
+ "camera_registration": {
+  "method": "register_table_camera(source='estimate') with the pose fitted to the cloth edges: the setup's measured cloth (work_area x -0.40..0.32, far edge y 1.16) projected through the camera matches the three cloth edges detected in frame 0 (left, right, far) at 0.39 px rms; lens = the setup's calibrated bench webcam (fovy 38)",
+  "fit": {
+   "yaw": 94.78250158859714,
+   "pitch": 35.68556670063195,
+   "roll": -1.868320454392364,
+   "h": 0.5726417569580213,
+   "fx": 0.044087897136685227,
+   "fy": -0.2668264321637548
+  },
+  "files": [
+   "camera_reg/cloth_edges.json",
+   "camera_reg/cloth_edges.png",
+   "camera_reg/fit_cloth_cam.py",
+   "camera_reg/camera_check_cloth.png",
+   "camera_reg/args_register.json"
+  ],
+  "previous": "prev_setupcam/: the earlier Stage 2 used the setup's ego camera as it is (source='setup'); its projected cloth sits ~30 px below the cloth edges of this video (another camera mounting: 8 cm further back, 2 deg more pitch), which put the box 11 cm too far from the robot",
+  "fovy_note": "the cloth fixes the pose for any lens but not the lens itself; GeoCalib (estimate_gravity, run in the sam3d-objects env where geocalib is installed) gives vfov 47 / pitch 42 here, but on the setup-camera clip open_the_bottle it reads vfov 40 / pitch 37 for the calibrated 38 / 34, and its vfov varies 40-45 between clips of one mounting, so it cannot overrule the calibrated lens; with fovy 44 the box would sit 7 cm farther (y 0.447), same width"
+ },
+ "notes": [
+  "Camera re-registered (rel_ maintainer fix): this clip was not filmed from the setup's camera pose; see camera_registration. camera_check.png: the 10 cm grid lies on the cloth and converges with its edges; camera_reg/camera_check_cloth.png also draws the setup's cloth outline on the frame.",
+  "Box re-measured through the new camera (0.254 x 0.224 x 0.036 m), rebuilt with the library's construct_hinged_lid_box (lid 'rest' = 189 deg, skirt 90), staged with stage_on_bench and placed with fit_object_placement (x, y, yaw, scale): scale 0.999, IoU 0.954 -> no rebuild needed.",
+  "The two dark patches on the lid's outer face are not modelled (labels; no latch action observed).",
+  "penetration_check at the scene's qpos0 flags only robot-hand self overlaps of the setup (robot visuals at qpos0, outside the box); scene_qc's penetration check at the home key reports 0 violations.",
+  "Hands are absent in frame 0 (masks/hands.png is empty).",
+  "Keyframe servo targets checked with sync_keyframe_ctrl.py: 0 changes needed (scene freshly staged from the current setup)."
+ ],
+ "source": "examples/asset_reuse"
+}

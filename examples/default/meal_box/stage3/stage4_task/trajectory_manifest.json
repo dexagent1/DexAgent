@@ -1,0 +1,1312 @@
+{
+ "source": "stage3/trajectory_manifest.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    135
+   ],
+   "motion": "hold",
+   "side": "left",
+   "object": "meal_box_mealbox_lid",
+   "plan": {
+    "index": 1,
+    "motion": "hold",
+    "side": "left",
+    "object": "meal_box_mealbox_lid",
+    "pose": "poses/r4_left_lid_squeeze.json",
+    "hand_scene": "poses/r4_hs_left_lid.json",
+    "approach_m": 0.06,
+    "press_depth_rad": 0.3,
+    "expect": {
+     "in_hand": false,
+     "pads": {},
+     "min_links": 0
+    }
+   },
+   "expect": {
+    "in_hand": false,
+    "stays_put": true,
+    "min_links": 0,
+    "pads": {},
+    "pads_at_label": "left: hold meal_box_mealbox_lid",
+    "hand": "left",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [
+     "meal_box_mealbox_container"
+    ],
+    "pads_at_rel": 135
+   }
+  },
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    136,
+    299
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "meal_box_mealbox_lid",
+   "plan": {
+    "index": 1,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "meal_box_mealbox_lid",
+    "pose": "poses/r4_right_lid_squeeze.json",
+    "hand_scene": "poses/r4_hs_right_lid.json",
+    "approach_m": 0.06,
+    "open_frac": 0.1,
+    "press_depth_rad": 0.3,
+    "lift_m": 0.04
+   },
+   "expect": {
+    "rise_m": 0.02,
+    "in_hand": true,
+    "no_slip": true,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       0.22976999293894176,
+       0.41967177327207367,
+       0.010323911323431446
+      ],
+      "normal": [
+       0.9822319604088026,
+       0.0716779593977309,
+       -0.17344349536970335
+      ]
+     },
+     "middle": {
+      "point": [
+       0.23113473774874196,
+       0.4017906303041967,
+       0.010472900472257053
+      ],
+      "normal": [
+       0.9822319604088026,
+       0.0716779593977309,
+       -0.17344349536970335
+      ]
+     }
+    },
+    "pads_at_label": "right: grip meal_box_mealbox_lid",
+    "hand": "right",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [
+     "meal_box_mealbox_container"
+    ],
+    "pads_at_rel": 131,
+    "slip_from_rel": 132
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    300,
+    362
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "meal_box_mealbox_lid",
+   "plan": {
+    "index": 2,
+    "motion": "carry",
+    "side": "right",
+    "object": "meal_box_mealbox_lid",
+    "target_pos": [
+     -0.1172,
+     0.4433,
+     0.115
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -87.99
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     -0.1172,
+     0.4433,
+     0.115
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "min_links": 1,
+    "hand": "right",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [
+     "meal_box_mealbox_container"
+    ],
+    "slip_from_rel": 0
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    363,
+    474
+   ],
+   "motion": "place",
+   "side": "right",
+   "object": "meal_box_mealbox_lid",
+   "plan": {
+    "index": 3,
+    "motion": "place",
+    "side": "right",
+    "object": "meal_box_mealbox_lid",
+    "target_pos": [
+     -0.1172,
+     0.4433,
+     0.0605
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -87.99
+    ],
+    "hover_m": 0.01,
+    "duration_s": 1.2,
+    "retreat_dir": [
+     0.5,
+     -0.3,
+     0.8
+    ],
+    "expect": {
+     "on": "meal_box_mealbox_container"
+    },
+    "clearance_m": 0.0
+   },
+   "expect": {
+    "target_pos": [
+     -0.1172,
+     0.4433,
+     0.0605
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": true,
+    "released": true,
+    "hand": "right",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [],
+    "on": "meal_box_mealbox_container"
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    475,
+    527
+   ],
+   "motion": "release",
+   "side": "left",
+   "object": "meal_box_mealbox_lid",
+   "plan": {
+    "index": 3,
+    "motion": "release",
+    "side": "left",
+    "object": "meal_box_mealbox_lid",
+    "retreat_dir": [
+     -0.5,
+     -0.3,
+     0.8
+    ],
+    "expect": {
+     "on": "meal_box_mealbox_container"
+    }
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [],
+    "on": "meal_box_mealbox_container"
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    528,
+    600
+   ],
+   "motion": "home",
+   "side": "left",
+   "object": null,
+   "plan": {
+    "index": 3,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    601,
+    732
+   ],
+   "motion": "press",
+   "side": "left",
+   "object": "meal_box_mealbox_lid",
+   "plan": {
+    "index": 3,
+    "motion": "press",
+    "side": "left",
+    "object": "meal_box_mealbox_lid",
+    "pose": "poses/r4_left_press.json",
+    "hand_scene": "poses/r4_hs_left_lid_onbox.json",
+    "direction": [
+     0,
+     0,
+     -1
+    ],
+    "distance_m": 0.004,
+    "expect": {
+     "displacement": null,
+     "stays_put": true,
+     "supported": true,
+     "on": "meal_box_mealbox_container",
+     "upright": true,
+     "upright_tol_deg": 2.0
+    }
+   },
+   "expect": {
+    "displacement": null,
+    "hand": "left",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [],
+    "stays_put": true,
+    "supported": true,
+    "on": "meal_box_mealbox_container",
+    "upright": true,
+    "upright_tol_deg": 2.0
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    733,
+    813
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 3,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    814,
+    946
+   ],
+   "motion": "press",
+   "side": "right",
+   "object": "meal_box_mealbox_lid",
+   "plan": {
+    "index": 3,
+    "motion": "press",
+    "side": "right",
+    "object": "meal_box_mealbox_lid",
+    "pose": "poses/r4_right_press.json",
+    "hand_scene": "poses/r4_hs_right_lid_onbox.json",
+    "direction": [
+     0,
+     0,
+     -1
+    ],
+    "distance_m": 0.004,
+    "expect": {
+     "displacement": null,
+     "stays_put": true,
+     "supported": true,
+     "on": "meal_box_mealbox_container",
+     "upright": true,
+     "upright_tol_deg": 2.0
+    }
+   },
+   "expect": {
+    "displacement": null,
+    "hand": "right",
+    "object": "meal_box_mealbox_lid",
+    "involved": [
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": [],
+    "stays_put": true,
+    "supported": true,
+    "on": "meal_box_mealbox_container",
+    "upright": true,
+    "upright_tol_deg": 2.0
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    947,
+    1003
+   ],
+   "motion": "home",
+   "side": "left",
+   "object": null,
+   "plan": {
+    "index": 4,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1004,
+    1071
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 4,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1072,
+    1344
+   ],
+   "motion": "both",
+   "side": "both",
+   "plan": {
+    "index": 4,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "close_joint",
+      "side": "left",
+      "object": "meal_box_mealbox_latch_yn",
+      "joint": "meal_box_mealbox_fold_yn",
+      "target": 0.0,
+      "pose": [
+       "poses/yn4Lc_c06.json",
+       "poses/yn4Lc_c07.json",
+       "poses/yn4Lc_c08.json"
+      ],
+      "hand_scene": "poses/hs_left_onbox_v1.json",
+      "hand_follows": "rigid",
+      "approach_m": 0.05,
+      "duration_s": 3.0,
+      "release": true,
+      "retreat_dir": [
+       -0.6,
+       0,
+       0.8
+      ],
+      "retreat_m": 0.06
+     },
+     "right": {
+      "motion": "close_joint",
+      "side": "right",
+      "object": "meal_box_mealbox_latch_yp",
+      "joint": "meal_box_mealbox_fold_yp",
+      "target": 0.0,
+      "pose": [
+       "poses/yp4Rd_c09.json",
+       "poses/yp4Rd_c06.json",
+       "poses/yp4Rd_c07.json",
+       "poses/yp4Rd_c08.json"
+      ],
+      "hand_scene": "poses/hs_right_onbox_v1.json",
+      "hand_follows": "rigid",
+      "approach_m": 0.05,
+      "duration_s": 3.0,
+      "release": true,
+      "retreat_dir": [
+       0.6,
+       0,
+       0.8
+      ],
+      "retreat_m": 0.06
+     }
+    }
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "joint": "meal_box_mealbox_fold_yn",
+      "joint_target": 0.0,
+      "object": "meal_box_mealbox_latch_yn",
+      "in_hand": false,
+      "min_links": 1,
+      "pads": {
+       "index": {
+        "point": [
+         -0.1955204914084852,
+         0.46230901088650045,
+         0.06329848184747489
+        ],
+        "normal": [
+         -8.724419650212344e-07,
+         -3.6986746706732975e-08,
+         0.9999999999996184
+        ]
+       },
+       "middle": {
+        "point": [
+         -0.2157207834042707,
+         0.45894775608612326,
+         0.06329846409957057
+        ],
+        "normal": [
+         -8.724419650212344e-07,
+         -3.6986746706732975e-08,
+         0.9999999999996184
+        ]
+       }
+      },
+      "pads_at_label": "left: grip meal_box_mealbox_latch_yn",
+      "hand": "left",
+      "involved": [
+       "meal_box_mealbox_latch_yn"
+      ],
+      "pads_at_rel": 125
+     },
+     "right": {
+      "joint": "meal_box_mealbox_fold_yp",
+      "joint_target": 0.0,
+      "object": "meal_box_mealbox_latch_yp",
+      "in_hand": false,
+      "min_links": 1,
+      "pads": {
+       "index": {
+        "point": [
+         -0.03637118808183273,
+         0.43481245860301976,
+         0.06331115883497858
+        ],
+        "normal": [
+         -8.724419650212344e-07,
+         -3.6986746706732975e-08,
+         0.9999999999996184
+        ]
+       },
+       "middle": {
+        "point": [
+         -0.01584693226084255,
+         0.4349915715000701,
+         0.06331117674782547
+        ],
+        "normal": [
+         -8.724419650212344e-07,
+         -3.6986746706732975e-08,
+         0.9999999999996184
+        ]
+       }
+      },
+      "pads_at_label": "right: grip meal_box_mealbox_latch_yp",
+      "hand": "right",
+      "involved": [
+       "meal_box_mealbox_latch_yp"
+      ],
+      "pads_at_rel": 125
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": "meal_box_mealbox_latch_yn",
+     "right": "meal_box_mealbox_latch_yp"
+    },
+    "involved": [
+     "meal_box_mealbox_latch_yn",
+     "meal_box_mealbox_latch_yn",
+     "meal_box_mealbox_latch_yp",
+     "meal_box_mealbox_latch_yp"
+    ],
+    "untouched": [],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 50.0
+   },
+   "hands": {
+    "left": {
+     "motion": "close_joint",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_yn",
+     "joint": "meal_box_mealbox_fold_yn",
+     "pose": {
+      "file": "poses/yn4Lc_c06.json",
+      "source": "py/latch_cands.py: flat_hand_pose with index+middle pads on the strap top, ranked by the side's arm reach over the whole rigid fold sweep (arm_reach_check of 5 poses along the fold), thumb curled so the two hands' thumbs do not meet over the lid; the executor's two-hand screen picked the pair (left yn: heading -75 deg from outward, pitch 50)",
+      "hand_scene": "poses/hs_left_onbox_v1.json",
+      "stress_tests": {
+       "grasp_approach_open_test": {
+        "ok": true,
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "floor_penetration_mm": 0.0
+       },
+       "grasp_turn_test": {
+        "ok": false,
+        "verdict": "LOST \u2014 the hand came off the part after 5.0 deg of sweep (moved 61 deg)"
+       }
+      },
+      "notes": "grasp_turn_test reports LOST for this one-sided push (the floating hand leaves the strap after 5 deg while the strap folds 61 deg); the bench fold is the proof (fold yn 1.48 -> 0.02 rad)"
+     }
+    },
+    "right": {
+     "motion": "close_joint",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_yp",
+     "joint": "meal_box_mealbox_fold_yp",
+     "pose": {
+      "file": "poses/yp4Rd_c09.json",
+      "source": "py/latch_cands.py: flat_hand_pose with index+middle pads on the strap top, ranked by the side's arm reach over the whole rigid fold sweep (arm_reach_check of 5 poses along the fold), thumb curled so the two hands' thumbs do not meet over the lid; the executor's two-hand screen picked the pair (right yp: heading 80 deg, pitch 35)",
+      "hand_scene": "poses/hs_right_onbox_v1.json",
+      "stress_tests": {
+       "grasp_approach_open_test": {
+        "ok": true,
+        "object_nudged_mm": 0.16,
+        "penetration_mm": 0.06,
+        "floor_penetration_mm": 0.0
+       },
+       "grasp_turn_test": {
+        "ok": false,
+        "verdict": "LOST \u2014 the hand came off the part after 5.0 deg of sweep (moved 69 deg)"
+       }
+      },
+      "notes": "grasp_turn_test reports LOST for this one-sided push; the bench fold is the proof (fold yp 1.52 -> -0.02 rad)"
+     }
+    }
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1345,
+    1405
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 5,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.2
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1406,
+    1581
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotLG_c05.json"
+    ],
+    "hand_scene": "poses/hs_left_box_rot0.json",
+    "angle_deg": -45,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "expect": {
+     "yaw_turned_deg": -5.0
+    },
+    "back": false
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   },
+   "goal_predicates": [
+    {
+     "class": "rotation_turns",
+     "bodies": {
+      "A": "meal_box_mealbox_container"
+     },
+     "params": {
+      "body": "meal_box_mealbox_container",
+      "axis": [
+       0,
+       0,
+       1
+      ],
+      "min_deg": 80
+     }
+    }
+   ],
+   "deviation": {
+    "reason": "Stage 1 has both hands swing the lidded box round; the robot turns it with the LEFT hand alone in five side pushes (-10.9, -21.1, -22.1, -24.1, -10.5 deg: -88.8 deg clockwise, as in the video). Measured: a flat hand pressed on the lid drags nothing (the press adds as much cloth friction under the 1.56 kg box as hand friction on the lid: -0.4 deg for a -105 deg sweep when r5's pressed-lid stroke was re-executed with the current executor, plans/plan_v5.json, logs/exec_v5b.txt), so the turn must push a side face; the executor's rotate has no two-hand couple and a two-hand entry may not act on one part (subgoal.run_both rejects it), and a right-hand push on the box's right face is out of the right arm's reach over the stroke (py/rot_cands.py right face: 55-276 mm flange residual on every sample). The goal (the unlatched flaps face left and right) is met: rotation_turns >= 80 deg.",
+    "sequential": true
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1582,
+    1732
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotT1_c00.json"
+    ],
+    "hand_scene": "poses/hs_left_box_turn1.json",
+    "angle_deg": -55.0,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "back": false,
+    "expect": {
+     "yaw_turned_deg": -5.0
+    }
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1733,
+    1883
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotT2_c00.json"
+    ],
+    "hand_scene": "poses/hs_left_box_turn2.json",
+    "angle_deg": -55.0,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "back": false,
+    "expect": {
+     "yaw_turned_deg": -5.0
+    }
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1884,
+    2037
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotT3_c01.json"
+    ],
+    "hand_scene": "poses/hs_left_box_turn3.json",
+    "angle_deg": -55.0,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "back": false,
+    "expect": {
+     "yaw_turned_deg": -5.0
+    }
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    2038,
+    2187
+   ],
+   "motion": "rotate",
+   "side": "left",
+   "object": "meal_box_mealbox_container",
+   "plan": {
+    "index": 5,
+    "motion": "rotate",
+    "side": "left",
+    "object": "meal_box_mealbox_container",
+    "pose": [
+     "poses/rotT4_c02.json"
+    ],
+    "hand_scene": "poses/hs_left_box_turn4.json",
+    "angle_deg": -30.0,
+    "duration_s": 3.0,
+    "with": "meal_box_mealbox_lid",
+    "back": false,
+    "expect": {
+     "yaw_turned_deg": -5.0
+    }
+   },
+   "expect": {
+    "yaw_turned_deg": -5.0,
+    "upright": true,
+    "hand": "left",
+    "object": "meal_box_mealbox_container",
+    "involved": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ],
+    "untouched": []
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    2188,
+    2270
+   ],
+   "motion": "home",
+   "side": "left",
+   "object": null,
+   "plan": {
+    "index": 5,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   }
+  },
+  {
+   "index": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    2271,
+    2491
+   ],
+   "motion": "both",
+   "side": "both",
+   "plan": {
+    "index": 6,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "close_joint",
+      "side": "left",
+      "object": "meal_box_mealbox_latch_xp",
+      "joint": "meal_box_mealbox_fold_xp",
+      "target": 0.0,
+      "pose": [
+       "poses/xp6L_c09.json",
+       "poses/xp6L_c10.json",
+       "poses/xp6L_c11.json",
+       "poses/xp6L_c01.json",
+       "poses/xp6L_c02.json"
+      ],
+      "hand_scene": "poses/hs_left_turned_v1.json",
+      "hand_follows": "rigid",
+      "approach_m": 0.05,
+      "duration_s": 3.0,
+      "release": false
+     },
+     "right": {
+      "motion": "close_joint",
+      "side": "right",
+      "object": "meal_box_mealbox_latch_xn",
+      "joint": "meal_box_mealbox_fold_xn",
+      "target": 0.0,
+      "pose": [
+       "poses/xn6R_c09.json",
+       "poses/xn6R_c10.json",
+       "poses/xn6R_c00.json",
+       "poses/xn6R_c01.json",
+       "poses/xn6R_c02.json"
+      ],
+      "hand_scene": "poses/hs_right_turned_v1.json",
+      "hand_follows": "rigid",
+      "approach_m": 0.05,
+      "duration_s": 3.0,
+      "release": false
+     }
+    }
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "joint": "meal_box_mealbox_fold_xp",
+      "joint_target": 0.0,
+      "object": "meal_box_mealbox_latch_xp",
+      "in_hand": true,
+      "min_links": 1,
+      "pads": {
+       "index": {
+        "point": [
+         -0.10253657641276627,
+         0.4179647330582395,
+         0.06331738294995287
+        ],
+        "normal": [
+         3.842575274737962e-06,
+         1.4327311774199172e-06,
+         0.9999999999915922
+        ]
+       },
+       "middle": {
+        "point": [
+         -0.12281850005835283,
+         0.4148150137590859,
+         0.06331746539747224
+        ],
+        "normal": [
+         3.842575274737962e-06,
+         1.4327311774199172e-06,
+         0.9999999999915922
+        ]
+       }
+      },
+      "pads_at_label": "left: grip meal_box_mealbox_latch_xp",
+      "hand": "left",
+      "involved": [
+       "meal_box_mealbox_latch_xp"
+      ],
+      "pads_at_rel": 125
+     },
+     "right": {
+      "joint": "meal_box_mealbox_fold_xn",
+      "joint_target": 0.0,
+      "object": "meal_box_mealbox_latch_xn",
+      "in_hand": true,
+      "min_links": 1,
+      "pads": {
+       "index": {
+        "point": [
+         0.1173360968313934,
+         0.4019575777326678,
+         0.06331434348625979
+        ],
+        "normal": [
+         3.842575274737962e-06,
+         1.4327311774199172e-06,
+         0.9999999999915922
+        ]
+       },
+       "middle": {
+        "point": [
+         0.13785907368233563,
+         0.40224840346238416,
+         0.06331426420850128
+        ],
+        "normal": [
+         3.842575274737962e-06,
+         1.4327311774199172e-06,
+         0.9999999999915922
+        ]
+       }
+      },
+      "pads_at_label": "right: grip meal_box_mealbox_latch_xn",
+      "hand": "right",
+      "involved": [
+       "meal_box_mealbox_latch_xn"
+      ],
+      "pads_at_rel": 125
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": "meal_box_mealbox_latch_xp",
+     "right": "meal_box_mealbox_latch_xn"
+    },
+    "involved": [
+     "meal_box_mealbox_latch_xp",
+     "meal_box_mealbox_latch_xp",
+     "meal_box_mealbox_latch_xn",
+     "meal_box_mealbox_latch_xn"
+    ],
+    "untouched": [],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 50.0
+   },
+   "hands": {
+    "left": {
+     "motion": "close_joint",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_xp",
+     "joint": "meal_box_mealbox_fold_xp",
+     "pose": {
+      "file": "poses/xp6L_c09.json",
+      "source": "py/latch_cands.py: flat_hand_pose with index+middle pads on the strap top, ranked by the side's arm reach over the whole rigid fold sweep (arm_reach_check of 5 poses along the fold), thumb curled so the two hands' thumbs do not meet over the lid; the executor's two-hand screen picked the pair (left xp after the turn: heading -75 deg, pitch 35)",
+      "hand_scene": "poses/hs_left_turned_v1.json",
+      "stress_tests": {
+       "grasp_approach_open_test": {
+        "ok": true,
+        "object_nudged_mm": 0.18,
+        "penetration_mm": 0.06,
+        "floor_penetration_mm": 0.0
+       }
+      }
+     }
+    },
+    "right": {
+     "motion": "close_joint",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_xn",
+     "joint": "meal_box_mealbox_fold_xn",
+     "pose": {
+      "file": "poses/xn6R_c09.json",
+      "source": "py/latch_cands.py: flat_hand_pose with index+middle pads on the strap top, ranked by the side's arm reach over the whole rigid fold sweep (arm_reach_check of 5 poses along the fold), thumb curled so the two hands' thumbs do not meet over the lid; the executor's two-hand screen picked the pair (right xn after the turn: heading 80 deg, pitch 35)",
+      "hand_scene": "poses/hs_right_turned_v1.json",
+      "stress_tests": {
+       "grasp_approach_open_test": {
+        "ok": true,
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "floor_penetration_mm": 0.0
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    2492,
+    2544
+   ],
+   "motion": "both",
+   "side": "both",
+   "plan": {
+    "index": 7,
+    "motion": "both",
+    "sync": "start",
+    "hands": {
+     "left": {
+      "motion": "release",
+      "side": "left",
+      "object": "meal_box_mealbox_latch_xp",
+      "retreat_dir": [
+       -0.6,
+       0,
+       0.8
+      ],
+      "retreat_m": 0.06
+     },
+     "right": {
+      "motion": "release",
+      "side": "right",
+      "object": "meal_box_mealbox_latch_xn",
+      "retreat_dir": [
+       0.6,
+       0,
+       0.8
+      ],
+      "retreat_m": 0.06
+     }
+    }
+   },
+   "expect": {
+    "hands": {
+     "left": {
+      "released": true,
+      "at_rest": true,
+      "supported": true,
+      "hand": "left",
+      "object": "meal_box_mealbox_latch_xp",
+      "involved": [
+       "meal_box_mealbox_latch_xp"
+      ]
+     },
+     "right": {
+      "released": true,
+      "at_rest": true,
+      "supported": true,
+      "hand": "right",
+      "object": "meal_box_mealbox_latch_xn",
+      "involved": [
+       "meal_box_mealbox_latch_xn"
+      ]
+     }
+    },
+    "sync": "start",
+    "objects": {
+     "left": "meal_box_mealbox_latch_xp",
+     "right": "meal_box_mealbox_latch_xn"
+    },
+    "involved": [
+     "meal_box_mealbox_latch_xp",
+     "meal_box_mealbox_latch_xp",
+     "meal_box_mealbox_latch_xn",
+     "meal_box_mealbox_latch_xn"
+    ],
+    "untouched": [],
+    "hands_apart": true,
+    "hand_clearance_m": 0.005,
+    "planned_hand_gap_mm": 50.0
+   },
+   "hands": {
+    "left": {
+     "motion": "release",
+     "side": "left",
+     "object": "meal_box_mealbox_latch_xp"
+    },
+    "right": {
+     "motion": "release",
+     "side": "right",
+     "object": "meal_box_mealbox_latch_xn"
+    }
+   }
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    2545,
+    2599
+   ],
+   "motion": "home",
+   "side": "left",
+   "object": null,
+   "plan": {
+    "index": 7,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   }
+  },
+  {
+   "index": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    2600,
+    2658
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": null,
+   "plan": {
+    "index": 7,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "meal_box_mealbox_container",
+     "meal_box_mealbox_lid"
+    ]
+   }
+  }
+ ]
+}

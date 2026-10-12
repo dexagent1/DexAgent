@@ -1,0 +1,370 @@
+{
+  "task_prompt": "Take a tube from the rack, mount a tip on the pipette, pipette into the tube, then put the tube back and set the pipette down.",
+  "task_summary": "The left hand takes the leftmost clear tube out of the orange rack and holds it; the right hand lifts the grey pipette out of the rack's rightmost well, presses its nozzle into the blue tip box to mount a tip, dips the tip into the second tube still in the rack, then into the tube held by the left hand; the left hand puts its tube back into the rack and the right hand lays the pipette down on the table to the right of the rack.",
+  "video": {
+    "path": "video.mp4",
+    "duration_s": 37.767,
+    "fps": 30.0,
+    "frames": 1133
+  },
+  "environment": {
+    "support_surface": "white cloth on a table",
+    "camera": "head-mounted egocentric camera looking down the table from the operator's side; it pans and shifts with the head throughout (the tip box and rack move in the frame), and the first second has a green colour cast",
+    "notes": "The blue tip box stands at the left of the table and the orange tube rack right of centre; nothing else on the table is used."
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ],
+    "notes": "The left hand only handles the tube (pick, hold, return); the right hand only handles the pipette (pick, tip mounting, pipetting, set down). Both forearms enter from the bottom of the image at about 3.9 s."
+  },
+  "objects": [
+    {
+      "id": "tube_rack",
+      "name": "orange tube rack",
+      "type": "rigid",
+      "role": "container",
+      "parts": [
+        "top_wells",
+        "perforated_side_walls"
+      ],
+      "appearance": {
+        "top_wells": "a row of four large round wells along the top face",
+        "perforated_side_walls": "bright orange plastic with a grid of small round holes on the sides"
+      },
+      "approximate_size": "about two hand-lengths long and a palm high",
+      "properties": [
+        "A rigid rack standing still on the table for the whole clip; neither hand moves it.",
+        "Its top row has four large wells counted from left to right in the image: well 1 and well 2 hold clear tubes, well 3 is empty, and well 4 holds the pipette standing upright at the start.",
+        "A tube dropped into a well sits upright with its rim above the top face and can be pulled straight up out of it.",
+        "The pipette stands in well 4 leaning slightly, supported by the well and its own weight, and is lifted straight out."
+      ],
+      "initial_state": "right of centre on the table, long axis across the image, tubes in wells 1 and 2, pipette in well 4",
+      "final_state": "same place; tubes back in wells 1 and 2, wells 3 and 4 empty",
+      "evidence": "prompt: 'rack'; present in every frame; 0 to 5 s two tubes and the pipette stand in it; 9.2 to 9.9 s the pipette is lifted out of the rightmost well; 36.7 s two tubes in the two left wells."
+    },
+    {
+      "id": "tube",
+      "name": "clear plastic tube",
+      "type": "rigid",
+      "role": "container",
+      "parts": [
+        "body",
+        "open_mouth"
+      ],
+      "appearance": {
+        "body": "transparent plastic, short and wide (a cup-like sample tube without a visible cap)"
+      },
+      "approximate_size": "about as tall as a finger is long; fits between thumb and fingers",
+      "properties": [
+        "A small rigid open-topped tube that is pinched by its body between the thumb and fingers of the left hand and pulled straight up out of rack well 1.",
+        "It is held upright in the air near the front of the tip box for about twenty seconds while the right hand works, so the grasp must stay stable with the mouth facing up.",
+        "Its open mouth receives the pipette tip from above; the tip goes partly inside the tube.",
+        "It is returned into well 1 of the rack and seats upright there."
+      ],
+      "initial_state": "upright in well 1 (leftmost) of the rack",
+      "final_state": "upright in well 1 of the rack again",
+      "evidence": "prompt: 'take a tube from the rack', 'pipette into the tube', 'put the tube back'; 5.4 to 6.7 s the left hand lifts the leftmost tube; 7.3 to 26 s it is held at the lower left; 22.3 to 25 s the pipette tip is inside it; 26 to 27.4 s it goes back into the leftmost well."
+    },
+    {
+      "id": "source_tube",
+      "name": "clear plastic tube",
+      "type": "rigid",
+      "role": "target",
+      "appearance": {
+        "body": "transparent plastic, identical to the picked tube"
+      },
+      "approximate_size": "same as the picked tube",
+      "properties": [
+        "The second tube, standing in rack well 2; it is never grasped and stays in its well.",
+        "The mounted pipette tip is lowered into its open mouth from above, as the source the pipette draws from before dispensing into the held tube."
+      ],
+      "initial_state": "upright in well 2 of the rack",
+      "final_state": "unchanged, upright in well 2",
+      "evidence": "17.0 to 20.3 s the right hand lowers the tipped pipette into the tube in the second well while the left hand holds the other tube away from the rack; it does not move in any frame."
+    },
+    {
+      "id": "pipette",
+      "name": "grey pipette",
+      "type": "articulated",
+      "role": "tool",
+      "parts": [
+        "barrel",
+        "plunger_button",
+        "nozzle"
+      ],
+      "appearance": {
+        "barrel": "light grey with a white label and dark blue printing, finger hook near the top",
+        "plunger_button": "dark blue button on top",
+        "nozzle": "grey tapered shaft at the bottom"
+      },
+      "approximate_size": "about one and a half hand-lengths long",
+      "properties": [
+        "Held in a fist grip around the barrel by the right hand with the thumb over the top button and the nozzle pointing down.",
+        "Its tapered nozzle accepts a tip by press fit: pushing the nozzle straight down into a tip seated in the tip box makes the tip stay on the nozzle when the pipette is lifted.",
+        "The top button is a plunger that slides along the barrel axis to draw and expel liquid; its strokes are implied by the prompt ('pipette into the tube') but are not resolvable at this resolution.",
+        "Carried tip-down between the rack and the held tube without the tip touching the table.",
+        "It is set down lying on its side on the table at the end, with the tip still mounted."
+      ],
+      "articulation": {
+        "moving_part": "plunger_button",
+        "fixed_part": "barrel",
+        "joint_type": "prismatic",
+        "axis": "along the barrel's long axis, pressed down by the thumb",
+        "range_observed": "not resolved in the video; only the thumb resting on the button is visible",
+        "state_over_video": "released -> presumably pressed and released at the source tube (17 to 20.3 s) and at the held tube (22.3 to 25 s) -> released"
+      },
+      "initial_state": "standing upright in well 4 (rightmost) of the rack, leaning toward the far right",
+      "final_state": "lying on the table to the right of and in front of the rack, tip still mounted, nozzle end pointing away from the operator",
+      "evidence": "prompt: 'pipette'; 0 to 8.6 s it stands in the rightmost well; 8.6 to 9.9 s the right hand lifts it; 11.8 to 16.2 s its nozzle is pushed into the tip box; 16.2 s a clear tip is on it; 27.4 to 30.8 s it is laid on the table at the right."
+    },
+    {
+      "id": "pipette_tip",
+      "name": "clear pipette tip",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "clear, thin tapered plastic cone"
+      },
+      "approximate_size": "about a finger long, thin",
+      "properties": [
+        "One small tapered tip, initially standing in a hole of the tip box rack with its wide end up.",
+        "It is picked up only by the pipette nozzle being pressed into it from above; once mounted it moves with the pipette as one body.",
+        "Its narrow end is what enters the source tube and the held tube.",
+        "It is not ejected in the video; it stays on the pipette to the end."
+      ],
+      "initial_state": "seated in the tip box, exact hole not resolvable",
+      "final_state": "mounted on the pipette nozzle, pipette lying on the table",
+      "evidence": "prompt: 'mount a tip on the pipette'; before 11.8 s the nozzle is bare grey; 16.2 to 17.0 s a clear tip extends below the nozzle; it stays visible on the pipette lying at the right after 30 s."
+    },
+    {
+      "id": "tip_box",
+      "name": "blue pipette tip box",
+      "type": "rigid",
+      "role": "container",
+      "parts": [
+        "base",
+        "tip_tray",
+        "lid"
+      ],
+      "appearance": {
+        "base": "dark navy blue box",
+        "tip_tray": "light blue perforated tray holding a grid of tips",
+        "lid": "clear plastic lid standing open, tilted back toward the far side"
+      },
+      "approximate_size": "about a hand-length long, palm high",
+      "properties": [
+        "A rigid box standing still on the left of the table; neither hand moves it.",
+        "Its top tray holds a dense grid of tips upright, wide ends up, so the pipette nozzle can be pushed into one from above.",
+        "The tray supports the downward press of the nozzle without moving, so the tip seats by press fit on the nozzle.",
+        "The clear lid is hinged at the far edge but stays open the whole clip; it never moves and can be reconstructed fixed open."
+      ],
+      "initial_state": "left of centre on the table with the lid open",
+      "final_state": "unchanged, one tip fewer",
+      "evidence": "prompt implies a tip source; present at the left in every frame with the lid open; 11.8 to 16.2 s the pipette is pressed down into it; the lid does not move in any frame."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "left",
+      "action": "Pull the leftmost tube straight up out of the rack.",
+      "object_refs": [
+        "tube",
+        "tube_rack:top_wells"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Pinches the tube by its body and lifts it out of well 1.",
+        "right": "Rests on the table at the lower right."
+      },
+      "goal": "The tube is held in the left hand clear of the rack, mouth up.",
+      "time_window_s": [
+        4.5,
+        6.9
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "left",
+      "action": "Carry the tube to the left and hold it upright in front of the tip box.",
+      "object_refs": [
+        "tube"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Moves the tube left and holds it just above the table, mouth up.",
+        "right": "Rests on the table, then reaches for the pipette."
+      },
+      "goal": "The tube is held upright, mouth up, in front of the tip box and away from the rack.",
+      "time_window_s": [
+        6.7,
+        8.4
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Lift the pipette out of the rack's rightmost well.",
+      "object_refs": [
+        "pipette",
+        "tube_rack:top_wells"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Holds the tube upright at the lower left.",
+        "right": "Wraps around the barrel with the thumb near the button and lifts the pipette clear of well 4."
+      },
+      "goal": "The pipette is held nozzle-down in the right hand, clear of the rack.",
+      "time_window_s": [
+        8.4,
+        10.0
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "right",
+      "action": "Carry the pipette over the tip box.",
+      "object_refs": [
+        "pipette",
+        "tip_box:tip_tray"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Holds the tube upright.",
+        "right": "Moves the pipette left, nozzle down, until it is above the tip tray."
+      },
+      "goal": "The pipette nozzle is directly above a tip in the tip box.",
+      "time_window_s": [
+        10.0,
+        11.8
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "right",
+      "action": "Press the nozzle down into a tip repeatedly until the tip is seated, then lift.",
+      "object_refs": [
+        "pipette:nozzle",
+        "pipette_tip",
+        "tip_box:tip_tray"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Holds the tube upright at the lower left.",
+        "right": "Pushes the pipette straight down into the tip tray and lifts it out with the tip attached."
+      },
+      "goal": "A tip is attached to the nozzle and comes up with the pipette, leaving the tip box behind.",
+      "time_window_s": [
+        11.8,
+        16.4
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "right",
+      "action": "Lower the tip into the tube still standing in the rack's second well.",
+      "object_refs": [
+        "pipette",
+        "pipette_tip",
+        "source_tube"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Holds the picked tube upright near the tip box.",
+        "right": "Carries the pipette to the rack and dips the tip into the second tube, thumb on the button."
+      },
+      "goal": "Intended outcome: the tip is inside the source tube and liquid is drawn into the tip.",
+      "observed_outcome": "The tip is held inside the second tube for about three seconds; a plunger stroke or liquid is not visible at this resolution.",
+      "time_window_s": [
+        16.4,
+        20.5
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "right",
+      "action": "Carry the pipette from the rack to the tube held by the left hand.",
+      "object_refs": [
+        "pipette",
+        "tube"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Holds the tube upright and still as the target.",
+        "right": "Lifts the tip out of the source tube and brings it above the held tube."
+      },
+      "goal": "The tip is directly above the mouth of the held tube.",
+      "time_window_s": [
+        20.5,
+        22.3
+      ]
+    },
+    {
+      "index": 8,
+      "acting_hand": "both",
+      "action": "Insert the tip into the held tube and dispense.",
+      "object_refs": [
+        "pipette",
+        "pipette_tip",
+        "tube"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Holds the tube upright and steady under the tip.",
+        "right": "Lowers the tip into the tube mouth and presses the button with the thumb."
+      },
+      "goal": "Intended outcome: the tip is inside the held tube and its contents are expelled into it.",
+      "observed_outcome": "The tip enters the held tube and stays for about three seconds; liquid transfer is not visible.",
+      "time_window_s": [
+        22.3,
+        25.2
+      ]
+    },
+    {
+      "index": 9,
+      "acting_hand": "left",
+      "action": "Put the tube back into the rack's leftmost well.",
+      "object_refs": [
+        "tube",
+        "tube_rack:top_wells"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Carries the tube right to the rack and lowers it into well 1, keeping fingers on it while it settles.",
+        "right": "Withdraws the pipette to the right."
+      },
+      "goal": "The tube stands upright in well 1 of the rack without support.",
+      "time_window_s": [
+        25.5,
+        28.0
+      ]
+    },
+    {
+      "index": 10,
+      "acting_hand": "right",
+      "action": "Lay the pipette down on the table to the right of the rack.",
+      "object_refs": [
+        "pipette"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Rests on the rack beside the returned tube.",
+        "right": "Lowers the pipette and lays it on its side on the table at the right, tip still on, then lets go."
+      },
+      "goal": "The pipette lies on the table to the right of the rack without hand support.",
+      "time_window_s": [
+        27.4,
+        31.0
+      ]
+    }
+  ],
+  "task_success": "Both tubes stand in the two left wells of the orange rack, the pipette lies on the table to the right of the rack with a tip mounted, and the tip box and rack have not moved.",
+  "notes": [
+    "Liquid is not visible anywhere; aspiration from the second tube and dispensing into the held tube are inferred from the prompt and the tip positions, so both are written as intended outcomes with observed_outcome.",
+    "The pipette starts standing in the rack's rightmost well but is set down lying on the table, not returned to the rack.",
+    "The tip is not ejected in the video.",
+    "The two tubes look identical; 'tube' is the one taken from the leftmost well, 'source_tube' the one that stays in the second well."
+  ]
+}

@@ -1,0 +1,6779 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_recon": "../stage2/scene_recon.json",
+ "subgoals": [
+  {
+   "index": 1,
+   "step": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    53
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": null,
+   "tag": "subgoal_01_01",
+   "variant": "as planned",
+   "plan": {
+    "index": 1,
+    "step": 1,
+    "motion": "home",
+    "side": "right",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "marker_marker",
+     "marker_marker_cap",
+     "eraser_eraser"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:marker_marker": true,
+     "untouched:marker_marker_cap": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "marker_marker": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 0.01,
+     "max_track_pos_mm": 1.1,
+     "max_track_rot_deg": 0.1
+    }
+   }
+  },
+  {
+   "index": 1,
+   "step": 2,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    54,
+    217
+   ],
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "tag": "subgoal_01_02",
+   "variant": "as planned",
+   "plan": {
+    "index": 1,
+    "step": 2,
+    "motion": "grasp_lift",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "pose": "stage3/poses/left_cap_clamp.json",
+    "hand_scene": "stage3/poses/hs_left_cap.json",
+    "lift_m": 0.06,
+    "with": "marker_marker"
+   },
+   "expect": {
+    "rise_m": 0.03,
+    "in_hand": true,
+    "no_slip": true,
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap",
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 132
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "no_slip": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.2504,
+      0.339,
+      0.0067
+     ],
+     "object_end": [
+      0.2497,
+      0.3373,
+      0.0651
+     ],
+     "object_moved_m": 0.0584,
+     "object_rotated_deg": 6.31,
+     "object_tilt_end_deg": 4.94,
+     "rise_m": 0.0584,
+     "peak_rise_m": 0.0585,
+     "hand_links_touching": [
+      "robot_left_left_index_MP",
+      "robot_left_left_middle_DP",
+      "robot_left_left_middle_MP"
+     ],
+     "slip_in_hand_m": 0.0037,
+     "untouched": {
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.81,
+     "max_object_pen_mm": 0.19,
+     "max_track_pos_mm": 1.7,
+     "max_track_rot_deg": 1.0
+    }
+   },
+   "pose": {
+    "file": "poses/left_cap_clamp.json",
+    "source": "custom index-middle adduction clamp (py/cig_test.py; pen along the fingers, pads on the cap's sides at the equator)",
+    "hand_scene": "poses/hs_left_cap.json",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 4.2,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 59.9
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.9
+       },
+       {
+        "commanded_mm": 150.0,
+        "achieved_mm": 149.9
+       }
+      ],
+      "penetration_at_end_mm": {
+       "object_mm": 0.55,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.38,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {
+        "object": [
+         "hand_collision_hand_left_index_1",
+         "marker_marker_cap_shell"
+        ]
+       }
+      }
+     }
+    }
+   }
+  },
+  {
+   "index": 1,
+   "step": 3,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    218,
+    295
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "tag": "subgoal_01_03",
+   "variant": "as planned",
+   "plan": {
+    "index": 1,
+    "step": 3,
+    "motion": "carry",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "target_pos": [
+     0.1,
+     0.42,
+     0.18
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     -140.0
+    ],
+    "duration_s": 2.5,
+    "with": "marker_marker"
+   },
+   "expect": {
+    "target_pos": [
+     0.1,
+     0.42,
+     0.18
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap",
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.2497,
+      0.3373,
+      0.0651
+     ],
+     "object_end": [
+      0.0998,
+      0.4206,
+      0.1797
+     ],
+     "object_moved_m": 0.2063,
+     "object_rotated_deg": 38.08,
+     "object_tilt_end_deg": 0.1,
+     "hand_links_touching": [
+      "robot_left_left_index_MP",
+      "robot_left_left_middle_DP",
+      "robot_left_left_middle_MP"
+     ],
+     "slip_in_hand_m": 0.0007,
+     "target_err_m": 0.0007,
+     "untouched": {
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.56,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 1.0,
+     "max_track_rot_deg": 0.8
+    }
+   }
+  },
+  {
+   "index": 1,
+   "step": 4,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    296,
+    421
+   ],
+   "motion": "hold",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_01_04",
+   "variant": "pose turned {'primary': -15.0} deg about its contact for reach",
+   "plan": {
+    "index": 1,
+    "step": 4,
+    "motion": "hold",
+    "side": "right",
+    "object": "marker_marker",
+    "pose": "stage3/poses/right_tripod_va.json",
+    "hand_scene": "stage3/poses/hs_right_air.json",
+    "approach_m": 0.05,
+    "with": "marker_marker_cap"
+   },
+   "expect": {
+    "in_hand": true,
+    "stays_put": true,
+    "min_links": 2,
+    "pads": {
+     "thumb": {
+      "point": [
+       0.13088795373309536,
+       0.4379746730144436,
+       0.17961999999999997
+      ],
+      "normal": [
+       0.6427876096858969,
+       -0.7660444431182113,
+       2.223308773542079e-16
+      ]
+     },
+     "index": {
+      "point": [
+       0.12906263629047768,
+       0.45367442604074776,
+       0.18194937140592268
+      ],
+      "normal": [
+       -0.6427876096858969,
+       0.7660444431182113,
+       -2.223308773542079e-16
+      ]
+     },
+     "middle": {
+      "point": [
+       0.11574367827998842,
+       0.44249849328648055,
+       0.1772906285940773
+      ],
+      "normal": [
+       -0.6427876096858969,
+       0.7660444431182113,
+       -2.223308773542079e-16
+      ]
+     }
+    },
+    "pads_at_label": "right: hold marker_marker",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker",
+     "marker_marker_cap"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "pads_at_rel": 125
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "pads_touching": true,
+     "stays_put": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0998,
+      0.4205,
+      0.1796
+     ],
+     "object_end": [
+      0.1052,
+      0.419,
+      0.1803
+     ],
+     "object_moved_m": 0.0056,
+     "object_rotated_deg": 21.45,
+     "object_tilt_end_deg": 20.78,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "pads": {
+      "thumb": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 5.6
+      },
+      "index": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 9.8
+      },
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 8.1
+      }
+     },
+     "pads_frame": 125,
+     "untouched": {
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.45,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 1.4,
+     "max_track_rot_deg": 2.3,
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance"
+    }
+   },
+   "pose": {
+    "file": "poses/right_tripod_va.json",
+    "source": "pose_from_points (py/air_tripod.py: thumb vs index+middle at the equator of the marker held in the air by the left hand)",
+    "hand_scene": "poses/hs_right_air.json",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 1.0,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 60.0
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 100.0
+       },
+       {
+        "commanded_mm": 150.0,
+        "achieved_mm": 150.0
+       }
+      ],
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.8,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      },
+      "scene": "poses/hs_right_air_post.json",
+      "note": "hand scene with the marker's cap end resting on a rail where the left hand holds it (a free-floating part falls in a hand scene)"
+     }
+    }
+   }
+  },
+  {
+   "index": 1,
+   "step": 5,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    422,
+    469
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "tag": "subgoal_01_05",
+   "variant": "as planned",
+   "plan": {
+    "index": 1,
+    "step": 5,
+    "stage1_indices": [
+     3
+    ],
+    "motion": "carry",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "target_pos": [
+     0.084,
+     0.3825,
+     0.1668
+    ],
+    "duration_s": 1.5,
+    "with": "marker_marker"
+   },
+   "expect": {
+    "target_pos": [
+     0.084,
+     0.3825,
+     0.1668
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap",
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1023,
+      0.4173,
+      0.1802
+     ],
+     "object_end": [
+      0.0827,
+      0.3843,
+      0.1667
+     ],
+     "object_moved_m": 0.0407,
+     "object_rotated_deg": 0.8,
+     "object_tilt_end_deg": 1.12,
+     "hand_links_touching": [
+      "robot_left_left_index_MP",
+      "robot_left_left_middle_DP",
+      "robot_left_left_middle_MP"
+     ],
+     "slip_in_hand_m": 0.0034,
+     "target_err_m": 0.0022,
+     "untouched": {
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.46,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 1,
+   "step": 6,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    470,
+    508
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_01_06",
+   "variant": "as planned",
+   "plan": {
+    "index": 1,
+    "step": 6,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "marker_marker",
+    "lift_m": 0.05,
+    "duration_s": 1.0
+   },
+   "expect": {
+    "rise_m": 0.025,
+    "in_hand": true,
+    "no_slip": true,
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "no_slip": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1058,
+      0.4155,
+      0.1772
+     ],
+     "object_end": [
+      0.1058,
+      0.4155,
+      0.2272
+     ],
+     "object_moved_m": 0.05,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 9.09,
+     "rise_m": 0.05,
+     "peak_rise_m": 0.05,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "untouched": {
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.44,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.4,
+     "max_track_rot_deg": 0.0
+    }
+   },
+   "pose": {
+    "file": "poses/right_tripod_va.json",
+    "source": "pose_from_points (py/air_tripod.py: thumb vs index+middle at the equator of the marker held in the air by the left hand)",
+    "hand_scene": "poses/hs_right_air.json",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 1.0,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 60.0
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 100.0
+       },
+       {
+        "commanded_mm": 150.0,
+        "achieved_mm": 150.0
+       }
+      ],
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.8,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      },
+      "scene": "poses/hs_right_air_post.json",
+      "note": "hand scene with the marker's cap end resting on a rail where the left hand holds it (a free-floating part falls in a hand scene)"
+     }
+    }
+   }
+  },
+  {
+   "index": 1,
+   "step": 7,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    509,
+    547
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "tag": "subgoal_01_07",
+   "variant": "as planned",
+   "plan": {
+    "index": 1,
+    "step": 7,
+    "stage1_indices": [
+     3
+    ],
+    "motion": "carry",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "target_pos": [
+     0.0366,
+     0.3459,
+     0.1867
+    ],
+    "duration_s": 1.2
+   },
+   "expect": {
+    "target_pos": [
+     0.0366,
+     0.3459,
+     0.1867
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0848,
+      0.381,
+      0.167
+     ],
+     "object_end": [
+      0.0401,
+      0.3399,
+      0.1874
+     ],
+     "object_moved_m": 0.0641,
+     "object_rotated_deg": 3.51,
+     "object_tilt_end_deg": 3.38,
+     "hand_links_touching": [
+      "robot_left_left_index_MP",
+      "robot_left_left_middle_MP"
+     ],
+     "slip_in_hand_m": 0.007,
+     "target_err_m": 0.007,
+     "untouched": {
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.69,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.4,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 1,
+   "step": 8,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    548,
+    715
+   ],
+   "motion": "place",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "tag": "subgoal_01_08",
+   "variant": "as planned",
+   "plan": {
+    "index": 1,
+    "step": 8,
+    "stage1_indices": [
+     3
+    ],
+    "motion": "place",
+    "side": "left",
+    "object": "marker_marker_cap",
+    "target_pos": [
+     0.2504,
+     0.339,
+     0.0085
+    ],
+    "upright": false,
+    "duration_s": 2.5,
+    "carry_rise_m": 0.02,
+    "target_euler_deg": [
+     0,
+     0,
+     -120.0
+    ]
+   },
+   "expect": {
+    "target_pos": [
+     0.2504,
+     0.339,
+     0.0085
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": false,
+    "released": true,
+    "hand": "left",
+    "object": "marker_marker_cap",
+    "involved": [
+     "marker_marker_cap"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0401,
+      0.3399,
+      0.1874
+     ],
+     "object_end": [
+      0.249,
+      0.3427,
+      0.0076
+     ],
+     "object_moved_m": 0.2757,
+     "object_rotated_deg": 27.07,
+     "object_tilt_end_deg": 2.0,
+     "target_err_m": 0.0039,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.0137,
+     "support_contacts": 3,
+     "untouched": {
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.77,
+     "max_object_pen_mm": 0.05,
+     "max_track_pos_mm": 1.7,
+     "max_track_rot_deg": 0.8
+    }
+   },
+   "goal_predicates": [
+    {
+     "class": "apart",
+     "bodies": {
+      "A": "marker_marker_cap",
+      "B": "marker_marker"
+     },
+     "params": {
+      "apart_m": 0.01
+     }
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "step": 1,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    716,
+    784
+   ],
+   "motion": "home",
+   "side": "left",
+   "object": null,
+   "tag": "subgoal_02_01",
+   "variant": "as planned",
+   "plan": {
+    "index": 2,
+    "step": 1,
+    "motion": "home",
+    "side": "left",
+    "duration_s": 1.5
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "marker_marker_cap",
+     "eraser_eraser"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:marker_marker_cap": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      },
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.33,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 1.6,
+     "max_track_rot_deg": 1.4
+    }
+   }
+  },
+  {
+   "index": 2,
+   "step": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    785,
+    973
+   ],
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_02_02",
+   "variant": "as planned",
+   "plan": {
+    "index": 2,
+    "motion": "grasp_lift",
+    "side": "left",
+    "object": "eraser_eraser",
+    "pose": "stage3/poses/ler_1.json",
+    "hand_scene": "stage3/poses/hs_left_eraser.json",
+    "lift_m": 0.06,
+    "step": 2
+   },
+   "expect": {
+    "rise_m": 0.03,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       -0.27765348828583225,
+       0.3067083227912772,
+       0.0185
+      ],
+      "normal": [
+       0.995760168441988,
+       0.09198742817572303,
+       -0.0
+      ]
+     },
+     "index": {
+      "point": [
+       -0.3215665117141677,
+       0.3026516772087228,
+       0.0185
+      ],
+      "normal": [
+       -0.9957601684419853,
+       -0.09198742817575054,
+       -0.0
+      ]
+     }
+    },
+    "pads_at_label": "left: grip eraser_eraser",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "pads_at_rel": 156,
+    "slip_from_rel": 157
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "pads_touching": true,
+     "no_slip": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.2996,
+      0.3047,
+      -0.0
+     ],
+     "object_end": [
+      -0.2838,
+      0.3003,
+      0.0631
+     ],
+     "object_moved_m": 0.0652,
+     "object_rotated_deg": 4.0,
+     "object_tilt_end_deg": 3.85,
+     "rise_m": 0.0631,
+     "peak_rise_m": 0.0631,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "pads": {
+      "thumb": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 8.0
+      },
+      "index": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 10.6
+      }
+     },
+     "pads_frame": 156,
+     "slip_in_hand_m": 0.0001,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.33,
+     "max_object_pen_mm": 0.13,
+     "max_track_pos_mm": 1.6,
+     "max_track_rot_deg": 2.3,
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance"
+    }
+   },
+   "pose": {
+    "file": "poses/ler_1.json",
+    "source": "generate_flat_pinches (bench-screened, lift-verified 79.8 mm)",
+    "hand_scene": "poses/hs_left_eraser.json",
+    "stress_tests": {
+     "grasp_stress_test": {
+      "ok": true,
+      "first_fail": null,
+      "slip_mm_s": 0.0,
+      "max_drift_mm": 1.3,
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 59.8
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 99.8
+       },
+       {
+        "commanded_mm": 150.0,
+        "achieved_mm": 149.8
+       }
+      ],
+      "penetration_at_end_mm": {
+       "object_mm": 0.0,
+       "floor_mm": 0.0,
+       "visual_object_mm": 0.0,
+       "visual_floor_mm": 0.0,
+       "worst_pair": {}
+      }
+     }
+    }
+   }
+  },
+  {
+   "index": 2,
+   "step": 3,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    974,
+    1021
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_02_03",
+   "variant": "as planned",
+   "plan": {
+    "index": 2,
+    "step": 3,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     -0.36,
+     0.27,
+     0.1
+    ],
+    "duration_s": 1.5
+   },
+   "expect": {
+    "target_pos": [
+     -0.36,
+     0.27,
+     0.1
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.2838,
+      0.3003,
+      0.0631
+     ],
+     "object_end": [
+      -0.36,
+      0.27,
+      0.1
+     ],
+     "object_moved_m": 0.0899,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 3.85,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.33,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 4,
+   "step": 1,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1022,
+    1085
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_04_01",
+   "variant": "as planned",
+   "plan": {
+    "index": 4,
+    "step": 1,
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.0558,
+     0.3655,
+     0.17720000000000002
+    ],
+    "target_euler_deg": [
+     63.184,
+     -46.765,
+     -110.217
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     0.0558,
+     0.3655,
+     0.17720000000000002
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1058,
+      0.4155,
+      0.2272
+     ],
+     "object_end": [
+      0.056,
+      0.3657,
+      0.177
+     ],
+     "object_moved_m": 0.0865,
+     "object_rotated_deg": 63.03,
+     "object_tilt_end_deg": 72.03,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0006,
+     "target_err_m": 0.0003,
+     "max_hand_pen_mm": 0.34,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 1.0,
+     "max_track_rot_deg": 1.7
+    }
+   }
+  },
+  {
+   "index": 4,
+   "step": 2,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1086,
+    1115
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_04_02",
+   "variant": "carried object turned +20 deg about the vertical for reach",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.12076,
+     0.32503,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 4,
+    "step": 2
+   },
+   "expect": {
+    "target_pos": [
+     -0.12076,
+     0.32503,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.056,
+      0.3657,
+      0.177
+     ],
+     "object_end": [
+      -0.1207,
+      0.325,
+      0.0812
+     ],
+     "object_moved_m": 0.2051,
+     "object_rotated_deg": 20.0,
+     "object_tilt_end_deg": 72.02,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0002,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.36,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 1.7,
+     "max_track_rot_deg": 1.2
+    }
+   }
+  },
+  {
+   "index": 4,
+   "step": 3,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1116,
+    1133
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_04_03",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.12076,
+     0.32503,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 4,
+    "step": 3
+   },
+   "expect": {
+    "target_pos": [
+     -0.12076,
+     0.32503,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1207,
+      0.325,
+      0.0812
+     ],
+     "object_end": [
+      -0.1207,
+      0.3251,
+      0.0669
+     ],
+     "object_moved_m": 0.0143,
+     "object_rotated_deg": 0.06,
+     "object_tilt_end_deg": 71.98,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0003,
+     "target_err_m": 0.0012,
+     "max_hand_pen_mm": 0.34,
+     "max_object_pen_mm": 0.06,
+     "max_track_pos_mm": 1.1,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 4,
+   "step": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1134,
+    1146
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_04_04",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.32,
+    "index": 4,
+    "step": 4
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1207,
+      0.3251,
+      0.0669
+     ],
+     "object_end": [
+      -0.117,
+      0.3319,
+      0.0658
+     ],
+     "object_moved_m": 0.0079,
+     "object_rotated_deg": 4.02,
+     "object_tilt_end_deg": 68.51,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.003,
+     "target_err_m": 0.0031,
+     "max_hand_pen_mm": 0.29,
+     "max_object_pen_mm": 0.06,
+     "max_track_pos_mm": 1.1,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 4,
+   "step": 5,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1147,
+    1163
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_04_05",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.31903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 4,
+    "step": 5
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.31903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.117,
+      0.3319,
+      0.0658
+     ],
+     "object_end": [
+      -0.1159,
+      0.3199,
+      0.0658
+     ],
+     "object_moved_m": 0.0121,
+     "object_rotated_deg": 2.09,
+     "object_tilt_end_deg": 68.8,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0014,
+     "target_err_m": 0.0014,
+     "max_hand_pen_mm": 0.31,
+     "max_object_pen_mm": 0.02,
+     "max_track_pos_mm": 0.2,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 4,
+   "step": 6,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1164,
+    1180
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_04_06",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.30403,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 4,
+    "step": 6
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.30403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1159,
+      0.3199,
+      0.0658
+     ],
+     "object_end": [
+      -0.1158,
+      0.305,
+      0.0658
+     ],
+     "object_moved_m": 0.0149,
+     "object_rotated_deg": 1.87,
+     "object_tilt_end_deg": 69.2,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0014,
+     "target_err_m": 0.0014,
+     "max_hand_pen_mm": 0.27,
+     "max_object_pen_mm": 0.02,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 4,
+   "step": 7,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1181,
+    1197
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_04_07",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 4,
+    "step": 7
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1158,
+      0.305,
+      0.0658
+     ],
+     "object_end": [
+      -0.1154,
+      0.2896,
+      0.0658
+     ],
+     "object_moved_m": 0.0154,
+     "object_rotated_deg": 1.2,
+     "object_tilt_end_deg": 69.33,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0008,
+     "target_err_m": 0.0008,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.01,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 4,
+   "step": 8,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    1198,
+    1215
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_04_08",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.11476,
+     0.28903,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 4,
+    "step": 8
+   },
+   "expect": {
+    "target_pos": [
+     -0.11476,
+     0.28903,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1154,
+      0.2896,
+      0.0658
+     ],
+     "object_end": [
+      -0.1147,
+      0.2889,
+      0.081
+     ],
+     "object_moved_m": 0.0153,
+     "object_rotated_deg": 0.04,
+     "object_tilt_end_deg": 69.3,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0002,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   },
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "marker_marker",
+      "B": "board_board"
+     },
+     "frames": [
+      1181,
+      1197
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "marker_marker"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "right"
+     }
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "step": 1,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1216,
+    1245
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_01",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.07126,
+     0.32278,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 5,
+    "step": 1
+   },
+   "expect": {
+    "target_pos": [
+     -0.07126,
+     0.32278,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.1147,
+      0.2889,
+      0.081
+     ],
+     "object_end": [
+      -0.0713,
+      0.3228,
+      0.0812
+     ],
+     "object_moved_m": 0.0551,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.3,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.26,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 2,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1246,
+    1263
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_02",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.07126,
+     0.32278,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 5,
+    "step": 2
+   },
+   "expect": {
+    "target_pos": [
+     -0.07126,
+     0.32278,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0713,
+      0.3228,
+      0.0812
+     ],
+     "object_end": [
+      -0.0713,
+      0.3228,
+      0.0658
+     ],
+     "object_moved_m": 0.0154,
+     "object_rotated_deg": 0.04,
+     "object_tilt_end_deg": 69.27,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 3,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1264,
+    1278
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_03",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.06376,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.41,
+    "index": 5,
+    "step": 3
+   },
+   "expect": {
+    "target_pos": [
+     -0.06376,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0712,
+      0.3228,
+      0.0658
+     ],
+     "object_end": [
+      -0.0638,
+      0.3339,
+      0.0657
+     ],
+     "object_moved_m": 0.0134,
+     "object_rotated_deg": 0.3,
+     "object_tilt_end_deg": 69.07,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0001,
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 4,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1279,
+    1295
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_04",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.04876,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 4
+   },
+   "expect": {
+    "target_pos": [
+     -0.04876,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0638,
+      0.3339,
+      0.0657
+     ],
+     "object_end": [
+      -0.0488,
+      0.334,
+      0.0657
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.07,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1296,
+    1310
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_05",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.04126,
+     0.32278,
+     0.06571
+    ],
+    "duration_s": 0.41,
+    "index": 5,
+    "step": 5
+   },
+   "expect": {
+    "target_pos": [
+     -0.04126,
+     0.32278,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0487,
+      0.334,
+      0.0657
+     ],
+     "object_end": [
+      -0.0413,
+      0.3228,
+      0.0657
+     ],
+     "object_moved_m": 0.0135,
+     "object_rotated_deg": 0.05,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.26,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 6,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1311,
+    1327
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_06",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.05126,
+     0.31153,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 6
+   },
+   "expect": {
+    "target_pos": [
+     -0.05126,
+     0.31153,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0413,
+      0.3228,
+      0.0657
+     ],
+     "object_end": [
+      -0.0513,
+      0.3115,
+      0.0657
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 7,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1328,
+    1344
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_07",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.06126,
+     0.30028,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 7
+   },
+   "expect": {
+    "target_pos": [
+     -0.06126,
+     0.30028,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0513,
+      0.3115,
+      0.0657
+     ],
+     "object_end": [
+      -0.0613,
+      0.3003,
+      0.0657
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 8,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1345,
+    1361
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_08",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.07126,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 8
+   },
+   "expect": {
+    "target_pos": [
+     -0.07126,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0613,
+      0.3003,
+      0.0657
+     ],
+     "object_end": [
+      -0.0713,
+      0.289,
+      0.0657
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 9,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1362,
+    1378
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_09",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.05626,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 9
+   },
+   "expect": {
+    "target_pos": [
+     -0.05626,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0712,
+      0.289,
+      0.0657
+     ],
+     "object_end": [
+      -0.0563,
+      0.289,
+      0.0657
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 10,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1379,
+    1395
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_10",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.04126,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 5,
+    "step": 10
+   },
+   "expect": {
+    "target_pos": [
+     -0.04126,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0562,
+      0.289,
+      0.0657
+     ],
+     "object_end": [
+      -0.0413,
+      0.289,
+      0.0657
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 11,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    1396,
+    1413
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_05_11",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.04126,
+     0.28903,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 5,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     -0.04126,
+     0.28903,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0413,
+      0.289,
+      0.0657
+     ],
+     "object_end": [
+      -0.0413,
+      0.289,
+      0.0812
+     ],
+     "object_moved_m": 0.0155,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   },
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "marker_marker",
+      "B": "board_board"
+     },
+     "frames": [
+      1379,
+      1395
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "marker_marker"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "right"
+     }
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "step": 1,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1414,
+    1443
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_01",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.01126,
+     0.32953,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 6,
+    "step": 1
+   },
+   "expect": {
+    "target_pos": [
+     -0.01126,
+     0.32953,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0413,
+      0.289,
+      0.0812
+     ],
+     "object_end": [
+      -0.0113,
+      0.3295,
+      0.0812
+     ],
+     "object_moved_m": 0.0504,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 2,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1444,
+    1461
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_02",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.01126,
+     0.32953,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 6,
+    "step": 2
+   },
+   "expect": {
+    "target_pos": [
+     -0.01126,
+     0.32953,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0113,
+      0.3295,
+      0.0812
+     ],
+     "object_end": [
+      -0.0113,
+      0.3295,
+      0.0657
+     ],
+     "object_moved_m": 0.0155,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 3,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1462,
+    1475
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_03",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00074,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.38,
+    "index": 6,
+    "step": 3
+   },
+   "expect": {
+    "target_pos": [
+     0.00074,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0112,
+      0.3295,
+      0.0657
+     ],
+     "object_end": [
+      0.0007,
+      0.334,
+      0.0657
+     ],
+     "object_moved_m": 0.0128,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 4,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1476,
+    1487
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_04",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00974,
+     0.32953,
+     0.06571
+    ],
+    "duration_s": 0.3,
+    "index": 6,
+    "step": 4
+   },
+   "expect": {
+    "target_pos": [
+     0.00974,
+     0.32953,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0008,
+      0.334,
+      0.0657
+     ],
+     "object_end": [
+      0.0097,
+      0.3295,
+      0.0657
+     ],
+     "object_moved_m": 0.01,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.27,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 5,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1488,
+    1499
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_05",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.01874,
+     0.32503,
+     0.06571
+    ],
+    "duration_s": 0.3,
+    "index": 6,
+    "step": 5
+   },
+   "expect": {
+    "target_pos": [
+     0.01874,
+     0.32503,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0098,
+      0.3295,
+      0.0657
+     ],
+     "object_end": [
+      0.0187,
+      0.325,
+      0.0657
+     ],
+     "object_moved_m": 0.01,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.27,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 6,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1500,
+    1513
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_06",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00899,
+     0.31828,
+     0.06571
+    ],
+    "duration_s": 0.36,
+    "index": 6,
+    "step": 6
+   },
+   "expect": {
+    "target_pos": [
+     0.00899,
+     0.31828,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0187,
+      0.325,
+      0.0657
+     ],
+     "object_end": [
+      0.009,
+      0.3183,
+      0.0657
+     ],
+     "object_moved_m": 0.0118,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 7,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1514,
+    1527
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_07",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.00076,
+     0.31153,
+     0.06571
+    ],
+    "duration_s": 0.36,
+    "index": 6,
+    "step": 7
+   },
+   "expect": {
+    "target_pos": [
+     -0.00076,
+     0.31153,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.009,
+      0.3183,
+      0.0657
+     ],
+     "object_end": [
+      -0.0008,
+      0.3115,
+      0.0657
+     ],
+     "object_moved_m": 0.0118,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 8,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1528,
+    1540
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_08",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00899,
+     0.30591,
+     0.06571
+    ],
+    "duration_s": 0.34,
+    "index": 6,
+    "step": 8
+   },
+   "expect": {
+    "target_pos": [
+     0.00899,
+     0.30591,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0007,
+      0.3115,
+      0.0657
+     ],
+     "object_end": [
+      0.009,
+      0.3059,
+      0.0657
+     ],
+     "object_moved_m": 0.0112,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.27,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 9,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1541,
+    1553
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_09",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.01874,
+     0.30028,
+     0.06571
+    ],
+    "duration_s": 0.34,
+    "index": 6,
+    "step": 9
+   },
+   "expect": {
+    "target_pos": [
+     0.01874,
+     0.30028,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.009,
+      0.3059,
+      0.0657
+     ],
+     "object_end": [
+      0.0187,
+      0.3003,
+      0.0657
+     ],
+     "object_moved_m": 0.0112,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.27,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 10,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1554,
+    1573
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_10",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.00374,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.56,
+    "index": 6,
+    "step": 10
+   },
+   "expect": {
+    "target_pos": [
+     0.00374,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0187,
+      0.3003,
+      0.0657
+     ],
+     "object_end": [
+      0.0037,
+      0.289,
+      0.0657
+     ],
+     "object_moved_m": 0.0187,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 11,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1574,
+    1590
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_11",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.01126,
+     0.29353,
+     0.06571
+    ],
+    "duration_s": 0.47,
+    "index": 6,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     -0.01126,
+     0.29353,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0037,
+      0.289,
+      0.0657
+     ],
+     "object_end": [
+      -0.0113,
+      0.2935,
+      0.0657
+     ],
+     "object_moved_m": 0.0156,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.26,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 6,
+   "step": 12,
+   "stage1_indices": [
+    6
+   ],
+   "frames": [
+    1591,
+    1608
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_06_12",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     -0.01126,
+     0.29353,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 6,
+    "step": 12
+   },
+   "expect": {
+    "target_pos": [
+     -0.01126,
+     0.29353,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0113,
+      0.2935,
+      0.0657
+     ],
+     "object_end": [
+      -0.0113,
+      0.2935,
+      0.0812
+     ],
+     "object_moved_m": 0.0155,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   },
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "marker_marker",
+      "B": "board_board"
+     },
+     "frames": [
+      1574,
+      1590
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "marker_marker"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "right"
+     }
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "step": 1,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1609,
+    1638
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_01",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.33403,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 7,
+    "step": 1
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.33403,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0112,
+      0.2935,
+      0.0812
+     ],
+     "object_end": [
+      0.0797,
+      0.334,
+      0.0812
+     ],
+     "object_moved_m": 0.0996,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.28,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.9,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 2,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1639,
+    1656
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_02",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.33403,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 7,
+    "step": 2
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.33403,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0797,
+      0.334,
+      0.0812
+     ],
+     "object_end": [
+      0.0797,
+      0.334,
+      0.0657
+     ],
+     "object_moved_m": 0.0155,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 3,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1657,
+    1675
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_03",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.06924,
+     0.31941,
+     0.06571
+    ],
+    "duration_s": 0.54,
+    "index": 7,
+    "step": 3
+   },
+   "expect": {
+    "target_pos": [
+     0.06924,
+     0.31941,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0797,
+      0.334,
+      0.0657
+     ],
+     "object_end": [
+      0.0692,
+      0.3194,
+      0.0657
+     ],
+     "object_moved_m": 0.018,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 4,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1676,
+    1694
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_04",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.05874,
+     0.30478,
+     0.06571
+    ],
+    "duration_s": 0.54,
+    "index": 7,
+    "step": 4
+   },
+   "expect": {
+    "target_pos": [
+     0.05874,
+     0.30478,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0692,
+      0.3194,
+      0.0657
+     ],
+     "object_end": [
+      0.0587,
+      0.3048,
+      0.0657
+     ],
+     "object_moved_m": 0.018,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 5,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1695,
+    1711
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_05",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07374,
+     0.30478,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 7,
+    "step": 5
+   },
+   "expect": {
+    "target_pos": [
+     0.07374,
+     0.30478,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0588,
+      0.3048,
+      0.0657
+     ],
+     "object_end": [
+      0.0737,
+      0.3048,
+      0.0657
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 6,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1712,
+    1728
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_06",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.08874,
+     0.30478,
+     0.06571
+    ],
+    "duration_s": 0.45,
+    "index": 7,
+    "step": 6
+   },
+   "expect": {
+    "target_pos": [
+     0.08874,
+     0.30478,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0738,
+      0.3048,
+      0.0657
+     ],
+     "object_end": [
+      0.0887,
+      0.3048,
+      0.0657
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 7,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1729,
+    1746
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_07",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.08874,
+     0.30478,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 7,
+    "step": 7
+   },
+   "expect": {
+    "target_pos": [
+     0.08874,
+     0.30478,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0887,
+      0.3048,
+      0.0657
+     ],
+     "object_end": [
+      0.0887,
+      0.3048,
+      0.0812
+     ],
+     "object_moved_m": 0.0155,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 8,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1747,
+    1776
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_08",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.32053,
+     0.08121
+    ],
+    "duration_s": 0.9,
+    "index": 7,
+    "step": 8
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.32053,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0887,
+      0.3048,
+      0.0812
+     ],
+     "object_end": [
+      0.0797,
+      0.3205,
+      0.0812
+     ],
+     "object_moved_m": 0.0181,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.2,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 9,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1777,
+    1794
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_09",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.32053,
+     0.06571
+    ],
+    "duration_s": 0.5,
+    "index": 7,
+    "step": 9
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.32053,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0797,
+      0.3205,
+      0.0812
+     ],
+     "object_end": [
+      0.0797,
+      0.3205,
+      0.0657
+     ],
+     "object_moved_m": 0.0155,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 10,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1795,
+    1811
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_10",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.30478,
+     0.06571
+    ],
+    "duration_s": 0.47,
+    "index": 7,
+    "step": 10
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.30478,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0797,
+      0.3205,
+      0.0657
+     ],
+     "object_end": [
+      0.0797,
+      0.3048,
+      0.0657
+     ],
+     "object_moved_m": 0.0157,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 11,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1812,
+    1828
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_11",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.28903,
+     0.06571
+    ],
+    "duration_s": 0.47,
+    "index": 7,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.28903,
+     0.06571
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0797,
+      0.3048,
+      0.0657
+     ],
+     "object_end": [
+      0.0797,
+      0.289,
+      0.0657
+     ],
+     "object_moved_m": 0.0157,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.25,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 12,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1829,
+    1846
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_12",
+   "variant": "as planned",
+   "plan": {
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.07974,
+     0.28903,
+     0.08121
+    ],
+    "duration_s": 0.5,
+    "index": 7,
+    "step": 12
+   },
+   "expect": {
+    "target_pos": [
+     0.07974,
+     0.28903,
+     0.08121
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0797,
+      0.289,
+      0.0657
+     ],
+     "object_end": [
+      0.0797,
+      0.289,
+      0.0812
+     ],
+     "object_moved_m": 0.0155,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 69.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.23,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 7,
+   "step": 13,
+   "stage1_indices": [
+    7
+   ],
+   "frames": [
+    1847,
+    1894
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_07_13",
+   "variant": "carried object turned -20 deg about the vertical for reach",
+   "plan": {
+    "index": 7,
+    "step": 13,
+    "motion": "carry",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.2,
+     0.42,
+     0.17
+    ],
+    "duration_s": 1.5
+   },
+   "expect": {
+    "target_pos": [
+     0.2,
+     0.42,
+     0.17
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0797,
+      0.289,
+      0.0812
+     ],
+     "object_end": [
+      0.2,
+      0.42,
+      0.17
+     ],
+     "object_moved_m": 0.1988,
+     "object_rotated_deg": 19.99,
+     "object_tilt_end_deg": 69.03,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_middle_DP",
+      "robot_right_right_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0002,
+     "target_err_m": 0.0,
+     "max_hand_pen_mm": 0.33,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 1.0,
+     "max_track_rot_deg": 0.7
+    }
+   },
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "marker_marker",
+      "B": "board_board"
+     },
+     "frames": [
+      1812,
+      1828
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "marker_marker"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "right"
+     }
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "step": 1,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    1895,
+    1966
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_01",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 1,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.3,
+     0.045
+    ],
+    "duration_s": 2.0,
+    "target_euler_deg": [
+     0,
+     0,
+     15.0
+    ]
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.3,
+     0.045
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.36,
+      0.27,
+      0.1
+     ],
+     "object_end": [
+      0.0901,
+      0.2999,
+      0.0448
+     ],
+     "object_moved_m": 0.4544,
+     "object_rotated_deg": 81.27,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0003,
+     "target_err_m": 0.0003,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 1.4,
+     "max_track_rot_deg": 2.1
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 2,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    1967,
+    1993
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_02",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 2,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.3,
+     0.0113
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.3,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.0901,
+      0.2999,
+      0.0447
+     ],
+     "object_end": [
+      0.09,
+      0.3,
+      0.0113
+     ],
+     "object_moved_m": 0.0334,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.4,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 3,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    1994,
+    2011
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_03",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 3,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.3,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 4,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2012,
+    2038
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_04",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 4,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 5,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2039,
+    2056
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_05",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 5,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 6,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2057,
+    2083
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_06",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 6,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 7,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2084,
+    2101
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_07",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 7,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 8,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2102,
+    2128
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_08",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 11,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2129,
+    2146
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_11",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 12,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2147,
+    2173
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_12",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8,
+    "step": 12
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 11,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2174,
+    2191
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_09",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "duration_s": 0.5,
+    "step": 11
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.285,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.5,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 12,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2192,
+    2218
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_10",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "duration_s": 0.8,
+    "step": 12
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.315,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.285,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_moved_m": 0.03,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 13,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2219,
+    2233
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_13",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 13,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.3,
+     0.0113
+    ],
+    "duration_s": 0.4
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.3,
+     0.0113
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.315,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.3,
+      0.0113
+     ],
+     "object_moved_m": 0.015,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.3,
+     "max_track_rot_deg": 0.0
+    }
+   }
+  },
+  {
+   "index": 8,
+   "step": 14,
+   "stage1_indices": [
+    8
+   ],
+   "frames": [
+    2234,
+    2260
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_08_14",
+   "variant": "as planned",
+   "plan": {
+    "index": 8,
+    "step": 14,
+    "motion": "carry",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     0.09,
+     0.3,
+     0.05
+    ],
+    "duration_s": 0.8
+   },
+   "expect": {
+    "target_pos": [
+     0.09,
+     0.3,
+     0.05
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.3,
+      0.0113
+     ],
+     "object_end": [
+      0.09,
+      0.3,
+      0.05
+     ],
+     "object_moved_m": 0.0387,
+     "object_rotated_deg": 0.0,
+     "object_tilt_end_deg": 0.47,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_thumb_DP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.0,
+     "max_track_pos_mm": 0.4,
+     "max_track_rot_deg": 0.0
+    }
+   },
+   "goal_predicates": [
+    {
+     "class": "contact",
+     "bodies": {
+      "A": "eraser_eraser",
+      "B": "board_board"
+     },
+     "frames": [
+      2219,
+      2233
+     ]
+    },
+    {
+     "class": "held",
+     "bodies": {
+      "A": "eraser_eraser"
+     },
+     "params": {
+      "mode": "in_hand",
+      "side": "left"
+     }
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "step": null,
+   "stage1_indices": [
+    9
+   ],
+   "frames": [
+    2261,
+    2439
+   ],
+   "motion": "place",
+   "side": "left",
+   "object": "eraser_eraser",
+   "tag": "subgoal_09",
+   "variant": "carried 3 cm lower (rise 2 cm)",
+   "plan": {
+    "index": 9,
+    "motion": "place",
+    "side": "left",
+    "object": "eraser_eraser",
+    "target_pos": [
+     -0.29961,
+     0.30468,
+     0.0
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     95.278
+    ],
+    "duration_s": 2.0
+   },
+   "expect": {
+    "target_pos": [
+     -0.29961,
+     0.30468,
+     0.0
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": true,
+    "released": true,
+    "hand": "left",
+    "object": "eraser_eraser",
+    "involved": [
+     "eraser_eraser"
+    ],
+    "untouched": [
+     "marker_marker_cap"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "upright": true,
+     "untouched:marker_marker_cap": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.09,
+      0.3,
+      0.05
+     ],
+     "object_end": [
+      -0.3139,
+      0.3081,
+      -0.0
+     ],
+     "object_moved_m": 0.4071,
+     "object_rotated_deg": 85.9,
+     "object_tilt_end_deg": 0.0,
+     "target_err_m": 0.0147,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.0575,
+     "support_contacts": 3,
+     "untouched": {
+      "marker_marker_cap": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.24,
+     "max_object_pen_mm": 0.18,
+     "max_track_pos_mm": 2.2,
+     "max_track_rot_deg": 2.3
+    }
+   }
+  },
+  {
+   "index": 10,
+   "step": null,
+   "stage1_indices": [
+    10
+   ],
+   "frames": [
+    2440,
+    2621
+   ],
+   "motion": "place",
+   "side": "right",
+   "object": "marker_marker",
+   "tag": "subgoal_10",
+   "variant": "as planned",
+   "plan": {
+    "index": 10,
+    "motion": "place",
+    "side": "right",
+    "object": "marker_marker",
+    "target_pos": [
+     0.27,
+     0.44,
+     0.0075
+    ],
+    "target_euler_deg": [
+     0,
+     0,
+     160.0
+    ],
+    "upright": false,
+    "duration_s": 2.5
+   },
+   "expect": {
+    "target_pos": [
+     0.27,
+     0.44,
+     0.0075
+    ],
+    "target_axes": "xy",
+    "supported": true,
+    "at_rest": true,
+    "upright": false,
+    "released": true,
+    "hand": "right",
+    "object": "marker_marker",
+    "involved": [
+     "marker_marker"
+    ],
+    "untouched": [
+     "eraser_eraser"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "at_target": true,
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "untouched:eraser_eraser": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.2,
+      0.42,
+      0.17
+     ],
+     "object_end": [
+      0.2691,
+      0.4413,
+      0.0066
+     ],
+     "object_moved_m": 0.1787,
+     "object_rotated_deg": 88.3,
+     "object_tilt_end_deg": 9.67,
+     "target_err_m": 0.0016,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.0392,
+     "support_contacts": 2,
+     "untouched": {
+      "eraser_eraser": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.36,
+     "max_object_pen_mm": 0.02,
+     "max_track_pos_mm": 14.7,
+     "max_track_rot_deg": 2.0
+    }
+   }
+  }
+ ],
+ "episode": {
+  "trajectory": "trajectory.npz",
+  "phases": "phases.json",
+  "sim_video": "sim_video.mp4",
+  "fps": 30,
+  "n_frames": 2622,
+  "execution_dir": "episode"
+ },
+ "stage4": {
+  "task_dir": "stage4_task",
+  "config": "stage4_task/stage4.json"
+ },
+ "checks": {
+  "episode_physics_check": {
+   "ok": true,
+   "failed": []
+  },
+  "robot_self_collision_check": {
+   "ok": true,
+   "failed": []
+  },
+  "arm_reach_check": {
+   "ok": true,
+   "failed": []
+  },
+  "stage4_handoff_check": {
+   "ok": true
+  },
+  "ink_trace_check": {
+   "ok": true,
+   "issues": [],
+   "regions": {
+    "digit_1_written": {
+     "expect": "inked",
+     "ink": 0.1042,
+     "at_frame": 1894,
+     "ok": true,
+     "threshold": 0.02
+    },
+    "digit_2_written": {
+     "expect": "inked",
+     "ink": 0.2085,
+     "at_frame": 1894,
+     "ok": true,
+     "threshold": 0.02
+    },
+    "digit_3_written": {
+     "expect": "inked",
+     "ink": 0.2503,
+     "at_frame": 1894,
+     "ok": true,
+     "threshold": 0.02
+    },
+    "digit_4_written": {
+     "expect": "inked",
+     "ink": 0.2437,
+     "at_frame": 1894,
+     "ok": true,
+     "threshold": 0.02
+    },
+    "digit_1_remains": {
+     "expect": "inked",
+     "ink": 0.1042,
+     "at_frame": 2621,
+     "ok": true,
+     "threshold": 0.02
+    },
+    "digit_2_remains": {
+     "expect": "inked",
+     "ink": 0.2085,
+     "at_frame": 2621,
+     "ok": true,
+     "threshold": 0.02
+    },
+    "digit_3_remains": {
+     "expect": "inked",
+     "ink": 0.2503,
+     "at_frame": 2621,
+     "ok": true,
+     "threshold": 0.02
+    },
+    "digit_4_wiped": {
+     "expect": "clean",
+     "ink": 0.0,
+     "at_frame": 2621,
+     "ok": true,
+     "threshold": 0.004
+    },
+    "gap_1_2_blank": {
+     "expect": "clean",
+     "ink": 0.0,
+     "at_frame": 2621,
+     "ok": true,
+     "threshold": 0.004
+    },
+    "gap_2_3_blank": {
+     "expect": "clean",
+     "ink": 0.0,
+     "at_frame": 2621,
+     "ok": true,
+     "threshold": 0.004
+    },
+    "gap_3_4_blank": {
+     "expect": "clean",
+     "ink": 0.0,
+     "at_frame": 2621,
+     "ok": true,
+     "threshold": 0.004
+    }
+   },
+   "nibs": {
+    "marker_marker_tip": {
+     "contact_frames": 466,
+     "first": 1128,
+     "last": 1830,
+     "inked_path_m": 0.3741
+    }
+   },
+   "pads": {
+    "eraser_eraser_pad": {
+     "contact_frames": 253,
+     "first": 1986,
+     "last": 2238
+    }
+   },
+   "png": "look/ink_final.png",
+   "args": {
+    "surface_geom": "board_board_panel",
+    "texture": "board_board_ink",
+    "nibs": [
+     "marker_marker_tip"
+    ],
+    "pads": [
+     "eraser_eraser_pad"
+    ],
+    "regions": [
+     {
+      "name": "digit_1_written",
+      "rect": [
+       -0.14500000000000002,
+       -0.11500000000000002,
+       0.2775,
+       0.3225
+      ],
+      "expect": "inked",
+      "at_frame": 1894
+     },
+     {
+      "name": "digit_2_written",
+      "rect": [
+       -0.085,
+       -0.05500000000000001,
+       0.2775,
+       0.3225
+      ],
+      "expect": "inked",
+      "at_frame": 1894
+     },
+     {
+      "name": "digit_3_written",
+      "rect": [
+       -0.025,
+       0.0049999999999999975,
+       0.2775,
+       0.3225
+      ],
+      "expect": "inked",
+      "at_frame": 1894
+     },
+     {
+      "name": "digit_4_written",
+      "rect": [
+       0.045,
+       0.075,
+       0.2775,
+       0.3225
+      ],
+      "expect": "inked",
+      "at_frame": 1894
+     },
+     {
+      "name": "digit_1_remains",
+      "rect": [
+       -0.14500000000000002,
+       -0.11500000000000002,
+       0.2775,
+       0.3225
+      ],
+      "expect": "inked"
+     },
+     {
+      "name": "digit_2_remains",
+      "rect": [
+       -0.085,
+       -0.05500000000000001,
+       0.2775,
+       0.3225
+      ],
+      "expect": "inked"
+     },
+     {
+      "name": "digit_3_remains",
+      "rect": [
+       -0.025,
+       0.0049999999999999975,
+       0.2775,
+       0.3225
+      ],
+      "expect": "inked"
+     },
+     {
+      "name": "digit_4_wiped",
+      "rect": [
+       0.045,
+       0.075,
+       0.2775,
+       0.3225
+      ],
+      "expect": "clean"
+     },
+     {
+      "name": "gap_1_2_blank",
+      "rect": [
+       -0.11000000000000001,
+       -0.09000000000000001,
+       0.2775,
+       0.3225
+      ],
+      "expect": "clean"
+     },
+     {
+      "name": "gap_2_3_blank",
+      "rect": [
+       -0.05000000000000001,
+       -0.030000000000000002,
+       0.2775,
+       0.3225
+      ],
+      "expect": "clean"
+     },
+     {
+      "name": "gap_3_4_blank",
+      "rect": [
+       0.009999999999999998,
+       0.04,
+       0.2775,
+       0.3225
+      ],
+      "expect": "clean"
+     }
+    ]
+   }
+  }
+ },
+ "notes": [
+  "Ink (ink_trace_check on the delivered trajectory, checks.ink_trace_check): at the end of Stage 1 subgoal 7 the four digit boxes carry ink 0.10/0.21/0.25/0.24 (strokes of 1, 2, 3, 4; look/ink_final.png); at the end 1-3 keep the same ink and the 4's box is clean (0.000) after the left hand's eraser passes; the gaps between digits stay blank.",
+  "Pick-up (subgoal 1) is a handover: no single-hand grasp of the 13 mm marker lying on the table both lifts it under realistic friction and is held by the right YAM (tripods with pads 40 deg above the equator wedge out; an index-middle 'cigarette' clamp lifts it but needs a nearly flat hand 7 cm above the table that the right arm cannot hold: joint 2 at pi / joint 4 at -pi/2, best 6.3 mm off over station shifts). The left hand, which reaches the pen at the Stage 2 layout once the right hand has parked, clamps the marker by its cap between index and middle (grasp_stress_test ok), lifts it to (0.10, 0.42, 0.18) and the right hand takes it there with a thumb-index-middle tripod (pose_from_points in the hand scene with the held pen in place); the right then lifts it. Deviation in method only: Stage 1 has the right hand grasp it from the table; the predicates (held in the right hand at the end, lifted clear) are the same.",
+  "Uncap (subgoal 3) is done by the left hand during the handover: it keeps the cap and pulls it 4.5 cm off along the pen axis (the press fit lets go at 96 % of 20.2 mm: equalities_released marker_marker_cap_engaged at frame 445), moves it clear and sets it on the table at the marker's start spot. Those entries carry stage1_indices [3] and plan index 1, so each hand's subgoal labels stay in order (the left hand acts again only in subgoal 2); Stage 1 has the right hand pull the cap. Predicate: apart(cap, marker) > 1 cm at the end of the cap entries.",
+  "Eraser (subgoal 2): generate_flat_pinches thumb-index pinch across the short axis (r6's pinch now fails grasp_stress_test at the 6 cm lift); the left hand first returns home (a direct reach passed the wrist Euler singularity) and afterwards holds the eraser aside at (-0.36, 0.27, 0.10) so the right arm can reach the first digit.",
+  "Writing (4-7): the pen tipped 72 deg nib-down at yaw -140 (the nib disc's rim keeps the tip site 1.4 mm off the face at 55 deg, past ink_trace_check's 1.2 mm), digits 3 cm x 4.5 cm on the row y 0.28-0.32 at x -0.13/-0.07/-0.01/+0.06 (the human's row: x -0.14..+0.06, y 0.27-0.34), strokes as carries of 2 cm segments with the nib 0.5 mm into the face; the right then lifts the pen clear.",
+  "Wiping (8): the eraser turned to yaw 15 deg (the left arm cannot hold it over the 4 at its start yaw 95), centred 3 cm right of the 4 so its pad never reaches the 3, five passes in y with the felt 0.3 mm above the face (a 0.5 mm press pushed the eraser up out of the pinch).",
+  "Places: the eraser goes back to its start pose (subgoal 9); the marker is laid flat on the table at the right edge (0.27, 0.44), yaw 160 deg (subgoal 10): its start spot holds the cap.",
+  "Stress test of the right tripod: in hand scenes a part held in the air falls during the test (gravity acts; held_in_air only keeps it through the settle), so the tripod was stress-tested with the marker's cap end resting on a rail where the left hand holds it (poses/hs_right_air_post.json, all 15 phases ok, drift 1 mm).",
+  "Stations not moved (Stage 2 layout). Stage 2 scene unchanged by Stage 3.",
+  "Stage 4 randomization (write_stage4_config ranges): the marker is not randomized -- its pick is a two-hand handover (left carries it by the cap, right takes it in the air), which Stage 4's single-carrier kinematic adaptation does not model (all 3 draws with the marker randomized put a finger into the cap or the two hands into each other); the eraser is randomized dx -0.02..0, dy +-0.015, yaw +-6 deg (toward the board its pick puts the thumb into the board frame). stage4_handoff_check accepted 6 of 6 draws."
+ ],
+ "source": "examples/asset_reuse"
+}

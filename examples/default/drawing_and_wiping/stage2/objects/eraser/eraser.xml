@@ -1,0 +1,18 @@
+<mujoco model="eraser_eraser">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="eraser" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="eraser_free" />
+      <geom name="eraser_body" type="box" size="0.057350 0.022050 0.010150" pos="0 0 0.01635" rgba="0.4080 0.3660 0.3470 1.0000" mass="0.04800" friction="0.85 0.02 0.006" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="eraser_pad" type="box" size="0.056490 0.021719 0.003100" pos="0 0 0.00310" rgba="0.4550 0.4100 0.3950 1.0000" mass="0.00001" friction="0.85 0.02 0.006" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <site name="eraser_pad_site" pos="0 0 0" size="0.002" rgba="0 1 0 0.35" />
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,159 @@
+{
+ "side": "right",
+ "pos": [
+  0.15076733569554643,
+  0.2330657953269747,
+  0.17883061088309327
+ ],
+ "euler": [
+  -1.3427231987916861,
+  -0.05878822360979474,
+  -0.04408343791814329
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 1.1292285710558683,
+  "thumb_CMC_AA": -0.027342860428581015,
+  "thumb_MCP_FE": 0.13405833932387917,
+  "thumb_MCP_AA": -0.3490999999999996,
+  "thumb_IP": 0.37231136290493994,
+  "index_MCP_FE": 0.6238687510658026,
+  "index_MCP_AA": -0.09001449684134956,
+  "index_PIP": 0.8902433845778741,
+  "index_DIP": 0.5372325420965576,
+  "middle_MCP_FE": 0.5926606462524714,
+  "middle_MCP_AA": -0.34909999999999936,
+  "middle_PIP": 1.1301152351487114,
+  "middle_DIP": 0.7062976689795852,
+  "ring_MCP_FE": 0.9599334745000001,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.1344450000000001,
+  "ring_DIP": 0.907595,
+  "pinky_CMC": 0.17017,
+  "pinky_MCP_FE": 0.9599334745000001,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.1344450000000001,
+  "pinky_DIP": 0.907595
+ },
+ "grip_fingers": [
+  "thumb",
+  "index",
+  "middle"
+ ],
+ "finger_targets_squeezed": {
+  "thumb_CMC_FE": 1.113300694022623,
+  "thumb_CMC_AA": -0.008157558169912834,
+  "thumb_MCP_FE": 0.15630405442654355,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.3893407746816484,
+  "index_MCP_FE": 0.6796507199044493,
+  "index_MCP_AA": -0.09286321246408827,
+  "index_PIP": 0.851628323915931,
+  "index_DIP": 0.5113458759539694,
+  "middle_MCP_FE": 0.652712036256649,
+  "middle_MCP_AA": -0.34252364324916496,
+  "middle_PIP": 1.0890960707026982,
+  "middle_DIP": 0.6767337558742132,
+  "ring_MCP_FE": 0.9599334745000001,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 1.1344450000000001,
+  "ring_DIP": 0.907595,
+  "pinky_CMC": 0.17017,
+  "pinky_MCP_FE": 0.9599334745000001,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.1344450000000001,
+  "pinky_DIP": 0.907595
+ },
+ "press_depth_rad": 0.0,
+ "standoff_m": 0.008,
+ "residual_mm": {
+  "thumb": 0.0,
+  "index": 0.0,
+  "middle": 0.0
+ },
+ "worst_residual_mm": 0.0,
+ "overlap_mm": 0.94,
+ "palm_facing": 0.654,
+ "bar": {
+  "p0": [
+   0.2251,
+   0.3642,
+   0.1464
+  ],
+  "p1": [
+   0.2373,
+   0.3542,
+   0.23
+  ],
+  "radius": 0.013
+ },
+ "pinch_dir": [
+  -0.9896644583595253,
+  -0.017031985498558656,
+  0.14238739876795023
+ ],
+ "approach": [
+  -0.5763339691371012,
+  -0.6850092691055295,
+  0.445647234096863
+ ],
+ "targets": {
+  "thumb": [
+   0.25076295362555,
+   0.3605576716954697,
+   0.17684986462587302
+  ],
+  "index": [
+   0.20881290220824833,
+   0.36657858100673163,
+   0.18096591092635828
+  ],
+  "middle": [
+   0.2095811905406516,
+   0.35310607560232893,
+   0.18469435982189555
+  ]
+ },
+ "straddle": {
+  "ok": true,
+  "along_axis_cos": 0.164,
+  "opposite_sides": true,
+  "along_segment": 0.5,
+  "axis_to_segment_mm": 0.0,
+  "pad_to_axis_mm": [
+   21.0,
+   21.0
+  ],
+  "pad_rise_mm": [
+   -2.99,
+   -3.89
+  ],
+  "below_centre_line": true,
+  "pad_span_mm": 42.58,
+  "bar_diameter_mm": 26.0,
+  "reach_mm": 32.0
+ },
+ "reach_optimized": {
+  "rotation_deg": {
+   "primary": -67.5
+  },
+  "axes": {
+   "primary": [
+    -0.9897,
+    -0.017,
+    0.1424
+   ]
+  },
+  "pivot": [
+   0.2231,
+   0.3601,
+   0.1808
+  ]
+ },
+ "reanchored": {
+  "body": "pipette_pipette",
+  "mode": "full",
+  "shift_m": 0.007,
+  "turn_deg": 38.33
+ },
+ "source_note": "right_pipette_f2_reach70.json re-anchored with subgoal.reanchor_pose: {'body': 'pipette_pipette', 'mode': 'full', 'shift_m': 0.007, 'turn_deg': 38.33}"
+}

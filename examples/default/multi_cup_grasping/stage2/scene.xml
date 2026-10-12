@@ -1,0 +1,858 @@
+<mujoco model="dexagent_bench">
+  <compiler angle="radian" />
+  <option impratio="5" integrator="implicitfast" />
+  <size nkey="1" />
+  <visual>
+    <global offwidth="1920" offheight="1088" />
+    <headlight ambient="0.35 0.35 0.35" diffuse="0.45 0.45 0.45" />
+  </visual>
+  <default>
+    <geom solref="0.005" solimp="0.99 0.999 0.0005" />
+    <default class="robot_right_main">
+      <joint armature="1" />
+      <geom contype="0" conaffinity="0" condim="1" solref="0.02" solimp="0.9 0.95 0.001" density="800" />
+      <site group="3" rgba="1 0 0 1" />
+      <general biastype="affine" gainprm="300" biasprm="0 -300 1" />
+      <default class="robot_right_arm_main">
+        <joint armature="0" />
+        <geom contype="1" conaffinity="1" condim="3" density="1000" />
+        <site group="0" rgba="0.5 0.5 0.5 1" />
+        <general biastype="none" gainprm="1" biasprm="0 0 0" />
+      </default>
+    </default>
+    <default class="robot_left_main">
+      <joint armature="1" />
+      <geom contype="0" conaffinity="0" condim="1" solref="0.02" solimp="0.9 0.95 0.001" density="800" />
+      <site group="3" rgba="1 0 0 1" />
+      <general biastype="affine" gainprm="300" biasprm="0 -300 1" />
+      <default class="robot_left_arm_main">
+        <joint armature="0" />
+        <geom contype="1" conaffinity="1" condim="3" density="1000" />
+        <site group="0" rgba="0.5 0.5 0.5 1" />
+        <general biastype="none" gainprm="1" biasprm="0 0 0" />
+      </default>
+    </default>
+    <default class="cup_teal_main">
+      <geom solref="0.02" solimp="0.9 0.95 0.001" />
+    </default>
+    <default class="cup_green_main">
+      <geom solref="0.02" solimp="0.9 0.95 0.001" />
+    </default>
+    <default class="cup_orange_near_main">
+      <geom solref="0.02" solimp="0.9 0.95 0.001" />
+    </default>
+    <default class="cup_orange_far_main">
+      <geom solref="0.02" solimp="0.9 0.95 0.001" />
+    </default>
+  </default>
+  <asset>
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="1 1 1" rgb2="1 1 1" width="512" height="3072" />
+    <texture type="2d" colorspace="auto" name="robot_right_right_groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300" />
+    <texture type="skybox" colorspace="auto" builtin="gradient" rgb1="1 1 1" rgb2="1 1 1" width="512" height="3072" />
+    <texture type="2d" colorspace="auto" name="robot_left_left_groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300" />
+    <texture type="skybox" colorspace="auto" name="bg_white" builtin="flat" rgb1="1 1 1" rgb2="1 1 1" width="8" height="48" />
+    <material name="robot_right_right_groundplane" texture="robot_right_right_groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2" />
+    <material name="robot_left_left_groundplane" texture="robot_left_left_groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2" />
+    <material name="cup_teal_cup_mat" specular="0.3" shininess="0.3" rgba="0.287 0.489 0.433 1" />
+    <material name="cup_teal_cup_inmat" specular="0.21" shininess="0.21" rgba="0.705 0.835 0.838 1" />
+    <material name="cup_green_cup_mat" specular="0.3" shininess="0.3" rgba="0.167 0.463 0.369 1" />
+    <material name="cup_green_cup_inmat" specular="0.21" shininess="0.21" rgba="0.69 0.83 0.82 1" />
+    <material name="cup_orange_near_cup_mat" specular="0.3" shininess="0.3" rgba="0.834 0.489 0.193 1" />
+    <material name="cup_orange_near_cup_inmat" specular="0.21" shininess="0.21" rgba="0.94 0.751 0.702 1" />
+    <material name="cup_orange_far_cup_mat" specular="0.3" shininess="0.3" rgba="0.838 0.495 0.16 1" />
+    <material name="cup_orange_far_cup_inmat" specular="0.21" shininess="0.21" rgba="0.94 0.751 0.702 1" />
+    <mesh name="robot_right_right_hand_C_MC_visual" file="../../../_assets/c8be2ef1a1820685174c.stl" />
+    <mesh name="robot_right_right_hand_C_MC" file="../../../_assets/422d61c4001823c69572.stl" />
+    <mesh name="robot_right_right_thumb_CMC_VL_visual" file="../../../_assets/54c4b2f7c55f76c3098f.stl" />
+    <mesh name="robot_right_right_thumb_MC_visual" file="../../../_assets/140a5fad347e24942c14.stl" />
+    <mesh name="robot_right_right_thumb_MC" file="../../../_assets/4a695669ca49d9d58807.stl" />
+    <mesh name="robot_right_right_thumb_MCP_VL_visual" file="../../../_assets/ef762a09a29d4683f98c.stl" />
+    <mesh name="robot_right_right_thumb_PP_visual" file="../../../_assets/6a8f7ebaa3d0febd86f2.stl" />
+    <mesh name="robot_right_right_thumb_PP" file="../../../_assets/3af8d5ae6c47b13b9a2e.stl" />
+    <mesh name="robot_right_right_thumb_DP_visual" file="../../../_assets/666bc5f056eac543f1f4.stl" />
+    <mesh name="robot_right_right_thumb_DP" file="../../../_assets/666bc5f056eac543f1f4.stl" />
+    <mesh name="robot_right_right_thumb_elastomer" file="../../../_assets/1ed14a6d0309ab831e65.stl" />
+    <mesh name="robot_right_right_MCP_VL_visual" file="../../../_assets/0c0842d903aefd46bd69.stl" />
+    <mesh name="robot_right_right_MCP_VL" file="../../../_assets/d60ee0f79b981861bd1b.stl" />
+    <mesh name="robot_right_right_PP_visual" file="../../../_assets/f9c0f8eb098d0df1264e.stl" />
+    <mesh name="robot_right_right_PP" file="../../../_assets/4934e4e7d8c5456393d3.stl" />
+    <mesh name="robot_right_right_MP_visual" file="../../../_assets/e326f37ca1cfb84f1d0b.stl" />
+    <mesh name="robot_right_right_MP" file="../../../_assets/68decf89f9c6cbb6eae8.stl" />
+    <mesh name="robot_right_right_DP_visual" file="../../../_assets/6816f2e797169a49b4b6.stl" />
+    <mesh name="robot_right_right_DP" file="../../../_assets/6816f2e797169a49b4b6.stl" />
+    <mesh name="robot_right_right_elastomer" file="../../../_assets/36bc794cfb4957aecdba.stl" />
+    <mesh name="robot_right_right_pinky_MC_visual" file="../../../_assets/8228ca762e394f0afe67.stl" />
+    <mesh name="robot_right_right_pinky_MC" file="../../../_assets/95df68e14b42510f6f74.stl" />
+    <mesh name="robot_right_arm_base" content_type="model/stl" file="../../../_assets/17cedf9090eee7f70c49.stl" />
+    <mesh name="robot_right_arm_link1" content_type="model/stl" file="../../../_assets/06583e8485daf7a1e154.stl" />
+    <mesh name="robot_right_arm_link2" content_type="model/stl" file="../../../_assets/b970fa4765b786010bf3.stl" />
+    <mesh name="robot_right_arm_link3" content_type="model/stl" file="../../../_assets/f7ab5912d893ca939c15.stl" />
+    <mesh name="robot_right_arm_link4" content_type="model/stl" file="../../../_assets/8e7dd9eba7200f0e230a.stl" />
+    <mesh name="robot_right_arm_link5" content_type="model/stl" file="../../../_assets/a68c984d70b5325a47e3.stl" />
+    <mesh name="robot_left_left_hand_C_MC_visual" file="../../../_assets/e2cf44a45ed8ca5322f9.stl" />
+    <mesh name="robot_left_left_hand_C_MC" file="../../../_assets/ddb5f484bc37ca3c17d5.stl" />
+    <mesh name="robot_left_left_thumb_CMC_VL_visual" file="../../../_assets/01e6263b6662ca3dad75.stl" />
+    <mesh name="robot_left_left_thumb_MC_visual" file="../../../_assets/2703a89f49fd48e4d63d.stl" />
+    <mesh name="robot_left_left_thumb_MC" file="../../../_assets/8406ff3ccbc6dde71853.stl" />
+    <mesh name="robot_left_left_thumb_MCP_VL_visual" file="../../../_assets/071e052971a990b5b957.stl" />
+    <mesh name="robot_left_left_thumb_PP_visual" file="../../../_assets/fd6065d4cf7d00bd662c.stl" />
+    <mesh name="robot_left_left_thumb_PP" file="../../../_assets/e6a51db39b97993efa4f.stl" />
+    <mesh name="robot_left_left_thumb_DP_visual" file="../../../_assets/666bc5f056eac543f1f4.stl" />
+    <mesh name="robot_left_left_thumb_DP" file="../../../_assets/3bd8ca6f4c76a3f8d402.stl" />
+    <mesh name="robot_left_left_thumb_elastomer_surface" file="../../../_assets/cfb99f55ae4c193dcbde.stl" />
+    <mesh name="robot_left_left_thumb_elastomer" file="../../../_assets/1ed14a6d0309ab831e65.stl" />
+    <mesh name="robot_left_left_MCP_VL_visual" file="../../../_assets/919448ebc1699edb43dd.stl" />
+    <mesh name="robot_left_left_MCP_VL" file="../../../_assets/9339476df86769944675.stl" />
+    <mesh name="robot_left_left_PP_visual" file="../../../_assets/945728996307f8496f6c.stl" />
+    <mesh name="robot_left_left_PP" file="../../../_assets/d3257d673dfe7772b6e5.stl" />
+    <mesh name="robot_left_left_MP_visual" file="../../../_assets/17d1c8d5efc9be44f197.stl" />
+    <mesh name="robot_left_left_MP" file="../../../_assets/811cd607d1829f6f7926.stl" />
+    <mesh name="robot_left_left_DP_visual" file="../../../_assets/6816f2e797169a49b4b6.stl" />
+    <mesh name="robot_left_left_DP" file="../../../_assets/b1339462ed70c3977e38.stl" />
+    <mesh name="robot_left_left_elastomer_surface" file="../../../_assets/73b54cea26079a331254.stl" />
+    <mesh name="robot_left_left_elastomer" file="../../../_assets/36bc794cfb4957aecdba.stl" />
+    <mesh name="robot_left_left_pinky_MC_visual" file="../../../_assets/a7274c5c1f7e2d8ceef2.stl" />
+    <mesh name="robot_left_left_pinky_MC" file="../../../_assets/2bd466700304d45e53d2.stl" />
+    <mesh name="robot_left_arm_base" content_type="model/stl" file="../../../_assets/17cedf9090eee7f70c49.stl" />
+    <mesh name="robot_left_arm_link1" content_type="model/stl" file="../../../_assets/06583e8485daf7a1e154.stl" />
+    <mesh name="robot_left_arm_link2" content_type="model/stl" file="../../../_assets/b970fa4765b786010bf3.stl" />
+    <mesh name="robot_left_arm_link3" content_type="model/stl" file="../../../_assets/f7ab5912d893ca939c15.stl" />
+    <mesh name="robot_left_arm_link4" content_type="model/stl" file="../../../_assets/8e7dd9eba7200f0e230a.stl" />
+    <mesh name="robot_left_arm_link5" content_type="model/stl" file="../../../_assets/a68c984d70b5325a47e3.stl" />
+    <mesh name="cup_teal_cup_shell" file="../../../_assets/28421c4d8cd761620468.obj" />
+    <mesh name="cup_teal_cup_lining" file="../../../_assets/b43a919f434dde0f52ec.obj" />
+    <mesh name="cup_teal_cup_wedge0" file="../../../_assets/a67eea5089b35ef5a6f1.obj" />
+    <mesh name="cup_teal_cup_wedge1" file="../../../_assets/2a00bcb439e7f72dd6e0.obj" />
+    <mesh name="cup_teal_cup_wedge2" file="../../../_assets/2265b465deb8d0c3055f.obj" />
+    <mesh name="cup_teal_cup_wedge3" file="../../../_assets/49ff829ab22b090745cb.obj" />
+    <mesh name="cup_teal_cup_wedge4" file="../../../_assets/e810841ee82acddb46d2.obj" />
+    <mesh name="cup_teal_cup_wedge5" file="../../../_assets/73327adfd9de1954dfa3.obj" />
+    <mesh name="cup_teal_cup_wedge6" file="../../../_assets/799e705d4a8b9770ec73.obj" />
+    <mesh name="cup_teal_cup_wedge7" file="../../../_assets/35d09fe16544cadfbe26.obj" />
+    <mesh name="cup_teal_cup_wedge8" file="../../../_assets/6d33eee3927f18056d88.obj" />
+    <mesh name="cup_teal_cup_wedge9" file="../../../_assets/7e482f35873e4f01611f.obj" />
+    <mesh name="cup_teal_cup_wedge10" file="../../../_assets/cb854443aad749ceb603.obj" />
+    <mesh name="cup_teal_cup_wedge11" file="../../../_assets/a0cff2b569ba4e4cc97e.obj" />
+    <mesh name="cup_teal_cup_wedge12" file="../../../_assets/3558472eeb13fd5563ef.obj" />
+    <mesh name="cup_teal_cup_wedge13" file="../../../_assets/0b2d2c1676c64f9a1d7a.obj" />
+    <mesh name="cup_teal_cup_wedge14" file="../../../_assets/9c6fea7597adfd58703a.obj" />
+    <mesh name="cup_teal_cup_wedge15" file="../../../_assets/75907583467d99372c97.obj" />
+    <mesh name="cup_green_cup_shell" file="../../../_assets/28421c4d8cd761620468.obj" />
+    <mesh name="cup_green_cup_lining" file="../../../_assets/b43a919f434dde0f52ec.obj" />
+    <mesh name="cup_green_cup_wedge0" file="../../../_assets/a67eea5089b35ef5a6f1.obj" />
+    <mesh name="cup_green_cup_wedge1" file="../../../_assets/2a00bcb439e7f72dd6e0.obj" />
+    <mesh name="cup_green_cup_wedge2" file="../../../_assets/2265b465deb8d0c3055f.obj" />
+    <mesh name="cup_green_cup_wedge3" file="../../../_assets/49ff829ab22b090745cb.obj" />
+    <mesh name="cup_green_cup_wedge4" file="../../../_assets/e810841ee82acddb46d2.obj" />
+    <mesh name="cup_green_cup_wedge5" file="../../../_assets/73327adfd9de1954dfa3.obj" />
+    <mesh name="cup_green_cup_wedge6" file="../../../_assets/799e705d4a8b9770ec73.obj" />
+    <mesh name="cup_green_cup_wedge7" file="../../../_assets/35d09fe16544cadfbe26.obj" />
+    <mesh name="cup_green_cup_wedge8" file="../../../_assets/6d33eee3927f18056d88.obj" />
+    <mesh name="cup_green_cup_wedge9" file="../../../_assets/7e482f35873e4f01611f.obj" />
+    <mesh name="cup_green_cup_wedge10" file="../../../_assets/cb854443aad749ceb603.obj" />
+    <mesh name="cup_green_cup_wedge11" file="../../../_assets/a0cff2b569ba4e4cc97e.obj" />
+    <mesh name="cup_green_cup_wedge12" file="../../../_assets/3558472eeb13fd5563ef.obj" />
+    <mesh name="cup_green_cup_wedge13" file="../../../_assets/0b2d2c1676c64f9a1d7a.obj" />
+    <mesh name="cup_green_cup_wedge14" file="../../../_assets/9c6fea7597adfd58703a.obj" />
+    <mesh name="cup_green_cup_wedge15" file="../../../_assets/75907583467d99372c97.obj" />
+    <mesh name="cup_orange_near_cup_shell" file="../../../_assets/7320f15260ff88e53b6c.obj" />
+    <mesh name="cup_orange_near_cup_lining" file="../../../_assets/e384b25683ad57def99e.obj" />
+    <mesh name="cup_orange_near_cup_wedge0" file="../../../_assets/8c4bd4444ccae3b44f21.obj" />
+    <mesh name="cup_orange_near_cup_wedge1" file="../../../_assets/2c9f7caec8c09dc40c9d.obj" />
+    <mesh name="cup_orange_near_cup_wedge2" file="../../../_assets/5574461a1a697258f6bf.obj" />
+    <mesh name="cup_orange_near_cup_wedge3" file="../../../_assets/8b30b7b4639f095dab45.obj" />
+    <mesh name="cup_orange_near_cup_wedge4" file="../../../_assets/0847ac4fc31f7a3e2c06.obj" />
+    <mesh name="cup_orange_near_cup_wedge5" file="../../../_assets/c23696677f844f00cb4e.obj" />
+    <mesh name="cup_orange_near_cup_wedge6" file="../../../_assets/1d2900892084cb47d1d2.obj" />
+    <mesh name="cup_orange_near_cup_wedge7" file="../../../_assets/873238bdb5304e66dcec.obj" />
+    <mesh name="cup_orange_near_cup_wedge8" file="../../../_assets/05588fba7bd69b2d5c68.obj" />
+    <mesh name="cup_orange_near_cup_wedge9" file="../../../_assets/66cef6f62a2a6277cab6.obj" />
+    <mesh name="cup_orange_near_cup_wedge10" file="../../../_assets/57525465dc9594bcfabe.obj" />
+    <mesh name="cup_orange_near_cup_wedge11" file="../../../_assets/faafbe988ec59bbed509.obj" />
+    <mesh name="cup_orange_near_cup_wedge12" file="../../../_assets/07f1dd9eda35e676e58a.obj" />
+    <mesh name="cup_orange_near_cup_wedge13" file="../../../_assets/b5322f6ffd6ef6dcfce4.obj" />
+    <mesh name="cup_orange_near_cup_wedge14" file="../../../_assets/046f14af5e9dbebd65c9.obj" />
+    <mesh name="cup_orange_near_cup_wedge15" file="../../../_assets/63fe486dc842be57ad93.obj" />
+    <mesh name="cup_orange_far_cup_shell" file="../../../_assets/7320f15260ff88e53b6c.obj" />
+    <mesh name="cup_orange_far_cup_lining" file="../../../_assets/e384b25683ad57def99e.obj" />
+    <mesh name="cup_orange_far_cup_wedge0" file="../../../_assets/8c4bd4444ccae3b44f21.obj" />
+    <mesh name="cup_orange_far_cup_wedge1" file="../../../_assets/2c9f7caec8c09dc40c9d.obj" />
+    <mesh name="cup_orange_far_cup_wedge2" file="../../../_assets/5574461a1a697258f6bf.obj" />
+    <mesh name="cup_orange_far_cup_wedge3" file="../../../_assets/8b30b7b4639f095dab45.obj" />
+    <mesh name="cup_orange_far_cup_wedge4" file="../../../_assets/0847ac4fc31f7a3e2c06.obj" />
+    <mesh name="cup_orange_far_cup_wedge5" file="../../../_assets/c23696677f844f00cb4e.obj" />
+    <mesh name="cup_orange_far_cup_wedge6" file="../../../_assets/1d2900892084cb47d1d2.obj" />
+    <mesh name="cup_orange_far_cup_wedge7" file="../../../_assets/873238bdb5304e66dcec.obj" />
+    <mesh name="cup_orange_far_cup_wedge8" file="../../../_assets/05588fba7bd69b2d5c68.obj" />
+    <mesh name="cup_orange_far_cup_wedge9" file="../../../_assets/66cef6f62a2a6277cab6.obj" />
+    <mesh name="cup_orange_far_cup_wedge10" file="../../../_assets/57525465dc9594bcfabe.obj" />
+    <mesh name="cup_orange_far_cup_wedge11" file="../../../_assets/faafbe988ec59bbed509.obj" />
+    <mesh name="cup_orange_far_cup_wedge12" file="../../../_assets/07f1dd9eda35e676e58a.obj" />
+    <mesh name="cup_orange_far_cup_wedge13" file="../../../_assets/b5322f6ffd6ef6dcfce4.obj" />
+    <mesh name="cup_orange_far_cup_wedge14" file="../../../_assets/046f14af5e9dbebd65c9.obj" />
+    <mesh name="cup_orange_far_cup_wedge15" file="../../../_assets/63fe486dc842be57ad93.obj" />
+  </asset>
+  <worldbody>
+    <camera name="ego" pos="0.0187862 -0.182928 0.557788" quat="0.881567 0.470897 0.0249467 0.021763" fovy="38" />
+    <camera name="video_cam" pos="0.01879 -0.18293 0.55779" quat="0.881567 0.470897 0.024947 0.021763" fovy="38" />
+    <light pos="6.70448e-08 0.35 3.3623" dir="0 0 -1" castshadow="false" />
+    <light pos="1.7195 1.5923 2.8623" dir="-0.467988 -0.338112 -0.816497" castshadow="false" />
+    <body name="table" pos="1.92587e-07 1.125 -0.02" quat="1 0 0 -1.88231e-07">
+      <geom name="g_table" size="1.8 1.075 0.02" type="box" rgba="0.263 0.204 0.142 1" />
+    </body>
+    <body name="robot_right_right_base_tx">
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+      <joint name="robot_right_right_pos_x" pos="0 0 0" axis="1 0 0" type="slide" range="-5 5" armature="1" />
+      <body name="robot_right_right_base_ty">
+        <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+        <joint name="robot_right_right_pos_y" pos="0 0 0" axis="0 1 0" type="slide" range="-5 5" armature="1" />
+        <body name="robot_right_right_base_tz">
+          <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+          <joint name="robot_right_right_pos_z" pos="0 0 0" axis="0 0 1" type="slide" range="-5 5" armature="1" />
+          <body name="robot_right_right_base_roll">
+            <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+            <joint name="robot_right_right_rot_x" pos="0 0 0" axis="1 0 0" range="-6.28 6.28" armature="1" />
+            <body name="robot_right_right_base_pitch">
+              <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+              <joint name="robot_right_right_rot_y" pos="0 0 0" axis="0 1 0" range="-6.28 6.28" armature="1" />
+              <body name="robot_right_right_base_yaw">
+                <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+                <joint name="robot_right_right_rot_z" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" armature="1" />
+                <camera name="wrist_right" pos="0.050377 0.001601 0.054631" quat="0.152857 0.702458 -0.678966 -0.148973" fovy="100" />
+                <body name="robot_right_right_hand_C_MC">
+                  <inertial pos="0.0060282 0.00091891 0.038914" mass="0.72045" diaginertia="0.00071328 0.00081371 0.00020795" />
+                  <geom name="robot_right_right_hand_C_MC_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_hand_C_MC_visual" />
+                  <geom name="robot_right_collision_hand_right_hand_C_MC_hull" type="mesh" contype="0" conaffinity="0" condim="1" group="3" density="0" rgba="0 1 0 1" mesh="robot_right_right_hand_C_MC_visual" />
+                  <geom name="robot_right_collision_hand_right_palm_0" size="0.016 0.035 0.035" pos="0 0 0.05" type="box" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                  <site name="robot_right_right_palm" pos="0 0 0.05" size="0.01 0.02 0.03" group="3" type="box" rgba="1 0 0 1" />
+                  <body name="robot_right_right_thumb_CMC_VL" pos="0.01 0.026 0.0212" quat="-2.59734e-06 0.707105 0.707108 -2.59735e-06">
+                    <inertial pos="0 0 0" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                    <joint name="robot_right_right_thumb_CMC_FE" pos="0 0 0" axis="0 0 1" range="-0.1745 1.9199" armature="1" />
+                    <geom type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_thumb_CMC_VL_visual" />
+                    <site name="robot_right_right_thumb_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                    <body name="robot_right_right_thumb_MC" pos="0 -0.005 0" quat="0.65328 -0.653282 0.270598 0.270599">
+                      <inertial pos="0.0378875 -0.0105001 0.00999649" quat="-0.224946 0.690249 -0.156115 0.669764" mass="0.116" diaginertia="3.87084e-05 3.37238e-05 1.64399e-05" />
+                      <joint name="robot_right_right_thumb_CMC_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                      <geom name="robot_right_right_thumb_MC_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_thumb_MC_visual" />
+                      <geom name="robot_right_collision_hand_right_thumb_MC_hull" type="mesh" contype="0" conaffinity="0" condim="1" group="3" density="0" rgba="0 1 0 1" mesh="robot_right_right_thumb_MC_visual" />
+                      <geom name="robot_right_collision_hand_right_thumb_2" size="0.015 0.0330189" pos="0.0325 -0.003 0.005" quat="0.758758 0.0598721 0.648615 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                      <body name="robot_right_right_thumb_MCP_VL" pos="0.065 -0.006 0.010392" quat="0.965926 0.25882 0 0">
+                        <inertial pos="4.8e-09 0.000869809 -3.6e-09" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                        <joint name="robot_right_right_thumb_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.5236 1.3963" armature="1" />
+                        <geom type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_thumb_MCP_VL_visual" />
+                        <site name="robot_right_right_thumb_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                        <body name="robot_right_right_thumb_PP" quat="0.707105 -0.707108 0 0">
+                          <inertial pos="0.0219649 -0.000155785 -0.00149071" quat="0.47361 0.526063 0.5236 0.474125" mass="0.04955" diaginertia="4.63211e-06 4.39424e-06 2.59479e-06" />
+                          <joint name="robot_right_right_thumb_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                          <geom name="robot_right_right_thumb_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_thumb_PP_visual" />
+                          <geom name="robot_right_collision_hand_right_thumb_1" size="0.012 0.0195" pos="0.0195 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <body name="robot_right_right_thumb_DP" pos="0.039 0 0" quat="0.707105 0.707108 0 0">
+                            <inertial pos="0.009858 -0.0101251 0.00044685" quat="0.650084 0.202839 -0.647252 0.342507" mass="0.005987" diaginertia="8.79951e-07 8.08527e-07 2.50483e-07" />
+                            <joint name="robot_right_right_thumb_IP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                            <geom name="robot_right_right_thumb_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_thumb_DP_visual" />
+                            <geom name="robot_right_collision_hand_right_thumb_DP_hull" type="mesh" contype="0" conaffinity="0" condim="1" group="3" density="0" rgba="0 1 0 1" mesh="robot_right_right_thumb_DP_visual" />
+                            <geom name="robot_right_right_thumb_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_right_right_thumb_elastomer" />
+                            <geom name="robot_right_collision_hand_right_thumb_0" size="0.007 0.0112805" pos="0.011 -0.0005 0" quat="0.707107 0.15671 0.689523 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                            <site name="robot_right_right_thumb_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_right_right_thumb_tip" pos="0.015 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_right_track_hand_right_thumb_tip" pos="0.015 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_right_trace_hand_right_thumb_tip" pos="0.015 0 0" group="3" rgba="1 0 0 1" />
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="robot_right_right_index_MCP_VL" pos="0.001 0.0303 0.0957" quat="0.499998 -0.500002 -0.5 -0.5">
+                    <inertial pos="4.8e-09 0.00086981 -3.6e-09" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                    <joint name="robot_right_right_index_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" armature="1" />
+                    <geom type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_MCP_VL_visual" />
+                    <site name="robot_right_right_index_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                    <body name="robot_right_right_index_PP" quat="0.707105 -0.707108 0 0">
+                      <inertial pos="0.0243772 1.00263e-06 -0.000755901" quat="0.479204 0.519977 0.519877 0.479286" mass="0.04138" diaginertia="6.82371e-06 6.54097e-06 2.16753e-06" />
+                      <joint name="robot_right_right_index_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                      <geom name="robot_right_right_index_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_PP_visual" />
+                      <geom name="robot_right_collision_hand_right_index_2" size="0.01 0.0235" pos="0.0235 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                      <body name="robot_right_right_index_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+                        <inertial pos="0.015316 -0.00138561 6.28778e-08" quat="-0.0196261 0.706839 0.0195184 0.706832" mass="0.02509" diaginertia="2.28516e-06 2.26758e-06 9.99868e-07" />
+                        <joint name="robot_right_right_index_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                        <geom name="robot_right_right_index_MP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_MP_visual" />
+                        <geom name="robot_right_collision_hand_right_index_1" size="0.009 0.01575" pos="0.01575 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                        <site name="robot_right_right_index_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                        <body name="robot_right_right_index_DP" pos="0.0315 0 0">
+                          <inertial pos="0.00931268 -0.00769378 0.000111581" quat="0.64397 0.245697 -0.649334 0.321406" mass="0.004103" diaginertia="4.23752e-07 3.85411e-07 1.37217e-07" />
+                          <joint name="robot_right_right_index_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" armature="1" />
+                          <geom name="robot_right_right_index_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_DP_visual" />
+                          <geom name="robot_right_right_index_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_right_right_elastomer" />
+                          <geom name="robot_right_collision_hand_right_index_0" size="0.007 0.0100499" pos="0.01 -0.001 0" quat="0.707107 0.0703598 0.703598 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <site name="robot_right_right_index_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_right_index_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_track_hand_right_index_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_trace_hand_right_index_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="robot_right_right_middle_MCP_VL" pos="0 0.01 0.0987" quat="0.499998 -0.500002 -0.5 -0.5">
+                    <inertial pos="0 0 0" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                    <joint name="robot_right_right_middle_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" armature="1" />
+                    <geom type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_MCP_VL_visual" />
+                    <site name="robot_right_right_middle_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                    <body name="robot_right_right_middle_PP" quat="0.707105 -0.707108 0 0">
+                      <inertial pos="0.0243772 1.00263e-06 -0.000755901" quat="0.479204 0.519977 0.519877 0.479286" mass="0.04138" diaginertia="6.82371e-06 6.54097e-06 2.16753e-06" />
+                      <joint name="robot_right_right_middle_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                      <geom name="robot_right_right_middle_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_PP_visual" />
+                      <geom name="robot_right_collision_hand_right_middle_2" size="0.01 0.0235" pos="0.0235 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                      <body name="robot_right_right_middle_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+                        <inertial pos="0.015316 -0.00138561 6.28778e-08" quat="-0.0196261 0.706839 0.0195184 0.706832" mass="0.02509" diaginertia="2.28516e-06 2.26758e-06 9.99868e-07" />
+                        <joint name="robot_right_right_middle_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                        <geom name="robot_right_right_middle_MP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_MP_visual" />
+                        <geom name="robot_right_collision_hand_right_middle_1" size="0.009 0.01575" pos="0.01575 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                        <site name="robot_right_right_middle_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                        <body name="robot_right_right_middle_DP" pos="0.0315 0 0">
+                          <inertial pos="0.00931268 -0.00769378 0.000111581" quat="0.64397 0.245697 -0.649334 0.321406" mass="0.004103" diaginertia="4.23752e-07 3.85411e-07 1.37217e-07" />
+                          <joint name="robot_right_right_middle_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" armature="1" />
+                          <geom name="robot_right_right_middle_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_DP_visual" />
+                          <geom name="robot_right_right_middle_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_right_right_elastomer" />
+                          <geom name="robot_right_collision_hand_right_middle_0" size="0.007 0.0100499" pos="0.01 -0.001 0" quat="0.707107 0.0703598 0.703598 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <site name="robot_right_right_middle_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_right_middle_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_track_hand_right_middle_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_trace_hand_right_middle_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="robot_right_right_ring_MCP_VL" pos="0.0015 -0.0103 0.0927" quat="0.499998 -0.500002 -0.5 -0.5">
+                    <inertial pos="4.8e-09 0.00086981 -3.6e-09" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                    <joint name="robot_right_right_ring_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" armature="1" />
+                    <geom type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_MCP_VL_visual" />
+                    <site name="robot_right_right_ring_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                    <body name="robot_right_right_ring_PP" quat="0.707105 -0.707108 0 0">
+                      <inertial pos="0.0243772 1.00263e-06 -0.000755901" quat="0.479204 0.519977 0.519877 0.479286" mass="0.04138" diaginertia="6.82371e-06 6.54097e-06 2.16753e-06" />
+                      <joint name="robot_right_right_ring_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                      <geom name="robot_right_right_ring_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_PP_visual" />
+                      <geom name="robot_right_collision_hand_right_ring_2" size="0.01 0.0235" pos="0.0235 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                      <body name="robot_right_right_ring_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+                        <inertial pos="0.015316 -0.00138561 6.28778e-08" quat="-0.0196261 0.706839 0.0195184 0.706832" mass="0.02509" diaginertia="2.28516e-06 2.26758e-06 9.99868e-07" />
+                        <joint name="robot_right_right_ring_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                        <geom name="robot_right_right_ring_MP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_MP_visual" />
+                        <geom name="robot_right_collision_hand_right_ring_1" size="0.009 0.01575" pos="0.01575 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                        <site name="robot_right_right_ring_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                        <body name="robot_right_right_ring_DP" pos="0.0315 0 0">
+                          <inertial pos="0.00931268 -0.00769378 0.000111581" quat="0.64397 0.245697 -0.649334 0.321406" mass="0.004103" diaginertia="4.23752e-07 3.85411e-07 1.37217e-07" />
+                          <joint name="robot_right_right_ring_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" armature="1" />
+                          <geom name="robot_right_right_ring_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_DP_visual" />
+                          <geom name="robot_right_right_ring_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_right_right_elastomer" />
+                          <geom name="robot_right_collision_hand_right_ring_0" size="0.007 0.0100499" pos="0.01 -0.001 0" quat="0.707107 0.0703598 0.703598 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <site name="robot_right_right_ring_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_right_ring_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_track_hand_right_ring_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_right_trace_hand_right_ring_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="robot_right_right_pinky_MC" pos="0.01136 -0.0263 0.0867" quat="-3.67321e-06 0 0 1">
+                    <inertial pos="0.0107985 0.00598801 -0.0335125" quat="0.709657 -0.106152 -0.0812795 0.691746" mass="0.12541" diaginertia="3.57685e-05 2.46485e-05 2.14424e-05" />
+                    <joint name="robot_right_right_pinky_CMC" pos="0 0 0" axis="0 0 1" range="0 0.2618" armature="1" />
+                    <geom name="robot_right_right_pinky_MC_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_pinky_MC_visual" />
+                    <body name="robot_right_right_pinky_MCP_VL" pos="0.00836 0.0048 0" quat="0.499998 0.5 -0.5 0.500002">
+                      <inertial pos="4.8e-09 0.00086981 -3.6e-09" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                      <joint name="robot_right_right_pinky_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" armature="1" />
+                      <geom type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_MCP_VL_visual" />
+                      <site name="robot_right_right_pinky_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                      <body name="robot_right_right_pinky_PP" quat="0.707105 -0.707108 0 0">
+                        <inertial pos="0.0243772 1.00263e-06 -0.000755901" quat="0.479204 0.519977 0.519877 0.479286" mass="0.04138" diaginertia="6.82371e-06 6.54097e-06 2.16753e-06" />
+                        <joint name="robot_right_right_pinky_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                        <geom name="robot_right_right_pinky_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_PP_visual" />
+                        <geom name="robot_right_collision_hand_right_pinky_2" size="0.009 0.0235" pos="0.0235 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                        <body name="robot_right_right_pinky_MP" pos="0.047 0 0" quat="0.707105 0.707108 0 0">
+                          <inertial pos="0.015316 -0.00138561 6.28778e-08" quat="-0.0196261 0.706839 0.0195184 0.706832" mass="0.02509" diaginertia="2.28516e-06 2.26758e-06 9.99868e-07" />
+                          <joint name="robot_right_right_pinky_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                          <geom name="robot_right_right_pinky_MP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_MP_visual" />
+                          <geom name="robot_right_collision_hand_right_pinky_1" size="0.008 0.01575" pos="0.01575 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <site name="robot_right_right_pinky_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                          <body name="robot_right_right_pinky_DP" pos="0.0315 0 0">
+                            <inertial pos="0.00931268 -0.00769376 0.000111581" quat="0.64397 0.245701 -0.649333 0.321403" mass="0.004103" diaginertia="4.23753e-07 3.85412e-07 1.37217e-07" />
+                            <joint name="robot_right_right_pinky_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" armature="1" />
+                            <geom name="robot_right_right_pinky_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_right_right_DP_visual" />
+                            <geom name="robot_right_right_pinky_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.1 1 0.2 1" mesh="robot_right_right_elastomer" />
+                            <geom name="robot_right_collision_hand_right_pinky_0" size="0.007 0.0100499" pos="0.01 -0.001 0" quat="0.707107 0.0703598 0.703598 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                            <site name="robot_right_right_pinky_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_right_right_pinky_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_right_track_hand_right_pinky_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_right_trace_hand_right_pinky_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="robot_right_arm_root" pos="0.26 0 -0.05" quat="2.91442e-07 0 0 1">
+      <body name="robot_right_arm_base" quat="0.499998 -0.500002 0.5 0.5">
+        <inertial pos="-0.0247678 -2.4007e-05 3.82998e-05" quat="0.500738 0.500087 -0.499793 0.499381" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+        <geom pos="-0.187501 -0.0464005 -0.0374966" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_right_arm_base" />
+        <body name="robot_right_arm_link1" pos="-0.068 0 0">
+          <inertial pos="-0.0233636 -0.00172503 -0.00727828" quat="0.350044 0.317088 -0.649919 0.595424" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+          <joint name="robot_right_arm_dof_joint1" pos="0 0 0" axis="-1 0 0" range="-2.61799 3.05433" actuatorfrcrange="-1 1" damping="5" />
+          <geom pos="-0.119501 -0.0464 -0.0374968" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_right_arm_link1" />
+          <body name="robot_right_arm_link2" pos="-0.0455 -0.0339 -0.02" quat="1.32679e-06 0 0 -1">
+            <inertial pos="0.000134495 -0.0331253 0.129165" quat="1 0.000113256 1.56201e-05 -8.02079e-05" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+            <joint name="robot_right_arm_dof_joint2" pos="0 0 0" axis="0 1 0" range="-0.15 3.14159" actuatorfrcrange="-1 1" damping="5" />
+            <geom pos="-0.0740001 -0.08025 -0.0174977" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_right_arm_link2" />
+            <body name="robot_right_arm_link3" pos="4.08431e-07 -0.0688 0.264" quat="1.32679e-06 0 0 -1">
+              <inertial pos="-0.0556042 -0.0340514 -0.135083" quat="0.990999 0.00518347 0.0472812 0.125137" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+              <joint name="robot_right_arm_dof_joint3" pos="0 0 0" axis="0 1 0" range="-0.15 3.14159" actuatorfrcrange="-1 1" damping="5" />
+              <geom pos="-0.0740003 -0.0813 -0.281499" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_right_arm_link3" />
+              <body name="robot_right_arm_link4" pos="-0.0600003 -0.0688 -0.244999">
+                <inertial pos="-0.0550959 0.032726 -0.0575534" quat="0.127536 0.44423 0.0147443 0.886666" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+                <joint name="robot_right_arm_dof_joint4" pos="0 0 0" axis="0 1 0" range="-1.5708 1.5708" actuatorfrcrange="-1 1" damping="5" />
+                <geom pos="-0.0140003 -0.0125 -0.0364989" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_right_arm_link4" />
+                <body name="robot_right_arm_link5" pos="-0.0405003 0.0338995 -0.0739989">
+                  <inertial pos="0.0375847 -3.55003e-05 -0.000825911" quat="0.661372 -0.253166 -0.247107 0.661387" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+                  <joint name="robot_right_arm_dof_joint5" pos="0 0 0" axis="-1 0 0" range="-1.5708 1.5708" actuatorfrcrange="-1 1" damping="5" />
+                  <geom pos="0.0265 -0.0463995 0.0375" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_right_arm_link5" />
+                  <body name="robot_right_arm_gripper" pos="0.0404996 2.39858e-07 -0.0356">
+                    <inertial pos="-3.57064e-05 0.000249371 -0.0293133" quat="0.667981 0.744113 -0.0043308 0.00882784" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+                    <joint name="robot_right_arm_dof_joint6" pos="0 0 0" axis="0 0 1" range="-2.0944 2.0944" actuatorfrcrange="-1 1" damping="5" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="robot_left_left_base_tx">
+      <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+      <joint name="robot_left_left_pos_x" pos="0 0 0" axis="1 0 0" type="slide" range="-5 5" armature="1" />
+      <body name="robot_left_left_base_ty">
+        <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+        <joint name="robot_left_left_pos_y" pos="0 0 0" axis="0 1 0" type="slide" range="-5 5" armature="1" />
+        <body name="robot_left_left_base_tz">
+          <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+          <joint name="robot_left_left_pos_z" pos="0 0 0" axis="0 0 1" type="slide" range="-5 5" armature="1" />
+          <body name="robot_left_left_base_roll">
+            <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+            <joint name="robot_left_left_rot_x" pos="0 0 0" axis="1 0 0" range="-6.28 6.28" armature="1" />
+            <body name="robot_left_left_base_pitch">
+              <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+              <joint name="robot_left_left_rot_y" pos="0 0 0" axis="0 1 0" range="-6.28 6.28" armature="1" />
+              <body name="robot_left_left_base_yaw">
+                <inertial pos="0 0 0" mass="0.1" diaginertia="0.01 0.01 0.01" />
+                <joint name="robot_left_left_rot_z" pos="0 0 0" axis="0 0 1" range="-6.28 6.28" armature="1" />
+                <camera name="wrist_left" pos="0.050377 -0.0016 0.054631" quat="0.148974 0.678966 -0.702458 -0.152857" fovy="100" />
+                <body name="robot_left_left_hand_C_MC">
+                  <inertial pos="0.0060282 0.00091891 0.038914" mass="0.72045" diaginertia="0.00071328 0.00081371 0.00020795" />
+                  <geom name="robot_left_left_hand_C_MC_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_hand_C_MC_visual" />
+                  <geom name="robot_left_collision_hand_left_hand_C_MC_hull" type="mesh" contype="0" conaffinity="0" condim="1" group="3" density="0" rgba="0 1 0 1" mesh="robot_left_left_hand_C_MC_visual" />
+                  <geom name="robot_left_collision_hand_left_palm_0" size="0.016 0.035 0.035" pos="0 0 0.05" quat="0 0 1 0" type="box" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                  <site name="robot_left_left_palm" pos="0 0 0.05" size="0.01 0.02 0.03" group="3" type="box" rgba="1 0 0 1" />
+                  <body name="robot_left_left_thumb_CMC_VL" pos="0.01 -0.026 0.0212" quat="0.707105 0 0 -0.707108">
+                    <inertial pos="0 0 0" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                    <joint name="robot_left_left_thumb_CMC_FE" pos="0 0 0" axis="0 0 1" range="-0.1745 1.9199" armature="1" />
+                    <geom type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_thumb_CMC_VL_visual" />
+                    <site name="robot_left_left_thumb_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                    <body name="robot_left_left_thumb_MC" pos="0 -0.005 0" quat="0.65328 0.653282 -0.270598 0.270599">
+                      <inertial pos="0.0385056 -0.0105846 -0.00991873" quat="0.158428 0.667584 0.222963 0.692474" mass="0.116" diaginertia="3.83518e-05 3.34032e-05 1.641e-05" />
+                      <joint name="robot_left_left_thumb_CMC_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                      <geom name="robot_left_left_thumb_MC_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_thumb_MC_visual" />
+                      <geom name="robot_left_collision_hand_left_thumb_MC_hull" type="mesh" contype="0" conaffinity="0" condim="1" group="3" density="0" rgba="0 1 0 1" mesh="robot_left_left_thumb_MC_visual" />
+                      <geom name="robot_left_collision_hand_left_thumb_2" size="0.015 0.0330189" pos="0.0325 -0.003 -0.005" quat="0.651372 0.0697427 0.755546 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                      <body name="robot_left_left_thumb_MCP_VL" pos="0.065 -0.006 -0.010392" quat="0.965926 -0.25882 0 0">
+                        <inertial pos="4.8e-09 0.000869809 -3.6e-09" mass="0.001" diaginertia="2e-12 2e-12 2e-12" />
+                        <joint name="robot_left_left_thumb_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.5236 1.3963" armature="1" />
+                        <geom type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_thumb_MCP_VL_visual" />
+                        <site name="robot_left_left_thumb_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                        <body name="robot_left_left_thumb_PP" quat="0.707105 0.707108 0 0">
+                          <inertial pos="0.0219483 -0.00015581 0.00149446" quat="0.526585 0.473016 0.473458 0.524215" mass="0.04955" diaginertia="4.60001e-06 4.35675e-06 2.57733e-06" />
+                          <joint name="robot_left_left_thumb_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                          <geom name="robot_left_left_thumb_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_thumb_PP_visual" />
+                          <geom name="robot_left_collision_hand_left_thumb_1" size="0.012 0.0195" pos="0.0195 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <body name="robot_left_left_thumb_DP" pos="0.039 0 0" quat="0.707105 -0.707108 0 0">
+                            <inertial pos="0.00985829 -0.0101254 0.00044771" quat="0.649916 0.20258 -0.647399 0.342703" mass="0.006986" diaginertia="8.79989e-07 8.08573e-07 2.50588e-07" />
+                            <joint name="robot_left_left_thumb_IP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                            <geom name="robot_left_left_thumb_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_thumb_DP_visual" />
+                            <geom name="robot_left_collision_hand_left_thumb_DP_hull" type="mesh" contype="0" conaffinity="0" condim="1" group="3" density="0" rgba="0 1 0 1" mesh="robot_left_left_thumb_DP_visual" />
+                            <geom quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_left_left_thumb_elastomer" />
+                            <geom name="robot_left_collision_hand_left_thumb_0" size="0.007 0.0112805" pos="0.011 -0.0005 0" quat="0.707107 0.15671 0.689523 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                            <site name="robot_left_left_thumb_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_left_left_thumb_tip" pos="0.015 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_left_track_hand_left_thumb_tip" pos="0.015 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_left_trace_hand_left_thumb_tip" pos="0.015 0 0" group="3" rgba="1 0 0 1" />
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="robot_left_left_index_MCP_VL" pos="0.001 -0.0303 0.0957" quat="0.499998 -0.500002 -0.5 -0.5">
+                    <inertial pos="4.8e-09 0.00086981 -3.6e-09" mass="0.001" diaginertia="2e-12 2e-12 2e-12" />
+                    <joint name="robot_left_left_index_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" armature="1" />
+                    <geom name="robot_left_left_index_MCP_VL_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_MCP_VL_visual" />
+                    <site name="robot_left_left_index_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                    <body name="robot_left_left_index_PP" quat="0.707105 0.707108 0 0">
+                      <inertial pos="0.0243772 -1.00263e-06 0.000755901" quat="0.519877 0.479286 0.479204 0.519977" mass="0.04138" diaginertia="6.82371e-06 6.54097e-06 2.16753e-06" />
+                      <joint name="robot_left_left_index_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                      <geom name="robot_left_left_index_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_PP_visual" />
+                      <geom name="robot_left_collision_hand_left_index_2" size="0.01 0.0235" pos="0.0235 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                      <body name="robot_left_left_index_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0">
+                        <inertial pos="0.015316 -0.00138561 6.27987e-08" quat="-0.0196259 0.706839 0.0195186 0.706832" mass="0.02509" diaginertia="2.28516e-06 2.26758e-06 9.99868e-07" />
+                        <joint name="robot_left_left_index_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                        <geom name="robot_left_left_index_MP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_MP_visual" />
+                        <geom name="robot_left_collision_hand_left_index_1" size="0.009 0.01575" pos="0.01575 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                        <site name="robot_left_left_index_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                        <body name="robot_left_left_index_DP" pos="0.0315 0 0">
+                          <inertial pos="0.00931302 -0.00769378 0.000111984" quat="0.643869 0.245527 -0.649442 0.321517" mass="0.005102" diaginertia="4.23794e-07 3.8546e-07 1.37255e-07" />
+                          <joint name="robot_left_left_index_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" armature="1" />
+                          <geom name="robot_left_left_index_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_DP_visual" />
+                          <geom name="robot_left_left_index_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_left_left_elastomer" />
+                          <geom name="robot_left_collision_hand_left_index_0" size="0.007 0.0100499" pos="0.01 -0.001 0" quat="0.707107 0.0703598 0.703598 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <site name="robot_left_left_index_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_left_index_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_track_hand_left_index_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_trace_hand_left_index_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="robot_left_left_middle_MCP_VL" pos="0 -0.01 0.0987" quat="0.499998 -0.500002 -0.5 -0.5">
+                    <inertial pos="4.8e-09 0.00086981 -3.6e-09" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                    <joint name="robot_left_left_middle_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" armature="1" />
+                    <geom name="robot_left_left_middle_MCP_VL_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_MCP_VL_visual" />
+                    <site name="robot_left_left_middle_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                    <body name="robot_left_left_middle_PP" quat="0.707105 0.707108 0 0">
+                      <inertial pos="0.0243772 -1.00263e-06 0.000755901" quat="0.519877 0.479286 0.479204 0.519977" mass="0.04138" diaginertia="6.82371e-06 6.54097e-06 2.16753e-06" />
+                      <joint name="robot_left_left_middle_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                      <geom name="robot_left_left_middle_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_PP_visual" />
+                      <geom name="robot_left_collision_hand_left_middle_2" size="0.01 0.0235" pos="0.0235 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                      <body name="robot_left_left_middle_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0">
+                        <inertial pos="0.015316 -0.00138561 6.27987e-08" quat="-0.0196259 0.706839 0.0195186 0.706832" mass="0.02509" diaginertia="2.28516e-06 2.26758e-06 9.99868e-07" />
+                        <joint name="robot_left_left_middle_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                        <geom name="robot_left_left_middle_MP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_MP_visual" />
+                        <geom name="robot_left_collision_hand_left_middle_1" size="0.009 0.01575" pos="0.01575 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                        <site name="robot_left_left_middle_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                        <body name="robot_left_left_middle_DP" pos="0.0315 0 0">
+                          <inertial pos="0.00931302 -0.00769378 0.000111984" quat="0.643869 0.245527 -0.649442 0.321517" mass="0.005102" diaginertia="4.23794e-07 3.8546e-07 1.37255e-07" />
+                          <joint name="robot_left_left_middle_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" armature="1" />
+                          <geom name="robot_left_left_middle_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_DP_visual" />
+                          <geom name="robot_left_left_middle_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_left_left_elastomer" />
+                          <geom name="robot_left_collision_hand_left_middle_0" size="0.007 0.0100499" pos="0.01 -0.001 0" quat="0.707107 0.0703598 0.703598 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <site name="robot_left_left_middle_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_left_middle_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_track_hand_left_middle_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_trace_hand_left_middle_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="robot_left_left_ring_MCP_VL" pos="0.0015 0.0103 0.0927" quat="0.499998 -0.500002 -0.5 -0.5">
+                    <inertial pos="4.8e-09 0.00086981 3.6e-09" mass="1e-06" diaginertia="2e-12 2e-12 2e-12" />
+                    <joint name="robot_left_left_ring_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" armature="1" />
+                    <geom name="robot_left_left_ring_MCP_VL_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_MCP_VL_visual" />
+                    <site name="robot_left_left_ring_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                    <body name="robot_left_left_ring_PP" quat="0.707105 0.707108 0 0">
+                      <inertial pos="0.0243772 -1.00263e-06 0.000755901" quat="0.519877 0.479286 0.479204 0.519977" mass="0.04138" diaginertia="6.82371e-06 6.54097e-06 2.16753e-06" />
+                      <joint name="robot_left_left_ring_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                      <geom name="robot_left_left_ring_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_PP_visual" />
+                      <geom name="robot_left_collision_hand_left_ring_2" size="0.01 0.0235" pos="0.0235 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                      <body name="robot_left_left_ring_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0">
+                        <inertial pos="0.015316 -0.00138561 6.27987e-08" quat="-0.0196259 0.706839 0.0195186 0.706832" mass="0.02509" diaginertia="2.28516e-06 2.26758e-06 9.99868e-07" />
+                        <joint name="robot_left_left_ring_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                        <geom name="robot_left_left_ring_MP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_MP_visual" />
+                        <geom name="robot_left_collision_hand_left_ring_1" size="0.009 0.01575" pos="0.01575 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                        <site name="robot_left_left_ring_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                        <body name="robot_left_left_ring_DP" pos="0.0315 0 0">
+                          <inertial pos="0.00931208 -0.00769378 0.000111984" quat="0.643953 0.245771 -0.649317 0.321417" mass="0.005102" diaginertia="4.23686e-07 3.85387e-07 1.37226e-07" />
+                          <joint name="robot_left_left_ring_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" armature="1" />
+                          <geom name="robot_left_left_ring_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_DP_visual" />
+                          <geom name="robot_left_left_ring_elastomer_visual" quat="0.499998 0.5 -0.5 0.500002" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_left_left_elastomer" />
+                          <geom name="robot_left_collision_hand_left_ring_0" size="0.007 0.0100499" pos="0.01 -0.001 0" quat="0.707107 0.0703598 0.703598 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <site name="robot_left_left_ring_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_left_ring_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_track_hand_left_ring_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          <site name="robot_left_trace_hand_left_ring_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                  <body name="robot_left_left_pinky_MC" pos="0.01136 0.0263 0.0867" quat="1.34924e-11 3.67321e-06 -1 -3.67321e-06">
+                    <inertial pos="0.0107985 0.00598801 0.0335125" quat="0.709657 0.106152 0.0812795 0.691746" mass="0.12541" diaginertia="3.57685e-05 2.46485e-05 2.14424e-05" />
+                    <joint name="robot_left_left_pinky_CMC" pos="0 0 0" axis="0 0 1" range="0 0.2618" armature="1" />
+                    <geom name="robot_left_left_pinky_MC_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_pinky_MC_visual" />
+                    <body name="robot_left_left_pinky_MCP_VL" pos="0.00836 0.0048 0" quat="0.499998 -0.5 0.5 0.500002">
+                      <inertial pos="4.8e-09 0.00086981 -3.6e-09" mass="0.001" diaginertia="2e-12 2e-12 2e-12" />
+                      <joint name="robot_left_left_pinky_MCP_FE" pos="0 0 0" axis="0 0 1" range="-0.174533 1.5708" armature="1" />
+                      <geom name="robot_left_left_pinky_MCP_VL_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_MCP_VL_visual" />
+                      <site name="robot_left_left_pinky_mcp" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                      <body name="robot_left_left_pinky_PP" quat="0.707105 0.707108 0 0">
+                        <inertial pos="0.0243772 -1.00263e-06 0.000755901" quat="0.519877 0.479286 0.479204 0.519977" mass="0.04138" diaginertia="6.82371e-06 6.54097e-06 2.16753e-06" />
+                        <joint name="robot_left_left_pinky_MCP_AA" pos="0 0 0" axis="0 0 1" range="-0.3491 0.3491" armature="1" />
+                        <geom name="robot_left_left_pinky_PP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_PP_visual" />
+                        <geom name="robot_left_collision_hand_left_pinky_2" size="0.009 0.0235" pos="0.0235 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                        <body name="robot_left_left_pinky_MP" pos="0.047 0 0" quat="0.707105 -0.707108 0 0">
+                          <inertial pos="0.015316 -0.00138561 6.27987e-08" quat="-0.0196259 0.706839 0.0195186 0.706832" mass="0.02509" diaginertia="2.28516e-06 2.26758e-06 9.99868e-07" />
+                          <joint name="robot_left_left_pinky_PIP" pos="0 0 0" axis="0 0 1" range="0 1.7453" armature="1" />
+                          <geom name="robot_left_left_pinky_MP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_MP_visual" />
+                          <geom name="robot_left_collision_hand_left_pinky_1" size="0.008 0.01575" pos="0.01575 0 0" quat="0.707107 0 0.707107 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                          <site name="robot_left_left_pinky_pip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                          <body name="robot_left_left_pinky_DP" pos="0.0315 0 0">
+                            <inertial pos="0.00931208 -0.00769378 0.000111984" quat="0.643953 0.245771 -0.649317 0.321417" mass="0.005102" diaginertia="4.23686e-07 3.85387e-07 1.37226e-07" />
+                            <joint name="robot_left_left_pinky_DIP" pos="0 0 0" axis="0 0 1" range="0 1.3963" armature="1" />
+                            <geom name="robot_left_left_pinky_DP_visual" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.79216 0.81961 0.93333 1" mesh="robot_left_left_DP_visual" />
+                            <geom name="robot_left_left_pinky_elastomer_visual" quat="0.5 0.5 -0.5 0.5" type="mesh" contype="0" conaffinity="0" condim="1" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.2 1 0.2 1" mesh="robot_left_left_elastomer" />
+                            <geom name="robot_left_collision_hand_left_pinky_0" size="0.007 0.0100499" pos="0.01 -0.001 0" quat="0.707107 0.0703598 0.703598 0" type="capsule" contype="0" conaffinity="0" condim="1" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="800" rgba="0 1 0 1" />
+                            <site name="robot_left_left_pinky_dip" pos="0 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_left_left_pinky_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_left_track_hand_left_pinky_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                            <site name="robot_left_trace_hand_left_pinky_tip" pos="0.014 0 0" group="3" rgba="1 0 0 1" />
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="robot_left_arm_root" pos="-0.23 0 -0.05" quat="2.91442e-07 0 0 1">
+      <body name="robot_left_arm_base" quat="0.499998 -0.500002 0.5 0.5">
+        <inertial pos="-0.0247678 -2.4007e-05 3.82998e-05" quat="0.500738 0.500087 -0.499793 0.499381" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+        <geom pos="-0.187501 -0.0464005 -0.0374966" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_left_arm_base" />
+        <body name="robot_left_arm_link1" pos="-0.068 0 0">
+          <inertial pos="-0.0233636 -0.00172503 -0.00727828" quat="0.350044 0.317088 -0.649919 0.595424" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+          <joint name="robot_left_arm_dof_joint1" pos="0 0 0" axis="-1 0 0" range="-2.61799 3.05433" actuatorfrcrange="-1 1" damping="5" />
+          <geom pos="-0.119501 -0.0464 -0.0374968" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_left_arm_link1" />
+          <body name="robot_left_arm_link2" pos="-0.0455 -0.0339 -0.02" quat="1.32679e-06 0 0 -1">
+            <inertial pos="0.000134495 -0.0331253 0.129165" quat="1 0.000113256 1.56201e-05 -8.02079e-05" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+            <joint name="robot_left_arm_dof_joint2" pos="0 0 0" axis="0 1 0" range="-0.15 3.14159" actuatorfrcrange="-1 1" damping="5" />
+            <geom pos="-0.0740001 -0.08025 -0.0174977" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_left_arm_link2" />
+            <body name="robot_left_arm_link3" pos="4.08431e-07 -0.0688 0.264" quat="1.32679e-06 0 0 -1">
+              <inertial pos="-0.0556042 -0.0340514 -0.135083" quat="0.990999 0.00518347 0.0472812 0.125137" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+              <joint name="robot_left_arm_dof_joint3" pos="0 0 0" axis="0 1 0" range="-0.15 3.14159" actuatorfrcrange="-1 1" damping="5" />
+              <geom pos="-0.0740003 -0.0813 -0.281499" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_left_arm_link3" />
+              <body name="robot_left_arm_link4" pos="-0.0600003 -0.0688 -0.244999">
+                <inertial pos="-0.0550959 0.032726 -0.0575534" quat="0.127536 0.44423 0.0147443 0.886666" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+                <joint name="robot_left_arm_dof_joint4" pos="0 0 0" axis="0 1 0" range="-1.5708 1.5708" actuatorfrcrange="-1 1" damping="5" />
+                <geom pos="-0.0140003 -0.0125 -0.0364989" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_left_arm_link4" />
+                <body name="robot_left_arm_link5" pos="-0.0405003 0.0338995 -0.0739989">
+                  <inertial pos="0.0375847 -3.55003e-05 -0.000825911" quat="0.661372 -0.253166 -0.247107 0.661387" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+                  <joint name="robot_left_arm_dof_joint5" pos="0 0 0" axis="-1 0 0" range="-1.5708 1.5708" actuatorfrcrange="-1 1" damping="5" />
+                  <geom pos="0.0265 -0.0463995 0.0375" quat="1 0 0 0" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" density="0" rgba="0.08 0.08 0.09 1" mesh="robot_left_arm_link5" />
+                  <body name="robot_left_arm_gripper" pos="0.0404996 2.39858e-07 -0.0356">
+                    <inertial pos="-3.57064e-05 0.000249371 -0.0293133" quat="0.667981 0.744113 -0.0043308 0.00882784" mass="0.25" diaginertia="0.00025 0.00025 0.00025" />
+                    <joint name="robot_left_arm_dof_joint6" pos="0 0 0" axis="0 0 1" range="-2.0944 2.0944" actuatorfrcrange="-1 1" damping="5" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <body name="camrig" pos="6.70448e-08 0.35 0.3623" quat="-0.491472 0.867231 0.0694148 0.0393383" mocap="true" />
+    <body name="cup_teal_cup" pos="0.107557 0.297022 0.000000" quat="1.000000 0.000000 0.000000 0.000000">
+      <joint name="cup_teal_cup_free" type="free" />
+      <geom name="cup_teal_cup_shell" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" mass="0" material="cup_teal_cup_mat" mesh="cup_teal_cup_shell" />
+      <geom name="cup_teal_cup_lining" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" mass="0" material="cup_teal_cup_inmat" mesh="cup_teal_cup_lining" />
+      <geom name="cup_teal_cup_base" size="0.0269 0.001" pos="0 0 0.001" type="cylinder" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" />
+      <geom name="cup_teal_cup_wedge0" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge0" />
+      <geom name="cup_teal_cup_wedge1" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge1" />
+      <geom name="cup_teal_cup_wedge2" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge2" />
+      <geom name="cup_teal_cup_wedge3" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge3" />
+      <geom name="cup_teal_cup_wedge4" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge4" />
+      <geom name="cup_teal_cup_wedge5" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge5" />
+      <geom name="cup_teal_cup_wedge6" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge6" />
+      <geom name="cup_teal_cup_wedge7" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge7" />
+      <geom name="cup_teal_cup_wedge8" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge8" />
+      <geom name="cup_teal_cup_wedge9" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge9" />
+      <geom name="cup_teal_cup_wedge10" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge10" />
+      <geom name="cup_teal_cup_wedge11" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge11" />
+      <geom name="cup_teal_cup_wedge12" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge12" />
+      <geom name="cup_teal_cup_wedge13" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge13" />
+      <geom name="cup_teal_cup_wedge14" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge14" />
+      <geom name="cup_teal_cup_wedge15" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_teal_cup_wedge15" />
+      <site name="cup_teal_cup_rim" pos="0 0 0.1015" size="0.002" rgba="0 1 0 0" />
+      <site name="cup_teal_cup_floor" pos="0 0 0.002" size="0.002" rgba="0 0 1 0" />
+    </body>
+    <body name="cup_green_cup" pos="-0.125279 0.534761 0.000000" quat="1.000000 0.000000 0.000000 0.000000">
+      <joint name="cup_green_cup_free" type="free" />
+      <geom name="cup_green_cup_shell" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" mass="0" material="cup_green_cup_mat" mesh="cup_green_cup_shell" />
+      <geom name="cup_green_cup_lining" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" mass="0" material="cup_green_cup_inmat" mesh="cup_green_cup_lining" />
+      <geom name="cup_green_cup_base" size="0.0269 0.001" pos="0 0 0.001" type="cylinder" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" />
+      <geom name="cup_green_cup_wedge0" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge0" />
+      <geom name="cup_green_cup_wedge1" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge1" />
+      <geom name="cup_green_cup_wedge2" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge2" />
+      <geom name="cup_green_cup_wedge3" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge3" />
+      <geom name="cup_green_cup_wedge4" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge4" />
+      <geom name="cup_green_cup_wedge5" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge5" />
+      <geom name="cup_green_cup_wedge6" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge6" />
+      <geom name="cup_green_cup_wedge7" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge7" />
+      <geom name="cup_green_cup_wedge8" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge8" />
+      <geom name="cup_green_cup_wedge9" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge9" />
+      <geom name="cup_green_cup_wedge10" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge10" />
+      <geom name="cup_green_cup_wedge11" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge11" />
+      <geom name="cup_green_cup_wedge12" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge12" />
+      <geom name="cup_green_cup_wedge13" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge13" />
+      <geom name="cup_green_cup_wedge14" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge14" />
+      <geom name="cup_green_cup_wedge15" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="233.749" rgba="0.8 0.2 0.2 0" mesh="cup_green_cup_wedge15" />
+      <site name="cup_green_cup_rim" pos="0 0 0.1015" size="0.002" rgba="0 1 0 0" />
+      <site name="cup_green_cup_floor" pos="0 0 0.002" size="0.002" rgba="0 0 1 0" />
+    </body>
+    <body name="cup_orange_near_cup" pos="-0.107724 0.296867 0.000000" quat="1.000000 0.000000 0.000000 0.000000">
+      <joint name="cup_orange_near_cup_free" type="free" />
+      <geom name="cup_orange_near_cup_shell" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" mass="0" material="cup_orange_near_cup_mat" mesh="cup_orange_near_cup_shell" />
+      <geom name="cup_orange_near_cup_lining" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" mass="0" material="cup_orange_near_cup_inmat" mesh="cup_orange_near_cup_lining" />
+      <geom name="cup_orange_near_cup_base" size="0.0237 0.001" pos="0 0 0.001" type="cylinder" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" />
+      <geom name="cup_orange_near_cup_wedge0" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge0" />
+      <geom name="cup_orange_near_cup_wedge1" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge1" />
+      <geom name="cup_orange_near_cup_wedge2" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge2" />
+      <geom name="cup_orange_near_cup_wedge3" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge3" />
+      <geom name="cup_orange_near_cup_wedge4" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge4" />
+      <geom name="cup_orange_near_cup_wedge5" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge5" />
+      <geom name="cup_orange_near_cup_wedge6" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge6" />
+      <geom name="cup_orange_near_cup_wedge7" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge7" />
+      <geom name="cup_orange_near_cup_wedge8" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge8" />
+      <geom name="cup_orange_near_cup_wedge9" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge9" />
+      <geom name="cup_orange_near_cup_wedge10" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge10" />
+      <geom name="cup_orange_near_cup_wedge11" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge11" />
+      <geom name="cup_orange_near_cup_wedge12" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge12" />
+      <geom name="cup_orange_near_cup_wedge13" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge13" />
+      <geom name="cup_orange_near_cup_wedge14" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge14" />
+      <geom name="cup_orange_near_cup_wedge15" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_near_cup_wedge15" />
+      <site name="cup_orange_near_cup_rim" pos="0 0 0.1024" size="0.002" rgba="0 1 0 0" />
+      <site name="cup_orange_near_cup_floor" pos="0 0 0.002" size="0.002" rgba="0 0 1 0" />
+    </body>
+    <body name="cup_orange_far_cup" pos="0.115237 0.526092 0.000000" quat="1.000000 0.000000 0.000000 0.000000">
+      <joint name="cup_orange_far_cup_free" type="free" />
+      <geom name="cup_orange_far_cup_shell" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" mass="0" material="cup_orange_far_cup_mat" mesh="cup_orange_far_cup_shell" />
+      <geom name="cup_orange_far_cup_lining" type="mesh" contype="0" conaffinity="0" group="1" solref="0.02" solimp="0.9 0.95 0.001" mass="0" material="cup_orange_far_cup_inmat" mesh="cup_orange_far_cup_lining" />
+      <geom name="cup_orange_far_cup_base" size="0.0237 0.001" pos="0 0 0.001" type="cylinder" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" />
+      <geom name="cup_orange_far_cup_wedge0" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge0" />
+      <geom name="cup_orange_far_cup_wedge1" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge1" />
+      <geom name="cup_orange_far_cup_wedge2" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge2" />
+      <geom name="cup_orange_far_cup_wedge3" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge3" />
+      <geom name="cup_orange_far_cup_wedge4" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge4" />
+      <geom name="cup_orange_far_cup_wedge5" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge5" />
+      <geom name="cup_orange_far_cup_wedge6" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge6" />
+      <geom name="cup_orange_far_cup_wedge7" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge7" />
+      <geom name="cup_orange_far_cup_wedge8" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge8" />
+      <geom name="cup_orange_far_cup_wedge9" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge9" />
+      <geom name="cup_orange_far_cup_wedge10" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge10" />
+      <geom name="cup_orange_far_cup_wedge11" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge11" />
+      <geom name="cup_orange_far_cup_wedge12" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge12" />
+      <geom name="cup_orange_far_cup_wedge13" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge13" />
+      <geom name="cup_orange_far_cup_wedge14" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge14" />
+      <geom name="cup_orange_far_cup_wedge15" type="mesh" condim="4" group="3" solref="0.02" solimp="0.9 0.95 0.001" density="244.829" rgba="0.8 0.2 0.2 0" mesh="cup_orange_far_cup_wedge15" />
+      <site name="cup_orange_far_cup_rim" pos="0 0 0.1024" size="0.002" rgba="0 1 0 0" />
+      <site name="cup_orange_far_cup_floor" pos="0 0 0.002" size="0.002" rgba="0 0 1 0" />
+    </body>
+  </worldbody>
+  <contact>
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_palm_0" name="robot_right_collision_hand_right_palm_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_thumb_2" name="robot_right_collision_hand_right_thumb_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_thumb_1" name="robot_right_collision_hand_right_thumb_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_thumb_0" name="robot_right_collision_hand_right_thumb_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_index_2" name="robot_right_collision_hand_right_index_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_index_1" name="robot_right_collision_hand_right_index_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_index_0" name="robot_right_collision_hand_right_index_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_middle_2" name="robot_right_collision_hand_right_middle_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_middle_1" name="robot_right_collision_hand_right_middle_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_middle_0" name="robot_right_collision_hand_right_middle_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_ring_2" name="robot_right_collision_hand_right_ring_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_ring_1" name="robot_right_collision_hand_right_ring_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_ring_0" name="robot_right_collision_hand_right_ring_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_pinky_2" name="robot_right_collision_hand_right_pinky_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_pinky_1" name="robot_right_collision_hand_right_pinky_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_right_collision_hand_right_pinky_0" name="robot_right_collision_hand_right_pinky_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_palm_0" name="robot_left_collision_hand_left_palm_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_thumb_2" name="robot_left_collision_hand_left_thumb_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_thumb_1" name="robot_left_collision_hand_left_thumb_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_thumb_0" name="robot_left_collision_hand_left_thumb_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_index_2" name="robot_left_collision_hand_left_index_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_index_1" name="robot_left_collision_hand_left_index_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_index_0" name="robot_left_collision_hand_left_index_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_middle_2" name="robot_left_collision_hand_left_middle_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_middle_1" name="robot_left_collision_hand_left_middle_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_middle_0" name="robot_left_collision_hand_left_middle_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_ring_2" name="robot_left_collision_hand_left_ring_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_ring_1" name="robot_left_collision_hand_left_ring_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_ring_0" name="robot_left_collision_hand_left_ring_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_pinky_2" name="robot_left_collision_hand_left_pinky_2_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_pinky_1" name="robot_left_collision_hand_left_pinky_1_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+    <pair geom1="g_table" geom2="robot_left_collision_hand_left_pinky_0" name="robot_left_collision_hand_left_pinky_0_g_table" solref="0.01" friction="1 1 0.1 0 0" />
+  </contact>
+  <equality>
+    <weld body1="robot_right_arm_gripper" body2="robot_right_right_base_yaw" anchor="0 0 0" relpose="0 0 0 1 0 0 0" torquescale="0" />
+    <weld body1="robot_left_arm_gripper" body2="robot_left_left_base_yaw" anchor="0 0 0" relpose="0 0 0 1 0 0 0" torquescale="0" />
+  </equality>
+  <actuator>
+    <general name="robot_right_right_pos_x_position" joint="robot_right_right_pos_x" ctrlrange="-5 5" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_right_right_pos_y_position" joint="robot_right_right_pos_y" ctrlrange="-5 5" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_right_right_pos_z_position" joint="robot_right_right_pos_z" ctrlrange="-5 5" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_right_right_rot_x_position" joint="robot_right_right_rot_x" ctrlrange="-6.28 6.28" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_right_right_rot_y_position" joint="robot_right_right_rot_y" ctrlrange="-6.28 6.28" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_right_right_rot_z_position" joint="robot_right_right_rot_z" ctrlrange="-6.28 6.28" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_right_right_thumb_CMC_FE_position" joint="robot_right_right_thumb_CMC_FE" ctrlrange="-0.1745 1.9199" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_thumb_CMC_AA_position" joint="robot_right_right_thumb_CMC_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_thumb_MCP_FE_position" joint="robot_right_right_thumb_MCP_FE" ctrlrange="-0.5236 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_thumb_MCP_AA_position" joint="robot_right_right_thumb_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_thumb_IP_position" joint="robot_right_right_thumb_IP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_index_MCP_FE_position" joint="robot_right_right_index_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_index_MCP_AA_position" joint="robot_right_right_index_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_index_PIP_position" joint="robot_right_right_index_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_index_DIP_position" joint="robot_right_right_index_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_middle_MCP_FE_position" joint="robot_right_right_middle_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_middle_MCP_AA_position" joint="robot_right_right_middle_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_middle_PIP_position" joint="robot_right_right_middle_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_middle_DIP_position" joint="robot_right_right_middle_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_ring_MCP_FE_position" joint="robot_right_right_ring_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_ring_MCP_AA_position" joint="robot_right_right_ring_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_ring_PIP_position" joint="robot_right_right_ring_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_ring_DIP_position" joint="robot_right_right_ring_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_pinky_CMC_position" joint="robot_right_right_pinky_CMC" ctrlrange="0 0.2618" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_pinky_MCP_FE_position" joint="robot_right_right_pinky_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_pinky_MCP_AA_position" joint="robot_right_right_pinky_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_pinky_PIP_position" joint="robot_right_right_pinky_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_right_right_pinky_DIP_position" joint="robot_right_right_pinky_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_pos_x_position" joint="robot_left_left_pos_x" ctrlrange="-5 5" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_left_left_pos_y_position" joint="robot_left_left_pos_y" ctrlrange="-5 5" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_left_left_pos_z_position" joint="robot_left_left_pos_z" ctrlrange="-5 5" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_left_left_rot_x_position" joint="robot_left_left_rot_x" ctrlrange="-6.28 6.28" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_left_left_rot_y_position" joint="robot_left_left_rot_y" ctrlrange="-6.28 6.28" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_left_left_rot_z_position" joint="robot_left_left_rot_z" ctrlrange="-6.28 6.28" biastype="affine" gainprm="1000" biasprm="0 -1000 1" />
+    <general name="robot_left_left_thumb_CMC_FE_position" joint="robot_left_left_thumb_CMC_FE" ctrlrange="-0.1745 1.9199" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_thumb_CMC_AA_position" joint="robot_left_left_thumb_CMC_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_thumb_MCP_FE_position" joint="robot_left_left_thumb_MCP_FE" ctrlrange="-0.5236 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_thumb_MCP_AA_position" joint="robot_left_left_thumb_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_thumb_IP_position" joint="robot_left_left_thumb_IP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_index_MCP_FE_position" joint="robot_left_left_index_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_index_MCP_AA_position" joint="robot_left_left_index_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_index_PIP_position" joint="robot_left_left_index_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_index_DIP_position" joint="robot_left_left_index_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_middle_MCP_FE_position" joint="robot_left_left_middle_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_middle_MCP_AA_position" joint="robot_left_left_middle_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_middle_PIP_position" joint="robot_left_left_middle_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_middle_DIP_position" joint="robot_left_left_middle_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_ring_MCP_FE_position" joint="robot_left_left_ring_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_ring_MCP_AA_position" joint="robot_left_left_ring_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_ring_PIP_position" joint="robot_left_left_ring_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_ring_DIP_position" joint="robot_left_left_ring_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_pinky_CMC_position" joint="robot_left_left_pinky_CMC" ctrlrange="0 0.2618" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_pinky_MCP_FE_position" joint="robot_left_left_pinky_MCP_FE" ctrlrange="-0.174533 1.5708" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_pinky_MCP_AA_position" joint="robot_left_left_pinky_MCP_AA" ctrlrange="-0.3491 0.3491" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_pinky_PIP_position" joint="robot_left_left_pinky_PIP" ctrlrange="0 1.7453" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+    <general name="robot_left_left_pinky_DIP_position" joint="robot_left_left_pinky_DIP" ctrlrange="0 1.3963" biastype="affine" gainprm="300" biasprm="0 -300 1" />
+  </actuator>
+  <keyframe>
+    <key name="home" qpos="0.270103 0.10463 0.16946 -1.80056 -0.0521791 1.71766 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.12918 0.165585 -0.0539663 0.770028 0.0972879 -0.329552 -0.235957 0.104757 0.141353 -1.96796 -0.245073 1.05714 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.121032 -0.0126219 -0.0249804 0.24649 0.548471 -1.06727 0.107557 0.297022 0 1 0 0 0 -0.125279 0.534761 0 1 0 0 0 -0.107724 0.296867 0 1 0 0 0 0.115237 0.526092 0 1 0 0 0" ctrl="0.270103 0.10463 0.16946 -1.80056 -0.0521791 1.71766 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -0.235957 0.104757 0.141353 -1.96796 -0.245073 1.05714 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0" />
+  </keyframe>
+</mujoco>

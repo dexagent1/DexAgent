@@ -1,0 +1,135 @@
+{
+ "side": "right",
+ "pos": [
+  0.07293562320654469,
+  0.41126889014376483,
+  0.19665041380226445
+ ],
+ "euler": [
+  -3.0118002370335386,
+  -0.7768792078138365,
+  0.18407706446864602
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": -0.1745,
+  "thumb_CMC_AA": -0.3491,
+  "thumb_MCP_FE": -0.5236,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "finger_targets_open": {
+  "thumb_CMC_FE": -0.1745,
+  "thumb_CMC_AA": -0.3491,
+  "thumb_MCP_FE": -0.5236,
+  "thumb_MCP_AA": -0.3491,
+  "thumb_IP": 0.0,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "grip_fingers": [
+  "index",
+  "middle",
+  "ring"
+ ],
+ "contact_side": "pad",
+ "thumb": "out",
+ "pitch_deg": 45.0,
+ "press_travel_m": 0.004,
+ "face_offset_m": 0.1317,
+ "overlap_mm": 0.0,
+ "approach": [
+  -2.3450436076018348e-17,
+  -8.153372275120228e-18,
+  1.0
+ ],
+ "approach_kind": "normal",
+ "normals": {
+  "index": [
+   -2.345043607601834e-17,
+   -8.153372275120226e-18,
+   0.9999999999999998
+  ],
+  "middle": [
+   -2.345043607601834e-17,
+   -8.153372275120226e-18,
+   0.9999999999999998
+  ],
+  "ring": [
+   -2.345043607601834e-17,
+   -8.153372275120226e-18,
+   0.9999999999999998
+  ]
+ },
+ "points": {
+  "index": [
+   -0.07253283880462538,
+   0.399858286654838,
+   0.064
+  ],
+  "middle": [
+   -0.07268738664115826,
+   0.42035380116329146,
+   0.064
+  ],
+  "ring": [
+   -0.06477977455421641,
+   0.4397879121818704,
+   0.064
+  ]
+ },
+ "reach_optimized": {
+  "rotation_deg": {
+   "primary": 7.5,
+   "tilt": 0.0
+  },
+  "axes": {
+   "primary": [
+    -0.0,
+    -0.0,
+    -1.0
+   ],
+   "tilt": [
+    -0.0608,
+    -0.9981,
+    0.0
+   ]
+  },
+  "pivot": [
+   -0.07,
+   0.42,
+   0.0753
+  ]
+ }
+}

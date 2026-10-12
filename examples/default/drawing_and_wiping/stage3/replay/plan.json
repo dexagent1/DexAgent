@@ -1,0 +1,946 @@
+{
+ "subgoals": [
+  {
+   "index": 1,
+   "step": 1,
+   "motion": "home",
+   "side": "right",
+   "duration_s": 1.5
+  },
+  {
+   "index": 1,
+   "step": 2,
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "pose": "${REPLAY}/poses/left_cap_clamp.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_cap.json",
+   "lift_m": 0.06,
+   "with": "marker_marker"
+  },
+  {
+   "index": 1,
+   "step": 3,
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "target_pos": [
+    0.1,
+    0.42,
+    0.18
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    -140.0
+   ],
+   "duration_s": 2.5,
+   "with": "marker_marker"
+  },
+  {
+   "index": 1,
+   "step": 4,
+   "motion": "hold",
+   "side": "right",
+   "object": "marker_marker",
+   "pose": "${REPLAY}/poses/right_tripod_va.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_air.json",
+   "approach_m": 0.05,
+   "with": "marker_marker_cap"
+  },
+  {
+   "index": 1,
+   "step": 5,
+   "stage1_indices": [
+    3
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "target_pos": [
+    0.084,
+    0.3825,
+    0.1668
+   ],
+   "duration_s": 1.5,
+   "with": "marker_marker"
+  },
+  {
+   "index": 1,
+   "step": 6,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "marker_marker",
+   "lift_m": 0.05,
+   "duration_s": 1.0
+  },
+  {
+   "index": 1,
+   "step": 7,
+   "stage1_indices": [
+    3
+   ],
+   "motion": "carry",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "target_pos": [
+    0.0366,
+    0.3459,
+    0.1867
+   ],
+   "duration_s": 1.2
+  },
+  {
+   "index": 1,
+   "step": 8,
+   "stage1_indices": [
+    3
+   ],
+   "motion": "place",
+   "side": "left",
+   "object": "marker_marker_cap",
+   "target_pos": [
+    0.2504,
+    0.339,
+    0.0085
+   ],
+   "upright": false,
+   "duration_s": 2.5,
+   "carry_rise_m": 0.02,
+   "target_euler_deg": [
+    0,
+    0,
+    -120.0
+   ]
+  },
+  {
+   "index": 2,
+   "step": 1,
+   "motion": "home",
+   "side": "left",
+   "duration_s": 1.5
+  },
+  {
+   "index": 2,
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "eraser_eraser",
+   "pose": "${REPLAY}/poses/ler_1.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_eraser.json",
+   "lift_m": 0.06,
+   "step": 2
+  },
+  {
+   "index": 2,
+   "step": 3,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    -0.36,
+    0.27,
+    0.1
+   ],
+   "duration_s": 1.5
+  },
+  {
+   "index": 4,
+   "step": 1,
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.0558,
+    0.3655,
+    0.17720000000000002
+   ],
+   "target_euler_deg": [
+    63.184,
+    -46.765,
+    -110.217
+   ],
+   "duration_s": 2.0
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.12076,
+    0.32503,
+    0.08121
+   ],
+   "duration_s": 0.9,
+   "index": 4,
+   "step": 2
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.12076,
+    0.32503,
+    0.06571
+   ],
+   "duration_s": 0.5,
+   "index": 4,
+   "step": 3
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.11476,
+    0.33403,
+    0.06571
+   ],
+   "duration_s": 0.32,
+   "index": 4,
+   "step": 4
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.11476,
+    0.31903,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 4,
+   "step": 5
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.11476,
+    0.30403,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 4,
+   "step": 6
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.11476,
+    0.28903,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 4,
+   "step": 7
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.11476,
+    0.28903,
+    0.08121
+   ],
+   "duration_s": 0.5,
+   "index": 4,
+   "step": 8
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.07126,
+    0.32278,
+    0.08121
+   ],
+   "duration_s": 0.9,
+   "index": 5,
+   "step": 1
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.07126,
+    0.32278,
+    0.06571
+   ],
+   "duration_s": 0.5,
+   "index": 5,
+   "step": 2
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.06376,
+    0.33403,
+    0.06571
+   ],
+   "duration_s": 0.41,
+   "index": 5,
+   "step": 3
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.04876,
+    0.33403,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 5,
+   "step": 4
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.04126,
+    0.32278,
+    0.06571
+   ],
+   "duration_s": 0.41,
+   "index": 5,
+   "step": 5
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.05126,
+    0.31153,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 5,
+   "step": 6
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.06126,
+    0.30028,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 5,
+   "step": 7
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.07126,
+    0.28903,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 5,
+   "step": 8
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.05626,
+    0.28903,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 5,
+   "step": 9
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.04126,
+    0.28903,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 5,
+   "step": 10
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.04126,
+    0.28903,
+    0.08121
+   ],
+   "duration_s": 0.5,
+   "index": 5,
+   "step": 11
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.01126,
+    0.32953,
+    0.08121
+   ],
+   "duration_s": 0.9,
+   "index": 6,
+   "step": 1
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.01126,
+    0.32953,
+    0.06571
+   ],
+   "duration_s": 0.5,
+   "index": 6,
+   "step": 2
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.00074,
+    0.33403,
+    0.06571
+   ],
+   "duration_s": 0.38,
+   "index": 6,
+   "step": 3
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.00974,
+    0.32953,
+    0.06571
+   ],
+   "duration_s": 0.3,
+   "index": 6,
+   "step": 4
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.01874,
+    0.32503,
+    0.06571
+   ],
+   "duration_s": 0.3,
+   "index": 6,
+   "step": 5
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.00899,
+    0.31828,
+    0.06571
+   ],
+   "duration_s": 0.36,
+   "index": 6,
+   "step": 6
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.00076,
+    0.31153,
+    0.06571
+   ],
+   "duration_s": 0.36,
+   "index": 6,
+   "step": 7
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.00899,
+    0.30591,
+    0.06571
+   ],
+   "duration_s": 0.34,
+   "index": 6,
+   "step": 8
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.01874,
+    0.30028,
+    0.06571
+   ],
+   "duration_s": 0.34,
+   "index": 6,
+   "step": 9
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.00374,
+    0.28903,
+    0.06571
+   ],
+   "duration_s": 0.56,
+   "index": 6,
+   "step": 10
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.01126,
+    0.29353,
+    0.06571
+   ],
+   "duration_s": 0.47,
+   "index": 6,
+   "step": 11
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    -0.01126,
+    0.29353,
+    0.08121
+   ],
+   "duration_s": 0.5,
+   "index": 6,
+   "step": 12
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.07974,
+    0.33403,
+    0.08121
+   ],
+   "duration_s": 0.9,
+   "index": 7,
+   "step": 1
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.07974,
+    0.33403,
+    0.06571
+   ],
+   "duration_s": 0.5,
+   "index": 7,
+   "step": 2
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.06924,
+    0.31941,
+    0.06571
+   ],
+   "duration_s": 0.54,
+   "index": 7,
+   "step": 3
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.05874,
+    0.30478,
+    0.06571
+   ],
+   "duration_s": 0.54,
+   "index": 7,
+   "step": 4
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.07374,
+    0.30478,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 7,
+   "step": 5
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.08874,
+    0.30478,
+    0.06571
+   ],
+   "duration_s": 0.45,
+   "index": 7,
+   "step": 6
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.08874,
+    0.30478,
+    0.08121
+   ],
+   "duration_s": 0.5,
+   "index": 7,
+   "step": 7
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.07974,
+    0.32053,
+    0.08121
+   ],
+   "duration_s": 0.9,
+   "index": 7,
+   "step": 8
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.07974,
+    0.32053,
+    0.06571
+   ],
+   "duration_s": 0.5,
+   "index": 7,
+   "step": 9
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.07974,
+    0.30478,
+    0.06571
+   ],
+   "duration_s": 0.47,
+   "index": 7,
+   "step": 10
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.07974,
+    0.28903,
+    0.06571
+   ],
+   "duration_s": 0.47,
+   "index": 7,
+   "step": 11
+  },
+  {
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.07974,
+    0.28903,
+    0.08121
+   ],
+   "duration_s": 0.5,
+   "index": 7,
+   "step": 12
+  },
+  {
+   "index": 7,
+   "step": 13,
+   "motion": "carry",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.2,
+    0.42,
+    0.17
+   ],
+   "duration_s": 1.5
+  },
+  {
+   "index": 8,
+   "step": 1,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.3,
+    0.045
+   ],
+   "duration_s": 2.0,
+   "target_euler_deg": [
+    0,
+    0,
+    15.0
+   ]
+  },
+  {
+   "index": 8,
+   "step": 2,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.3,
+    0.0113
+   ],
+   "duration_s": 0.8
+  },
+  {
+   "index": 8,
+   "step": 3,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.285,
+    0.0113
+   ],
+   "duration_s": 0.5
+  },
+  {
+   "index": 8,
+   "step": 4,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.315,
+    0.0113
+   ],
+   "duration_s": 0.8
+  },
+  {
+   "index": 8,
+   "step": 5,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.285,
+    0.0113
+   ],
+   "duration_s": 0.5
+  },
+  {
+   "index": 8,
+   "step": 6,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.315,
+    0.0113
+   ],
+   "duration_s": 0.8
+  },
+  {
+   "index": 8,
+   "step": 7,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.285,
+    0.0113
+   ],
+   "duration_s": 0.5
+  },
+  {
+   "index": 8,
+   "step": 8,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.315,
+    0.0113
+   ],
+   "duration_s": 0.8
+  },
+  {
+   "index": 8,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.285,
+    0.0113
+   ],
+   "duration_s": 0.5,
+   "step": 11
+  },
+  {
+   "index": 8,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.315,
+    0.0113
+   ],
+   "duration_s": 0.8,
+   "step": 12
+  },
+  {
+   "index": 8,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.285,
+    0.0113
+   ],
+   "duration_s": 0.5,
+   "step": 11
+  },
+  {
+   "index": 8,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.315,
+    0.0113
+   ],
+   "duration_s": 0.8,
+   "step": 12
+  },
+  {
+   "index": 8,
+   "step": 13,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.3,
+    0.0113
+   ],
+   "duration_s": 0.4
+  },
+  {
+   "index": 8,
+   "step": 14,
+   "motion": "carry",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    0.09,
+    0.3,
+    0.05
+   ],
+   "duration_s": 0.8
+  },
+  {
+   "index": 9,
+   "motion": "place",
+   "side": "left",
+   "object": "eraser_eraser",
+   "target_pos": [
+    -0.29961,
+    0.30468,
+    0.0
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    95.278
+   ],
+   "duration_s": 2.0
+  },
+  {
+   "index": 10,
+   "motion": "place",
+   "side": "right",
+   "object": "marker_marker",
+   "target_pos": [
+    0.27,
+    0.44,
+    0.0075
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    160.0
+   ],
+   "upright": false,
+   "duration_s": 2.5
+  }
+ ]
+}

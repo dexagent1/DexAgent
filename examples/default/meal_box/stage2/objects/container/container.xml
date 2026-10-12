@@ -1,0 +1,146 @@
+<mujoco model="mealbox_latchbox">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.001" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="mealbox_container" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="mealbox_container_free" />
+      <geom name="mealbox_floor_a" type="box" size="0.105000 0.051000 0.003000" pos="0 0 0.003000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_floor_b" type="box" size="0.081000 0.075000 0.003000" pos="0 0 0.003000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_floor_c0" type="cylinder" size="0.024000 0.003000" pos="0.081000 0.051000 0.003000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_floor_c1" type="cylinder" size="0.024000 0.003000" pos="-0.081000 0.051000 0.003000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_floor_c2" type="cylinder" size="0.024000 0.003000" pos="-0.081000 -0.051000 0.003000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_floor_c3" type="cylinder" size="0.024000 0.003000" pos="0.081000 -0.051000 0.003000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_0" type="box" size="0.052250 0.002500 0.023500" pos="0.102500 0.000000 0.029500" euler="0 0 90.0000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_1" type="box" size="0.082250 0.002500 0.023500" pos="0.000000 0.072500 0.029500" euler="0 0 0.0000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_2" type="box" size="0.052250 0.002500 0.023500" pos="-0.102500 0.000000 0.029500" euler="0 0 -90.0000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_3" type="box" size="0.082250 0.002500 0.023500" pos="0.000000 -0.072500 0.029500" euler="0 0 180.0000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_4" type="box" size="0.005444 0.002500 0.023500" pos="0.101682 0.055114 0.029500" euler="0 0 101.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_5" type="box" size="0.005444 0.002500 0.023500" pos="0.098533 0.062715 0.029500" euler="0 0 123.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_6" type="box" size="0.005444 0.002500 0.023500" pos="0.092715 0.068533 0.029500" euler="0 0 146.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_7" type="box" size="0.005444 0.002500 0.023500" pos="0.085114 0.071682 0.029500" euler="0 0 168.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_8" type="box" size="0.005444 0.002500 0.023500" pos="-0.085114 0.071682 0.029500" euler="0 0 -168.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_9" type="box" size="0.005444 0.002500 0.023500" pos="-0.092715 0.068533 0.029500" euler="0 0 -146.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_10" type="box" size="0.005444 0.002500 0.023500" pos="-0.098533 0.062715 0.029500" euler="0 0 -123.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_11" type="box" size="0.005444 0.002500 0.023500" pos="-0.101682 0.055114 0.029500" euler="0 0 -101.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_12" type="box" size="0.005444 0.002500 0.023500" pos="-0.101682 -0.055114 0.029500" euler="0 0 -78.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_13" type="box" size="0.005444 0.002500 0.023500" pos="-0.098533 -0.062715 0.029500" euler="0 0 -56.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_14" type="box" size="0.005444 0.002500 0.023500" pos="-0.092715 -0.068533 0.029500" euler="0 0 -33.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_15" type="box" size="0.005444 0.002500 0.023500" pos="-0.085114 -0.071682 0.029500" euler="0 0 -11.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_16" type="box" size="0.005444 0.002500 0.023500" pos="0.085114 -0.071682 0.029500" euler="0 0 11.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_17" type="box" size="0.005444 0.002500 0.023500" pos="0.092715 -0.068533 0.029500" euler="0 0 33.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_18" type="box" size="0.005444 0.002500 0.023500" pos="0.098533 -0.062715 0.029500" euler="0 0 56.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_wall_19" type="box" size="0.005444 0.002500 0.023500" pos="0.101682 -0.055114 0.029500" euler="0 0 78.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_0" type="box" size="0.052625 0.003250 0.003500" pos="0.103250 0.000000 0.056500" euler="0 0 90.0000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_1" type="box" size="0.082625 0.003250 0.003500" pos="0.000000 0.073250 0.056500" euler="0 0 0.0000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_2" type="box" size="0.052625 0.003250 0.003500" pos="-0.103250 0.000000 0.056500" euler="0 0 -90.0000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_3" type="box" size="0.082625 0.003250 0.003500" pos="0.000000 -0.073250 0.056500" euler="0 0 180.0000" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_4" type="box" size="0.005966 0.003250 0.003500" pos="0.102403 0.055257 0.056500" euler="0 0 101.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_5" type="box" size="0.005966 0.003250 0.003500" pos="0.099145 0.063124 0.056500" euler="0 0 123.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_6" type="box" size="0.005966 0.003250 0.003500" pos="0.093124 0.069145 0.056500" euler="0 0 146.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_7" type="box" size="0.005966 0.003250 0.003500" pos="0.085257 0.072403 0.056500" euler="0 0 168.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_8" type="box" size="0.005966 0.003250 0.003500" pos="-0.085257 0.072403 0.056500" euler="0 0 -168.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_9" type="box" size="0.005966 0.003250 0.003500" pos="-0.093124 0.069145 0.056500" euler="0 0 -146.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_10" type="box" size="0.005966 0.003250 0.003500" pos="-0.099145 0.063124 0.056500" euler="0 0 -123.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_11" type="box" size="0.005966 0.003250 0.003500" pos="-0.102403 0.055257 0.056500" euler="0 0 -101.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_12" type="box" size="0.005966 0.003250 0.003500" pos="-0.102403 -0.055257 0.056500" euler="0 0 -78.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_13" type="box" size="0.005966 0.003250 0.003500" pos="-0.099145 -0.063124 0.056500" euler="0 0 -56.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_14" type="box" size="0.005966 0.003250 0.003500" pos="-0.093124 -0.069145 0.056500" euler="0 0 -33.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_15" type="box" size="0.005966 0.003250 0.003500" pos="-0.085257 -0.072403 0.056500" euler="0 0 -11.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_16" type="box" size="0.005966 0.003250 0.003500" pos="0.085257 -0.072403 0.056500" euler="0 0 11.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_17" type="box" size="0.005966 0.003250 0.003500" pos="0.093124 -0.069145 0.056500" euler="0 0 33.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_18" type="box" size="0.005966 0.003250 0.003500" pos="0.099145 -0.063124 0.056500" euler="0 0 56.2500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_rim_19" type="box" size="0.005966 0.003250 0.003500" pos="0.102403 -0.055257 0.056500" euler="0 0 78.7500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_nub_xp" type="box" size="0.001850 0.015750 0.002500" pos="0.106850 0.000000 0.034000" rgba="0.7800 0.7900 0.7900 0.3800" density="950.0" friction="0.5 0.02 0.001" condim="3" solref="0.002 1" solimp="0.95 0.99 0.0005" />
+      <geom name="mealbox_ramp_xp" type="box" size="0.000925 0.015750 0.002000" pos="0.105925 0.000000 0.038500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_nub_xn" type="box" size="0.001850 0.015750 0.002500" pos="-0.106850 0.000000 0.034000" rgba="0.7800 0.7900 0.7900 0.3800" density="950.0" friction="0.5 0.02 0.001" condim="3" solref="0.002 1" solimp="0.95 0.99 0.0005" />
+      <geom name="mealbox_ramp_xn" type="box" size="0.000925 0.015750 0.002000" pos="-0.105925 0.000000 0.038500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_nub_yp" type="box" size="0.022050 0.001850 0.002500" pos="0.000000 0.076850 0.034000" rgba="0.7800 0.7900 0.7900 0.3800" density="950.0" friction="0.5 0.02 0.001" condim="3" solref="0.002 1" solimp="0.95 0.99 0.0005" />
+      <geom name="mealbox_ramp_yp" type="box" size="0.022050 0.000925 0.002000" pos="0.000000 0.075925 0.038500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_nub_yn" type="box" size="0.022050 0.001850 0.002500" pos="0.000000 -0.076850 0.034000" rgba="0.7800 0.7900 0.7900 0.3800" density="950.0" friction="0.5 0.02 0.001" condim="3" solref="0.002 1" solimp="0.95 0.99 0.0005" />
+      <geom name="mealbox_ramp_yn" type="box" size="0.022050 0.000925 0.002000" pos="0.000000 -0.075925 0.038500" rgba="0.7800 0.7900 0.7900 0.3800" density="2500.0" friction="0.9 0.02 0.001" condim="4" />
+    </body>
+    <body name="mealbox_lid" pos="0.000000 -0.250000 0.005000" euler="0 0 0.0">
+      <freejoint name="mealbox_lid_free" />
+      <geom name="mealbox_panel_a" type="box" size="0.106500 0.051000 0.002000" pos="0 0 0.002000" rgba="0.7900 0.7900 0.8000 0.3400" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_panel_b" type="box" size="0.081000 0.076500 0.002000" pos="0 0 0.002000" rgba="0.7900 0.7900 0.8000 0.3400" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_panel_c0" type="cylinder" size="0.025500 0.002000" pos="0.081000 0.051000 0.002000" rgba="0.7900 0.7900 0.8000 0.3400" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_panel_c1" type="cylinder" size="0.025500 0.002000" pos="-0.081000 0.051000 0.002000" rgba="0.7900 0.7900 0.8000 0.3400" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_panel_c2" type="cylinder" size="0.025500 0.002000" pos="-0.081000 -0.051000 0.002000" rgba="0.7900 0.7900 0.8000 0.3400" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_panel_c3" type="cylinder" size="0.025500 0.002000" pos="0.081000 -0.051000 0.002000" rgba="0.7900 0.7900 0.8000 0.3400" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_0" type="box" size="0.052375 0.002750 0.002500" pos="0.094750 0.000000 -0.002500" euler="0 0 90.0000" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_1" type="box" size="0.082375 0.002750 0.002500" pos="0.000000 0.064750 -0.002500" euler="0 0 0.0000" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_2" type="box" size="0.052375 0.002750 0.002500" pos="-0.094750 0.000000 -0.002500" euler="0 0 -90.0000" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_3" type="box" size="0.082375 0.002750 0.002500" pos="0.000000 -0.064750 -0.002500" euler="0 0 180.0000" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_4" type="box" size="0.004057 0.002750 0.002500" pos="0.094227 0.053631 -0.002500" euler="0 0 101.2500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_5" type="box" size="0.004057 0.002750 0.002500" pos="0.092213 0.058492 -0.002500" euler="0 0 123.7500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_6" type="box" size="0.004057 0.002750 0.002500" pos="0.088492 0.062213 -0.002500" euler="0 0 146.2500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_7" type="box" size="0.004057 0.002750 0.002500" pos="0.083631 0.064227 -0.002500" euler="0 0 168.7500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_8" type="box" size="0.004057 0.002750 0.002500" pos="-0.083631 0.064227 -0.002500" euler="0 0 -168.7500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_9" type="box" size="0.004057 0.002750 0.002500" pos="-0.088492 0.062213 -0.002500" euler="0 0 -146.2500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_10" type="box" size="0.004057 0.002750 0.002500" pos="-0.092213 0.058492 -0.002500" euler="0 0 -123.7500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_11" type="box" size="0.004057 0.002750 0.002500" pos="-0.094227 0.053631 -0.002500" euler="0 0 -101.2500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_12" type="box" size="0.004057 0.002750 0.002500" pos="-0.094227 -0.053631 -0.002500" euler="0 0 -78.7500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_13" type="box" size="0.004057 0.002750 0.002500" pos="-0.092213 -0.058492 -0.002500" euler="0 0 -56.2500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_14" type="box" size="0.004057 0.002750 0.002500" pos="-0.088492 -0.062213 -0.002500" euler="0 0 -33.7500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_15" type="box" size="0.004057 0.002750 0.002500" pos="-0.083631 -0.064227 -0.002500" euler="0 0 -11.2500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_16" type="box" size="0.004057 0.002750 0.002500" pos="0.083631 -0.064227 -0.002500" euler="0 0 11.2500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_17" type="box" size="0.004057 0.002750 0.002500" pos="0.088492 -0.062213 -0.002500" euler="0 0 33.7500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_18" type="box" size="0.004057 0.002750 0.002500" pos="0.092213 -0.058492 -0.002500" euler="0 0 56.2500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <geom name="mealbox_gasket_19" type="box" size="0.004057 0.002750 0.002500" pos="0.094227 -0.053631 -0.002500" euler="0 0 78.7500" rgba="0.6000 0.6500 0.7000 1.0000" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+      <body name="mealbox_latch_xp" pos="0.108750 0.000000 0.002000" quat="0.76648549 0.00000000 -0.64226163 0.00000000">
+        <joint name="mealbox_fold_xp" type="hinge" axis="0.000000 -1.000000 0.000000" range="-1 115.0" ref="79.92134189221233" damping="0.004" frictionloss="0.006" armature="0.002" />
+        <inertial pos="0 0 -0.020000" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+        <body name="mealbox_strap_xp">
+          <joint name="mealbox_flex_xp" type="slide" axis="1.000000 0.000000 0.000000" range="0 0.006" stiffness="6000.0" damping="6.0" armature="0.01" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+          <geom name="mealbox_barhi_xp" type="box" size="0.001250 0.031500 0.011500" pos="0.000000 0.000000 -0.011500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_side0_xp" type="box" size="0.001250 0.005985 0.004500" pos="0.000000 0.025515 -0.027500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_side1_xp" type="box" size="0.001250 0.005985 0.004500" pos="0.000000 -0.025515 -0.027500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_barlo_xp" type="box" size="0.001250 0.031500 0.004000" pos="0.000000 0.000000 -0.036000" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.5 0.02 0.001" condim="3" solref="0.002 1" solimp="0.95 0.99 0.0005" />
+          <geom name="mealbox_tab_xp" type="box" size="0.001250 0.022050 0.003000" pos="0.000000 0.000000 -0.043000" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+        </body>
+      </body>
+      <body name="mealbox_latch_xn" pos="-0.108750 0.000000 0.002000" quat="0.76648549 0.00000000 0.64226163 -0.00000000">
+        <joint name="mealbox_fold_xn" type="hinge" axis="0.000000 1.000000 -0.000000" range="-1 115.0" ref="79.92134189221233" damping="0.004" frictionloss="0.006" armature="0.002" />
+        <inertial pos="0 0 -0.020000" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+        <body name="mealbox_strap_xn">
+          <joint name="mealbox_flex_xn" type="slide" axis="-1.000000 0.000000 0.000000" range="0 0.006" stiffness="6000.0" damping="6.0" armature="0.01" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+          <geom name="mealbox_barhi_xn" type="box" size="0.001250 0.031500 0.011500" pos="0.000000 0.000000 -0.011500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_side0_xn" type="box" size="0.001250 0.005985 0.004500" pos="0.000000 0.025515 -0.027500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_side1_xn" type="box" size="0.001250 0.005985 0.004500" pos="0.000000 -0.025515 -0.027500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_barlo_xn" type="box" size="0.001250 0.031500 0.004000" pos="0.000000 0.000000 -0.036000" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.5 0.02 0.001" condim="3" solref="0.002 1" solimp="0.95 0.99 0.0005" />
+          <geom name="mealbox_tab_xn" type="box" size="0.001250 0.022050 0.003000" pos="0.000000 0.000000 -0.043000" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+        </body>
+      </body>
+      <body name="mealbox_latch_yp" pos="0.000000 0.078750 0.002000" quat="0.76648549 0.64226163 0.00000000 0.00000000">
+        <joint name="mealbox_fold_yp" type="hinge" axis="1.000000 0.000000 0.000000" range="-1 115.0" ref="79.92134189221233" damping="0.004" frictionloss="0.006" armature="0.002" />
+        <inertial pos="0 0 -0.020000" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+        <body name="mealbox_strap_yp">
+          <joint name="mealbox_flex_yp" type="slide" axis="0.000000 1.000000 0.000000" range="0 0.006" stiffness="6000.0" damping="6.0" armature="0.01" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+          <geom name="mealbox_barhi_yp" type="box" size="0.044100 0.001250 0.011500" pos="0.000000 0.000000 -0.011500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_side0_yp" type="box" size="0.008379 0.001250 0.004500" pos="0.035721 0.000000 -0.027500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_side1_yp" type="box" size="0.008379 0.001250 0.004500" pos="-0.035721 0.000000 -0.027500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_barlo_yp" type="box" size="0.044100 0.001250 0.004000" pos="0.000000 0.000000 -0.036000" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.5 0.02 0.001" condim="3" solref="0.002 1" solimp="0.95 0.99 0.0005" />
+          <geom name="mealbox_tab_yp" type="box" size="0.030870 0.001250 0.003000" pos="0.000000 0.000000 -0.043000" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+        </body>
+      </body>
+      <body name="mealbox_latch_yn" pos="0.000000 -0.078750 0.002000" quat="0.76648549 -0.64226163 0.00000000 0.00000000">
+        <joint name="mealbox_fold_yn" type="hinge" axis="-1.000000 0.000000 0.000000" range="-1 115.0" ref="79.92134189221233" damping="0.004" frictionloss="0.006" armature="0.002" />
+        <inertial pos="0 0 -0.020000" mass="0.0005" diaginertia="1e-7 1e-7 1e-7" />
+        <body name="mealbox_strap_yn">
+          <joint name="mealbox_flex_yn" type="slide" axis="0.000000 -1.000000 0.000000" range="0 0.006" stiffness="6000.0" damping="6.0" armature="0.01" solreflimit="0.004 1" solimplimit="0.99 0.999 0.0002" />
+          <geom name="mealbox_barhi_yn" type="box" size="0.044100 0.001250 0.011500" pos="0.000000 0.000000 -0.011500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_side0_yn" type="box" size="0.008379 0.001250 0.004500" pos="0.035721 0.000000 -0.027500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_side1_yn" type="box" size="0.008379 0.001250 0.004500" pos="-0.035721 0.000000 -0.027500" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+          <geom name="mealbox_barlo_yn" type="box" size="0.044100 0.001250 0.004000" pos="0.000000 0.000000 -0.036000" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.5 0.02 0.001" condim="3" solref="0.002 1" solimp="0.95 0.99 0.0005" />
+          <geom name="mealbox_tab_yn" type="box" size="0.030870 0.001250 0.003000" pos="0.000000 0.000000 -0.043000" rgba="0.8800 0.9200 0.9400 0.8200" density="950.0" friction="0.9 0.02 0.001" condim="4" />
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

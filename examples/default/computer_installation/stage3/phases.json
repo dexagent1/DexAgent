@@ -1,0 +1,587 @@
+[
+ {
+  "label": "right: reach for disk_1_disk_1 #1",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 1,
+  "frames": [
+   [
+    0,
+    66
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on disk_1_disk_1 #1",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 1,
+  "frames": [
+   [
+    67,
+    92
+   ]
+  ]
+ },
+ {
+  "label": "right: close on disk_1_disk_1 #1",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 1,
+  "frames": [
+   [
+    93,
+    120
+   ]
+  ]
+ },
+ {
+  "label": "right: grip disk_1_disk_1 #1",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 1,
+  "frames": [
+   [
+    121,
+    137
+   ]
+  ]
+ },
+ {
+  "label": "right: lift disk_1_disk_1 #1",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 1,
+  "frames": [
+   [
+    138,
+    169
+   ]
+  ]
+ },
+ {
+  "label": "right: carry disk_1_disk_1 #2.1",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    170,
+    262
+   ]
+  ]
+ },
+ {
+  "label": "right: carry disk_1_disk_1 #2.2",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    263,
+    340
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of disk_1_disk_1 #2.2",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    341,
+    371
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #2.2",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": null,
+  "subgoal": 2,
+  "frames": [
+   [
+    372,
+    400
+   ]
+  ]
+ },
+ {
+  "label": "right: approach for push #3",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 3,
+  "frames": [
+   [
+    401,
+    464
+   ]
+  ]
+ },
+ {
+  "label": "right: contact #3",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 3,
+  "frames": [
+   [
+    465,
+    478
+   ]
+  ]
+ },
+ {
+  "label": "right: push disk_1_disk_1 #3",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 3,
+  "frames": [
+   [
+    479,
+    516
+   ]
+  ]
+ },
+ {
+  "label": "right: back off #3",
+  "hand": "right",
+  "objects": [
+   "disk_1_disk_1"
+  ],
+  "anchor": "disk_1_disk_1",
+  "subgoal": 3,
+  "frames": [
+   [
+    517,
+    536
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for disk_2_disk_2 #4",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 4,
+  "frames": [
+   [
+    537,
+    599
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on disk_2_disk_2 #4",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 4,
+  "frames": [
+   [
+    600,
+    625
+   ]
+  ]
+ },
+ {
+  "label": "right: close on disk_2_disk_2 #4",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 4,
+  "frames": [
+   [
+    626,
+    653
+   ]
+  ]
+ },
+ {
+  "label": "right: grip disk_2_disk_2 #4",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 4,
+  "frames": [
+   [
+    654,
+    670
+   ]
+  ]
+ },
+ {
+  "label": "right: lift disk_2_disk_2 #4",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 4,
+  "frames": [
+   [
+    671,
+    702
+   ]
+  ]
+ },
+ {
+  "label": "right: carry disk_2_disk_2 #5.1",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    703,
+    795
+   ]
+  ]
+ },
+ {
+  "label": "right: carry disk_2_disk_2 #5.2",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    796,
+    873
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of disk_2_disk_2 #5.2",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    874,
+    904
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #5.2",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": null,
+  "subgoal": 5,
+  "frames": [
+   [
+    905,
+    933
+   ]
+  ]
+ },
+ {
+  "label": "right: approach for push #6",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 6,
+  "frames": [
+   [
+    934,
+    997
+   ]
+  ]
+ },
+ {
+  "label": "right: contact #6",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 6,
+  "frames": [
+   [
+    998,
+    1011
+   ]
+  ]
+ },
+ {
+  "label": "right: push disk_2_disk_2 #6",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 6,
+  "frames": [
+   [
+    1012,
+    1049
+   ]
+  ]
+ },
+ {
+  "label": "right: back off #6",
+  "hand": "right",
+  "objects": [
+   "disk_2_disk_2"
+  ],
+  "anchor": "disk_2_disk_2",
+  "subgoal": 6,
+  "frames": [
+   [
+    1050,
+    1069
+   ]
+  ]
+ },
+ {
+  "label": "right: reach for disk_3_disk_3 #7",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 7,
+  "frames": [
+   [
+    1070,
+    1140
+   ]
+  ]
+ },
+ {
+  "label": "right: descend on disk_3_disk_3 #7",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 7,
+  "frames": [
+   [
+    1141,
+    1166
+   ]
+  ]
+ },
+ {
+  "label": "right: close on disk_3_disk_3 #7",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 7,
+  "frames": [
+   [
+    1167,
+    1194
+   ]
+  ]
+ },
+ {
+  "label": "right: grip disk_3_disk_3 #7",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 7,
+  "frames": [
+   [
+    1195,
+    1211
+   ]
+  ]
+ },
+ {
+  "label": "right: lift disk_3_disk_3 #7",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 7,
+  "frames": [
+   [
+    1212,
+    1243
+   ]
+  ]
+ },
+ {
+  "label": "right: carry disk_3_disk_3 #8.1",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    1244,
+    1351
+   ]
+  ]
+ },
+ {
+  "label": "right: carry disk_3_disk_3 #8.2",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    1352,
+    1429
+   ]
+  ]
+ },
+ {
+  "label": "right: let go of disk_3_disk_3 #8.2",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    1430,
+    1460
+   ]
+  ]
+ },
+ {
+  "label": "right: retreat #8.2",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": null,
+  "subgoal": 8,
+  "frames": [
+   [
+    1461,
+    1489
+   ]
+  ]
+ },
+ {
+  "label": "right: approach for push #9",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 9,
+  "frames": [
+   [
+    1490,
+    1557
+   ]
+  ]
+ },
+ {
+  "label": "right: contact #9",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 9,
+  "frames": [
+   [
+    1558,
+    1571
+   ]
+  ]
+ },
+ {
+  "label": "right: push disk_3_disk_3 #9",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 9,
+  "frames": [
+   [
+    1572,
+    1609
+   ]
+  ]
+ },
+ {
+  "label": "right: back off #9",
+  "hand": "right",
+  "objects": [
+   "disk_3_disk_3"
+  ],
+  "anchor": "disk_3_disk_3",
+  "subgoal": 9,
+  "frames": [
+   [
+    1610,
+    1629
+   ]
+  ]
+ }
+]

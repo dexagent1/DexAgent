@@ -1,0 +1,49 @@
+{
+ "task": "multi_cup_grasping",
+ "prompt": "Pick up all four cups from the table.",
+ "fingerprint": "fingerprint.json",
+ "video": {
+  "duration_s": 18.933,
+  "fps": 30.0,
+  "resolution": [
+   640,
+   480
+  ]
+ },
+ "objects": [
+  {
+   "id": "cup_teal",
+   "type": "rigid",
+   "root_body": "cup_teal_cup"
+  },
+  {
+   "id": "cup_green",
+   "type": "rigid",
+   "root_body": "cup_green_cup"
+  },
+  {
+   "id": "cup_orange_near",
+   "type": "rigid",
+   "root_body": "cup_orange_near_cup"
+  },
+  {
+   "id": "cup_orange_far",
+   "type": "rigid",
+   "root_body": "cup_orange_far_cup"
+  }
+ ],
+ "stages": {
+  "stage1": "stage1/scene_semantics.json",
+  "stage2": "stage2/scene_recon.json"
+ },
+ "provenance": {
+  "run": "rel_multi_cup_grasping",
+  "how": "solved by the agent stages (a model acting as the harness agent), reviewed by the maintainers",
+  "verified_at": "9503dc3",
+  "finish_verifiers": "stage 1 and 2 passed",
+  "stage3": "not solved: the second cup must be taken while the first stays in the same hand, which the planner cannot express, and the joint two-cup grasp is out of the arm's reach"
+ },
+ "verified": {
+  "stage_verifiers": "stages 1-2 passed at the end of the run"
+ }
+}

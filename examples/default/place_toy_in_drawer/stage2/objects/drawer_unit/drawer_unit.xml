@@ -1,0 +1,35 @@
+<mujoco model="drawer_unit">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <default>
+    <geom condim="4" friction="0.8 0.02 0.001" solref="0.004 1" solimp="0.95 0.99 0.001" />
+  </default>
+  <worldbody>
+    <body name="drawer_unit_carcass" pos="0.000000 0.000000 0.000000" quat="1.000000 0.000000 0.000000 0.000000">
+      <freejoint name="drawer_unit_free" />
+      <inertial pos="0.000000 0.000000 0.051500" mass="0.600000" fullinertia="0.0037562500 0.0011689000 0.0038642500 0.0000000000 0.0000000000 0.0000000000" />
+      <geom name="carcass_left_side" type="box" size="0.003000 0.127000 0.051500" pos="-0.053500 0.000000 0.051500" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+      <geom name="carcass_right_side" type="box" size="0.003000 0.127000 0.051500" pos="0.053500 0.000000 0.051500" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+      <geom name="carcass_top_panel" type="box" size="0.050500 0.127000 0.003000" pos="0.000000 0.000000 0.100000" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+      <geom name="carcass_bottom_panel" type="box" size="0.050500 0.127000 0.003000" pos="0.000000 0.000000 0.003000" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+      <geom name="carcass_rear_panel" type="box" size="0.050500 0.003000 0.045500" pos="0.000000 -0.124000 0.051500" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+      <body name="drawer_unit_drawer_r0c0" pos="0.000000 0.022400 0.051500" quat="1.000000 0.000000 0.000000 0.000000">
+        <joint name="drawer_unit_carcass_to_drawer_r0c0" type="slide" axis="0.000000 1.000000 0.000000" range="0.000000 0.203200" damping="3.0" frictionloss="0.4" armature="0.01" />
+        <inertial pos="0.000000 0.000000 0.000000" mass="0.086930" fullinertia="0.0003269200 0.0001078650 0.0003443640 0.0000000000 0.0000000000 0.0000000000" />
+        <geom name="drawer_r0c0_front" type="box" size="0.048500 0.003000 0.040500" pos="0.000000 0.101600 0.000000" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.55 0.54 0.564 1" />
+        <geom name="drawer_r0c0_side_left" type="box" size="0.003000 0.098600 0.037500" pos="-0.043500 0.000000 0.000000" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+        <geom name="drawer_r0c0_side_right" type="box" size="0.003000 0.098600 0.037500" pos="0.043500 0.000000 0.000000" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+        <geom name="drawer_r0c0_back" type="box" size="0.040500 0.003000 0.037500" pos="0.000000 -0.095600 0.000000" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+        <geom name="drawer_r0c0_bottom" type="box" size="0.040500 0.092600 0.003000" pos="0.000000 0.000000 -0.034500" quat="1.000000 0.000000 0.000000 0.000000" rgba="0.565 0.555 0.577 1" />
+        <geom name="drawer_r0c0_post_0" type="cylinder" size="0.003570 0.016000" pos="-0.016975 0.120600 0.000000" quat="0.707105 -0.707108 0.000000 0.000000" rgba="0.05 0.05 0.05 1" />
+        <geom name="drawer_r0c0_post_1" type="cylinder" size="0.003570 0.016000" pos="0.016975 0.120600 0.000000" quat="0.707105 -0.707108 0.000000 0.000000" rgba="0.05 0.05 0.05 1" />
+        <geom name="drawer_r0c0_pull_bar" type="cylinder" size="0.005100 0.022075" pos="0.000000 0.136600 0.000000" quat="0.707105 0.000000 0.707108 0.000000" rgba="0.05 0.05 0.05 1" />
+        <site name="drawer_unit_drawer_r0c0_handle" pos="0.000000 0.136600 0.000000" quat="0.707105 0.000000 0.707108 0.000000" size="0.004" rgba="0 1 0 0" />
+      </body>
+    </body>
+  </worldbody>
+</mujoco>

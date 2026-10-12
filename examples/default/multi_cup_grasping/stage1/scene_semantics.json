@@ -1,0 +1,182 @@
+{
+  "task_prompt": "Pick up all four cups from the table.",
+  "task_summary": "Each hand picks up a near cup, then takes a far cup into the same hand with its free fingers, so that the right hand ends up holding the teal and the green cup and the left hand the two orange cups, two cups side by side per hand; both pairs are carried away off the table toward the operator.",
+  "environment": {
+    "support_surface": "white tablecloth on a table",
+    "camera": "fixed camera above the operator looking down the table"
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ]
+  },
+  "objects": [
+    {
+      "id": "cup_teal",
+      "name": "teal plastic cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "teal, tapered disposable cup, open top"
+      },
+      "approximate_size": "a standard party cup",
+      "properties": [
+        "A rigid tapered cup grasped around its side; it can be carried upright in one hand.",
+        "Being tapered, a second cup can be taken into the same hand beside it: the first cup stays pinched between thumb and index while the other fingers hold the second cup from inside its rim."
+      ],
+      "initial_state": "standing near-right",
+      "final_state": "held in the right hand with the green cup held beside it, carried off the table",
+      "evidence": "3.3 to 4.1 s the right hand grasps it and lifts; 8.2 to 9.9 s the green cup is taken into the same hand; 12.3 to 14.8 s it is carried away."
+    },
+    {
+      "id": "cup_green",
+      "name": "green plastic cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "dark green tapered cup"
+      },
+      "approximate_size": "a standard party cup",
+      "properties": [
+        "Same cup form; it is picked up by the right hand's free fingers and held beside the teal cup by the same hand's free fingers."
+      ],
+      "initial_state": "standing far-left",
+      "final_state": "held beside the teal cup in the right hand, carried off",
+      "evidence": "7.4 to 9.9 s the right hand, already holding the teal cup, lifts the green cup into the same hand."
+    },
+    {
+      "id": "cup_orange_near",
+      "name": "orange plastic cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "orange tapered cup with writing on the side"
+      },
+      "approximate_size": "a standard party cup",
+      "properties": [
+        "Same cup form; grasped by the left hand and kept pinched while the same hand takes the second orange cup."
+      ],
+      "initial_state": "standing near-left",
+      "final_state": "held in the left hand with the far orange cup held beside it, carried off",
+      "evidence": "6.6 to 7.4 s the left hand grasps it; 10.7 to 12.3 s the far orange cup is taken into the same hand; 12.3 to 14.8 s carried away."
+    },
+    {
+      "id": "cup_orange_far",
+      "name": "orange plastic cup",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "orange tapered cup with writing on the side"
+      },
+      "approximate_size": "a standard party cup",
+      "properties": [
+        "Same cup form; picked up by the left hand's free fingers and held beside the near orange cup by the same hand's free fingers."
+      ],
+      "initial_state": "standing far-right",
+      "final_state": "held beside the near orange cup in the left hand, carried off",
+      "evidence": "10.7 to 12.3 s the left hand lifts it into the same hand."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the teal cup.",
+      "object_refs": [
+        "cup_teal"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests on the table.",
+        "right": "Grasps the teal cup around its side and lifts it."
+      },
+      "goal": "The teal cup is held clear of the table.",
+      "time_window_s": [
+        3.0,
+        4.5
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "left",
+      "action": "Pick up the near orange cup.",
+      "object_refs": [
+        "cup_orange_near"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Grasps the near orange cup and lifts it.",
+        "right": "Holds the teal cup."
+      },
+      "goal": "The cup_orange_near is held clear of the table.",
+      "time_window_s": [
+        6.3,
+        7.6
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Take the green cup into the right hand with the free fingers, beside the held teal cup.",
+      "object_refs": [
+        "cup_green",
+        "cup_teal"
+      ],
+      "motion": "regrasp",
+      "hand_roles": {
+        "left": "Holds the orange cup.",
+        "right": "Keeps the teal cup pinched between thumb and index and hooks the remaining fingers inside the green cup's rim to lift it."
+      },
+      "goal": "The teal and the green cup are held in the right hand side by side and are clear of the table.",
+      "time_window_s": [
+        7.4,
+        10.0
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "left",
+      "action": "Take the far orange cup into the left hand with the free fingers, beside the held orange cup.",
+      "object_refs": [
+        "cup_orange_far",
+        "cup_orange_near"
+      ],
+      "motion": "regrasp",
+      "hand_roles": {
+        "left": "Keeps the near orange cup pinched and hooks the remaining fingers inside the far orange cup's rim to lift it.",
+        "right": "Holds its stack."
+      },
+      "goal": "The cup_orange_near and cup_orange_far are held in the left hand side by side and are clear of the table.",
+      "time_window_s": [
+        10.5,
+        12.3
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "both",
+      "action": "Carry both stacks off the table toward the operator.",
+      "object_refs": [
+        "cup_teal",
+        "cup_green",
+        "cup_orange_near",
+        "cup_orange_far"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Carries the orange stack back and down out of view.",
+        "right": "Carries the teal and green stack back and down out of view."
+      },
+      "goal": "The teal and the green cup are clear of the table, and the cup_orange_near and cup_orange_far are clear of the table.",
+      "time_window_s": [
+        12.3,
+        15.0
+      ]
+    }
+  ],
+  "task_success": "The teal and the green cup are held in the right hand side by side and are clear of the table, and the cup_orange_near and cup_orange_far are held in the left hand side by side and are clear of the table.",
+  "notes": [
+    "Taking a second cup into a hand that already holds one needs the first cup held by thumb and index while the other fingers take the second from inside its rim; the two grasps of one hand must be planned together."
+  ]
+}

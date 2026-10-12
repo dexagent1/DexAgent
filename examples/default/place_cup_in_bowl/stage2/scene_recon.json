@@ -1,0 +1,220 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "cup",
+   "type": "rigid",
+   "skill": "construct_cup_upside_down",
+   "skill_origin": "library",
+   "params": {
+    "name": "cup",
+    "rim_radius": 0.023,
+    "base_radius": 0.017,
+    "height": 0.045,
+    "wall": 0.002,
+    "bottom": 0.003,
+    "body_rgba": [
+     0.229,
+     0.291,
+     0.519,
+     1
+    ],
+    "inner_rgba": [
+     0.2,
+     0.26,
+     0.48,
+     1
+    ],
+    "mass": 0.03,
+    "include_floor": false
+   },
+   "asset_xml": "objects/cup/cup.xml",
+   "root_body": "cup_cup",
+   "bodies": [
+    "cup_cup"
+   ],
+   "pose": {
+    "x": -0.0787,
+    "y": 0.7157,
+    "z": 0.0,
+    "yaw_deg": 11.54
+   },
+   "mask": "masks/cup.png",
+   "iou": 0.866,
+   "verification_plan": {
+    "silhouette_iou_check": "placement and size at frame 0 through video_cam (run inside scene_qc)",
+    "rest_inside_container_test": "the upside-down cup fits inside the green bowl and comes to rest on its flat inner bottom, upright, clear of the rim",
+    "settle_stability_check": "stands stably upside down on the cloth at frame 0",
+    "support_check": "rests on the table, not floating",
+    "no_contact_check": "cup and bowl are separate at frame 0 (cup left of and nearer than the bowl)",
+    "color_match_check": "opaque blue body colour matches the video palette",
+    "model_finite_check": "finite light mass (30 g) and inertia, liftable in one hand"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.866,
+     "source": "scene_qc"
+    },
+    "rest_inside_container_test": {
+     "ok": true,
+     "inside": true,
+     "tilt_deg": 0.0,
+     "rim_contacts": [],
+     "final_offset_xy_m": [
+      0.0,
+      0.0
+     ],
+     "bottom_above_floor_m": -0.0008
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_drift_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "no_contact_check": {
+     "ok": true,
+     "in_contact": false
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.229,
+      0.291,
+      0.519
+     ],
+     "dist": 0.0
+    },
+    "model_finite_check": {
+     "ok": true,
+     "state_finite": true
+    }
+   },
+   "properties_covered": {
+    "A rigid open-topped cup that is grasped from above around its rim and body with one hand.": "construct_cup_upside_down: a rigid hollow tapered cup with an open mouth (rim_radius 0.023, base_radius 0.017, height 0.045, measured from the mask widths); frame 0 shows it standing mouth-down on the cloth with the closed base up (see notes), so the mouth faces the cloth and the hand closes on its body from above; free body, 30 g, 46 mm across: one hand encloses it (model_finite_check); the grasp itself is Stage 3's",
+    "It is carried upright and set down inside the bowl, where it rests on the bowl's inner surface.": "free body that stands on its own (settle_stability_check, support_check); rest_inside_container_test: set into the bowl it reaches the bowl's inner floor, stays inside, tilt 0, speed 0, no rim contact",
+    "It is small enough to fit inside the bowl's opening.": "mouth diameter 0.046 m < bowl floor diameter 0.084 m and rim diameter 0.124 m; height 0.045 m < bowl depth; rest_inside_container_test (inside, clear of the rim)"
+   }
+  },
+  {
+   "id": "bowl",
+   "type": "rigid",
+   "skill": "construct_bowl",
+   "skill_origin": "library",
+   "params": {
+    "name": "bowl",
+    "rim_radius": 0.062,
+    "base_radius": 0.042,
+    "height": 0.058,
+    "curvature": 0.05,
+    "wall": 0.003,
+    "bottom": 0.004,
+    "body_rgba": [
+     0.351,
+     0.652,
+     0.221,
+     1
+    ],
+    "inner_rgba": [
+     0.42,
+     0.7,
+     0.3,
+     1
+    ],
+    "mass": 0.15,
+    "include_floor": false
+   },
+   "asset_xml": "objects/bowl/bowl.xml",
+   "root_body": "bowl_bowl",
+   "bodies": [
+    "bowl_bowl"
+   ],
+   "pose": {
+    "x": 0.0988,
+    "y": 0.7987,
+    "z": 0.0,
+    "yaw_deg": 2.96
+   },
+   "mask": "masks/bowl.png",
+   "iou": 0.856,
+   "verification_plan": {
+    "silhouette_iou_check": "placement and size at frame 0 through video_cam (run inside scene_qc)",
+    "vessel_containment_test": "open-topped vessel with a real hollow inside: lands upright, an object dropped in stays inside below the rim on the floor",
+    "rest_inside_container_test": "flat inner bottom large enough to hold the upside-down cup standing, without rim contact",
+    "settle_stability_check": "stays where it is on the table (does not drift)",
+    "support_check": "rests on the table",
+    "color_match_check": "glossy green colour matches the video palette"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.856,
+     "source": "scene_qc"
+    },
+    "vessel_containment_test": {
+     "ok": true,
+     "verdict": "VESSEL OK - landed upright (0.0 deg), a 20 mm ball came to rest 1.2 mm off axis at z 23.6 mm, under the 58 mm rim",
+     "report_json": "checks/bowl_containment.json"
+    },
+    "rest_inside_container_test": {
+     "ok": true,
+     "inside": true,
+     "rim_contacts": [],
+     "container_height_m": 0.0615
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_drift_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": []
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.351,
+      0.652,
+      0.221
+     ],
+     "dist": 0.0
+    }
+   },
+   "properties_covered": {
+    "A rigid open container with a stable base; its opening is wide enough to receive the cup.": "construct_bowl hollow wedge model, flat base 0.084 m across, opening 0.124 m across (rim_radius 0.062, measured width; the video bowl is rounded-square in plan, the library bowl round with the same width, IoU 0.856); vessel_containment_test (lands upright, keeps a dropped object inside) and rest_inside_container_test (the cup enters through the opening and rests on the floor); settle_stability_check (stable base, no drift)",
+    "It stays where it is; no hand touches it.": "free body (only unmoved, not fixed), 0.15 kg on table friction; settle_stability_check drift 0 and support_check; no hand is planned to touch it (Stage 3's job)"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "iou": {
+    "cup": 0.866,
+    "bowl": 0.856
+   },
+   "report_json": "checks/scene_qc.json"
+  }
+ },
+ "notes": [
+  "Camera given by the run configuration (fovy 28.37, pos/quat as given) registered with register_table_camera(source='given'); the 10 cm grid lies on the cloth and converges with the table edges.",
+  "Frame 0 has no hands; masks/hands.png is empty.",
+  "fit_object_placement with a free uniform scale returned 0.78 (cup) and 1.07 (bowl), contradicting the mask widths, which a direct segmentation render at scale 1 matched to 2 px; sizes were taken from the mask widths and apparent heights instead and the placement refit with x, y, yaw only.",
+  "The white plate and black keyboard at the left edge are not task objects and are not reconstructed.",
+  "Stage 1 calls the cup 'open-topped' and 'carried upright'; frame 0 (and the whole clip) shows it standing mouth-down with its closed base up. The asset reproduces the video (construct_cup_upside_down, mouth at body z = 0): its body z axis points up as it stands, so 'upright' holds for the body as carried."
+ ],
+ "source": "examples/asset_reuse"
+}

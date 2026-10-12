@@ -1,0 +1,513 @@
+{
+ "name": "stage3",
+ "scene": "../../stage2/scene.xml",
+ "trajectory": "trajectory.npz",
+ "human_video": "human_video.mp4",
+ "output_dir": "outputs",
+ "num_samples": 3,
+ "seed": 0,
+ "robot": {
+  "body_prefix": "robot_",
+  "end_effectors": {
+   "left": "robot_left_left_base_yaw",
+   "right": "robot_right_right_base_yaw"
+  },
+  "init_jitter_rad": 0.05
+ },
+ "randomize": {
+  "objects": {
+   "meal_box_mealbox_container": {
+    "dx": [
+     -0.03,
+     0.03
+    ],
+    "dy": [
+     -0.03,
+     0.03
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ]
+   },
+   "meal_box_mealbox_lid": {
+    "attached_to": "meal_box_mealbox_container",
+    "carrier": "right",
+    "release": "right: let go of meal_box_mealbox_lid #3.1",
+    "inside": "meal_box_mealbox_container"
+   }
+  }
+ },
+ "segments": {
+  "left": [
+   {
+    "phases": [
+     "left: reach to hold meal_box_mealbox_lid #1.1"
+    ],
+    "blend": [
+     "world",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on meal_box_mealbox_lid #1.1",
+     "left: close on meal_box_mealbox_lid #1.1",
+     "left: hold meal_box_mealbox_lid #1.1",
+     "right: reach for meal_box_mealbox_lid #1.2",
+     "right: descend on meal_box_mealbox_lid #1.2",
+     "right: close on meal_box_mealbox_lid #1.2",
+     "right: grip meal_box_mealbox_lid #1.2",
+     "right: lift meal_box_mealbox_lid #1.2",
+     "right: carry meal_box_mealbox_lid #2",
+     "right: carry meal_box_mealbox_lid (up) #3.1",
+     "right: carry meal_box_mealbox_lid #3.1",
+     "right: carry meal_box_mealbox_lid (down) #3.1",
+     "right: set down meal_box_mealbox_lid #3.1",
+     "right: let go of meal_box_mealbox_lid #3.1",
+     "right: retreat #3.1",
+     "left: let go of meal_box_mealbox_lid #3.2",
+     "left: retreat #3.2"
+    ],
+    "anchor": "meal_box_mealbox_lid"
+   },
+   {
+    "phases": [
+     "left: return home #3.3"
+    ],
+    "blend": [
+     "meal_box_mealbox_lid",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "left: approach for push #3.4"
+    ],
+    "blend": [
+     "world",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   {
+    "phases": [
+     "left: contact #3.4",
+     "left: press meal_box_mealbox_lid #3.4",
+     "left: back off #3.4",
+     "right: return home #3.5",
+     "right: approach for push #3.6",
+     "right: contact #3.6",
+     "right: press meal_box_mealbox_lid #3.6",
+     "right: back off #3.6"
+    ],
+    "anchor": "meal_box_mealbox_lid"
+   },
+   {
+    "phases": [
+     "left: return home #4.1"
+    ],
+    "blend": [
+     "meal_box_mealbox_lid",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: return home #4.2"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "left: reach for meal_box_mealbox_latch_yn | right: reach for meal_box_mealbox_latch_yp #4.3"
+    ],
+    "blend": [
+     "world",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   {
+    "phases": [
+     "right: reach for meal_box_mealbox_latch_yp | left: reach for meal_box_mealbox_latch_yn #4.3",
+     "left: descend on meal_box_mealbox_latch_yn | right: descend on meal_box_mealbox_latch_yp #4.3",
+     "left: close on meal_box_mealbox_latch_yn | right: close on meal_box_mealbox_latch_yp #4.3",
+     "left: grip meal_box_mealbox_latch_yn | right: grip meal_box_mealbox_latch_yp #4.3",
+     "left: close meal_box_mealbox_latch_yn | right: close meal_box_mealbox_latch_yp #4.3",
+     "left: let go | right: let go #4.3",
+     "right: let go | left: let go #4.3",
+     "left: retreat | right: retreat #4.3",
+     "right: return home #5.1"
+    ],
+    "anchor": "meal_box_mealbox_lid"
+   },
+   {
+    "phases": [
+     "left: approach for rotate #5.2"
+    ],
+    "blend": [
+     "meal_box_mealbox_lid",
+     "meal_box_mealbox_container"
+    ]
+   },
+   {
+    "phases": [
+     "left: contact #5.2",
+     "left: press for rotate #5.2",
+     "left: rotate meal_box_mealbox_container #5.2",
+     "left: approach for rotate #5.3",
+     "left: contact #5.3",
+     "left: press for rotate #5.3",
+     "left: rotate meal_box_mealbox_container #5.3",
+     "left: approach for rotate #5.4",
+     "left: contact #5.4",
+     "left: press for rotate #5.4",
+     "left: rotate meal_box_mealbox_container #5.4",
+     "left: approach for rotate #5.5",
+     "left: contact #5.5",
+     "left: press for rotate #5.5",
+     "left: rotate meal_box_mealbox_container #5.5",
+     "left: approach for rotate #5.6",
+     "left: contact #5.6",
+     "left: press for rotate #5.6",
+     "left: rotate meal_box_mealbox_container #5.6"
+    ],
+    "anchor": "meal_box_mealbox_container"
+   },
+   {
+    "phases": [
+     "left: return home #5.7"
+    ],
+    "blend": [
+     "meal_box_mealbox_container",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "left: reach for meal_box_mealbox_latch_xp | right: reach for meal_box_mealbox_latch_xn #6"
+    ],
+    "blend": [
+     "world",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   {
+    "phases": [
+     "right: reach for meal_box_mealbox_latch_xn | left: reach for meal_box_mealbox_latch_xp #6",
+     "left: descend on meal_box_mealbox_latch_xp | right: descend on meal_box_mealbox_latch_xn #6",
+     "left: close on meal_box_mealbox_latch_xp | right: close on meal_box_mealbox_latch_xn #6",
+     "left: grip meal_box_mealbox_latch_xp | right: grip meal_box_mealbox_latch_xn #6",
+     "left: close meal_box_mealbox_latch_xp | right: close meal_box_mealbox_latch_xn #6",
+     "left: let go of meal_box_mealbox_latch_xp | right: let go of meal_box_mealbox_latch_xn #7.1",
+     "right: let go of meal_box_mealbox_latch_xn | left: let go of meal_box_mealbox_latch_xp #7.1",
+     "left: retreat | right: retreat #7.1"
+    ],
+    "anchor": "meal_box_mealbox_lid"
+   },
+   {
+    "phases": [
+     "left: return home #7.2"
+    ],
+    "blend": [
+     "meal_box_mealbox_lid",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: return home #7.3"
+    ],
+    "anchor": "world"
+   }
+  ],
+  "right": [
+   {
+    "phases": [
+     "left: reach to hold meal_box_mealbox_lid #1.1",
+     "left: descend on meal_box_mealbox_lid #1.1",
+     "left: close on meal_box_mealbox_lid #1.1",
+     "left: hold meal_box_mealbox_lid #1.1"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: reach for meal_box_mealbox_lid #1.2"
+    ],
+    "blend": [
+     "world",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   {
+    "phases": [
+     "right: descend on meal_box_mealbox_lid #1.2",
+     "right: close on meal_box_mealbox_lid #1.2",
+     "right: grip meal_box_mealbox_lid #1.2",
+     "right: lift meal_box_mealbox_lid #1.2"
+    ],
+    "anchor": "meal_box_mealbox_lid"
+   },
+   {
+    "phases": [
+     "right: carry meal_box_mealbox_lid #2"
+    ],
+    "blend": [
+     "meal_box_mealbox_lid",
+     "meal_box_mealbox_container"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry meal_box_mealbox_lid (up) #3.1",
+     "right: carry meal_box_mealbox_lid #3.1",
+     "right: carry meal_box_mealbox_lid (down) #3.1",
+     "right: set down meal_box_mealbox_lid #3.1",
+     "right: let go of meal_box_mealbox_lid #3.1",
+     "right: retreat #3.1",
+     "left: let go of meal_box_mealbox_lid #3.2",
+     "left: retreat #3.2",
+     "left: return home #3.3",
+     "left: approach for push #3.4",
+     "left: contact #3.4",
+     "left: press meal_box_mealbox_lid #3.4",
+     "left: back off #3.4"
+    ],
+    "anchor": "meal_box_mealbox_container"
+   },
+   {
+    "phases": [
+     "right: return home #3.5"
+    ],
+    "blend": [
+     "meal_box_mealbox_container",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: approach for push #3.6"
+    ],
+    "blend": [
+     "world",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   {
+    "phases": [
+     "right: contact #3.6",
+     "right: press meal_box_mealbox_lid #3.6",
+     "right: back off #3.6",
+     "left: return home #4.1"
+    ],
+    "anchor": "meal_box_mealbox_lid"
+   },
+   {
+    "phases": [
+     "right: return home #4.2"
+    ],
+    "blend": [
+     "meal_box_mealbox_lid",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "left: reach for meal_box_mealbox_latch_yn | right: reach for meal_box_mealbox_latch_yp #4.3"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: reach for meal_box_mealbox_latch_yp | left: reach for meal_box_mealbox_latch_yn #4.3"
+    ],
+    "blend": [
+     "world",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on meal_box_mealbox_latch_yn | right: descend on meal_box_mealbox_latch_yp #4.3",
+     "left: close on meal_box_mealbox_latch_yn | right: close on meal_box_mealbox_latch_yp #4.3",
+     "left: grip meal_box_mealbox_latch_yn | right: grip meal_box_mealbox_latch_yp #4.3",
+     "left: close meal_box_mealbox_latch_yn | right: close meal_box_mealbox_latch_yp #4.3",
+     "left: let go | right: let go #4.3",
+     "right: let go | left: let go #4.3",
+     "left: retreat | right: retreat #4.3"
+    ],
+    "anchor": "meal_box_mealbox_lid"
+   },
+   {
+    "phases": [
+     "right: return home #5.1"
+    ],
+    "blend": [
+     "meal_box_mealbox_lid",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "left: approach for rotate #5.2",
+     "left: contact #5.2",
+     "left: press for rotate #5.2",
+     "left: rotate meal_box_mealbox_container #5.2",
+     "left: approach for rotate #5.3",
+     "left: contact #5.3",
+     "left: press for rotate #5.3",
+     "left: rotate meal_box_mealbox_container #5.3",
+     "left: approach for rotate #5.4",
+     "left: contact #5.4",
+     "left: press for rotate #5.4",
+     "left: rotate meal_box_mealbox_container #5.4",
+     "left: approach for rotate #5.5",
+     "left: contact #5.5",
+     "left: press for rotate #5.5",
+     "left: rotate meal_box_mealbox_container #5.5",
+     "left: approach for rotate #5.6",
+     "left: contact #5.6",
+     "left: press for rotate #5.6",
+     "left: rotate meal_box_mealbox_container #5.6",
+     "left: return home #5.7",
+     "left: reach for meal_box_mealbox_latch_xp | right: reach for meal_box_mealbox_latch_xn #6"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: reach for meal_box_mealbox_latch_xn | left: reach for meal_box_mealbox_latch_xp #6"
+    ],
+    "blend": [
+     "world",
+     "meal_box_mealbox_lid"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on meal_box_mealbox_latch_xp | right: descend on meal_box_mealbox_latch_xn #6",
+     "left: close on meal_box_mealbox_latch_xp | right: close on meal_box_mealbox_latch_xn #6",
+     "left: grip meal_box_mealbox_latch_xp | right: grip meal_box_mealbox_latch_xn #6",
+     "left: close meal_box_mealbox_latch_xp | right: close meal_box_mealbox_latch_xn #6",
+     "left: let go of meal_box_mealbox_latch_xp | right: let go of meal_box_mealbox_latch_xn #7.1",
+     "right: let go of meal_box_mealbox_latch_xn | left: let go of meal_box_mealbox_latch_xp #7.1",
+     "left: retreat | right: retreat #7.1",
+     "left: return home #7.2"
+    ],
+    "anchor": "meal_box_mealbox_lid"
+   },
+   {
+    "phases": [
+     "right: return home #7.3"
+    ],
+    "blend": [
+     "meal_box_mealbox_lid",
+     "world"
+    ]
+   }
+  ]
+ },
+ "cameras": {
+  "width": 640,
+  "height": 480,
+  "ego": {
+   "pos": [
+    0.01879,
+    -0.18293,
+    0.55779
+   ],
+   "quat_wxyz": [
+    0.8815668496593654,
+    0.47089691969418795,
+    0.0249469957455896,
+    0.021762996288582456
+   ],
+   "fovy": 38.0
+  },
+  "views": {
+   "wrist_right": {
+    "parent_body": "robot_right_right_base_yaw",
+    "pos": [
+     0.050377,
+     0.001601,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.15285697798110676,
+     0.7024578988116494,
+     -0.6789659021956478,
+     -0.14897297854059297
+    ],
+    "fovy": 100.0
+   },
+   "wrist_left": {
+    "parent_body": "robot_left_left_base_yaw",
+    "pos": [
+     0.050377,
+     -0.0016,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.14897395634728527,
+     0.6789658010477727,
+     -0.7024577941640913,
+     -0.15285695520947942
+    ],
+    "fovy": 100.0
+   }
+  }
+ },
+ "table": {
+  "top_z": 0.0,
+  "center": [
+   0.0,
+   1.125
+  ],
+  "half_size": [
+   1.8,
+   1.075
+  ]
+ },
+ "inpaint": {
+  "erase_prompts": [
+   "hand",
+   "arm",
+   "clear glass food container",
+   "clear latching lid"
+  ],
+  "background_prompt": "An empty white tablecloth on a table, nothing on it, static background."
+ },
+ "render": {
+  "stride": 2,
+  "samples": 32,
+  "chunks": 4,
+  "exclude_geoms": [
+   "^table",
+   "groundplane",
+   "floor",
+   "^g_table"
+  ],
+  "materials": [
+   {
+    "match": "^robot_\\w+_arm_",
+    "preset": "yam_black"
+   },
+   {
+    "match": "^robot_",
+    "preset": "sharpa"
+   }
+  ]
+ },
+ "manifest": "trajectory_manifest.json",
+ "goal": {
+  "semantics": "scene_semantics.json",
+  "objects": "goal_objects.json"
+ },
+ "checks": {
+  "physics_replay": true
+ },
+ "physics": {
+  "rules": [],
+  "mujoco_version": "3.10.0"
+ }
+}

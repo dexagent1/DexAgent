@@ -1,0 +1,132 @@
+{
+ "side": "left",
+ "pos": [
+  -0.0414960299312255,
+  0.2437470791055126,
+  0.16772181780538026
+ ],
+ "euler": [
+  -2.2627192611485825,
+  -0.4533252206393199,
+  1.2226934618369345
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 1.0821399999999999,
+  "thumb_CMC_AA": 0.03491000000000005,
+  "thumb_MCP_FE": 0.62834,
+  "thumb_MCP_AA": 0.03491000000000005,
+  "thumb_IP": 1.04718,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "finger_targets_open": {
+  "thumb_CMC_FE": 1.0821399999999999,
+  "thumb_CMC_AA": 0.03491000000000005,
+  "thumb_MCP_FE": 0.62834,
+  "thumb_MCP_AA": 0.03491000000000005,
+  "thumb_IP": 1.04718,
+  "index_MCP_FE": -0.17453293,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 0.0,
+  "index_DIP": 0.0,
+  "middle_MCP_FE": -0.17453293,
+  "middle_MCP_AA": 0.0,
+  "middle_PIP": 0.0,
+  "middle_DIP": 0.0,
+  "ring_MCP_FE": -0.17453293,
+  "ring_MCP_AA": 0.0,
+  "ring_PIP": 0.0,
+  "ring_DIP": 0.0,
+  "pinky_CMC": 0.0,
+  "pinky_MCP_FE": -0.17453293,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 0.0,
+  "pinky_DIP": 0.0
+ },
+ "grip_fingers": [
+  "index",
+  "middle"
+ ],
+ "contact_side": "pad",
+ "thumb": "curled",
+ "pitch_deg": 35.0,
+ "press_travel_m": 0.004,
+ "face_offset_m": 0.1034,
+ "overlap_mm": 0.0,
+ "approach": [
+  0.0,
+  0.0,
+  1.0
+ ],
+ "approach_kind": "normal",
+ "gap_before_m": 0.001,
+ "normals": {
+  "index": [
+   0.0,
+   0.0,
+   1.0
+  ],
+  "middle": [
+   0.0,
+   0.0,
+   1.0
+  ]
+ },
+ "points": {
+  "index": [
+   -0.10231778761269497,
+   0.3965554155386377,
+   0.06329454076252966
+  ],
+  "middle": [
+   -0.12109335103797816,
+   0.38826352935400954,
+   0.06329454076252966
+  ]
+ },
+ "candidate": {
+  "heading_from_outward_deg": -60,
+  "pitch_deg": 35,
+  "out_m": 0.011,
+  "along_m": 0.012,
+  "sweep_reach": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ],
+   [
+    0.0,
+    0.0
+   ]
+  ],
+  "hand_scene": "poses/hs_left_turned_v1.json",
+  "generator": "py/latch_cands.py (flat_hand_pose + arm_reach_check over the fold sweep)"
+ }
+}

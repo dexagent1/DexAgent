@@ -1,0 +1,58 @@
+<mujoco model="cup_vessel">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <material name="cup_mat" rgba="0.1670 0.4630 0.3690 1.0000" specular="0.300" shininess="0.300" />
+    <material name="cup_inmat" rgba="0.6900 0.8300 0.8200 1.0000" specular="0.210" shininess="0.210" />
+    <mesh name="cup_shell" file="../../../../../_assets/28421c4d8cd761620468.obj" />
+    <mesh name="cup_lining" file="../../../../../_assets/b43a919f434dde0f52ec.obj" />
+    <mesh name="cup_wedge0" file="../../../../../_assets/a67eea5089b35ef5a6f1.obj" />
+    <mesh name="cup_wedge1" file="../../../../../_assets/2a00bcb439e7f72dd6e0.obj" />
+    <mesh name="cup_wedge2" file="../../../../../_assets/2265b465deb8d0c3055f.obj" />
+    <mesh name="cup_wedge3" file="../../../../../_assets/49ff829ab22b090745cb.obj" />
+    <mesh name="cup_wedge4" file="../../../../../_assets/e810841ee82acddb46d2.obj" />
+    <mesh name="cup_wedge5" file="../../../../../_assets/73327adfd9de1954dfa3.obj" />
+    <mesh name="cup_wedge6" file="../../../../../_assets/799e705d4a8b9770ec73.obj" />
+    <mesh name="cup_wedge7" file="../../../../../_assets/35d09fe16544cadfbe26.obj" />
+    <mesh name="cup_wedge8" file="../../../../../_assets/6d33eee3927f18056d88.obj" />
+    <mesh name="cup_wedge9" file="../../../../../_assets/7e482f35873e4f01611f.obj" />
+    <mesh name="cup_wedge10" file="../../../../../_assets/cb854443aad749ceb603.obj" />
+    <mesh name="cup_wedge11" file="../../../../../_assets/a0cff2b569ba4e4cc97e.obj" />
+    <mesh name="cup_wedge12" file="../../../../../_assets/3558472eeb13fd5563ef.obj" />
+    <mesh name="cup_wedge13" file="../../../../../_assets/0b2d2c1676c64f9a1d7a.obj" />
+    <mesh name="cup_wedge14" file="../../../../../_assets/9c6fea7597adfd58703a.obj" />
+    <mesh name="cup_wedge15" file="../../../../../_assets/75907583467d99372c97.obj" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="cup" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="cup_free" />
+      <geom name="cup_shell" type="mesh" mesh="cup_shell" material="cup_mat" contype="0" conaffinity="0" mass="0" group="1" />
+      <geom name="cup_lining" type="mesh" mesh="cup_lining" material="cup_inmat" contype="0" conaffinity="0" mass="0" group="1" />
+      <geom name="cup_base" type="cylinder" pos="0 0 0.00100" size="0.02690 0.00100" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge0" type="mesh" mesh="cup_wedge0" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge1" type="mesh" mesh="cup_wedge1" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge2" type="mesh" mesh="cup_wedge2" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge3" type="mesh" mesh="cup_wedge3" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge4" type="mesh" mesh="cup_wedge4" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge5" type="mesh" mesh="cup_wedge5" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge6" type="mesh" mesh="cup_wedge6" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge7" type="mesh" mesh="cup_wedge7" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge8" type="mesh" mesh="cup_wedge8" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge9" type="mesh" mesh="cup_wedge9" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge10" type="mesh" mesh="cup_wedge10" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge11" type="mesh" mesh="cup_wedge11" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge12" type="mesh" mesh="cup_wedge12" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge13" type="mesh" mesh="cup_wedge13" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge14" type="mesh" mesh="cup_wedge14" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="cup_wedge15" type="mesh" mesh="cup_wedge15" density="233.749" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <site name="cup_rim" pos="0 0 0.10150" size="0.002" rgba="0 1 0 0" />
+      <site name="cup_floor" pos="0 0 0.00200" size="0.002" rgba="0 0 1 0" />
+    </body>
+  </worldbody>
+</mujoco>

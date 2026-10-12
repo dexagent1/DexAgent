@@ -1,0 +1,183 @@
+{
+ "side": "right",
+ "pos": [
+  -0.09740762164150019,
+  0.3071362113817064,
+  0.1580049013448118
+ ],
+ "euler": [
+  3.6064449701073764,
+  0.8214073107312495,
+  2.2855079044043456
+ ],
+ "finger_targets": {
+  "thumb_CMC_FE": 0.9351471012023723,
+  "thumb_CMC_AA": -0.14987661587568807,
+  "thumb_MCP_FE": 0.00179657617254307,
+  "thumb_MCP_AA": -0.32174391427904336,
+  "thumb_IP": 0.34664801203195966,
+  "index_MCP_FE": 0.9599334745000001,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 1.1344450000000001,
+  "index_DIP": 0.907595,
+  "middle_MCP_FE": 0.17506829918726904,
+  "middle_MCP_AA": -0.1759614294922758,
+  "middle_PIP": 0.5701753025397355,
+  "middle_DIP": 0.4747225273779645,
+  "ring_MCP_FE": 0.4128838870394635,
+  "ring_MCP_AA": -0.20828444271648708,
+  "ring_PIP": 0.2558754024360338,
+  "ring_DIP": 0.22017448793910602,
+  "pinky_CMC": 0.17017,
+  "pinky_MCP_FE": 0.9599334745000001,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.1344450000000001,
+  "pinky_DIP": 0.907595
+ },
+ "grip_fingers": [
+  "middle",
+  "ring",
+  "thumb"
+ ],
+ "finger_targets_squeezed": {
+  "thumb_CMC_FE": 0.9227254221485853,
+  "thumb_CMC_AA": -0.1300246672665451,
+  "thumb_MCP_FE": 0.02426424912925844,
+  "thumb_MCP_AA": -0.3381279755433033,
+  "thumb_IP": 0.3700257681470933,
+  "index_MCP_FE": 0.9599334745000001,
+  "index_MCP_AA": 0.0,
+  "index_PIP": 1.1344450000000001,
+  "index_DIP": 0.907595,
+  "middle_MCP_FE": 0.17867993085161438,
+  "middle_MCP_AA": -0.19651336145518944,
+  "middle_PIP": 0.613465483216783,
+  "middle_DIP": 0.49871645555563515,
+  "ring_MCP_FE": 0.4046372517917661,
+  "ring_MCP_AA": -0.22657198425630828,
+  "ring_PIP": 0.3163321613427423,
+  "ring_DIP": 0.25670470030306297,
+  "pinky_CMC": 0.17017,
+  "pinky_MCP_FE": 0.9599334745000001,
+  "pinky_MCP_AA": 0.0,
+  "pinky_PIP": 1.1344450000000001,
+  "pinky_DIP": 0.907595
+ },
+ "press_depth_rad": 0.06,
+ "curl_free": 0.65,
+ "approach": [
+  -0.35847422141986374,
+  -0.2553404032449126,
+  0.8979407057529735
+ ],
+ "cleared_m": 0.0,
+ "contact_side": "pad",
+ "normals": {
+  "thumb": [
+   -0.9955290551385633,
+   -0.09445581174771404,
+   0.0
+  ],
+  "middle": [
+   0.9955290551385625,
+   0.0944558117477209,
+   -3.4539352459317464e-15
+  ],
+  "ring": [
+   0.9955290551385625,
+   0.0944558117477209,
+   -3.4539352459317464e-15
+  ]
+ },
+ "points": {
+  "thumb": [
+   -0.10974003639816465,
+   0.34096810263159505,
+   0.016
+  ],
+  "middle": [
+   -0.011037233189939084,
+   0.35937344530263243,
+   0.016
+  ],
+  "ring": [
+   -0.009337028578478445,
+   0.34145392231012034,
+   0.016
+  ]
+ },
+ "residual_mm": {
+  "thumb": 0.01,
+  "middle": 0.02,
+  "ring": 0.02
+ },
+ "worst_residual_mm": 0.02,
+ "overlap_mm": 0.43,
+ "palm_facing": 0.488,
+ "standoff_m": 0.008,
+ "targets": {
+  "thumb": [
+   -0.11770426883927315,
+   0.34021245613761336,
+   0.016
+  ],
+  "middle": [
+   -0.0030730007488305837,
+   0.3601290917966142,
+   0.015999999999999973
+  ],
+  "ring": [
+   -0.0013727961373699443,
+   0.3422095688041021,
+   0.015999999999999973
+  ]
+ },
+ "progress": {
+  "seeds_tried": 48,
+  "seeds_total": 48,
+  "elapsed_s": 7.94,
+  "stopped": null
+ },
+ "pinch": {
+  "axis": "short",
+  "thumb_side": "+",
+  "along": 0.2,
+  "fingers": [
+   "middle",
+   "ring"
+  ],
+  "z": 0.016,
+  "grip": null,
+  "contact_deg": null
+ },
+ "family": "flat_pinch_short",
+ "open_frac": 0.1,
+ "hold": {
+  "opposed": true,
+  "opposition_deg": 180.0,
+  "need_n": 8.76
+ },
+ "lift": {
+  "ok": true,
+  "first_fail": null,
+  "achieved_mm": 76.3,
+  "tried": [
+   {
+    "press_depth_rad": 0.12,
+    "open_frac": 0.1,
+    "seat_mm": 0.0,
+    "ok": false,
+    "first_fail": "servo_reserve",
+    "achieved_mm": 78.9
+   },
+   {
+    "press_depth_rad": 0.06,
+    "open_frac": 0.1,
+    "seat_mm": 0.0,
+    "ok": true,
+    "first_fail": null,
+    "achieved_mm": 76.3
+   }
+  ]
+ }
+}

@@ -1,0 +1,285 @@
+{
+ "name": "stage3",
+ "scene": "../scene_executed.xml",
+ "trajectory": "trajectory.npz",
+ "human_video": "human_video.mp4",
+ "output_dir": "outputs",
+ "num_samples": 3,
+ "seed": 0,
+ "robot": {
+  "body_prefix": "robot_",
+  "end_effectors": {
+   "left": "robot_left_left_base_yaw",
+   "right": "robot_right_right_base_yaw"
+  },
+  "init_jitter_rad": 0.05
+ },
+ "randomize": {
+  "objects": {
+   "holder_battery_holder": {
+    "dx": [
+     -0.03,
+     0.03
+    ],
+    "dy": [
+     -0.03,
+     0.03
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ]
+   },
+   "battery_battery": {
+    "dx": [
+     -0.03,
+     0.03
+    ],
+    "dy": [
+     -0.03,
+     0.03
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ],
+    "carrier": "right",
+    "release": "right: let go of battery_battery #3.2",
+    "rests_on": "holder_battery_holder"
+   }
+  }
+ },
+ "segments": {
+  "left": [
+   {
+    "phases": [
+     "right: reach for battery_battery #1",
+     "right: descend on battery_battery #1",
+     "right: close on battery_battery #1",
+     "right: grip battery_battery #1",
+     "right: lift battery_battery #1",
+     "right: carry battery_battery #2",
+     "right: carry battery_battery #3.1",
+     "right: let go of battery_battery #3.2",
+     "right: retreat #3.2"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "left: reach to hold holder_battery_holder #4.1"
+    ],
+    "blend": [
+     "world",
+     "holder_battery_holder"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on holder_battery_holder #4.1",
+     "left: close on holder_battery_holder #4.1",
+     "left: hold holder_battery_holder #4.1",
+     "right: approach for push #4.2",
+     "right: contact #4.2",
+     "right: press battery_battery #4.2",
+     "right: back off #4.2",
+     "right: let go #5.1",
+     "right: retreat #5.1",
+     "left: let go of holder_battery_holder #5.2",
+     "left: retreat #5.2"
+    ],
+    "anchor": "holder_battery_holder"
+   },
+   {
+    "phases": [
+     "left: return home #5.3"
+    ],
+    "blend": [
+     "holder_battery_holder",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: return home #5.4"
+    ],
+    "anchor": "world"
+   }
+  ],
+  "right": [
+   {
+    "phases": [
+     "right: reach for battery_battery #1"
+    ],
+    "blend": [
+     "world",
+     "battery_battery"
+    ]
+   },
+   {
+    "phases": [
+     "right: descend on battery_battery #1",
+     "right: close on battery_battery #1",
+     "right: grip battery_battery #1",
+     "right: lift battery_battery #1"
+    ],
+    "anchor": "battery_battery"
+   },
+   {
+    "phases": [
+     "right: carry battery_battery #2"
+    ],
+    "blend": [
+     "battery_battery",
+     "holder_battery_holder"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry battery_battery #3.1",
+     "right: let go of battery_battery #3.2",
+     "right: retreat #3.2",
+     "left: reach to hold holder_battery_holder #4.1",
+     "left: descend on holder_battery_holder #4.1",
+     "left: close on holder_battery_holder #4.1",
+     "left: hold holder_battery_holder #4.1"
+    ],
+    "anchor": "holder_battery_holder"
+   },
+   {
+    "phases": [
+     "right: approach for push #4.2"
+    ],
+    "blend": [
+     "holder_battery_holder",
+     "battery_battery"
+    ]
+   },
+   {
+    "phases": [
+     "right: contact #4.2",
+     "right: press battery_battery #4.2",
+     "right: back off #4.2",
+     "right: let go #5.1",
+     "right: retreat #5.1",
+     "left: let go of holder_battery_holder #5.2",
+     "left: retreat #5.2",
+     "left: return home #5.3"
+    ],
+    "anchor": "battery_battery"
+   },
+   {
+    "phases": [
+     "right: return home #5.4"
+    ],
+    "blend": [
+     "battery_battery",
+     "world"
+    ]
+   }
+  ]
+ },
+ "cameras": {
+  "width": 640,
+  "height": 480,
+  "ego": {
+   "pos": [
+    0.01879,
+    -0.18293,
+    0.55779
+   ],
+   "quat_wxyz": [
+    0.8815668496593654,
+    0.47089691969418795,
+    0.0249469957455896,
+    0.021762996288582456
+   ],
+   "fovy": 38.0
+  },
+  "views": {
+   "wrist_right": {
+    "parent_body": "robot_right_right_base_yaw",
+    "pos": [
+     0.050377,
+     0.001601,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.15285697798110676,
+     0.7024578988116494,
+     -0.6789659021956478,
+     -0.14897297854059297
+    ],
+    "fovy": 100.0
+   },
+   "wrist_left": {
+    "parent_body": "robot_left_left_base_yaw",
+    "pos": [
+     0.050377,
+     -0.0016,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.14897395634728527,
+     0.6789658010477727,
+     -0.7024577941640913,
+     -0.15285695520947942
+    ],
+    "fovy": 100.0
+   }
+  }
+ },
+ "table": {
+  "top_z": 0.0,
+  "center": [
+   0.0,
+   1.125
+  ],
+  "half_size": [
+   1.8,
+   1.075
+  ]
+ },
+ "inpaint": {
+  "erase_prompts": [
+   "hand",
+   "arm",
+   "AA battery",
+   "black battery holder with wires"
+  ],
+  "background_prompt": "An empty white tablecloth on a table, nothing on it, static background."
+ },
+ "render": {
+  "stride": 2,
+  "samples": 32,
+  "chunks": 4,
+  "exclude_geoms": [
+   "^table",
+   "groundplane",
+   "floor",
+   "^g_table"
+  ],
+  "materials": [
+   {
+    "match": "^robot_\\w+_arm_",
+    "preset": "yam_black"
+   },
+   {
+    "match": "^robot_",
+    "preset": "sharpa"
+   }
+  ]
+ },
+ "manifest": "trajectory_manifest.json",
+ "goal": {
+  "semantics": "scene_semantics.json",
+  "objects": "goal_objects.json"
+ },
+ "checks": {
+  "physics_replay": true
+ },
+ "physics": {
+  "rules": [],
+  "mujoco_version": "3.10.0"
+ }
+}

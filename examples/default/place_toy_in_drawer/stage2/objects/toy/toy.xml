@@ -1,0 +1,16 @@
+<mujoco model="toy">
+  <option timestep="0.002" />
+  <worldbody>
+    <body name="toy" pos="0 0 0" quat="1 0 0 0">
+      <freejoint name="toy_free" />
+      <geom name="toy_torso" type="ellipsoid" size="0.02336 0.02125 0.01558" pos="-0.00864 0 0.01558" friction="1 0.01 0.005" condim="6" solref="0.03 1" solimp="0.5 0.95 0.012" rgba="0.775 0.698 0.54 1" mass="0.0211412" />
+      <geom name="toy_head" type="ellipsoid" size="0.0144 0.0144 0.0144" pos="0.0176 0 0.0144" friction="1 0.01 0.005" condim="6" solref="0.03 1" solimp="0.5 0.95 0.012" rgba="0.775 0.698 0.54 1" mass="0.00816241" />
+      <geom name="toy_ear0" type="ellipsoid" size="0.00504 0.0036 0.00702" pos="0.0176 -0.0072 0.02862" friction="1 0.01 0.005" condim="6" solref="0.03 1" solimp="0.5 0.95 0.012" rgba="0.775 0.698 0.54 1" mass="0.000348178" />
+      <geom name="toy_ear1" type="ellipsoid" size="0.00504 0.0036 0.00702" pos="0.0176 0.0072 0.02862" friction="1 0.01 0.005" condim="6" solref="0.03 1" solimp="0.5 0.95 0.012" rgba="0.775 0.698 0.54 1" mass="0.000348178" />
+      <geom name="toy_eye0" type="sphere" size="0.001" pos="0.02984 -0.00504 0.018" contype="0" conaffinity="0" mass="0" rgba="0.813 0.755 0.636 1" />
+      <geom name="toy_eye1" type="sphere" size="0.001" pos="0.02984 0.00504 0.018" contype="0" conaffinity="0" mass="0" rgba="0.813 0.755 0.636 1" />
+      <site name="toy_grasp" pos="-0.00864 0 0.01558" size="0.004" rgba="1 0 0 0" />
+      <site name="toy_top" pos="-0.00864 0 0.03116" size="0.004" rgba="1 0 0 0" />
+    </body>
+  </worldbody>
+</mujoco>

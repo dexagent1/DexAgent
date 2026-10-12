@@ -1,0 +1,35 @@
+[
+ {
+  "index": 1,
+  "motion": "grasp_lift",
+  "side": "left",
+  "object": "ribbon_ribbon_red_strandB_13",
+  "ok": true,
+  "failed": [],
+  "measured": {
+   "rise_m": 0.0596,
+   "slip_in_hand_m": 0.0194,
+   "max_hand_pen_mm": 1.02,
+   "max_track_pos_mm": 5.6
+  }
+ },
+ {
+  "index": 1,
+  "motion": "place",
+  "side": "left",
+  "object": "ribbon_ribbon_red_strandB_13",
+  "ok": false,
+  "failed": [
+   "upright",
+   "servo_tracking",
+   "plan_collision",
+   "arm_speed"
+  ],
+  "measured": {
+   "target_err_m": 0.017,
+   "max_hand_pen_mm": 1.25,
+   "max_track_pos_mm": 17.5,
+   "hint": "the left hand is pushed off its path by ['ribbon_ribbon_red_strandB_14', 'ribbon_ribbon_wide_pink_strandB_15', 'robot_right_right_thumb_DP'] at frame 35 (tracking 17 mm)"
+  }
+ }
+]

@@ -1,0 +1,45 @@
+{
+ "hand_xml": "${SETUP}/robot/sharpa_right.xml",
+ "side": "right",
+ "objects": [
+  {
+   "name": "gift_box",
+   "xml": "${STAGE2}/assets/gift_box/gift_box.xml",
+   "pos": [
+    -0.005124,
+    0.373098,
+    0.0
+   ],
+   "quat": [
+    0.9998970477900805,
+    0.0,
+    0.0,
+    0.014349000685810505
+   ]
+  }
+ ],
+ "floor": true,
+ "grasp_body": "gift_box_gift_box_lidb",
+ "joint_init": {
+  "gift_box_gift_box_lid": 0.0,
+  "gift_box_gift_box_lidflap": 1.5708
+ },
+ "bench_scene": "${STAGE2}/scene.xml",
+ "target": "gift_box",
+ "target_root": "gift_box_gift_box",
+ "grasp_body_pose": {
+  "body": "gift_box_gift_box_lidb",
+  "pos": [
+   -0.008337,
+   0.485052,
+   0.0375
+  ],
+  "quat_wxyz": [
+   0.9998970477869404,
+   2.5058937548477767e-06,
+   3.596077344778827e-08,
+   0.014349000685765443
+  ]
+ },
+ "held_in_air": []
+}

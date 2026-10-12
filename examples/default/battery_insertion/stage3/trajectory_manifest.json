@@ -1,0 +1,1450 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_recon": "../stage2/scene_recon.json",
+ "scene_executed": "scene_executed.xml",
+ "stations": {
+  "tool": "place_arm_stations",
+  "shift_m": [
+   0.0,
+   -0.075
+  ],
+  "file": "scene_stations.xml",
+  "why": "object_reach_check: the cell and the holder lie at y 0.37 m, 3-8 cm in front of the arms' palm-down band at the setup stations; stage3_r4's shift (0, -0.075) holds every pose of this plan (the pinch, the tilted insert, the brace and the rim press)"
+ },
+ "subgoals": [
+  {
+   "index": 1,
+   "stage1_indices": [
+    1
+   ],
+   "frames": [
+    0,
+    162
+   ],
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 1,
+    "motion": "grasp_lift",
+    "side": "right",
+    "object": "battery_battery",
+    "pose": "poses/pinch_h30c_B_r.json",
+    "hand_scene": "poses/hs_right_battery.json",
+    "lift_m": 0.08,
+    "open_frac": 0.3
+   },
+   "expect": {
+    "rise_m": 0.04,
+    "in_hand": true,
+    "no_slip": true,
+    "pads": {
+     "thumb": {
+      "point": [
+       0.1356199406086351,
+       0.3733999403289909,
+       0.0301127201298911
+      ],
+      "normal": [
+       0.7086126251011751,
+       -0.705597720284175,
+       -6.837393759554195e-05
+      ]
+     },
+     "index": {
+      "point": [
+       0.12818005939136487,
+       0.38080005967100905,
+       0.030111626146889593
+      ],
+      "normal": [
+       -0.7086126251011751,
+       0.705597720284175,
+       6.837393759554195e-05
+      ]
+     }
+    },
+    "pads_at_label": "right: grip battery_battery",
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": [
+     "holder_battery_holder"
+    ],
+    "pads_at_rel": 130,
+    "slip_from_rel": 131
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "rise": true,
+     "in_hand": true,
+     "pads_touching": true,
+     "no_slip": true,
+     "untouched:holder_battery_holder": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1319,
+      0.3771,
+      0.0001
+     ],
+     "object_end": [
+      0.1488,
+      0.3816,
+      0.0893
+     ],
+     "object_moved_m": 0.0908,
+     "object_rotated_deg": 46.28,
+     "object_tilt_end_deg": 8.31,
+     "rise_m": 0.0891,
+     "peak_rise_m": 0.0891,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "pads": {
+      "thumb": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 3.8
+      },
+      "index": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 11.9
+      }
+     },
+     "pads_frame": 130,
+     "slip_in_hand_m": 0.0046,
+     "untouched": {
+      "holder_battery_holder": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.3,
+     "max_object_pen_mm": 0.11,
+     "max_track_pos_mm": 1.6,
+     "max_track_rot_deg": 1.7
+    }
+   },
+   "pose": {
+    "file": "poses/pinch_h30c_B_r.json",
+    "source": "pose_from_points + optimize_pose_for_reach",
+    "hand_scene": "poses/hs_right_battery.json",
+    "derivation": "thumb and index pads on opposite sides of the upright cell 30 mm up (8 mm above its centre of mass), pinch line across the slot direction (perpendicular to slot 2's axis) so the 30-60 deg tilt of the carry turns the cell about the pinch line; idle fingers fully curled (curl_free 1.0) so they stay clear of the holder at the tilted insert; turned -17.5 deg about the pinch line by optimize_pose_for_reach for the right arm; executed from a 30% pre-opening (the stress-tested opening)",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "open_frac": 0.3,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 60.0,
+        "drift_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 100.0,
+        "drift_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 4.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.0,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.1,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 15.2,
+        "ok": true
+       }
+      ],
+      "grip": {
+       "fingers": [
+        "index",
+        "thumb"
+       ],
+       "force_N": 14.7
+      },
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 60.0
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 100.0
+       }
+      ]
+     }
+    },
+    "rejected": [
+     "pinch at the centre of mass (21.9 mm up): lifts and survives every stress phase, but at the 45 deg insert its thumb hit the slot divider and the table (plan collision 6 mm)",
+     "pinch 34 mm up (stage3_r4's height): fails to seat in the stress test with the realistic contact friction",
+     "pinch 30 mm up with idle fingers curled 65%: the pinky reached the table at the insert"
+    ]
+   }
+  },
+  {
+   "index": 2,
+   "stage1_indices": [
+    2
+   ],
+   "frames": [
+    163,
+    219
+   ],
+   "motion": "carry",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 2,
+    "motion": "carry",
+    "side": "right",
+    "object": "battery_battery",
+    "target_pos": [
+     -0.03624,
+     0.35616,
+     0.04472
+    ],
+    "target_euler_deg": [
+     -22.251,
+     20.658,
+     -11.192
+    ],
+    "duration_s": 1.8,
+    "pos_tol_m": 0.01
+   },
+   "expect": {
+    "target_pos": [
+     -0.03624,
+     0.35616,
+     0.04472
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": [
+     "holder_battery_holder"
+    ],
+    "pos_tol_m": 0.01,
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "untouched:holder_battery_holder": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      0.1488,
+      0.3816,
+      0.0893
+     ],
+     "object_end": [
+      -0.0364,
+      0.3559,
+      0.0449
+     ],
+     "object_moved_m": 0.1921,
+     "object_rotated_deg": 70.69,
+     "object_tilt_end_deg": 30.11,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0006,
+     "target_err_m": 0.0003,
+     "untouched": {
+      "holder_battery_holder": {
+       "moved_m": 0.0,
+       "rotated_deg": 0.0
+      }
+     },
+     "max_hand_pen_mm": 0.37,
+     "max_object_pen_mm": 0.02,
+     "max_track_pos_mm": 0.6,
+     "max_track_rot_deg": 2.2
+    }
+   },
+   "pose": {
+    "file": "poses/pinch_h30c_B_r.json",
+    "source": "pose_from_points + optimize_pose_for_reach",
+    "hand_scene": "poses/hs_right_battery.json",
+    "derivation": "thumb and index pads on opposite sides of the upright cell 30 mm up (8 mm above its centre of mass), pinch line across the slot direction (perpendicular to slot 2's axis) so the 30-60 deg tilt of the carry turns the cell about the pinch line; idle fingers fully curled (curl_free 1.0) so they stay clear of the holder at the tilted insert; turned -17.5 deg about the pinch line by optimize_pose_for_reach for the right arm; executed from a 30% pre-opening (the stress-tested opening)",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "open_frac": 0.3,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 60.0,
+        "drift_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 100.0,
+        "drift_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 4.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.0,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.1,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 15.2,
+        "ok": true
+       }
+      ],
+      "grip": {
+       "fingers": [
+        "index",
+        "thumb"
+       ],
+       "force_N": 14.7
+      },
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 60.0
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 100.0
+       }
+      ]
+     }
+    },
+    "rejected": [
+     "pinch at the centre of mass (21.9 mm up): lifts and survives every stress phase, but at the 45 deg insert its thumb hit the slot divider and the table (plan collision 6 mm)",
+     "pinch 34 mm up (stage3_r4's height): fails to seat in the stress test with the realistic contact friction",
+     "pinch 30 mm up with idle fingers curled 65%: the pinky reached the table at the insert"
+    ],
+    "note": "the grasp of subgoal 1, held"
+   }
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    220,
+    270
+   ],
+   "motion": "insert",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 3,
+    "motion": "insert",
+    "side": "right",
+    "object": "battery_battery",
+    "target_pos": [
+     -0.03624,
+     0.35616,
+     0.00472
+    ],
+    "target_euler_deg": [
+     -22.251,
+     20.658,
+     -11.192
+    ],
+    "duration_s": 1.6,
+    "pos_tol_m": 0.004
+   },
+   "expect": {
+    "target_pos": [
+     -0.03624,
+     0.35616,
+     0.00472
+    ],
+    "in_hand": true,
+    "no_slip": true,
+    "target_axes": "xyz",
+    "pos_tol_m": 0.004,
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": [],
+    "slip_from_rel": 0
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "no_slip": true,
+     "at_target": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0364,
+      0.3559,
+      0.0449
+     ],
+     "object_end": [
+      -0.0363,
+      0.3563,
+      0.0047
+     ],
+     "object_moved_m": 0.0402,
+     "object_rotated_deg": 0.17,
+     "object_tilt_end_deg": 30.04,
+     "hand_links_touching": [
+      "robot_right_right_index_DP",
+      "robot_right_right_thumb_DP",
+      "robot_right_right_thumb_PP"
+     ],
+     "slip_in_hand_m": 0.0001,
+     "target_err_m": 0.0001,
+     "max_hand_pen_mm": 0.32,
+     "max_object_pen_mm": 1.27,
+     "max_track_pos_mm": 0.2,
+     "max_track_rot_deg": 0.0
+    }
+   },
+   "pose": {
+    "file": "poses/pinch_h30c_B_r.json",
+    "source": "pose_from_points + optimize_pose_for_reach",
+    "hand_scene": "poses/hs_right_battery.json",
+    "derivation": "thumb and index pads on opposite sides of the upright cell 30 mm up (8 mm above its centre of mass), pinch line across the slot direction (perpendicular to slot 2's axis) so the 30-60 deg tilt of the carry turns the cell about the pinch line; idle fingers fully curled (curl_free 1.0) so they stay clear of the holder at the tilted insert; turned -17.5 deg about the pinch line by optimize_pose_for_reach for the right arm; executed from a 30% pre-opening (the stress-tested opening)",
+    "stress_tests": {
+     "grasp_stress_test_preopen": {
+      "ok": true,
+      "open_frac": 0.3,
+      "first_fail": null,
+      "phases": [
+       {
+        "name": "approach_open",
+        "object_nudged_mm": 0.0,
+        "penetration_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "seated",
+        "held_before_full_press": true,
+        "finger_contacts": 2,
+        "fingers": [
+         "index",
+         "thumb"
+        ],
+        "contact_force_N": 14.7,
+        "ok": true
+       },
+       {
+        "name": "lift_0.06",
+        "commanded_mm": 60.0,
+        "achieved_mm": 60.0,
+        "drift_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "lift_0.10",
+        "commanded_mm": 100.0,
+        "achieved_mm": 100.0,
+        "drift_mm": 0.0,
+        "ok": true
+       },
+       {
+        "name": "move_up",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "move_fwd",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_back",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_left",
+        "drift_mm": 0.2,
+        "ok": true
+       },
+       {
+        "name": "move_right",
+        "drift_mm": 0.1,
+        "ok": true
+       },
+       {
+        "name": "turn_roll",
+        "drift_mm": 4.2,
+        "ok": true
+       },
+       {
+        "name": "turn_pitch",
+        "drift_mm": 1.0,
+        "ok": true
+       },
+       {
+        "name": "turn_yaw",
+        "drift_mm": 1.1,
+        "ok": true
+       },
+       {
+        "name": "hold",
+        "drift_mm": 1.1,
+        "slip_mm_s": 0.0,
+        "finger_contacts": 2,
+        "contact_force_N": 15.2,
+        "ok": true
+       }
+      ],
+      "grip": {
+       "fingers": [
+        "index",
+        "thumb"
+       ],
+       "force_N": 14.7
+      },
+      "lifts": [
+       {
+        "commanded_mm": 60.0,
+        "achieved_mm": 60.0
+       },
+       {
+        "commanded_mm": 100.0,
+        "achieved_mm": 100.0
+       }
+      ]
+     }
+    },
+    "rejected": [
+     "pinch at the centre of mass (21.9 mm up): lifts and survives every stress phase, but at the 45 deg insert its thumb hit the slot divider and the table (plan collision 6 mm)",
+     "pinch 34 mm up (stage3_r4's height): fails to seat in the stress test with the realistic contact friction",
+     "pinch 30 mm up with idle fingers curled 65%: the pinky reached the table at the insert"
+    ],
+    "note": "the grasp of subgoal 1, held"
+   },
+   "goal_predicates": [
+    {
+     "class": "insertion_depth",
+     "bodies": {
+      "A": "battery_battery",
+      "B": "holder_battery_holder"
+     }
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "stage1_indices": [
+    3
+   ],
+   "frames": [
+    271,
+    324
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 3,
+    "motion": "release",
+    "side": "right",
+    "object": "battery_battery",
+    "retreat_m": 0.12,
+    "retreat_dir": [
+     0,
+     0,
+     1
+    ]
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0363,
+      0.3563,
+      0.0047
+     ],
+     "object_end": [
+      -0.0437,
+      0.3585,
+      0.0064
+     ],
+     "object_moved_m": 0.0079,
+     "object_rotated_deg": 54.63,
+     "object_tilt_end_deg": 74.8,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.0104,
+     "support_contacts": 5,
+     "max_hand_pen_mm": 0.28,
+     "max_object_pen_mm": 2.96,
+     "max_track_pos_mm": 2.7,
+     "max_track_rot_deg": 0.0,
+     "plan_collisions": [
+      {
+       "frame": 6,
+       "depth_mm": 7.1,
+       "geoms": [
+        "robot_right_collision_hand_right_index_1",
+        "holder_battery_holder_sidewall_a"
+       ],
+       "kind": "hand-object"
+      },
+      {
+       "frame": 9,
+       "depth_mm": 5.5,
+       "geoms": [
+        "robot_right_collision_hand_right_index_0",
+        "holder_battery_holder_floor"
+       ],
+       "kind": "hand-object"
+      }
+     ],
+     "plan_collision_warning": "the plan sweeps a hand through a bystander; physics resolved it by compliance"
+    }
+   },
+   "pose": {
+    "source": "no hand pose: the hand opens and withdraws",
+    "stress_tests": {}
+   },
+   "goal_predicates": [
+    {
+     "class": "insertion_depth",
+     "bodies": {
+      "A": "battery_battery",
+      "B": "holder_battery_holder"
+     }
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    325,
+    451
+   ],
+   "motion": "hold",
+   "side": "left",
+   "object": "holder_battery_holder",
+   "plan": {
+    "index": 4,
+    "motion": "hold",
+    "side": "left",
+    "object": "holder_battery_holder",
+    "pose": "poses/left_brace_v9.json",
+    "hand_scene": "poses/hs_left_holder_after.json",
+    "approach_m": 0.05
+   },
+   "expect": {
+    "in_hand": true,
+    "stays_put": true,
+    "min_links": 1,
+    "pads": {
+     "index": {
+      "point": [
+       -0.06693713032639215,
+       0.35697512951764104,
+       0.011659260426816885
+      ],
+      "normal": [
+       0.33719132022287396,
+       0.1796842593377936,
+       0.9241296340409088
+      ]
+     },
+     "middle": {
+      "point": [
+       -0.07655055951688389,
+       0.3751317814209894,
+       0.011636644910631266
+      ],
+      "normal": [
+       0.33719132022287396,
+       0.1796842593377936,
+       0.9241296340409088
+      ]
+     }
+    },
+    "pads_at_label": "left: hold holder_battery_holder",
+    "hand": "left",
+    "object": "holder_battery_holder",
+    "involved": [
+     "holder_battery_holder"
+    ],
+    "untouched": [],
+    "pads_at_rel": 126
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "in_hand": true,
+     "pads_touching": true,
+     "stays_put": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0439,
+      0.3738,
+      -0.0
+     ],
+     "object_end": [
+      -0.0503,
+      0.3805,
+      -0.0011
+     ],
+     "object_moved_m": 0.0093,
+     "object_rotated_deg": 3.14,
+     "object_tilt_end_deg": 1.5,
+     "hand_links_touching": [
+      "robot_left_left_index_DP",
+      "robot_left_left_middle_DP"
+     ],
+     "pads": {
+      "index": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 8.2
+      },
+      "middle": {
+       "touching": true,
+       "in_contact": true,
+       "side_ok": true,
+       "offset_mm": 8.2
+      }
+     },
+     "pads_frame": 126,
+     "max_hand_pen_mm": 0.48,
+     "max_object_pen_mm": 1.95,
+     "max_track_pos_mm": 3.0,
+     "max_track_rot_deg": 2.3
+    }
+   },
+   "pose": {
+    "file": "poses/left_brace_v9.json",
+    "source": "reachable_contact_search (flat_hand_pose)",
+    "hand_scene": "poses/hs_left_holder_after.json",
+    "derivation": "index and middle pads on the top of the holder's spring-end wall over slots 0-1 (away from the cell in slot 2), fingers along the slots pitched 20 deg so only the fingertips press, the human's bracing end (the left hand holds the holder's near end, 9.8-13.5 s); reach-checked for the left arm in the post-release state",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.29,
+      "penetration_mm": 0.01,
+      "floor_penetration_mm": 0.0,
+      "approach_axis": [
+       0.3372,
+       0.1809,
+       0.9239
+      ],
+      "open_targets": {
+       "thumb_CMC_FE": -0.1745,
+       "thumb_CMC_AA": -0.3491,
+       "thumb_MCP_FE": -0.5236,
+       "thumb_MCP_AA": -0.3491,
+       "thumb_IP": 0.0,
+       "index_MCP_FE": -0.17453293,
+       "index_MCP_AA": 0.0,
+       "index_PIP": 0.0,
+       "index_DIP": 0.0,
+       "middle_MCP_FE": -0.17453293,
+       "middle_MCP_AA": 0.0,
+       "middle_PIP": 0.0,
+       "middle_DIP": 0.0,
+       "ring_MCP_FE": 1.5708,
+       "ring_MCP_AA": 0.0,
+       "ring_PIP": 1.7453,
+       "ring_DIP": 1.3963,
+       "pinky_CMC": 0.2618,
+       "pinky_MCP_FE": 1.5708,
+       "pinky_MCP_AA": 0.0,
+       "pinky_PIP": 1.7453,
+       "pinky_DIP": 1.3963
+      }
+     }
+    }
+   }
+  },
+  {
+   "index": 4,
+   "stage1_indices": [
+    4
+   ],
+   "frames": [
+    452,
+    590
+   ],
+   "motion": "press",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 4,
+    "motion": "press",
+    "side": "right",
+    "object": "battery_battery",
+    "pose": "poses/right_flat_push_v10.json",
+    "hand_scene": "poses/hs_right_battery_v10.json",
+    "direction": [
+     -0.3636,
+     -0.3165,
+     -0.8761
+    ],
+    "distance_m": 0.016,
+    "back": true,
+    "wrist_force_n": [
+     20.0,
+     20.0,
+     20.0
+    ],
+    "reanchor": "translate",
+    "expect": {
+     "displacement": {
+      "dir": [
+       -0.3636,
+       -0.3165,
+       -0.8761
+      ],
+      "min_m": 0.002
+     }
+    }
+   },
+   "expect": {
+    "displacement": {
+     "dir": [
+      -0.3636,
+      -0.3165,
+      -0.8761
+     ],
+     "min_m": 0.002
+    },
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "displaced": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0495,
+      0.3643,
+      0.005
+     ],
+     "object_end": [
+      -0.0579,
+      0.3651,
+      0.0054
+     ],
+     "object_moved_m": 0.0084,
+     "object_rotated_deg": 18.97,
+     "object_tilt_end_deg": 89.89,
+     "displacement_along_m": 0.0025,
+     "max_hand_pen_mm": 0.64,
+     "max_object_pen_mm": 3.71,
+     "max_track_pos_mm": 3.3,
+     "max_track_rot_deg": 0.8
+    }
+   },
+   "pose": {
+    "file": "poses/right_flat_push_v10.json",
+    "source": "reachable_contact_search (flat_hand_pose)",
+    "hand_scene": "poses/hs_right_battery_v10.json",
+    "derivation": "index and middle pads on the top rim of the cell's + end, contact normal 45 deg between the cell's up direction and its + end face; the press drives the wrist along minus that normal (down and toward the spring) under a 20 N wrist cap: the spring compresses and the + end drops past the end contact (the human 'presses and rolls the cell down into the slot')",
+    "stress_tests": {
+     "grasp_approach_open_test": {
+      "ok": true,
+      "object_nudged_mm": 0.02,
+      "penetration_mm": 0.0,
+      "floor_penetration_mm": 0.0,
+      "approach_axis": [
+       0.1583,
+       0.4773,
+       0.8644
+      ],
+      "open_targets": {
+       "thumb_CMC_FE": -0.1745,
+       "thumb_CMC_AA": -0.3491,
+       "thumb_MCP_FE": -0.5236,
+       "thumb_MCP_AA": -0.3491,
+       "thumb_IP": 0.0,
+       "index_MCP_FE": -0.17453293,
+       "index_MCP_AA": 0.0,
+       "index_PIP": 0.0,
+       "index_DIP": 0.0,
+       "middle_MCP_FE": -0.17453293,
+       "middle_MCP_AA": 0.0,
+       "middle_PIP": 0.0,
+       "middle_DIP": 0.0,
+       "ring_MCP_FE": 1.5708,
+       "ring_MCP_AA": 0.0,
+       "ring_PIP": 1.7453,
+       "ring_DIP": 1.3963,
+       "pinky_CMC": 0.2618,
+       "pinky_MCP_FE": 1.5708,
+       "pinky_MCP_AA": 0.0,
+       "pinky_PIP": 1.7453,
+       "pinky_DIP": 1.3963
+      }
+     },
+     "pregrasp_clearance_test": {
+      "ok": true,
+      "retract_m": 0.0,
+      "clearance_mm": 5.31,
+      "open_targets": {
+       "thumb_CMC_FE": -0.1745,
+       "thumb_CMC_AA": -0.3491,
+       "thumb_MCP_FE": -0.5236,
+       "thumb_MCP_AA": -0.3491,
+       "thumb_IP": 0.0,
+       "index_MCP_FE": -0.17453293,
+       "index_MCP_AA": 0.0,
+       "index_PIP": 0.0,
+       "index_DIP": 0.0,
+       "middle_MCP_FE": -0.17453293,
+       "middle_MCP_AA": 0.0,
+       "middle_PIP": 0.0,
+       "middle_DIP": 0.0,
+       "ring_MCP_FE": 1.5708,
+       "ring_MCP_AA": 0.0,
+       "ring_PIP": 1.7453,
+       "ring_DIP": 1.3963,
+       "pinky_CMC": 0.2618,
+       "pinky_MCP_FE": 1.5708,
+       "pinky_MCP_AA": 0.0,
+       "pinky_PIP": 1.7453,
+       "pinky_DIP": 1.3963
+      },
+      "approach": [
+       0.15825204982031668,
+       0.4772520781521048,
+       0.8643996428881524
+      ],
+      "curled": [
+       "thumb",
+       "ring",
+       "pinky"
+      ]
+     }
+    }
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    591,
+    643
+   ],
+   "motion": "release",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 5,
+    "motion": "release",
+    "side": "right",
+    "object": "battery_battery",
+    "retreat_m": 0.08,
+    "retreat_dir": [
+     0,
+     0,
+     1
+    ]
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "right",
+    "object": "battery_battery",
+    "involved": [
+     "battery_battery"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0579,
+      0.365,
+      0.0053
+     ],
+     "object_end": [
+      -0.0537,
+      0.3592,
+      0.0045
+     ],
+     "object_moved_m": 0.0072,
+     "object_rotated_deg": 10.96,
+     "object_tilt_end_deg": 86.69,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0012,
+     "lowest_point_z": -0.0167,
+     "support_contacts": 10,
+     "max_hand_pen_mm": 0.22,
+     "max_object_pen_mm": 2.94,
+     "max_track_pos_mm": 2.0,
+     "max_track_rot_deg": 0.5
+    }
+   },
+   "pose": {
+    "source": "no hand pose: the hand opens and withdraws",
+    "stress_tests": {}
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    644,
+    696
+   ],
+   "motion": "release",
+   "side": "left",
+   "object": "holder_battery_holder",
+   "plan": {
+    "index": 5,
+    "motion": "release",
+    "side": "left",
+    "object": "holder_battery_holder",
+    "retreat_m": 0.07,
+    "retreat_dir": [
+     -0.3,
+     -0.3,
+     0.9
+    ]
+   },
+   "expect": {
+    "released": true,
+    "at_rest": true,
+    "supported": true,
+    "hand": "left",
+    "object": "holder_battery_holder",
+    "involved": [
+     "holder_battery_holder"
+    ],
+    "untouched": []
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "released": true,
+     "at_rest": true,
+     "supported": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "object_start": [
+      -0.0468,
+      0.3778,
+      -0.0014
+     ],
+     "object_end": [
+      -0.0469,
+      0.3752,
+      -0.0
+     ],
+     "object_moved_m": 0.0029,
+     "object_rotated_deg": 3.78,
+     "object_tilt_end_deg": 0.02,
+     "hand_contacts_end": 0,
+     "moved_in_last_window_m": 0.0,
+     "lowest_point_z": -0.034,
+     "support_contacts": 21,
+     "max_hand_pen_mm": 0.19,
+     "max_object_pen_mm": 2.78,
+     "max_track_pos_mm": 2.1,
+     "max_track_rot_deg": 0.4
+    }
+   },
+   "pose": {
+    "source": "no hand pose: the hand opens and withdraws",
+    "stress_tests": {}
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    697,
+    757
+   ],
+   "motion": "home",
+   "side": "left",
+   "object": "holder_battery_holder",
+   "plan": {
+    "index": 5,
+    "motion": "home",
+    "side": "left"
+   },
+   "expect": {
+    "object": null,
+    "hand": "left",
+    "involved": [],
+    "untouched": [
+     "holder_battery_holder",
+     "battery_battery"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:holder_battery_holder": true,
+     "untouched:battery_battery": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "holder_battery_holder": {
+       "moved_m": 0.0001,
+       "rotated_deg": 0.18
+      },
+      "battery_battery": {
+       "moved_m": 0.0007,
+       "rotated_deg": 0.85
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 1.47,
+     "max_track_pos_mm": 1.2,
+     "max_track_rot_deg": 2.5
+    }
+   },
+   "pose": {
+    "source": "no hand pose: the arm returns home in joint space",
+    "stress_tests": {}
+   }
+  },
+  {
+   "index": 5,
+   "stage1_indices": [
+    5
+   ],
+   "frames": [
+    758,
+    816
+   ],
+   "motion": "home",
+   "side": "right",
+   "object": "battery_battery",
+   "plan": {
+    "index": 5,
+    "motion": "home",
+    "side": "right"
+   },
+   "expect": {
+    "object": null,
+    "hand": "right",
+    "involved": [],
+    "untouched": [
+     "holder_battery_holder",
+     "battery_battery"
+    ]
+   },
+   "outcome": {
+    "ok": true,
+    "failed": [],
+    "checks": {
+     "untouched:holder_battery_holder": true,
+     "untouched:battery_battery": true,
+     "hand_penetration": true,
+     "object_penetration": true,
+     "servo_tracking": true
+    },
+    "measured": {
+     "untouched": {
+      "holder_battery_holder": {
+       "moved_m": 0.0001,
+       "rotated_deg": 0.19
+      },
+      "battery_battery": {
+       "moved_m": 0.0003,
+       "rotated_deg": 0.32
+      }
+     },
+     "max_hand_pen_mm": 0.0,
+     "max_object_pen_mm": 1.07,
+     "max_track_pos_mm": 1.8,
+     "max_track_rot_deg": 0.8
+    }
+   },
+   "pose": {
+    "source": "no hand pose: the arm returns home in joint space",
+    "stress_tests": {}
+   }
+  }
+ ],
+ "episode": {
+  "trajectory": "trajectory.npz",
+  "phases": "phases.json",
+  "sim_video": "sim_video.mp4",
+  "fps": 30.0,
+  "n_frames": 817,
+  "execution_dir": "ep_v23"
+ },
+ "stage4": {
+  "task_dir": "stage4_task",
+  "config": "stage4_task/stage4.json"
+ },
+ "checks": {
+  "episode_physics_check": {
+   "ok": true,
+   "failed": []
+  },
+  "robot_self_collision_check": {
+   "ok": true
+  },
+  "arm_reach_check": {
+   "ok": true,
+   "sides": {
+    "left": {
+     "pos_err_mm": {
+      "max": 0.5,
+      "mean": 0.03,
+      "worst_frame": 396,
+      "label": "left: descend on holder_battery_holder #4.1"
+     },
+     "tilt_err_deg": {
+      "max": 0.96,
+      "mean": 0.02,
+      "worst_frame": 740,
+      "label": "left: return home #5.3"
+     }
+    },
+    "right": {
+     "pos_err_mm": {
+      "max": 0.5,
+      "mean": 0.05,
+      "worst_frame": 494,
+      "label": "right: approach for push #4.2"
+     },
+     "tilt_err_deg": {
+      "max": 0.99,
+      "mean": 0.03,
+      "worst_frame": 174,
+      "label": "right: carry battery_battery #2"
+     }
+    }
+   }
+  },
+  "stage4_handoff_check": {
+   "ok": true,
+   "issues": []
+  }
+ },
+ "notes": [
+  "Maintainer rebuild for the release example on the rebuilt Stage 2 scene (three-slot holder): every subgoal re-executed with the current executor and realistic contact friction. stage3_r4's plan structure was the starting point (tilted insert, let-go, rim push with a left brace); its cell pinch (34 mm up) no longer seats with the realistic friction and was replaced.",
+  "Subgoal 3 (insert): the cell is carried tilted 60 deg (its - end low) into slot 2, the near slot (spring at the holder's lower-left end), with the top edge of its - face pressing the spring's contact plate 1.5 mm, then let go: it drops into the slot with its - end on the slot floor and its + end resting on the far end wall (not yet seated, as the Stage 1 goal allows). A deeper hold is impossible for this hand: at 45 deg and less the curled fingers straddling the cell reach the slot divider, the side wall and the table.",
+  "Subgoal 4 (both): the left hand braces the holder's spring-end wall with two fingertips while the right hand presses the + end rim down and toward the spring (wrist force capped at 20 N): the spring compresses and the cell drops in and lies flat between the contacts (spring 2.4 mm compressed).",
+  "Subgoal 5 (both): the right hand lifts off the seated cell while the left still holds the holder, then the left lets go; both arms return home and the holder rests with the cell seated.",
+  "The free holder slides and turns on the cloth when the cell drops in at the let-go and under the press (10 mm / 8 deg over the episode); the human's holder also shifts during the press.",
+  "Stage 2 was rebuilt during this pass (three-slot holder; its rigid decorative leads dropped after they sank 12 mm into the tabletop when the holder tilted at the let-go: object_visual_penetration_audit); the episode was re-executed on the rebuilt scene.",
+  "Both arm stations are moved -0.075 m (place_arm_stations); every tool, audit and the Stage 4 package use scene_stations.xml."
+ ],
+ "source": "examples/asset_reuse"
+}

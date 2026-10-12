@@ -1,0 +1,9 @@
+# Stage 4 dependencies that are not already pinned by VOID's own requirements.txt
+# (install third_party/void-model/requirements.txt first, see setup.sh).
+mujoco==3.10.0        # the physics replay must re-simulate with the MuJoCo Stage 3 executed the episode with (3.15 settles dense contacts differently)
+bpy==5.0.1            # Blender as a Python module: no separate Blender install needed (Python 3.11 only)
+huggingface_hub
+setuptools<81         # SAM 3 imports pkg_resources, which setuptools 81 removed
+pycocotools           # imported by SAM 3 but not declared by it
+scipy                 # the physics replay uses the DexAgent tool library's executor and outcome checks
+trimesh               # the physics replay's visible-object collision audit (object_visual_penetration_audit) builds mesh solids

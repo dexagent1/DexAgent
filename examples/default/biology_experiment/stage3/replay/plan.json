@@ -1,0 +1,407 @@
+{
+ "subgoals": [
+  {
+   "index": 1,
+   "step": 1,
+   "motion": "grasp_lift",
+   "side": "left",
+   "object": "held_tube",
+   "pose": "${REPLAY}/poses/left_tube.json",
+   "hand_scene": "${REPLAY}/poses/hs_left_tube.json",
+   "lift_m": 0.1,
+   "press_depth_rad": 0.0
+  },
+  {
+   "index": 1,
+   "step": 2,
+   "motion": "carry",
+   "side": "left",
+   "object": "held_tube",
+   "target_pos": [
+    -0.16,
+    0.28,
+    0.06
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    0
+   ],
+   "duration_s": 1.6
+  },
+  {
+   "index": 2,
+   "step": 1,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "pipette_pipette",
+   "pose": "${REPLAY}/poses/right_pipette_p0.json",
+   "hand_scene": "${REPLAY}/poses/hs_right_pipette.json",
+   "approach_m": 0.1,
+   "lift_path": [
+    [
+     0.0008,
+     -0.0012,
+     0.0058
+    ],
+    [
+     -0.0005980000000000002,
+     -0.00047099999999999963,
+     0.0117
+    ],
+    [
+     0.010202000000000001,
+     -0.015671,
+     0.0874
+    ]
+   ],
+   "open_frac": 0.3,
+   "duration_s": 2.0
+  },
+  {
+   "index": 3,
+   "step": 1,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "target_pos": [
+    0.2165,
+    0.3705,
+    0.135
+   ],
+   "turn": {
+    "axis": [
+     0,
+     0,
+     1
+    ],
+    "deg": -15
+   },
+   "arm_path": "joint",
+   "duration_s": 1.0
+  },
+  {
+   "index": 3,
+   "step": 2,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "over": "tip_box_tipbox_tip",
+   "offset": [
+    -0.0009,
+    -0.0005,
+    0
+   ],
+   "height_m": 0.023,
+   "target_euler_deg": [
+    0,
+    6,
+    -100
+   ],
+   "duration_s": 2.0
+  },
+  {
+   "index": 3,
+   "step": 3,
+   "motion": "insert",
+   "side": "right",
+   "object": "pipette_pipette",
+   "over": "tip_box_tipbox_tip",
+   "offset": [
+    -0.0009,
+    -0.0005,
+    0
+   ],
+   "height_m": -0.0105,
+   "target_euler_deg": [
+    0,
+    6,
+    -100
+   ],
+   "duration_s": 2.0
+  },
+  {
+   "index": 3,
+   "step": 4,
+   "motion": "grasp_lift",
+   "side": "right",
+   "object": "pipette_pipette",
+   "with": "tip_box_tipbox_tip",
+   "lift_m": 0.065
+  },
+  {
+   "index": 4,
+   "step": 1,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "over": "tip_box_tipbox_tip",
+   "offset": [
+    -0.0009,
+    -0.0005,
+    0
+   ],
+   "height_m": 0.023,
+   "with": "tip_box_tipbox_tip",
+   "duration_s": 0.8
+  },
+  {
+   "index": 4,
+   "step": 2,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "over": "rack_tube_srctube",
+   "offset": [
+    0.0,
+    0.0,
+    0
+   ],
+   "height_m": 0.07,
+   "with": "tip_box_tipbox_tip",
+   "target_euler_deg": [
+    0,
+    0,
+    -100
+   ],
+   "duration_s": 2.0
+  },
+  {
+   "index": 4,
+   "step": 3,
+   "motion": "insert",
+   "side": "right",
+   "object": "pipette_pipette",
+   "over": "rack_tube_srctube",
+   "offset": [
+    0.0,
+    0.0,
+    0
+   ],
+   "height_m": 0.035,
+   "with": "tip_box_tipbox_tip",
+   "duration_s": 1.2
+  },
+  {
+   "index": 4,
+   "step": 4,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "over": "rack_tube_srctube",
+   "offset": [
+    0.0,
+    0.0,
+    0
+   ],
+   "height_m": 0.079,
+   "with": "tip_box_tipbox_tip",
+   "duration_s": 1.0
+  },
+  {
+   "index": 5,
+   "step": 1,
+   "motion": "carry",
+   "side": "left",
+   "object": "held_tube",
+   "target_pos": [
+    0.02,
+    0.32,
+    0.07
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    0
+   ],
+   "duration_s": 1.5
+  },
+  {
+   "index": 5,
+   "step": 2,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "over": "held_tube",
+   "offset": [
+    0,
+    0,
+    0
+   ],
+   "height_m": 0.0736,
+   "with": "tip_box_tipbox_tip",
+   "target_euler_deg": [
+    0,
+    0,
+    -100
+   ],
+   "duration_s": 2.0
+  },
+  {
+   "index": 5,
+   "step": 3,
+   "motion": "both",
+   "sync": "start",
+   "hands": {
+    "left": {
+     "motion": "wait",
+     "object": "held_tube",
+     "duration_s": 1.2
+    },
+    "right": {
+     "motion": "insert",
+     "object": "pipette_pipette",
+     "over": "held_tube",
+     "offset": [
+      0,
+      0,
+      0
+     ],
+     "height_m": 0.052,
+     "with": "tip_box_tipbox_tip",
+     "duration_s": 1.2
+    }
+   }
+  },
+  {
+   "index": 5,
+   "step": 4,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "over": "held_tube",
+   "offset": [
+    0,
+    0,
+    0
+   ],
+   "height_m": 0.0736,
+   "with": "tip_box_tipbox_tip",
+   "duration_s": 1.0
+  },
+  {
+   "index": 6,
+   "step": 1,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "target_pos": [
+    0.15,
+    0.3,
+    0.25
+   ],
+   "with": "tip_box_tipbox_tip",
+   "duration_s": 2.0
+  },
+  {
+   "index": 6,
+   "step": 2,
+   "motion": "carry",
+   "side": "left",
+   "object": "held_tube",
+   "target_pos": [
+    0.03,
+    0.24,
+    0.1
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    0
+   ],
+   "duration_s": 1.5
+  },
+  {
+   "index": 6,
+   "step": 3,
+   "motion": "place",
+   "side": "left",
+   "object": "held_tube",
+   "offset": [
+    -0.0533,
+    0.0086,
+    0
+   ],
+   "target_euler_deg": [
+    0,
+    0,
+    0
+   ],
+   "via_height": 0.27,
+   "duration_s": 2.0,
+   "over": "tube_rack_rack",
+   "height_m": -0.05
+  },
+  {
+   "index": 7,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "with": "tip_box_tipbox_tip",
+   "step": 1,
+   "target_pos": [
+    0.25,
+    0.24,
+    0.14
+   ],
+   "target_euler_deg": [
+    89.953,
+    69.945,
+    110.058
+   ],
+   "duration_s": 2.2
+  },
+  {
+   "index": 7,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "with": "tip_box_tipbox_tip",
+   "step": 2,
+   "target_pos": [
+    0.25,
+    0.24,
+    0.07
+   ],
+   "target_euler_deg": [
+    89.953,
+    69.945,
+    110.058
+   ],
+   "duration_s": 1.5
+  },
+  {
+   "index": 7,
+   "motion": "carry",
+   "side": "right",
+   "object": "pipette_pipette",
+   "with": "tip_box_tipbox_tip",
+   "step": 3,
+   "target_pos": [
+    0.25,
+    0.24,
+    0.02
+   ],
+   "target_euler_deg": [
+    89.953,
+    69.945,
+    110.058
+   ],
+   "duration_s": 1.5
+  },
+  {
+   "index": 7,
+   "motion": "release",
+   "side": "right",
+   "object": "pipette_pipette",
+   "with": "tip_box_tipbox_tip",
+   "retreat_dir": [
+    0,
+    -0.4,
+    0.9
+   ],
+   "retreat_m": 0.06,
+   "step": 4
+  }
+ ]
+}

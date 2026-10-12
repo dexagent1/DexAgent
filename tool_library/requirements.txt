@@ -1,0 +1,16 @@
+# the constructors, scene checks, grasp and trajectory tools
+mujoco==3.10.0        # pinned simulation version; physics differs across versions
+numpy>=1.26,<2
+scipy
+trimesh
+opencv-python<4.12    # 4.12+ needs numpy>=2
+pillow
+pyyaml
+imageio
+imageio-ffmpeg
+h5py
+scikit-image
+matplotlib
+sympy
+# model-backed perception tools import their own package (SAM 3, SAM 2, HaMeR, SAM 3D, VOID, torch)
+# and name it when it is missing; see each tool's `requirements` field

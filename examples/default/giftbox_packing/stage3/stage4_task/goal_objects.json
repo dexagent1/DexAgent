@@ -1,0 +1,19 @@
+{
+ "objects": [
+  {
+   "id": "gift_box",
+   "type": "articulated",
+   "root_body": "gift_box_gift_box",
+   "bodies": [
+    "gift_box_gift_box",
+    "gift_box_gift_box_lidb",
+    "gift_box_gift_box_lidflapb"
+   ],
+   "joints": {
+    "lid": "gift_box_gift_box_lid",
+    "skirt": "gift_box_gift_box_lidflap",
+    "free": "gift_box_gift_box_free"
+   }
+  }
+ ]
+}

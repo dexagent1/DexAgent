@@ -1,0 +1,283 @@
+{
+ "name": "stage3",
+ "scene": "../../stage2/scene.xml",
+ "trajectory": "trajectory.npz",
+ "human_video": "human_video.mp4",
+ "output_dir": "outputs",
+ "num_samples": 3,
+ "seed": 0,
+ "robot": {
+  "body_prefix": "robot_",
+  "end_effectors": {
+   "left": "robot_left_left_base_yaw",
+   "right": "robot_right_right_base_yaw"
+  },
+  "init_jitter_rad": 0.05
+ },
+ "randomize": {
+  "objects": {
+   "gift_box_gift_box": {
+    "dx": [
+     -0.02,
+     0.02
+    ],
+    "dy": [
+     -0.02,
+     0.02
+    ],
+    "dyaw_deg": [
+     -5.0,
+     5.0
+    ]
+   }
+  }
+ },
+ "segments": {
+  "left": [
+   {
+    "phases": [
+     "right: reach to hold gift_box_gift_box #1.1",
+     "right: descend on gift_box_gift_box #1.1",
+     "right: close on gift_box_gift_box #1.1",
+     "right: hold gift_box_gift_box #1.1"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "left: reach for gift_box_gift_box_lidb #1.2"
+    ],
+    "blend": [
+     "world",
+     "gift_box_gift_box"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on gift_box_gift_box_lidb #1.2",
+     "left: close on gift_box_gift_box_lidb #1.2",
+     "left: grip gift_box_gift_box_lidb #1.2",
+     "left: close gift_box_gift_box_lidb #1.2",
+     "right: let go of gift_box_gift_box #1.3",
+     "right: retreat #1.3",
+     "right: return home #1.4",
+     "left: close gift_box_gift_box_lidb #2.1",
+     "left: let go #2.1",
+     "left: retreat #2.1",
+     "left: reach for gift_box_gift_box_lidb #2.2",
+     "left: descend on gift_box_gift_box_lidb #2.2",
+     "left: close on gift_box_gift_box_lidb #2.2",
+     "left: grip gift_box_gift_box_lidb #2.2",
+     "left: press gift_box_gift_box_lidb #2.2",
+     "right: reach for gift_box_gift_box_lidb #3.1",
+     "right: descend on gift_box_gift_box_lidb #3.1",
+     "right: close on gift_box_gift_box_lidb #3.1",
+     "right: grip gift_box_gift_box_lidb #3.1",
+     "right: press gift_box_gift_box_lidb #3.1",
+     "left: let go of gift_box_gift_box_lidb #3.2",
+     "left: retreat #3.2",
+     "right: let go of gift_box_gift_box_lidb #3.3",
+     "right: retreat #3.3",
+     "right: wait #3.4"
+    ],
+    "anchor": "gift_box_gift_box"
+   },
+   {
+    "phases": [
+     "left: return home | right: return home #4.1"
+    ],
+    "blend": [
+     "gift_box_gift_box",
+     "world"
+    ]
+   }
+  ],
+  "right": [
+   {
+    "phases": [
+     "right: reach to hold gift_box_gift_box #1.1"
+    ],
+    "blend": [
+     "world",
+     "gift_box_gift_box"
+    ]
+   },
+   {
+    "phases": [
+     "right: descend on gift_box_gift_box #1.1",
+     "right: close on gift_box_gift_box #1.1",
+     "right: hold gift_box_gift_box #1.1",
+     "left: reach for gift_box_gift_box_lidb #1.2",
+     "left: descend on gift_box_gift_box_lidb #1.2",
+     "left: close on gift_box_gift_box_lidb #1.2",
+     "left: grip gift_box_gift_box_lidb #1.2",
+     "left: close gift_box_gift_box_lidb #1.2",
+     "right: let go of gift_box_gift_box #1.3",
+     "right: retreat #1.3"
+    ],
+    "anchor": "gift_box_gift_box"
+   },
+   {
+    "phases": [
+     "right: return home #1.4"
+    ],
+    "blend": [
+     "gift_box_gift_box",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "left: close gift_box_gift_box_lidb #2.1",
+     "left: let go #2.1",
+     "left: retreat #2.1",
+     "left: reach for gift_box_gift_box_lidb #2.2",
+     "left: descend on gift_box_gift_box_lidb #2.2",
+     "left: close on gift_box_gift_box_lidb #2.2",
+     "left: grip gift_box_gift_box_lidb #2.2",
+     "left: press gift_box_gift_box_lidb #2.2"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: reach for gift_box_gift_box_lidb #3.1"
+    ],
+    "blend": [
+     "world",
+     "gift_box_gift_box"
+    ]
+   },
+   {
+    "phases": [
+     "right: descend on gift_box_gift_box_lidb #3.1",
+     "right: close on gift_box_gift_box_lidb #3.1",
+     "right: grip gift_box_gift_box_lidb #3.1",
+     "right: press gift_box_gift_box_lidb #3.1",
+     "left: let go of gift_box_gift_box_lidb #3.2",
+     "left: retreat #3.2",
+     "right: let go of gift_box_gift_box_lidb #3.3",
+     "right: retreat #3.3"
+    ],
+    "anchor": "gift_box_gift_box"
+   },
+   {
+    "phases": [
+     "right: wait #3.4"
+    ],
+    "blend": [
+     "gift_box_gift_box",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "left: return home | right: return home #4.1"
+    ],
+    "anchor": "world"
+   }
+  ]
+ },
+ "cameras": {
+  "width": 640,
+  "height": 480,
+  "ego": {
+   "pos": [
+    0.04409,
+    -0.26683,
+    0.57264
+   ],
+   "quat_wxyz": [
+    0.889469869807852,
+    0.4556648619877769,
+    0.02647614985468877,
+    0.02262515729304605
+   ],
+   "fovy": 38.0
+  },
+  "views": {
+   "wrist_right": {
+    "parent_body": "robot_right_right_base_yaw",
+    "pos": [
+     0.050377,
+     0.001601,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.15285697798110676,
+     0.7024578988116494,
+     -0.6789659021956478,
+     -0.14897297854059297
+    ],
+    "fovy": 100.0
+   },
+   "wrist_left": {
+    "parent_body": "robot_left_left_base_yaw",
+    "pos": [
+     0.050377,
+     -0.0016,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.14897395634728527,
+     0.6789658010477727,
+     -0.7024577941640913,
+     -0.15285695520947942
+    ],
+    "fovy": 100.0
+   }
+  }
+ },
+ "table": {
+  "top_z": 0.0,
+  "center": [
+   0.0,
+   1.125
+  ],
+  "half_size": [
+   1.8,
+   1.075
+  ]
+ },
+ "inpaint": {
+  "erase_prompts": [
+   "hand",
+   "arm",
+   "red gift box"
+  ],
+  "background_prompt": "An empty white tablecloth on a table, nothing on it, static background."
+ },
+ "render": {
+  "stride": 2,
+  "samples": 32,
+  "chunks": 4,
+  "exclude_geoms": [
+   "^table",
+   "groundplane",
+   "floor",
+   "^g_table"
+  ],
+  "materials": [
+   {
+    "match": "^robot_\\w+_arm_",
+    "preset": "yam_black"
+   },
+   {
+    "match": "^robot_",
+    "preset": "sharpa"
+   }
+  ]
+ },
+ "manifest": "trajectory_manifest.json",
+ "goal": {
+  "semantics": "scene_semantics.json",
+  "objects": "goal_objects.json"
+ },
+ "checks": {
+  "physics_replay": true
+ },
+ "physics": {
+  "rules": [],
+  "mujoco_version": "3.10.0"
+ }
+}

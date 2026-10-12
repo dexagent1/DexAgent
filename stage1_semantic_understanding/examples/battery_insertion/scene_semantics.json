@@ -1,0 +1,169 @@
+{
+  "task_prompt": "Insert the battery into the battery holder.",
+  "task_summary": "The right hand picks up the single AA battery, carries it to the black battery holder and presses it down into an empty slot against the slot's spring contact; the left hand then steadies the holder while the right hand presses and rolls the battery until it is seated.",
+  "environment": {
+    "support_surface": "white tablecloth on a table",
+    "camera": "fixed camera above the operator looking down the table"
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ]
+  },
+  "objects": [
+    {
+      "id": "battery",
+      "name": "AA battery",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "cylindrical cell, dark body with a metallic end"
+      },
+      "approximate_size": "finger-length cylinder",
+      "properties": [
+        "A small rigid cylinder picked up with a fingertip pinch and carried in one hand.",
+        "It goes into a slot of the holder lengthwise: one end is pushed against the slot's spring contact to compress it, then the other end is pressed down so the cell drops between the contacts and seats.",
+        "Once seated it is held by the spring and stays in the slot without support."
+      ],
+      "initial_state": "lying on the cloth to the right of the holder",
+      "final_state": "seated in one slot of the holder",
+      "evidence": "prompt: 'battery'; 3.7 to 4.3 s the right hand pinches and lifts it; 5 to 6.2 s it is placed into a slot; 6 to 13.5 s it is pressed and seated."
+    },
+    {
+      "id": "battery_holder",
+      "name": "black battery holder with wires",
+      "type": "articulated",
+      "role": "container",
+      "parts": [
+        "case",
+        "slots",
+        "spring_contacts",
+        "wire_leads"
+      ],
+      "appearance": {
+        "case": "black plastic, three parallel slots open on top",
+        "spring_contacts": "metal coil spring at one end of each slot, flat contact at the other",
+        "wire_leads": "red and black wires leaving one side"
+      },
+      "approximate_size": "about three AA cells side by side",
+      "properties": [
+        "A rigid open-topped case with three parallel cylindrical slots, each sized for one AA cell.",
+        "Each slot has a compressible spring contact at one end: inserting a cell compresses the spring a few millimetres, and the spring then clamps the seated cell between the contacts.",
+        "The holder is light and slides when pushed, so one hand steadies it while the other presses the cell in.",
+        "Two wire leads trail from the case onto the cloth; they do not take part in the task."
+      ],
+      "articulation": {
+        "moving_part": "spring_contacts",
+        "fixed_part": "case",
+        "joint_type": "prismatic",
+        "axis": "along each slot's length",
+        "range_observed": "a few millimetres of spring compression during insertion",
+        "state_over_video": "springs at rest -> one compressed while the cell is pushed in -> clamping the seated cell"
+      },
+      "initial_state": "lying on the cloth left of centre, all slots empty",
+      "final_state": "in about the same place, one slot holding the battery",
+      "evidence": "prompt: 'battery holder'; the black case with wires is visible in every frame; 9.8 to 13.5 s the left hand holds it while the right hand presses the cell in."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the battery.",
+      "object_refs": [
+        "battery"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests on the table at the left.",
+        "right": "Pinches the cell between thumb and fingers and lifts it."
+      },
+      "goal": "The AA battery is held clear of the table.",
+      "time_window_s": [
+        3.4,
+        4.5
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "right",
+      "action": "Carry the battery over an empty slot of the holder.",
+      "object_refs": [
+        "battery",
+        "battery_holder:slots"
+      ],
+      "motion": "carry",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Moves the cell to above the holder, aligned with a slot."
+      },
+      "goal": "The AA battery is above the opening of the slots and is roughly parallel to the slots.",
+      "time_window_s": [
+        4.5,
+        5.5
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Push one end of the battery against the spring and lower it into the slot.",
+      "object_refs": [
+        "battery",
+        "battery_holder:spring_contacts",
+        "battery_holder:slots"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Rests, then comes in to steady the holder.",
+        "right": "Presses the cell endwise into the spring and pushes the other end down into the slot."
+      },
+      "goal": "The AA battery is inside the slots and touches the spring contacts.",
+      "time_window_s": [
+        5.5,
+        9.5
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "both",
+      "action": "Steady the holder and press the battery until it is fully seated.",
+      "object_refs": [
+        "battery",
+        "battery_holder"
+      ],
+      "motion": "press",
+      "hand_roles": {
+        "left": "Holds the holder down on the cloth so it cannot slide.",
+        "right": "Presses and rolls the cell down into the slot."
+      },
+      "goal": "The AA battery is fully inside the slots when the hands withdraw.",
+      "time_window_s": [
+        9.5,
+        14.0
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "both",
+      "action": "Release and withdraw.",
+      "object_refs": [
+        "battery_holder"
+      ],
+      "motion": "release",
+      "hand_roles": {
+        "left": "Lets go of the holder.",
+        "right": "Lifts off the cell."
+      },
+      "goal": "The battery holder rests on the table without hand support and the AA battery is fully inside the slots when the hands withdraw.",
+      "time_window_s": [
+        14.0,
+        15.5
+      ]
+    }
+  ],
+  "task_success": "The AA battery is fully inside the slots and touches the spring contacts, and the battery holder rests on the table.",
+  "notes": [
+    "The holder has three slots; only one cell is inserted in this demonstration."
+  ]
+}

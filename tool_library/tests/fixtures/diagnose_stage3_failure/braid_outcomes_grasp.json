@@ -1,0 +1,21 @@
+[
+ {
+  "index": 1,
+  "motion": "grasp_lift",
+  "side": "left",
+  "object": "ribbon_ribbon_red_strandB_13",
+  "ok": false,
+  "failed": [
+   "rise",
+   "in_hand",
+   "no_slip",
+   "plan_collision"
+  ],
+  "measured": {
+   "rise_m": 0.0038,
+   "slip_in_hand_m": 0.0554,
+   "max_hand_pen_mm": 0.69,
+   "max_track_pos_mm": 3.0
+  }
+ }
+]

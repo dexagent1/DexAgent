@@ -1,0 +1,86 @@
+{
+ "hand_xml": "${SETUP}/robot/sharpa_right.xml",
+ "side": "right",
+ "objects": [
+  {
+   "name": "board",
+   "xml": "${STAGE2}/assets/board/board.xml",
+   "pos": [
+    -0.02616,
+    0.33218,
+    0.0
+   ],
+   "quat": [
+    0.9999203847601588,
+    0.0,
+    0.0,
+    0.012618404855446021
+   ]
+  },
+  {
+   "name": "eraser",
+   "xml": "${STAGE2}/assets/eraser/eraser.xml",
+   "pos": [
+    -0.29961,
+    0.30468,
+    -1e-06
+   ],
+   "quat": [
+    0.6737998856575166,
+    5.744327042581558e-16,
+    6.299441484627681e-16,
+    0.738913874607804
+   ]
+  },
+  {
+   "name": "marker",
+   "xml": "${STAGE2}/assets/marker/marker.xml",
+   "pos": [
+    0.099769,
+    0.420441,
+    0.172121
+   ],
+   "quat": [
+    -0.34202738013499834,
+    0.0061701080612531975,
+    0.004252629780840456,
+    0.9396601067111708
+   ],
+   "hold": true
+  }
+ ],
+ "floor": true,
+ "grasp_body": "marker_marker",
+ "joint_init": {
+  "marker_marker_cap_slide": -3.618893075855789e-10,
+  "marker_marker_cap_free": [
+   0.09977362096292902,
+   0.4206081749400171,
+   0.17966742931073146,
+   0.3425438018035072,
+   -0.00019357568119735344,
+   -0.0008183525687857073,
+   -0.9395014830608456
+  ]
+ },
+ "bench_scene": "${STAGE2}/scene.xml",
+ "target": "marker",
+ "target_root": "marker_marker",
+ "grasp_body_pose": {
+  "body": "marker_marker",
+  "pos": [
+   0.099834,
+   0.420533,
+   0.17962
+  ],
+  "quat_wxyz": [
+   -0.34202738013499834,
+   0.0061701080612531975,
+   0.004252629780840456,
+   0.9396601067111708
+  ]
+ },
+ "held_in_air": [
+  "marker"
+ ]
+}

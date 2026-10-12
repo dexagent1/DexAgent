@@ -1,0 +1,36 @@
+{
+ "objects": [
+  {
+   "id": "board",
+   "type": "rigid",
+   "root_body": "board_board",
+   "bodies": [
+    "board_board"
+   ]
+  },
+  {
+   "id": "marker",
+   "type": "rigid",
+   "root_body": "marker_marker",
+   "bodies": [
+    "marker_marker",
+    "marker_marker_cap_carrier",
+    "marker_marker_cap"
+   ],
+   "joints": {
+    "lift": "marker_marker_cap_slide"
+   },
+   "equalities": {
+    "engaged": "marker_marker_cap_engaged"
+   }
+  },
+  {
+   "id": "eraser",
+   "type": "rigid",
+   "root_body": "eraser_eraser",
+   "bodies": [
+    "eraser_eraser"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,82 @@
+<mujoco model="pc_case_case">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="pc_case" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <geom name="pc_case_bottom" type="box" size="0.250000 0.117500 0.002500" pos="0 0 0.00250" rgba="0.1850 0.1850 0.1880 1.0000" friction="0.9 0.02 0.002" condim="3" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_top" type="box" size="0.250000 0.117500 0.002500" pos="0 0 0.49750" rgba="0.1850 0.1850 0.1880 1.0000" friction="0.9 0.02 0.002" condim="3" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_side" type="box" size="0.250000 0.002500 0.250000" pos="0 -0.11500 0.25000" rgba="0.1850 0.1850 0.1880 1.0000" friction="0.9 0.02 0.002" condim="3" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_front" type="box" size="0.002500 0.117500 0.250000" pos="0.24750 0 0.25000" rgba="0.1850 0.1850 0.1880 1.0000" friction="0.9 0.02 0.002" condim="3" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_rear" type="box" size="0.002500 0.117500 0.250000" pos="-0.24750 0 0.25000" rgba="0.1850 0.1850 0.1880 1.0000" friction="0.9 0.02 0.002" condim="3" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_psu" type="box" size="0.095000 0.103400 0.047500" pos="0.15000 0 0.05250" rgba="0.1300 0.1200 0.1000 1.0000" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_psu_accent" type="box" size="0.066500 0.001000 0.013300" pos="0.15000 0.10340 0.05250" rgba="0.7200 0.6000 0.2200 1.0000" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_board" type="box" size="0.130000 0.002000 0.150000" pos="0.05000 -0.10850 0.27500" rgba="0.1600 0.1600 0.1800 1.0000" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_cooler" type="box" size="0.065000 0.050000 0.080000" pos="0.05000 -0.05650 0.31000" rgba="0.8800 0.8800 0.9000 1.0000" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_pipe0" type="cylinder" size="0.004 0.04000" pos="0.01360 -0.05650 0.39800" euler="90 0 0" rgba="0.75 0.74 0.72 1" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_pipe1" type="cylinder" size="0.004 0.04000" pos="0.05000 -0.05650 0.39800" euler="90 0 0" rgba="0.75 0.74 0.72 1" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_pipe2" type="cylinder" size="0.004 0.04000" pos="0.08640 -0.05650 0.39800" euler="90 0 0" rgba="0.75 0.74 0.72 1" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_ram0" type="box" size="0.002 0.004 0.055" pos="-0.03000 -0.10050 0.31000" rgba="0.3000 0.3000 0.3400 1.0000" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_ram1" type="box" size="0.002 0.004 0.055" pos="-0.03900 -0.10050 0.31000" rgba="0.3000 0.3000 0.3400 1.0000" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_ram2" type="box" size="0.002 0.004 0.055" pos="-0.04800 -0.10050 0.31000" rgba="0.3000 0.3000 0.3400 1.0000" mass="0.0001" contype="0" conaffinity="0" group="2" />
+      <geom name="pc_case_cage_plate_bot" type="box" size="0.058000 0.070500 0.003000" pos="-0.127000 0.041000 0.008000" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_plate_top" type="box" size="0.058000 0.070500 0.003000" pos="-0.127000 0.041000 0.282000" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_back" type="box" size="0.058000 0.002000 0.134000" pos="-0.127000 -0.031500 0.145000" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_postLB" type="box" size="0.005000 0.005000 0.140000" pos="-0.190000 -0.024500 0.145000" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_postLF" type="box" size="0.005000 0.005000 0.140000" pos="-0.190000 0.106500 0.145000" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_postRB" type="box" size="0.005000 0.005000 0.140000" pos="-0.064000 -0.024500 0.145000" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_postRF" type="box" size="0.005000 0.005000 0.140000" pos="-0.064000 0.106500 0.145000" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip0L" type="box" size="0.002000 0.070500 0.009750" pos="-0.183000 0.041000 0.020750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip0R" type="box" size="0.002000 0.070500 0.009750" pos="-0.071000 0.041000 0.020750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail1L" type="box" size="0.009000 0.070500 0.002000" pos="-0.176000 0.041000 0.043000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip1L" type="box" size="0.002000 0.070500 0.009750" pos="-0.183000 0.041000 0.054750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail1R" type="box" size="0.009000 0.070500 0.002000" pos="-0.078000 0.041000 0.043000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip1R" type="box" size="0.002000 0.070500 0.009750" pos="-0.071000 0.041000 0.054750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail2L" type="box" size="0.009000 0.070500 0.002000" pos="-0.176000 0.041000 0.077000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip2L" type="box" size="0.002000 0.070500 0.009750" pos="-0.183000 0.041000 0.088750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail2R" type="box" size="0.009000 0.070500 0.002000" pos="-0.078000 0.041000 0.077000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip2R" type="box" size="0.002000 0.070500 0.009750" pos="-0.071000 0.041000 0.088750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail3L" type="box" size="0.009000 0.070500 0.002000" pos="-0.176000 0.041000 0.111000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip3L" type="box" size="0.002000 0.070500 0.009750" pos="-0.183000 0.041000 0.122750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail3R" type="box" size="0.009000 0.070500 0.002000" pos="-0.078000 0.041000 0.111000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip3R" type="box" size="0.002000 0.070500 0.009750" pos="-0.071000 0.041000 0.122750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail4L" type="box" size="0.009000 0.070500 0.002000" pos="-0.176000 0.041000 0.145000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip4L" type="box" size="0.002000 0.070500 0.009750" pos="-0.183000 0.041000 0.156750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail4R" type="box" size="0.009000 0.070500 0.002000" pos="-0.078000 0.041000 0.145000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip4R" type="box" size="0.002000 0.070500 0.009750" pos="-0.071000 0.041000 0.156750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail5L" type="box" size="0.009000 0.070500 0.002000" pos="-0.176000 0.041000 0.179000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip5L" type="box" size="0.002000 0.070500 0.009750" pos="-0.183000 0.041000 0.190750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail5R" type="box" size="0.009000 0.070500 0.002000" pos="-0.078000 0.041000 0.179000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip5R" type="box" size="0.002000 0.070500 0.009750" pos="-0.071000 0.041000 0.190750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail6L" type="box" size="0.009000 0.070500 0.002000" pos="-0.176000 0.041000 0.213000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip6L" type="box" size="0.002000 0.070500 0.009750" pos="-0.183000 0.041000 0.224750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail6R" type="box" size="0.009000 0.070500 0.002000" pos="-0.078000 0.041000 0.213000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip6R" type="box" size="0.002000 0.070500 0.009750" pos="-0.071000 0.041000 0.224750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail7L" type="box" size="0.009000 0.070500 0.002000" pos="-0.176000 0.041000 0.247000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip7L" type="box" size="0.002000 0.070500 0.009750" pos="-0.183000 0.041000 0.258750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_rail7R" type="box" size="0.009000 0.070500 0.002000" pos="-0.078000 0.041000 0.247000" rgba="0.1600 0.1600 0.1700 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <geom name="pc_case_cage_lip7R" type="box" size="0.002000 0.070500 0.009750" pos="-0.071000 0.041000 0.258750" rgba="0.1000 0.1000 0.1100 1.0000" friction="0.75 0.02 0.002" condim="6" solref="0.005 1" solimp="0.99 0.999 0.001" />
+      <site name="pc_case_cage_slot0" pos="-0.127000 0.041000 0.011000" size="0.002" group="4" rgba="0 1 0 0.3" />
+      <site name="pc_case_cage_mouth0" pos="-0.127000 0.131500 0.026000" size="0.002" group="4" rgba="1 0 0 0.3" />
+      <site name="pc_case_cage_slot1" pos="-0.127000 0.041000 0.045000" size="0.002" group="4" rgba="0 1 0 0.3" />
+      <site name="pc_case_cage_mouth1" pos="-0.127000 0.131500 0.060000" size="0.002" group="4" rgba="1 0 0 0.3" />
+      <site name="pc_case_cage_slot2" pos="-0.127000 0.041000 0.079000" size="0.002" group="4" rgba="0 1 0 0.3" />
+      <site name="pc_case_cage_mouth2" pos="-0.127000 0.131500 0.094000" size="0.002" group="4" rgba="1 0 0 0.3" />
+      <site name="pc_case_cage_slot3" pos="-0.127000 0.041000 0.113000" size="0.002" group="4" rgba="0 1 0 0.3" />
+      <site name="pc_case_cage_mouth3" pos="-0.127000 0.131500 0.128000" size="0.002" group="4" rgba="1 0 0 0.3" />
+      <site name="pc_case_cage_slot4" pos="-0.127000 0.041000 0.147000" size="0.002" group="4" rgba="0 1 0 0.3" />
+      <site name="pc_case_cage_mouth4" pos="-0.127000 0.131500 0.162000" size="0.002" group="4" rgba="1 0 0 0.3" />
+      <site name="pc_case_cage_slot5" pos="-0.127000 0.041000 0.181000" size="0.002" group="4" rgba="0 1 0 0.3" />
+      <site name="pc_case_cage_mouth5" pos="-0.127000 0.131500 0.196000" size="0.002" group="4" rgba="1 0 0 0.3" />
+      <site name="pc_case_cage_slot6" pos="-0.127000 0.041000 0.215000" size="0.002" group="4" rgba="0 1 0 0.3" />
+      <site name="pc_case_cage_mouth6" pos="-0.127000 0.131500 0.230000" size="0.002" group="4" rgba="1 0 0 0.3" />
+      <site name="pc_case_cage_slot7" pos="-0.127000 0.041000 0.249000" size="0.002" group="4" rgba="0 1 0 0.3" />
+      <site name="pc_case_cage_mouth7" pos="-0.127000 0.131500 0.264000" size="0.002" group="4" rgba="1 0 0 0.3" />
+    </body>
+  </worldbody>
+</mujoco>

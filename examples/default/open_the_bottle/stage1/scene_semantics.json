@@ -1,0 +1,226 @@
+{
+  "task_prompt": "Remove the bottle cap, then pour the water from the bottle into the mug.",
+  "task_summary": "With the left hand steadying the blue bottle, the right hand unscrews the cap with repeated turns, lifts the cap and its attached drinking tube clear and sets them on the table to the right; the left hand then lifts the bottle, tilts its mouth over the grey mug as if pouring water into it, and stands it upright again.",
+  "environment": {
+    "support_surface": "white tablecloth on a table",
+    "camera": "fixed camera above the operator looking down the table; it does not move"
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ]
+  },
+  "objects": [
+    {
+      "id": "bottle",
+      "name": "blue sports bottle",
+      "type": "articulated",
+      "role": "manipulated",
+      "parts": [
+        "body",
+        "threaded_mouth",
+        "screw_cap",
+        "drinking_tube"
+      ],
+      "appearance": {
+        "body": "translucent blue plastic with a lighter blue silicone sleeve",
+        "screw_cap": "blue cap with a flip spout on top",
+        "drinking_tube": "clear tube hanging from the cap, as long as the bottle"
+      },
+      "approximate_size": "about one and a half hand-lengths tall; the mug comes up to its shoulder",
+      "properties": [
+        "The cap is attached to the bottle mouth by a screw thread: it turns about the bottle axis relative to the body for several turns before it comes free, and only then can it be lifted off.",
+        "Unscrewing needs the body to be held against rotation while the cap is turned, so this is a two-handed interaction.",
+        "A drinking tube hangs from the underside of the cap down into the body; when the cap is lifted the tube comes with it and must clear the mouth before the cap is moved aside.",
+        "The body is a rigid container with a stable base; after the cap is off it can be lifted by one hand and tilted so its open mouth points into the mug.",
+        "The bottle returns to standing upright on the table at the end."
+      ],
+      "articulation": {
+        "moving_part": "screw_cap (with drinking_tube)",
+        "fixed_part": "body",
+        "joint_type": "screw",
+        "axis": "the bottle's vertical axis",
+        "range_observed": "several full turns of the cap, then separation",
+        "state_over_video": "capped -> cap turning (5 s to 8 s) -> cap lifted off with the tube (8.5 s) -> cap set aside; body uncapped for the rest"
+      },
+      "initial_state": "standing upright left of centre, capped",
+      "final_state": "standing upright near its starting place, uncapped",
+      "evidence": "prompt: 'bottle cap', 'pour'; 4 to 8 s both hands on the bottle with the right hand twisting the cap; 8.5 to 10 s the cap and tube lifted and carried right; 11 to 14 s the body tilted over the mug; 14.5 to 16 s stood up again."
+    },
+    {
+      "id": "cap_assembly",
+      "name": "blue bottle cap with clear tube",
+      "type": "rigid",
+      "role": "manipulated",
+      "parts": [
+        "screw_cap",
+        "drinking_tube"
+      ],
+      "appearance": {
+        "screw_cap": "blue plastic",
+        "drinking_tube": "clear flexible tube"
+      },
+      "properties": [
+        "Once unscrewed it is a free object: the cap with the tube hanging from it is carried by the right hand and laid on the table.",
+        "The tube is long and flexible, so it trails below the cap while carried and lies in a curve on the table."
+      ],
+      "initial_state": "screwed onto the bottle",
+      "final_state": "lying on the table to the right of the mug, near the table's right edge",
+      "evidence": "8.5 to 10.5 s the right hand carries the cap with the tube hanging and puts it down at the right; it stays there to the end."
+    },
+    {
+      "id": "mug",
+      "name": "grey mug",
+      "type": "rigid",
+      "role": "target",
+      "appearance": {
+        "body": "grey ceramic with a printed word, a handle on the right"
+      },
+      "approximate_size": "a typical coffee mug",
+      "properties": [
+        "An open-topped rigid receptacle with a stable base; the bottle mouth is brought over its opening.",
+        "It stays on the table where it is; neither hand grasps or steadies it."
+      ],
+      "initial_state": "standing upright right of centre",
+      "final_state": "unchanged",
+      "evidence": "prompt: 'mug'; visible right of centre in every frame and never moved; 11 to 14 s the tilted bottle is held over it."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "left",
+      "action": "Hold the bottle body steady on the table.",
+      "object_refs": [
+        "bottle:body"
+      ],
+      "motion": "hold",
+      "hand_roles": {
+        "left": "Wraps around the body and keeps it upright and from turning.",
+        "right": "Approaches the cap."
+      },
+      "goal": "The body is held fixed.",
+      "time_window_s": [
+        4.5,
+        6.5
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "both",
+      "action": "Unscrew the cap with repeated turns.",
+      "object_refs": [
+        "bottle:screw_cap",
+        "bottle:body"
+      ],
+      "motion": "unscrew",
+      "hand_roles": {
+        "left": "Resists rotation of the body.",
+        "right": "Grips the cap from above, turns it counter-clockwise, releases and regrips for each turn."
+      },
+      "goal": "The thread is fully disengaged and the cap sits on the threaded mouth.",
+      "time_window_s": [
+        6.5,
+        12.0
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "both",
+      "action": "Lift the cap and its tube clear of the bottle.",
+      "object_refs": [
+        "cap_assembly",
+        "bottle:threaded_mouth"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Keeps the body upright.",
+        "right": "Lifts the cap straight up until the tube's end leaves the mouth."
+      },
+      "goal": "The cap assembly is clear of the sports bottle.",
+      "time_window_s": [
+        12.0,
+        12.5
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "right",
+      "action": "Put the cap and tube down on the table to the right.",
+      "object_refs": [
+        "cap_assembly"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Still holds the body.",
+        "right": "Carries the cap to the right side and lays it down, then lets go."
+      },
+      "goal": "The cap assembly rests on the table to the right of the mug and the sports bottle.",
+      "time_window_s": [
+        12.5,
+        13.5
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "left",
+      "action": "Lift the uncapped bottle.",
+      "object_refs": [
+        "bottle"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Lifts the body off the table.",
+        "right": "Rests near the cap."
+      },
+      "goal": "The sports bottle is held upright above the table.",
+      "time_window_s": [
+        13.5,
+        14.5
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "left",
+      "action": "Tilt the bottle mouth over the mug and hold a pouring posture.",
+      "object_refs": [
+        "bottle",
+        "mug"
+      ],
+      "motion": "pour",
+      "hand_roles": {
+        "left": "Carries the bottle over the mug and tilts it so the mouth points into the mug opening.",
+        "right": "Rests on the table at the right."
+      },
+      "goal": "Intended outcome: water transfers from the bottle into the mug.",
+      "observed_outcome": "The tilted bottle is held over the mug for about three seconds; a liquid stream or level change is not visible at this resolution.",
+      "time_window_s": [
+        14.5,
+        18.5
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "left",
+      "action": "Stand the bottle upright back on the table and release it.",
+      "object_refs": [
+        "bottle"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Returns the bottle to vertical, sets it down near its start, lets go.",
+        "right": "Rests."
+      },
+      "goal": "The sports bottle stands upright on the table without hand support.",
+      "time_window_s": [
+        18.5,
+        20.5
+      ]
+    }
+  ],
+  "task_success": "The sports bottle stands upright on the table, the cap assembly is clear of the sports bottle and lies on the table to the right of the sports bottle, and the mug has not moved.",
+  "notes": [
+    "Whether liquid actually poured cannot be confirmed from the video; the pouring posture is what the demonstration shows."
+  ]
+}

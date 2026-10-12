@@ -1,0 +1,66 @@
+<mujoco model="bowl_vessel">
+  <compiler angle="degree" autolimits="true" />
+  <option timestep="0.002" integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+    <quality shadowsize="4096" />
+  </visual>
+  <asset>
+    <material name="bowl_mat" rgba="0.3510 0.6520 0.2210 1.0000" specular="0.300" shininess="0.300" />
+    <material name="bowl_inmat" rgba="0.4200 0.7000 0.3000 1.0000" specular="0.210" shininess="0.210" />
+    <mesh name="bowl_shell" file="../../../../../_assets/8f6d4af94eb657bd42c1.obj" />
+    <mesh name="bowl_lining" file="../../../../../_assets/fdb39261c40ec44896e5.obj" />
+    <mesh name="bowl_wedge0" file="../../../../../_assets/4ea668a1157beacf3935.obj" />
+    <mesh name="bowl_wedge1" file="../../../../../_assets/1e1074aad5355450a316.obj" />
+    <mesh name="bowl_wedge2" file="../../../../../_assets/760a64f23f632fa4a899.obj" />
+    <mesh name="bowl_wedge3" file="../../../../../_assets/c2ae73f5559825f5aabc.obj" />
+    <mesh name="bowl_wedge4" file="../../../../../_assets/01f32f408e223be169cb.obj" />
+    <mesh name="bowl_wedge5" file="../../../../../_assets/26f4a802ca78ddad5980.obj" />
+    <mesh name="bowl_wedge6" file="../../../../../_assets/6c0d11b867aef8beb830.obj" />
+    <mesh name="bowl_wedge7" file="../../../../../_assets/e1a800c0db62ae8fc650.obj" />
+    <mesh name="bowl_wedge8" file="../../../../../_assets/51273560db267672fb4f.obj" />
+    <mesh name="bowl_wedge9" file="../../../../../_assets/6d8c9284b0a8fbf64b6c.obj" />
+    <mesh name="bowl_wedge10" file="../../../../../_assets/220ac2bbd0d5906def03.obj" />
+    <mesh name="bowl_wedge11" file="../../../../../_assets/b7f27cda0a347fdc7b83.obj" />
+    <mesh name="bowl_wedge12" file="../../../../../_assets/4cb4583f5d17206af6c0.obj" />
+    <mesh name="bowl_wedge13" file="../../../../../_assets/a9ee99af7a7e73a7a0d8.obj" />
+    <mesh name="bowl_wedge14" file="../../../../../_assets/9de8868294fee9a559ba.obj" />
+    <mesh name="bowl_wedge15" file="../../../../../_assets/d14d94cb1f2490313dd1.obj" />
+    <mesh name="bowl_wedge16" file="../../../../../_assets/f9d11de167647217c063.obj" />
+    <mesh name="bowl_wedge17" file="../../../../../_assets/4779292af7ad5df7451e.obj" />
+    <mesh name="bowl_wedge18" file="../../../../../_assets/ff5e5ca34b52ab8dc4e5.obj" />
+    <mesh name="bowl_wedge19" file="../../../../../_assets/533ea0d37da5f9cc8ef6.obj" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.3 0.4 -1" diffuse=".7 .7 .7" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.5 -0.3 -1" diffuse=".3 .3 .3" />
+    <body name="bowl" pos="0.000000 0.000000 0.000000" euler="0 0 0.0">
+      <freejoint name="bowl_free" />
+      <geom name="bowl_shell" type="mesh" mesh="bowl_shell" material="bowl_mat" contype="0" conaffinity="0" mass="0" group="1" />
+      <geom name="bowl_lining" type="mesh" mesh="bowl_lining" material="bowl_inmat" contype="0" conaffinity="0" mass="0" group="1" />
+      <geom name="bowl_base" type="cylinder" pos="0 0 0.00200" size="0.03900 0.00200" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge0" type="mesh" mesh="bowl_wedge0" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge1" type="mesh" mesh="bowl_wedge1" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge2" type="mesh" mesh="bowl_wedge2" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge3" type="mesh" mesh="bowl_wedge3" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge4" type="mesh" mesh="bowl_wedge4" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge5" type="mesh" mesh="bowl_wedge5" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge6" type="mesh" mesh="bowl_wedge6" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge7" type="mesh" mesh="bowl_wedge7" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge8" type="mesh" mesh="bowl_wedge8" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge9" type="mesh" mesh="bowl_wedge9" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge10" type="mesh" mesh="bowl_wedge10" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge11" type="mesh" mesh="bowl_wedge11" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge12" type="mesh" mesh="bowl_wedge12" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge13" type="mesh" mesh="bowl_wedge13" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge14" type="mesh" mesh="bowl_wedge14" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge15" type="mesh" mesh="bowl_wedge15" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge16" type="mesh" mesh="bowl_wedge16" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge17" type="mesh" mesh="bowl_wedge17" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge18" type="mesh" mesh="bowl_wedge18" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <geom name="bowl_wedge19" type="mesh" mesh="bowl_wedge19" density="1229.290" rgba="0.8000 0.2000 0.2000 0.0000" group="3" friction="1.000000 0.005000 0.000100" condim="4" />
+      <site name="bowl_rim" pos="0 0 0.05800" size="0.002" rgba="0 1 0 0" />
+      <site name="bowl_floor" pos="0 0 0.00400" size="0.002" rgba="0 0 1 0" />
+    </body>
+  </worldbody>
+</mujoco>

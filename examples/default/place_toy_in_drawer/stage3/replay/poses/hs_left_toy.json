@@ -1,0 +1,58 @@
+{
+ "hand_xml": "${SETUP}/robot/sharpa_left.xml",
+ "side": "left",
+ "objects": [
+  {
+   "name": "drawer_unit",
+   "xml": "${STAGE2}/assets/drawer_unit/drawer_unit.xml",
+   "pos": [
+    -0.08895,
+    0.89963,
+    0.0
+   ],
+   "quat": [
+    -0.06444521591655121,
+    0.0,
+    0.0,
+    0.9979212464646041
+   ]
+  },
+  {
+   "name": "toy",
+   "xml": "${STAGE2}/assets/toy/toy.xml",
+   "pos": [
+    0.10571,
+    0.69409,
+    0.0
+   ],
+   "quat": [
+    -0.509943085029702,
+    0.0,
+    0.0,
+    0.8602081434341285
+   ]
+  }
+ ],
+ "floor": true,
+ "grasp_body": "toy_toy",
+ "joint_init": {
+  "drawer_unit_drawer_unit_carcass_to_drawer_r0c0": 0.0
+ },
+ "bench_scene": "${STAGE2}/scene.xml",
+ "target": "toy",
+ "target_root": "toy_toy",
+ "grasp_body_pose": {
+  "body": "toy_toy",
+  "pos": [
+   0.10571,
+   0.69409,
+   0.0
+  ],
+  "quat_wxyz": [
+   -0.509943085029702,
+   0.0,
+   0.0,
+   0.8602081434341285
+  ]
+ }
+}

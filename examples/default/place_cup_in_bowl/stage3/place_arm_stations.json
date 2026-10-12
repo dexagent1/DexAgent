@@ -1,0 +1,76 @@
+{
+ "shift": [
+  0.0,
+  0.3
+ ],
+ "stations_moved": [
+  "left",
+  "right"
+ ],
+ "station_shifts": {
+  "left": [
+   0.0,
+   0.3,
+   0.051
+  ],
+  "right": [
+   0.0,
+   0.3,
+   0.051
+  ]
+ },
+ "table_lift_m": {
+  "left": 0.051,
+  "right": 0.051
+ },
+ "scene": "stage3/scene_stations.xml",
+ "reached": {
+  "bowl_bowl": {
+   "reached": 3,
+   "centre": false,
+   "worst_mm": 26.1
+  },
+  "cup_cup": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 46.3
+  }
+ },
+ "poses_held": [],
+ "before": {
+  "bowl_bowl": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 220.6
+  },
+  "cup_cup": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 139.5
+  }
+ },
+ "home_weld_mm_deg": {
+  "left": [
+   0.0,
+   2.6694654798162853e-15
+  ],
+  "right": [
+   0.0,
+   2.306978382188081e-15
+  ]
+ },
+ "candidates": [
+  {
+   "shift": [
+    0.0,
+    0.3
+   ],
+   "reached": 3,
+   "poses_held": 0,
+   "pose_err_mm": 0.0,
+   "all_centres": false,
+   "worst_mm": 46.3
+  }
+ ],
+ "note": "stations moved +0.300 m toward the objects; use scene_stations.xml for Stage 3 and Stage 4"
+}

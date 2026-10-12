@@ -1,0 +1,380 @@
+{
+ "name": "stage3",
+ "scene": "../scene_executed.xml",
+ "trajectory": "trajectory.npz",
+ "human_video": "human_video.mp4",
+ "output_dir": "outputs",
+ "num_samples": 3,
+ "seed": 0,
+ "robot": {
+  "body_prefix": "robot_",
+  "end_effectors": {
+   "left": "robot_left_left_base_yaw",
+   "right": "robot_right_right_base_yaw"
+  },
+  "init_jitter_rad": 0.05
+ },
+ "randomize": {
+  "objects": {
+   "disk_1_disk_1": {
+    "dx": [
+     -0.0299,
+     0.0299
+    ],
+    "dy": [
+     -0.0299,
+     0.0299
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ],
+    "carrier": "right",
+    "release": "right: let go of disk_1_disk_1 #2.2"
+   },
+   "disk_2_disk_2": {
+    "dx": [
+     -0.0195,
+     0.0195
+    ],
+    "dy": [
+     -0.0195,
+     0.0195
+    ],
+    "dyaw_deg": [
+     -9.8,
+     9.8
+    ],
+    "carrier": "right",
+    "release": "right: let go of disk_2_disk_2 #5.2"
+   },
+   "disk_3_disk_3": {
+    "dx": [
+     -0.0195,
+     0.0195
+    ],
+    "dy": [
+     -0.0195,
+     0.0195
+    ],
+    "dyaw_deg": [
+     -9.8,
+     9.8
+    ],
+    "carrier": "right",
+    "release": "right: let go of disk_3_disk_3 #8.2"
+   }
+  }
+ },
+ "segments": {
+  "left": [
+   {
+    "phases": [
+     "right: reach for disk_1_disk_1 #1",
+     "right: descend on disk_1_disk_1 #1",
+     "right: close on disk_1_disk_1 #1",
+     "right: grip disk_1_disk_1 #1",
+     "right: lift disk_1_disk_1 #1",
+     "right: carry disk_1_disk_1 #2.1",
+     "right: carry disk_1_disk_1 #2.2",
+     "right: let go of disk_1_disk_1 #2.2",
+     "right: retreat #2.2",
+     "right: approach for push #3",
+     "right: contact #3",
+     "right: push disk_1_disk_1 #3",
+     "right: back off #3",
+     "right: reach for disk_2_disk_2 #4",
+     "right: descend on disk_2_disk_2 #4",
+     "right: close on disk_2_disk_2 #4",
+     "right: grip disk_2_disk_2 #4",
+     "right: lift disk_2_disk_2 #4",
+     "right: carry disk_2_disk_2 #5.1",
+     "right: carry disk_2_disk_2 #5.2",
+     "right: let go of disk_2_disk_2 #5.2",
+     "right: retreat #5.2",
+     "right: approach for push #6",
+     "right: contact #6",
+     "right: push disk_2_disk_2 #6",
+     "right: back off #6",
+     "right: reach for disk_3_disk_3 #7",
+     "right: descend on disk_3_disk_3 #7",
+     "right: close on disk_3_disk_3 #7",
+     "right: grip disk_3_disk_3 #7",
+     "right: lift disk_3_disk_3 #7",
+     "right: carry disk_3_disk_3 #8.1",
+     "right: carry disk_3_disk_3 #8.2",
+     "right: let go of disk_3_disk_3 #8.2",
+     "right: retreat #8.2",
+     "right: approach for push #9",
+     "right: contact #9",
+     "right: push disk_3_disk_3 #9",
+     "right: back off #9"
+    ],
+    "anchor": "world"
+   }
+  ],
+  "right": [
+   {
+    "phases": [
+     "right: reach for disk_1_disk_1 #1"
+    ],
+    "blend": [
+     "world",
+     "disk_1_disk_1"
+    ]
+   },
+   {
+    "phases": [
+     "right: descend on disk_1_disk_1 #1",
+     "right: close on disk_1_disk_1 #1",
+     "right: grip disk_1_disk_1 #1",
+     "right: lift disk_1_disk_1 #1"
+    ],
+    "anchor": "disk_1_disk_1"
+   },
+   {
+    "phases": [
+     "right: carry disk_1_disk_1 #2.1"
+    ],
+    "blend": [
+     "disk_1_disk_1",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry disk_1_disk_1 #2.2",
+     "right: let go of disk_1_disk_1 #2.2",
+     "right: retreat #2.2"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: approach for push #3"
+    ],
+    "blend": [
+     "world",
+     "disk_1_disk_1"
+    ]
+   },
+   {
+    "phases": [
+     "right: contact #3",
+     "right: push disk_1_disk_1 #3",
+     "right: back off #3"
+    ],
+    "anchor": "disk_1_disk_1"
+   },
+   {
+    "phases": [
+     "right: reach for disk_2_disk_2 #4"
+    ],
+    "blend": [
+     "disk_1_disk_1",
+     "disk_2_disk_2"
+    ]
+   },
+   {
+    "phases": [
+     "right: descend on disk_2_disk_2 #4",
+     "right: close on disk_2_disk_2 #4",
+     "right: grip disk_2_disk_2 #4",
+     "right: lift disk_2_disk_2 #4"
+    ],
+    "anchor": "disk_2_disk_2"
+   },
+   {
+    "phases": [
+     "right: carry disk_2_disk_2 #5.1"
+    ],
+    "blend": [
+     "disk_2_disk_2",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry disk_2_disk_2 #5.2",
+     "right: let go of disk_2_disk_2 #5.2",
+     "right: retreat #5.2"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: approach for push #6"
+    ],
+    "blend": [
+     "world",
+     "disk_2_disk_2"
+    ]
+   },
+   {
+    "phases": [
+     "right: contact #6",
+     "right: push disk_2_disk_2 #6",
+     "right: back off #6"
+    ],
+    "anchor": "disk_2_disk_2"
+   },
+   {
+    "phases": [
+     "right: reach for disk_3_disk_3 #7"
+    ],
+    "blend": [
+     "disk_2_disk_2",
+     "disk_3_disk_3"
+    ]
+   },
+   {
+    "phases": [
+     "right: descend on disk_3_disk_3 #7",
+     "right: close on disk_3_disk_3 #7",
+     "right: grip disk_3_disk_3 #7",
+     "right: lift disk_3_disk_3 #7"
+    ],
+    "anchor": "disk_3_disk_3"
+   },
+   {
+    "phases": [
+     "right: carry disk_3_disk_3 #8.1"
+    ],
+    "blend": [
+     "disk_3_disk_3",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry disk_3_disk_3 #8.2",
+     "right: let go of disk_3_disk_3 #8.2",
+     "right: retreat #8.2"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: approach for push #9"
+    ],
+    "blend": [
+     "world",
+     "disk_3_disk_3"
+    ]
+   },
+   {
+    "phases": [
+     "right: contact #9",
+     "right: push disk_3_disk_3 #9",
+     "right: back off #9"
+    ],
+    "anchor": "disk_3_disk_3"
+   }
+  ]
+ },
+ "cameras": {
+  "width": 640,
+  "height": 480,
+  "ego": {
+   "pos": [
+    0.01879,
+    -0.18293,
+    0.55779
+   ],
+   "quat_wxyz": [
+    0.8815668496593654,
+    0.47089691969418795,
+    0.0249469957455896,
+    0.021762996288582456
+   ],
+   "fovy": 38.0
+  },
+  "views": {
+   "wrist_right": {
+    "parent_body": "robot_right_right_base_yaw",
+    "pos": [
+     0.050377,
+     0.001601,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.15285697798110676,
+     0.7024578988116494,
+     -0.6789659021956478,
+     -0.14897297854059297
+    ],
+    "fovy": 100.0
+   },
+   "wrist_left": {
+    "parent_body": "robot_left_left_base_yaw",
+    "pos": [
+     0.050377,
+     -0.0016,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.14897395634728527,
+     0.6789658010477727,
+     -0.7024577941640913,
+     -0.15285695520947942
+    ],
+    "fovy": 100.0
+   }
+  }
+ },
+ "table": {
+  "top_z": 0.0,
+  "center": [
+   0.0,
+   1.125
+  ],
+  "half_size": [
+   1.8,
+   1.075
+  ]
+ },
+ "inpaint": {
+  "erase_prompts": [
+   "hand",
+   "arm",
+   "black computer case",
+   "hard disk drive",
+   "hard disk drive",
+   "hard disk drive"
+  ],
+  "background_prompt": "An empty white tablecloth on a table, nothing on it, static background."
+ },
+ "render": {
+  "stride": 2,
+  "samples": 32,
+  "chunks": 4,
+  "exclude_geoms": [
+   "^table",
+   "groundplane",
+   "floor",
+   "^g_table"
+  ],
+  "materials": [
+   {
+    "match": "^robot_\\w+_arm_",
+    "preset": "yam_black"
+   },
+   {
+    "match": "^robot_",
+    "preset": "sharpa"
+   }
+  ]
+ },
+ "manifest": "trajectory_manifest.json",
+ "goal": {
+  "semantics": "scene_semantics.json",
+  "objects": "goal_objects.json"
+ },
+ "checks": {
+  "physics_replay": true
+ },
+ "physics": {
+  "rules": [],
+  "mujoco_version": "3.10.0"
+ }
+}

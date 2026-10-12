@@ -1,0 +1,377 @@
+{
+ "name": "stage3",
+ "scene": "../../stage2/scene.xml",
+ "trajectory": "trajectory.npz",
+ "human_video": "human_video.mp4",
+ "output_dir": "outputs",
+ "num_samples": 3,
+ "seed": 0,
+ "robot": {
+  "body_prefix": "robot_",
+  "end_effectors": {
+   "left": "robot_left_left_base_yaw",
+   "right": "robot_right_right_base_yaw"
+  },
+  "init_jitter_rad": 0.05
+ },
+ "randomize": {
+  "objects": {
+   "tube_rack_rack": {
+    "dx": [
+     -0.03,
+     0.03
+    ],
+    "dy": [
+     -0.03,
+     0.03
+    ],
+    "dyaw_deg": [
+     -15.0,
+     15.0
+    ]
+   },
+   "held_tube": {
+    "carrier": "left",
+    "release": "left: let go of held_tube #6.3",
+    "rests_on": "tube_rack_rack",
+    "attached_to": "tube_rack_rack"
+   },
+   "rack_tube_srctube": {
+    "attached_to": "tube_rack_rack"
+   },
+   "pipette_pipette": {
+    "carrier": "right",
+    "release": "right: let go of pipette_pipette #7.4",
+    "attached_to": "tube_rack_rack"
+   },
+   "tip_box_tipbox": {
+    "dx": [
+     -0.005,
+     0.005
+    ],
+    "dy": [
+     -0.005,
+     0.005
+    ],
+    "dyaw_deg": [
+     -3.0,
+     3.0
+    ]
+   },
+   "tip_box_tipbox_tip": {
+    "attached_to": "tip_box_tipbox",
+    "carrier": "right",
+    "release": "right: let go of pipette_pipette #7.4"
+   }
+  }
+ },
+ "segments": {
+  "left": [
+   {
+    "phases": [
+     "left: reach for held_tube #1.1"
+    ],
+    "blend": [
+     "world",
+     "held_tube"
+    ]
+   },
+   {
+    "phases": [
+     "left: descend on held_tube #1.1",
+     "left: close on held_tube #1.1",
+     "left: grip held_tube #1.1",
+     "left: lift held_tube #1.1"
+    ],
+    "anchor": "held_tube"
+   },
+   {
+    "phases": [
+     "left: carry held_tube #1.2"
+    ],
+    "blend": [
+     "held_tube",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: reach for pipette_pipette #2.1",
+     "right: descend on pipette_pipette #2.1",
+     "right: close on pipette_pipette #2.1",
+     "right: grip pipette_pipette #2.1",
+     "right: lift pipette_pipette #2.1",
+     "right: carry pipette_pipette (free) #3.1",
+     "right: carry pipette_pipette #3.2",
+     "right: carry pipette_pipette #3.3",
+     "right: lift pipette_pipette #3.4",
+     "right: carry pipette_pipette #4.1",
+     "right: carry pipette_pipette #4.2",
+     "right: carry pipette_pipette #4.3",
+     "right: carry pipette_pipette #4.4",
+     "left: carry held_tube #5.1",
+     "right: carry pipette_pipette #5.2",
+     "left: wait | right: carry pipette_pipette #5.3",
+     "right: carry pipette_pipette #5.4",
+     "right: carry pipette_pipette #6.1",
+     "left: carry held_tube #6.2"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "left: carry held_tube (up) #6.3"
+    ],
+    "blend": [
+     "world",
+     "tube_rack_rack"
+    ]
+   },
+   {
+    "phases": [
+     "left: carry held_tube #6.3",
+     "left: carry held_tube (down) #6.3",
+     "left: set down held_tube #6.3",
+     "left: let go of held_tube #6.3",
+     "left: retreat #6.3",
+     "right: carry pipette_pipette #7.1",
+     "right: carry pipette_pipette #7.2",
+     "right: carry pipette_pipette #7.3",
+     "right: let go of pipette_pipette #7.4",
+     "right: retreat #7.4"
+    ],
+    "anchor": "tube_rack_rack"
+   }
+  ],
+  "right": [
+   {
+    "phases": [
+     "left: reach for held_tube #1.1",
+     "left: descend on held_tube #1.1",
+     "left: close on held_tube #1.1",
+     "left: grip held_tube #1.1",
+     "left: lift held_tube #1.1",
+     "left: carry held_tube #1.2"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: reach for pipette_pipette #2.1"
+    ],
+    "blend": [
+     "world",
+     "pipette_pipette"
+    ]
+   },
+   {
+    "phases": [
+     "right: descend on pipette_pipette #2.1",
+     "right: close on pipette_pipette #2.1",
+     "right: grip pipette_pipette #2.1",
+     "right: lift pipette_pipette #2.1"
+    ],
+    "anchor": "pipette_pipette"
+   },
+   {
+    "phases": [
+     "right: carry pipette_pipette (free) #3.1"
+    ],
+    "blend": [
+     "pipette_pipette",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry pipette_pipette #3.2"
+    ],
+    "blend": [
+     "world",
+     "tip_box_tipbox_tip"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry pipette_pipette #3.3"
+    ],
+    "anchor": "tip_box_tipbox_tip"
+   },
+   {
+    "phases": [
+     "right: lift pipette_pipette #3.4"
+    ],
+    "anchor": "tip_box_tipbox_tip"
+   },
+   {
+    "phases": [
+     "right: carry pipette_pipette #4.1"
+    ],
+    "anchor": "tip_box_tipbox_tip"
+   },
+   {
+    "phases": [
+     "right: carry pipette_pipette #4.2"
+    ],
+    "blend": [
+     "tip_box_tipbox_tip",
+     "rack_tube_srctube"
+    ]
+   },
+   {
+    "phases": [
+     "right: carry pipette_pipette #4.3",
+     "right: carry pipette_pipette #4.4",
+     "left: carry held_tube #5.1"
+    ],
+    "anchor": "rack_tube_srctube"
+   },
+   {
+    "phases": [
+     "right: carry pipette_pipette #5.2"
+    ],
+    "blend": [
+     "rack_tube_srctube",
+     "world"
+    ]
+   },
+   {
+    "phases": [
+     "left: wait | right: carry pipette_pipette #5.3",
+     "right: carry pipette_pipette #5.4"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "right: carry pipette_pipette #6.1"
+    ],
+    "anchor": "world"
+   },
+   {
+    "phases": [
+     "left: carry held_tube #6.2",
+     "left: carry held_tube (up) #6.3",
+     "left: carry held_tube #6.3",
+     "left: carry held_tube (down) #6.3",
+     "left: set down held_tube #6.3",
+     "left: let go of held_tube #6.3",
+     "left: retreat #6.3",
+     "right: carry pipette_pipette #7.1",
+     "right: carry pipette_pipette #7.2",
+     "right: carry pipette_pipette #7.3",
+     "right: let go of pipette_pipette #7.4",
+     "right: retreat #7.4"
+    ],
+    "anchor": "world"
+   }
+  ]
+ },
+ "cameras": {
+  "width": 640,
+  "height": 480,
+  "ego": {
+   "pos": [
+    0.01879,
+    -0.18293,
+    0.55779
+   ],
+   "quat_wxyz": [
+    0.8815668496593654,
+    0.47089691969418795,
+    0.0249469957455896,
+    0.021762996288582456
+   ],
+   "fovy": 38.0
+  },
+  "views": {
+   "wrist_right": {
+    "parent_body": "robot_right_right_base_yaw",
+    "pos": [
+     0.050377,
+     0.001601,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.15285697798110676,
+     0.7024578988116494,
+     -0.6789659021956478,
+     -0.14897297854059297
+    ],
+    "fovy": 100.0
+   },
+   "wrist_left": {
+    "parent_body": "robot_left_left_base_yaw",
+    "pos": [
+     0.050377,
+     -0.0016,
+     0.054631
+    ],
+    "quat_wxyz": [
+     0.14897395634728527,
+     0.6789658010477727,
+     -0.7024577941640913,
+     -0.15285695520947942
+    ],
+    "fovy": 100.0
+   }
+  }
+ },
+ "table": {
+  "top_z": 0.0,
+  "center": [
+   0.0,
+   1.125
+  ],
+  "half_size": [
+   1.8,
+   1.075
+  ]
+ },
+ "inpaint": {
+  "erase_prompts": [
+   "hand",
+   "arm",
+   "orange tube rack",
+   "clear plastic tube",
+   "clear plastic tube in the rack",
+   "micropipette",
+   "blue pipette tip box",
+   "pipette tip"
+  ],
+  "background_prompt": "An empty white tablecloth on a table, nothing on it, static background."
+ },
+ "render": {
+  "stride": 2,
+  "samples": 32,
+  "chunks": 4,
+  "exclude_geoms": [
+   "^table",
+   "groundplane",
+   "floor",
+   "^g_table"
+  ],
+  "materials": [
+   {
+    "match": "^robot_\\w+_arm_",
+    "preset": "yam_black"
+   },
+   {
+    "match": "^robot_",
+    "preset": "sharpa"
+   }
+  ]
+ },
+ "manifest": "trajectory_manifest.json",
+ "goal": {
+  "semantics": "scene_semantics.json",
+  "objects": "goal_objects.json"
+ },
+ "checks": {
+  "physics_replay": true
+ },
+ "physics": {
+  "rules": [],
+  "mujoco_version": "3.10.0"
+ }
+}

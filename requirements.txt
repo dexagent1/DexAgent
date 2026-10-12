@@ -1,0 +1,20 @@
+# DexAgent harness and the CPU tools of the library
+pyyaml
+jsonschema
+anthropic
+rich
+openai
+numpy>=1.26,<2
+scipy
+opencv-python<4.12    # 4.12+ needs numpy>=2
+pillow
+mujoco==3.10.0        # pinned simulation version; physics differs across versions
+trimesh
+imageio
+imageio-ffmpeg        # H.264 video writing (falls back to OpenCV's mp4v without it)
+h5py                  # EgoDex episodes
+scikit-image
+matplotlib
+sympy
+# GPU perception models (SAM 3, SAM 2, HaMeR, Video Depth Anything, GeoCalib, SAM 3D, VOID) are installed
+# in their own environments; see tool_library/README.md and stage4_robot_data_generation/README.md

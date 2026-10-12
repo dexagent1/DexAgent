@@ -1,0 +1,339 @@
+<mujoco model="rope_cuttable_rope">
+  <compiler angle="radian" />
+  <option integrator="implicitfast" cone="elliptic" />
+  <visual>
+    <global offwidth="1280" offheight="960" />
+  </visual>
+  <default>
+    <default class="a_main" />
+    <default class="b_main" />
+  </default>
+  <extension>
+    <plugin plugin="mujoco.elasticity.cable">
+      <instance name="a_compositerope_a">
+        <config key="twist" value="50000.0" />
+        <config key="bend" value="100000.0" />
+        <config key="vmax" value="0" />
+      </instance>
+      <instance name="b_compositerope_b">
+        <config key="twist" value="50000.0" />
+        <config key="bend" value="100000.0" />
+        <config key="vmax" value="0" />
+      </instance>
+    </plugin>
+  </extension>
+  <custom>
+    <text name="a_composite_rope_a" data="rope_rope_a" />
+    <text name="b_composite_rope_b" data="rope_rope_b" />
+  </custom>
+  <asset>
+    <material name="a_rope_a_mat" specular="0.12" shininess="0.1" rgba="0.579 0.182 0.191 1" />
+    <material name="a_rope_a_capmat" specular="0.35" shininess="0.85" reflectance="0.15" rgba="0.83 0.68 0.24 1" />
+    <material name="b_rope_b_mat" specular="0.12" shininess="0.1" rgba="0.579 0.182 0.191 1" />
+    <material name="b_rope_b_capmat" specular="0.35" shininess="0.85" reflectance="0.15" rgba="0.83 0.68 0.24 1" />
+  </asset>
+  <worldbody>
+    <light name="key" pos="0.4 -0.5 1.2" dir="-0.268328 0.357771 -0.894427" />
+    <light name="fill" pos="-0.6 0.4 0.9" dir="0.431934 -0.259161 -0.863868" diffuse="0.3 0.3 0.3" />
+    <light name="a_key" pos="0.4 -0.5 1.2" dir="-0.268328 0.357771 -0.894427" />
+    <light name="a_fill" pos="-0.6 0.4 0.9" dir="0.431934 -0.259161 -0.863868" diffuse="0.3 0.3 0.3" />
+    <body name="a_rope_aB_first" pos="-0.06495 0.50633 0.0041" quat="0 0.120684 0.992691 0">
+      <joint name="a_rope_aJ_first" type="free" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" />
+      <geom name="a_rope_aG0" size="0.0041 0.00979739" pos="0.00979739 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+      <site name="a_rope_aS_first" pos="0 0 0" group="3" />
+      <plugin instance="a_compositerope_a" />
+      <body name="a_rope_aB_1" pos="0.0195948 0 0" quat="0.99067 0 0 0.136286">
+        <joint name="a_rope_aJ_1" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+        <geom name="a_rope_aG1" size="0.0041 0.00983732" pos="0.00983732 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+        <plugin instance="a_compositerope_a" />
+        <body name="a_rope_aB_2" pos="0.0196746 0 0" quat="0.999987 0 0 -0.00506093">
+          <joint name="a_rope_aJ_2" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+          <geom name="a_rope_aG2" size="0.0041 0.00983716" pos="0.00983716 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+          <plugin instance="a_compositerope_a" />
+          <body name="a_rope_aB_3" pos="0.0196743 0 0" quat="0.9961 0 0 0.0882287">
+            <joint name="a_rope_aJ_3" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+            <geom name="a_rope_aG3" size="0.0041 0.00964452" pos="0.00964452 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+            <plugin instance="a_compositerope_a" />
+            <body name="a_rope_aB_4" pos="0.019289 0 0" quat="0.993363 0 0 0.115024">
+              <joint name="a_rope_aJ_4" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+              <geom name="a_rope_aG4" size="0.0041 0.00983708" pos="0.00983708 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+              <plugin instance="a_compositerope_a" />
+              <body name="a_rope_aB_5" pos="0.0196742 0 0" quat="0.995362 0 0 0.0961979">
+                <joint name="a_rope_aJ_5" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                <geom name="a_rope_aG5" size="0.0041 0.00973923" pos="0.00973923 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                <plugin instance="a_compositerope_a" />
+                <body name="a_rope_aB_6" pos="0.0194785 0 0" quat="0.998497 0 0 0.0547987">
+                  <joint name="a_rope_aJ_6" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                  <geom name="a_rope_aG6" size="0.0041 0.0098371" pos="0.0098371 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                  <plugin instance="a_compositerope_a" />
+                  <body name="a_rope_aB_7" pos="0.0196742 0 0" quat="0.999837 0 0 0.0180417">
+                    <joint name="a_rope_aJ_7" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                    <geom name="a_rope_aG7" size="0.0041 0.00979059" pos="0.00979059 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                    <plugin instance="a_compositerope_a" />
+                    <body name="a_rope_aB_8" pos="0.0195812 0 0" quat="0.987552 0 0 0.157292">
+                      <joint name="a_rope_aJ_8" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                      <geom name="a_rope_aG8" size="0.0041 0.00983708" pos="0.00983708 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                      <plugin instance="a_compositerope_a" />
+                      <body name="a_rope_aB_9" pos="0.0196742 0 0" quat="0.99226 0 0 0.124176">
+                        <joint name="a_rope_aJ_9" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                        <geom name="a_rope_aG9" size="0.0041 0.00919672" pos="0.00919672 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                        <plugin instance="a_compositerope_a" />
+                        <body name="a_rope_aB_10" pos="0.0183934 0 0" quat="0.941422 0 0 0.33723">
+                          <joint name="a_rope_aJ_10" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                          <geom name="a_rope_aG10" size="0.0041 0.00925944" pos="0.00925944 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                          <plugin instance="a_compositerope_a" />
+                          <body name="a_rope_aB_11" pos="0.0185189 0 0" quat="0.778028 0 0 0.62823">
+                            <joint name="a_rope_aJ_11" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                            <geom name="a_rope_aG11" size="0.0041 0.00983732" pos="0.00983732 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                            <plugin instance="a_compositerope_a" />
+                            <body name="a_rope_aB_12" pos="0.0196746 0 0" quat="0.994593 0 0 0.10385">
+                              <joint name="a_rope_aJ_12" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                              <geom name="a_rope_aG12" size="0.0041 0.00965533" pos="0.00965533 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                              <plugin instance="a_compositerope_a" />
+                              <body name="a_rope_aB_13" pos="0.0193107 0 0" quat="0.995429 0 0 0.0955025">
+                                <joint name="a_rope_aJ_13" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                <geom name="a_rope_aG13" size="0.0041 0.00983728" pos="0.00983728 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                <plugin instance="a_compositerope_a" />
+                                <body name="a_rope_aB_14" pos="0.0196746 0 0" quat="0.999917 0 0 0.0128737">
+                                  <joint name="a_rope_aJ_14" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                  <geom name="a_rope_aG14" size="0.0041 0.00982975" pos="0.00982975 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                  <plugin instance="a_compositerope_a" />
+                                  <body name="a_rope_aB_15" pos="0.0196595 0 0" quat="0.999528 0 0 0.0307227">
+                                    <joint name="a_rope_aJ_15" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                    <geom name="a_rope_aG15" size="0.0041 0.00983724" pos="0.00983724 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                    <plugin instance="a_compositerope_a" />
+                                    <body name="a_rope_aB_16" pos="0.0196745 0 0">
+                                      <joint name="a_rope_aJ_16" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                      <geom name="a_rope_aG16" size="0.0041 0.00983724" pos="0.00983724 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                      <plugin instance="a_compositerope_a" />
+                                      <body name="a_rope_aB_17" pos="0.0196745 0 0" quat="0.998847 0 0.0180798 0.0444732">
+                                        <joint name="a_rope_aJ_17" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                        <geom name="a_rope_aG17" size="0.0041 0.00981507" pos="0.00981507 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                        <plugin instance="a_compositerope_a" />
+                                        <body name="a_rope_aB_18" pos="0.0196301 0 0" quat="0.99142 0 0.130304 0.0103163">
+                                          <joint name="a_rope_aJ_18" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                          <geom name="a_rope_aG18" size="0.0041 0.00982072" pos="0.00982072 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                          <plugin instance="a_compositerope_a" />
+                                          <body name="a_rope_aB_19" pos="0.0196414 0 0" quat="0.99528 0 -0.088381 0.0400881">
+                                            <joint name="a_rope_aJ_19" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                            <geom name="a_rope_aG19" size="0.0041 0.00971154" pos="0.00971154 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                            <plugin instance="a_compositerope_a" />
+                                            <body name="a_rope_aB_20" pos="0.0194231 0 0" quat="0.978147 0 -0.203994 0.0401917">
+                                              <joint name="a_rope_aJ_20" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                              <geom name="a_rope_aG20" size="0.0041 0.00981854" pos="0.00981854 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                              <plugin instance="a_compositerope_a" />
+                                              <body name="a_rope_aB_21" pos="0.0196371 0 0" quat="0.997739 0 0.0671534 0.00283597">
+                                                <joint name="a_rope_aJ_21" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                                <geom name="a_rope_aG21" size="0.0041 0.00977238" pos="0.00977238 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                                <plugin instance="a_compositerope_a" />
+                                                <body name="a_rope_aB_22" pos="0.0195448 0 0" quat="-0.994656 0 -0.0798206 -0.0654791">
+                                                  <joint name="a_rope_aJ_22" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                                  <geom name="a_rope_aG22" size="0.0041 0.00983709" pos="0.00983709 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                                  <plugin instance="a_compositerope_a" />
+                                                  <body name="a_rope_aB_last" pos="0.0196742 0 0" quat="1 0 1.56612e-06 0.000534351">
+                                                    <joint name="a_rope_aJ_last" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                                    <geom name="a_rope_aG23" size="0.0041 0.00983704" pos="0.00983704 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="a_rope_a_mat" rgba="0.579 0.182 0.191 1" />
+                                                    <site name="a_rope_aS_last" pos="0.0196741 0 0" group="3" />
+                                                    <plugin instance="a_compositerope_a" />
+                                                  </body>
+                                                </body>
+                                              </body>
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+    <light name="b_key" pos="0.4 -0.5 1.2" dir="-0.268328 0.357771 -0.894427" />
+    <light name="b_fill" pos="-0.6 0.4 0.9" dir="0.431934 -0.259161 -0.863868" diffuse="0.3 0.3 0.3" />
+    <body name="b_rope_bB_first" pos="-0.075436 0.426798 0.0041" quat="0 -0.617458 0.786604 0">
+      <joint name="b_rope_bJ_first" type="free" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" />
+      <geom name="b_rope_bG0" size="0.0041 0.00982561" pos="0.00982561 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+      <site name="b_rope_bS_first" pos="0 0 0" group="3" />
+      <plugin instance="b_compositerope_b" />
+      <body name="b_rope_bB_1" pos="0.0196512 0 0" quat="0.999976 0 0 0.00698645">
+        <joint name="b_rope_bJ_1" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+        <geom name="b_rope_bG1" size="0.0041 0.00983702" pos="0.00983702 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+        <plugin instance="b_compositerope_b" />
+        <body name="b_rope_bB_2" pos="0.019674 0 0" quat="0.999472 0 0 0.0324962">
+          <joint name="b_rope_bJ_2" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+          <geom name="b_rope_bG2" size="0.0041 0.00983283" pos="0.00983283 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+          <plugin instance="b_compositerope_b" />
+          <body name="b_rope_bB_3" pos="0.0196657 0 0" quat="0.999988 0 0 0.00480713">
+            <joint name="b_rope_bJ_3" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+            <geom name="b_rope_bG3" size="0.0041 0.00983552" pos="0.00983552 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+            <plugin instance="b_compositerope_b" />
+            <body name="b_rope_bB_4" pos="0.019671 0 0" quat="0.999366 0 0 -0.0356004">
+              <joint name="b_rope_bJ_4" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+              <geom name="b_rope_bG4" size="0.0041 0.00983749" pos="0.00983749 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+              <plugin instance="b_compositerope_b" />
+              <body name="b_rope_bB_5" pos="0.019675 0 0" quat="0.999822 0 0 -0.0188629">
+                <joint name="b_rope_bJ_5" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                <geom name="b_rope_bG5" size="0.0041 0.00983124" pos="0.00983124 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                <plugin instance="b_compositerope_b" />
+                <body name="b_rope_bB_6" pos="0.0196625 0 0" quat="0.999761 0 0 -0.0218606">
+                  <joint name="b_rope_bJ_6" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                  <geom name="b_rope_bG6" size="0.0041 0.00983391" pos="0.00983391 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                  <plugin instance="b_compositerope_b" />
+                  <body name="b_rope_bB_7" pos="0.0196678 0 0" quat="0.999212 0 0 -0.0396846">
+                    <joint name="b_rope_bJ_7" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                    <geom name="b_rope_bG7" size="0.0041 0.00983709" pos="0.00983709 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                    <plugin instance="b_compositerope_b" />
+                    <body name="b_rope_bB_8" pos="0.0196742 0 0" quat="-0.982413 0 0 0.186721">
+                      <joint name="b_rope_bJ_8" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                      <geom name="b_rope_bG8" size="0.0041 0.00979464" pos="0.00979464 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                      <plugin instance="b_compositerope_b" />
+                      <body name="b_rope_bB_9" pos="0.0195893 0 0" quat="0.928213 0 0 -0.37205">
+                        <joint name="b_rope_bJ_9" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                        <geom name="b_rope_bG9" size="0.0041 0.00863088" pos="0.00863088 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                        <plugin instance="b_compositerope_b" />
+                        <body name="b_rope_bB_10" pos="0.0172618 0 0" quat="0.665499 0 0 -0.746399">
+                          <joint name="b_rope_bJ_10" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                          <geom name="b_rope_bG10" size="0.0041 0.00961549" pos="0.00961549 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                          <plugin instance="b_compositerope_b" />
+                          <body name="b_rope_bB_11" pos="0.019231 0 0" quat="0.989165 0 0 -0.146805">
+                            <joint name="b_rope_bJ_11" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                            <geom name="b_rope_bG11" size="0.0041 0.00983711" pos="0.00983711 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                            <plugin instance="b_compositerope_b" />
+                            <body name="b_rope_bB_12" pos="0.0196742 0 0" quat="0.988168 0 0 0.153374">
+                              <joint name="b_rope_bJ_12" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                              <geom name="b_rope_bG12" size="0.0041 0.00982732" pos="0.00982732 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                              <plugin instance="b_compositerope_b" />
+                              <body name="b_rope_bB_13" pos="0.0196546 0 0" quat="0.873278 0 0 0.487222">
+                                <joint name="b_rope_bJ_13" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                <geom name="b_rope_bG13" size="0.0041 0.00826866" pos="0.00826866 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                <plugin instance="b_compositerope_b" />
+                                <body name="b_rope_bB_14" pos="0.0165373 0 0" quat="0.76104 0 0 0.648705">
+                                  <joint name="b_rope_bJ_14" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                  <geom name="b_rope_bG14" size="0.0041 0.00967502" pos="0.00967502 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                  <plugin instance="b_compositerope_b" />
+                                  <body name="b_rope_bB_15" pos="0.01935 0 0" quat="-0.964334 0 0 -0.264688">
+                                    <joint name="b_rope_bJ_15" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                    <geom name="b_rope_bG15" size="0.0041 0.00972104" pos="0.00972104 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                    <plugin instance="b_compositerope_b" />
+                                    <body name="b_rope_bB_16" pos="0.0194421 0 0" quat="0.990163 0 0 0.139919">
+                                      <joint name="b_rope_bJ_16" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                      <geom name="b_rope_bG16" size="0.0041 0.00976536" pos="0.00976536 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                      <plugin instance="b_compositerope_b" />
+                                      <body name="b_rope_bB_17" pos="0.0195307 0 0" quat="0.99983 0 2.56285e-05 -0.0184154">
+                                        <joint name="b_rope_bJ_17" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                        <geom name="b_rope_bG17" size="0.0041 0.00975421" pos="0.00975421 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                        <plugin instance="b_compositerope_b" />
+                                        <body name="b_rope_bB_18" pos="0.0195084 0 0" quat="0.962839 0 0.113588 0.245027">
+                                          <joint name="b_rope_bJ_18" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                          <geom name="b_rope_bG18" size="0.0041 0.00618662" pos="0.00618662 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                          <plugin instance="b_compositerope_b" />
+                                          <body name="b_rope_bB_19" pos="0.0123732 0 0" quat="0.523504 0 0.413372 0.745028">
+                                            <joint name="b_rope_bJ_19" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                            <geom name="b_rope_bG19" size="0.0041 0.00983431" pos="0.00983431 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                            <plugin instance="b_compositerope_b" />
+                                            <body name="b_rope_bB_20" pos="0.0196686 0 0" quat="0.957324 0 -0.287308 -0.0313899">
+                                              <joint name="b_rope_bJ_20" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                              <geom name="b_rope_bG20" size="0.0041 0.00945809" pos="0.00945809 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                              <plugin instance="b_compositerope_b" />
+                                              <body name="b_rope_bB_21" pos="0.0189162 0 0" quat="0.994853 0 -0.0365136 -0.0945254">
+                                                <joint name="b_rope_bJ_21" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                                <geom name="b_rope_bG21" size="0.0041 0.00941613" pos="0.00941613 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                                <plugin instance="b_compositerope_b" />
+                                                <body name="b_rope_bB_22" pos="0.0188323 0 0" quat="0.996325 0 -0.0856064 -0.00281537">
+                                                  <joint name="b_rope_bJ_22" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                                  <geom name="b_rope_bG22" size="0.0041 0.00973761" pos="0.00973761 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                                  <plugin instance="b_compositerope_b" />
+                                                  <body name="b_rope_bB_last" pos="0.0194752 0 0" quat="0.988153 0 -0.148335 0.0393721">
+                                                    <joint name="b_rope_bJ_last" pos="0 0 0" type="ball" group="3" solreffriction="0.001" solimpfriction="0.999 0.9999 0.0001" armature="1e-05" damping="0.012" frictionloss="0.02" />
+                                                    <geom name="b_rope_bG23" size="0.0041 0.00983291" pos="0.00983291 0 0" quat="0.707107 0 -0.707107 0" type="capsule" condim="4" friction="0.7 0.02 0.001" solref="0.004" density="1100" material="b_rope_b_mat" rgba="0.579 0.182 0.191 1" />
+                                                    <site name="b_rope_bS_last" pos="0.0196658 0 0" group="3" />
+                                                    <plugin instance="b_compositerope_b" />
+                                                  </body>
+                                                </body>
+                                              </body>
+                                            </body>
+                                          </body>
+                                        </body>
+                                      </body>
+                                    </body>
+                                  </body>
+                                </body>
+                              </body>
+                            </body>
+                          </body>
+                        </body>
+                      </body>
+                    </body>
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <contact>
+    <exclude body1="a_rope_aB_first" body2="a_rope_aB_1" />
+    <exclude body1="a_rope_aB_1" body2="a_rope_aB_2" />
+    <exclude body1="a_rope_aB_2" body2="a_rope_aB_3" />
+    <exclude body1="a_rope_aB_3" body2="a_rope_aB_4" />
+    <exclude body1="a_rope_aB_4" body2="a_rope_aB_5" />
+    <exclude body1="a_rope_aB_5" body2="a_rope_aB_6" />
+    <exclude body1="a_rope_aB_6" body2="a_rope_aB_7" />
+    <exclude body1="a_rope_aB_7" body2="a_rope_aB_8" />
+    <exclude body1="a_rope_aB_8" body2="a_rope_aB_9" />
+    <exclude body1="a_rope_aB_9" body2="a_rope_aB_10" />
+    <exclude body1="a_rope_aB_10" body2="a_rope_aB_11" />
+    <exclude body1="a_rope_aB_11" body2="a_rope_aB_12" />
+    <exclude body1="a_rope_aB_12" body2="a_rope_aB_13" />
+    <exclude body1="a_rope_aB_13" body2="a_rope_aB_14" />
+    <exclude body1="a_rope_aB_14" body2="a_rope_aB_15" />
+    <exclude body1="a_rope_aB_15" body2="a_rope_aB_16" />
+    <exclude body1="a_rope_aB_16" body2="a_rope_aB_17" />
+    <exclude body1="a_rope_aB_17" body2="a_rope_aB_18" />
+    <exclude body1="a_rope_aB_18" body2="a_rope_aB_19" />
+    <exclude body1="a_rope_aB_19" body2="a_rope_aB_20" />
+    <exclude body1="a_rope_aB_20" body2="a_rope_aB_21" />
+    <exclude body1="a_rope_aB_21" body2="a_rope_aB_22" />
+    <exclude body1="a_rope_aB_22" body2="a_rope_aB_last" />
+    <exclude name="rope_cut_selfpair" body1="a_rope_aB_last" body2="b_rope_bB_first" />
+    <exclude body1="b_rope_bB_first" body2="b_rope_bB_1" />
+    <exclude body1="b_rope_bB_1" body2="b_rope_bB_2" />
+    <exclude body1="b_rope_bB_2" body2="b_rope_bB_3" />
+    <exclude body1="b_rope_bB_3" body2="b_rope_bB_4" />
+    <exclude body1="b_rope_bB_4" body2="b_rope_bB_5" />
+    <exclude body1="b_rope_bB_5" body2="b_rope_bB_6" />
+    <exclude body1="b_rope_bB_6" body2="b_rope_bB_7" />
+    <exclude body1="b_rope_bB_7" body2="b_rope_bB_8" />
+    <exclude body1="b_rope_bB_8" body2="b_rope_bB_9" />
+    <exclude body1="b_rope_bB_9" body2="b_rope_bB_10" />
+    <exclude body1="b_rope_bB_10" body2="b_rope_bB_11" />
+    <exclude body1="b_rope_bB_11" body2="b_rope_bB_12" />
+    <exclude body1="b_rope_bB_12" body2="b_rope_bB_13" />
+    <exclude body1="b_rope_bB_13" body2="b_rope_bB_14" />
+    <exclude body1="b_rope_bB_14" body2="b_rope_bB_15" />
+    <exclude body1="b_rope_bB_15" body2="b_rope_bB_16" />
+    <exclude body1="b_rope_bB_16" body2="b_rope_bB_17" />
+    <exclude body1="b_rope_bB_17" body2="b_rope_bB_18" />
+    <exclude body1="b_rope_bB_18" body2="b_rope_bB_19" />
+    <exclude body1="b_rope_bB_19" body2="b_rope_bB_20" />
+    <exclude body1="b_rope_bB_20" body2="b_rope_bB_21" />
+    <exclude body1="b_rope_bB_21" body2="b_rope_bB_22" />
+    <exclude body1="b_rope_bB_22" body2="b_rope_bB_last" />
+  </contact>
+  <equality>
+    <connect name="rope_cut" body1="a_rope_aB_last" body2="b_rope_bB_first" anchor="0.0196742 0 0" solref="0.004" solimp="0.995 0.9995 0.0005" />
+  </equality>
+</mujoco>

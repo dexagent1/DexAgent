@@ -1,0 +1,91 @@
+{
+ "shift": [
+  -0.55,
+  0.175
+ ],
+ "scene": "scene_stations.xml",
+ "reached": {
+  "disk_1_disk_1": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 72.7
+  },
+  "disk_2_disk_2": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 127.6
+  },
+  "disk_3_disk_3": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 86.0
+  }
+ },
+ "poses_held": [
+  {
+   "pose": "r2/d1_c2.json",
+   "side": "right",
+   "ok": true,
+   "residual_mm": 0.01,
+   "residual_deg": 0.0,
+   "reason": null
+  },
+  {
+   "pose": "r2/d2_c3.json",
+   "side": "right",
+   "ok": true,
+   "residual_mm": 0.0,
+   "residual_deg": 0.0,
+   "reason": null
+  },
+  {
+   "pose": "r2/d3_c4.json",
+   "side": "right",
+   "ok": true,
+   "residual_mm": 0.01,
+   "residual_deg": 0.0,
+   "reason": null
+  }
+ ],
+ "before": {
+  "disk_1_disk_1": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 76.8
+  },
+  "disk_2_disk_2": {
+   "reached": 0,
+   "centre": false,
+   "worst_mm": 58.6
+  },
+  "disk_3_disk_3": {
+   "reached": 2,
+   "centre": true,
+   "worst_mm": 24.5
+  }
+ },
+ "home_weld_mm_deg": {
+  "left": [
+   0.0,
+   2.6694654798162853e-15
+  ],
+  "right": [
+   0.0,
+   2.306978382188081e-15
+  ]
+ },
+ "candidates": [
+  {
+   "shift": [
+    -0.55,
+    0.175
+   ],
+   "reached": 0,
+   "poses_held": 3,
+   "pose_err_mm": 999.0,
+   "all_centres": false,
+   "worst_mm": 127.6
+  }
+ ],
+ "note": "stations moved +0.175 m toward the objects and -0.550 m sideways; use scene_stations.xml for Stage 3 and Stage 4"
+}

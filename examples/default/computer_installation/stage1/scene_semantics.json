@@ -1,0 +1,264 @@
+{
+  "task_prompt": "Put the three hard disk drives into the hard-disk stack on the right side of the computer case",
+  "task_summary": "One at a time, the right hand picks up each of the three hard disk drives lying in front of the open computer case, slides it into a free slot of the drive cage on the right side of the case, and pushes it fully home with the index finger; the left hand rests.",
+  "environment": {
+    "support_surface": "white tablecloth on a table",
+    "camera": "fixed camera looking down over the table from the operator's side"
+  },
+  "hands": {
+    "used": [
+      "right"
+    ],
+    "notes": "The left hand rests on the table or holds nothing."
+  },
+  "objects": [
+    {
+      "id": "pc_case",
+      "name": "black computer case",
+      "type": "rigid",
+      "role": "container",
+      "parts": [
+        "chassis",
+        "drive_cage",
+        "cage_slots"
+      ],
+      "appearance": {
+        "chassis": "black steel tower lying on its side with the side panel removed, open toward the camera",
+        "drive_cage": "black stacked bays on the right side of the case"
+      },
+      "approximate_size": "large, spanning most of the far half of the table",
+      "properties": [
+        "A heavy rigid case that does not move; its open side faces the camera.",
+        "On its right side is a drive cage with several stacked horizontal slots; each slot accepts one drive slid in along the slot direction and holds it in place.",
+        "Three of the slots are free at the start and filled at the end, one drive each."
+      ],
+      "initial_state": "open case with three empty slots in the right-side cage",
+      "final_state": "three slots each holding a drive",
+      "evidence": "prompt: 'hard-disk stack on the right side of the computer case'; the case fills the far part of every frame; drives enter the cage on its right at 6.7 s, 13 s and 20 s."
+    },
+    {
+      "id": "disk_1",
+      "name": "hard disk drive",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "silver metal rectangular drive in a black tray",
+        "label": "white label on top"
+      },
+      "approximate_size": "palm-sized rectangular block",
+      "properties": [
+        "A rigid rectangular block grasped around its edges with one hand and carried level.",
+        "It slides into a cage slot along the slot direction and seats when pushed fully in."
+      ],
+      "initial_state": "lying rightmost of the three drives in front of the case",
+      "final_state": "seated in the first filled cage slot",
+      "evidence": "5.3 to 6.7 s the right hand lifts the rightmost drive; 6.7 to 8 s it enters the cage; 8 to 10 s the index finger pushes it in."
+    },
+    {
+      "id": "disk_2",
+      "name": "hard disk drive",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "silver metal drive in a black tray"
+      },
+      "approximate_size": "palm-sized rectangular block",
+      "properties": [
+        "Same as disk_1."
+      ],
+      "initial_state": "lying in the middle of the three",
+      "final_state": "seated in the second filled cage slot",
+      "evidence": "10.7 to 12 s the right hand lifts the middle drive; 12 to 14.7 s it enters the cage and is pushed in; 16 s a final push."
+    },
+    {
+      "id": "disk_3",
+      "name": "hard disk drive",
+      "type": "rigid",
+      "role": "manipulated",
+      "appearance": {
+        "body": "silver metal drive in a black tray"
+      },
+      "approximate_size": "palm-sized rectangular block",
+      "properties": [
+        "Same as disk_1."
+      ],
+      "initial_state": "lying leftmost of the three",
+      "final_state": "seated in the third filled cage slot",
+      "evidence": "17.3 to 18.7 s the right hand lifts the last drive; 20 to 22.7 s it enters the cage; 24 to 25.3 s it is pushed in."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the first (rightmost) drive.",
+      "object_refs": [
+        "disk_1"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests on the table.",
+        "right": "Grasps the drive around its edges and lifts it."
+      },
+      "goal": "Disk 1 is held clear of the table.",
+      "time_window_s": [
+        5.0,
+        6.7
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "right",
+      "action": "Carry drive 1 to a free slot of the cage and slide it in.",
+      "object_refs": [
+        "disk_1",
+        "pc_case:cage_slots"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Aligns the drive with the slot and slides it in along the slot."
+      },
+      "goal": "Disk 1 is inside the cage slots.",
+      "time_window_s": [
+        6.7,
+        8.0
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Push drive 1 fully home with the index finger.",
+      "object_refs": [
+        "disk_1",
+        "pc_case:cage_slots"
+      ],
+      "motion": "push",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Extends the index finger and pushes the drive's exposed end into the cage."
+      },
+      "goal": "Disk 1 is fully inside the cage slots.",
+      "time_window_s": [
+        8.0,
+        10.0
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "right",
+      "action": "Pick up the second (middle) drive.",
+      "object_refs": [
+        "disk_2"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Grasps and lifts the drive."
+      },
+      "goal": "Disk 2 is held clear of the table.",
+      "time_window_s": [
+        10.5,
+        12.0
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "right",
+      "action": "Carry drive 2 to the next free slot and slide it in.",
+      "object_refs": [
+        "disk_2",
+        "pc_case:cage_slots"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Aligns and slides the drive into the slot."
+      },
+      "goal": "Disk 2 is inside the cage slots.",
+      "time_window_s": [
+        12.0,
+        14.0
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "right",
+      "action": "Push drive 2 fully home.",
+      "object_refs": [
+        "disk_2",
+        "pc_case:cage_slots"
+      ],
+      "motion": "push",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Pushes the drive in with the index finger."
+      },
+      "goal": "Disk 2 is fully inside the cage slots.",
+      "time_window_s": [
+        14.0,
+        16.5
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "right",
+      "action": "Pick up the third (leftmost) drive.",
+      "object_refs": [
+        "disk_3"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Grasps and lifts the drive."
+      },
+      "goal": "Disk 3 is held clear of the table.",
+      "time_window_s": [
+        17.0,
+        19.0
+      ]
+    },
+    {
+      "index": 8,
+      "acting_hand": "right",
+      "action": "Carry drive 3 to the last free slot and slide it in.",
+      "object_refs": [
+        "disk_3",
+        "pc_case:cage_slots"
+      ],
+      "motion": "insert",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Aligns and slides the drive into the slot."
+      },
+      "goal": "Disk 3 is inside the cage slots.",
+      "time_window_s": [
+        19.0,
+        22.7
+      ]
+    },
+    {
+      "index": 9,
+      "acting_hand": "right",
+      "action": "Push drive 3 fully home.",
+      "object_refs": [
+        "disk_3",
+        "pc_case:cage_slots"
+      ],
+      "motion": "push",
+      "hand_roles": {
+        "left": "Rests.",
+        "right": "Pushes the drive in with the index finger, then withdraws."
+      },
+      "goal": "Disk 3 is fully inside the cage slots, and disk 1 and disk 2 remain fully inside the cage slots.",
+      "time_window_s": [
+        22.7,
+        25.5
+      ]
+    }
+  ],
+  "task_success": "Disk 1 is fully inside the drive cage and no longer supported by the table, disk 2 is fully inside the drive cage and no longer supported by the table, and disk 3 is fully inside the drive cage and no longer supported by the table.",
+  "notes": [
+    "The three drives look alike; they are distinguished by their starting position (right, middle, left) and the order they are installed."
+  ]
+}

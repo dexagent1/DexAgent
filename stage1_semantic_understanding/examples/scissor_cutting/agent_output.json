@@ -1,0 +1,224 @@
+{
+  "task_prompt": "Cut the red rope with the scissors.",
+  "task_summary": "The right hand picks up the purple scissors from the right of the table and the left hand lifts the red rope by a point near its middle so a strand hangs down; the right hand works its fingers into the scissor rings, closes the blades repeatedly on the hanging strand just below the left fist until the rope is severed, then both hands put things down: the left lays the rope back on the cloth and the right sets the scissors back at the right, and the hands rest and withdraw.",
+  "video": {
+    "path": "video.mp4",
+    "duration_s": 24.746,
+    "fps": 60.05,
+    "frames": 1486,
+    "width": 640,
+    "height": 480
+  },
+  "environment": {
+    "support_surface": "white tablecloth on a table, black backdrop at the far edge",
+    "camera": "head-mounted egocentric camera looking down the table from the operator's side; small head motion only (the view tilts slightly toward the hands while the rope is held up between 9.7 s and 17 s)",
+    "notes": "A small red-and-black clip on the far-left table edge is background and not task-relevant."
+  },
+  "hands": {
+    "used": [
+      "left",
+      "right"
+    ],
+    "notes": "The left forearm enters from the image's lower left and only holds and positions the rope; the right forearm enters from the lower right and handles the scissors. Both hands first rest flat on the table (2.5 s to 4.5 s) and rest again after the cut (18.3 s to 20.4 s)."
+  },
+  "objects": [
+    {
+      "id": "red_rope",
+      "name": "red rope",
+      "type": "deformable",
+      "role": "manipulated",
+      "appearance": {
+        "rope": "solid bright red braided cord, uniform thickness, finger-thick or slightly thinner"
+      },
+      "approximate_size": "longer than the visible table area: it runs from a loop near the middle of the table to past the near (bottom) edge of the image, at least two forearm-lengths long",
+      "properties": [
+        "A flexible rope lying loosely on the cloth in curves and loops; it bends under its own weight and drapes when lifted.",
+        "It can be pinched in one fist at a point near its middle and lifted about a forearm-length so that a strand hangs from the fist down to the table.",
+        "It is cuttable: when the scissor blades close across a hanging strand it separates into two independent pieces at that point, each with a free end that falls and curls on the cloth.",
+        "The cut is made on the strand just below the left fist, between the fist and the part still lying on the table; the hanging strand must stay taut enough under its own weight for the blades to bite.",
+        "After the cut both pieces lie on the cloth; nothing else constrains them."
+      ],
+      "deformation": {
+        "kind": "flexible rope (cuttable cable)",
+        "how_the_task_deforms_it": "Lifted and draped from one hand into a hanging strand, cut through by the scissor blades into two pieces, then laid back down in loose curves."
+      },
+      "initial_state": "one continuous rope lying on the cloth left of centre: a teardrop loop at the far end, an S-shaped run toward the operator, and loops near the near edge",
+      "final_state": "in two pieces (cut at about 15.4 s) lying in loose curves left of centre on the cloth",
+      "evidence": "prompt: 'red rope', 'cut'; 0 to 8 s it lies on the cloth; 8.3 to 9.7 s the left hand lifts it and it drapes (deformable); 11 to 15.3 s the open blades straddle the hanging strand; at 15.42 s the strand parts above the blades and the lower piece drops and curls on the cloth, the upper piece hanging from the fist with a free end (15.6 s to 16.1 s)."
+    },
+    {
+      "id": "scissors",
+      "name": "purple scissors",
+      "type": "articulated",
+      "role": "tool",
+      "parts": [
+        "blade_a",
+        "blade_b",
+        "pivot",
+        "finger_rings"
+      ],
+      "appearance": {
+        "blade_a": "silver steel blade, pointed",
+        "blade_b": "silver steel blade, pointed",
+        "pivot": "small screw where the blades cross",
+        "finger_rings": "purple plastic handles with grey inner rims, one ring per blade"
+      },
+      "approximate_size": "about one hand-length long; blades about half the length",
+      "properties": [
+        "Two halves joined by one pivot screw: each blade is rigid with its own finger ring, and the halves rotate relative to each other about the pivot, axis perpendicular to the plane of the blades.",
+        "Squeezing the rings together closes the blades with a shearing action; spreading them opens the blades to a wide V large enough to straddle the rope.",
+        "Closing the blades on a rope placed between them cuts the rope through; several opening and closing strokes are used before it parts.",
+        "Operated by one hand with the thumb in one ring and fingers in the other; when picked up it is first grasped around the handles and then regripped into the rings.",
+        "Rests flat on the cloth, closed, with the points toward the far side of the table, at the start and the end."
+      ],
+      "articulation": {
+        "moving_part": "blade_a with its finger ring",
+        "fixed_part": "blade_b with its finger ring",
+        "joint_type": "revolute",
+        "axis": "through the pivot screw, perpendicular to the flat of the blades",
+        "range_observed": "closed to open about a 30 to 45 degree V between the blades",
+        "state_over_video": "closed on the table -> picked up closed (4.7 s to 6.6 s) -> opened when the fingers enter the rings (about 10.6 s) -> repeatedly opened and closed on the rope (11 s to 15.4 s) -> closed and set down (17 s to 18.3 s)"
+      },
+      "initial_state": "lying closed on the cloth right of centre, points toward the far side",
+      "final_state": "lying closed on the cloth at the right, slightly nearer the operator than at the start, points toward the far side",
+      "evidence": "prompt: 'scissors'; 4.7 s the right hand grasps them; 10.6 s the blades are seen open in a V while the handles are held; 11 s to 15.4 s the blade angle changes while the rings are squeezed (articulation); 18.3 s onward they lie at the right."
+    }
+  ],
+  "subgoals": [
+    {
+      "index": 1,
+      "acting_hand": "right",
+      "action": "Pick up the scissors from the right side of the table.",
+      "object_refs": [
+        "scissors"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Rests flat on the table on top of the rope's near run.",
+        "right": "Closes around the purple handles from above and lifts the scissors, turning the points up and to the left."
+      },
+      "goal": "The scissors are held in the right hand, clear of the table.",
+      "time_window_s": [
+        4.5,
+        6.7
+      ]
+    },
+    {
+      "index": 2,
+      "acting_hand": "left",
+      "action": "Pinch the rope near its middle and lift it so a strand hangs down to the table.",
+      "object_refs": [
+        "red_rope"
+      ],
+      "motion": "grasp_lift",
+      "hand_roles": {
+        "left": "Grips the rope in a fist at the run below the teardrop loop and raises it about a forearm-length above the cloth.",
+        "right": "Holds the scissors at the right, waiting."
+      },
+      "goal": "A segment of the rope hangs vertically from the left fist with its lower part still on the cloth.",
+      "time_window_s": [
+        8.2,
+        9.8
+      ]
+    },
+    {
+      "index": 3,
+      "acting_hand": "right",
+      "action": "Regrip the scissors with the thumb and fingers in the rings and open the blades.",
+      "object_refs": [
+        "scissors:finger_rings",
+        "scissors:blade_a"
+      ],
+      "motion": "regrasp",
+      "hand_roles": {
+        "left": "Keeps the rope lifted with the strand hanging.",
+        "right": "Shifts its grip from around the handles to thumb and fingers in the rings and spreads them to open the blades."
+      },
+      "goal": "The scissors are held by their rings with the blades open.",
+      "time_window_s": [
+        9.8,
+        10.8
+      ]
+    },
+    {
+      "index": 4,
+      "acting_hand": "right",
+      "action": "Close the blades repeatedly on the hanging strand until the rope is cut through.",
+      "object_refs": [
+        "scissors",
+        "red_rope"
+      ],
+      "motion": "cut",
+      "hand_roles": {
+        "left": "Holds the rope up so the strand hangs just below the fist and stays still between the blades.",
+        "right": "Brings the open blades around the strand from the right, a short distance below the left fist, and squeezes the rings closed several times."
+      },
+      "goal": "The rope is separated into two pieces at the cut point: the piece below falls to the cloth and the piece in the left fist ends in a free end.",
+      "time_window_s": [
+        10.8,
+        15.6
+      ]
+    },
+    {
+      "index": 5,
+      "acting_hand": "left",
+      "action": "Lower the held rope piece and lay it on the cloth.",
+      "object_refs": [
+        "red_rope"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Lowers the fist to the table, lays the held piece down to the left of the other piece and opens the hand.",
+        "right": "Moves the scissors away to the right."
+      },
+      "goal": "Both rope pieces lie on the cloth without hand contact.",
+      "time_window_s": [
+        15.8,
+        18.1
+      ]
+    },
+    {
+      "index": 6,
+      "acting_hand": "right",
+      "action": "Put the scissors back down on the right side of the table.",
+      "object_refs": [
+        "scissors"
+      ],
+      "motion": "place",
+      "hand_roles": {
+        "left": "Lays the rope down and then rests on the table.",
+        "right": "Closes the blades, sets the scissors flat on the cloth at the right with the points away from the operator and lets go."
+      },
+      "goal": "The closed scissors rest flat on the cloth at the right, away from the rope.",
+      "time_window_s": [
+        16.4,
+        18.3
+      ]
+    },
+    {
+      "index": 7,
+      "acting_hand": "both",
+      "action": "Withdraw both hands from the table out of view.",
+      "object_refs": [
+        "red_rope",
+        "scissors"
+      ],
+      "motion": "other",
+      "hand_roles": {
+        "left": "Lifts off the cloth beside the rope pieces (where it lay since 18.3 s) and moves back toward the operator out of view.",
+        "right": "Lifts off the cloth left of the scissors (where it lay since 18.3 s) and moves back toward the operator out of view."
+      },
+      "goal": "No hand touches the rope or the scissors, and both stay where they were put.",
+      "time_window_s": [
+        20.3,
+        21.2
+      ]
+    }
+  ],
+  "task_success": "The red rope lies on the cloth left of centre in two separate pieces, cut at a point near its middle, and the closed purple scissors lie on the cloth at the right; no hand is in view.",
+  "notes": [
+    "The cut is resolved at about 15.42 s in a tight crop: the strand parts above the blades and the lower piece drops to the cloth. Before that (11 s to 15.3 s) the blades straddle the strand and close several times without a visible separation; whether earlier strokes partly cut the rope cannot be resolved.",
+    "The rope's far ends run past the near edge of the image at the start and end, so the total length and the exact lengths of the two pieces cannot be measured from the frames.",
+    "Only one cut is observed; the prompt's single 'cut' matches one severing of the rope."
+  ]
+}

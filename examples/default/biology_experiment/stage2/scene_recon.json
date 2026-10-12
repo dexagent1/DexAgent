@@ -1,0 +1,817 @@
+{
+ "scene_semantic": "../stage1/scene_semantics.json",
+ "scene_xml": "scene.xml",
+ "camera_json": "camera.json",
+ "frame0": "frame0.jpg",
+ "frame0_compare_png": "frame0_compare.png",
+ "simulator": "mujoco",
+ "objects": [
+  {
+   "id": "tube_rack",
+   "type": "rigid",
+   "skill": "construct_conical_tube_rack_lowpoly",
+   "skill_origin": "created",
+   "params": {
+    "name": "rack",
+    "length": 0.16,
+    "width": 0.058,
+    "height": 0.068,
+    "rows": 1,
+    "cols": 4,
+    "pitch_x": 0.036,
+    "hole_r": 0.0128,
+    "rim_r": 0.0002,
+    "rim_h": 0.0001,
+    "rack_rgba": [
+     0.856,
+     0.408,
+     0.104,
+     1.0
+    ],
+    "friction": [
+     0.8,
+     0.01,
+     0.0002
+    ],
+    "include_floor": false,
+    "catch_holes": [
+     [
+      0,
+      3,
+      0.0085
+     ]
+    ]
+   },
+   "asset_xml": "objects/tube_rack/tube_rack.xml",
+   "root_body": "tube_rack_rack",
+   "bodies": [
+    "tube_rack_rack"
+   ],
+   "pose": {
+    "x": 0.156,
+    "y": 0.3888,
+    "z": -0.0,
+    "yaw_deg": -9.14,
+    "tilt_deg": 0.0
+   },
+   "mask": "masks/tube_rack.png",
+   "iou": 0.768,
+   "verification_plan": {
+    "silhouette_iou_check": "placement and size against the frame-0 mask",
+    "settle_stability_check": "stands still on the table",
+    "support_check": "rests on the table",
+    "color_match_check": "orange colour measured from the video",
+    "contact_check": "the two tubes and the pipette stand in its wells (in contact with the rack after settling)"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.768,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc settle_stability"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "source": "scene_qc support"
+    },
+    "color_match_check": {
+     "ok": true,
+     "dominant_rgb": [
+      0.856,
+      0.408,
+      0.104
+     ],
+     "closest_palette_rgb": [
+      0.855,
+      0.4,
+      0.094
+     ],
+     "dist": 0.013,
+     "colours": [
+      {
+       "rgb": [
+        0.856,
+        0.408,
+        0.104
+       ],
+       "share": 0.966
+      },
+      {
+       "rgb": [
+        0.55,
+        0.2,
+        0.03
+       ],
+       "share": 0.034
+      }
+     ]
+    },
+    "contact_check": {
+     "ok": true,
+     "held_tube": {
+      "ok": true,
+      "in_contact": true
+     },
+     "rack_tube": {
+      "ok": true,
+      "in_contact": true
+     },
+     "pipette": {
+      "ok": true,
+      "in_contact": true
+     }
+    }
+   },
+   "properties_covered": {
+    "A rigid rack with vertical round wells; a tube or the pipette stands upright in a well and is lifted straight up to remove it.": "one row of four square-cut round wells (hole_r 12.8 mm) through the top plate above an empty interior and a bottom plate: a tube (rim radius 12 mm) drops in to stand on the bottom plate with its rim above the top and comes out straight up, the pipette stands in the end well with its nose in a 17 mm catch hole of the bottom plate and its barrel on the hole edge (stands still: 0.06 mm in 4 s, where on a flat plate it slid out); contact_check: both tubes and the pipette stand in their wells after settling",
+    "It stays in place on the right half of the table; nothing moves it.": "free body at rest on the right half of the table: settle_stability_check and support_check; nothing in the scene moves it"
+   }
+  },
+  {
+   "id": "tube",
+   "type": "rigid",
+   "skill": "construct_cup",
+   "skill_origin": "library",
+   "params": {
+    "base_radius": 0.0105,
+    "rim_radius": 0.012,
+    "height": 0.082,
+    "wall": 0.001,
+    "lip": 0.0008,
+    "bottom": 0.0015,
+    "n_wedges": 6,
+    "body_rgba": [
+     0.88,
+     0.9,
+     0.92,
+     1.0
+    ],
+    "inner_rgba": [
+     0.8,
+     0.82,
+     0.85,
+     1.0
+    ],
+    "density": 1050.0,
+    "include_floor": false,
+    "name": "tube"
+   },
+   "asset_xml": "objects/tube/tube.xml",
+   "root_body": "held_tube",
+   "bodies": [
+    "held_tube"
+   ],
+   "pose": {
+    "x": 0.1027,
+    "y": 0.3974,
+    "z": 0.004,
+    "yaw_deg": -9.14,
+    "tilt_deg": 0.0
+   },
+   "mask": "masks/tube.png",
+   "iou": 0.581,
+   "verification_plan": {
+    "silhouette_iou_check": "placement in its rack well",
+    "vessel_containment_test": "open-topped vessel that stands upright and holds what enters its mouth",
+    "contact_check": "stands in the rack well (touches the rack)",
+    "settle_stability_check": "upright and still at frame 0"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.581,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "vessel_containment_test": {
+     "ok": true,
+     "verdict": "VESSEL OK \u2014 landed upright (0.0 deg), a 4 mm ball came to rest 0.0 mm off axis at z -0.1 mm, under the 82 mm rim",
+     "measured": {
+      "drop": {
+       "tilt_deg": 0.0,
+       "base_height_mm": -0.05,
+       "ok": true
+      },
+      "fill": {
+       "ball_radius_mm": 4.4,
+       "ball_off_axis_mm": 0.0,
+       "ball_z_mm": -0.1,
+       "rim_z_mm": 81.96,
+       "floor_z_mm": 1.46,
+       "below_rim": true,
+       "above_floor": true,
+       "inside_radius": true,
+       "vessel_tilt_deg": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "contact_check": {
+     "ok": true,
+     "in_contact": true,
+     "with": "tube_rack_rack"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc settle_stability"
+    }
+   },
+   "properties_covered": {
+    "A rigid open-topped vessel held upright in one hand; the pipette tip is dipped into its opening.": "construct_cup clear tube, rim radius 12 mm, 82 mm tall, 9 g: an open-topped rigid vessel (vessel_containment_test: a ball dropped from above enters and stays below the rim, so a tip enters its mouth); it lands and stays upright; held in one hand is a Stage 3 grasp",
+    "It is lifted straight up out of a rack well and later lowered straight back into one.": "stands on the rack's bottom plate inside well 1 (contact_check with the rack); the well is 25.6 mm across for a 24 mm rim, so it lifts out straight up and drops back in"
+   }
+  },
+  {
+   "id": "rack_tube",
+   "type": "rigid",
+   "skill": "construct_cup",
+   "skill_origin": "library",
+   "params": {
+    "base_radius": 0.0105,
+    "rim_radius": 0.012,
+    "height": 0.082,
+    "wall": 0.001,
+    "lip": 0.0008,
+    "bottom": 0.0015,
+    "n_wedges": 6,
+    "body_rgba": [
+     0.88,
+     0.9,
+     0.92,
+     1.0
+    ],
+    "inner_rgba": [
+     0.8,
+     0.82,
+     0.85,
+     1.0
+    ],
+    "density": 1050.0,
+    "include_floor": false,
+    "name": "srctube"
+   },
+   "asset_xml": "objects/rack_tube/rack_tube.xml",
+   "root_body": "rack_tube_srctube",
+   "bodies": [
+    "rack_tube_srctube"
+   ],
+   "pose": {
+    "x": 0.1382,
+    "y": 0.3917,
+    "z": 0.004,
+    "yaw_deg": -9.14,
+    "tilt_deg": 0.0
+   },
+   "mask": "masks/rack_tube.png",
+   "iou": 0.708,
+   "verification_plan": {
+    "silhouette_iou_check": "placement in its rack well",
+    "vessel_containment_test": "open-topped vessel that stands upright and holds what enters its mouth",
+    "contact_check": "stands in the rack well (touches the rack)",
+    "settle_stability_check": "upright and still at frame 0"
+   },
+   "verifiers": {
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.708,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "vessel_containment_test": {
+     "ok": true,
+     "verdict": "VESSEL OK \u2014 landed upright (0.0 deg), a 4 mm ball came to rest 0.0 mm off axis at z -0.1 mm, under the 82 mm rim",
+     "measured": {
+      "drop": {
+       "tilt_deg": 0.0,
+       "base_height_mm": -0.05,
+       "ok": true
+      },
+      "fill": {
+       "ball_radius_mm": 4.4,
+       "ball_off_axis_mm": 0.0,
+       "ball_z_mm": -0.1,
+       "rim_z_mm": 81.96,
+       "floor_z_mm": 1.46,
+       "below_rim": true,
+       "above_floor": true,
+       "inside_radius": true,
+       "vessel_tilt_deg": 0.0,
+       "ok": true
+      }
+     }
+    },
+    "contact_check": {
+     "ok": true,
+     "in_contact": true,
+     "with": "tube_rack_rack"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc settle_stability"
+    }
+   },
+   "properties_covered": {
+    "A second open-topped tube that stays standing in a rack well; the pipette tip is dipped into it to draw before dispensing into the held tube.": "the same clear tube standing in well 2 (contact_check with the rack, settle_stability_check); open mouth (vessel_containment_test) receives the tip from above",
+    "It is not grasped; it is held in place by the rack well.": "free body standing on the bottom plate inside its well, held in place by the well walls: contact_check, settle_stability_check"
+   }
+  },
+  {
+   "id": "pipette",
+   "type": "articulated",
+   "skill": "construct_micropipette",
+   "skill_origin": "library",
+   "params": {
+    "name": "pipette",
+    "layout": "upright",
+    "total_len": 0.23,
+    "handle_len": 0.085,
+    "include_floor": false
+   },
+   "asset_xml": "objects/pipette/pipette.xml",
+   "root_body": "pipette_pipette",
+   "bodies": [
+    "pipette_pipette",
+    "pipette_pipette_pin",
+    "pipette_pipette_plunger",
+    "pipette_pipette_ejector",
+    "pipette_pipette_jaw0",
+    "pipette_pipette_jaw1",
+    "pipette_pipette_jaw2",
+    "pipette_pipette_jaw3"
+   ],
+   "pose": {
+    "x": 0.2046,
+    "y": 0.387,
+    "z": -0.0,
+    "yaw_deg": -125.27,
+    "tilt_deg": 13.73
+   },
+   "mask": "masks/pipette.png",
+   "iou": 0.507,
+   "verification_plan": {
+    "articulation_check": "plunger, blow-out pin, ejector and nose jaws are slide joints with usable range",
+    "plunger_two_stage_test": "the plunger button slides down under thumb force to its first stop, past it under more force, and springs back",
+    "silhouette_iou_check": "placement in the rack's end well",
+    "settle_stability_check": "rests in the well without falling",
+    "contact_check": "supported by the rack well"
+   },
+   "verifiers": {
+    "articulation_check": {
+     "ok": true,
+     "objects": {
+      "pipette_pipette": {
+       "bodies": [
+        "pipette_pipette",
+        "pipette_pipette_ejector",
+        "pipette_pipette_jaw0",
+        "pipette_pipette_jaw1",
+        "pipette_pipette_jaw2",
+        "pipette_pipette_jaw3",
+        "pipette_pipette_pin",
+        "pipette_pipette_plunger"
+       ],
+       "joints": [
+        {
+         "joint": "pipette_pipette_blow",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.0055
+         ],
+         "travel": 0.0055,
+         "moves_part_m": 0.0056,
+         "usable": true
+        },
+        {
+         "joint": "pipette_pipette_plunge",
+         "type": "slide",
+         "range": [
+          -0.0005,
+          0.0187
+         ],
+         "travel": 0.0192,
+         "moves_part_m": 0.0187,
+         "usable": true
+        },
+        {
+         "joint": "pipette_pipette_eject",
+         "type": "slide",
+         "range": [
+          -0.0002,
+          0.01
+         ],
+         "travel": 0.0102,
+         "moves_part_m": 0.01,
+         "usable": true
+        },
+        {
+         "joint": "pipette_pipette_jawslide0",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.0009
+         ],
+         "travel": 0.0009,
+         "moves_part_m": 0.0009,
+         "usable": false
+        },
+        {
+         "joint": "pipette_pipette_jawslide1",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.0009
+         ],
+         "travel": 0.0009,
+         "moves_part_m": 0.0009,
+         "usable": false
+        },
+        {
+         "joint": "pipette_pipette_jawslide2",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.0009
+         ],
+         "travel": 0.0009,
+         "moves_part_m": 0.0009,
+         "usable": false
+        },
+        {
+         "joint": "pipette_pipette_jawslide3",
+         "type": "slide",
+         "range": [
+          0.0,
+          0.0009
+         ],
+         "travel": 0.0009,
+         "moves_part_m": 0.0009,
+         "usable": false
+        }
+       ],
+       "total_travel": {
+        "slide": 0.0385,
+        "hinge": 0.0
+       },
+       "verdict": "articulated"
+      }
+     }
+    },
+    "plunger_two_stage_test": {
+     "ok": true,
+     "verdict": "PLUNGER OK \u2014 4 N took it 12.4 mm (first stop at 12.0), 22 N took it 18.8 mm (blow-out 5.5 further), and it returned to 0.0 mm",
+     "measured": {
+      "first_stop": {
+       "N": 4.0,
+       "mm": 12.43
+      },
+      "second_stop": {
+       "N": 22.0,
+       "mm": 18.76
+      },
+      "released_mm": 0.03,
+      "max_mm_stage1": 12.4269,
+      "stroke1_mm": 12.0,
+      "stroke2_mm": 5.5,
+      "first_stop_N_designed": 2.64,
+      "second_stage_step_N_designed": 5.0,
+      "checks": {
+       "first_stop": true,
+       "blow_out": true,
+       "spring_return": true
+      }
+     }
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.507,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.5,
+     "verdict": "at rest",
+     "source": "scene_qc settle_stability"
+    },
+    "contact_check": {
+     "ok": true,
+     "in_contact": true,
+     "with": "tube_rack_rack"
+    }
+   },
+   "properties_covered": {
+    "A hand-held pipette gripped around its body with the thumb on the plunger button; the plunger slides down under thumb pressure and springs back when released.": "handle radius 13 mm x 85 mm with the blue plunger button on top (a fist grip with the thumb over the button); pipette_plunge slide: plunger_two_stage_test PLUNGER OK \u2014 4 N took it 12.4 mm (first stop at 12.0), 22 N took it 18.8 mm (blow-out 5.5 further), and it returned to 0.0 mm",
+    "Its nose is pressed into a tip in the tip box to mount the tip by friction; the tip then stays on through the task.": "sprung nose jaws (pipette_jawslide0..3, 0.5 mm snap interference, about 18 N to snap) matching the box's free tip collar ; the snap is proven in construct_tip_box_lowpoly's test (force-driven press mounts the tip, a 7 cm lift carries it)",
+    "Pipetting is repeated plunger strokes with the tip inside the tube.": "the plunger slide returns on its spring after each push (plunger_two_stage_test: released to 0.03 mm), so it can be stroked repeatedly",
+    "It stands upright in a rack well at the start and lies on the table at the end.": "free body standing in the rack's end well leaning on the hole edge at frame 0 (contact_check, settle_stability_check); a free body can be laid on its side on the table (its final state is Stage 3's)"
+   }
+  },
+  {
+   "id": "tip_box",
+   "type": "articulated",
+   "skill": "construct_tip_box_lowpoly",
+   "skill_origin": "created",
+   "params": {
+    "name": "tipbox",
+    "free_wells": [
+     [
+      0,
+      11
+     ]
+    ],
+    "tip_names": [
+     "tip"
+    ],
+    "tip_params": {
+     "tip_rgba": [
+      0.8,
+      0.85,
+      0.95,
+      1.0
+     ]
+    },
+    "lid_rgba": [
+     0.82,
+     0.86,
+     0.88,
+     1.0
+    ],
+    "stub_rgba": [
+     0.62,
+     0.72,
+     0.93,
+     1.0
+    ],
+    "include_floor": false,
+    "lip_segments": 12,
+    "lid_density": 280.0
+   },
+   "asset_xml": "objects/tip_box/tip_box.xml",
+   "root_body": "tip_box_tipbox",
+   "bodies": [
+    "tip_box_tipbox",
+    "tip_box_tipbox_lid"
+   ],
+   "joints": [
+    "tip_box_tipbox_hinge"
+   ],
+   "pose": {
+    "x": -0.1439,
+    "y": 0.3945,
+    "z": -0.0,
+    "yaw_deg": 25.19,
+    "tilt_deg": 0.0
+   },
+   "mask": "masks/tip_box.png",
+   "iou": 0.751,
+   "verification_plan": {
+    "box_enclosure_check": "a box with a bottom, four walls and a tray top",
+    "joint_release_hold_test": "the hinged lid stays open where frame 0 shows it (100 and 110 deg)",
+    "articulation_check": "the lid hinge is a usable joint",
+    "silhouette_iou_check": "placement and yaw",
+    "settle_stability_check": "stands still",
+    "support_check": "rests on the table"
+   },
+   "verifiers": {
+    "box_enclosure_check": {
+     "ok": true,
+     "issues": [],
+     "faces": {
+      "bottom": {
+       "hit": true,
+       "geom": "tipbox_floor",
+       "distance_m": 0.0396
+      },
+      "x_pos": {
+       "hit": true,
+       "geom": "tipbox_wall2",
+       "distance_m": 0.0605
+      },
+      "x_neg": {
+       "hit": true,
+       "geom": "tipbox_wall3",
+       "distance_m": 0.0605
+      },
+      "y_pos": {
+       "hit": true,
+       "geom": "tipbox_wall0",
+       "distance_m": 0.045
+      },
+      "y_neg": {
+       "hit": true,
+       "geom": "tipbox_wall1",
+       "distance_m": 0.045
+      },
+      "top": {
+       "hit": true,
+       "geom": "tipbox_slab3",
+       "distance_m": 0.0254
+      }
+     },
+     "cavity_fraction": 0.771,
+     "top_state": "closed",
+     "interior_size_m": [
+      0.121,
+      0.09,
+      0.0792
+     ],
+     "n_geoms": 112,
+     "walls_found": [
+      "x_pos",
+      "x_neg",
+      "y_pos",
+      "y_neg"
+     ]
+    },
+    "joint_release_hold_test": {
+     "ok": true,
+     "issues": [],
+     "trials": [
+      {
+       "released": 100.0,
+       "final": 100.0446,
+       "drift": 0.0446,
+       "root_slip_m": 0.0,
+       "held": true
+      },
+      {
+       "released": 110.0,
+       "final": 110.0509,
+       "drift": 0.0509,
+       "root_slip_m": 0.0,
+       "held": true
+      }
+     ],
+     "joint_type": "hinge",
+     "range": [
+      -2.0,
+      118.00000000000001
+     ],
+     "tol": 3.0,
+     "hold_s": 3.0
+    },
+    "articulation_check": {
+     "ok": true,
+     "objects": {
+      "tip_box_tipbox": {
+       "bodies": [
+        "tip_box_tipbox",
+        "tip_box_tipbox_lid",
+        "tip_box_tipbox_tip"
+       ],
+       "joints": [
+        {
+         "joint": "tip_box_tipbox_hinge",
+         "type": "hinge",
+         "range": [
+          -0.0349066,
+          2.05949
+         ],
+         "travel": 2.0944,
+         "moves_part_m": 0.1638,
+         "usable": true
+        }
+       ],
+       "total_travel": {
+        "slide": 0.0,
+        "hinge": 2.0944
+       },
+       "verdict": "articulated"
+      }
+     }
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 0.751,
+     "source": "scene_qc silhouette_iou through video_cam"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc settle_stability"
+    },
+    "support_check": {
+     "ok": true,
+     "floating": [],
+     "source": "scene_qc support"
+    }
+   },
+   "properties_covered": {
+    "An open box whose tray holds many tips standing upright in a grid; pressing the pipette nose straight down onto one tip mounts it and lifts it out.": "8 x 12 tray of tips wide end up (drawn collars on merged tray slabs) with one real free tip caged in well (0, 11); box_enclosure_check: bottom, four walls, tray top; the free tip snaps onto a pressed nose and lifts out (the tool's tested snap)",
+    "The lid is already open and stays open; the box does not move.": "lid on tipbox_hinge at 100 deg (frame 0), friction hinge: joint_release_hold_test holds it at 100 and 110 deg; free base at rest (settle_stability_check, support_check)"
+   }
+  },
+  {
+   "id": "tip",
+   "type": "rigid",
+   "skill": "construct_tip_box_lowpoly",
+   "skill_origin": "created",
+   "params": {
+    "built_by": "tip_box",
+    "free_wells": [
+     [
+      0,
+      11
+     ]
+    ],
+    "tip_names": [
+     "tip"
+    ],
+    "lip_segments": 12,
+    "tip_params": {
+     "tip_rgba": [
+      0.8,
+      0.85,
+      0.95,
+      1.0
+     ]
+    }
+   },
+   "asset_xml": "objects/tip_box/tip_box.xml",
+   "root_body": "tip_box_tipbox_tip",
+   "bodies": [
+    "tip_box_tipbox_tip"
+   ],
+   "pose": {
+    "x": -0.0857,
+    "y": 0.3871,
+    "z": 0.01,
+    "yaw_deg": 29.75,
+    "tilt_deg": 0.47
+   },
+   "mask": "masks/tip.png",
+   "iou": 1.0,
+   "verification_plan": {
+    "contact_check": "the tip stands seated in its tip-box socket",
+    "settle_stability_check": "stays seated and still",
+    "silhouette_iou_check": "its collar lies on the visible tray (mask = the chosen well's collar inside the tip-box mask)"
+   },
+   "verifiers": {
+    "contact_check": {
+     "ok": true,
+     "in_contact": true,
+     "with": "tip_box_tipbox"
+    },
+    "settle_stability_check": {
+     "ok": true,
+     "pos_m": 0.0,
+     "rot_deg": 0.0,
+     "verdict": "at rest",
+     "source": "scene_qc settle_stability"
+    },
+    "silhouette_iou_check": {
+     "ok": true,
+     "iou": 1.0,
+     "source": "scene_qc silhouette_iou through video_cam"
+    }
+   },
+   "properties_covered": {
+    "A small tapered cone that mounts onto the pipette nose by friction and then moves with the pipette.": "76 mm tapered tip whose collar carries a 12-capsule snap lip that the pipette's sprung nose jaws pass and catch: a free body that only the nose can carry; construct_tip_box_lowpoly's test presses a micropipette onto it with a force grip, it snaps on and rides a 7 cm lift"
+   }
+  }
+ ],
+ "scene_checks": {
+  "scene_qc": {
+   "ok": true,
+   "failed": [],
+   "silhouette_iou": {
+    "tube_rack": 0.768,
+    "tube": 0.581,
+    "rack_tube": 0.708,
+    "pipette": 0.507,
+    "tip_box": 0.751,
+    "tip": 1.0
+   },
+   "warnings": [
+    "OUT OF REACH: tip_box_tipbox_tip at y=0.39 m (right arm, 30 mm short); the arms reach a band about 0.4-0.6 m in front of their stations: check the camera registration and the object sizes, or change the setup"
+   ]
+  }
+ },
+ "notes": [
+  "Camera: the setup's calibrated ego camera (register_table_camera source=setup) at 640x480; the grid lies on the cloth. The video's first second has a green colour cast; the rack colour is measured (measure_object_color), tip box and pipette keep their constructors' colours.",
+  "SAM 3 returned nothing for 'clear plastic tube' and 'grey pipette'; the masks used 'small cup' (split left/right into the tube (well 1) and the rack tube (well 2)) and 'pipette' at min_score 0.05.",
+  "Re-staged for the current Stage 1 ids (tube_rack, tube, rack_tube, pipette, tip_box, tip) with attach prefixes that keep every id resolving to its own bodies and no id's '<id>_' prefix capturing another object (held tube 'held_tube', rack 'tube_rack_rack', rack tube 'rack_tube_srctube', tip box 'tip_box_tipbox' with its free tip 'tip_box_tipbox_tip'); every object keeps the fitted frame-0 placement of the earlier verified scene.",
+  "Tip box rebuilt with construct_tip_box_lowpoly (created): the original construct_tip_box gave the lid a hand-written 1e-7 kg m^2 inertia (38x too small for its plates), drew 95 standing tips as visual stubs 15.6 mm proud of any collision geometry and put 148 collision geoms within 6 cm of the free tip (one box per tray cell, 37 per tip); the fork merges the tray into slabs under the drawn collars, cages the free tip's collar in a slab hole, infers the lid inertia from its plates (25 g, stiff hinge friction so it holds its own weight) and uses a 12-capsule snap lip (47 collision geoms near the tip). Its test presses a micropipette onto the free tip with a force grip: it snaps on and rides a 7 cm lift.",
+  "Rack rebuilt with construct_conical_tube_rack_catch_holes (created): in the plain rack the leaning pipette's nose stood on the flat bottom plate, held sideways by friction only; MuJoCo's soft friction crept and the pipette slid and fell within 3 s (9 s with the executor's no-slip iterations) - the earlier scene only passed the 1 s keyframe check. A 17 mm catch hole under the end well holds the nose by its edges: the pipette now stands at a 14 deg lean (closer to the video's ~19 deg than the earlier 11 deg; IoU 0.50 vs 0.46) and moves 0.06 mm in 4 s.",
+  "Render traps fixed in scene.xml: <quality offsamples=0> (MSAA blends segmentation ids at thin geoms); translucent colours are opaque (clear plastic is a Stage 4 retexture job); rack hole rim discs are 0.2 mm visual-only disks.",
+  "tip: the exact tip-box hole is not resolvable at this resolution; the free tip stands in well (row 0, col 11) and its mask is that well's rendered collar inside the video's tip-box mask, so its IoU proves only that the well lies on the visible tray.",
+  "Tube lift-out and drop-back have no library verifier; covered by the well geometry (25.6 mm wells for 24 mm rims) and contact_check.",
+  "REACH: object_reach_check reports the free tip (y = 0.39 m) 30 mm short of the right arm's palm-down band; the tip box is where the video has it, so Stage 3 has to reach it with an orientation the arm holds or move the stations.",
+  "Rack friction is the constructor's default 0.8: the earlier scene had raised it to 1.2 so the leaning pipette would not slide off the flat bottom plate; with the catch hole holding the nose that is no longer needed, and at 1.2 the barrel's friction on the hole edge lifted the light rack out with the pipette (measured in Stage 3: rack thrown 14 cm at 1.2, untouched at 0.8)."
+ ],
+ "source": "examples/asset_reuse"
+}
